@@ -1,0 +1,492 @@
+{
+ "cell": 24,
+ "scale": 6,
+ "units": "cell rects in native pixels; multiply by scale for the PNG",
+ "facing": "right; climb_* face up; front_* face the viewer",
+ "frames": {
+  "idle": {
+   "cell": [
+    0,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    0,
+    0,
+    144,
+    144
+   ],
+   "pose": {},
+   "view": "side",
+   "rotate": 0
+  },
+  "blink": {
+   "cell": [
+    24,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    144,
+    0,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "blink"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "walk_1": {
+   "cell": [
+    48,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    288,
+    0,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "walk1"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "walk_2": {
+   "cell": [
+    72,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    432,
+    0,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "stand",
+    "body_dy": -1
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "walk_3": {
+   "cell": [
+    96,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    576,
+    0,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "walk2"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "drag": {
+   "cell": [
+    120,
+    0,
+    24,
+    24
+   ],
+   "rect_px": [
+    720,
+    0,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "squint",
+    "legs": "wide",
+    "head_dy": 1
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "look_up": {
+   "cell": [
+    0,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    0,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "up",
+    "head_dy": -2,
+    "body_dy": 1
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "with_sack": {
+   "cell": [
+    24,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    144,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "sack": 5
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "oof": {
+   "cell": [
+    48,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    288,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "squint",
+    "legs": "wide",
+    "head_dy": 1,
+    "tail": "out",
+    "sack": 3
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "lift": {
+   "cell": [
+    72,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    432,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "squint",
+    "head_dy": -2,
+    "body_dy": -1,
+    "legs": "wide",
+    "tail": "out"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "stretch": {
+   "cell": [
+    96,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    576,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "squint",
+    "head_dx": 4,
+    "legs": "tiptoe",
+    "body_dy": -1,
+    "tail": "out"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "teeter": {
+   "cell": [
+    120,
+    24,
+    24,
+    24
+   ],
+   "rect_px": [
+    720,
+    144,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "wide",
+    "legs": "teeter",
+    "tail": "high",
+    "head_dy": 2
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "happy": {
+   "cell": [
+    0,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    0,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "happy",
+    "tail": "wag"
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "inspect": {
+   "cell": [
+    24,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    144,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "down",
+    "head_dy": 1
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "glow": {
+   "cell": [
+    48,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    288,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "down",
+    "tail_glow": true
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "sit": {
+   "cell": [
+    72,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    432,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "sit",
+    "tail": "curl",
+    "body_dy": 1,
+    "head_dy": -1
+   },
+   "view": "side",
+   "rotate": 0
+  },
+  "climb_1": {
+   "cell": [
+    96,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    576,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "walk1",
+    "sack": 5,
+    "eyes": "up"
+   },
+   "view": "side",
+   "rotate": 90
+  },
+  "climb_2": {
+   "cell": [
+    120,
+    48,
+    24,
+    24
+   ],
+   "rect_px": [
+    720,
+    288,
+    144,
+    144
+   ],
+   "pose": {
+    "legs": "walk2",
+    "sack": 5,
+    "eyes": "up"
+   },
+   "view": "side",
+   "rotate": 90
+  },
+  "front": {
+   "cell": [
+    0,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    0,
+    432,
+    144,
+    144
+   ],
+   "pose": {},
+   "view": "front",
+   "rotate": 0
+  },
+  "front_happy": {
+   "cell": [
+    24,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    144,
+    432,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "happy"
+   },
+   "view": "front",
+   "rotate": 0
+  },
+  "front_wave_1": {
+   "cell": [
+    48,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    288,
+    432,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "happy",
+    "arm": 1
+   },
+   "view": "front",
+   "rotate": 0
+  },
+  "front_wave_2": {
+   "cell": [
+    72,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    432,
+    432,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "happy",
+    "arm": 2
+   },
+   "view": "front",
+   "rotate": 0
+  },
+  "front_blink": {
+   "cell": [
+    96,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    576,
+    432,
+    144,
+    144
+   ],
+   "pose": {
+    "eyes": "blink"
+   },
+   "view": "front",
+   "rotate": 0
+  },
+  "front_glow": {
+   "cell": [
+    120,
+    72,
+    24,
+    24
+   ],
+   "rect_px": [
+    720,
+    432,
+    144,
+    144
+   ],
+   "pose": {
+    "glow": 1
+   },
+   "view": "front",
+   "rotate": 0
+  }
+ }
+}

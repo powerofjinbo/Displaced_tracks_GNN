@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="branding/canto_banner.gif" width="768"
+       alt="Tercet, a small orange gecko, hangs the letters C, A, N, T, O on a wire in the dark">
+</p>
+
 # Canto: displaced-particle tracking with a graph neural network trained on ttbar events
 
 **Canto** (**C**hained-triplet, origin-**A**gnostic **N**etworks for **T**racking **O**ff-vertex) is a graph neural
@@ -29,8 +34,8 @@ the evaluation code of three published GNN studies on this phase, none of their 
 hits and the EggNet code, at a fake rate not resolved from EggNet's, Canto-L finds 99.37 % of the particles against
 95.87 %.
 
-Release cards with every comparison: `figures/release/` (`canto_card*` for the HNL benchmark,
-`canto_l_trackml_card` and `canto_l_trackml_accuracy_card` for TrackML). The TrackML model card is
+Release cards: `figures/release/` (`canto_card_full` for every dataset and model, `canto_card*` for the HNL
+benchmark, `canto_l_trackml_card` for TrackML). The TrackML model card is
 `docs/model_card_canto_l_trackml.md`.
 
 ## Models

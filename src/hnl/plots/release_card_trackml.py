@@ -6,17 +6,16 @@ that reference's own evaluation code: Canto-L's values come from the post-freeze
 test tracks (hnl.trackml.refmetrics: $RUN/test_post/refmetrics/test_<cond>/refmetrics.csv, ports of the EggNet and
 HierarchicalGNN code), the published values from hnl.trackml.evaluate.REFERENCES (no transcription). Only references
 that used the throughput phase, as our test does, are shown (DECISIONS 2026-10-11). A model the paper does not
-report gets a dash. Shading: the best value of a row and every value within 2 sigma of it (combined uncertainty; a
-published value without a quoted uncertainty counts with ours only) are bold and shaded, peach in the highlighted
-column, grey elsewhere; a difference below 2 sigma is not resolved, so tied values are shaded together.
+report gets a dash. Shading: the first place of each row only (the highest value, the lowest for rates; equal
+shown values share it), bold and shaded, peach in the highlighted column, grey elsewhere.
 
-Accuracy card (one-time T2, 300 accuracy-phase events of Kaggle train_1, the same frozen pipeline without retraining):
+Accuracy card (not a release card: Canto-L was not trained on that phase; kept for the record, rendered only on request
+with --out-accuracy; one-time T2, 300 accuracy-phase events of Kaggle train_1, the same frozen pipeline):
 the only same-phase study, Ju et al. (P1), under variant J' (our port of their evaluation script, as in the test
 reports; J' at pT > 0.1 GeV recomputed here from the stored per-event counts with the reports' bootstrap), and
 Canto-L's own definitions in the three conditions. A condition whose T2 report is not written yet shows "pending".
 
-    python -m hnl.plots.release_card_trackml --out figures/release/canto_l_trackml_card \
-        --out-accuracy figures/release/canto_l_trackml_accuracy_card
+    python -m hnl.plots.release_card_trackml --out figures/release/canto_l_trackml_card
 """
 
 from __future__ import annotations
@@ -175,6 +174,15 @@ def tied_best(vals: dict, kind: str) -> set:
     return {c for c, (v, s) in vals.items() if abs(v - vb) <= 2 * np.hypot(s, sb)}
 
 
+def first_place(vals: dict, kind: str, unit: str) -> set:
+    """The column with the best value, and any column showing the same value."""
+    best = (max if kind == "max" else min)(vals, key=lambda c: vals[c][0])
+    shown = lambda c: f"{vals[c][0]:.3f}" if unit == "score" else (fmt_ours(vals[c][0]) if c == "Canto-L"
+                                                                   else fmt_published(vals[c][0]))
+    return {c for c in vals if shown(c).rstrip("%") == shown(best).rstrip("%")
+            or abs(vals[c][0] - vals[best][0]) < 1e-12}
+
+
 def notes() -> list[str]:
     g = lambda c, k, n="WP-A": ours(c, k, n)
     errs = [ours(c, k)[1] for _t, _s, c, k, _b, _r in ROWS]
@@ -193,8 +201,8 @@ def notes() -> list[str]:
         "which reproduces their Truth-CC; HierarchicalGNN a2563af has >= 50 %); nothing was re-chosen. "
         f"Event-bootstrap errors on the Canto-L values are at most {np.ceil(1e4 * max(errs)) / 100:.2f} points. "
         "Published values as quoted, on the authors' own events; where no uncertainty is quoted (Liu et al., the "
-        "Calafiura et al. fake rates) the 2-sigma test uses the Canto-L error alone. Bold and shaded: the best "
-        "value of a row and every value within 2 sigma of it (not resolved).",
+        "Calafiura et al. fake rates) the 2-sigma test uses the Canto-L error alone. Bold and shaded: the first "
+        "place of each row; a difference below 2 sigma is not resolved.",
         "Working points chosen on val for one reference each, with our readings of its definitions. Full TrackML, EggNet code, at the point chosen for "
         f"Chan et al.'s fake rate: efficiency {100 * g('full', 'eggnet_efficiency', 'WP-R-P3')[0]:.2f} %, "
         f"duplicates {100 * g('full', 'eggnet_duplication', 'WP-R-P3')[0]:.2f} %, fake tracks "
@@ -209,10 +217,8 @@ def notes() -> list[str]:
         "Caveats. Liu et al. state that their FR is a model-to-model comparison, not final track-building "
         "performance; Canto-L's is after its final builder. Liu et al.'s code takes a particle's pT as the minimum "
         "hit-level truth pT, our tables hold the initial pT. Our TrackML-1GeV events keep the hits of particles with "
-        "pT > 1 GeV (EggNet's hard cut; Liu et al.'s released events cut hits by hit-level pT). Ju et al. (Exa.TrkX) "
-        "evaluated on the accuracy phase: compared on the accuracy-phase card.",
-        "The same frozen Canto-L on 300 accuracy-phase events (Kaggle train_1), without retraining: accuracy-phase "
-        "card. Context, not a comparison: TrackML score on full test events "
+        "pT > 1 GeV (EggNet's hard cut; Liu et al.'s released events cut hits by hit-level pT).",
+        "Context, not a comparison: TrackML score on full test events "
         f"{report('test', 'full', 'P0_trackml_score'):.3f}; challenge winner of the throughput phase (2 CPU cores) "
         "Mikado 94.4 % at 0.56 s per event.",
     ]]
@@ -307,7 +313,7 @@ def render(out: str, title: str, subtitle: str, columns: list, rows: list, nts: 
         for k, line in enumerate(subs):
             ax.text(x0 + st["lpad"], yc + st["sub_dy"] + dy - k * 0.25, line, ha="left", va="center",
                     fontsize=st["sub"], color=MUTED)
-        best = tied_best(vals, kind) if len(vals) > 1 and "Canto-L" in vals else set()
+        best = first_place(vals, kind, unit) if len(vals) > 1 and "Canto-L" in vals else set()
         for i, (head, _note) in enumerate(columns):
             xl = x0 + lw + i * cw
             v = vals.get(head)

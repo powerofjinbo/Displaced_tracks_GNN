@@ -20,6 +20,6 @@ from matplotlib.font_manager import findfont, FontProperties
 f = findfont(FontProperties(family="FreeSerif"), fallback_to_default=False)
 print("FreeSerif:", f)
 PY
-python -I -m hnl.plots.release_card_trackml --out figures/release/canto_l_trackml_card \
-    --out-accuracy figures/release/canto_l_trackml_accuracy_card
+python -I -m hnl.plots.release_card_trackml --out figures/release/canto_l_trackml_card
+python -I -m hnl.plots.release_card_full --out figures/release/canto_card_full
 rm -rf "$MPLCONFIGDIR"
