@@ -7,7 +7,7 @@ test tracks (hnl.trackml.refmetrics: $RUN/test_post/refmetrics/test_<cond>/refme
 HierarchicalGNN code), the published values from hnl.trackml.evaluate.REFERENCES (no transcription). Only references
 that used the throughput phase, as our test does, are shown (DECISIONS 2026-10-11). A model the paper does not
 report gets a dash. Shading: the first place of each row only (the highest value, the lowest for rates; equal
-shown values share it), bold and shaded, peach in the highlighted column, grey elsewhere.
+shown values share it), bold, lightly filled and framed in orange, whichever column it is in.
 
 Accuracy card (not a release card: Canto-L was not trained on that phase; kept for the record, rendered only on request
 with --out-accuracy; one-time T2, 300 accuracy-phase events of Kaggle train_1, the same frozen pipeline):
@@ -33,7 +33,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.patches import Rectangle
 
-from hnl.plots.release_card import BG, FULL, GREY, INK, MUTED, ORANGE, PEACH
+from hnl.plots.release_card import BG, FULL, INK, MUTED, ORANGE
 from hnl.trackml.evaluate import REFERENCES as REF
 
 RUN = "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1"
@@ -201,7 +201,7 @@ def notes() -> list[str]:
         "which reproduces their Truth-CC; HierarchicalGNN a2563af has >= 50 %); nothing was re-chosen. "
         f"Event-bootstrap errors on the Canto-L values are at most {np.ceil(1e4 * max(errs)) / 100:.2f} points. "
         "Published values as quoted, on the authors' own events; where no uncertainty is quoted (Liu et al., the "
-        "Calafiura et al. fake rates) the 2-sigma test uses the Canto-L error alone. Bold and shaded: the first "
+        "Calafiura et al. fake rates) the 2-sigma test uses the Canto-L error alone. Framed in orange: the first "
         "place of each row; a difference below 2 sigma is not resolved.",
         "Working points chosen on val for one reference each, with our readings of its definitions. Full TrackML, EggNet code, at the point chosen for "
         f"Chan et al.'s fake rate: efficiency {100 * g('full', 'eggnet_efficiency', 'WP-R-P3')[0]:.2f} %, "
@@ -324,13 +324,12 @@ def render(out: str, title: str, subtitle: str, columns: list, rows: list, nts: 
             else:
                 txt = fmt_ours(v[0]) if i == 0 else fmt_published(v[0])
                 is_best = head in best
-            if is_best:
-                ax.add_patch(Rectangle((xl, yc - rh / 2), cw, rh, color=PEACH if i == 0 else GREY, zorder=0))
-            elif i == 0:
+            if is_best:                                  # the first place of the row: light fill, orange frame
                 ax.add_patch(Rectangle((xl, yc - rh / 2), cw, rh, color="#F6E7DF", zorder=0))
+                ax.add_patch(Rectangle((xl + 0.035, yc - rh / 2 + 0.035), cw - 0.07, rh - 0.07, fill=False,
+                                       lw=st["frame"] * 0.75, ec=ORANGE, zorder=6))
             ax.text(xl + st["cpad"], yc + st["val_dy"] + dy, txt, ha="left", va="center", fontsize=st["val"],
                     weight="bold" if is_best else "normal", color=INK if v is not None else MUTED)
-    ax.add_patch(Rectangle((x0 + lw, ybot), cw, top - ybot, fill=False, lw=st["frame"], ec=ORANGE, zorder=5))
     y = ybot - 0.45
     for note in nts:
         for line in textwrap.wrap(note, int(10.2 * (W - 1.2)), break_on_hyphens=False):

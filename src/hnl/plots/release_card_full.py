@@ -1,6 +1,5 @@
 """One "model release" card with every result of the study, in the look of hnl.plots.release_card (colours, bold row
-title over a muted subtitle, the highlighted Canto-L column in an orange frame, the best value of a row bold and
-shaded). Seventeen columns: Canto-L/H/B, Canto-L trained on HNL and on ttbar+HNL (validation only), acorn with its
+title over a muted subtitle; the first place of each row bold, lightly filled and framed in orange). Seventeen columns: Canto-L/H/B, Canto-L trained on HNL and on ttbar+HNL (validation only), acorn with its
 val-best builder (three training samples), acorn + CC at the preregistered cut (two), DeZoort IN / IN-L, Wang et al.'s
 published values (external sample only) and the published TrackML references of the throughput phase. Six bands,
 each a full-width row:
@@ -27,9 +26,9 @@ with $RUN the TrackML run canto_l_v1/seed0_x1. No acorn number on TrackML is sho
 
 Cells: the value, and on a muted second line the combined uncertainty in percentage points (score units in score
 rows), or k/n in the |d0| >= 300 mm rows and where the source gives no sigma; "—" where a model was not evaluated on that
-set; "pending" where a report is not written yet. Shading (the user's rule, 2026-10-12): the
-first place of each row only (highest value, lowest for rates; cells showing the same value share it), dark in its
-column; the Canto-L column is light where it is not first. The 2-sigma rule is stated in the notes.
+set; "pending" where a report is not written yet. Marking (the user's rule, 2026-10-12): only the
+first place of each row (highest value, lowest for rates; cells showing the same value share it) is bold, lightly
+filled and framed in orange, whichever column it is in; no column is singled out. The 2-sigma rule is in the notes.
 
     python -m hnl.plots.release_card_full --out figures/release/canto_card_full [--dump cells.csv]
 """
@@ -51,7 +50,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.patches import Rectangle
 
-from hnl.plots.release_card import BG, GREY, INK, MUTED, ORANGE, PEACH, _wrap
+from hnl.plots.release_card import BG, INK, MUTED, ORANGE, _wrap
 from hnl.plots.release_card_trackml import ROWS as TM_ROWS
 from hnl.plots.release_card_trackml import RUN, fmt_ours, fmt_published, ours, report
 from hnl.trackml.evaluate import REFERENCES as REF
@@ -619,9 +618,9 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
          "the uncertainty quoted by their authors; none is shown where none is quoted (Liu et al.; Calafiura et al.'s "
          "fake rates)."),
         ("Shading.",
-         "Bold and shaded: the first place of each row, the highest value (the lowest for rates; cells showing the "
-         "same value share it), peach in the Canto-L column and grey elsewhere; the Canto-L column is light where "
-         "it is not first; published values take part like any other column. A difference below 2σ, σ the two "
+         "Framed in orange: the first place of each row, the highest value (the lowest for rates; cells showing the "
+         "same value share it), in whichever column it is; published values take part like any other column. "
+         "A difference below 2σ, σ the two "
          "cells' uncertainties in quadrature, is not resolved. "
          "Paired differences, with smaller uncertainties, are in results/strong_baselines_v3_differences.csv and "
          "results/bootstrap_v1.csv."),
@@ -718,9 +717,9 @@ def best_cols(row: Row) -> set:
     if row.kind is None:
         return set()
     cells = {k: c for k, c in row.cells.items() if c.v is not None and not c.pending}
-    if len(cells) < 2:
+    if not cells:
         return set()
-    top = (max if row.kind == "max" else min)(cells, key=lambda k: cells[k].v)
+    top = (max if row.kind == "max" else min)(cells, key=lambda k: cells[k].v)   # a lone value is first too
     shown = cell_text(row, top, cells[top])[0]
     return {k for k, c in cells.items() if cell_text(row, k, c)[0] == shown}
 
@@ -858,10 +857,11 @@ def render(items: list, nts: list, out: str, hdr: dict) -> list[str]:
             c = it.cells.get(key)
             val, muted = texts[key]
             is_best = key in best
-            if is_best:
-                ax.add_patch(Rectangle((xl, y - rh), cw, rh, color=PEACH if i == 0 else GREY, zorder=0, lw=0))
-            elif i == 0:
+            if is_best:                                  # the first place of the row: light fill, orange frame
                 ax.add_patch(Rectangle((xl, y - rh), cw, rh, color=CANTO_FILL, zorder=0, lw=0))
+                m = 0.035
+                ax.add_patch(Rectangle((xl + m, y - rh + m), cw - 2 * m, rh - 2 * m, fill=False, lw=st["frame"] * 0.75,
+                                       ec=ORANGE, zorder=6))
             missing = c is None or c.pending or bool(c.label)
             if it.fmt == "text":
                 y1 = yc + (0.14 if n_lines == 2 else 0.24 if n_lines >= 3 else 0.0)
@@ -883,14 +883,13 @@ def render(items: list, nts: list, out: str, hdr: dict) -> list[str]:
         y -= rh
         blocks[-1][1] = y
     ybot = y
-    # vertical lines and the highlighted column's frame, block by block (the band rows stay whole)
+    # vertical lines, block by block (the band rows stay whole)
     for bt, bb in blocks:
         if bt == bb:
             continue
         for i in range(len(COLUMNS) + 1):
             w = st["sep"] if i in seps else st["grid"]
             ax.plot([xc(i), xc(i)], [bb, bt], color=INK, lw=w, zorder=2)
-        ax.add_patch(Rectangle((xc(0), bb), cw, bt - bb, fill=False, lw=st["frame"], ec=ORANGE, zorder=5))
     ax.plot([x0, x1], [top - hh, top - hh], color=INK, lw=1.0, zorder=2)
     ax.add_patch(Rectangle((x0, ybot), x1 - x0, top - ybot, fill=False, lw=st["border"], ec=INK, zorder=4))
 
