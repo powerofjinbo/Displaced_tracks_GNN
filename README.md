@@ -6,8 +6,8 @@
 <h1 align="center">Canto</h1>
 
 <p align="center">
-  <b>Graph-neural-network track reconstruction for displaced particles, built to carry over to signals it has not
-  seen</b><br>
+  <b>Graph-neural-network track reconstruction for displaced particles:<br>
+  higher efficiency for a known signal, and strong generalization to particles it has not seen</b><br>
   <sub><b>C</b>hained-triplet, origin-<b>A</b>gnostic <b>N</b>etworks for <b>T</b>racking <b>O</b>ff-vertex</sub>
 </p>
 
@@ -33,14 +33,17 @@
 Charged particles from the decay of a long-lived particle start far from the collision point, and trackers built
 for prompt particles lose many of them. Canto has two aims:
 
-- **Higher reconstruction efficiency for displaced tracks.** Canto keeps the three stages of the Exa.TrkX pipeline
-  (graph construction, edge classification, track building) and changes each one for particles produced off the
-  vertex. On the one-time test of the HNL benchmark, Canto-L finds 99.08 ± 0.15 % of the displaced HNL daughters
-  at a fake-track rate of 1.02 %.
-- **Generalization to displaced signatures it has not seen.** A search for long-lived particles whose properties are
-  not known in advance cannot train its tracker on the signal it looks for. Canto is trained on generic top-quark pair
-  (ttbar) events and tested on signals that are not in its training events: the HNL decays, and K<sub>S</sub> and Λ
-  decays, which ttbar events do not contain.
+- **Higher reconstruction efficiency for the displaced particles of a known signal.** Canto keeps the three stages of
+  the Exa.TrkX pipeline (graph construction, edge classification, track building) and changes each one for particles
+  produced off the vertex. Trained on the HNL signal, Canto-L finds 99.17 ± 0.32 % of the displaced HNL daughters on
+  validation, against 98.65 ± 0.31 % for acorn trained on the same events (one Canto seed). Even trained without the
+  signal, Canto-L finds 99.08 ± 0.15 % of them on the one-time test, 1.10 ± 0.22 points more than the signal-trained
+  acorn (post-freeze).
+- **Strong generalization to displaced particles it has not seen.** A search for long-lived particles whose
+  properties are not known in advance cannot train its tracker on the signal it looks for. Trained on generic
+  top-quark pair (ttbar) events, Canto finds as many displaced HNL daughters as when it is trained on the signal, and
+  it finds K<sub>S</sub> and Λ daughters, which ttbar events do not contain, as well as the baselines that were
+  trained on events containing them.
 
 The benchmark is a public sample of heavy neutral leptons (HNLs), pp → W → μN, N → νμ⁺μ⁻, in the ACTS generic
 detector without pileup. Canto is also tested on the TrackML challenge, with pileup 200 and noise hits.
@@ -67,6 +70,9 @@ best value of each row among the columns shown.
 
 - In a post-freeze comparison, Canto-L finds **1.10 ± 0.22 points** more displaced daughters than acorn trained on
   the HNL signal with its builder chosen on validation, at a lower fake-track rate.
+- With the signal in training for both (validation, learned merging): Canto-L (HNL) finds 99.17 ± 0.32 % and acorn
+  (HNL) 98.65 ± 0.31 %, +0.53 ± 0.37 points (paired; one Canto seed; not resolved). Canto-L trained on ttbar+HNL
+  finds 99.25 ± 0.31 %. The one-time test of these two Canto-L runs is in progress.
 - Above 300 mm acorn (HNL) finds 101 of 108 daughters (three seeds pooled) against 94 for Canto-L; with 36 daughters
   per seed, the difference is not resolved.
 - On the evaluation sample of Wang et al. (Exa.TrkX large-radius tracking) and with their definitions, Canto-L finds
