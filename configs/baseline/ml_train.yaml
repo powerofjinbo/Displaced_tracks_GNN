@@ -1,0 +1,36 @@
+# Baseline metric learning (brief §5f): acorn examples/Example_2/metric_learning_train.yaml (the 3-feature TrackML
+# recipe) with: no hard_cuts (no truth-based node cut), natural weighting (every true edge positive, every fake
+# negative), undirected truth, no wandb, explicit workers. input_dir / stage_dir / data_split / max_epochs are set by
+# hnl.train.acorn_runner per run.
+stage: graph_construction
+model: MetricLearning
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+weighting:
+  - weight: 1.0
+    conditions:
+      y: true
+undirected: true
+train_undirected: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+emb_hidden: 1024
+nb_layer: 4
+emb_dim: 12
+activation: Tanh
+randomisation: 1
+points_per_batch: 50000
+r_train: 0.1
+knn: 50
+knn_val: 1000
+warmup: 5
+margin: 0.1
+lr: 0.01
+factor: 0.7
+patience: 10
+max_epochs: 100
+metric_to_monitor: f1
+metric_mode: max

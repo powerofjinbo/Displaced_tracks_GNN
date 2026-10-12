@@ -1,0 +1,895 @@
+check,ours,reference,ok
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_primary,0.9907573641864484,0.9907573641864484,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_primary_sd,0.0017428475858874985,0.0017428475858874,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_hnl_targets,0.9916392543859649,0.9916392543859648,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_hnl_targets_sd,0.0015806692152783262,0.0015806692152783,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_w_muons,0.9977232743454415,0.9977232743454416,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_w_muons_sd,8.962282974071955e-05,8.962282974071955e-05,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_ttbar_prompt,0.9632354786099612,0.9632354786099612,True
+rounds 1-2 test row Canto-L (frozen: learned merging) eff_ttbar_prompt_sd,0.003399818576652834,0.0033998185766528,True
+rounds 1-2 test row Canto-L (frozen: learned merging) fake_rate_hnl,0.010200568668983131,0.0102005686689831,True
+rounds 1-2 test row Canto-L (frozen: learned merging) fake_rate_hnl_sd,0.000341172852390662,0.0003411728523906,True
+rounds 1-2 test row Canto-L (frozen: learned merging) k_n_d0_100,1727/1752,1727/1752,True
+rounds 1-2 test row Canto-L (frozen: learned merging) k_n_d0_300,94/108,94/108,True
+rounds 1-2 test row Canto-L (frozen: learned merging) primary sigma,0.001545475601766603,0.0015454756017666,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_primary,0.9774586076201874,0.9774586076201874,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_primary_sd,0.00019948134849390176,0.0001994813484939,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_hnl_targets,0.9816337719298246,0.9816337719298246,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_hnl_targets_sd,0.0003626303880296965,0.0003626303880296,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_w_muons,0.9969988616371728,0.9969988616371728,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_w_muons_sd,0.00047423943857554567,0.0004742394385755,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_ttbar_prompt,0.9478045414628027,0.9478045414628028,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) eff_ttbar_prompt_sd,0.00430774134688602,0.004307741346886,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate_hnl,0.014131385542168586,0.0141313855421685,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate_hnl_sd,0.0007183186793539923,0.0007183186793539,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) k_n_d0_100,1683/1752,1683/1752,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) k_n_d0_300,101/108,101/108,True
+rounds 1-2 test row acorn (HNL) + MWS-layer + merging (Canto builder) primary sigma,0.0018389925488877489,0.0018389925488877,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary",0.9773921138373561,0.977392113837356,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary_sd",0.0006412428194024355,0.0006412428194024,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets",0.9820449561403509,0.9820449561403508,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets_sd",0.00047479462926779787,0.0004747946292677,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons",0.9967918865776674,0.9967918865776674,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons_sd",0.0002371197192877668,0.0002371197192877,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt",0.9399949818090579,0.939994981809058,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt_sd",0.0006119055776318017,0.0006119055776318,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl",0.015119076551026059,0.015119076551026,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl_sd",0.0005253975269468248,0.0005253975269468,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_100",1677/1752,1677/1752,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_300",103/108,103/108,True
+"rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.0019684394810193266,0.0019684394810193,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_primary,0.977325620054525,0.977325620054525,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_primary_sd,0.0007552241965290712,0.000755224196529,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets,0.9819535818713451,0.9819535818713452,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets_sd,0.00041872950429056743,0.0004187295042905,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_w_muons,0.996740142812791,0.996740142812791,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_w_muons_sd,0.0001552312946289658,0.0001552312946289,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt,0.9392108894743445,0.9392108894743444,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt_sd,0.0020554396926095605,0.0020554396926095,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl,0.015193690558864978,0.0151936905588649,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl_sd,0.0005601532466856272,0.0005601532466856,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) k_n_d0_100,1677/1752,1677/1752,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) k_n_d0_300,103/108,103/108,True
+rounds 1-2 test row acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.001989214771953876,0.0019892147719538,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_primary,0.9738014495644657,0.9738014495644656,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_primary_sd,0.0018959475270142285,0.0018959475270142,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_hnl_targets,0.97953216374269,0.97953216374269,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_hnl_targets_sd,0.0015159594319295402,0.0015159594319295,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_w_muons,0.99689537410742,0.99689537410742,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_w_muons_sd,0.0001552312946289658,0.0001552312946289,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_ttbar_prompt,0.9493288169614854,0.9493288169614854,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) eff_ttbar_prompt_sd,0.004633422868767309,0.0046334228687673,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate_hnl,0.014842036456342961,0.0148420364563429,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate_hnl_sd,0.0010823123511229486,0.0010823123511229,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) k_n_d0_100,1669/1752,1669/1752,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) k_n_d0_300,99/108,99/108,True
+rounds 1-2 test row acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary sigma,0.0023767306673625295,0.0023767306673625,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_primary,0.9728705366048275,0.9728705366048276,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_primary_sd,0.003166668235864269,0.0031666682358642,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_hnl_targets,0.9786641081871346,0.9786641081871346,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_hnl_targets_sd,0.002680009023403243,0.0026800090234032,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_w_muons,0.9965331677532857,0.9965331677532856,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_w_muons_sd,0.00032313970808228113,0.0003231397080822,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_ttbar_prompt,0.9565801028729144,0.9565801028729144,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) eff_ttbar_prompt_sd,0.0012500074661184431,0.0012500074661184,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate_hnl,0.014756819594855178,0.0147568195948551,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate_hnl_sd,0.0018639605303728296,0.0018639605303728,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) k_n_d0_100,1669/1752,1669/1752,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) k_n_d0_300,99/108,99/108,True
+rounds 1-2 test row acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary sigma,0.002811658577033572,0.0028116585770335,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_primary,0.969279872331937,0.969279872331937,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_primary_sd,0.0017390380784124018,0.0017390380784124,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets,0.9759685672514621,0.975968567251462,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets_sd,0.0016749180171622214,0.0016749180171622,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_w_muons,0.9965849115181621,0.996584911518162,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_w_muons_sd,0.0004107034012829239,0.0004107034012829,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt,0.9481056329193326,0.9481056329193326,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt_sd,0.0048567891919729655,0.0048567891919729,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl,0.015597982423154397,0.0155979824231543,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl_sd,0.0013256927690576087,0.0013256927690576,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) k_n_d0_100,1646/1752,1646/1752,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) k_n_d0_300,99/108,99/108,True
+rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.002457333232074036,0.002457333232074,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary",0.9691468847662744,0.9691468847662744,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary_sd",0.0015104483930581424,0.0015104483930581,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets",0.975877192982456,0.975877192982456,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets_sd",0.001391021321969916,0.0013910213219699,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons",0.9964296802235331,0.9964296802235332,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons_sd",0.0005596943923414862,0.0005596943923414,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt",0.9480742692259442,0.9480742692259442,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt_sd",0.004855002483808492,0.0048550024838084,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl",0.01561121027279036,0.0156112102727903,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl_sd",0.001343997558009081,0.001343997558009,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_100",1645/1752,1645/1752,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_300",99/108,99/108,True
+"rounds 1-2 test row acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.0023840155344946254,0.0023840155344946,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_primary,0.9599707427355542,0.9599707427355542,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_primary_sd,0.007507321823363397,0.0075073218233633,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_hnl_targets,0.9695723684210527,0.9695723684210528,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_hnl_targets_sd,0.004773595056816897,0.0047735950568168,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_w_muons,0.9961709613991515,0.9961709613991516,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_w_muons_sd,0.0004989987975262976,0.0004989987975262,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_ttbar_prompt,0.9594341989712708,0.9594341989712708,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) eff_ttbar_prompt_sd,0.0020594844541594166,0.0020594844541594,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate_hnl,0.016290119449960654,0.0162901194499606,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate_hnl_sd,0.0001460726082164972,0.0001460726082164,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) k_n_d0_100,1602/1752,1602/1752,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) k_n_d0_300,96/108,96/108,True
+rounds 1-2 test row acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma,0.004966604126067671,0.0049666041260676,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary",0.9466719861692932,0.9466719861692932,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_primary_sd",0.0088636486869148,0.0088636486869148,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets",0.9593384502923977,0.9593384502923976,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_hnl_targets_sd",0.0068398080739846545,0.0068398080739846,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons",0.9948773672772431,0.9948773672772432,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_w_muons_sd",0.0007761564731449955,0.0007761564731449,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt",0.942516622757496,0.942516622757496,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) eff_ttbar_prompt_sd",0.003645362564027363,0.0036453625640273,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl",0.024007507300800594,0.0240075073008005,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate_hnl_sd",0.0008197451440114102,0.0008197451440114,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_100",1570/1752,1570/1752,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) k_n_d0_300",96/108,96/108,True
+"rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.005875788975987625,0.0058757889759876,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_primary,0.9454086042954982,0.9454086042954982,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_primary_sd,0.012337777611377321,0.0123377776113773,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets,0.9586074561403509,0.9586074561403508,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_hnl_targets_sd,0.009058504189615301,0.0090585041896153,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_w_muons,0.994722135982614,0.994722135982614,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_w_muons_sd,0.0005596943923415324,0.0005596943923415,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt,0.9439718981307239,0.943971898130724,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) eff_ttbar_prompt_sd,0.004022009407626923,0.0040220094076269,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl,0.023890584079696967,0.0238905840796969,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate_hnl_sd,0.0009600021117610498,0.000960002111761,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) k_n_d0_100,1567/1752,1567/1752,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) k_n_d0_300,95/108,95/108,True
+rounds 1-2 test row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.00767250517801384,0.0076725051780138,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_primary",0.9448101602500166,0.9448101602500166,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_primary_sd",0.01356815374005473,0.0135681537400547,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_hnl_targets",0.9488304093567251,0.9488304093567252,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_hnl_targets_sd",0.01116384553350243,0.0111638455335024,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_w_muons",0.9851495394804926,0.9851495394804926,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_w_muons_sd",0.003279509857702745,0.0032795098577027,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_ttbar_prompt",0.8447748086814704,0.8447748086814704,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* eff_ttbar_prompt_sd",0.022872582337125847,0.0228725823371258,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* fake_rate_hnl",0.02900375011967422,0.0290037501196742,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* fake_rate_hnl_sd",0.00016379837937924917,0.0001637983793792,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* k_n_d0_100",1631/1752,1631/1752,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* k_n_d0_300",99/108,99/108,True
+"rounds 1-2 test row acorn (HNL) + CC, best cut <= FR* primary sigma",0.008325849073155367,0.0083258490731553,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_primary",0.940089101668994,0.940089101668994,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_primary_sd",0.006002145938637832,0.0060021459386378,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_hnl_targets",0.9477796052631579,0.947779605263158,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_hnl_targets_sd",0.005076825432415586,0.0050768254324155,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_w_muons",0.9877884714891856,0.9877884714891856,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_w_muons_sd",0.0024164947591504803,0.0024164947591504,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_ttbar_prompt",0.8611968385397063,0.8611968385397063,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* eff_ttbar_prompt_sd",0.012620711248693675,0.0126207112486936,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate_hnl",0.02888445397838395,0.0288844539783839,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate_hnl_sd",0.0007425290807002403,0.0007425290807002,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* k_n_d0_100",1602/1752,1602/1752,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* k_n_d0_300",96/108,96/108,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, best cut <= FR* primary sigma",0.004562355427627422,0.0045623554276274,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_primary",0.9299820466786355,0.9299820466786356,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_primary_sd",0.024768644029413353,0.0247686440294133,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_hnl_targets",0.9374086257309941,0.937408625730994,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_hnl_targets_sd",0.023799927684827995,0.0237999276848279,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_w_muons",0.9841664079478424,0.9841664079478424,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_w_muons_sd",0.00810331147850869,0.0081033114785086,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_ttbar_prompt",0.8603751097729267,0.8603751097729267,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule eff_ttbar_prompt_sd",0.00961208121248717,0.0096120812124871,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate_hnl",0.02917746910363458,0.0291774691036345,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate_hnl_sd",0.0004411200101057078,0.0004411200101057,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule k_n_d0_100",1596/1752,1596/1752,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule k_n_d0_300",95/108,95/108,True
+"rounds 1-2 test row acorn (ttbar+HNL) + CC, preregistered cut rule primary sigma",0.01466019410114294,0.0146601941011429,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_primary",0.9257264445774321,0.925726444577432,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_primary_sd",0.005671494816554286,0.0056714948165542,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_hnl_targets",0.9306469298245613,0.9306469298245612,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_hnl_targets_sd",0.006699204720312436,0.0066992047203124,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_w_muons",0.9762496119217635,0.9762496119217636,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_w_muons_sd",0.00472627673009572,0.0047262767300957,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_ttbar_prompt",0.8167168485760884,0.8167168485760884,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) eff_ttbar_prompt_sd",0.003249908269822319,0.0032499082698223,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate_hnl",0.028647263692667162,0.0286472636926671,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate_hnl_sd",0.0007193032613263405,0.0007193032613263,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) k_n_d0_100",1607/1752,1607/1752,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) k_n_d0_300",98/108,98/108,True
+"rounds 1-2 test row acorn (HNL) + CC, preregistered cut (claims' reference) primary sigma",0.0047150186584839614,0.0047150186584839,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_primary",0.9037834962431012,0.9037834962431012,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_primary_sd",0.016397965441104716,0.0163979654411047,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_hnl_targets",0.9183114035087719,0.918311403508772,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_hnl_targets_sd",0.01229510311408367,0.0122951031140836,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_w_muons",0.9843733830073477,0.9843733830073476,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_w_muons_sd",0.0015931702699307473,0.0015931702699307,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_ttbar_prompt",0.8741124074771044,0.8741124074771044,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) eff_ttbar_prompt_sd",0.008463058980038593,0.0084630589800385,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate_hnl",0.029460047030928787,0.0294600470309287,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate_hnl_sd",0.0005001415233771076,0.0005001415233771,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) k_n_d0_100",1487/1752,1487/1752,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) k_n_d0_300",86/108,86/108,True
+"rounds 1-2 test row acorn (ttbar) + CC, preregistered cut (= best cut) primary sigma",0.010172180112056551,0.0101721801120565,True
+"ranking_test_v1 row Canto-L (full budget): learned triplet union, learned merging (rule R6) eff_primary",0.9907573641864484,0.9907573641864484,True
+"ranking_test_v1 row Canto-L (full budget): learned triplet union, learned merging (rule R6) eff_hnl_targets",0.9916392543859649,0.9916392543859648,True
+"ranking_test_v1 row Canto-L (full budget): learned triplet union, learned merging (rule R6) eff_w_muons",0.9977232743454415,0.9977232743454416,True
+"ranking_test_v1 row Canto-L (full budget): learned triplet union, learned merging (rule R6) eff_ttbar_prompt",0.9632354786099612,0.9632354786099612,True
+"ranking_test_v1 row Canto-L (full budget): learned triplet union, learned merging (rule R6) fake_rate_hnl",0.010200568668983131,0.0102005686689831,True
+"ranking_test_v1 row Canto-B (full budget): base graph, learned merging (rule R6) eff_primary",0.9843074672518121,0.984307467251812,True
+"ranking_test_v1 row Canto-B (full budget): base graph, learned merging (rule R6) eff_hnl_targets",0.9869334795321638,0.9869334795321638,True
+"ranking_test_v1 row Canto-B (full budget): base graph, learned merging (rule R6) eff_w_muons",0.9977750181103177,0.9977750181103175,True
+"ranking_test_v1 row Canto-B (full budget): base graph, learned merging (rule R6) eff_ttbar_prompt",0.96578221051311,0.96578221051311,True
+"ranking_test_v1 row Canto-B (full budget): base graph, learned merging (rule R6) fake_rate_hnl",0.012895655731879804,0.0128956557318798,True
+claims primary difference value,0.0650309196090163,0.0650309196090163,True
+claims primary difference sigma_boot,0.0033691640436554716,0.0033691640436554716,True
+claims primary difference sigma_seeds,0.003425559378254205,0.003425559378254205,True
+claims primary difference sigma,0.004804760494239669,0.004804760494239669,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary value_base,0.9774586076201874,0.9774586076201874,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary difference,0.013298756566261005,0.013298756566261,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary sigma_boot,0.0017429305342158018,0.0017429305342158,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary sigma_seeds,0.0010128031259876106,0.0010128031259876,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) primary sigma,0.002015831594928519,0.0020158315949285,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_base,0.9606164383561643,0.9606164383561644,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 difference,0.02511415525114158,0.0251141552511415,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_boot,0.006612271935096361,0.0066122719350963,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_seeds,0.002283105022831059,0.002283105022831,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma,0.006995334780333203,0.0069953347803332,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_base,0.9351851851851851,0.9351851851851852,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 difference,-0.06481481481481477,-0.0648148148148147,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_boot,0.05763074992764101,0.057630749927641,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_seeds,0.013094570021973083,0.013094570021973,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma,0.05909967090672037,0.0590996709067203,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets value_base,0.9816337719298246,0.9816337719298246,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets difference,0.010005482456140302,0.0100054824561403,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma_boot,0.0013362994003126363,0.0013362994003126,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma_seeds,0.0009363076357784635,0.0009363076357784,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma,0.0016316764618308885,0.0016316764618308,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons value_base,0.9969988616371728,0.9969988616371728,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons difference,0.0007244127082687291,0.0007244127082687,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons sigma_boot,0.00028416303382494223,0.0002841630338249,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons sigma_seeds,0.0002786487016006491,0.0002786487016006,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) w_muons sigma,0.0003979870961429815,0.0003979870961429,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt value_base,0.9478045414628027,0.9478045414628028,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt difference,0.015430937147158486,0.0154309371471584,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_boot,0.0007814805756969356,0.0007814805756969,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_seeds,0.00316835403460667,0.0031683540346066,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma,0.0032633080116348163,0.0032633080116348,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate value_base,0.014131385542168586,0.0141313855421685,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate difference,-0.003930816873185455,-0.0039308168731854,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate sigma_boot,0.00010533782077665268,0.0001053378207766,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate sigma_seeds,0.00045912258360095365,0.0004591225836009,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + MWS-layer + merging (Canto builder) fake_rate sigma,0.00047105159298997055,0.0004710515929899,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_base",0.9773921138373561,0.977392113837356,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary difference",0.013365250349092306,0.0133652503490923,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_boot",0.0018437713120180487,0.001843771312018,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_seeds",0.0010721800316907395,0.0010721800316907,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.0021328531762353246,0.0021328531762353,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_base",0.9571917808219178,0.9571917808219178,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 difference",0.028538812785388057,0.028538812785388,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_boot",0.007227867364115418,0.0072278673641154,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_seeds",0.0028538812785388022,0.0028538812785388,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma",0.00777088830091123,0.0077708883009112,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_base",0.9537037037037037,0.9537037037037036,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 difference",-0.08333333333333337,-0.0833333333333333,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_boot",0.056641451215606445,0.0566414512156064,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_seeds",0.013094570021973083,0.013094570021973,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma",0.0581353744278841,0.0581353744278841,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_base",0.9820449561403509,0.9820449561403508,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets difference",0.009594298245613975,0.0095942982456139,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_boot",0.0013805770664166795,0.0013805770664166,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_seeds",0.0009528807389717675,0.0009528807389717,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma",0.0016774906077290169,0.001677490607729,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_base",0.9967918865776674,0.9967918865776674,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons difference",0.0009313877677741278,0.0009313877677741,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_boot",0.0002899697359391532,0.0002899697359391,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_seeds",0.00014635346811269777,0.0001463534681126,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma",0.00032481038374601985,0.000324810383746,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_base",0.9399949818090579,0.939994981809058,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt difference",0.023240496800903232,0.0232404968009032,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_boot",0.0008677657807093665,0.0008677657807093,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_seeds",0.0019944251293786065,0.0019944251293786,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma",0.002175028516334213,0.0021750285163342,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_base",0.015119076551026059,0.015119076551026,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate difference",-0.004918507882042927,-0.0049185078820429,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_boot",0.00011052200540507643,0.000110522005405,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_seeds",0.0003616819397068,0.0003616819397068,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma",0.0003781916699093636,0.0003781916699093,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary value_base,0.977325620054525,0.977325620054525,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary difference,0.013431744131923495,0.0134317441319234,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma_boot,0.0018533856962825337,0.0018533856962825,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma_seeds,0.0010966435602414097,0.0010966435602414,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.0021535240043713574,0.0021535240043713,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_base,0.9571917808219178,0.9571917808219178,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 difference,0.028538812785388057,0.028538812785388,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_boot,0.007227867364115418,0.0072278673641154,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_seeds,0.0028538812785388022,0.0028538812785388,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma,0.00777088830091123,0.0077708883009112,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_base,0.9537037037037037,0.9537037037037036,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 difference,-0.08333333333333337,-0.0833333333333333,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_boot,0.056641451215606445,0.0566414512156064,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_seeds,0.013094570021973083,0.013094570021973,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma,0.0581353744278841,0.0581353744278841,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_base,0.9819535818713451,0.9819535818713452,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets difference,0.009685672514619825,0.0096856725146198,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_boot,0.0013998329413687628,0.0013998329413687,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_seeds,0.0009440779568609123,0.0009440779568609,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma,0.0016884358004886644,0.0016884358004886,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons value_base,0.996740142812791,0.996740142812791,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons difference,0.0009831315326505052,0.0009831315326505,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_boot,0.00030226713461343216,0.0003022671346134,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_seeds,0.00010348752975265312,0.0001034875297526,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma,0.0003194919239694815,0.0003194919239694,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_base,0.9392108894743445,0.9392108894743444,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt difference,0.02402458913561667,0.0240245891356166,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_boot,0.0008656763965417117,0.0008656763965417,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_seeds,0.002293730490133819,0.0022937304901338,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma,0.002451651521913131,0.0024516515219131,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate value_base,0.015193690558864978,0.0151936905588649,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate difference,-0.004993121889881847,-0.0049931218898818,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_boot,0.00011222266017572988,0.0001122226601757,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_seeds,0.00037866897372279724,0.0003786689737227,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma,0.00039494824612497506,0.0003949482461249,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_base,0.9599707427355542,0.9599707427355542,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary difference,0.03078662145089428,0.0307866214508942,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_boot,0.002304323898336711,0.0023043238983367,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_seeds,0.004449621656844628,0.0044496216568446,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma,0.005010892287557819,0.0050108922875578,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_base,0.9143835616438357,0.9143835616438356,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 difference,0.07134703196347014,0.0713470319634701,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_boot,0.009929190962252414,0.0099291909622524,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_seeds,0.014062425793099225,0.0140624257930992,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma,0.017214547695228517,0.0172145476952285,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_base,0.8888888888888888,0.8888888888888888,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 difference,-0.01851851851851849,-0.0185185185185184,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_boot,0.057778813386599584,0.0577788133865995,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_seeds,0.018518518518518483,0.0185185185185184,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma,0.060673938428984574,0.0606739384289845,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_base,0.9695723684210527,0.9695723684210528,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets difference,0.022066885964912242,0.0220668859649122,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_boot,0.0017493488569234256,0.0017493488569234,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_seeds,0.0029032008160302034,0.0029032008160302,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma,0.003389512708549377,0.0033895127085493,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_base,0.9961709613991515,0.9961709613991516,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons difference,0.001552312946289991,0.0015523129462899,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_boot,0.0003641496500160271,0.000364149650016,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_seeds,0.00029270693622542493,0.0002927069362254,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma,0.0004672069328694406,0.0004672069328694,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_base,0.9594341989712708,0.9594341989712708,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt difference,0.003801279638690369,0.0038012796386903,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_boot,0.000655855694055524,0.0006558556940555,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_seeds,0.0022949395468492566,0.0022949395468492,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma,0.0023868167535690136,0.002386816753569,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_base,0.016290119449960654,0.0162901194499606,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate difference,-0.006089550780977523,-0.0060895507809775,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_boot,0.00011899727575073254,0.0001189972757507,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_seeds,0.00021427095158509836,0.000214270951585,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma,0.00024509669995591423,0.0002450966999559,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_base",0.9466719861692932,0.9466719861692932,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary difference",0.044085378017155286,0.0440853780171552,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_boot",0.0028107931126181034,0.0028107931126181,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_seeds",0.005215418990924261,0.0052154189909242,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.005924622618600683,0.0059246226186006,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_base",0.8961187214611872,0.8961187214611872,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 difference",0.08961187214611865,0.0896118721461186,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_boot",0.01056975042243597,0.0105697504224359,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_seeds",0.01090466505396278,0.0109046650539627,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma",0.015186551416687807,0.0151865514166878,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_base",0.8888888888888888,0.8888888888888888,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 difference",-0.01851851851851849,-0.0185185185185184,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_boot",0.060949032878381215,0.0609490328783812,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_seeds",0.02928034870526274,0.0292803487052627,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma",0.0676174787248961,0.0676174787248961,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_base",0.9593384502923977,0.9593384502923976,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets difference",0.03230080409356717,0.0323008040935671,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_boot",0.002137469409153349,0.0021374694091533,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_seeds",0.004053043698139061,0.004053043698139,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma",0.004582132548725661,0.0045821325487256,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_base",0.9948773672772431,0.9948773672772432,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons difference",0.0028459070681984278,0.0028459070681984,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_boot",0.0005976017964107542,0.0005976017964107,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_seeds",0.000451091684108531,0.0004510916841085,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma",0.0007487400179937168,0.0007487400179937,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_base",0.942516622757496,0.942516622757496,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt difference",0.020718855852465135,0.0207188558524651,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_boot",0.0007786886357208415,0.0007786886357208,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_seeds",0.002877929497478228,0.0028779294974782,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma",0.002981414795672697,0.0029814147956726,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_base",0.024007507300800594,0.0240075073008005,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate difference",-0.013806938631817462,-0.0138069386318174,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_boot",0.00018479537094426095,0.0001847953709442,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_seeds",0.0005126340528221759,0.0005126340528221,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma",0.0005449247665827976,0.0005449247665827,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary value_base,0.9454086042954982,0.9454086042954982,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary difference,0.04534875989095022,0.0453487598909502,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary sigma_boot,0.0027749416225995053,0.0027749416225995,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary sigma_seeds,0.007193938978877459,0.0071939389788774,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.00771058097944945,0.0077105809794494,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_base,0.894406392694064,0.894406392694064,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 difference,0.09132420091324189,0.0913242009132418,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_boot,0.010582630039056788,0.0105826300390567,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_seeds,0.015014779038773888,0.0150147790387738,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma,0.018369421551228848,0.0183694215512288,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_base,0.8796296296296297,0.8796296296296297,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 difference,-0.0092592592592593,-0.0092592592592593,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_boot,0.062190894053060754,0.0621908940530607,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_seeds,0.038176903940904235,0.0381769039409042,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma,0.07297385352050456,0.0729738535205045,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_base,0.9586074561403509,0.9586074561403508,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets difference,0.033031798245613975,0.0330317982456139,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_boot,0.0021127980025892595,0.0021127980025892,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_seeds,0.0053089551175790565,0.005308955117579,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma,0.0057139233316709824,0.0057139233316709,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons value_base,0.994722135982614,0.994722135982614,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons difference,0.003001138362827449,0.0030011383628274,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_boot,0.0006200145936910799,0.000620014593691,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_seeds,0.0003272563034428781,0.0003272563034428,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) w_muons sigma,0.0007010811540278429,0.0007010811540278,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_base,0.9439718981307239,0.943971898130724,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt difference,0.019263580479237263,0.0192635804792372,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_boot,0.0007595061781531237,0.0007595061781531,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_seeds,0.0030405770301700505,0.00304057703017,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma,0.003134000368706183,0.0031340003687061,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate value_base,0.023890584079696967,0.0238905840796969,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate difference,-0.013690015410713836,-0.0136900154107138,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_boot,0.00018605182127515987,0.0001860518212751,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_seeds,0.0005882184882604012,0.0005882184882604,True
+results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma,0.0006169410588793356,0.0006169410588793,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary value_base",0.9448101602500166,0.9448101602500166,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary difference",0.04594720393643181,0.0459472039364318,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary sigma_boot",0.002767406991669432,0.0027674069916694,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary sigma_seeds",0.00789793883705099,0.0078979388370509,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* primary sigma",0.008368750165427284,0.0083687501654272,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 value_base",0.9309360730593608,0.9309360730593608,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 difference",0.05479452054794509,0.054794520547945,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma_boot",0.00823734110227156,0.0082373411022715,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma_seeds",0.004155313863744574,0.0041553138637445,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma",0.009226072931719122,0.0092260729317191,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 value_base",0.9166666666666666,0.9166666666666666,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 difference",-0.04629629629629628,-0.0462962962962962,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma_boot",0.05987636046129363,0.0598763604612936,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma_seeds",0.01851851851851851,0.0185185185185185,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma",0.06267466848904332,0.0626746684890433,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets value_base",0.9488304093567251,0.9488304093567252,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets difference",0.04280884502923976,0.0428088450292397,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets sigma_boot",0.0022314062007697433,0.0022314062007697,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets sigma_seeds",0.006509735331640623,0.0065097353316406,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* hnl_targets sigma",0.006881557070957408,0.0068815570709574,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons value_base",0.9851495394804926,0.9851495394804926,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons difference",0.012573734864948949,0.0125737348649489,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons sigma_boot",0.001169708125627013,0.001169708125627,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons sigma_seeds",0.0018941327970323002,0.0018941327970323,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* w_muons sigma",0.002226197689323943,0.0022261976893239,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt value_base",0.8447748086814704,0.8447748086814704,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt difference",0.1184606699284908,0.1184606699284908,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt sigma_boot",0.0018510160559503325,0.0018510160559503,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt sigma_seeds",0.013350577879162573,0.0133505778791625,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* ttbar_prompt sigma",0.01347828587569543,0.0134782858756954,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate value_base",0.02900375011967422,0.0290037501196742,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate difference",-0.01880318145069109,-0.018803181450691,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate sigma_boot",0.00026443578173754523,0.0002644357817375,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate sigma_seeds",0.0002185015822182598,0.0002185015822182,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, best cut <= FR* fake_rate sigma",0.0003430294799212301,0.0003430294799212,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary value_base",0.9257264445774321,0.925726444577432,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary difference",0.0650309196090163,0.0650309196090163,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary sigma_boot",0.0033691640436554716,0.0033691640436554,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary sigma_seeds",0.003425559378254205,0.0034255593782542,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) primary sigma",0.004804760494239669,0.0048047604942396,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 value_base",0.9172374429223744,0.9172374429223744,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 difference",0.06849315068493145,0.0684931506849314,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 sigma_boot",0.008973493541570118,0.0089734935415701,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 sigma_seeds",0.006457596175219602,0.0064575961752196,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_100_300 sigma",0.011055502462702066,0.011055502462702,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 value_base",0.9074074074074074,0.9074074074074074,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 difference",-0.03703703703703709,-0.037037037037037,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 sigma_boot",0.05975934034646417,0.0597593403464641,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 sigma_seeds",0.02618914004394617,0.0261891400439461,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_d0_ge300 sigma",0.06524607126016067,0.0652460712601606,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets value_base",0.9306469298245613,0.9306469298245612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets difference",0.06099232456140358,0.0609923245614035,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets sigma_boot",0.0026629507649468856,0.0026629507649468,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets sigma_seeds",0.0039739929144704915,0.0039739929144704,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) hnl_targets sigma",0.004783714713566527,0.0047837147135665,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons value_base",0.9762496119217635,0.9762496119217636,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons difference",0.021473662423677986,0.0214736624236779,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons sigma_boot",0.0015612778320692462,0.0015612778320692,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons sigma_seeds",0.002729207698280157,0.0027292076982801,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) w_muons sigma",0.0031442269525691876,0.0031442269525691,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt value_base",0.8167168485760884,0.8167168485760884,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt difference",0.14651863003387278,0.1465186300338727,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt sigma_boot",0.0020406015849633017,0.0020406015849633,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt sigma_seeds",0.00271542937773588,0.0027154293777358,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) ttbar_prompt sigma",0.0033967059828642525,0.0033967059828642,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate value_base",0.028647263692667162,0.0286472636926671,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate difference",-0.018446695023684033,-0.018446695023684,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate sigma_boot",0.00021042315427863436,0.0002104231542786,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate sigma_seeds",0.00045963612309561066,0.0004596361230956,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (HNL) + CC, preregistered cut (claims' reference) fake_rate sigma",0.0005055128776905029,0.0005055128776905,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary value_base",0.9037834962431012,0.9037834962431012,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary difference",0.08697386794334727,0.0869738679433472,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary sigma_boot",0.003630630607065248,0.0036306306070652,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary sigma_seeds",0.009520693047520202,0.0095206930475202,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) primary sigma",0.010189458999871311,0.0101894589998713,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 value_base",0.848744292237443,0.848744292237443,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 difference",0.1369863013698629,0.1369863013698629,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 sigma_boot",0.012152401471073836,0.0121524014710738,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 sigma_seeds",0.02445028537740172,0.0244502853774017,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_100_300 sigma",0.02730379674240456,0.0273037967424045,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 value_base",0.7962962962962964,0.7962962962962964,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 difference",0.07407407407407396,0.0740740740740739,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 sigma_boot",0.077756512230981,0.077756512230981,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 sigma_seeds",0.013094570021973083,0.013094570021973,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_d0_ge300 sigma",0.0788513979482105,0.0788513979482105,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets value_base",0.9183114035087719,0.918311403508772,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets difference",0.07332785087719296,0.0733278508771929,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets sigma_boot",0.0028750035605057483,0.0028750035605057,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets sigma_seeds",0.007157002998324521,0.0071570029983245,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) hnl_targets sigma",0.0077128682985609775,0.0077128682985609,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons value_base",0.9843733830073477,0.9843733830073476,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons difference",0.013349891338093833,0.0133498913380938,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons sigma_boot",0.00121927040876657,0.0012192704087665,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons sigma_seeds",0.0009212715416933172,0.0009212715416933,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) w_muons sigma",0.0015281889880599782,0.0015281889880599,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt value_base",0.8741124074771044,0.8741124074771044,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt difference",0.08912307113285678,0.0891230711328567,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt sigma_boot",0.0016274452732839013,0.0016274452732839,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt sigma_seeds",0.005265679242470863,0.0052656792424708,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) ttbar_prompt sigma",0.005511438650853571,0.0055114386508535,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate value_base",0.029460047030928787,0.0294600470309287,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate difference",-0.019259478361945657,-0.0192594783619456,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate sigma_boot",0.000246126031013167,0.0002461260310131,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate sigma_seeds",0.00034954277688353314,0.0003495427768835,True
+"results/strong_baselines_v1_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + CC, preregistered cut (= best cut) fake_rate sigma",0.00042750225264172103,0.0004275022526417,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary value_base,0.9738014495644657,0.9738014495644656,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary difference,0.01695591462198276,0.0169559146219827,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary sigma_boot,0.001987989335653236,0.0019879893356532,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary sigma_seeds,0.0014868461849190779,0.001486846184919,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) primary sigma,0.0024825013950206375,0.0024825013950206,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 value_base,0.9526255707762558,0.9526255707762558,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 difference,0.0331050228310501,0.0331050228310501,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma_boot,0.007533918167771054,0.007533918167771,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma_seeds,0.004601745290124745,0.0046017452901247,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma,0.008828135854972783,0.0088281358549727,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 value_base,0.9166666666666666,0.9166666666666666,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 difference,-0.04629629629629628,-0.0462962962962962,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma_boot,0.055632344262473585,0.0556323442624735,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma_seeds,0.009259259259259228,0.0092592592592592,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma,0.056397620607331965,0.0563976206073319,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets value_base,0.97953216374269,0.97953216374269,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets difference,0.012107090643274865,0.0121070906432748,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma_boot,0.0014857689947125206,0.0014857689947125,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma_seeds,0.0012644693442158167,0.0012644693442158,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma,0.0019509977519491487,0.0019509977519491,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons value_base,0.99689537410742,0.99689537410742,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons difference,0.0008279002380214839,0.0008279002380214,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons sigma_boot,0.0003485159630088405,0.0003485159630088,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons sigma_seeds,0.00010348752975265312,0.0001034875297526,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) w_muons sigma,0.0003635561102309872,0.0003635561102309,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt value_base,0.9493288169614854,0.9493288169614854,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt difference,0.01390666164847576,0.0139066616484757,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma_boot,0.0006180859193332024,0.0006180859193332,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma_seeds,0.0033180000921724712,0.0033180000921724,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma,0.0033750784902479673,0.0033750784902479,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate value_base,0.014842036456342961,0.0148420364563429,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate difference,-0.00464146778735983,-0.0046414677873598,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate sigma_boot,9.774184072736583e-05,9.774184072736584e-05,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate sigma_seeds,0.0006551841829088126,0.0006551841829088,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + walkthrough + merging (Canto builder family) fake_rate sigma,0.0006624347371346571,0.0006624347371346,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary value_base,0.9728705366048275,0.9728705366048276,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary difference,0.017886827581620968,0.0178868275816209,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary sigma_boot,0.0020449039073177464,0.0020449039073177,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary sigma_seeds,0.0020868880678868557,0.0020868880678868,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) primary sigma,0.0029217689501485093,0.0029217689501485,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_base,0.9526255707762555,0.9526255707762556,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 difference,0.033105022831050324,0.0331050228310503,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_boot,0.007936667814543118,0.0079366678145431,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_seeds,0.00500854131700463,0.0050085413170046,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma,0.009384891161997944,0.0093848911619979,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_base,0.9166666666666666,0.9166666666666666,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 difference,-0.04629629629629628,-0.0462962962962962,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_boot,0.05582595184747358,0.0558259518474735,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_seeds,0.01851851851851851,0.0185185185185185,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma,0.05881728001019047,0.0588172800101904,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets value_base,0.9786641081871346,0.9786641081871346,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets difference,0.012975146198830334,0.0129751461988303,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma_boot,0.0015274436363514117,0.0015274436363514,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma_seeds,0.0017963818760359579,0.0017963818760359,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) hnl_targets sigma,0.002357980472094901,0.0023579804720949,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons value_base,0.9965331677532857,0.9965331677532856,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons difference,0.001190106592155793,0.0011901065921557,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons sigma_boot,0.0003706631551278255,0.0003706631551278,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons sigma_seeds,0.00019360744006901857,0.000193607440069,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) w_muons sigma,0.0004181806014384132,0.0004181806014384,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt value_base,0.9565801028729144,0.9565801028729144,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt difference,0.006655375737046776,0.0066553757370467,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_boot,0.0006512509436072229,0.0006512509436072,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_seeds,0.0020913540286542874,0.0020913540286542,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) ttbar_prompt sigma,0.0021904085154869665,0.0021904085154869,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate value_base,0.014756819594855178,0.0147568195948551,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate difference,-0.004556250925872047,-0.004556250925872,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate sigma_boot,0.00010439737952864478,0.0001043973795286,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate sigma_seeds,0.0010940365280306596,0.0010940365280306,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + MWS-layer + merging (Canto builder) fake_rate sigma,0.0010990062499903392,0.0010990062499903,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary value_base,0.969279872331937,0.969279872331937,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary difference,0.02147749185451142,0.0214774918545114,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma_boot,0.002119787714880872,0.0021197877148808,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma_seeds,0.001421474720821324,0.0014214747208213,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) primary sigma,0.002552271603512042,0.002552271603512,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 value_base,0.9394977168949771,0.9394977168949772,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 difference,0.046232876712328785,0.0462328767123287,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_boot,0.008938165637707747,0.0089381656377077,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma_seeds,0.0018930506794265945,0.0018930506794265,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_100_300 sigma,0.009136435072936109,0.0091364350729361,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 value_base,0.9166666666666666,0.9166666666666666,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 difference,-0.04629629629629628,-0.0462962962962962,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_boot,0.059003018025016486,0.0590030180250164,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma_seeds,0.009259259259259228,0.0092592592592592,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_d0_ge300 sigma,0.05972512049456743,0.0597251204945674,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets value_base,0.9759685672514621,0.975968567251462,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets difference,0.015670687134502814,0.0156706871345028,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_boot,0.0015929647009385417,0.0015929647009385,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma_seeds,0.001329644756108842,0.0013296447561088,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) hnl_targets sigma,0.0020749678830969793,0.0020749678830969,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons value_base,0.9965849115181621,0.996584911518162,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons difference,0.0011383628272794155,0.0011383628272794,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_boot,0.0003389028408533736,0.0003389028408533,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma_seeds,0.00024269977024854968,0.0002426997702485,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) w_muons sigma,0.00041684327272631605,0.0004168432727263,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt value_base,0.9481056329193326,0.9481056329193326,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt difference,0.015129845690628585,0.0151298456906285,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_boot,0.0006567514279509382,0.0006567514279509,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma_seeds,0.0034228237664935424,0.0034228237664935,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) ttbar_prompt sigma,0.0034852611056545874,0.0034852611056545,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate value_base,0.015597982423154397,0.0155979824231543,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate difference,-0.005397413754171266,-0.0053974137541712,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_boot,0.00010445216745382822,0.0001044521674538,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma_seeds,0.0007903290945633578,0.0007903290945633,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk) fake_rate sigma,0.0007972015635955185,0.0007972015635955,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary value_base",0.9691468847662744,0.9691468847662744,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary difference",0.021610479420174022,0.021610479420174,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_boot",0.0020945794741465016,0.0020945794741465,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma_seeds",0.0013315369635282137,0.0013315369635282,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) primary sigma",0.0024819858699754458,0.0024819858699754,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 value_base",0.9389269406392694,0.9389269406392694,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 difference",0.04680365296803646,0.0468036529680364,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_boot",0.008955569106294903,0.0089555691062949,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma_seeds",0.0016143990438049094,0.0016143990438049,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_100_300 sigma",0.009099917707884061,0.009099917707884,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 value_base",0.9166666666666666,0.9166666666666666,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 difference",-0.04629629629629628,-0.0462962962962962,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_boot",0.059003018025016486,0.0590030180250164,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma_seeds",0.009259259259259228,0.0092592592592592,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_d0_ge300 sigma",0.05972512049456743,0.0597251204945674,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets value_base",0.975877192982456,0.975877192982456,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets difference",0.015762061403508887,0.0157620614035088,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_boot",0.0015808087534355318,0.0015808087534355,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma_seeds",0.001215655582570372,0.0012156555825703,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) hnl_targets sigma",0.0019941852497631484,0.0019941852497631,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons value_base",0.9964296802235331,0.9964296802235332,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons difference",0.0012935941219084368,0.0012935941219084,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_boot",0.00035570614347959286,0.0003557061434795,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma_seeds",0.00032725630344285174,0.0003272563034428,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) w_muons sigma",0.00048334619958390545,0.0004833461995839,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt value_base",0.9480742692259442,0.9480742692259442,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt difference",0.015161209384016994,0.0151612093840169,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_boot",0.0006612187460738795,0.0006612187460738,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma_seeds",0.0034219787390699515,0.0034219787390699,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) ttbar_prompt sigma",0.003485275989187411,0.0034852759891874,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate value_base",0.01561121027279036,0.0156112102727903,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate difference",-0.005410641603807229,-0.0054106416038072,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_boot",0.00010381968709086729,0.0001038196870908,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma_seeds",0.0008005682047027084,0.0008005682047027,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk) fake_rate sigma",0.0008072719354768647,0.0008072719354768,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_new,0.9907573641864484,0.9907573641864484,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_base,0.9599707427355542,0.9599707427355542,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary difference,0.03078662145089428,0.0307866214508942,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_boot,0.002304323898336711,0.0023043238983367,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_seeds,0.004449621656844628,0.0044496216568446,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma,0.005010892287557819,0.0050108922875578,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_new,0.9857305936073059,0.985730593607306,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_base,0.9143835616438357,0.9143835616438356,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 difference,0.07134703196347014,0.0713470319634701,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_boot,0.009929190962252414,0.0099291909622524,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_seeds,0.014062425793099225,0.0140624257930992,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma,0.017214547695228517,0.0172145476952285,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_new,0.8703703703703703,0.8703703703703703,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_base,0.8888888888888888,0.8888888888888888,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 difference,-0.01851851851851849,-0.0185185185185184,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_boot,0.057778813386599584,0.0577788133865995,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_seeds,0.018518518518518483,0.0185185185185184,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma,0.060673938428984574,0.0606739384289845,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_new,0.9916392543859649,0.9916392543859648,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_base,0.9695723684210527,0.9695723684210528,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets difference,0.022066885964912242,0.0220668859649122,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_boot,0.0017493488569234256,0.0017493488569234,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_seeds,0.0029032008160302034,0.0029032008160302,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma,0.003389512708549377,0.0033895127085493,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_new,0.9977232743454415,0.9977232743454416,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_base,0.9961709613991515,0.9961709613991516,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons difference,0.001552312946289991,0.0015523129462899,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_boot,0.0003641496500160271,0.000364149650016,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_seeds,0.00029270693622542493,0.0002927069362254,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma,0.0004672069328694406,0.0004672069328694,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_new,0.9632354786099612,0.9632354786099612,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_base,0.9594341989712708,0.9594341989712708,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt difference,0.003801279638690369,0.0038012796386903,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_boot,0.000655855694055524,0.0006558556940555,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_seeds,0.0022949395468492566,0.0022949395468492,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma,0.0023868167535690136,0.002386816753569,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_new,0.010200568668983131,0.0102005686689831,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_base,0.016290119449960654,0.0162901194499606,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate difference,-0.006089550780977523,-0.0060895507809775,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_boot,0.00011899727575073254,0.0001189972757507,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_seeds,0.00021427095158509836,0.000214270951585,True
+results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma,0.00024509669995591423,0.0002450966999559,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary value_base",0.940089101668994,0.940089101668994,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary difference",0.05066826251745449,0.0506682625174544,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary sigma_boot",0.002861792308767376,0.0028617923087673,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary sigma_seeds",0.003608474912218942,0.0036084749122189,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* primary sigma",0.004605534324118496,0.0046055343241184,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 value_base",0.9143835616438357,0.9143835616438356,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 difference",0.07134703196347014,0.0713470319634701,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma_boot",0.009423333490907243,0.0094233334909072,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma_seeds",0.0015101320268633568,0.0015101320268633,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_100_300 sigma",0.009543569186599555,0.0095435691865995,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 value_base",0.8888888888888888,0.8888888888888888,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 difference",-0.01851851851851849,-0.0185185185185184,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma_boot",0.06285941857404874,0.0628594185740487,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma_seeds",0.009259259259259228,0.0092592592592592,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_d0_ge300 sigma",0.06353770837461516,0.0635377083746151,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets value_base",0.9477796052631579,0.947779605263158,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets difference",0.04385964912280704,0.043859649122807,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets sigma_boot",0.002293984359059603,0.0022939843590596,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets sigma_seeds",0.003069889880725925,0.0030698898807259,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* hnl_targets sigma",0.0038323084582785783,0.0038323084582785,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons value_base",0.9877884714891856,0.9877884714891856,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons difference",0.00993480285625592,0.0099348028562559,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons sigma_boot",0.0010289192280976075,0.0010289192280976,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons sigma_seeds",0.0013961231049603603,0.0013961231049603,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* w_muons sigma",0.0017343109588978365,0.0017343109588978,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt value_base",0.8611968385397063,0.8611968385397063,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt difference",0.10203864007025487,0.1020386400702548,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt sigma_boot",0.0019531356235879095,0.0019531356235879,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt sigma_seeds",0.007546326231508432,0.0075463262315084,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* ttbar_prompt sigma",0.007794984179360494,0.0077949841793604,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate value_base",0.02888445397838395,0.0288844539783839,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate difference",-0.01868388530940082,-0.0186838853094008,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate sigma_boot",0.00027848856674634145,0.0002784885667463,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate sigma_seeds",0.0004717867989158961,0.0004717867989158,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, best cut <= FR* fake_rate sigma",0.0005478491265300508,0.00054784912653,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary value_new",0.9907573641864484,0.9907573641864484,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary value_base",0.9299820466786355,0.9299820466786356,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary difference",0.060775317507812954,0.0607753175078129,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary sigma_boot",0.0031237511735761475,0.0031237511735761,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary sigma_seeds",0.014335541435693173,0.0143355414356931,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule primary sigma",0.014671931353741204,0.0146719313537412,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 value_new",0.9857305936073059,0.985730593607306,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 value_base",0.910958904109589,0.910958904109589,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 difference",0.07477168949771684,0.0747716894977168,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 sigma_boot",0.00978603691721242,0.0097860369172124,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 sigma_seeds",0.006582512896501608,0.0065825128965016,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_100_300 sigma",0.011793896496817934,0.0117938964968179,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 value_new",0.8703703703703703,0.8703703703703703,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 value_base",0.8796296296296297,0.8796296296296297,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 difference",-0.0092592592592593,-0.0092592592592593,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 sigma_boot",0.064420312087449,0.064420312087449,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 sigma_seeds",0.013094570021973057,0.013094570021973,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_d0_ge300 sigma",0.0657376937038765,0.0657376937038765,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets value_new",0.9916392543859649,0.9916392543859648,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets value_base",0.9374086257309941,0.937408625730994,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets difference",0.05423062865497075,0.0542306286549707,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets sigma_boot",0.002482983242907941,0.0024829832429079,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets sigma_seeds",0.013771166411154995,0.0137711664111549,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule hnl_targets sigma",0.013993220862556452,0.0139932208625564,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons value_new",0.9977232743454415,0.9977232743454416,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons value_base",0.9841664079478424,0.9841664079478424,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons difference",0.013556866397599121,0.0135568663975991,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons sigma_boot",0.0010467523408316157,0.0010467523408316,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons sigma_seeds",0.004678735198367945,0.0046787351983679,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule w_muons sigma",0.0047943981394418635,0.0047943981394418,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt value_new",0.9632354786099612,0.9632354786099612,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt value_base",0.8603751097729267,0.8603751097729267,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt difference",0.10286036883703442,0.1028603688370344,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt sigma_boot",0.0017715755145041839,0.0017715755145041,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt sigma_seeds",0.005886449739008014,0.005886449739008,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule ttbar_prompt sigma",0.006147257139038376,0.0061472571390383,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate value_new",0.010200568668983131,0.0102005686689831,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate value_base",0.02917746910363458,0.0291774691036345,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate difference",-0.01897690043465145,-0.0189769004346514,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate sigma_boot",0.0002548149396391688,0.0002548149396391,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate sigma_seeds",0.0003219657220492269,0.0003219657220492,True
+"results/strong_baselines_v2_armiii_differences.csv: Canto-L (frozen: learned merging) - acorn (ttbar+HNL) + CC, preregistered cut rule fake_rate sigma",0.00041060026745971963,0.0004106002674597,True

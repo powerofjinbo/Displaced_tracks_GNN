@@ -1,0 +1,241 @@
+{
+ "version": "v1",
+ "plan": "docs/trackml_plan.md section 5",
+ "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1",
+ "selection": {
+  "fr_target": 0.029368,
+  "families": {
+   "cc": {
+    "config": 11,
+    "params": "0.6",
+    "reached_fr": false,
+    "eff_target": 0.9934910168773818,
+    "fake_rate": 0.0408971351389777
+   },
+   "mws2passmerge": {
+    "config": 64,
+    "params": "0.2,0.1,1",
+    "reached_fr": false,
+    "eff_target": 0.991791180206884,
+    "fake_rate": 0.057088010361416
+   },
+   "mwslayer": {
+    "config": 43,
+    "params": "0.15",
+    "reached_fr": false,
+    "eff_target": 0.991331437904543,
+    "fake_rate": 0.0552566967606001
+   },
+   "mwslayermerge": {
+    "config": 58,
+    "params": "0.6,1",
+    "reached_fr": false,
+    "eff_target": 0.9903696086141188,
+    "fake_rate": 0.0512686744955647
+   },
+   "mwslmerge": {
+    "config": 90,
+    "params": "0.3",
+    "reached_fr": true,
+    "eff_target": 0.9963825539894744,
+    "fake_rate": 0.0170376938643261
+   },
+   "walkmerge": {
+    "config": 38,
+    "params": "0.5,0.7,1,1",
+    "reached_fr": false,
+    "eff_target": 0.9939991531062852,
+    "fake_rate": 0.0436225856036947
+   }
+  },
+  "WP-A": {
+   "config": 90,
+   "family": "mwslmerge",
+   "params": "0.3",
+   "reached_fr": true,
+   "flag": null
+  },
+  "WP-A-FRcc": {
+   "fr_target_cc": 0.0412861401810137,
+   "config": 90,
+   "family": "mwslmerge",
+   "params": "0.3",
+   "reached_fr": true,
+   "same_as_WP-A": true
+  },
+  "WP-S": {
+   "config": 88,
+   "family": "mwslmerge",
+   "params": "0.1",
+   "trackml_score": 0.9664294452839176
+  },
+  "WP-R": {
+   "P1": {
+    "reached": true,
+    "config": 91,
+    "family": "mwslmerge",
+    "params": "0.5",
+    "eff": 0.9933487705548494,
+    "fake_metric": 0.8917416053430588
+   },
+   "P2": {
+    "reached": true,
+    "config": 91,
+    "family": "mwslmerge",
+    "params": "0.5",
+    "eff": 0.9971373221623088,
+    "fake_metric": 0.1540981375292152
+   },
+   "P3": {
+    "reached": true,
+    "config": 15,
+    "family": "cc",
+    "params": "0.8",
+    "eff": 0.9983062125703224,
+    "fake_metric": 0.001538678734984
+   },
+   "P4": {
+    "reached": true,
+    "config": 19,
+    "family": "walkmerge",
+    "params": "0.1,0.5,1,0",
+    "eff": 0.9987962010767648,
+    "fake_metric": 0.0004014779041689
+   }
+  },
+  "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid_blocks/full/merged",
+  "grid_nonoise": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/nonoise",
+  "grid_1gev": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/1gev"
+ },
+ "graph_choice": {
+  "density": 10.0,
+  "r_star": 0.115734,
+  "rw_factor": 1.2,
+  "tau": 0.05,
+  "k": 3,
+  "pairs_per_hit": 15.72953203658636,
+  "ceil_targets": 0.9943194152977785,
+  "ceil_displaced_targets": 0.8577712609970675,
+  "ceil_ge5": 0.92941013986892,
+  "true_edge_eff": 0.9522829588528805,
+  "cap_binding": 0.0,
+  "r_wide": 0.1388808,
+  "n_tied": 3,
+  "cap_ok": true,
+  "gate_g1_pass": true,
+  "ml_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/ml/artifacts/best-epoch=23-f1=0.224451.ckpt",
+  "ltf_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/support/model.joblib",
+  "field_map": "configs/trackml/field_map_v1.json",
+  "knn": 300,
+  "scan": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/graph/scan/all",
+  "scan_events": 50,
+  "union_max_pairs_per_hit": 16.5,
+  "utc": "2026-10-07T14:20:03+00:00",
+  "git": "12de86bfa6fac42c4ae034c2ed6cda3ccacdd08e",
+  "slurm_job": "6707285",
+  "host": "submit80.mit.edu"
+ },
+ "inputs": {
+  "ml_checkpoint": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/ml/artifacts/best-epoch=23-f1=0.224451.ckpt",
+   "sha256": "87d07e0357b28481eb45a21560c32895939dd3368843ca410e1cddfbe97be481"
+  },
+  "classifier_checkpoint": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/gnn/artifacts/best-epoch=27-val_loss=0.003794.ckpt",
+   "sha256": "306d6fdfc83938e8055720805576ab7ad5a0d37c5d4239ba6eac9e5755944a60"
+  },
+  "support_model": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/support/model.joblib",
+   "sha256": "d39d1e7e1b11d6602d3e39e2c38f55451b79f4f8177baf11cc1c586fab3c5de4"
+  },
+  "graph_choice": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/graph/graph_choice.json",
+   "sha256": "08897b2ee1b730766fc3c354b17d98bd23e2f856c9e6506f735c20a269ac49aa"
+  },
+  "merge_model": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/lmerge/model.joblib",
+   "sha256": "c99beec1c610aac5cfc582596be8de96dadd80b626c84601de440c396b73cc51"
+  },
+  "field_map": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/field_map_v1.json",
+   "sha256": "34c2a64788cddd0484028ff2a3e32c815852ef20c530a1071e56416cd60a5401"
+  },
+  "pipeline_config": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/pipeline_v1.yaml",
+   "sha256": "b62b627cf7084c6cac9185893a88d7f1e4ec9dd4c0d1f3626c01cc1f2ba8de57"
+  },
+  "ml_config": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/ml_train.yaml",
+   "sha256": "d85f5f0d597ce1fe21cf975c09a65a71f176c2344bf73206490001996e636d4d"
+  },
+  "classifier_config": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/classifier_train.yaml",
+   "sha256": "6f01c09a7a4038114495e74223572a95bad3e30554b6369b744461a4d4c6bf0e"
+  },
+  "split": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/split_tp_v1.json",
+   "sha256": "36875d204d6637f642f3a384e44cd6f1373f66a78713dddd355e642b43a97f73"
+  },
+  "t2_split": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/split_v1.json",
+   "sha256": "8efbdc430ef86e05a480646cf2a1d9bfad7760ebf02862ef6899387c3eab43f0"
+  },
+  "detectors": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp_v1/../../detectors.csv",
+   "sha256": "e01684d65c088794618b916655f989dae6f099de4ecc7a462987e97b4037639a"
+  },
+  "res_table": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/res_v1.json",
+   "sha256": "7e111f3303db8f18c7be0df4b995b2918097800d1232f7212ad5db1a1a5c4ed3"
+  },
+  "merge_cuts": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/merge_cuts_v1.tsv",
+   "sha256": "da7f1bd07ebd7da42cf9e237448f7fbfadec848ae2a44122df6c9901b78b9dc1"
+  },
+  "slope_window": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/slope_window_v1.tsv",
+   "sha256": "39d3cca2a26ba2b62e7a892e666e833f471d0815c5650def91638fc4a7d0c0f8"
+  },
+  "ml_train_config_run": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/ml/train_config.yaml",
+   "sha256": "2854af483512b4556314d00c2cbb332ee4aa6ee130f568ec991b5b1bba491f2f"
+  },
+  "classifier_train_config_run": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/gnn/train_config.yaml",
+   "sha256": "188910e467de82d237f60d45d937cd815c9b40b484125e93ba86af3855fc4a1d"
+  },
+  "env_lock": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/env/lock.txt",
+   "sha256": "d60265adb0d93a83b47ed89beed7a822abc3532f7fcc3b300780f0716d6893c0"
+  },
+  "ml_config_x1": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/ml_train_x1.yaml",
+   "sha256": "742e6a0b6a2d81d1eb4949178f67a3e15420dc3503fa46d254b7c24d427863d2"
+  },
+  "val_grid_full_summary": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid_blocks/full/merged/summary.csv",
+   "sha256": "62bad81b6b0dab031a24fdb2c754488f0286371230134b0357ca27fcf44dbd1e"
+  },
+  "val_grid_full_configs": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid_blocks/full/merged/configs.json",
+   "sha256": "9e6130b263523ad935b162862cb0f9defe7f5ce43eb7c2f3bf30d079e04f5939"
+  },
+  "val_grid_nonoise_summary": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/nonoise/summary.csv",
+   "sha256": "282d23ccfddf7422777cf75eca4852b33edbc590af171e2b6f06b6ce5f9f1410"
+  },
+  "val_grid_nonoise_configs": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/nonoise/configs.json",
+   "sha256": "9e6130b263523ad935b162862cb0f9defe7f5ce43eb7c2f3bf30d079e04f5939"
+  },
+  "val_grid_1gev_summary": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/1gev/summary.csv",
+   "sha256": "c5fc367f1c35a9f8c691f23dce0db8724076457619dd59692a00581ad09fb30a"
+  },
+  "val_grid_1gev_configs": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/1gev/configs.json",
+   "sha256": "9e6130b263523ad935b162862cb0f9defe7f5ce43eb7c2f3bf30d079e04f5939"
+  }
+ },
+ "git": "5089c9a21d03b9b7dea0be38a67b46598bb86702"
+}

@@ -1,0 +1,202 @@
+[
+ {
+  "label": "ladder: IGNN (acorn arch., 263,937 par.), screening budget + CC (best cut <= FR*)",
+  "short": "IGNN CC",
+  "group": "IGNN",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "ladder: IGNN (acorn arch., 263,937 par.), screening budget + walkthrough + merging",
+  "short": "IGNN walk+m",
+  "group": "IGNN",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: IGNN (acorn arch., 263,937 par.), screening budget + MWS-layer + merging",
+  "short": "IGNN MWS+m",
+  "group": "IGNN",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched IGNN (hidden 147, 347,803 par.), screening budget + CC (best cut <= FR*)",
+  "short": "IGNN-147 CC",
+  "group": "IGNN-147",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147_screen/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched IGNN (hidden 147, 347,803 par.), screening budget + walkthrough + merging",
+  "short": "IGNN-147 walk+m",
+  "group": "IGNN-147",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147_screen/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched IGNN (hidden 147, 347,803 par.), screening budget + MWS-layer + merging",
+  "short": "IGNN-147 MWS+m",
+  "group": "IGNN-147",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147_screen/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: IGNN + trunc. (263,937 par.), screening budget + CC (best cut <= FR*)",
+  "short": "IGNN+trunc CC",
+  "group": "IGNN+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn_trunc/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "ladder: IGNN + trunc. (263,937 par.), screening budget + walkthrough + merging",
+  "short": "IGNN+trunc walk+m",
+  "group": "IGNN+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn_trunc/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: IGNN + trunc. (263,937 par.), screening budget + MWS-layer + merging",
+  "short": "IGNN+trunc MWS+m",
+  "group": "IGNN+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn_trunc/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 (symmetric + regions, 347,777 par.), screening budget + CC (best cut <= FR*)",
+  "short": "L1 CC",
+  "group": "L1",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/l1/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 (symmetric + regions, 347,777 par.), screening budget + walkthrough + merging",
+  "short": "L1 walk+m",
+  "group": "L1",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/l1/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 (symmetric + regions, 347,777 par.), screening budget + MWS-layer + merging",
+  "short": "L1 MWS+m",
+  "group": "L1",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/l1/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 + trunc. = Canto classifier (347,777 par.), screening budget + CC (best cut <= FR*)",
+  "short": "L1+trunc CC",
+  "group": "L1+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 + trunc. = Canto classifier (347,777 par.), screening budget + walkthrough + merging",
+  "short": "L1+trunc walk+m",
+  "group": "L1+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "ladder: L1 + trunc. = Canto classifier (347,777 par.), screening budget + MWS-layer + merging",
+  "short": "L1+trunc MWS+m",
+  "group": "L1+trunc",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+    "source": [
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ }
+]

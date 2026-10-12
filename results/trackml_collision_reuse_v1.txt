@@ -1,0 +1,29 @@
+signatures: /ceph/submit/data/user/j/jinboz1/gnn-displaced/gd/signatures/clusters_v1.parquet
+train events 1399 of 1399, val events 150 of 150
+val collisions with a twin in train: 16721 of 21883 (0.7641); hard scatter (vertex 1): 140 of 150
+
+== full: generation-0 targets of 150 val events, DM efficiency by training twin
+                 mean           sum           size        
+twin            False  True   False   True   False   True 
+bin                                                       
+[0.0, 1.0)     0.9984 0.9983  34674  122953  34729  123159
+[1.0, 3.0)     0.9963 0.9956    545    2016    547    2025
+[3.0, 10.0)    0.9935 0.9932    608    2057    612    2071
+[10.0, 30.0)   0.9925 0.9873    264    1010    266    1023
+[30.0, 100.0)  0.9216 0.9811     47     208     51     212
+[100.0, 300.0) 1.0000 1.0000      1       9      1       9
+all |d0|, twin=False: 99.815 +- 0.023 % (36139 of 36206)
+all |d0|, twin=True: 99.809 +- 0.012 % (128253 of 128499)
+
+== 1gev: generation-0 targets of 150 val events, DM efficiency by training twin
+                 mean           sum           size        
+twin            False  True   False   True   False   True 
+bin                                                       
+[0.0, 1.0)     0.9992 0.9993  34701  123068  34729  123159
+[1.0, 3.0)     1.0000 0.9965    547    2018    547    2025
+[3.0, 10.0)    0.9951 0.9971    609    2065    612    2071
+[10.0, 30.0)   0.9887 0.9932    263    1016    266    1023
+[30.0, 100.0)  0.9608 1.0000     49     212     51     212
+[100.0, 300.0) 1.0000 1.0000      1       9      1       9
+all |d0|, twin=False: 99.901 +- 0.017 % (36170 of 36206)
+all |d0|, twin=True: 99.914 +- 0.008 % (128388 of 128499)

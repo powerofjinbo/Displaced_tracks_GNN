@@ -1,0 +1,117 @@
+{
+ "models": {
+  "new": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "cut": 0,
+    "sub": "trackbuild_test",
+    "cut_e": 0.22,
+    "sub_e": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "cut": 0,
+    "sub": "trackbuild_test",
+    "cut_e": 0.22,
+    "sub_e": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "cut": 0,
+    "sub": "trackbuild_test",
+    "cut_e": 0.2,
+    "sub_e": "eval_test"
+   }
+  ],
+  "new_llp_blind": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "cut": 0,
+    "sub": "trackbuild_test_llpblind"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "cut": 0,
+    "sub": "trackbuild_test_llpblind"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "cut": 0,
+    "sub": "trackbuild_test_llpblind"
+   }
+  ],
+  "arm_i": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "cut": 0.34,
+    "cut_e": 0.42,
+    "sub": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "cut": 0.33,
+    "cut_e": 0.35,
+    "sub": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "cut": 0.31,
+    "cut_e": 0.22,
+    "sub": "eval_test"
+   }
+  ],
+  "ref": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+    "cut": 0.26,
+    "cut_e": 0.39,
+    "sub": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+    "cut": 0.36,
+    "cut_e": 0.37,
+    "sub": "eval_test"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+    "cut": 0.27,
+    "cut_e": 0.45,
+    "sub": "eval_test"
+   }
+  ]
+ },
+ "dd": {
+  "new": [
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/edge_tpr_test_events.parquet",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/edge_tpr_test_events.parquet",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/edge_tpr_test_events.parquet"
+  ],
+  "arm_i": [
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/edge_tpr_test_events.parquet",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/edge_tpr_test_events.parquet",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/edge_tpr_test_events.parquet"
+  ]
+ },
+ "claims": {
+  "primary": {
+   "new": "new",
+   "base": "ref"
+  },
+  "S1": {
+   "new": "new",
+   "arm_i": "arm_i",
+   "ref": "ref"
+  },
+  "S1b": {
+   "new": "new",
+   "new_llp_blind": "new_llp_blind",
+   "arm_i": "arm_i"
+  }
+ },
+ "candidate": {
+  "pipeline": "l1tl",
+  "family": "mwslmerge"
+ },
+ "selection_created_utc": "2026-10-05T14:58:49Z"
+}

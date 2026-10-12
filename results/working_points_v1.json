@@ -1,0 +1,235 @@
+{
+ "s_star": {
+  "i": 0.35,
+  "ii": 0.4,
+  "iii": 0.35
+ },
+ "fake_rate_at_s_star": {
+  "i": 0.030228711463794116,
+  "ii": 0.02936834277897644,
+  "iii": 0.027387827444708576
+ },
+ "reference_arm": "ii",
+ "reference_rule": "no consistent arm: highest primary efficiency at own s*",
+ "FR_star": 0.02936834277897644,
+ "e_star": 0.011791817004015985,
+ "candidates": {
+  "i": {
+   "fr_star": 0.030228711463794116,
+   "cuts": {
+    "i": {
+     "0": 0.36,
+     "1": 0.35,
+     "2": 0.32
+    },
+    "ii": {
+     "0": 0.39,
+     "1": 0.31,
+     "2": 0.45
+    },
+    "iii": {
+     "0": 0.39,
+     "1": 0.39,
+     "2": 0.27
+    }
+   },
+   "eff_primary": {
+    "i": 0.9253693964437767,
+    "ii": 0.9521662910092662,
+    "iii": 0.9421487603305785
+   },
+   "unreachable": [],
+   "consistent": false
+  },
+  "ii": {
+   "fr_star": 0.02936834277897644,
+   "cuts": {
+    "i": {
+     "0": 0.34,
+     "1": 0.33,
+     "2": 0.31
+    },
+    "ii": {
+     "0": 0.26,
+     "1": 0.36,
+     "2": 0.27
+    },
+    "iii": {
+     "0": 0.26,
+     "1": 0.38,
+     "2": 0.39
+    }
+   },
+   "eff_primary": {
+    "i": 0.9231154520410718,
+    "ii": 0.9383921863260706,
+    "iii": 0.9393939393939394
+   },
+   "unreachable": [
+    [
+     "i",
+     0
+    ],
+    [
+     "i",
+     2
+    ],
+    [
+     "ii",
+     1
+    ]
+   ],
+   "consistent": false
+  },
+  "iii": {
+   "fr_star": 0.027387827444708576,
+   "cuts": {
+    "i": {
+     "0": 0.34,
+     "1": 0.3,
+     "2": 0.31
+    },
+    "ii": {
+     "0": 0.35,
+     "1": 0.36,
+     "2": 0.41
+    },
+    "iii": {
+     "0": 0.33,
+     "1": 0.35,
+     "2": 0.29
+    }
+   },
+   "eff_primary": {
+    "i": 0.9211119459053343,
+    "ii": 0.9549211119459052,
+    "iii": 0.9386426245930378
+   },
+   "unreachable": [
+    [
+     "i",
+     0
+    ],
+    [
+     "i",
+     1
+    ],
+    [
+     "i",
+     2
+    ],
+    [
+     "ii",
+     1
+    ]
+   ],
+   "consistent": false
+  }
+ },
+ "cuts_at_FR_star": {
+  "i": {
+   "0": 0.34,
+   "1": 0.33,
+   "2": 0.31
+  },
+  "ii": {
+   "0": 0.26,
+   "1": 0.36,
+   "2": 0.27
+  },
+  "iii": {
+   "0": 0.26,
+   "1": 0.38,
+   "2": 0.39
+  }
+ },
+ "cuts_at_e_star": {
+  "i": {
+   "0": 0.42,
+   "1": 0.35,
+   "2": 0.22
+  },
+  "ii": {
+   "0": 0.39,
+   "1": 0.37,
+   "2": 0.45
+  },
+  "iii": {
+   "0": 0.2,
+   "1": 0.21,
+   "2": 0.34
+  }
+ },
+ "unreachable_at_FR_star": [
+  [
+   "i",
+   0
+  ],
+  [
+   "i",
+   2
+  ],
+  [
+   "ii",
+   1
+  ]
+ ],
+ "unreachable_at_e_star": [],
+ "runs": [
+  "armi_s0",
+  "armi_s1",
+  "armi_s2",
+  "armii_s0",
+  "armii_s1",
+  "armii_s2",
+  "armiii_s0",
+  "armiii_s1",
+  "armiii_s2"
+ ],
+ "missing_runs": [],
+ "n_events": 2999,
+ "val_chain": {
+  "armi_s0": {
+   "ml": "9b6996daa4919db111b48015513226cb4ead7f024272ab879a8bbc601412ccef",
+   "gnn": "1cdc321d3fe9555892088be93f714d66c6283bcacfda69fc019fac4f9e1ad20e"
+  },
+  "armi_s1": {
+   "ml": "9d505517d74435c53b6fcbf2944b3d1cca819f05866e6cb22ec89fc64b2c1be7",
+   "gnn": "a73a1fb31f4e0873a89a192c1f2eab8ee17f49943f5af18d7b7d71f0bfedc743"
+  },
+  "armi_s2": {
+   "ml": "1989f31c234629e157c799c95cefad1d14c18d61662c202cc64ea91bac604ba8",
+   "gnn": "bba2f17c29e2066a090c0ef072b79dea51e022dad359ca29f15338a773987803"
+  },
+  "armii_s0": {
+   "ml": "7ec3ff82afa05c7acc299dfd2e6cba338c5cbb4db0b97c85d1bbf77a9f6f7209",
+   "gnn": "f214b0fb7bd4d2b5fa9e0bfaf174cab15de036651ee538f59f32f113cedac996"
+  },
+  "armii_s1": {
+   "ml": "d7a42cb437fe4d6f281796a7c43bc15667605975ea37ae7c8fc3114c0cb0d4de",
+   "gnn": "5403a1dd3500a994611c1f5159187f3ddd5da9da538391442e15dfa484b60396"
+  },
+  "armii_s2": {
+   "ml": "ea8e5c2ae591b2a135da5c40e9f23410fb43636fff0f3f4e2fae98fe246f6634",
+   "gnn": "b6d44c9754e6b3c57963a42e8e8bbeb8eefa0dee426627f80e5b6734cd0d12e9"
+  },
+  "armiii_s0": {
+   "ml": "e4d36909c40436af1e4a5ebedac76baccef827be9ceefdeb7ea49c856211081b",
+   "gnn": "87f1343c1f1b51f9310db0f63ea067254f6b14d97ae8e7672c786e91145c0450"
+  },
+  "armiii_s1": {
+   "ml": "b2f1f82ac839adbfc653b55d98c400dac1f37c68e35ffc4e75873452d8d66318",
+   "gnn": "bde07075ca80cfd6f8a3613c554b1b2a375332689ff7ee61f249188fe969ec35"
+  },
+  "armiii_s2": {
+   "ml": "d02cba6e157ee76b20b7c10cd56bc616ed470494f6b9dfe501b396332f1c4617",
+   "gnn": "026742a5f9409abf9cfa816ed0128f5228f446d5de7c191a5e8760e9b85fdcd5"
+  }
+ },
+ "accepted_unreachable_reference": [
+  [
+   "ii",
+   "1"
+  ]
+ ]
+}

@@ -1,0 +1,44 @@
+split,seed,event_id,particle_id,stage_lm,d0,r_first,r_bin,n_hits,ge300,edge_cut_lm,stage_mwsm,edge_cut_mwsm,pipeline,found_by,first_passes_equal,dm_lm_first,dm_lm,dm_mw_first,dm_mw_any,dm_mw,lm_n_frag,lm_frags,lm_hits_on_frags,mwsm_n_frag,mwsm_frags,mwsm_hits_on_frags
+train,0,200006441,4525594473660416,found,811.4934888490119,871.586181640625,>=700,7,True,0.2,classifier,0.2,Canto-L,LM only,True,False,True,False,False,False,3,3/3 2/2 2/2,7,,,
+train,0,400004228,4515697979817984,found,-614.6405308515131,657.0838012695312,500-700,6,True,0.2,graph,0.2,Canto-L,LM only,True,False,True,False,False,False,2,3/3 3/3,6,,,
+train,1,200008725,4517896784969728,impure,241.4630915481694,595.8779296875,500-700,5,False,0.2,found,0.2,Canto-L,MWS+M only,True,True,False,True,True,True,2,3/3 2/2,5,,,
+train,1,400001647,4531091243270144,impure,-472.1133459763134,870.1663818359375,>=700,5,True,0.2,found,0.2,Canto-L,MWS+M only,True,True,False,True,True,True,1,5/5,5,,,
+train,1,400004228,4515697979817984,found,-614.6405308515131,657.0838012695312,500-700,6,True,0.2,graph,0.2,Canto-L,LM only,True,False,True,False,False,False,2,3/3 3/3,6,,,
+train,1,400004536,4510198525853696,found,-829.5081278763462,844.3762817382812,>=700,8,True,0.2,fragmented,0.2,Canto-L,LM only,True,False,True,False,False,False,2,4/4 4/4,8,,,
+train,1,400005373,4515697291952128,classifier,353.48555686444354,360.3698425292969,200-500,6,True,0.2,found,0.2,Canto-L,MWS+M only,True,False,False,False,False,True,3,2/2 2/2 2/2,6,,,
+val,1,400007497,4512398320861184,found,-349.2261031928319,496.75518798828125,200-500,8,True,0.2,graph,0.2,Canto-L,LM only,True,False,True,False,False,False,2,3/3 2/2,5,,,
+train,2,400001647,4531091243270144,impure,-472.1133459763134,870.1663818359375,>=700,5,True,0.2,found,0.2,Canto-L,MWS+M only,True,True,False,True,True,True,2,3/3 2/2,5,,,
+train,2,400004228,4515697979817984,found,-614.6405308515131,657.0838012695312,500-700,6,True,0.2,graph,0.2,Canto-L,LM only,True,False,True,False,False,False,2,3/3 3/3,6,,,
+train,0,200001863,4509099148443648,found,-276.0946969248035,357.2707824707031,200-500,5,False,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,1,2/2,2,1.0,2/2,2.0
+train,0,200005219,4509098242473984,found,253.42193105483508,499.8533935546875,200-500,6,False,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,3/3 2/2,5,2.0,3/3 2/2,5.0
+train,0,200006441,4525594473660416,graph,811.4934888490119,871.586181640625,>=700,7,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,True,False,True,True,True,2,5/5 2/2,7,2.0,5/5 2/2,7.0
+train,0,200006901,4510198005760000,found,284.69764033253006,414.12152099609375,200-500,6,False,0.2,impure,0.1,acorn (ttbar),LM only,False,True,True,False,False,False,1,6/6,6,1.0,6/12,6.0
+val,0,200007497,4512398320861184,found,-212.20276233623696,359.5716247558594,200-500,6,False,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+train,0,400003332,4517895996440576,classifier,-279.06883349510053,418.7930603027344,200-500,5,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,True,True,True,2,2/2 2/4,4,1.0,4/6,4.0
+train,0,400006876,4518996229488640,found,-215.89387290509413,262.1533508300781,200-500,6,False,0.2,impure,0.1,acorn (ttbar),LM only,False,True,True,False,False,False,1,5/5,5,1.0,5/17,5.0
+val,0,400007497,4512398320861184,found,-349.2261031928319,496.75518798828125,200-500,8,True,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,4/4 2/2,6,2.0,4/4 2/2,6.0
+train,1,200001863,4509099148443648,found,-276.0946969248035,357.2707824707031,200-500,5,False,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,1,2/2,2,1.0,2/2,2.0
+train,1,200002895,4513498168033280,found,238.19695390287433,402.97100830078125,200-500,5,False,0.2,fragmented,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+train,1,200005219,4509098242473984,found,253.42193105483508,499.8533935546875,200-500,6,False,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,3/3 2/2,5,2.0,3/3 2/2,5.0
+train,1,200007936,4517896449425408,classifier,-224.24979716752034,270.6307067871094,200-500,6,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,True,True,True,1,3/4,3,1.0,4/5,4.0
+train,1,200009540,4506899252772864,found,427.63343389521197,545.6858520507812,500-700,5,True,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+val,1,400000394,4514598384304128,found,-213.79389748935887,356.3837585449219,200-500,5,False,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+train,1,400001515,4518996028162048,impure,244.81000072921094,272.5506591796875,200-500,5,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,True,False,True,True,True,2,3/5 2/5,5,2.0,3/5 2/5,5.0
+train,1,400002849,4509098661904384,found,-378.11495397292947,501.62481689453125,500-700,5,True,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+train,1,400003625,4518996095270912,classifier,-263.18552392423044,372.1899108886719,200-500,6,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,False,True,True,1,2/2,2,2.0,2/2 2/2,4.0
+train,1,400004245,4522295938777088,found,-255.04447572374522,499.64813232421875,200-500,5,False,0.2,impure,0.1,acorn (ttbar),LM only,False,True,True,False,False,False,2,3/3 2/2,5,2.0,3/6 2/2,5.0
+train,1,400004514,4511297718714368,classifier,393.20485162524176,655.4319458007812,500-700,6,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,True,True,True,1,3/3,3,1.0,4/4,4.0
+train,1,400004536,4510198525853696,found,-829.5081278763462,844.3762817382812,>=700,8,True,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,4/4 2/2,6,2.0,4/4 2/2,6.0
+train,1,400009235,4524495599566848,impure,-430.22229723441086,659.8727416992188,500-700,5,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,True,False,True,True,True,1,3/3,3,1.0,3/3,3.0
+train,2,200003937,4515697761714176,impure,310.30118147972814,358.8115539550781,200-500,6,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,True,False,True,True,True,2,4/4 2/9,6,2.0,4/4 2/9,6.0
+train,2,200006441,4525594473660416,classifier,811.4934888490119,871.586181640625,>=700,7,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,True,True,True,3,3/3 2/2 2/2,7,2.0,5/5 2/2,7.0
+train,2,200009939,4513497798934528,classifier,-289.75010680915835,295.82684326171875,200-500,9,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,False,False,True,3,4/4 2/2 2/2,8,3.0,4/4 3/3 2/2,9.0
+val,2,400000394,4514598384304128,found,-213.79389748935887,356.3837585449219,200-500,5,False,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,2/2 2/2,4,2.0,2/2 2/2,4.0
+train,2,400002382,4511299111223296,found,251.82055892615415,789.02001953125,>=700,5,False,0.2,impure,0.1,acorn (ttbar),LM only,False,True,True,False,False,False,1,4/4,4,1.0,4/16,4.0
+train,2,400004536,4510198525853696,found,-829.5081278763462,844.3762817382812,>=700,8,True,0.2,classifier,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,3,4/4 2/2 2/2,8,3.0,4/4 2/2 2/2,8.0
+train,2,400004955,4511297836154880,classifier,252.7859632466819,328.6920471191406,200-500,5,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,False,False,True,1,2/2,2,2.0,2/2 2/2,4.0
+train,2,400005632,4516796266708992,impure,271.6534883085934,816.168701171875,>=700,5,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,True,False,True,True,True,1,3/3,3,1.0,3/3,3.0
+train,2,400005976,4511297332838400,classifier,319.0473414804015,440.0614929199219,200-500,5,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,False,True,True,1,2/2,2,2.0,2/2 2/2,4.0
+train,2,400006307,4512397398114304,classifier,387.075726943037,499.6280517578125,200-500,5,True,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,True,True,True,0,,0,1.0,3/3,3.0
+train,2,400006876,4518996229488640,classifier,-215.89387290509413,262.1533508300781,200-500,6,False,0.2,found,0.1,acorn (ttbar),MWS+M only,False,False,False,False,True,True,1,3/3,3,2.0,3/3 2/2,5.0
+val,2,400007497,4512398320861184,found,-349.2261031928319,496.75518798828125,200-500,8,True,0.2,graph,0.1,acorn (ttbar),LM only,False,False,True,False,False,False,2,4/4 2/2,6,2.0,4/4 2/2,6.0

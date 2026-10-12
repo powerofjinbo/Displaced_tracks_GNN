@@ -1,0 +1,21 @@
+# Stage 1 reference: the DeZoort interaction network (hnl.models.dezoort_in; hidden 40, 1 round, 6,448 parameters) on the same graphs.
+model: hnl.models.dezoort_in.DeZoortIN
+stage: edge_classifier
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+edge_cut: 0.5
+undirected: true
+undirected_message_passing: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+warmup: 5
+scheduler: StepLR
+lr: 0.001
+factor: 0.9
+patience: 10
+max_epochs: 100
+dz_hidden: 40
+dz_rounds: 1

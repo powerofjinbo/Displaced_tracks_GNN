@@ -1,0 +1,29 @@
+check,value,reference,ok
+Canto-L seed 0 working point = final selection,"mwslmerge,0.05","mwslmerge,0.05",True
+Canto-L seed 1 working point = final selection,"mwslmerge,0.03","mwslmerge,0.03",True
+Canto-L seed 2 working point = final selection,"mwslmerge,0.1","mwslmerge,0.1",True
+"Canto-L (frozen, learned merging) seed 0: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_val_lmerge, 1129 particles of 49 events)",1117.0,1117.0,True
+"Canto-L (frozen, learned merging) seed 1: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_val_lmerge, 1129 particles of 49 events)",1117.0,1117.0,True
+"Canto-L (frozen, learned merging) seed 2: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_val_lmerge, 1129 particles of 49 events)",1116.0,1116.0,True
+"Canto-L + MWS-layer + merging seed 0: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_val_ext, 1129 particles of 49 events)",1116.0,1116.0,True
+"Canto-L + MWS-layer + merging seed 1: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_val_ext, 1129 particles of 49 events)",1116.0,1116.0,True
+"Canto-L + MWS-layer + merging seed 2: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_val_ext, 1129 particles of 49 events)",1116.0,1116.0,True
+"acorn (HNL) val-best (MWS-layer + learned merging) seed 0: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all, 1129 particles of 49 events)",1116.0,1116.0,True
+"acorn (HNL) val-best (MWS-layer + learned merging) seed 1: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all, 1129 particles of 49 events)",1114.0,1114.0,True
+"acorn (HNL) val-best (MWS-layer + learned merging) seed 2: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all, 1129 particles of 49 events)",1117.0,1117.0,True
+"acorn (HNL) + MWS-layer + merging seed 0: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all, 1129 particles of 49 events)",1116.0,1116.0,True
+"acorn (HNL) + MWS-layer + merging seed 1: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all, 1129 particles of 49 events)",1114.0,1114.0,True
+"acorn (HNL) + MWS-layer + merging seed 2: rebuilt DM = stored (/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all, 1129 particles of 49 events)",1114.0,1114.0,True
+far particles: hits in the graph event = n_hits of the particle table,612.0,612.0,True
+"Canto-L (frozen, learned merging) seed 0: |d0| >= 300 found = entry k_d0_300",16.0,16.0,True
+"Canto-L (frozen, learned merging) seed 1: |d0| >= 300 found = entry k_d0_300",17.0,17.0,True
+"Canto-L (frozen, learned merging) seed 2: |d0| >= 300 found = entry k_d0_300",17.0,17.0,True
+Canto-L + MWS-layer + merging seed 0: |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+Canto-L + MWS-layer + merging seed 1: |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+Canto-L + MWS-layer + merging seed 2: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 0: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 1: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 2: |d0| >= 300 found = entry k_d0_300,18.0,18.0,True
+acorn (HNL) + MWS-layer + merging seed 0: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+acorn (HNL) + MWS-layer + merging seed 1: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+acorn (HNL) + MWS-layer + merging seed 2: |d0| >= 300 found = entry k_d0_300,17.0,17.0,True

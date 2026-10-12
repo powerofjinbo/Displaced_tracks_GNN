@@ -1,0 +1,10 @@
+# ARM SEED ML_EPOCHS GNN_EPOCHS  (priority order; DECISIONS.md 2026-10-03 "Stage-0 epoch budget"); iii 2 moved before i 2 / ii 2: longest chain first (scheduling only)
+i 0 30 30
+ii 0 30 30
+iii 0 45 30
+i 1 30 30
+ii 1 30 30
+iii 1 45 30
+iii 2 45 30
+i 2 30 30
+ii 2 30 30

@@ -1,0 +1,10 @@
+events 100, common edges 174367153 (7912792 true); only in the stitched store 240, only in the S4 store 410
+|delta score| > 0.001: 4.033 % of edges
+|delta score| > 0.01: 0.991 % of edges
+|delta score| > 0.05: 0.221 % of edges
+|delta score| > 0.1: 0.091 % of edges
+|delta score| > 0.5: 0.004 % of edges
+per event, % of edges with |delta| > 0.01: min 0.913, median 0.992, max 1.129
+cut 0.1: true-edge efficiency stitched 97.893 %, full 97.889 %; fake edges kept stitched 0.4985 %, full 0.4982 %; different side: true 0.2600 %, fake 0.0854 %
+cut 0.2: true-edge efficiency stitched 97.116 %, full 97.112 %; fake edges kept stitched 0.2902 %, full 0.2914 %; different side: true 0.3039 %, fake 0.0461 %
+cut 0.5: true-edge efficiency stitched 95.274 %, full 95.271 %; fake edges kept stitched 0.1180 %, full 0.1192 %; different side: true 0.3784 %, fake 0.0175 %

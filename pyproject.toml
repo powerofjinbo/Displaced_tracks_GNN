@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hnl"
+version = "0.0.1"
+description = "Displaced-track (LLP-like) reconstruction studies on the Exa.TrkX HNL samples, against an acorn baseline"
+requires-python = ">=3.12"
+authors = [{ name = "Jinbo Zhang" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hnl", "hnl.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]          # the source tree next to the tests (also in git worktrees), before the editable install
+markers = [
+    "data: needs the unpacked npz files on /ceph (hnl_lrt/unpacked)",
+    "gpu: needs a CUDA device",
+]

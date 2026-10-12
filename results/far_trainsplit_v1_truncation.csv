@@ -1,0 +1,145 @@
+population,kind,binning,r_bin,expected_per_epoch,fraction,mean_hits,total_per_epoch
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,coarse,0-200,1321389.0,0.9752812057156354,11.740455687159496,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,coarse,200-500,31919.0,0.02355854393008975,6.492402644193114,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,coarse,500-700,1532.0,0.0011307274444969297,5.288511749347259,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,coarse,>=700,40.0,2.952290977798772e-05,5.05,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,0-100,1298880.0,0.9586679263108172,11.802000954668637,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,100-200,22509.0,0.01661327940481814,8.188991070238572,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,200-300,21541.0,0.015898824988190837,6.800659208021911,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,300-400,8035.0,0.005930414501653283,5.95556938394524,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,400-500,2343.0,0.0017293044402456306,5.499359795134443,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,500-600,1112.0,0.0008207368918280585,5.313848920863309,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,600-700,420.0,0.00030999055266887107,5.2214285714285715,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,700-800,11.0,8.118800188946622e-06,5.0,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,800-900,29.0,2.1404109589041096e-05,5.068965517241379,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,900-1000,0.0,0.0,,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,1000-1100,0.0,0.0,,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",natural,100mm,>=1100,0.0,0.0,,1354880.0
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,coarse,0-200,284162.3426627909,0.7100918185501671,8.56981835383111,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,coarse,200-500,104572.15754614955,0.26131482738294304,6.201934102545622,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,coarse,500-700,11274.360718129965,0.028173442090558127,5.26872820600651,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,coarse,>=700,168.03907296135236,0.00041991197633181485,5.069166257192359,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,0-100,164146.6259634423,0.41018516052133264,8.831786554582514,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,100-200,120015.71669934865,0.29990665802883454,8.211521978609031,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,200-300,48527.59630078986,0.12126536114599822,6.714007173672268,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,300-400,42637.318572467804,0.10654617638465494,5.833635561641125,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,400-500,13407.242672891884,0.033503289852289876,5.519734691602422,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,500-600,8737.882913434662,0.02183505073239852,5.298083420792874,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,600-700,2536.4778046953033,0.006338391358159609,5.167602767720727,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,700-800,79.51107737850386,0.00019868982287207868,5.039533128992308,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,800-900,88.50299558284851,0.0002211596810881425,5.095808192758302,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,900-1000,0.024999999999999998,6.247237159365775e-08,5.0,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,1000-1100,0.0,0.0,,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",truncated,100mm,>=1100,0.0,0.0,,400176.90000003175
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,coarse,0-200,1212576.842662132,0.8949699181201991,10.978295553124967,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,coarse,200-500,129399.75754614727,0.09550643418325415,6.229013449076724,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,coarse,500-700,12695.960718130134,0.009370542570660155,5.263007960073839,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,coarse,>=700,207.43907296135234,0.00015310512588675654,5.062778113847609,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,0-100,1076160.125962755,0.7942844576370267,11.331272428678231,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,100-200,136416.71669937714,0.10068546048317231,8.193742105071818,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,200-300,64656.29630078832,0.047721050056697537,6.706380576879292,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,300-400,49251.51857246686,0.03635120348111252,5.830808596385243,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,400-500,15491.942672892092,0.01143418064544409,5.502661886908343,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,500-600,9764.082913434839,0.007206603472956553,5.291775280339322,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,600-700,2931.8778046952953,0.0021639390977036027,5.1672036602426274,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,700-800,90.51107737850384,6.680375928388188e-05,5.034728585377201,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,800-900,116.90299558284849,8.628291478426339e-05,5.084508630520825,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,900-1000,0.024999999999999998,1.8451818611250894e-08,5.0,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,1000-1100,0.0,0.0,,1354879.9999993707
+"ttbar train tracks (pid != 0, >= 5 hits)",augmented,100mm,>=1100,0.0,0.0,,1354879.9999993707
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,coarse,0-200,504839.0,0.981997455718215,12.078819187899509,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,coarse,200-500,8681.0,0.016886016954097888,6.624697615482087,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,coarse,500-700,558.0,0.0010854046147202652,5.32078853046595,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,coarse,>=700,16.0,3.112271296688932e-05,5.0,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,0-100,500786.0,0.9741136834897898,12.104759318351551,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,100-200,4053.0,0.007883772228425151,8.87367382186035,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,200-300,5473.0,0.01064591300423658,7.083683537365247,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,300-400,2381.0,0.004631448723385218,5.964720705585888,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,400-500,827.0,0.0016086552264760919,5.4873035066505444,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,500-600,378.0,0.0007352740938427602,5.35978835978836,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,600-700,180.0,0.0003501305208775049,5.238888888888889,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,700-800,2.0,3.890339120861165e-06,5.0,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,800-900,14.0,2.723237384602816e-05,5.0,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,900-1000,0.0,0.0,,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,1000-1100,0.0,0.0,,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",natural,100mm,>=1100,0.0,0.0,,514094.0
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,coarse,0-200,98619.66752072643,0.6432876763274457,9.047442864435281,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,coarse,200-500,49168.331716980654,0.3207208324086687,6.241355805044212,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,coarse,500-700,5448.9607910226605,0.03554310629692242,5.246016872492056,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,coarse,>=700,68.73997122975067,0.0004483849669631907,5.0843775025653954,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,0-100,47852.33649157941,0.312136707843166,9.70371425476334,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,100-200,50767.331029147026,0.3311509684842797,8.428853729195042,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,200-300,22332.237446497234,0.145671279322968,6.8193163360071605,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,300-400,20420.57643371237,0.13320167765267543,5.847301879808873,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,400-500,6415.5178367710505,0.04184787543302529,5.483764035126886,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,500-600,4244.051354038062,0.0276835848506558,5.267817495360725,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,600-700,1204.9094369845984,0.00785952144626662,5.169228559474779,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,700-800,18.57545008912656,0.0001211660759458485,5.03411750001788,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,800-900,50.1645211406241,0.0003272188910173422,5.102988308520937,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,900-1000,0.0,0.0,,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,1000-1100,0.0,0.0,,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",truncated,100mm,>=1100,0.0,0.0,,153305.6999999595
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,coarse,0-200,452277.26752082206,0.8797559736561331,11.413592895126364,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,coarse,200-500,55768.831716977795,0.10847983387662981,6.271466369621681,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,coarse,500-700,5963.160791022663,0.01159935885464926,5.245815322361573,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,coarse,>=700,84.73997122975065,0.00016483361258785755,5.068445941326297,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,0-100,398653.93649167544,0.775449502409355,11.812069990270487,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,100-200,53623.33102914664,0.10430647124677819,8.451179715411207,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,200-300,26256.93744649546,0.05107419547104769,6.8514042052722575,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,300-400,22359.376433711273,0.043492778429059666,5.845743299466964,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,400-500,7152.5178367710605,0.013912859976522451,5.473357337012039,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,500-600,4589.051354038067,0.00892648300512669,5.2684282891575664,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,600-700,1374.1094369845962,0.0026728758495225707,5.170295816344867,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,700-800,20.57545008912656,4.002273920552363e-05,5.030801169160466,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,800-900,64.16452114062409,0.0001248108733823339,5.080517380761138,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,900-1000,0.0,0.0,,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,1000-1100,0.0,0.0,,514094.00000005227
+"ttbar train targets (pT > 1 GeV, |eta| < 4, >= 5 hits)",augmented,100mm,>=1100,0.0,0.0,,514094.00000005227
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),coarse,0-200,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),coarse,200-500,57.0,0.59375,5.964912280701754,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),coarse,500-700,33.0,0.34375,5.7272727272727275,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),coarse,>=700,6.0,0.0625,6.666666666666667,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,0-100,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,100-200,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,200-300,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,300-400,23.0,0.23958333333333334,6.086956521739131,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,400-500,34.0,0.3541666666666667,5.882352941176471,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,500-600,24.0,0.25,5.75,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,600-700,9.0,0.09375,5.666666666666667,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,700-800,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,800-900,6.0,0.0625,6.666666666666667,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,900-1000,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,1000-1100,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 300 mm",first hit (particle table),100mm,>=1100,0.0,0.0,,96.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),coarse,0-200,0.0,0.0,,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),coarse,200-500,263.0,0.7897897897897898,6.026615969581749,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),coarse,500-700,60.0,0.18018018018018017,5.683333333333334,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),coarse,>=700,10.0,0.03003003003003003,6.0,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,0-100,0.0,0.0,,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,100-200,0.0,0.0,,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,200-300,63.0,0.1891891891891892,6.555555555555555,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,300-400,131.0,0.3933933933933934,5.916030534351145,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,400-500,69.0,0.2072072072072072,5.753623188405797,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,500-600,44.0,0.13213213213213212,5.7727272727272725,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,600-700,16.0,0.04804804804804805,5.4375,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,700-800,1.0,0.003003003003003003,5.0,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,800-900,9.0,0.02702702702702703,6.111111111111111,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,900-1000,0.0,0.0,,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,1000-1100,0.0,0.0,,333.0
+"far daughters, HNL train, |d0| >= 200 mm",first hit (particle table),100mm,>=1100,0.0,0.0,,333.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),coarse,0-200,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),coarse,200-500,40.0,0.7843137254901961,6.05,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),coarse,500-700,10.0,0.19607843137254902,5.9,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),coarse,>=700,1.0,0.0196078431372549,5.0,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,0-100,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,100-200,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,200-300,2.0,0.0392156862745098,7.0,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,300-400,22.0,0.43137254901960786,5.863636363636363,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,400-500,16.0,0.3137254901960784,6.1875,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,500-600,7.0,0.13725490196078433,5.857142857142857,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,600-700,3.0,0.058823529411764705,6.0,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,700-800,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,800-900,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,900-1000,0.0,0.0,,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,1000-1100,1.0,0.0196078431372549,5.0,51.0
+"far daughters, HNL val, |d0| >= 200 mm",first hit (particle table),100mm,>=1100,0.0,0.0,,51.0

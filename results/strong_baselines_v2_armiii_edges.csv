@@ -1,0 +1,13 @@
+label,seed,family,params,grid,n_family_configs,edges,lower_edge_rule
+acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk),0,acwalk,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk),1,acwalk,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk),2,acwalk,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+"acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk)",0,acwalkg,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+"acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk)",1,acwalkg,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+"acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk)",2,acwalkg,"0.01,0.15,0.6",trackbuild_val_acwalk_all,27,interior,interior (no extension needed)
+acorn (ttbar+HNL) + walkthrough + merging (Canto builder family),0,walkmerge,"0.2,0.5,1.0",trackbuild_val_ext,10,walk add 0.5 lowest,
+acorn (ttbar+HNL) + walkthrough + merging (Canto builder family),1,walkmerge,"0.2,0.5,1.0",trackbuild_val_ext,10,walk add 0.5 lowest,
+acorn (ttbar+HNL) + walkthrough + merging (Canto builder family),2,walkmerge,"0.2,0.5,1.0",trackbuild_val_ext,10,walk add 0.5 lowest,
+acorn (ttbar+HNL) + MWS-layer + merging (Canto builder),0,mwslayermerge,0.1,trackbuild_val_ext,6,s0 0.1 lowest,
+acorn (ttbar+HNL) + MWS-layer + merging (Canto builder),1,mwslayermerge,0.1,trackbuild_val_ext,6,s0 0.1 lowest,
+acorn (ttbar+HNL) + MWS-layer + merging (Canto builder),2,mwslayermerge,0.2,trackbuild_val_ext,6,interior,

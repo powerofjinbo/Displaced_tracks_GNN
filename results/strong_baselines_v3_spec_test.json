@@ -1,0 +1,1132 @@
+{
+ "fr_star": 0.02936834277897644,
+ "created_utc": "2026-10-06T15:31:37Z",
+ "rule": "per run and family: builder rule at FR* with the one-standard-error tie rule (hnl.eval.ranking, tie_se) on the united grid RUN/trackbuild_val_fb3_all; val-best: the same rule over the families' choices and CC at its best cut <= FR* (menu_choice); CC rows: rounds 1-2",
+ "round2_rule_best": {
+  "i": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)",
+  "ii": "acorn (HNL) + MWS-layer + learned merging (Canto-L's builder)",
+  "iii": "acorn (ttbar+HNL) + MWS-layer + learned merging (Canto-L's builder)"
+ },
+ "models": [
+  {
+   "label": "Canto-L (frozen: learned merging)",
+   "short": "Canto-L",
+   "group": "reference",
+   "kind": "canto",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.05 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.03 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.1 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + CC, preregistered cut (= best cut)",
+   "short": "acorn (ttbar) CC",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "kind": "cc",
+   "cc_rule": "s4",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "eval_test",
+     "cut": 0.34,
+     "wp": "CC 0.34 (FR* unreachable on val: minimum-rate cut)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "eval_test",
+     "cut": 0.33,
+     "wp": "CC 0.33",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "eval_test",
+     "cut": 0.31,
+     "wp": "CC 0.31 (FR* unreachable on val: minimum-rate cut)",
+     "source": "results/ranking/spec_test_v1.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + acorn's CC + walkthrough (CCandWalk)",
+   "short": "(ttbar) CCandWalk",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "acwalk",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s0/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.01,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.01,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s1/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.01,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.01,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s2/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.01,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.01,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk)",
+   "short": "(ttbar) CCandWalk-g",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "acwalkg",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s0/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.01,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.01,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.01,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s1/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.005,0.005,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.005,0.005,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.005,0.005,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s2/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.01,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.01,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.01,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + walkthrough + merging (Canto builder family)",
+   "short": "(ttbar) walk+M",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "walkmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s0/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s1/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.7,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.7,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.7,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.3,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.3,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.3,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + MWS-layer + merging (Canto builder)",
+   "short": "(ttbar) MWS+M",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "mwsm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s0/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s1/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armi_s2/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + two-pass MWS-layer + merging (Canto builder family)",
+   "short": "(ttbar) 2pass+M",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "mws2pm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.02",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.02 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.02",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.02 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)",
+   "short": "(ttbar) lmerge",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "lmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge/model.joblib",
+     "merge_model_sha256": "f3391be0123ee5aca8cff45c90dbf7b7048516d68fca3442b35fffffc083fb98"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.02",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.02 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge/model.joblib",
+     "merge_model_sha256": "2b36b786cf1db8f95f52f20cd63ba1d2a1612560cc15d86cbb0827f97b97fa47"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge/model.joblib",
+     "merge_model_sha256": "8d74cae8549d437fcc175ead40d9faad7f0ea6fbb663dc4ab17dc77242c8962c"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar) + val-best builder of the full menu (chosen per seed)",
+   "short": "(ttbar) val-best",
+   "group": "acorn (ttbar)",
+   "arm": "i",
+   "key": "best",
+   "kind": "best",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge/model.joblib",
+     "merge_model_sha256": "f3391be0123ee5aca8cff45c90dbf7b7048516d68fca3442b35fffffc083fb98"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.02",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.02 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge/model.joblib",
+     "merge_model_sha256": "2b36b786cf1db8f95f52f20cd63ba1d2a1612560cc15d86cbb0827f97b97fa47"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge/model.joblib",
+     "merge_model_sha256": "8d74cae8549d437fcc175ead40d9faad7f0ea6fbb663dc4ab17dc77242c8962c"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + CC, best cut <= FR*",
+   "short": "acorn (HNL) CC*",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "kind": "cc",
+   "cc_rule": "best",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/published_defs_v1/armii_s0/eval_test_bestcut",
+     "cut": 0.38,
+     "wp": "CC 0.38 (post-freeze CC on the stored test scores)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "eval_test",
+     "cut": 0.36,
+     "wp": "CC 0.36 (FR* unreachable on val: minimum-rate cut)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/published_defs_v1/armii_s2/eval_test_bestcut",
+     "cut": 0.44,
+     "wp": "CC 0.44 (post-freeze CC on the stored test scores)",
+     "source": "results/ranking/spec_test_v1.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + CC, preregistered cut (claims' reference)",
+   "short": "acorn (HNL) CC",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "kind": "cc",
+   "cc_rule": "s4",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "eval_test",
+     "cut": 0.26,
+     "wp": "CC 0.26",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "eval_test",
+     "cut": 0.36,
+     "wp": "CC 0.36 (FR* unreachable on val: minimum-rate cut)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "eval_test",
+     "cut": 0.27,
+     "wp": "CC 0.27",
+     "source": "results/ranking/spec_test_v1.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + acorn's CC + walkthrough (CCandWalk)",
+   "short": "(HNL) CCandWalk",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "acwalk",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s0/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s1/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s2/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.2,0.4",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.2,0.4 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.2,0.4 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk)",
+   "short": "(HNL) CCandWalk-g",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "acwalkg",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s0/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s1/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s2/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.2,0.4",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.2,0.4 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.2,0.4 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + walkthrough + merging (Canto builder family)",
+   "short": "(HNL) walk+M",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "walkmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.3,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.3,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.3,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s1/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s2/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + MWS-layer + merging (Canto builder)",
+   "short": "(HNL) MWS+M",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "mwsm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s0/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s1/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/strong_baselines/armii_s2/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v1_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + two-pass MWS-layer + merging (Canto builder family)",
+   "short": "(HNL) 2pass+M",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "mws2pm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.2,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.2,0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.2,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.2,0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + MWS-layer + learned merging (Canto-L's builder)",
+   "short": "(HNL) lmerge",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "lmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge/model.joblib",
+     "merge_model_sha256": "ddbe2f0144d6232898beeb15ecfc39f5a10227110e39da491471b73a74417134"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "dde547b08d5c1135d8dc9c0eb247991266ebf226d5dc30a0fbe23c1400456739"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "f2d5831af534d86a963424389f5a0c426f68d9da99d842383521775e7324085a"
+    }
+   ]
+  },
+  {
+   "label": "acorn (HNL) + val-best builder of the full menu (chosen per seed)",
+   "short": "(HNL) val-best",
+   "group": "acorn (HNL)",
+   "arm": "ii",
+   "key": "best",
+   "kind": "best",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge/model.joblib",
+     "merge_model_sha256": "ddbe2f0144d6232898beeb15ecfc39f5a10227110e39da491471b73a74417134"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "dde547b08d5c1135d8dc9c0eb247991266ebf226d5dc30a0fbe23c1400456739"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "f2d5831af534d86a963424389f5a0c426f68d9da99d842383521775e7324085a"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + CC, best cut <= FR*",
+   "short": "(ttbar+HNL) CC*",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "kind": "cc",
+   "cc_rule": "best",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s0/eval_test_bestcut",
+     "cut": 0.37,
+     "wp": "CC 0.37 (post-freeze CC on the stored test scores)",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "eval_test",
+     "cut": 0.38,
+     "wp": "CC 0.38",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s2/eval_test_bestcut",
+     "cut": 0.38,
+     "wp": "CC 0.38 (post-freeze CC on the stored test scores)",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + CC, preregistered cut rule",
+   "short": "(ttbar+HNL) CC",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "kind": "cc",
+   "cc_rule": "s4",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "eval_test",
+     "cut": 0.26,
+     "wp": "CC 0.26",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "eval_test",
+     "cut": 0.38,
+     "wp": "CC 0.38",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "eval_test",
+     "cut": 0.39,
+     "wp": "CC 0.39",
+     "source": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + acorn's CC + walkthrough (CCandWalk)",
+   "short": "(ttbar+HNL) CCandWalk",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "acwalk",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s0/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s1/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s2/acwalk_test",
+     "cut": 0,
+     "config": "acwalk,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalk 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + acorn's CC + walkthrough, score-guided (CCandWalk)",
+   "short": "(ttbar+HNL) CCandWalk-g",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "acwalkg",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s0/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s1/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s2/acwalkg_test",
+     "cut": 0,
+     "config": "acwalkg,0.01,0.15,0.6",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",
+     "wp": "acwalkg 0.01,0.15,0.6 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + walkthrough + merging (Canto builder family)",
+   "short": "(ttbar+HNL) walk+M",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "walkmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s0/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s1/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s2/walkmerge_test",
+     "cut": 0,
+     "config": "walkmerge,0.2,0.5,1.0",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",
+     "wp": "walkmerge 0.2,0.5,1.0 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + MWS-layer + merging (Canto builder)",
+   "short": "(ttbar+HNL) MWS+M",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "mwsm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s0/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s1/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v2/strong_baselines_armiii/armiii_s2/mwsm_test",
+     "cut": 0,
+     "config": "mwslayermerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslayermerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslayermerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": "results/strong_baselines_v2_armiii_spec_test.json"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + two-pass MWS-layer + merging (Canto builder family)",
+   "short": "(ttbar+HNL) 2pass+M",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "mws2pm",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.1,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.1,0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/mws2pm_test",
+     "cut": 0,
+     "config": "mws2passmerge,0.2,0.1",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",
+     "wp": "mws2passmerge 0.2,0.1 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + MWS-layer + learned merging (Canto-L's builder)",
+   "short": "(ttbar+HNL) lmerge",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "lmerge",
+   "kind": "family",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge/model.joblib",
+     "merge_model_sha256": "a58fb2b0948babeafda5a3a92310e76d18b3988ba30fb94ba6de727e6a15bfc7"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "fbd8cb9f5e8bae5a733ac530b04b3eb532a2da3a787750a08378867db9ac3ef2"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "9f8d96dbe9aa210d896ca96c2a5f90ca8b2afdba3bd969348a4f5ea89f3f9fa2"
+    }
+   ]
+  },
+  {
+   "label": "acorn (ttbar+HNL) + val-best builder of the full menu (chosen per seed)",
+   "short": "(ttbar+HNL) val-best",
+   "group": "acorn (ttbar+HNL)",
+   "arm": "iii",
+   "key": "best",
+   "kind": "best",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.2",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge/model.joblib",
+     "merge_model_sha256": "a58fb2b0948babeafda5a3a92310e76d18b3988ba30fb94ba6de727e6a15bfc7"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.03",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "fbd8cb9f5e8bae5a733ac530b04b3eb532a2da3a787750a08378867db9ac3ef2"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test",
+     "cut": 0,
+     "config": "mwslmerge,0.05",
+     "val_grid": "trackbuild_val_fb3_all",
+     "val_wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+     "wp": "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+     "reused": null,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "9f8d96dbe9aa210d896ca96c2a5f90ca8b2afdba3bd969348a4f5ea89f3f9fa2"
+    }
+   ]
+  },
+  {
+   "label": "Canto-B + CC, best cut <= FR*",
+   "short": "Canto-B CC*",
+   "group": "decomposition",
+   "key": "cc",
+   "kind": "canto",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/canto_b_s0/eval_test_bestcut",
+     "cut": 0.4,
+     "val_wp": "CC 0.40",
+     "wp": "CC 0.40 (post-freeze CC on the stored test scores)"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/canto_b_s1/eval_test_bestcut",
+     "cut": 0.38,
+     "val_wp": "CC 0.38",
+     "wp": "CC 0.38 (post-freeze CC on the stored test scores)"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+     "sub": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/canto_b_s2/eval_test_bestcut",
+     "cut": 0.4,
+     "val_wp": "CC 0.40",
+     "wp": "CC 0.40 (post-freeze CC on the stored test scores)"
+    }
+   ]
+  },
+  {
+   "label": "Canto-B (frozen: learned merging)",
+   "short": "Canto-B lmerge",
+   "group": "decomposition",
+   "key": "lmerge",
+   "kind": "canto",
+   "entries": [
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.05 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.2 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    },
+    {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+     "sub": "trackbuild_test",
+     "cut": 0,
+     "wp": "mwslmerge 0.1 (trackbuild_test, configuration 0)",
+     "source": "results/ranking/spec_test_v1.json"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+# hnl-displaced environment lock, written by env/make_env.sh --stage smoke
+# date_utc 2026-10-03T02:39:32Z host submit20.mit.edu slurm_job 6652954
+# gpu NVIDIA A30, 615.71.09, 8.0
+# micromamba 2.9.0; python 3.12.14; venv /work/submit/jinboz1/hnl/env/venv
+# torch_cuda_arch_list 7.0;8.0;8.6; nvcc release 12.6; host gcc 11.5.0
+# acorn https://gitlab.cern.ch/gnn4itkteam/acorn.git @ 99d153418981cba9018e70b476fc7ea0f17bacd4 + patches/acorn:
+#     2938b912ef6612692403a0e2867b14d5eefe359e2d4cb8fc785325a3cf761c64  0001-track_building-match-reconstructed-tracks-on-hit_id-.patch
+#     ffb46e8435a04a5dd530f659b77db9c2a8f15ae26f7fec9044050c297009f56f  0002-ConnectedComponents-on_true_graph_edges-selects-edge.patch
+#     c3df328a9f0a4e6868e29df61ef519cded79c887513a187ea5ca924d94ecac61  0003-graph_construction-fix-within-not_within-conditions.patch
+#     77d1a394c3f694577d1d080df7beef2373b623ed5a78ae1c985d5939f9a0a707  0004-graph_construction-raise-when-a-condition-mask-match.patch
+#     be94936159d87917dd17f62ff647e3a2c9f9e7c21e06dec0da59c47f29224111  0005-Flatten-event_id-before-naming-or-saving-stage-outpu.patch
+#     1a435d42738d3408004f3d7dee2d322706fb184d2b4a3ad914d80ce44d536039  0006-TrackMLReader-deterministic-event-split-from-id-list.patch
+#     bc4d7b0d1c6f75ff310fd115f7282e51aee234e6fbe3df23b9ab0f312dcf3be4  0007-Filter-evaluate-in-fixed-2M-edge-chunks-instead-of-c.patch
+# acorn working tree: OK: acorn == 99d153418981 + 7 patches (tree ae5e807fdb98fa2d8c4d14679e81cb69217618bb)
+# FRNN https://github.com/murnanedaniel/FRNN.git @ c3d7bc3fedc67d24929829411eae4ba31f881d76 (setup.py: -std=c++14 -> -std=c++17)
+# ---- micromamba env /work/submit/jinboz1/hnl/env/mamba/envs/py312 (explicit)
+# List of packages in environment: "/work/submit/jinboz1/hnl/env/mamba/envs/py312"
+# 
+# https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda#a9f577daf3de00bca7c3c76c0ecbd1de
+# https://conda.anaconda.org/conda-forge/linux-64/bzip2-1.0.8-hda65f42_10.conda#e675fabcf81499adc7edf58124fb1e01
+# https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.7.22-hbd8a1cb_0.conda#0f51e2391ade309db462a55611263e9c
+# https://conda.anaconda.org/conda-forge/linux-64/icu-78.3-py310h44b86e0_2.conda#72a381cbad04f24b1c2a43ef707f45b4
+# https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda#449500f2c089da11c40f5c21312e3e07
+# https://conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.5-hd2095e1_0.conda#72cfd2b95b0540247220b42f58a148d7
+# https://conda.anaconda.org/conda-forge/linux-64/libffi-3.7.0-h81df57d_1.conda#6525a0b06aa4fd390795f0740636a9dd
+# https://conda.anaconda.org/conda-forge/linux-64/libgcc-16.2.0-ha9f2e26_7.conda#735629b400b70eeab21a2ba8f5b1c2ce
+# https://conda.anaconda.org/conda-forge/linux-64/libgomp-16.2.0-he0feb66_7.conda#d904c7ddd95e026254b4b80808ee9e12
+# https://conda.anaconda.org/conda-forge/linux-64/liblzma-5.8.3-hb03c661_1.conda#1390b7c5ac0b1d8e447bc5efa6d3c8c2
+# https://conda.anaconda.org/conda-forge/linux-64/libnsl-2.0.1-hb9d3cd8_1.conda#d864d34357c3b65a4b731f78c0801dc4
+# https://conda.anaconda.org/conda-forge/linux-64/libpython-3.12.14-h0c77377_3_cpython.conda#d247b7632f09324c11f24b5270361385
+# https://conda.anaconda.org/conda-forge/linux-64/libsqlite-3.53.4-h13e7031_1.conda#e72bbec309c2b0f37823ee7d4fabfcd3
+# https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-16.2.0-h934c35e_7.conda#9b6707e0caca917fa6ea9ee473f37a5d
+# https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.42.4-hcfc3c73_0.conda#54a948337e66706380ff24d6b5fde63f
+# https://conda.anaconda.org/conda-forge/linux-64/libxcrypt-4.4.38-h280c20c_0.conda#f7a7ff5a6ab331e037abd34f379a631d
+# https://conda.anaconda.org/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_3.conda#0de0122d9570a8ab637c6b73db268389
+# https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.6-hdb14827_1.conda#ee6c0cd80a60961a1f48aa3e0b91f986
+# https://conda.anaconda.org/conda-forge/linux-64/openssl-3.6.4-h781a0a9_0.conda#16e3034a330cc625f2c685edec60cf4e
+# https://conda.anaconda.org/conda-forge/noarch/packaging-26.3-pyhc364b38_0.conda#936687ed80f295a1f5dbcf8bd34c252c
+# https://conda.anaconda.org/conda-forge/noarch/pip-26.2.1-pyh8b19718_0.conda#77b6cf3b0689d9fc68561df0db9b856d
+# https://conda.anaconda.org/conda-forge/linux-64/python-3.12.14-h5f976f7_3_cpython.conda#98be3cf76eca2e8871f907a03aed3b84
+# https://conda.anaconda.org/conda-forge/linux-64/readline-8.3-hd6e31c0_1.conda#69c01c781e7c8190bbdaf79e3848c5ca
+# https://conda.anaconda.org/conda-forge/noarch/setuptools-84.0.0-pyh332efcf_0.conda#62ac906f1cd582c6c264c95625cb9d6f
+# https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h1df4ec4_4.conda#676a2f9b1c4fcf57b70aa5c65f6c60d0
+# https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda#fcb489df604d100968b737f2cb6076c6
+# https://conda.anaconda.org/conda-forge/noarch/wheel-0.48.0-pyhd8ed1ab_0.conda#9a2124517bfd5d792e0f7b86eefdfeb8
+# https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_7.conda#aa459086047c0e5e27023ab19f8cb86a
+# ---- micromamba env /work/submit/jinboz1/hnl/env/mamba/envs/cuda126 (explicit)
+# List of packages in environment: "/work/submit/jinboz1/hnl/env/mamba/envs/cuda126"
+# 
+# https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda#a9f577daf3de00bca7c3c76c0ecbd1de
+# https://conda.anaconda.org/conda-forge/linux-64/binutils_impl_linux-64-2.46.1-default_hfdba357_102.conda#a0c5e0b7f58c8ceeb08e5bc41251d5a2
+# https://conda.anaconda.org/conda-forge/linux-64/binutils_linux-64-2.46.1-default_h4852527_102.conda#32fd07abe84eb14f17c7f5cc6fa8df82
+# https://conda.anaconda.org/conda-forge/linux-64/cccl-2.5.0-h7ab4013_0.conda#0c38396059f73f07c48f249d04494e5e
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-cccl-12.6.77-h7938cbb_0.conda#e61dd6088fcc027f37a75e1aee4a6617
+# https://conda.anaconda.org/conda-forge/noarch/cuda-cccl_linux-64-12.6.77-ha770c72_0.conda#365a924cf93535157d61debac807e9e4
+# https://conda.anaconda.org/conda-forge/noarch/cuda-crt-dev_linux-64-12.6.85-ha770c72_0.conda#4b14e78e12daa061dcdbe3ceed95cb57
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-crt-tools-12.6.85-ha770c72_0.conda#4ab193b5fcdcf8d7b094221e3977a112
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-cudart-12.6.77-h5888daf_0.conda#feb533cb1e5f7ffbbb82d8465e0adaad
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-cudart-dev-12.6.77-h5888daf_0.conda#86e47562bfe92a529ae1c75bbcff814b
+# https://conda.anaconda.org/conda-forge/noarch/cuda-cudart-dev_linux-64-12.6.77-h3f2d84a_0.conda#f967e2449b6c066f6d09497fff12d803
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-cudart-static-12.6.77-h5888daf_0.conda#ae37b405ef74e57ef9685fcf820a2dde
+# https://conda.anaconda.org/conda-forge/noarch/cuda-cudart-static_linux-64-12.6.77-h3f2d84a_0.conda#3ad8eacbf716ddbca1b5292a3668c821
+# https://conda.anaconda.org/conda-forge/noarch/cuda-cudart_linux-64-12.6.77-h3f2d84a_0.conda#314908ad05e2c4833475a7d93f4149ca
+# https://conda.anaconda.org/conda-forge/noarch/cuda-driver-dev_linux-64-12.6.77-h3f2d84a_0.conda#f2b7f45acf027c7de8c383b1d2f6a298
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvcc-12.6.85-hcdd1206_0.conda#fe294b5f78236b26d0b388652212e581
+# https://conda.anaconda.org/conda-forge/noarch/cuda-nvcc-dev_linux-64-12.6.85-he91c749_0.conda#8d4bca6397374ecbd3001ab4ece3b23d
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvcc-impl-12.6.85-h85509e4_0.conda#e5b96d2e34abaa90c0c1c968d02bbc9b
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvcc-tools-12.6.85-he02047a_0.conda#30b272fa555944cb44f8d4dc9244abb5
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvcc_linux-64-12.6.85-h04802cd_0.conda#4e1376cbc6d66b6744557cabeff02ca2
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvrtc-12.6.85-hbd13f7d_0.conda#9d9909844a0133153d54b6f07283da8c
+# https://conda.anaconda.org/conda-forge/noarch/cuda-nvvm-dev_linux-64-12.6.85-ha770c72_0.conda#9c1f1ecfd9990b549312b3206d9c003b
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvvm-impl-12.6.85-he02047a_0.conda#5b72e12459f5deab812cb30b67b64d48
+# https://conda.anaconda.org/conda-forge/linux-64/cuda-nvvm-tools-12.6.85-he02047a_0.conda#0919bdf9454da5eb974e98dd79bf38fe
+# https://conda.anaconda.org/conda-forge/noarch/cuda-version-12.6-h7480c83_3.conda#1c8b99e65a4423b1e4ac2e4c76fb0978
+# https://conda.anaconda.org/conda-forge/linux-64/gcc_impl_linux-64-13.4.0-h649a46b_20.conda#0f17341183ccd1c98e193cad45681036
+# https://conda.anaconda.org/conda-forge/linux-64/gcc_linux-64-13.4.0-h5174b15_28.conda#a24872d166cb708ddb01386fe0e9e082
+# https://conda.anaconda.org/conda-forge/linux-64/gxx_impl_linux-64-13.4.0-h5415f34_20.conda#9e6c78e79360614519b2602c631d612b
+# https://conda.anaconda.org/conda-forge/linux-64/gxx_linux-64-13.4.0-hb11295d_28.conda#8dab174551ee329cb75a3307fc853bb4
+# https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-5.14.0-he073ed8_3.conda#1e453742ed8f6b4250c66be1dd6ba4fe
+# https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda#449500f2c089da11c40f5c21312e3e07
+# https://conda.anaconda.org/conda-forge/linux-64/libcublas-12.6.4.1-h5888daf_1.conda#7718c5dd31ed259736a30b8a1422de70
+# https://conda.anaconda.org/conda-forge/linux-64/libcublas-dev-12.6.4.1-h5888daf_1.conda#d7c84bdc63481995050f42e37c55f341
+# https://conda.anaconda.org/conda-forge/linux-64/libcurand-10.3.7.77-hbd13f7d_0.conda#d8b8a1e6e6205447289cd09212c914ac
+# https://conda.anaconda.org/conda-forge/linux-64/libcurand-dev-10.3.7.77-h5888daf_0.conda#83a87ce38925eb22b509a8aba3ba3aaf
+# https://conda.anaconda.org/conda-forge/linux-64/libcusolver-11.7.1.2-h5888daf_1.conda#200e029abc85b27af8935f8348bee84f
+# https://conda.anaconda.org/conda-forge/linux-64/libcusolver-dev-11.7.1.2-h5888daf_1.conda#2a9339395d087361dc346d0b4826d70b
+# https://conda.anaconda.org/conda-forge/linux-64/libcusparse-12.5.4.2-hbd13f7d_0.conda#8186e9de34f321aa34965c1cb72c0c26
+# https://conda.anaconda.org/conda-forge/linux-64/libcusparse-dev-12.5.4.2-h5888daf_0.conda#48de133da2c0d116b3e7053b8c8dff89
+# https://conda.anaconda.org/conda-forge/linux-64/libgcc-16.2.0-ha9f2e26_7.conda#735629b400b70eeab21a2ba8f5b1c2ce
+# https://conda.anaconda.org/conda-forge/noarch/libgcc-devel_linux-64-13.4.0-hd1d28cc_120.conda#44af9c8ef5cc70a85a39621d7269d26d
+# https://conda.anaconda.org/conda-forge/linux-64/libgomp-16.2.0-he0feb66_7.conda#d904c7ddd95e026254b4b80808ee9e12
+# https://conda.anaconda.org/conda-forge/linux-64/libnvjitlink-12.9.86-hecca717_2.conda#3461b0f2d5cbb7973d361f9e85241d98
+# https://conda.anaconda.org/conda-forge/linux-64/libsanitizer-13.4.0-hf18ac3d_20.conda#605f9e5fa9594fdcc7a7d118a4dc92e9
+# https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-16.2.0-h934c35e_7.conda#9b6707e0caca917fa6ea9ee473f37a5d
+# https://conda.anaconda.org/conda-forge/noarch/libstdcxx-devel_linux-64-13.4.0-h6963c3b_120.conda#1fd9c3ee8b91a467378f09da6dfbbe1c
+# https://conda.anaconda.org/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_3.conda#0de0122d9570a8ab637c6b73db268389
+# https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda#b04e3a97151611d6a35c8c068b2a03a2
+# https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda#fcb489df604d100968b737f2cb6076c6
+# https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_7.conda#aa459086047c0e5e27023ab19f8cb86a
+# ---- pip freeze (editable installs excluded: acorn, hnl)
+aiohappyeyeballs==2.6.1
+aiohttp==3.13.5
+aiosignal==1.4.0
+annotated-types==0.7.0
+atlasify==0.8.0
+attrs==26.1.0
+awkward==2.14.0
+awkward_cpp==57
+boost-histogram==1.8.1
+certifi==2026.4.22
+charset-normalizer==3.4.7
+class-resolver==0.8.1
+click==8.3.3
+contourpy==1.3.3
+cramjam==2.12.1
+cuda-bindings==12.9.9
+cuda-pathfinder==1.8.3
+cuda-toolkit==12.6.3
+cycler==0.12.1
+filelock==3.25.2
+fonttools==4.62.1
+frnn @ file:///work/submit/jinboz1/hnl/env/wheels/frnn-0.0.0-cp312-cp312-linux_x86_64.whl#sha256=9ecde66fa4edb7569929590d52b47aa1c5d5c517511866ef515d3322f7108834
+frozenlist==1.8.0
+fsspec==2026.2.0
+gitdb==4.0.12
+GitPython==3.1.50
+h5py==3.16.0
+hist==2.12.0
+histoprint==2.7.1
+idna==3.13
+iniconfig==2.3.0
+Jinja2==3.1.6
+joblib==1.5.3
+kiwisolver==1.5.0
+lightning==2.6.1
+lightning-utilities==0.15.3
+llvmlite==0.49.0
+MarkupSafe==3.0.3
+matplotlib==3.10.9
+mplhep==1.2.1
+mplhep_data==0.1.0
+mpmath==1.3.0
+multidict==6.7.1
+networkx==3.6.1
+ninja==1.13.0
+numba==0.67.0
+numpy==2.4.3
+nvidia-cublas-cu12==12.6.4.1
+nvidia-cuda-cupti-cu12==12.6.80
+nvidia-cuda-nvrtc-cu12==12.6.85
+nvidia-cuda-runtime-cu12==12.6.77
+nvidia-cudnn-cu12==9.10.2.21
+nvidia-cufft-cu12==11.3.0.4
+nvidia-cufile-cu12==1.11.1.6
+nvidia-curand-cu12==10.3.7.77
+nvidia-cusolver-cu12==11.7.1.2
+nvidia-cusparse-cu12==12.5.4.2
+nvidia-cusparselt-cu12==0.7.1
+nvidia-nccl-cu12==2.28.9
+nvidia-nvjitlink-cu12==12.6.85
+nvidia-nvshmem-cu12==3.4.5
+nvidia-nvtx-cu12==12.6.77
+packaging==26.0
+pandas==3.0.2
+pillow==12.2.0
+platformdirs==4.9.6
+pluggy==1.6.0
+polars==1.44.2
+polars-runtime-32==1.44.2
+prefix_sum @ file:///work/submit/jinboz1/hnl/env/wheels/prefix_sum-0.0.0-cp312-cp312-linux_x86_64.whl#sha256=fb35622ea167c4491ffdec4e04155bedd4939a4f707f2274a9a211444c5345b3
+propcache==0.4.1
+protobuf==7.34.1
+psutil==7.2.2
+pyarrow==24.0.0
+pydantic==2.13.4
+pydantic_core==2.46.4
+pyg_lib==0.6.0+pt211cu126
+Pygments==2.20.0
+pyparsing==3.3.2
+pytest==9.0.3
+python-dateutil==2.9.0.post0
+pytorch-lightning==2.6.1
+PyYAML==6.0.3
+requests==2.33.1
+scikit-learn==1.8.0
+scipy==1.17.1
+seaborn==0.13.2
+sentry-sdk==2.59.0
+setuptools==70.2.0
+six==1.17.0
+smmap==5.0.3
+sympy==1.14.0
+threadpoolctl==3.6.0
+torch==2.11.0+cu126
+torch-geometric==2.7.0
+torch_cluster==1.6.3+pt211cu126
+torch_scatter==2.1.2+pt211cu126
+torch_sparse==0.6.18+pt211cu126
+torchmetrics==1.9.0
+tqdm==4.67.3
+trackml @ https://github.com/LAL/trackml-library/archive/53a165e15a2c885f54c2bef1bd1ed53db6ed9648.tar.gz#sha256=a95b6274eb5245e3d1fe16d1ccedc3c6512e17237e90ac293d67834ba2aca730
+triton==3.6.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+uhi==1.2.0
+uproot==5.7.1
+urllib3==2.7.0
+wandb==0.26.1
+wheel==0.47.0
+xxhash==3.7.0
+yarl==1.23.0

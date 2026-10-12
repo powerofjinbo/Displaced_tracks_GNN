@@ -1,0 +1,19 @@
+{
+ "started_utc": "2026-10-07T08:14:37.674679+00:00",
+ "slurm_job": "6713335",
+ "host": "submit37.mit.edu",
+ "s0": 0.2,
+ "population": 1331,
+ "events": 855,
+ "runs": [
+  "Canto-L (i) s0=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0:i",
+  "Canto-L (i) s1=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1:i",
+  "Canto-L (i) s2=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2:i",
+  "acorn (HNL) s0=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0:ii",
+  "acorn (HNL) s1=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1:ii",
+  "acorn (HNL) s2=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2:ii",
+  "acorn (ttbar) s0=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0:i",
+  "acorn (ttbar+HNL) s0=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0:iii"
+ ],
+ "elapsed_s": 62.9
+}

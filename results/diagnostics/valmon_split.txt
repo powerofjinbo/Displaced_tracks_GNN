@@ -1,0 +1,21 @@
+                model  seed   valmon  n_valmon     rest  n_rest      all
+0       acorn (ttbar)     0  0.97994       349  0.97149     982  0.97370
+1       acorn (ttbar)     1  0.95989       349  0.97251     982  0.96920
+2       acorn (ttbar)     2  0.96562       349  0.97454     982  0.97220
+3         acorn (HNL)     0  0.98567       349  0.98880     982  0.98798
+4         acorn (HNL)     1  0.97708       349  0.98676     982  0.98422
+5         acorn (HNL)     2  0.98854       349  0.98676     982  0.98723
+6   acorn (ttbar+HNL)     0  0.97708       349  0.97352     982  0.97446
+7   acorn (ttbar+HNL)     1  0.99140       349  0.97760     982  0.98122
+8   acorn (ttbar+HNL)     2  0.98567       349  0.97963     982  0.98122
+9     Canto-L (ttbar)     0  0.99427       349  0.98676     982  0.98873
+10    Canto-L (ttbar)     1  0.99427       349  0.99185     982  0.99249
+11    Canto-L (ttbar)     2  0.99713       349  0.98982     982  0.99174
+12      Canto-L (HNL)     0  0.99140       349  0.99185     982  0.99174
+                   valmon   rest    all
+model                                  
+Canto-L (HNL)       99.14  99.19  99.17
+Canto-L (ttbar)     99.52  98.95  99.10
+acorn (HNL)         98.38  98.74  98.65
+acorn (ttbar)       96.85  97.28  97.17
+acorn (ttbar+HNL)   98.47  97.69  97.90

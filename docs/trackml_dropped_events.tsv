@@ -1,0 +1,11 @@
+# TrackML events dropped before any use (docs/trackml_plan.md section 2.3). Source: the data-quality rule of
+# hnl.trackml.convert, applied to every event of the converted archives (test events included), Slurm job 6683339
+# (2026-10-05 UTC), per-event record external/trackml/derived/v1/dq_train_1.tsv.
+# Rule (the HNL criterion): an event is dropped if any hit lies more than 50 mm outside its module's bounds in
+# detectors.csv (local u, v, w against the trapezoid half widths and half thickness), or if particles.csv nhits differs
+# from the truth hit count, or if its tables are structurally inconsistent (hit ids not 1..N, unknown particle ids).
+# train_1 (1,770 events): no event dropped. Largest distance of any hit outside its module: 0.36 mm.
+# training_part01-02 (throughput phase, 1,850 events; Slurm job 6684895): event 22500 dropped (below). train_2 ... train_5
+# are not used (D2).
+archive	event	reason
+training_part02	22500	cells member of the published archive is an empty file (0 bytes; the archive md5 matches Zenodo); not converted (Slurm job 6684895, 2026-10-05)

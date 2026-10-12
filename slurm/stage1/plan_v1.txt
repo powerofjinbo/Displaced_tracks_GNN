@@ -1,0 +1,16 @@
+# NAME CONFIG ARM SEED EPOCHS  (priority order; full budget, S1TAG=v1). GPU limits lifted by the user (2026-10-03).
+# Primary-claim candidate on the reference arm (ii): TripletIGNN (absolute + origin-free edge / triplet features).
+# S1 (ttbar-only) candidates on arm (i): SymmetricTripletIGNN with detector regions (L1) and TripletIGNN (absolute).
+triplet configs/stage1/triplet.yaml ii 0 30
+symregion configs/stage1/triplet_symregion.yaml i 0 30
+triplet configs/stage1/triplet.yaml i 0 30
+triplet configs/stage1/triplet.yaml ii 1 30
+# ablations of the brief's ideas A-E on the reference arm (seed 0)
+focal configs/stage1/focal.yaml ii 0 30
+samepid configs/stage1/samepid.yaml ii 0 30
+dispw configs/stage1/displaced_weight.yaml ii 0 30
+residual configs/stage1/residual_ignn.yaml ii 0 30
+vertex configs/stage1/vertex.yaml ii 0 30
+scaled configs/stage1/ignn_scaled.yaml ii 0 30
+# exact invariance (L0) at full budget on ttbar
+sym configs/stage1/triplet_sym.yaml i 0 30

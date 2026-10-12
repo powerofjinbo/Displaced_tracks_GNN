@@ -1,0 +1,33 @@
+# Capacity-matched control (supervisor feedback round 1, point 4b): the acorn InteractionGNN of the baseline recipe
+# (configs/baseline/gnn_train.yaml, the config of runs/baseline_v1 arm (i)) with ONLY the hidden width changed,
+# 128 -> 147, so that its parameter count matches the Canto classifier (L1 SymmetricTripletIGNN, 347,777):
+# 16 h^2 + 14 h + 1 = 347,803 parameters at h = 147 (+26, +0.007 %; acorn h = 128: 263,937). The message-passing
+# MLPs are shared over the 8 iterations (acorn's recurrent default), so the iteration count does not change the
+# parameter count; the MLP depths (2 layers) stay as in acorn. No truncation augmentation (acorn recipe).
+stage: edge_classifier
+model: InteractionGNN
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+edge_cut: 0.5
+undirected: true
+undirected_message_passing: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+hidden: 147
+n_graph_iters: 8
+nb_node_layer: 2
+nb_edge_layer: 2
+layernorm: true
+batchnorm: false
+aggregation: sum
+hidden_activation: SiLU
+output_activation: Tanh
+warmup: 5
+scheduler: StepLR
+lr: 0.001
+factor: 0.9
+patience: 10
+max_epochs: 100

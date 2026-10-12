@@ -1,0 +1,46 @@
+check,value,reference,ok
+training ml seed 0: valmon definition confirmed,1.0,1.0,True
+training gnn seed 0: valmon definition confirmed,1.0,1.0,True
+training ml seed 1: valmon definition confirmed,1.0,1.0,True
+training gnn seed 1: valmon definition confirmed,1.0,1.0,True
+training ml seed 2: valmon definition confirmed,1.0,1.0,True
+training gnn seed 2: valmon definition confirmed,1.0,1.0,True
+Canto-L seed 0 working point = final selection,"mwslmerge,0.05","mwslmerge,0.05",True
+Canto-L seed 1 working point = final selection,"mwslmerge,0.03","mwslmerge,0.03",True
+Canto-L seed 2 working point = final selection,"mwslmerge,0.1","mwslmerge,0.1",True
+"Canto-L (frozen, learned merging) seed 0: full-val primary = entry",0.9887302779864763,0.9887302779864764,True
+"Canto-L (frozen, learned merging) seed 0: valmon + rest counts = full",2647.0,2647.0,True
+"Canto-L (frozen, learned merging) seed 1: full-val primary = entry",0.9924868519909842,0.9924868519909842,True
+"Canto-L (frozen, learned merging) seed 1: valmon + rest counts = full",2652.0,2652.0,True
+"Canto-L (frozen, learned merging) seed 2: full-val primary = entry",0.9917355371900827,0.9917355371900828,True
+"Canto-L (frozen, learned merging) seed 2: valmon + rest counts = full",2651.0,2651.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 0: full-val primary = entry,0.9879789631855748,0.9879789631855748,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 0: valmon + rest counts = full,2646.0,2646.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 1: full-val primary = entry,0.9842223891810669,0.9842223891810667,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 1: valmon + rest counts = full,2641.0,2641.0,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 2: full-val primary = entry,0.9872276483846731,0.9872276483846733,True
+acorn (HNL) val-best (MWS-layer + learned merging) seed 2: valmon + rest counts = full,2645.0,2645.0,True
+acorn (HNL) + MWS-layer + merging seed 0: full-val primary = entry,0.9842223891810669,0.9842223891810667,True
+acorn (HNL) + MWS-layer + merging seed 0: valmon + rest counts = full,2641.0,2641.0,True
+acorn (HNL) + MWS-layer + merging seed 1: full-val primary = entry,0.9834710743801653,0.9834710743801652,True
+acorn (HNL) + MWS-layer + merging seed 1: valmon + rest counts = full,2640.0,2640.0,True
+acorn (HNL) + MWS-layer + merging seed 2: full-val primary = entry,0.9834710743801653,0.9834710743801652,True
+acorn (HNL) + MWS-layer + merging seed 2: valmon + rest counts = full,2640.0,2640.0,True
+Canto-L + MWS-layer + merging seed 0: full-val primary = entry,0.9894815927873779,0.989481592787378,True
+Canto-L + MWS-layer + merging seed 0: valmon + rest counts = full,2648.0,2648.0,True
+Canto-L + MWS-layer + merging seed 1: full-val primary = entry,0.9924868519909842,0.9924868519909842,True
+Canto-L + MWS-layer + merging seed 1: valmon + rest counts = full,2652.0,2652.0,True
+Canto-L + MWS-layer + merging seed 2: full-val primary = entry,0.9924868519909842,0.9924868519909842,True
+Canto-L + MWS-layer + merging seed 2: valmon + rest counts = full,2652.0,2652.0,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) val-best (MWS-layer + learned merging): difference",0.004507888805409421,0.0045078888054094,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) val-best (MWS-layer + learned merging): sigma_boot",0.002398082319818173,0.0023980823198181,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) val-best (MWS-layer + learned merging): sigma_seeds",0.0016230254691730272,0.001623025469173,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) val-best (MWS-layer + learned merging): sigma",0.0028956882577737602,0.0028956882577737,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) + MWS-layer + merging: difference",0.0072627097420484565,0.0072627097420484,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) + MWS-layer + merging: sigma_boot",0.0027447813907627225,0.0027447813907627,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) + MWS-layer + merging: sigma_seeds",0.0011746595942457956,0.0011746595942457,True
+"full-val Canto-L (frozen, learned merging) - acorn (HNL) + MWS-layer + merging: sigma",0.0029855736543302766,0.0029855736543302,True
+full-val Canto-L + MWS-layer + merging - acorn (HNL) + MWS-layer + merging: difference,0.007763586275982948,0.0077635862759829,True
+full-val Canto-L + MWS-layer + merging - acorn (HNL) + MWS-layer + merging: sigma_boot,0.0027561001224318945,0.0027561001224318,True
+full-val Canto-L + MWS-layer + merging - acorn (HNL) + MWS-layer + merging: sigma_seeds,0.0010325834274023543,0.0010325834274023,True
+full-val Canto-L + MWS-layer + merging - acorn (HNL) + MWS-layer + merging: sigma,0.002943181343277219,0.0029431813432772,True

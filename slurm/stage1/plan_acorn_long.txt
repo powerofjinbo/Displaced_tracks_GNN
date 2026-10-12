@@ -1,0 +1,9 @@
+# NAME CONFIG ARM SEED EPOCHS  (S1TAG=acorn_long: robustness check of the Stage-0 baseline, not a replacement. The
+# acorn IGNN of baseline_v1/arm<A>_s<S> continued from its epoch-30 last.ckpt (copied into the new run directory) to
+# 60 epochs with the same config and graphs: is the preregistered 30-epoch baseline at its ceiling?)
+ignn60 configs/baseline/gnn_train.yaml i 0 60
+ignn60 configs/baseline/gnn_train.yaml i 1 60
+ignn60 configs/baseline/gnn_train.yaml i 2 60
+ignn60 configs/baseline/gnn_train.yaml ii 0 60
+ignn60 configs/baseline/gnn_train.yaml ii 1 60
+ignn60 configs/baseline/gnn_train.yaml ii 2 60

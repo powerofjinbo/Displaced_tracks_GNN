@@ -1,0 +1,73 @@
+check,value,reference,ok
+Canto-L seed 0 working point = final selection,"mwslmerge,0.05","mwslmerge,0.05",True
+Canto-L seed 1 working point = final selection,"mwslmerge,0.03","mwslmerge,0.03",True
+Canto-L seed 2 working point = final selection,"mwslmerge,0.1","mwslmerge,0.1",True
+Canto-L seed 0: scoring checkpoint and GPU = the stored val scores',best-epoch=28-val_loss=0.052177.ckpt on NVIDIA A30,best-epoch=28-val_loss=0.052177.ckpt on NVIDIA A30,True
+"seed 0: metric-learning checkpoint, r_infer, knn_infer = ml_graphs'",best-epoch=20-f1=0.356576.ckpt 0.16 300,best-epoch=20-f1=0.356576.ckpt 0.16 300,True
+"seed 0: union build settings = the stored val union graphs' (k, tau, r_w, GBDT)","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}",True
+"seed 0: union build base check (CPU radius graph = metric-learning graph, truth)","{""events"": 20, ""only_stored"": 0, ""only_recomputed"": 0, ""max_dist_dev"": 0.0, ""truth_ok"": true}","only_stored 0, only_recomputed 0, truth_ok",True
+Canto-L seed 1: scoring checkpoint and GPU = the stored val scores',best-epoch=29-val_loss=0.051051.ckpt on NVIDIA A30,best-epoch=29-val_loss=0.051051.ckpt on NVIDIA A30,True
+"seed 1: metric-learning checkpoint, r_infer, knn_infer = ml_graphs'",best-epoch=19-f1=0.358315.ckpt 0.16 300,best-epoch=19-f1=0.358315.ckpt 0.16 300,True
+"seed 1: union build settings = the stored val union graphs' (k, tau, r_w, GBDT)","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}",True
+"seed 1: union build base check (CPU radius graph = metric-learning graph, truth)","{""events"": 20, ""only_stored"": 0, ""only_recomputed"": 0, ""max_dist_dev"": 0.0, ""truth_ok"": true}","only_stored 0, only_recomputed 0, truth_ok",True
+Canto-L seed 2: scoring checkpoint and GPU = the stored val scores',best-epoch=28-val_loss=0.044359.ckpt on NVIDIA A30,best-epoch=28-val_loss=0.044359.ckpt on NVIDIA A30,True
+"seed 2: metric-learning checkpoint, r_infer, knn_infer = ml_graphs'",best-epoch=12-f1=0.354774.ckpt 0.18 500,best-epoch=12-f1=0.354774.ckpt 0.18 500,True
+"seed 2: union build settings = the stored val union graphs' (k, tau, r_w, GBDT)","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}","{""k"": 5, ""tau"": 0.005, ""r_wide"": 0.24, ""nsig"": 5.0, ""pt_min"": 0.5}",True
+"seed 2: union build base check (CPU radius graph = metric-learning graph, truth)","{""events"": 20, ""only_stored"": 0, ""only_recomputed"": 0, ""max_dist_dev"": 0.0, ""truth_ok"": true}","only_stored 0, only_recomputed 0, truth_ok",True
+acorn (ttbar) seed 0: scoring checkpoint and GPU = the stored val scores',best-epoch=23-val_loss=0.058278.ckpt on NVIDIA A30,best-epoch=23-val_loss=0.058278.ckpt on NVIDIA A30,True
+acorn (ttbar) seed 1: scoring checkpoint and GPU = the stored val scores',best-epoch=29-val_loss=0.056590.ckpt on NVIDIA A30,best-epoch=29-val_loss=0.056590.ckpt on NVIDIA A30,True
+acorn (ttbar) seed 2: scoring checkpoint and GPU = the stored val scores',best-epoch=28-val_loss=0.046033.ckpt on NVIDIA A30,best-epoch=28-val_loss=0.046033.ckpt on NVIDIA A30,True
+far particles: hits in the graph = n_hits of the particle table,4608.0,4608.0,True
+"Canto-L seed 0: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"Canto-L seed 0: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+Canto-L seed 0: largest |score - stored score| <= 0.0001,3.159046173095703e-06,0.0001,True
+"Canto-L seed 0: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"Canto-L seed 1: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"Canto-L seed 1: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+Canto-L seed 1: largest |score - stored score| <= 0.0001,2.86102294921875e-06,0.0001,True
+"Canto-L seed 1: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"Canto-L seed 2: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"Canto-L seed 2: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+Canto-L seed 2: largest |score - stored score| <= 0.0001,1.6987323760986328e-06,0.0001,True
+"Canto-L seed 2: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"acorn (ttbar) seed 0: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"acorn (ttbar) seed 0: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+acorn (ttbar) seed 0: largest |score - stored score| <= 0.0001,8.58306884765625e-06,0.0001,True
+"acorn (ttbar) seed 0: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"acorn (ttbar) seed 1: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"acorn (ttbar) seed 1: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+acorn (ttbar) seed 1: largest |score - stored score| <= 0.0001,4.410743713378906e-06,0.0001,True
+"acorn (ttbar) seed 1: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"acorn (ttbar) seed 2: val graphs = stored (nodes, edges, truth), 49 events",49.0,49.0,True
+"acorn (ttbar) seed 2: val scores bitwise equal to the stored ones, events (information)",0.0,49.0,
+acorn (ttbar) seed 2: largest |score - stored score| <= 0.0001,6.556510925292969e-06,0.0001,True
+"acorn (ttbar) seed 2: edges whose score is on the other side of a builder cut (0.1, 0.2) than the stored score",0.0,0.0,True
+"Canto-L LM (frozen) seed 0: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_lmerge, 1129 particles)",1117.0,1117.0,True
+Canto-L LM (frozen) seed 0: val |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+"Canto-L MWS+M seed 0: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_ext, 1129 particles)",1116.0,1116.0,True
+Canto-L MWS+M seed 0: val |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+"Canto-L LM (frozen) seed 1: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_lmerge, 1129 particles)",1117.0,1117.0,True
+Canto-L LM (frozen) seed 1: val |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+"Canto-L MWS+M seed 1: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_ext, 1129 particles)",1116.0,1116.0,True
+Canto-L MWS+M seed 1: val |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+"Canto-L LM (frozen) seed 2: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_lmerge, 1129 particles)",1116.0,1116.0,True
+Canto-L LM (frozen) seed 2: val |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+"Canto-L MWS+M seed 2: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_ext, 1129 particles)",1116.0,1116.0,True
+Canto-L MWS+M seed 2: val |d0| >= 300 found = entry k_d0_300,17.0,17.0,True
+"acorn (ttbar) LM seed 0: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1111.0,1111.0,True
+acorn (ttbar) LM seed 0: val |d0| >= 300 found = entry k_d0_300,15.0,15.0,True
+"acorn (ttbar) MWS+M seed 0: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1108.0,1108.0,True
+acorn (ttbar) MWS+M seed 0: val |d0| >= 300 found = entry k_d0_300,14.0,14.0,True
+"acorn (ttbar) LM seed 1: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1109.0,1109.0,True
+acorn (ttbar) LM seed 1: val |d0| >= 300 found = entry k_d0_300,13.0,13.0,True
+"acorn (ttbar) MWS+M seed 1: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1102.0,1102.0,True
+acorn (ttbar) MWS+M seed 1: val |d0| >= 300 found = entry k_d0_300,13.0,13.0,True
+"acorn (ttbar) LM seed 2: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1111.0,1111.0,True
+acorn (ttbar) LM seed 2: val |d0| >= 300 found = entry k_d0_300,16.0,16.0,True
+"acorn (ttbar) MWS+M seed 2: rebuilt DM of every particle of the 49 val events = stored grid (trackbuild_val_fb3_all, 1129 particles)",1106.0,1106.0,True
+acorn (ttbar) MWS+M seed 2: val |d0| >= 300 found = entry k_d0_300,15.0,15.0,True
+"Canto-L LM (frozen): val far-daughter classes and chain-edge counts = round 4 check 2 (results/round4_checks_far_particles.csv), 3 seeds x 51 particles",153.0,153.0,True
+Canto-L LM (frozen): val far daughters' lowest chain-edge score within 0.0001 of round 4's,8.940696716308594e-07,0.0001,True
+"Canto-L MWS+M: val far-daughter classes and chain-edge counts = round 4 check 2 (results/round4_checks_far_particles.csv), 3 seeds x 51 particles",153.0,153.0,True
+Canto-L MWS+M: val far daughters' lowest chain-edge score within 0.0001 of round 4's,8.940696716308594e-07,0.0001,True
+"feature-store ttbar train graphs = hits table (particle id, r, z per node), first 20 events",20.0,20.0,True

@@ -1,0 +1,45 @@
+[
+ {
+  "label": "acorn IGNN, ttbar-trained + CC",
+  "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+  "source": "eval_val",
+  "color": "#7f7f7f",
+  "marker": "o",
+  "ls": "--"
+ },
+ {
+  "label": "acorn IGNN, ttbar-trained + Canto builder (MWS-layer + merging)",
+  "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+  "source": "trackbuild_val_lmerge",
+  "family": "mwslayermerge",
+  "color": "#1f77b4",
+  "marker": "o",
+  "ls": "-"
+ },
+ {
+  "label": "Canto classifier (preview) + CC",
+  "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+  "source": "eval_val",
+  "color": "#ff7f0e",
+  "marker": "D",
+  "ls": "--"
+ },
+ {
+  "label": "Canto-B (preview): MWS-layer + merging",
+  "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+  "source": "trackbuild_val",
+  "family": "mwslayermerge",
+  "color": "#d62728",
+  "marker": "D",
+  "ls": "-"
+ },
+ {
+  "label": "Canto-H (preview): two-pass MWS + merging",
+  "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0/union_preview",
+  "source": "trackbuild_val",
+  "family": "mws2passmerge",
+  "color": "#e377c2",
+  "marker": "*",
+  "ls": "-"
+ }
+]

@@ -1,0 +1,5 @@
+# NAME CONFIG ARM SEED EPOCHS  (S1TAG=final_learned_ts, TAG=v1_ts, GRAPHS_SUBDIR=ltf_union_graphs: Canto-L with the recipe
+# of plan_final_learned.txt on the training samples of arm (ii) (HNL) and arm (iii) (ttbar + HNL), one seed each; graphs
+# runs/baseline_v1_ts/arm<A>_s0/ltf_union_graphs; started by slurm/stage1/ts_chain.sh; docs/training_sample_study.md)
+l1tl configs/stage1/triplet_symregion_trunc.yaml ii 0 30
+l1tl configs/stage1/triplet_symregion_trunc.yaml iii 0 30

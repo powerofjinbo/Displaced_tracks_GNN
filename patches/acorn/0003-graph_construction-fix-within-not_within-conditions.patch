@@ -1,0 +1,40 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:22:17 -0700
+Subject: [PATCH 3/7] graph_construction: fix within/not_within conditions
+
+get_condition_lambda in stages/graph_construction/utils.py compared the
+string "within" with a tensor (TypeError) and negated a tensor with the
+Python `not` operator. Metric learning uses this copy to select signal
+edges and weights, so ["within", [lo, hi]] / ["not_within", [lo, hi]]
+conditions crashed. Read the bounds from condition_val[1] and negate with
+~, as acorn.utils.mapping_utils already does.
+
+gd-displaced patch 0003 (plan item c).
+---
+ acorn/stages/graph_construction/utils.py | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/acorn/stages/graph_construction/utils.py b/acorn/stages/graph_construction/utils.py
+index 7be06a06..140a8c25 100644
+--- a/acorn/stages/graph_construction/utils.py
++++ b/acorn/stages/graph_construction/utils.py
+@@ -210,11 +210,13 @@ def get_condition_lambda(condition_key, condition_val):
+             event[condition_key],
+             torch.tensor(condition_val[1], device=event[condition_key].device),
+         ),
+-        "within": lambda event: (condition_val[0] <= event[condition_key].float())
+-        & (event[condition_key].float() <= condition_val[1]),
+-        "not_within": lambda event: not (
+-            (condition_val[0] <= event[condition_key].float())
+-            & (event[condition_key].float() <= condition_val[1])
++        # condition_val is ["within", [lo, hi]]: the bounds live in condition_val[1]
++        # (same as acorn.utils.mapping_utils.get_condition_lambda).
++        "within": lambda event: (condition_val[1][0] <= event[condition_key].float())
++        & (event[condition_key].float() <= condition_val[1][1]),
++        "not_within": lambda event: ~(
++            (condition_val[1][0] <= event[condition_key].float())
++            & (event[condition_key].float() <= condition_val[1][1])
+         ),
+     }
+ 

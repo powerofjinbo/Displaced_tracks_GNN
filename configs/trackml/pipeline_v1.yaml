@@ -1,0 +1,102 @@
+# Canto-L on TrackML, pipeline configuration v1 (docs/trackml_plan.md; read with `python -m hnl.trackml.config`).
+# Every stage script in slurm/trackml/ takes its parameters from here; nothing below is tuned on a TrackML test event.
+# Stages (plan section 8): S1 metric learning -> S2 radii, support GBDT, valmon graph scan, choice (gate G1) ->
+# S3 union additions -> S4 classifier (gates G2 / G3 on the first-epoch checkpoint) -> S5 scores -> S6 learned merging,
+# val builder grid, working points, freeze -> S7 one-time test.
+version: v1
+plan: docs/trackml_plan.md
+
+data:
+  # D1 (plan section 1.4), decided by the user 2026-10-05: the throughput phase (Zenodo 4730157). Its split file was
+  # written by `python -m hnl.trackml.split make-tp` from the stream manifest of training_part01 / 02 (Slurm job 6684878,
+  # 2026-10-05). Training = the split's train events of training_part01 and training_part02 (D2: train_1-sized).
+  phase: throughput
+  split: configs/trackml/split_tp_v1.json
+  train_archives: [training_part01, training_part02]
+  # cross-phase test set T2 = the test events of the accuracy-phase split (train_1, converted in derived/v1)
+  t2_split: configs/trackml/split_v1.json
+  t2_tables: /ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/v1
+  # the throughput-phase tables (hnl.trackml.throughput, Slurm job 6684895): the event sets of hnl.trackml.config are
+  # taken from here. hnl.trackml.events.iter_events reads each event from the tables of its phase (ids >= 21000 from
+  # here, accuracy ids such as T2 and the smoke events from derived/v1); hnl.trackml.convert.read_table defaults to
+  # derived/v1 (pass root=).
+  tables: /ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp_v1
+  # development / smoke events: accuracy-phase dev events 1000-1099 (inspected in the feasibility study; never val,
+  # test or T2)
+  smoke_events: [1000, 1001]
+  # calibration events (truth kinematics stored): dev + the next 100 training ids in sorted order (plan section 6.0)
+  n_calibration_extra: 100
+
+run_root: /ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1
+storage:                      # plan section 7 stop rule (hnl.trackml.convert.storage_check)
+  trackml_limit_gb: 40
+  min_free_gb: 15
+seed: 0                       # D4 default: one seed
+
+metric_learning:              # S1, plan section 6.1
+  config: configs/trackml/ml_train.yaml
+  virtual_epochs: 30
+  events_per_epoch: 1000
+  valmon: valmon
+  time: "1-00:00:00"
+
+graph:                        # S2, plan section 6.2
+  knn: 300                    # FRNN cap K of the base graph
+  cap_bind_max: 0.05          # K must bind for fewer than 5 % of hits, else K is raised
+  densities: [8, 10, 12, 14]  # base-graph pairs per hit (uncapped, valmon mean) -> the r* candidates
+  radii_events: 5             # valmon events used to set r* per density (bisection, radii averaged)
+  rw_factors: [1.1, 1.2, 1.3]    # amended 2026-10-05 (DECISIONS): the TrackML embedding is far sharper than ttbar's
+  ks: [3, 5, 8]
+  taus: [0.002, 0.005, 0.01, 0.02, 0.05]
+  union_max_pairs_per_hit: 16.5
+  tie_ceiling: 0.0005         # ceilings within 0.05 point are tied: fewer pairs wins
+  gate_g1_ceiling: 0.990      # union target ceiling on val (G1); D3 contingency X1, then X2 (20 pairs per hit)
+  max_triplets_per_chunk: 2.0e+7
+
+support:                      # learned triplet support GBDT, plan section 6.2 (hnl.graphs.learned_triplet_filter)
+  gbdt_events: 100            # the 100 smallest training ids outside the calibration set
+  max_negative_rows: 2.0e+7   # every positive, negatives subsampled to at most this many rows
+  data_rw_factor: 1.3         # training rows from the candidates within 1.3 r*(14 pairs per hit): every scanned r_w (amended 2026-10-05)
+  # hnl.graphs.learned_triplet_filter train unchanged: HistGradientBoosting, 300 iterations, learning rate 0.1,
+  # 63 leaves, unweighted
+  field_map: configs/trackml/field_map_v1.json   # plan section 6.5 (calibration; log_pt_turn at B(r, |z|))
+
+sectors:                      # plan section 6.3 (hnl.trackml.sectors)
+  inference: {n_phi: 8, halo_phi_deg: 22.5}
+  g2_fallback: {n_phi: 8, halo_phi_deg: 45.0}
+  train_window: {core_width_deg: 22.5, halo_phi_deg: 11.25}
+
+classifier:                   # S4, plan section 6.4
+  config: configs/trackml/classifier_train.yaml
+  virtual_epochs: 30
+  windows_per_epoch: 4000
+  time: "2-12:00:00"
+  gate_g2:                    # 5 val events, first-epoch checkpoint: stitched vs one full-event forward (CPU, 64 GB)
+    events: 5
+    dscore: 0.01
+    max_frac_dscore: 0.001
+    max_dmeff_points: 0.02
+    configs: ["walkmerge,0.2,0.7,1.0", "mwslayermerge,0.2", "cc,0.5"]
+
+scoring:                      # S5
+  merge_train_events: 200     # the 200 smallest training ids outside the calibration and GBDT sets (plan 6.6)
+
+builders:                     # S6, plan sections 5 and 6.7 (hnl.eval.trackbuild_val families, extended grid)
+  # G3 (2026-10-05): the sequential helix-merging pass is hnl.trackml.seqmerge (exact pre-filter and pre-fit of the
+  # 1-2 M candidate pairs per event, labels identical to the unfiltered pass); see the G3 report for the timing.
+  families: [cc, walkmergeX, mwslayer, mwslayermergeX, mws2passmergeX, mwslmerge]
+  # Merge-cut sets of the hand-cut merging families (walkmerge, mwslayermerge, mws2passmerge; DECISIONS 2026-10-05,
+  # merge-cut calibration): every such configuration runs once per set, the set being a grid parameter chosen by the
+  # builder rule (hnl.trackml.trackbuild: trailing flag 0 = H, 1 = C). H = the HNL cuts in every |eta| bin; C = the
+  # cuts of the union's |eta| bin, |eta| = asinh(|cot theta|) of the union's helix fit (the fit _merge makes).
+  merge_cut_sets: [H, C]
+  merge_cuts: {table: configs/trackml/merge_cuts_v1.tsv, max_rms: max_rms_widen_only, max_zrms: max_zrms_widen_only,
+               max_out: diag_max_out_99}
+  fr_target: 0.029368         # FR* (results/working_points_v1.json, commit 355c64e), not re-tuned on TrackML
+  gate_g3: {events: 5, max_minutes_per_event_config: 3, cpus: 16}
+  merge: {first_s0: 0.2}      # learned merging first pass (hnl.trackbuild.learned_merge)
+
+evaluation:                   # plan section 4
+  conditions: [full, nonoise, 1gev]
+  bootstrap: {B: 500, seed: 12345}
+  e_star: 0.011792            # edge FPR for the edge-TPR-vs-|d0| diagnostic (HNL value)

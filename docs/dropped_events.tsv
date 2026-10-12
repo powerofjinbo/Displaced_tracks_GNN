@@ -1,0 +1,12 @@
+# Events dropped before any split (brief 2.6). Source: derived/scans/v1 (job 6652979, git 3184d43).
+# Rule (user decision 2026-10-03, DECISIONS.md; hnl.data.scans.corrupted_events): an event is corrupted, and dropped,
+# if any hit lies more than 50 mm outside its module's (r, z, phi) envelope (0.1-99.9 % quantiles over clean events,
+# padded by 5 mm). This selects exactly the 4 events below (max excess 414-595 mm; each has hits at r < 29 mm and
+# 56-170 hits outside r in [29, 1030] mm). Every other event has all hits within 3.4 mm of its padded envelope,
+# including ttbar 6759, hnl15_100 4642 and hnl15_200 4991, whose single long-strip endcap hit at r = 1030.35-1031.04 mm
+# (coarse r of radial strips) put them outside the brief's hard range; they are kept.
+sample	sample_dir	event	reason	n_hits	n_r_lt_29	n_r_gt_1030	n_absz_gt_2960	n_module_envelope_violations	note
+hnl10_100	WmuHNL10GeV100mm_nopileup_10K	1171	corrupted	362	49	7	0	197	corrupted: 56 of 362 hits outside r in [29, 1030] mm (r 3.2-1471.6 mm); 197 hits outside their module envelope, max excess 474 mm
+hnl15_100	WmuHNL15GeV100mm_nopileup_5K	4375	corrupted	602	71	4	0	304	corrupted: 75 of 602 hits outside r in [29, 1030] mm (r 3.4-1328.6 mm); 304 hits outside their module envelope, max excess 414 mm
+hnl15_200	WmuHNL15GeV200mm_nopileup_10K	0	corrupted	2048	129	41	0	1157	corrupted: 170 of 2048 hits outside r in [29, 1030] mm (r 3.3-1623.7 mm); 1157 hits outside their module envelope, max excess 595 mm
+ttbar	ttbar_nopileup_10K	7500	corrupted	1515	127	25	0	873	corrupted: 152 of 1515 hits outside r in [29, 1030] mm (r 3.4-1539.6 mm); 873 hits outside their module envelope, max excess 556 mm

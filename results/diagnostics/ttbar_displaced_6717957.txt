@@ -1,0 +1,67 @@
+ttbar targets per val: 61257  with 1<=|d0|<100: 8411
+Canto-L (ttbar) frozen mwslmerge 0.05 (trackbuild_val_lmerge)
+Canto-L (HNL) MWS+M 0.2 mwslayermerge 0.2 (trackbuild_val_ext)
+acorn (ttbar) LM mwslmerge 0.03 (trackbuild_val_fb3_all)
+acorn (HNL) LM mwslmerge 0.03 (trackbuild_val_fb3_all)
+acorn (ttbar) CC CC 0.34 (FR* unreachable: minimum-rate cut)
+
+== species
+            n  share_%  Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC
+species                                                                                                                    
+K        1008     12.0                    64.2                     64.8              64.2            64.2              50.7
+e        1686     20.0                    80.5                     78.6              78.4            74.6              56.9
+mu         84      1.0                    81.0                     81.0              71.4            76.2              65.5
+other     103      1.2                    71.8                     71.8              69.9            68.9              64.1
+p         361      4.3                    70.4                     71.2              69.8            69.5              58.2
+pi       5169     61.5                    65.6                     66.3              65.0            64.1              50.7
+
+== pt_bin
+                         n  share_%  Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC
+pt_bin                                                                                                                                  
+[1.0, 2.0)            3260     38.8                    84.9                     85.2              84.1            82.0              70.4
+[10.0, 1000000000.0)  1127     13.4                    44.5                     44.2              43.1            42.9              27.6
+[2.0, 5.0)            2564     30.5                    68.0                     68.3              67.4            65.7              50.3
+[5.0, 10.0)           1460     17.4                    53.2                     53.5              51.8            52.0              36.1
+
+== rfirst_bin
+                n  share_%  Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC
+rfirst_bin                                                                                                                     
+[0, 40)      6566     78.1                    66.6                     67.3              66.0            65.3              52.2
+[100, 200)    411      4.9                    80.0                     80.3              76.2            73.2              58.4
+[200, 400)    920     10.9                    83.5                     80.9              80.7            77.0              56.6
+[40, 100)     377      4.5                    54.4                     57.6              56.5            54.4              41.4
+[400, 2000)   137      1.6                    81.8                     71.5              83.9            71.5              59.1
+
+== nhits_bin
+              n  share_%  Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC
+nhits_bin                                                                                                                    
+[11, 15)   5069     60.3                    67.4                     68.5              67.0            66.3              52.3
+[15, 100)   381      4.5                    66.9                     68.2              66.4            65.1              49.6
+[5, 8)     1069     12.7                    77.1                     74.8              75.6            71.6              53.3
+[8, 11)    1892     22.5                    68.3                     67.4              66.4            65.0              53.6
+
+== d0_bin
+              n  share_%  Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC
+d0_bin                                                                                                                       
+[1, 3)     3519     41.8                    74.2                     74.3              73.0            71.6              59.1
+[10, 30)   1654     19.7                    66.9                     67.2              66.1            64.4              49.7
+[3, 10)    2659     31.6                    62.8                     63.8              62.9            61.4              46.8
+[30, 100)   579      6.9                    69.3                     66.0              65.8            66.0              47.8
+
+== species x r_first (n, Canto-L (ttbar) eff)
+rfirst_bin  [0, 40) [100, 200) [200, 400) [40, 100) [400, 2000)
+species                                                        
+K            951:65        1:0      1:100     55:58         NaN
+e            128:77     395:82     911:83    115:53      137:82
+mu            80:82        NaN        1:0      3:67         NaN
+other         99:72        NaN        NaN      4:75         NaN
+p            347:71        NaN        NaN     14:43         NaN
+pi          4961:66      15:27      7:100    186:54         NaN
+
+== pions/kaons/protons with r_first < 40 mm, by pT (Canto-L (ttbar))
+                      Canto-L (ttbar) frozen  Canto-L (HNL) MWS+M 0.2  acorn (ttbar) LM  acorn (HNL) LM  acorn (ttbar) CC     n
+pt_bin                                                                                                                         
+[1.0, 2.0)                              85.5                     86.0              85.0            83.4              73.7  2111
+[10.0, 1000000000.0)                    44.0                     43.8              43.1            43.1              27.7   992
+[2.0, 5.0)                              65.8                     66.9              65.5            64.6              50.0  1927
+[5.0, 10.0)                             51.3                     52.0              50.8            50.9              35.0  1229

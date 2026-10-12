@@ -1,0 +1,16 @@
+Third-party material in this repository
+
+patches/acorn/
+    Modifications of acorn (https://gitlab.cern.ch/gnn4itkteam/acorn, commit 99d15341), applied at install time by
+    env/apply_acorn_patches.sh. The patches contain lines of acorn source code.
+    acorn (gnn4itk): Copyright (C) 2023 CERN for the benefit of the ATLAS collaboration.
+    Licensed under the Apache License, Version 2.0 (LICENSES/acorn-Apache-2.0.txt); the patches are distributed
+    under the same licence.
+
+figures/video/fonts/
+    Noto Sans, SIL Open Font License 1.1 (figures/video/fonts/OFL-LICENSE.txt).
+
+Data
+    The HNL and ttbar samples (X. Ju, "Large Radius Tracking Events in pp collisions with a Generic detector",
+    doi:10.5281/zenodo.6812533) and the TrackML datasets (doi:10.5281/zenodo.4730157 and the Kaggle accuracy phase)
+    are not included; splits/ lists the event identifiers used.

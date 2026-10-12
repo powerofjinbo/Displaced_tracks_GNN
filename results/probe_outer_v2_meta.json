@@ -1,0 +1,491 @@
+{
+ "cut": 0.35,
+ "M": 4,
+ "B": 2000,
+ "boot_seed": 20261005,
+ "n_events": 300,
+ "models": {
+  "acorn_ttbar_s0": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/gnn/artifacts/best-epoch=23-val_loss=0.058278.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 942.6,
+    "inner_2": 719.1,
+    "inner_4": 1001.7,
+    "outer_2": 546.3,
+    "outer_4": 753.6,
+    "middle_2": 998.5,
+    "middle_4": 684.0
+   },
+   "elapsed_s": 6032.4,
+   "host": "submit21.mit.edu",
+   "slurm_job": "6692295",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.914175039341484,
+     0.8703546786103378,
+     0.8437235201549449
+    ],
+    "new_tpr": [
+     0.914175039341484,
+     0.8703546786103378,
+     0.8437235201549449
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 0.0
+   }
+  },
+  "acorn_ttbar_s1": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/gnn/artifacts/best-epoch=29-val_loss=0.056590.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 112.9,
+    "inner_2": 93.7,
+    "inner_4": 86.6,
+    "outer_2": 89.2,
+    "outer_4": 85.2,
+    "middle_2": 85.7,
+    "middle_4": 94.5
+   },
+   "elapsed_s": 933.4,
+   "host": "submit22.mit.edu",
+   "slurm_job": "6692296",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.9140539886212324,
+     0.8658758019610217,
+     0.8330710567727878
+    ],
+    "new_tpr": [
+     0.9140539886212323,
+     0.8658758019610217,
+     0.8330710567727878
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 1.1102230246251565e-16
+   }
+  },
+  "acorn_ttbar_s2": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/gnn/artifacts/best-epoch=28-val_loss=0.046033.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 318.1,
+    "inner_2": 356.7,
+    "inner_4": 322.0,
+    "outer_2": 347.9,
+    "outer_4": 300.9,
+    "middle_2": 331.1,
+    "middle_4": 299.3
+   },
+   "elapsed_s": 2452.9,
+   "host": "submit37.mit.edu",
+   "slurm_job": "6692297",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu"
+  },
+  "acorn_hnl_s0": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/gnn/artifacts/best-epoch=24-val_loss=0.058465.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 103.6,
+    "inner_2": 110.6,
+    "inner_4": 116.4,
+    "outer_2": 112.2,
+    "outer_4": 114.0,
+    "middle_2": 114.8,
+    "middle_4": 109.3
+   },
+   "elapsed_s": 1036.4,
+   "host": "submit22.mit.edu",
+   "slurm_job": "6692400",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.9140539886212324,
+     0.91320663357947,
+     0.9105435177339304
+    ],
+    "new_tpr": [
+     0.9140539886212323,
+     0.9132066335794699,
+     0.9105435177339305
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 1.1102230246251565e-16
+   }
+  },
+  "ignn_scr": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn/armi_s0/gnn/artifacts/best-epoch=14-val_loss=0.062376.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 240.4,
+    "inner_2": 222.1,
+    "inner_4": 372.7,
+    "outer_2": 309.5,
+    "outer_4": 325.5,
+    "middle_2": 264.6,
+    "middle_4": 313.8
+   },
+   "elapsed_s": 2268.4,
+   "host": "submit37.mit.edu",
+   "slurm_job": "6692401",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.9134487350199734,
+     0.902917322358068,
+     0.8609127224306985
+    ],
+    "new_tpr": [
+     0.9134487350199734,
+     0.902917322358068,
+     0.8609127224306985
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 0.0
+   }
+  },
+  "l1_scr": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/l1/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/l1/armi_s0/gnn/artifacts/best-epoch=14-val_loss=0.060345.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 354.7,
+    "inner_2": 388.4,
+    "inner_4": 339.3,
+    "outer_2": 348.2,
+    "outer_4": 344.1,
+    "middle_2": 564.9,
+    "middle_4": 317.0
+   },
+   "elapsed_s": 2947.0,
+   "host": "submit22.mit.edu",
+   "slurm_job": "6692403",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.914175039341484,
+     0.8945648226606948,
+     0.839728846386636
+    ],
+    "new_tpr": [
+     0.914175039341484,
+     0.8945648226606948,
+     0.839728846386636
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 0.0
+   }
+  },
+  "canto_l_s0": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ltf_union_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/gnn/artifacts/best-epoch=28-val_loss=0.052177.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {},
+   "elapsed_s": "6900 + 4539",
+   "host": "submit37.mit.edu (both jobs)",
+   "slurm_job": "6692405 + 6692747",
+   "git": "b04036cd24290dcb1821e42e0c74b8ec0d0208cf",
+   "accelerator": "cpu",
+   "merged": "none_0, inner_2/4 and outer_2/4 from job 6692405 (8 CPUs on submit37, ~1,400 s per inference; cancelled after outer_4 because it would have hit its 2.5 h limit before the middle depths), middle_2/4 from the middle-only helper job 6692747 (canto_l_s0_midhelper, same node, checkpoint, graphs and events); their depth-0 rows are identical (max score difference 0.0)"
+  },
+  "canto_l_s1": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/ltf_union_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/gnn/artifacts/best-epoch=29-val_loss=0.051051.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 432.4,
+    "inner_2": 439.0,
+    "inner_4": 437.6,
+    "outer_2": 451.7,
+    "outer_4": 435.9,
+    "middle_2": 443.2,
+    "middle_4": 430.1
+   },
+   "elapsed_s": 3354.9,
+   "host": "submit20.mit.edu",
+   "slurm_job": "6692406",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu"
+  },
+  "canto_l_s2": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/ltf_union_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/gnn/artifacts/best-epoch=28-val_loss=0.044359.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 528.8,
+    "inner_2": 541.7,
+    "inner_4": 522.5,
+    "outer_2": 529.4,
+    "outer_4": 524.3,
+    "middle_2": 524.9,
+    "middle_4": 519.5
+   },
+   "elapsed_s": 3981.3,
+   "host": "submit21.mit.edu",
+   "slurm_job": "6692889",
+   "git": "b04036cd24290dcb1821e42e0c74b8ec0d0208cf",
+   "accelerator": "cpu"
+  },
+  "ignn_trunc_scr": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn_trunc/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/ignn_trunc/armi_s0/gnn/artifacts/best-epoch=14-val_loss=0.063254.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 104.6,
+    "inner_2": 122.4,
+    "inner_4": 107.8,
+    "outer_2": 105.7,
+    "outer_4": 101.8,
+    "middle_2": 106.8,
+    "middle_4": 105.2
+   },
+   "elapsed_s": 1008.7,
+   "host": "submit21.mit.edu",
+   "slurm_job": "6692402",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.9133276842997216,
+     0.9133276842997216,
+     0.913085582859218
+    ],
+    "new_tpr": [
+     0.9133276842997216,
+     0.9133276842997216,
+     0.913085582859218
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 0.0
+   }
+  },
+  "l1_trunc_scr": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0/gnn/artifacts/best-epoch=14-val_loss=0.061297.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 344.7,
+    "inner_2": 332.9,
+    "inner_4": 328.5,
+    "outer_2": 339.5,
+    "outer_4": 332.7,
+    "middle_2": 334.1,
+    "middle_4": 334.5
+   },
+   "elapsed_s": 2603.1,
+   "host": "submit22.mit.edu",
+   "slurm_job": "6692404",
+   "git": "c98b573b3a968db4fa46e6d879187bc74e7862b2",
+   "accelerator": "cpu",
+   "repro": {
+    "orig_tpr": [
+     0.9146592422224912,
+     0.9144171407819875,
+     0.9136908364604768
+    ],
+    "new_tpr": [
+     0.9146592422224912,
+     0.9144171407819877,
+     0.9136908364604769
+    ],
+    "orig_n": 8261,
+    "new_n": 8261,
+    "max_abs_diff": 1.1102230246251565e-16
+   }
+  },
+  "ignn147_scr": {
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147_screen/armi_s0",
+   "graphs": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml_graphs/valset.tar",
+   "ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147_screen/armi_s0/gnn/artifacts/best-epoch=14-val_loss=0.063059.ckpt",
+   "events": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/probe_outer_v1/events.json",
+   "n_events": 300,
+   "n_particles": 1145,
+   "modes": [
+    "inner",
+    "outer",
+    "middle"
+   ],
+   "depths": [
+    0,
+    2,
+    4
+   ],
+   "infer_seconds": {
+    "none_0": 192.5,
+    "inner_2": 221.2,
+    "inner_4": 230.9,
+    "outer_2": 274.5,
+    "outer_4": 361.1,
+    "middle_2": 460.2,
+    "middle_4": 931.7
+   },
+   "elapsed_s": 2931.0,
+   "host": "submit37.mit.edu",
+   "slurm_job": "6698615",
+   "git": "8343e132c44b7cd1f4a5ce043ef2f1bcbc71e67b",
+   "accelerator": "cpu"
+  }
+ }
+}

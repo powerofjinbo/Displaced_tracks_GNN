@@ -1,0 +1,5 @@
+# NAME CONFIG ARM SEED EPOCHS  (S1TAG=capacity, LIMIT_TRAIN=4000; screening budget as the ttbar ladder rungs of
+# plan_screen_ttbar.txt: 15 epochs x the first 4000 sorted arm (i) training graphs)
+# Supervisor feedback round 1, point 4b: the capacity-matched acorn IGNN (hidden 147, 347,803 parameters) next to the
+# ladder rungs IGNN (263,937) and L1 (347,777). The job name s1_ignn147_screen_i_s0 differs from every other plan's.
+ignn147_screen configs/stage1/ignn_capacity.yaml i 0 15

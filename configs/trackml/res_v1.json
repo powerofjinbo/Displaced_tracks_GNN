@@ -1,0 +1,196 @@
+{
+ "version": "v1",
+ "units": "mm",
+ "RES": {
+  "7": [
+   0.01724,
+   0.00944
+  ],
+  "8": [
+   0.00384,
+   0.004
+  ],
+  "9": [
+   0.01724,
+   0.00943
+  ],
+  "12": [
+   0.01828,
+   0.35966
+  ],
+  "13": [
+   0.0168,
+   0.29201
+  ],
+  "14": [
+   0.01872,
+   0.35925
+  ],
+  "16": [
+   0.02561,
+   3.67566
+  ],
+  "17": [
+   0.02591,
+   3.86812
+  ],
+  "18": [
+   0.02571,
+   3.67452
+  ]
+ },
+ "frame": "u = tangent at the module-centre azimuth phi_c, v = z (barrel 8, 13, 17) or radial at phi_c (endcaps), as hnl.geometry.resolution; phi_c from detectors.csv",
+ "estimator": "hit minus true intersection (truth tx, ty, tz) of every non-noise hit; sigma = 1.4826 x median absolute deviation from the median, per volume",
+ "table": [
+  {
+   "volume": 7,
+   "n_hits": 2936216,
+   "s_u_mm": 0.01724,
+   "s_v_mm": 0.00944,
+   "median_u_mm": 0.0,
+   "median_v_mm": 0.0,
+   "std_u_mm": 0.01363,
+   "std_v_mm": 0.00941,
+   "local_s_u_mm": 0.01724,
+   "local_s_v_mm": 0.00944,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.01826,
+   "ttbar_s_v_mm": 0.02
+  },
+  {
+   "volume": 8,
+   "n_hits": 4842442,
+   "s_u_mm": 0.00384,
+   "s_v_mm": 0.004,
+   "median_u_mm": 0.00897,
+   "median_v_mm": 0.0,
+   "std_u_mm": 0.00616,
+   "std_v_mm": 0.00944,
+   "local_s_u_mm": 0.00388,
+   "local_s_v_mm": 0.004,
+   "local_w_absmax_mm": 0.0013,
+   "ttbar_s_u_mm": 0.02034,
+   "ttbar_s_v_mm": 0.02467
+  },
+  {
+   "volume": 9,
+   "n_hits": 2930104,
+   "s_u_mm": 0.01724,
+   "s_v_mm": 0.00943,
+   "median_u_mm": -1e-05,
+   "median_v_mm": 0.0,
+   "std_u_mm": 0.01362,
+   "std_v_mm": 0.00941,
+   "local_s_u_mm": 0.01724,
+   "local_s_v_mm": 0.00943,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.01594,
+   "ttbar_s_v_mm": 0.01599
+  },
+  {
+   "volume": 12,
+   "n_hits": 1217035,
+   "s_u_mm": 0.01828,
+   "s_v_mm": 0.35966,
+   "median_u_mm": 2e-05,
+   "median_v_mm": 0.00038,
+   "std_u_mm": 0.01709,
+   "std_v_mm": 0.30073,
+   "local_s_u_mm": 0.01828,
+   "local_s_v_mm": 0.35966,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.02661,
+   "ttbar_s_v_mm": 0.39927
+  },
+  {
+   "volume": 13,
+   "n_hits": 3720755,
+   "s_u_mm": 0.0168,
+   "s_v_mm": 0.29201,
+   "median_u_mm": -0.0149,
+   "median_v_mm": 0.0,
+   "std_u_mm": 0.01746,
+   "std_v_mm": 0.26617,
+   "local_s_u_mm": 0.01698,
+   "local_s_v_mm": 0.29201,
+   "local_w_absmax_mm": 0.0014,
+   "ttbar_s_u_mm": 0.02608,
+   "ttbar_s_v_mm": 0.39965
+  },
+  {
+   "volume": 14,
+   "n_hits": 1209127,
+   "s_u_mm": 0.01872,
+   "s_v_mm": 0.35925,
+   "median_u_mm": 1e-05,
+   "median_v_mm": 9e-05,
+   "std_u_mm": 0.01744,
+   "std_v_mm": 0.30032,
+   "local_s_u_mm": 0.01872,
+   "local_s_v_mm": 0.35925,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.02722,
+   "ttbar_s_v_mm": 0.38988
+  },
+  {
+   "volume": 16,
+   "n_hits": 394279,
+   "s_u_mm": 0.02561,
+   "s_v_mm": 3.67566,
+   "median_u_mm": 0.0,
+   "median_v_mm": 0.0286,
+   "std_u_mm": 0.02428,
+   "std_v_mm": 2.8958,
+   "local_s_u_mm": 0.02561,
+   "local_s_v_mm": 3.67566,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.0347,
+   "ttbar_s_v_mm": 3.19191
+  },
+  {
+   "volume": 17,
+   "n_hits": 849857,
+   "s_u_mm": 0.02591,
+   "s_v_mm": 3.86812,
+   "median_u_mm": -0.01388,
+   "median_v_mm": 0.0,
+   "std_u_mm": 0.02659,
+   "std_v_mm": 3.03842,
+   "local_s_u_mm": 0.02616,
+   "local_s_v_mm": 3.86812,
+   "local_w_absmax_mm": 0.01,
+   "ttbar_s_u_mm": 0.0346,
+   "ttbar_s_v_mm": 3.12244
+  },
+  {
+   "volume": 18,
+   "n_hits": 400800,
+   "s_u_mm": 0.02571,
+   "s_v_mm": 3.67452,
+   "median_u_mm": 7e-05,
+   "median_v_mm": 0.04199,
+   "std_u_mm": 0.02451,
+   "std_v_mm": 2.89689,
+   "local_s_u_mm": 0.02571,
+   "local_s_v_mm": 3.67452,
+   "local_w_absmax_mm": 0.0,
+   "ttbar_s_u_mm": 0.0347,
+   "ttbar_s_v_mm": 3.21425
+  }
+ ],
+ "provenance": {
+  "events": "calib of configs/trackml/split_tp_v1.json (200 throughput training events: the 100 dev ids + the next 100 training ids)",
+  "event_ids_sha256": "1e05a332b630c7b96c79d1778180d24145a5e854b36d6147c3398d5eb002a44c",
+  "first_last_event": [
+   21000,
+   21339
+  ],
+  "split_sha256": "36875d204d6637f642f3a384e44cd6f1373f66a78713dddd355e642b43a97f73",
+  "tables": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp_v1",
+  "code_sha256": "c1a0d34048395b161295e928c3bf9cb9543dff34af59f701ab3828aa797ed140",
+  "made_utc": "2026-10-05T07:47:49+00:00",
+  "slurm_job": "6688288",
+  "host": "submit59.mit.edu",
+  "plan": "docs/trackml_plan.md sections 6.5, 6.6"
+ }
+}

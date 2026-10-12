@@ -1,0 +1,30 @@
+# Stage 1 ladder L0 + inner-hit truncation augmentation (hnl.models.augment, p = 0.3, m ~ U{1..n-5}, train only).
+model: hnl.models.augment.TruncSymmetricTripletIGNN
+stage: edge_classifier
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+edge_cut: 0.5
+undirected: true
+undirected_message_passing: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+hidden: 128
+n_graph_iters: 8
+nb_node_layer: 2
+nb_edge_layer: 2
+layernorm: true
+batchnorm: false
+aggregation: sum
+hidden_activation: SiLU
+output_activation: Tanh
+warmup: 5
+scheduler: StepLR
+lr: 0.001
+factor: 0.9
+patience: 10
+max_epochs: 100
+triplet_topk: 4
+detector_input: none

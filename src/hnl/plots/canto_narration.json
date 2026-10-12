@@ -1,0 +1,382 @@
+{
+ "voice": "af_heart",
+ "speed": 1.0,
+ "scenes": {
+  "title": [
+   {
+    "t0": 0.6,
+    "t1": 5.6,
+    "display": "Canto: reconstruction of displaced tracks, trained on {tt} only.",
+    "speech": "Canto: reconstruction of displaced tracks, trained on t t-bar only."
+   }
+  ],
+  "problem": [
+   {
+    "t0": 0.6,
+    "t1": 6.2,
+    "display": "Prompt tracks start at the collision point and leave a hit on every layer.",
+    "speech": "Prompt tracks start at the collision point and leave a hit on every layer."
+   },
+   {
+    "t0": 6.4,
+    "t1": 11.4,
+    "display": "A long-lived particle flies out unseen and decays far from the collision.",
+    "speech": "A long-lived particle flies out unseen and decays far from the collision."
+   },
+   {
+    "t0": 11.6,
+    "t1": 16.0,
+    "display": "Its tracks start late, with no hits on the inner layers.",
+    "speech": "Its tracks start late, with no hits on the inner layers."
+   },
+   {
+    "t0": 16.2,
+    "t1": 21.4,
+    "display": "They do not point back to the beam line: a large impact parameter, d_{0}.",
+    "speech": "They do not point back to the beam line: a large impact parameter, d zero."
+   },
+   {
+    "t0": 21.6,
+    "t1": 26.4,
+    "display": "Yet trackers and machine-learning pipelines are tuned on prompt tracks.",
+    "speech": "Yet trackers and machine-learning pipelines are tuned on prompt tracks."
+   }
+  ],
+  "pipeline": [
+   {
+    "t0": 0.6,
+    "t1": 5.4,
+    "display": "A collision leaves hits in the detector: points in space without labels.",
+    "speech": "A collision leaves hits in the detector: points in space without labels."
+   },
+   {
+    "t0": 5.6,
+    "t1": 10.6,
+    "display": "Graph construction: edges join hits that may be consecutive on a track.",
+    "speech": "Graph construction: edges join hits that may be consecutive on a track."
+   },
+   {
+    "t0": 10.8,
+    "t1": 15.6,
+    "display": "Edge classification: a graph neural network scores every edge.",
+    "speech": "Edge classification: a graph neural network scores every edge."
+   },
+   {
+    "t0": 15.8,
+    "t1": 21.4,
+    "display": "Track building: edges above a threshold are grouped into track candidates.",
+    "speech": "Track building: edges above a threshold are grouped into track candidates."
+   }
+  ],
+  "dezoort": [
+   {
+    "t0": 0.6,
+    "t1": 6.8,
+    "display": "Interaction network: small MLPs on edges, R_{1} and R_{2}, and on hits, O.",
+    "speech": "Interaction network: small MLPs on edges, R one and R two, and on hits, O."
+   },
+   {
+    "t0": 7.0,
+    "t1": 10.8,
+    "display": "In all, 6,448 parameters.",
+    "speech": "In all, 6,448 parameters."
+   },
+   {
+    "t0": 11.0,
+    "t1": 17.4,
+    "display": "Trained on {tt}, it cannot reach the fake-rate target: at best 12.5 %.",
+    "speech": "Trained on t t-bar, it cannot reach the fake rate target: at best 12.5 percent."
+   }
+  ],
+  "acorn": [
+   {
+    "t0": 0.6,
+    "t1": 6.6,
+    "display": "Metric learning: an MLP embeds each hit so that hits of one track sit together.",
+    "speech": "Metric learning: an MLP embeds each hit so that hits of one track sit together."
+   },
+   {
+    "t0": 6.8,
+    "t1": 10.8,
+    "display": "A radius graph links hits within 0.16.",
+    "speech": "A radius graph links hits within 0.16."
+   },
+   {
+    "t0": 11.0,
+    "t1": 14.2,
+    "display": "Then an interaction GNN scores the edges.",
+    "speech": "Then an interaction GNN scores the edges."
+   },
+   {
+    "t0": 14.4,
+    "t1": 19.0,
+    "display": "Connected components of edges above a cut are the track candidates.",
+    "speech": "Connected components of edges above a cut are the track candidates."
+   },
+   {
+    "t0": 19.2,
+    "t1": 24.6,
+    "display": "Trained on the HNL signal, our reproduction matches the paper on all tracks.",
+    "speech": "Trained on the HNL signal, our reproduction matches the paper on all tracks."
+   }
+  ],
+  "failure": [
+   {
+    "t0": 0.6,
+    "t1": 6.9,
+    "display": "Pointing shortcut: a GNN seeing absolute positions learns that tracks point to the origin.",
+    "speech": "Pointing shortcut: a GNN seeing absolute positions learns that tracks point to the origin."
+   },
+   {
+    "t0": 7.1,
+    "t1": 13.1,
+    "display": "Without their inner hits, prompt tracks lose edge TPR: the start radius matters.",
+    "speech": "Without their inner hits, prompt tracks lose edge TPR: the start radius matters."
+   },
+   {
+    "t0": 13.3,
+    "t1": 17.6,
+    "display": "The {tt}-trained graph already misses displaced pairs.",
+    "speech": "The graph trained on t t-bar already misses displaced pairs."
+   },
+   {
+    "t0": 17.8,
+    "t1": 26.4,
+    "display": "In dense jets, connected components merges neighbouring tracks: {tt} prompt efficiency is only 87 %.",
+    "speech": "In dense jets, connected components merges neighbouring tracks: t t-bar prompt efficiency is only 87 percent."
+   }
+  ],
+  "canto": [
+   {
+    "t0": 0.6,
+    "t1": 5.6,
+    "display": "A canto is built from interlocking tercets, linked by their rhymes.",
+    "speech": "A canto is built from interlocking [tercets](/tˈɜɹsəts/), linked by their rhymes."
+   },
+   {
+    "t0": 5.8,
+    "t1": 12.4,
+    "display": "Likewise, a track is assembled from chained hit triplets: neighbouring triplets share two hits.",
+    "speech": "Likewise, a track is assembled from chained hit triplets: neighbouring triplets share two hits."
+   },
+   {
+    "t0": 12.6,
+    "t1": 17.6,
+    "display": "The graph and the edge scores are learned; no HNL event is used in training.",
+    "speech": "The graph and the edge scores are learned; no HNL event is used in training."
+   }
+  ],
+  "classifier": [
+   {
+    "t0": 0.6,
+    "t1": 7.6,
+    "display": "Canto's messages come from hit triplets, a → b → c: two edges that share a hit.",
+    "speech": "Canto's messages come from hit triplets, [a](/ˈA/) to b to c: two edges that share a hit."
+   },
+   {
+    "t0": 7.8,
+    "t1": 13.4,
+    "display": "Shift the production point or rotate the track: only a 6-region flag changes.",
+    "speech": "Shift the production point or rotate the track: only a 6-region flag changes."
+   },
+   {
+    "t0": 13.6,
+    "t1": 19.2,
+    "display": "Training only: 30 % of {tt} particles lose their innermost hits.",
+    "speech": "Training only: 30 percent of t t-bar particles lose their innermost hits."
+   },
+   {
+    "t0": 19.4,
+    "t1": 23.8,
+    "display": "dD probes large |d_{0}|; dT, missing inner hits.",
+    "speech": "d D probes large d zero; d T, missing inner hits."
+   },
+   {
+    "t0": 24.0,
+    "t1": 27.9,
+    "display": "Inner-hit truncation removes both, for every architecture.",
+    "speech": "Inner hit truncation removes both, for every architecture."
+   },
+   {
+    "t0": 28.1,
+    "t1": 32.8,
+    "display": "**The Canto classifier: dD +2.4, dT −0.1**",
+    "speech": "The Canto classifier: d D plus 2.4, d T minus 0.1."
+   }
+  ],
+  "branches": [
+   {
+    "t0": 0.5,
+    "t1": 6.6,
+    "display": "Canto-B: the {tt}-trained metric-learning graph, which can miss a displaced edge.",
+    "speech": "Canto B: the metric learning graph trained on t t-bar, which can miss a displaced edge."
+   },
+   {
+    "t0": 6.8,
+    "t1": 12.2,
+    "display": "Canto-H adds wider-radius candidates with hand-cut helix-triplet support.",
+    "speech": "Canto H adds wider-radius candidates with hand-cut helix-triplet support."
+   },
+   {
+    "t0": 12.4,
+    "t1": 18.0,
+    "display": "Canto-L learns the triplet support instead, and keeps more true edges.",
+    "speech": "Canto L learns the triplet support instead, and keeps more true edges."
+   },
+   {
+    "t0": 18.2,
+    "t1": 23.0,
+    "display": "Both union graphs lift the ceiling to 0.9947.",
+    "speech": "Both union graphs lift the ceiling to 0.9947."
+   },
+   {
+    "t0": 23.2,
+    "t1": 29.6,
+    "display": "The learned union needs fewer pairs, yet keeps more {tt} edges.",
+    "speech": "The learned union needs fewer pairs, yet keeps more t t-bar edges."
+   },
+   {
+    "t0": 29.8,
+    "t1": 36.4,
+    "display": "Just a bigger graph? Without the filter, a larger radius adds pairs but little ceiling.",
+    "speech": "Just a bigger graph? Without the filter, a larger radius adds pairs but little ceiling."
+   },
+   {
+    "t0": 36.6,
+    "t1": 40.1,
+    "display": "The same ceiling needs 53 % more pairs.",
+    "speech": "The same ceiling needs 53 percent more pairs."
+   }
+  ],
+  "trackbuild": [
+   {
+    "t0": 0.6,
+    "t1": 8.8,
+    "display": "Mutex Watershed: edges above s_{0} attract, same-layer hits repel; we merge greedily by score.",
+    "speech": "[Mutex](/mjˈutˌɛks/) Watershed: edges above s zero attract, same layer hits repel; we merge greedily by score."
+   },
+   {
+    "t0": 9.0,
+    "t1": 13.6,
+    "display": "A second pass at a lower s_{0} attaches the leftover hits.",
+    "speech": "A second pass at a lower s zero attaches the leftover hits."
+   },
+   {
+    "t0": 13.8,
+    "t1": 17.4,
+    "display": "Fragment merging joins pieces of a broken track.",
+    "speech": "Fragment merging joins pieces of a broken track."
+   },
+   {
+    "t0": 17.6,
+    "t1": 22.2,
+    "display": "Our builder alone lifts acorn to 0.969.",
+    "speech": "Our builder alone lifts acorn to 0.969."
+   },
+   {
+    "t0": 22.4,
+    "t1": 28.2,
+    "display": "With Canto-B's scores, it reaches 0.9857.",
+    "speech": "With Canto B's scores, it reaches 0.9857."
+   },
+   {
+    "t0": 28.4,
+    "t1": 32.8,
+    "display": "For each Canto variant, the builder is chosen on validation.",
+    "speech": "For each Canto variant, the builder is chosen on validation."
+   }
+  ],
+  "results": [
+   {
+    "t0": 0.4,
+    "t1": 3.3,
+    "display": "Primary efficiency on validation.",
+    "speech": "Primary efficiency on validation."
+   },
+   {
+    "t0": 3.5,
+    "t1": 7.3,
+    "display": "The DeZoort networks cannot reach the fake-rate target.",
+    "speech": "The [DeZoort](/dəzˈʊɹt/) networks cannot reach the fake rate target."
+   },
+   {
+    "t0": 7.5,
+    "t1": 11.8,
+    "display": "acorn trained on {tt}: 92.3 %.",
+    "speech": "acorn trained on t t-bar: 92.3 percent."
+   },
+   {
+    "t0": 12.0,
+    "t1": 17.1,
+    "display": "On the HNL signal, at its best cut: 95.6 %.",
+    "speech": "On the HNL signal, at its best cut: 95.6 percent."
+   },
+   {
+    "t0": 17.3,
+    "t1": 23.2,
+    "display": "Our builder alone lifts acorn to 96.9 % and 98.6 %.",
+    "speech": "Our builder alone lifts acorn to 96.9 and 98.6 percent."
+   },
+   {
+    "t0": 23.4,
+    "t1": 29.8,
+    "display": "Canto-B reaches 98.3 %, one-seed previews up to 99.5 %.",
+    "speech": "Canto B reaches 98.3, one-seed previews up to 99.5 percent."
+   },
+   {
+    "t0": 30.0,
+    "t1": 37.4,
+    "display": "Trained on {tt} only, Canto beats acorn trained on the HNL signal itself, at its best cut.",
+    "speech": "Trained on t t-bar only, Canto beats acorn trained on the HNL signal itself, at its best cut."
+   },
+   {
+    "t0": 37.6,
+    "t1": 45.8,
+    "display": "{tt} only, stage by stage: 92.3 % with connected components, up to 99.4 % in a one-seed preview.",
+    "speech": "t t-bar only, stage by stage: 92.3 percent with connected components, up to 99.4 percent in a one seed preview."
+   },
+   {
+    "t0": 46.0,
+    "t1": 52.6,
+    "display": "Previews are one seed at the screening budget; three-seed runs and the one-time test are pending.",
+    "speech": "Previews are one seed at the screening budget; three-seed runs and the one-time test are pending."
+   }
+  ],
+  "table": [
+   {
+    "t0": 0.6,
+    "t1": 8.2,
+    "display": "Every validation number: displaced bins, prompt W muons, dense {tt} prompt tracks and the fake rate.",
+    "speech": "Every validation number: displaced bins, prompt W muons, dense t t-bar prompt tracks and the fake rate."
+   },
+   {
+    "t0": 8.4,
+    "t1": 14.0,
+    "display": "Starred rows include seeds that cannot reach FR*, shown at their lowest fake rate.",
+    "speech": "Starred rows include seeds that cannot reach F R star, shown at their lowest fake rate."
+   }
+  ],
+  "outlook": [
+   {
+    "t0": 0.6,
+    "t1": 6.3,
+    "display": "All Canto numbers so far are validation results; the one-time test is pending.",
+    "speech": "All Canto numbers so far are validation results; the one-time test is pending."
+   },
+   {
+    "t0": 6.5,
+    "t1": 13.8,
+    "display": "Preregistered claim: Canto's test inefficiency is at most half that of acorn (HNL).",
+    "speech": "The preregistered claim: Canto's test inefficiency is at most half that of acorn trained on the HNL signal."
+   }
+  ],
+  "end": [
+   {
+    "t0": 0.6,
+    "t1": 5.6,
+    "display": "Canto. These are validation results, in simulation without pileup.",
+    "speech": "Canto. These are validation results, in simulation without pileup."
+   }
+  ]
+ }
+}

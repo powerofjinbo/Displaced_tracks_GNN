@@ -1,0 +1,33 @@
+# Stage 1 B ladder: TripletIGNN with only a coarse detector-region node input and invariant edge features (no pointing).
+model: hnl.models.triplet_gnn.TripletIGNN
+stage: edge_classifier
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+edge_cut: 0.5
+undirected: true
+undirected_message_passing: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+hidden: 128
+n_graph_iters: 8
+nb_node_layer: 2
+nb_edge_layer: 2
+layernorm: true
+batchnorm: false
+aggregation: sum
+hidden_activation: SiLU
+output_activation: Tanh
+warmup: 5
+scheduler: StepLR
+lr: 0.001
+factor: 0.9
+patience: 10
+max_epochs: 100
+use_triplets: true
+triplet_topk: 4
+use_edge_geometry: true
+node_input: region
+edge_geometry: invariant

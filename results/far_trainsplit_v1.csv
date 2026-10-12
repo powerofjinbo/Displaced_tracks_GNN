@@ -1,0 +1,321 @@
+split,d0_min_mm,r_first_bin,model,pipeline,builder,seed,n,found,graph,classifier,fragmented,impure,short,lost,working_points
+train,300.0,all,Canto-L LM (frozen),Canto-L,LM,0,96,92,3,1,0,0,0,4,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,300.0,all,Canto-L LM (frozen),Canto-L,LM,1,96,87,4,4,0,1,0,9,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,300.0,all,Canto-L LM (frozen),Canto-L,LM,2,96,90,4,1,0,1,0,6,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,all,Canto-L LM (frozen),Canto-L,LM,pooled,288,269,11,6,0,2,0,19,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,0,96,90,4,2,0,0,0,6,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,1,96,87,5,3,1,0,0,9,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,2,96,90,5,1,0,0,0,6,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,pooled,288,267,14,6,1,0,0,21,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,0,96,84,10,0,0,2,0,12,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,1,96,77,10,6,0,3,0,19,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,2,96,80,8,6,1,1,0,16,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,pooled,288,241,28,12,1,6,0,47,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,96,85,9,0,0,2,0,11,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,96,76,10,8,0,2,0,20,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,96,83,8,4,1,0,0,13,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,288,244,27,12,1,4,0,44,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,0,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,1,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,2,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,pooled,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,0,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,1,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,2,0,0,0,0,0,0,0,0,
+train,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,pooled,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,0,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,1,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,2,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,pooled,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,0,0,0,0,0,0,0,0,
+train,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,0,0,0,0,0,0,0,0,
+train,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,0,57,55,1,1,0,0,0,2,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,1,57,53,1,3,0,0,0,4,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,2,57,55,1,1,0,0,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,pooled,171,163,3,5,0,0,0,8,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,0,57,55,1,1,0,0,0,2,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,1,57,54,1,2,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,2,57,55,1,1,0,0,0,2,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,pooled,171,164,3,4,0,0,0,7,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,0,57,53,4,0,0,0,0,4,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,1,57,49,4,4,0,0,0,8,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,2,57,47,3,5,1,1,0,10,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,pooled,171,149,11,9,1,1,0,22,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,57,53,4,0,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,57,49,4,4,0,0,0,8,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,57,50,3,3,1,0,0,7,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,171,152,11,7,1,0,0,19,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,0,33,31,2,0,0,0,0,2,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,1,33,31,2,0,0,0,0,2,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,2,33,31,2,0,0,0,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,pooled,99,93,6,0,0,0,0,6,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,0,33,30,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,1,33,30,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,2,33,30,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,pooled,99,90,9,0,0,0,0,9,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,0,33,28,3,0,0,2,0,5,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,1,33,25,3,2,0,3,0,8,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,2,33,30,3,0,0,0,0,3,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,99,83,9,2,0,5,0,16,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,33,28,3,0,0,2,0,5,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,33,25,3,3,0,2,0,8,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,33,30,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,99,83,9,3,0,4,0,16,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,0,6,6,0,0,0,0,0,0,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,1,6,3,1,1,0,1,0,3,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,2,6,4,1,0,0,1,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,pooled,18,13,2,1,0,2,0,5,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,0,6,5,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,1,6,3,1,1,1,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,2,6,5,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,pooled,18,13,2,2,1,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+train,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,0,6,3,3,0,0,0,0,3,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,1,6,3,3,0,0,0,0,3,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,2,6,3,2,1,0,0,0,3,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,18,9,8,1,0,0,0,9,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,6,4,2,0,0,0,0,2,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,6,2,3,1,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,6,3,2,1,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,18,9,7,2,0,0,0,9,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,all,Canto-L LM (frozen),Canto-L,LM,0,333,325,4,4,0,0,0,8,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,200.0,all,Canto-L LM (frozen),Canto-L,LM,1,333,321,5,5,0,2,0,12,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,200.0,all,Canto-L LM (frozen),Canto-L,LM,2,333,324,6,2,0,1,0,9,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,all,Canto-L LM (frozen),Canto-L,LM,pooled,999,970,15,11,0,3,0,29,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,0,333,323,5,5,0,0,0,10,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,1,333,322,6,4,1,0,0,11,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,2,333,324,7,2,0,0,0,9,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,pooled,999,969,18,11,1,0,0,30,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,0,333,304,19,6,0,4,0,29,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,1,333,277,21,30,0,5,0,56,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,2,333,298,15,17,1,2,0,35,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,pooled,999,879,55,53,1,11,0,120,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,333,302,20,5,0,6,0,31,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,333,275,23,30,1,4,0,58,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,333,304,15,12,1,1,0,29,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,999,881,58,47,2,11,0,118,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,0,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,1,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,2,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,pooled,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,0,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,1,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,2,0,0,0,0,0,0,0,0,
+train,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,pooled,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,0,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,1,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,2,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,pooled,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,0,0,0,0,0,0,0,0,
+train,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,0,0,0,0,0,0,0,0,
+train,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,0,263,257,2,4,0,0,0,6,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,1,263,257,2,4,0,0,0,6,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,2,263,258,3,2,0,0,0,5,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,pooled,789,772,7,10,0,0,0,17,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,0,263,257,2,4,0,0,0,6,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,1,263,258,2,3,0,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,2,263,258,3,2,0,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,pooled,789,773,7,9,0,0,0,16,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,0,263,244,13,6,0,0,0,19,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,1,263,219,15,27,0,2,0,44,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,2,263,235,10,16,1,1,0,28,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,pooled,789,698,38,49,1,3,0,91,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,263,241,15,5,0,2,0,22,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,263,218,17,25,1,2,0,45,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,263,241,10,11,1,0,0,22,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,789,700,42,41,2,4,0,89,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,0,60,58,2,0,0,0,0,2,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,1,60,57,2,0,0,1,0,3,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,2,60,58,2,0,0,0,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,pooled,180,173,6,0,0,1,0,7,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,0,60,57,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,1,60,57,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,2,60,57,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,pooled,180,171,9,0,0,0,0,9,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,0,60,54,3,0,0,3,0,6,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,1,60,51,3,3,0,3,0,9,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,2,60,57,3,0,0,0,0,3,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,180,162,9,3,0,6,0,18,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,60,54,3,0,0,3,0,6,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,60,51,3,4,0,2,0,9,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,60,57,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,180,162,9,4,0,5,0,18,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,0,10,10,0,0,0,0,0,0,mwslmerge 0.05 (trackbuild_val_lmerge)
+train,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,1,10,7,1,1,0,1,0,3,mwslmerge 0.03 (trackbuild_val_lmerge)
+train,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,2,10,8,1,0,0,1,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,pooled,30,25,2,1,0,2,0,5,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+train,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,0,10,9,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,1,10,7,1,1,1,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,2,10,9,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,pooled,30,25,2,2,1,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+train,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,0,10,6,3,0,0,1,0,4,mwslmerge 0.03 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,1,10,7,3,0,0,0,0,3,mwslmerge 0.02 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,2,10,6,2,1,0,1,0,4,mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,30,19,8,1,0,2,0,11,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,10,7,2,0,0,1,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,10,6,3,1,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,10,6,2,1,0,1,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+train,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,30,19,7,2,0,2,0,11,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,all,Canto-L LM (frozen),Canto-L,LM,0,19,16,1,2,0,0,0,3,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,300.0,all,Canto-L LM (frozen),Canto-L,LM,1,19,17,1,1,0,0,0,2,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,300.0,all,Canto-L LM (frozen),Canto-L,LM,2,19,17,1,1,0,0,0,2,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,all,Canto-L LM (frozen),Canto-L,LM,pooled,57,50,3,4,0,0,0,7,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,0,19,16,1,2,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,1,19,16,2,1,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,2,19,17,1,1,0,0,0,2,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,all,Canto-L MWS+M,Canto-L,MWS+M,pooled,57,49,4,4,0,0,0,8,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,0,19,15,4,0,0,0,0,4,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,1,19,13,4,2,0,0,0,6,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,2,19,16,2,1,0,0,0,3,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) LM,acorn (ttbar),LM,pooled,57,44,10,3,0,0,0,13,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,19,14,5,0,0,0,0,5,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,19,13,4,2,0,0,0,6,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,19,15,3,1,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,57,42,12,3,0,0,0,15,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,0,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,1,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,2,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L LM (frozen),Canto-L,LM,pooled,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,0,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,1,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,2,0,0,0,0,0,0,0,0,
+val,300.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,pooled,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,0,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,1,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,2,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,pooled,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,0,0,0,0,0,0,0,0,
+val,300.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,0,0,0,0,0,0,0,0,
+val,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,0,13,12,0,1,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,1,13,12,0,1,0,0,0,1,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,2,13,12,0,1,0,0,0,1,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,200-500,Canto-L LM (frozen),Canto-L,LM,pooled,39,36,0,3,0,0,0,3,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,0,13,12,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,1,13,11,1,1,0,0,0,2,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,2,13,12,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,pooled,39,35,1,3,0,0,0,4,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,0,13,11,2,0,0,0,0,2,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,1,13,9,2,2,0,0,0,4,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,2,13,12,0,1,0,0,0,1,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,pooled,39,32,4,3,0,0,0,7,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,13,10,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,13,9,2,2,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,13,11,1,1,0,0,0,2,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,39,30,6,3,0,0,0,9,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,0,5,4,0,1,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,1,5,5,0,0,0,0,0,0,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,2,5,5,0,0,0,0,0,0,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,500-700,Canto-L LM (frozen),Canto-L,LM,pooled,15,14,0,1,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,0,5,4,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,1,5,5,0,0,0,0,0,0,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,2,5,5,0,0,0,0,0,0,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,pooled,15,14,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,0,5,4,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,1,5,4,1,0,0,0,0,1,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,2,5,4,1,0,0,0,0,1,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,15,12,3,0,0,0,0,3,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,5,4,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,5,4,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,5,4,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,15,12,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,0,1,0,1,0,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,1,1,0,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,2,1,0,1,0,0,0,0,1,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,>=700,Canto-L LM (frozen),Canto-L,LM,pooled,3,0,3,0,0,0,0,3,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,0,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,1,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,2,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,pooled,3,0,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,0,1,0,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,1,1,0,1,0,0,0,0,1,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,2,1,0,1,0,0,0,0,1,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,3,0,3,0,0,0,0,3,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,300.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,3,0,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,all,Canto-L LM (frozen),Canto-L,LM,0,51,47,2,2,0,0,0,4,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,200.0,all,Canto-L LM (frozen),Canto-L,LM,1,51,47,2,2,0,0,0,4,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,200.0,all,Canto-L LM (frozen),Canto-L,LM,2,51,48,2,1,0,0,0,3,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,all,Canto-L LM (frozen),Canto-L,LM,pooled,153,142,6,5,0,0,0,11,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,0,51,47,2,2,0,0,0,4,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,1,51,46,3,2,0,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,2,51,48,2,1,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,all,Canto-L MWS+M,Canto-L,MWS+M,pooled,153,141,7,5,0,0,0,12,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,0,51,45,5,1,0,0,0,6,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,1,51,41,7,3,0,0,0,10,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,2,51,46,4,1,0,0,0,5,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) LM,acorn (ttbar),LM,pooled,153,132,16,5,0,0,0,21,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,51,43,7,1,0,0,0,8,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,51,40,7,4,0,0,0,11,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,51,44,5,2,0,0,0,7,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,all,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,153,127,19,7,0,0,0,26,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,0,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,1,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,2,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L LM (frozen),Canto-L,LM,pooled,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,0,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,1,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,2,0,0,0,0,0,0,0,0,
+val,200.0,0-200,Canto-L MWS+M,Canto-L,MWS+M,pooled,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,0,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,1,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,2,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) LM,acorn (ttbar),LM,pooled,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,0,0,0,0,0,0,0,0,
+val,200.0,0-200,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,0,0,0,0,0,0,0,0,
+val,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,0,40,39,0,1,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,1,40,38,0,2,0,0,0,2,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,2,40,39,0,1,0,0,0,1,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,200-500,Canto-L LM (frozen),Canto-L,LM,pooled,120,116,0,4,0,0,0,4,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,0,40,39,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,1,40,37,1,2,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,2,40,39,0,1,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,200-500,Canto-L MWS+M,Canto-L,MWS+M,pooled,120,115,1,4,0,0,0,5,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,0,40,37,2,1,0,0,0,3,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,1,40,33,4,3,0,0,0,7,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,2,40,38,1,1,0,0,0,2,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) LM,acorn (ttbar),LM,pooled,120,108,7,5,0,0,0,12,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,40,35,4,1,0,0,0,5,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,40,32,4,4,0,0,0,8,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,40,36,2,2,0,0,0,4,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,200-500,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,120,103,10,7,0,0,0,17,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,0,10,8,1,1,0,0,0,2,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,1,10,9,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,2,10,9,1,0,0,0,0,1,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,500-700,Canto-L LM (frozen),Canto-L,LM,pooled,30,26,3,1,0,0,0,4,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,0,10,8,1,1,0,0,0,2,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,1,10,9,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,2,10,9,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,500-700,Canto-L MWS+M,Canto-L,MWS+M,pooled,30,26,3,1,0,0,0,4,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,0,10,8,2,0,0,0,0,2,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,1,10,8,2,0,0,0,0,2,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,2,10,8,2,0,0,0,0,2,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,30,24,6,0,0,0,0,6,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,10,8,2,0,0,0,0,2,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,10,8,2,0,0,0,0,2,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,10,8,2,0,0,0,0,2,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,500-700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,30,24,6,0,0,0,0,6,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,0,1,0,1,0,0,0,0,1,mwslmerge 0.05 (trackbuild_val_lmerge)
+val,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,1,1,0,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_lmerge)
+val,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,2,1,0,1,0,0,0,0,1,mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,>=700,Canto-L LM (frozen),Canto-L,LM,pooled,3,0,3,0,0,0,0,3,mwslmerge 0.05 (trackbuild_val_lmerge); mwslmerge 0.03 (trackbuild_val_lmerge); mwslmerge 0.1 (trackbuild_val_lmerge)
+val,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,0,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,1,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,2,1,0,1,0,0,0,0,1,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,>=700,Canto-L MWS+M,Canto-L,MWS+M,pooled,3,0,3,0,0,0,0,3,mwslayermerge 0.2 (trackbuild_val_ext)
+val,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,0,1,0,1,0,0,0,0,1,mwslmerge 0.03 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,1,1,0,1,0,0,0,0,1,mwslmerge 0.02 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,2,1,0,1,0,0,0,0,1,mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) LM,acorn (ttbar),LM,pooled,3,0,3,0,0,0,0,3,mwslmerge 0.03 (trackbuild_val_fb3_all); mwslmerge 0.02 (trackbuild_val_fb3_all); mwslmerge 0.05 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,0,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,1,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,2,1,0,1,0,0,0,0,1,mwslayermerge 0.1 (trackbuild_val_fb3_all)
+val,200.0,>=700,acorn (ttbar) MWS+M,acorn (ttbar),MWS+M,pooled,3,0,3,0,0,0,0,3,mwslayermerge 0.1 (trackbuild_val_fb3_all)

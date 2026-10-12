@@ -1,0 +1,42 @@
+# X1 (plan section 1.4 D3, the first contingency after gate G1 failed on 2026-10-06, job 6691853): Canto-L metric
+# learning on TrackML with the stored cluster values as extra node features. Everything else is configs/trackml/
+# ml_train.yaml (S1) unchanged: recipe, sampler (30 virtual epochs x 1,000 training events), valmon checkpoint rule.
+# Extra inputs (plan section 7: only the stored cell count, charge sum and cluster extents): the natural logs of ncells,
+# charge (clipped at 1e-3), span0, span1 (hnl.trackml.events.cluster_feature), written to the node-local feature store
+# as hit_log_* by `hnl.trackml.graphs fs --ml-config configs/trackml/ml_train_x1.yaml`; node_scales 1 for them (the
+# logs are O(1): ncells, span0, span1 in [0, ~4.4], charge in [~-3.7, ~4]). Run directory canto_l_v1/seed0_x1
+# (slurm/trackml/_common.sh RUN_SUFFIX=_x1); docs/feedback/trackml_x1_decisions.md.
+stage: graph_construction
+model: hnl.trackml.ml.TrackMLMetricLearning
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+weighting:
+  - weight: 1.0
+    conditions:
+      y: true
+undirected: true
+train_undirected: true
+node_features: [r, phi, z, hit_log_ncells, hit_log_charge, hit_log_span0, hit_log_span1]
+node_scales: [1000, 3.14, 1000, 1, 1, 1, 1]
+emb_hidden: 1024
+nb_layer: 4
+emb_dim: 12
+activation: Tanh
+randomisation: 1
+points_per_batch: 50000
+r_train: 0.1
+knn: 50
+knn_val: 1000
+warmup: 5
+margin: 0.1
+lr: 0.01
+factor: 0.7
+patience: 10
+max_epochs: 30
+metric_to_monitor: f1
+metric_mode: max
+# TrackML sampling (hnl.trackml.ml)
+events_per_epoch: 1000

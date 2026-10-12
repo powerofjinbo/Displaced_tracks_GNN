@@ -1,0 +1,325 @@
+[
+ {
+  "label": "acorn IGNN (263,937 par.), ttbar + CC (best cut <= FR*)",
+  "short": "acorn CC",
+  "group": "acorn",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "source": "eval_val",
+    "rule": "best"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "acorn IGNN (263,937 par.), ttbar + walkthrough + merging",
+  "short": "acorn walk+m",
+  "group": "acorn",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val2"
+    ],
+    "family": "walkmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val2"
+    ],
+    "family": "walkmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val2"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "acorn IGNN (263,937 par.), ttbar + MWS-layer + merging",
+  "short": "acorn MWS+m",
+  "group": "acorn",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val_mwslayer",
+     "trackbuild_val_mws"
+    ],
+    "family": "mwslayermerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val_mwslayer",
+     "trackbuild_val_mws"
+    ],
+    "family": "mwslayermerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val_mwslayer",
+     "trackbuild_val_mws"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "acorn IGNN (263,937 par.), ttbar + best of walkthrough / MWS-layer / two-pass MWS-layer + merging (extended grid)",
+  "short": "acorn best",
+  "group": "acorn",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched acorn IGNN (hidden 147, 347,803 par.), ttbar + CC (best cut <= FR*)",
+  "short": "IGNN-147 CC",
+  "group": "capacity control",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched acorn IGNN (hidden 147, 347,803 par.), ttbar + walkthrough + merging",
+  "short": "IGNN-147 walk+m",
+  "group": "capacity control",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched acorn IGNN (hidden 147, 347,803 par.), ttbar + MWS-layer + merging",
+  "short": "IGNN-147 MWS+m",
+  "group": "capacity control",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "capacity-matched acorn IGNN (hidden 147, 347,803 par.), ttbar + best of walkthrough / MWS-layer / two-pass MWS-layer + merging (extended grid)",
+  "short": "IGNN-147 best",
+  "group": "capacity control",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_capacity/ignn147/armi_s0",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   }
+  ]
+ },
+ {
+  "label": "Canto-B classifier (347,777 par.), ttbar + CC (best cut <= FR*)",
+  "short": "Canto-B CC",
+  "group": "Canto-B",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+    "source": "eval_val",
+    "rule": "best"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+    "source": "eval_val",
+    "rule": "best"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+    "source": "eval_val",
+    "rule": "best"
+   }
+  ]
+ },
+ {
+  "label": "Canto-B classifier (347,777 par.), ttbar + walkthrough + merging",
+  "short": "Canto-B walk+m",
+  "group": "Canto-B",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val"
+    ],
+    "family": "walkmerge"
+   }
+  ]
+ },
+ {
+  "label": "Canto-B classifier (347,777 par.), ttbar + MWS-layer + merging",
+  "short": "Canto-B MWS+m",
+  "group": "Canto-B",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslayermerge"
+   }
+  ]
+ },
+ {
+  "label": "Canto-B classifier (347,777 par.), ttbar + best of walkthrough / MWS-layer / two-pass MWS-layer + merging (extended grid)",
+  "short": "Canto-B best",
+  "group": "Canto-B",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+    "source": [
+     "trackbuild_val_ext"
+    ],
+    "family": "*"
+   }
+  ]
+ },
+ {
+  "label": "Canto-B (full budget), learned merging (rule R6)",
+  "short": "Canto-B R6",
+  "group": "Canto-B",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s0",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s1",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslmerge"
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final/l1t/armi_s2",
+    "source": [
+     "trackbuild_val_ext",
+     "trackbuild_val_lmerge",
+     "trackbuild_val"
+    ],
+    "family": "mwslmerge"
+   }
+  ]
+ }
+]

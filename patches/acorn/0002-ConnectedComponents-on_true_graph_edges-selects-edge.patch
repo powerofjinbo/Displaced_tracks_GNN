@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:22:03 -0700
+Subject: [PATCH 2/7] ConnectedComponents: on_true_graph_edges selects edges
+ with edge_y
+
+The dataset renames y -> edge_y, so graph.y is None when _build_event
+runs and graph.edge_index[:, None] keeps every edge. The "perfect scores"
+option therefore produced one giant component (14,341 hits on a TrackML
+event) instead of the true-edge components.
+
+gd-displaced patch 0002 (plan item b).
+---
+ acorn/stages/track_building/models/connected_components.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/acorn/stages/track_building/models/connected_components.py b/acorn/stages/track_building/models/connected_components.py
+index 06c2b03a..e914dffe 100644
+--- a/acorn/stages/track_building/models/connected_components.py
++++ b/acorn/stages/track_building/models/connected_components.py
+@@ -78,7 +78,10 @@ class ConnectedComponents(TrackBuildingStage):
+         if on_truth_particle_edges:
+             edges = graph.track_edges
+         elif on_true_graph_edges:
+-            edges = graph.edge_index[:, graph.y]
++            # GraphDataset renames y -> edge_y, so graph.y is None here and
++            # edge_index[:, None] silently kept every edge (one giant component).
++            truth = graph.edge_y if "edge_y" in graph else graph.y
++            edges = graph.edge_index[:, truth.bool()]
+         else:
+             edge_mask = graph.edge_scores > score_cut
+             edges = graph.edge_index[:, edge_mask]

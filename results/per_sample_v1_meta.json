@@ -1,0 +1,395 @@
+{
+ "name": "per_sample_v1",
+ "git": "3d0c22bd3e68bb45886bc61c7825ada1ef8b5d7c (src/slurm dirty: 3 files)",
+ "slurm_job": "6712588",
+ "host": "submit21.mit.edu",
+ "started_utc": "2026-10-07T04:55:00Z",
+ "inputs": {
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_val_entries.csv": "cf96a9fdba9c741e8816be52d29388177daed8aee5f6e03704ee79dd645b2417",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_val.csv": "048c19629744d1ce9e2a0ea3af28124c6b6d8ac62a2d2e9477779a0811facfc4",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_val_differences.csv": "7ed17b747b1a8df73dd8148c7774b2aac99ca791487825d28a8d10b182c7c670",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_spec_test.json": "3039efbcf960b1d79b0cc8a6913d2cc21cab3b21e68bb7c0de957a27e2781296",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3.csv": "acf8e470f5b5747ec4385aa769572f1d8da17c2226d566ccd3528586cffadb49",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_differences.csv": "10ef05c4dfcb04d50125e11b139d759f4297e5924f29ccf49207ef4006e72fb4",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_test_per_set.csv": "9f47afae6a221412e4087f41996251a2864eec87b75b5aa5502b5e81dff88cd9",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/final_selection_v1.json": "1395f9191c2adc70ad0625c1212c97d0771d265aca86aad17e0fae4f0a9e07e1",
+  "/work/submit/jinboz1/hnl/hnl-displaced/results/working_points_v1.json": "186ac8dd9c8652f8a20dd2402eb7e6254d86789f4d60bdb8468371d743888d16",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl10_100_val.txt": "a3ebe2d0c63c96207106b76045c527f63635482d85824a0509ac1f546b3282eb",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl15_200_val.txt": "0efe904a4e8572ef411f4845ee77ce030009d72d994c07b593274c244c9d29dd",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/ttbar_val.txt": "54f9df251114902940b28576c3d3f7f77137f3f8d85844bf952db5ac75fb0592",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl10_100_test.txt": "d0985e1f7220bde58ed9828b6231effcda2ea5031948b8ae2b5aa1da32be7070",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl15_200_test.txt": "6b8773002bc4d37ca007c36194e64bccde95628d0a8bc6fd948bb1ce6a54fa08",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/ttbar_test.txt": "0dd72b310d1161c68d402137861dcc7485184003a35540216c97ae0d2779544b",
+  "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl15_100_external.txt": "43de4891aa261dff1e46a8042c7a9e5bddfa064034b99bc723e3134993768bf8",
+  "/work/submit/jinboz1/hnl/hnl-displaced/docs/dropped_events.tsv": "174f78afb27bcec071cf70883326737b5170da140361433b919c38ac26323014",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/bootstrap/v1/hnl_joint_test.npz": "eee6e4d475b4fe73f329e8cb8a4d600fa902446a934947197938d0a5787cc596",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/bootstrap/v1/ttbar_test.npz": "71c6027ab372d792467084169a44cd3195d714ba8b5f82d0fe7edbb39272ce6d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/bootstrap/v1/hnl15_100_external.npz": "5595ae94d98b1d7d2caff717b0f16c521b25517094db72b8cbfd2a2dfcab2440",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/bootstrap_v1/tables/val_b1000/hnl_joint_val.npz": "20e8d5343177c944a2d9cf6e8245fb8b63a4aed47e77a0cd9f6d80b8db7c01aa",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v1/bootstrap_v1/tables/val_b1000/ttbar_val.npz": "5d79f40b6aa675b3c59ef50dbbad009a82c0996ec3f2335584133990072c0b3b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/eval_val/per_particle.parquet": "eb8b40a8b2fdef11811a366eec17b037cd63adec71bbaf9b6deefabc110857b2",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/eval_val/per_event.parquet": "cf6da657277a288a444e8497b96277d8dd18fcf39afe2b135a9e26cc982f48a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/trackbuild_val_fb3_all/per_particle.parquet": "e34b782fe6a37e0f9c0c209311b8c57a70cbf7113289efadd5afd8db4d48df0e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/trackbuild_val_fb3_all/per_event.parquet": "73145cf5944ca5d04fea041ce5aaf33468566218b63ab5c58452aa3bcdc53fc1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/trackbuild_val_fb3_all/merged_from.json": "1d74316f2148207e003a78680ff59ab5a741a09bc8a48c85c0e49fe3e89113b4",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/eval_val/per_particle.parquet": "46f11f1d2fac4983cc9b6c5fb065be62738900d89c89412c5c0aad247cb43ce7",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/eval_val/per_event.parquet": "0ae5e08d599a998c5167d99d3a95c42f510f40644ec5e90affd5a410de8efb1e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/trackbuild_val_fb3_all/per_particle.parquet": "1247eda771ef1700808dc94226d5171a0e52b30b7eb3dfbb11c132a577cc86fe",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/trackbuild_val_fb3_all/per_event.parquet": "f4989587fdc5b27a8976edf919564ce05364c1ae49078aca02d7721669354daa",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/trackbuild_val_fb3_all/merged_from.json": "79249fb2f3875f3782095702175b7352863e8a9f962e9b692e385a7811c9c880",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/eval_val/per_particle.parquet": "d13fd90000bddff86b3d21d6886a6782af9524d68ab58c54f7d69843702664fb",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/eval_val/per_event.parquet": "05e4eeeb288ea6be071907a1bfdf778a01d73bb0164573885a81566fd861290f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/trackbuild_val_fb3_all/per_particle.parquet": "0b8aacd4e0014b96dc8a3a9e6686439ea80c198b3bb8e4da3ea0651c5fe66ff9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/trackbuild_val_fb3_all/per_event.parquet": "7687b8272727dae28ec06461797b46ce852e94e637671888dbaaea87d606dfce",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/trackbuild_val_fb3_all/merged_from.json": "3330a8ebe51d8e7b918e82bf1b727368f17edf8d8d0f5f1d140ea843af4342dc",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/eval_val/per_particle.parquet": "272537048ccfca5e64ab43f7ddabbece6770111da8c91166860df75091894c3d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/eval_val/per_event.parquet": "c886e8c94b89128e1af79051f8365854fb26f8b9e666bc6b966c5db31ec4657a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all/per_particle.parquet": "9a7f707a06a2c32b79b1fe2ebafb0e5b320f6b257786121550c8eeccb5178b5c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all/per_event.parquet": "e1d78cc9e1fdc50eabdcb25d4ead7f5e596ca54f06726a4f1660048a95f5e23e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/trackbuild_val_fb3_all/merged_from.json": "6814c9210a11d799d5d22898e9f349ba80faf2235d584f884d9cb6d0e6f134b4",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/eval_val/per_particle.parquet": "90fa565ecbd0e62174d1d99c0cbf3f084fb457e04aa403d01f4161910857f15b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/eval_val/per_event.parquet": "148102e49a27b1cc39f7e3180518dfb4d2b7f85f8d224f0f330646fa4fec6101",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all/per_particle.parquet": "382b5a94d0150d53f91da6c0d28fd5036527def48ef1b7e7b09036300d0e6be2",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all/per_event.parquet": "c981b92ba3ec776ef09a99d17a9414267c2d0c7ee4a7c1a25557f654bbf76be0",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/trackbuild_val_fb3_all/merged_from.json": "fa38cbd6c7ec06cb236655f762deb03cb6253a0b043bd960d4a1b737a6f4514e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/eval_val/per_particle.parquet": "863180c191bc836e4dcbea791a124695ff3b682520a3f9ada1f38e3b73e0349a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/eval_val/per_event.parquet": "938151d0b2a1c1a7025292035bfb90cb3b8d14f32681805a8ca3cf92d3b4d245",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all/per_particle.parquet": "96a76f76861b2ab40b7ded54401cf9e1c41184971aeccac9f81c03b810f39229",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all/per_event.parquet": "19d87aedd46becc1d345a1cef50453b8760e55b547427eec66960c6af0313856",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/trackbuild_val_fb3_all/merged_from.json": "71428ae9c98cf0ea5acbf18086dd2bfeb2cb3199f402779b1bd163388118f6c6",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0/trackbuild_val_fb3_all/per_particle.parquet": "1325eb1cd620d6fd12d6c8f5314759a219cfeb8e3866138f2ccd98152f60cc8d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0/trackbuild_val_fb3_all/per_event.parquet": "fd4fc95bf1c52f9c750785bd3f6b6248720ad134568c3fb9753a65a9d3169bf1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0/trackbuild_val_fb3_all/merged_from.json": "4e1f81008b4721a76f0389e08c7b13c2b19985aff367f3995cebc00b8f6441af",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/trackbuild_val_fb3_all/per_particle.parquet": "a43325775e5c78012e885a701fb19e6ec0b1b3d74f10d20dd52b8130dcb7793a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/trackbuild_val_fb3_all/per_event.parquet": "b91283eaeb269e0113693acf204b3c1b93c21879bffe3df6da06a54c753e904c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/trackbuild_val_fb3_all/merged_from.json": "0ad234fb787655bd01fbefab988ddba95cc7fe648d81453ee01b7c74d8ec9d71",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/trackbuild_val_fb3_all/per_particle.parquet": "42c0e9b0239d5d221b124ef3565d38c13d075744e71d1cf72f8682396f878940",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/trackbuild_val_fb3_all/per_event.parquet": "71eba214320983abb839c350297f9ad78146947af5421322920edf19318c4daf",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/trackbuild_val_fb3_all/configs.json": "5b55d5e22af84c6624dfa42187a3630b28ae7dbcdb21d41225fdace3cb00c683",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/trackbuild_val_fb3_all/merged_from.json": "7b6d9f511f06488b5df4bc0880c458bbe95c22718d2c0d656c712a88f477eb87",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/eval_val/per_particle.parquet": "a469ee76dbaf4f2ba53d95cb7ee543f068aafcee57346239d317c1c93688dbe9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/eval_val/per_event.parquet": "f29450006fabb6b800a0986993fd4da76e803eb37b045c3f03d2e35feda1a375",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_val_lmerge/per_particle.parquet": "fa3c975462c484f601aa66c93f9c1d2ce777ff0fcd734922d66ad2e2bf7d3208",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_val_lmerge/per_event.parquet": "8cb18298bb63abf5b1984b3e8fc725ed3632daedab95df36e1e3ae47f1e81a7f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_val_lmerge/configs.json": "fd653098c21bf00dc5177100bcc56bc185cca04bfe7f59da5315121fd2572417",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/eval_val/per_particle.parquet": "efc2afe96870e14cdf1dd56b1e8972f0af009f85296861ded595a6d95e95e5a4",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/eval_val/per_event.parquet": "9d9a0c5d05511dd38d4466321574e6e2575e8a4c95347f673f103b2d2027fc10",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_val_lmerge/per_particle.parquet": "4119b4fe499a99d642bab17e672ec50291b1434e976e25effed56a53f5d2cd2b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_val_lmerge/per_event.parquet": "7109d97efeeb9b4906ae43a352488b274765ba0d3f247e6a0e495a3195dea52a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_val_lmerge/configs.json": "fd653098c21bf00dc5177100bcc56bc185cca04bfe7f59da5315121fd2572417",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/eval_val/per_particle.parquet": "1249aee12e5d7dbd0e95ec2f0898242252368c930239542e1d7734fcdce553e3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/eval_val/per_event.parquet": "10dcd7e215d8e50d32b9daad30ed89e440574e3d1485625da713e3f5f91c748e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_val_lmerge/per_particle.parquet": "14deecfed7fb035cbead1285bdfb0f6375c8fb289d5ecd3ac2df3e33cff7c485",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_val_lmerge/per_event.parquet": "6ddf867871b3b257cc5b1d41a15facbeeb7ada8b756d41bc628c5db429e1ece7",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_val_lmerge/configs.json": "fd653098c21bf00dc5177100bcc56bc185cca04bfe7f59da5315121fd2572417",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_test/per_particle.parquet": "3909ccc2bbb414db64d6788f59932137c358aadf6fda60e29ca17d11bd0b9ee0",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_test/per_event.parquet": "3c51d397dbc9f0439401c9fb396b1327964bb170facc80d6e708e27d01e1458d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/trackbuild_test/configs.json": "3c48dbc37535a37900e05677f6a3db95bec1035ccbee787012a3bd6e583e35a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/final_selection_used.json": "1395f9191c2adc70ad0625c1212c97d0771d265aca86aad17e0fae4f0a9e07e1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_test/per_particle.parquet": "7cfb3aad2e3af2b1f5299cdbdea449c828039ed916121b5d3583b9bb5fd9bb8e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_test/per_event.parquet": "4586b7133f8b55df27a11cff9f3c1b3663bb837c444532edfc3ef27f88dde410",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/trackbuild_test/configs.json": "f38cb8116a4101655e46b986fc8eba0d243c7912f5012a5e26804f438ae3e4a5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/final_selection_used.json": "1395f9191c2adc70ad0625c1212c97d0771d265aca86aad17e0fae4f0a9e07e1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_test/per_particle.parquet": "239a042debf4c0475a5a8e42a6f7a8de8143777163cb6e0c61827acf5b6ec6b9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_test/per_event.parquet": "b7e67d980bf88bcd049875624649610041e187d2c57b3b42e444d6c2c771bf56",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/trackbuild_test/configs.json": "982035223d992e70099439fdccb8b8174daee52dfd1525cc3c6f48394fb35f93",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/final_selection_used.json": "1395f9191c2adc70ad0625c1212c97d0771d265aca86aad17e0fae4f0a9e07e1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test/per_particle.parquet": "c3069530bbd08f4c3db72cd72daef85ce2e7ff6ea23cd4cc05faadc9f3fb2640",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test/per_event.parquet": "bb6cfd9cbb41ccd1b3b8fba4e69a4fa2205b26e9e6678e8ec2180aeca39bcd9c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test/configs.json": "f38cb8116a4101655e46b986fc8eba0d243c7912f5012a5e26804f438ae3e4a5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test/provenance.json": "4cad746a08fd0a447a1aba2467cff69b8b8967b4b5cb80fa1702fac1784730c3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test/per_particle.parquet": "f2fd43f66403084423d285b6d6c11dec0eff32fcd7044682c6bc42f1614006bd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test/per_event.parquet": "0f0155b1ed2f344442dbc04e2a3b3133462b61005cdc841f3660c4c288c755bf",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test/configs.json": "1fcbd327b87e9d672224ba78968342cebb2e072fb64dea9c5b3069bed5e83fa9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test/provenance.json": "38ac87389efda2bd9108821eb61af3c5f78ecd1b6a0b210bceef9d412198ddce",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test/per_particle.parquet": "dab2ea4fb884febefd40b53315801bf466dff790eb7994ac02d779da2cd737f5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test/per_event.parquet": "3a557bb107dcbf671d49f379179ec38df5edd5f622d6a0f0663119ab9758f1a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test/configs.json": "3c48dbc37535a37900e05677f6a3db95bec1035ccbee787012a3bd6e583e35a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test/provenance.json": "c02040dcf1cf120501db36e14822f096a52838cdce66ab8b5020c7d35fad04fd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test/per_particle.parquet": "7c2b5e579b5069dbd1c95f827f28e2c35829c74859218b10576c1b2ae92a906f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test/per_event.parquet": "bfb514a79676230098f81fc02a50fa9ab20c96cb10b818841abb0bfd118af9c9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test/configs.json": "1fcbd327b87e9d672224ba78968342cebb2e072fb64dea9c5b3069bed5e83fa9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test/provenance.json": "95397295d48c6280ed61bcdedec2077f57bee1d0bf068d02ceab7a52309205a3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test/per_particle.parquet": "cf314ce37f9d03e3623d64b08775e68ea72598dc03de35d681b186ed538e404c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test/per_event.parquet": "032c1f38b4a27caec0394eabe920e9237b4ad06b4ed8b1f0e5d70867e8d0760b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test/configs.json": "f38cb8116a4101655e46b986fc8eba0d243c7912f5012a5e26804f438ae3e4a5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test/provenance.json": "ffab0a12f6e073e94b4e2b5403ed08f2aa22b57a2104498bcf6aaa21521606d0",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test/per_particle.parquet": "41007a406823efcf426e93e1993c1f106d04c6e66e512662802f03f80dcf84a1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test/per_event.parquet": "f2fd7f3b74d1d0086950030e5c88cc0557877b915f5068fbd587470d35fe5550",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test/configs.json": "3c48dbc37535a37900e05677f6a3db95bec1035ccbee787012a3bd6e583e35a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test/provenance.json": "d0d595e3add93c4a9d2fe38c0688f738a0510bea38a04a4ce4a46c0ed144f8dc",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test/per_particle.parquet": "2b310c0f3fd39b15ab325ebcbaf85f8dd137aa5939e7c3826e2b4a1738334841",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test/per_event.parquet": "f53c68e9b88aff43a799bf3845eb632ec034850fb60a16e7c11ee61f9b8e9437",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test/configs.json": "f38cb8116a4101655e46b986fc8eba0d243c7912f5012a5e26804f438ae3e4a5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test/provenance.json": "857fe4fd662ea50fd817c237b9238748e22a1c5015040d008a1d164b35d7cc44",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test/per_particle.parquet": "fdea6570594b3e712a2ed852ecefc6ae9995791ec02317d1efb73e0df53508a3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test/per_event.parquet": "9bba8e0f611e59567e8fdad1312f4346491527b2d6f2d6d8d563361c40819e54",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test/configs.json": "71e580bcb87e17a6e1b90741032fe8ed0a31f9067528a81e18b383ef533588ef",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test/provenance.json": "7fb79a45295ba195e602b7ea1b316bc3999499cbdeb8b2683641a33111ac1335",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test/per_particle.parquet": "59c4782ade6b21494150ffe9e97159e550970d30fc2c3c9f41d74fc77349379c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test/per_event.parquet": "aaaf3bfa553c3a2742509f8f041b886934557c2283063e0913ada331744f49bf",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test/configs.json": "3c48dbc37535a37900e05677f6a3db95bec1035ccbee787012a3bd6e583e35a8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test/provenance.json": "c46868f5e687aca6a41704f317df8b2f43610efe68e75ee8d7f3b72c737e6a6b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/eval_test/per_particle.parquet": "f5f05659bcc0a8c0e967f5679ef99ff85a34d6ad661ebee5a846b5f2c4aa2a15",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0/eval_test/per_event.parquet": "bc486eaf30f4cbfefa627bdce57e1f1587649a433a47687af66b75f3666a0804",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/eval_test/per_particle.parquet": "719623c8576736ce3f4aea18605a781acaecf9307d48574c5b6f4e83043640f4",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/eval_test/per_event.parquet": "519bb5bd89d66807a002c6266469f0c62dc6efd51e90de316113a1a124dd6b85",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/eval_test/per_particle.parquet": "c861213f24f255291ea42ef7b6211599eacb0c7f7a507d3b6c4331dbcfefe9aa",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/eval_test/per_event.parquet": "a5274c15bec47913bf5dbb219f78309e17feff773fe55eeba33b5a1fd6518b96",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/eval_test/per_particle.parquet": "f6871a0156a89bdd625464ed57478848608c3175d759a3e6cd4e3ce976c8b363",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/eval_test/per_event.parquet": "c56a4b6b66dd4e1be18a83c4b032b3567992633820964fd2241418a515b5a72a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/eval_test/per_particle.parquet": "be7abc6c659131756963a5c9f0e7625612c51349707f927f6321222eabc7855d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/eval_test/per_event.parquet": "000fc43ce37146b3b2a8db97f1c6e77a350a4d20c6a51c4e6a7e956c3ef591a6",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/eval_test/per_particle.parquet": "8f627025a4c8db35edc6c99c5573bc35aa645d0648d6e6dfbe474e6ade48f50d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/eval_test/per_event.parquet": "0d04d52694e2b45ea272a8eda0ab24601e20c55f4d5f265fa3e7e668666a7965",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_00000.parquet": "b913df306ce7c7393249d1dc24d2926519a82f2c356abe22f4bbc7b0a214bc83",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_00500.parquet": "e30580e070b4d0b7f6b21bd0e1161486c43ba64cccfec79c5e1a20851d6cce7c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_01000.parquet": "171eba0af12f478c15af8cb22b3eddda495d958497c0b3b95672a35e4a6346fd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_01500.parquet": "b269ee413bb5008b1776f452253a4a9d2ce2089b47004c86c9561c388d7ae2d5",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_02000.parquet": "51bc8304a90d36c479cbbb979ff5c20099f7c0f6517bb9268ffdbabe27b5b32d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_02500.parquet": "684bb284115cc35e7b289ac7daa0d1ba9c64070c1f93b24931ffbe99d98ffeea",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_03000.parquet": "cb328a016fe22efc851520dd8121850a2969394dc35f98080f38d4086450af28",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_03500.parquet": "0924ddf25d4689caeeab3c3bdfaeaf75928803d7dc762dbe193810b7ada625cb",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_04000.parquet": "a8c5e8c44442c1f8f6b88aa4e415d237da8f599f1cde77590c03f905c0c38170",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_04500.parquet": "737cfd9db516275d56b7cd047b9b8e980058a4d5a294194186ead8c09e27ce10",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_05000.parquet": "4bf0df2ddb23d9abc208ada42203cedf167c2693c32b3ea0b6f69d398f855884",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_05500.parquet": "3b9594dd8ac5222117ea6bc5ae5630956cda7b3d1d6c76bfd8119119ffbb8a7f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_06000.parquet": "04862b1666d43eaab1f3ce050b54881eb3c2656ca06f97be63eb512b4ea9e261",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_06500.parquet": "5254df4ac5a8a0eb14f76bfbc80b2ce87d044d719bc7ca8ae816a3089720879e",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_07000.parquet": "64ad0d01e32a7e6772d9217be2b03aa1d335fe7d1d62c52bdefdbfa7f9f24209",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_07500.parquet": "ac4b68831757a7118a7617b528dab0c4d475046da45c1d084bde2f1362aa5d93",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_08000.parquet": "7d500dc0c90a443f879ce0c129c4d8d5992785d093fd1f4b49083b184d70379c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_08500.parquet": "b5af2751929948a5bfadfeb535f203e32d75e30dd815a66df692355bff2dce59",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_09000.parquet": "1e919417fb579c090ee7d44ffb7e884295ee7fc49972049fbb9d971fa149a196",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl10_100/shard_09500.parquet": "ebfb2bf677ca5a6f134b113da078d9271fa7f7bae152252438b6d2d42f0f54b6",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/particles_hnl10_100.parquet": "75aa4c8630a0454afaf512f44dde5f17ee64b6950efe9d2992b9e244e2da5893",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/vertices_hnl10_100.parquet": "f0ea3ca7d8ca348342c7684b5f2a83c50655a5bfbc445d41070d7ae981042e0b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_00000.parquet": "6422880b0789726dca0524266d4867c86910cae2d3fb4477820249a1e3cff625",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_00500.parquet": "ef4ae20403776089e37595d9a08c7e7b2445ec964b93215162dd91c46df0c7f1",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_01000.parquet": "e462e5c50464c4b4f8378547528b56a8cade96bc402cd44f5cb9f9b41425f14b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_01500.parquet": "250615299d33a622f054c74bfa27d2a82cca51d5599059b8382ee2e200f7272f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_02000.parquet": "aee74cd57faa5f663ef8ddb9cd4d7ca700be061856c2ce6a4ea67a61aeec0c49",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_02500.parquet": "00c1d8f08ee9e9b43212a13b037dd17f7a5933436adac69366f6c9f0fb3977d4",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_03000.parquet": "4f874d5d2d39743b93a30ff301bc004b9bfab312337a1de48b51b10053961e10",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_03500.parquet": "d1b6b25b582b6ff686b714cf57c5106d0af34d802c5ea32c75dc3a5e17903bd0",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_04000.parquet": "3154d66c3a329a0c1314a8bbb8b644b724efabcc98393c039e2acd16a79b3a7b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_04500.parquet": "d87cb74dec71ac26ac4f4a0dfc28ed01f51719840b3792136d235a7c17aadd0a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_05000.parquet": "157adb0ceff5ae358e9e26f2cdea9e70627df9b9c797fbff28f0ac447d85b315",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_05500.parquet": "445e314eaa182918e2b665549f4ec518cdb05499cf733e0682c8de4364536433",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_06000.parquet": "686ad97f873e80194c2aa2f7b36af28e63d687f06e798249b32dfedb44b15ce9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_06500.parquet": "150dd1948c1ce3f9c21cef8feb1c7bf774430e83ab8fd14605810907ad41f8ed",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_07000.parquet": "5c9204936076e56bb1136ee524166f409c89d30dd2fd6ba9ed97da7e51b76531",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_07500.parquet": "7c9fd37e963fe6a5b7195ed0cb89d0cf04eb4f2d5dac0d97fdb1b124f07af858",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_08000.parquet": "584e347b50a8644808aff7edf53406f5c25f20b427c5b0bf73abad8b9711937f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_08500.parquet": "2a43b913863030485995af3dc0054710c22ad3b674b4055a7615f2d151387623",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_09000.parquet": "c362ad2a627117be0b5fd338aaf3107890b6125444166bc8ff9cfa38276318b0",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_200/shard_09500.parquet": "0e1c066ab72ba41b31cfeea09ac87bad1171267fe1f7d0dfeefb1319de34484d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/particles_hnl15_200.parquet": "6775c5bb4ee5ca5bb590cd7b4972bfc02d13b927e0f5ae671db4f61ed1fa6998",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/vertices_hnl15_200.parquet": "29f7c274865278ae761aded019c3c357f4d0554af9d8e33cc1d116d040d9acbe",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_00000.parquet": "7a404060ecca4896744a7c707d9fee70f2bdd10d7bf9a820ce767ca3a1497949",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_00500.parquet": "4adbf4c4bdb07e060197981ee51a343f793d608cdba58f077a8a1ba10ff6bbac",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_01000.parquet": "57da6c6498715e4b1b9cde53d9f630e26b910a33bc2ba5117e7100fed16c9e39",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_01500.parquet": "47cbeee93eba23d9f9e27302f848e8c92e9a6b3ea32230918e17841b96388603",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_02000.parquet": "a254487a5272e4dd96a62babf401fafaac21c87642e340c818ac40d6433ee82c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_02500.parquet": "457cae86fea770fd2c4a62c1562c7cffc851804b55144d95bb00cd101bfed4a7",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_03000.parquet": "c75136a0c66c8c8f3819a7732addfffd239dc3c744c2f7ef926bc1d358122bcd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_03500.parquet": "d755c170bc1a836f3ebf3b840d947826eaf58467fcacde332b29926277cf8a95",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_04000.parquet": "8d45438ba8a80b2adfd941f4fd7f61fa133dab0df7c731c2ee867efce011f131",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/hnl15_100/shard_04500.parquet": "5fe949b79080d90c63069f7269606d746507a735d7157c60e1bb95cf5968b95b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/particles_hnl15_100.parquet": "e426c3ee3ffb346929fd064aa98fe7e9eb3c1212b2f0cf915269de32b227f96c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/vertices_hnl15_100.parquet": "1ef74d0ad478275e8ce94d213f5f76c2e6cf83fb03527559014be109630dd7b2",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_00000.parquet": "3baf61b1febd3b19ceef6165b4e73e6fcf4f73922f9e44670d4c56b06526ec35",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_00500.parquet": "5cb4e9053f5c4c75ba895ca5a57f7c034c9f3584fe45f8cab4c7ca88fd7b524f",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_01000.parquet": "f359b52957ca03326987717c6d6bbb3178329d93ada04984be8778f51dfcd4e8",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_01500.parquet": "65e3c3955e9045b8afc3b718d245fd032a92777d6a074e90a6b5a314e9375ad3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_02000.parquet": "20f1295a94bce52367b0045299f19b6c6e843866af9a3e9045cc346b6f6d458c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_02500.parquet": "72b035d387898820c38db67ccbdcb8d4dffa5df36c5f2a56e81b6498606f7147",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_03000.parquet": "2b9e519961b17a36bc36015821f9660bddefd3f64bf5529e3370ffd8dd0d20db",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_03500.parquet": "902fdf7ca10a1a1ad240112b801ca173d00fda1209de34f6ec037043d7fa1a01",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_04000.parquet": "643df328e45acb4098868582cc6bfd5e4b27c08f38443da5a305cb82fcea0a9d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_04500.parquet": "448fb8a3d991236c047fe360b83905f810457e319cd612f76ff86bf4184d012c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_05000.parquet": "4d6dc78afb289b604391e053711790bce17ae9e3ed46472877735bcb59713b3d",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_05500.parquet": "fc664ea1f3c955f82ae5c0d68c19f92c2e5e8535cb836e720de34d9587e5e376",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_06000.parquet": "db5a363c96c19582abb4e3d4f562854ce1183e7daa3c04a26fb1dda3e96a51c9",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_06500.parquet": "17b79e5fcc85cdc8c8c524cd05fad672e68a98a4827835fd792d4bf72ec76d65",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_07000.parquet": "0a8d4177888edd1da96a1209e66d5121bf805f601a3ac36820c869facfb0fbb3",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_07500.parquet": "cb55122fe7729a6c3d54c13da456b4f0b79301c6751b28d416b273964f624fdd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_08000.parquet": "1533868355d017c3e4f34c2b15cb438d95df6bc0d933a8add6dc811582fcf23c",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_08500.parquet": "d4edcdc1f196bc3859f45eeb32441f0d09a1b39f1aeada98f5304730e9a0b2dd",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_09000.parquet": "69ca9feb789c6d611f3e5c31aa1c1cd500f56f2de1355e8c61142c6210a2712a",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/particles/ttbar/shard_09500.parquet": "e4b32ff6b5b00f1b34e064bd2b6f01cb24c9bf0e62348a6f497c0d7b53cbcf6b",
+  "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/truth_fits/v1/particles_ttbar.parquet": "97f2702908571eda6aeffc0290e2efc5dd3d1bd1ab171463ccc797c2f85393ca",
+  "/work/submit/jinboz1/hnl/tmp/per_sample_v1/cantol_cc_entries.csv": "972fd89d4a400abc92f7abf35cd72d709b5ee145d1f26db8471490d6531ed20c"
+ },
+ "test_use": "post-freeze, descriptive read-out of stored test outputs at committed configurations: every working point was fixed on validation before (results/final_selection_v1.json, results/strong_baselines_v3_val_entries.csv / _spec_test.json, results/working_points_v1.json); no configuration, cut, model or rule was chosen on test; results/claims_test_v1.json unchanged",
+ "validation_choice": "Canto-L classifier + CC (validation only, no test read-out): cut per seed chosen on validation by hnl.eval.ranking's rule 'best' (highest primary efficiency with fake rate <= FR*) and, as a second row, by its rule 's4' (largest fake rate <= FR*, ties to the lowest cut; the rule of the preregistered cuts and hnl.eval.ranking's default). The reference read-out given with --cc-ref was made from a spec without 'rule', i.e. with 's4', and equals the 's4' row (checked); the 'best' row has other cuts",
+ "cc_entries": {
+  "Canto-L classifier + CC, best cut <= FR*": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "working_point": "CC 0.35",
+    "eff_primary": 0.9797145003756574,
+    "fake_rate_hnl": 0.026537673709601285
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "working_point": "CC 0.39",
+    "eff_primary": 0.9827197595792637,
+    "fake_rate_hnl": 0.024175605364084182
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "working_point": "CC 0.39",
+    "eff_primary": 0.9812171299774606,
+    "fake_rate_hnl": 0.024271802640121187
+   }
+  ],
+  "Canto-L classifier + CC, preregistered cut rule": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "working_point": "CC 0.26",
+    "eff_primary": 0.9429000751314801,
+    "fake_rate_hnl": 0.02900878601960836
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "working_point": "CC 0.45",
+    "eff_primary": 0.9819684447783621,
+    "fake_rate_hnl": 0.02905062048810277
+   },
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "working_point": "CC 0.44",
+    "eff_primary": 0.9789631855747558,
+    "fake_rate_hnl": 0.028851184040735188
+   }
+  ]
+ },
+ "cc_reference": {
+  "path": "/work/submit/jinboz1/hnl/tmp/per_sample_v1/cantol_cc_entries.csv",
+  "sha256": "972fd89d4a400abc92f7abf35cd72d709b5ee145d1f26db8471490d6531ed20c"
+ },
+ "fr_star": 0.02936834277897644,
+ "per_sample_val_tables": {
+  "hnl10_100": {
+   "units": 1000,
+   "B": 1000,
+   "seed": "SeedSequence(20261008).spawn(2)[0]",
+   "w_sha256": "a06e21cc355cf13a326c091ffcb6156bd0ee83fbadbddec2003bb1b3b0706996"
+  },
+  "hnl15_200": {
+   "units": 999,
+   "B": 1000,
+   "seed": "SeedSequence(20261008).spawn(2)[1]",
+   "w_sha256": "6a8ff8c0da101efe8a846bc83ab13e0086b846497d754e14384e438325ebed36"
+  }
+ },
+ "checks": "745 of 745",
+ "working_points": {
+  "Canto-L (frozen: learned merging)": {
+   "val": [
+    "mwslmerge 0.05 (trackbuild_val_lmerge)",
+    "mwslmerge 0.03 (trackbuild_val_lmerge)",
+    "mwslmerge 0.1 (trackbuild_val_lmerge)"
+   ],
+   "test": [
+    "mwslmerge 0.05 (trackbuild_test, configuration 0)",
+    "mwslmerge 0.03 (trackbuild_test, configuration 0)",
+    "mwslmerge 0.1 (trackbuild_test, configuration 0)"
+   ]
+  },
+  "acorn (HNL) val-best (MWS-layer + learned merging)": {
+   "val": [
+    "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.05 (trackbuild_val_fb3_all)"
+   ],
+   "test": [
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  },
+  "acorn (ttbar+HNL) val-best (MWS-layer + learned merging)": {
+   "val": [
+    "mwslmerge 0.2 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.05 (trackbuild_val_fb3_all)"
+   ],
+   "test": [
+    "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  },
+  "acorn (ttbar) val-best (MWS-layer + learned merging)": {
+   "val": [
+    "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.02 (trackbuild_val_fb3_all)",
+    "mwslmerge 0.05 (trackbuild_val_fb3_all)"
+   ],
+   "test": [
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)",
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  },
+  "acorn (HNL) + CC, preregistered cut (claims' reference)": {
+   "val": [
+    "CC 0.26",
+    "CC 0.36 (FR* unreachable: minimum-rate cut)",
+    "CC 0.27"
+   ],
+   "test": [
+    "CC 0.26",
+    "CC 0.36 (FR* unreachable on val: minimum-rate cut)",
+    "CC 0.27"
+   ]
+  },
+  "acorn (ttbar) + CC, preregistered cut (= best cut)": {
+   "val": [
+    "CC 0.34 (FR* unreachable: minimum-rate cut)",
+    "CC 0.33",
+    "CC 0.31 (FR* unreachable: minimum-rate cut)"
+   ],
+   "test": [
+    "CC 0.34 (FR* unreachable on val: minimum-rate cut)",
+    "CC 0.33",
+    "CC 0.31 (FR* unreachable on val: minimum-rate cut)"
+   ]
+  },
+  "Canto-L classifier + CC, best cut <= FR* (validation only)": {
+   "val": [
+    "CC 0.35",
+    "CC 0.39",
+    "CC 0.39"
+   ],
+   "test": null
+  },
+  "Canto-L classifier + CC, preregistered cut rule (validation only)": {
+   "val": [
+    "CC 0.26",
+    "CC 0.45",
+    "CC 0.44"
+   ],
+   "test": null
+  },
+  "acorn (HNL) + CC, best cut <= FR* (validation only)": {
+   "val": [
+    "CC 0.38",
+    "CC 0.36 (FR* unreachable: minimum-rate cut)",
+    "CC 0.44"
+   ],
+   "test": null
+  }
+ },
+ "finished_utc": "2026-10-07T05:13:07Z"
+}

@@ -1,0 +1,10 @@
+[
+ {"label": "DeZoort IN (6.4k par.), ttbar + CC [FR 0.125, target unreachable]", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/dzin/armi_s0", "source": "eval_val", "color": "#bcbd22", "marker": "v", "ls": ":"},
+ {"label": "DeZoort IN-L (127k par.), ttbar + CC [FR 0.061, target unreachable]", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/dzinl/armi_s0", "source": "eval_val", "color": "#8c564b", "marker": "^", "ls": ":"},
+ {"label": "acorn IGNN, ttbar (arm i s0) + CC", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0", "source": "eval_val", "color": "#7f7f7f", "marker": "o", "ls": "--"},
+ {"label": "acorn IGNN, HNL-trained (arm ii s0) + CC", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0", "source": "eval_val", "color": "#000000", "marker": "s", "ls": "--"},
+ {"label": "acorn IGNN, ttbar + ours: MWS-layer + merging", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0", "source": "trackbuild_val_lmerge", "family": "mwslayermerge", "color": "#1f77b4", "marker": "o", "ls": "-"},
+ {"label": "ours: L1 + trunc. aug., ttbar (screen) + CC", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0", "source": "eval_val", "color": "#ff7f0e", "marker": "D", "ls": "--"},
+ {"label": "ours: L1 + trunc. aug., ttbar (screen) + MWS-layer + merging", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_screen_ttbar/symregion_trunc/armi_s0", "source": "trackbuild_val", "family": "mwslayermerge", "color": "#d62728", "marker": "D", "ls": "-"},
+ {"label": "acorn IGNN, HNL-trained + ours: MWS-layer + learned merging", "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0", "source": "trackbuild_val_lmerge", "family": "mwslmerge", "color": "#2ca02c", "marker": "s", "ls": "-"}
+]

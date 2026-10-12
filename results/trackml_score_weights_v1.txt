@@ -1,0 +1,6 @@
+T2 (accuracy phase) event 1112: hits 114636; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.080 of hits, 0.091 of the weight; zero-weight particle hits 0.020
+T2 (accuracy phase) event 1120: hits 87084; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.070 of hits, 0.091 of the weight; zero-weight particle hits 0.020
+T2 (accuracy phase) event 1138: hits 115443; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.078 of hits, 0.091 of the weight; zero-weight particle hits 0.022
+test (throughput phase) event 21102: hits 109857; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.079 of hits, 0.000 of the weight; zero-weight particle hits 0.102
+test (throughput phase) event 21105: hits 124601; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.074 of hits, 0.000 of the weight; zero-weight particle hits 0.094
+test (throughput phase) event 21108: hits 119083; weight sum 1.0000; noise weight 0.0e+00; generation >= 1: 0.078 of hits, 0.000 of the weight; zero-weight particle hits 0.100

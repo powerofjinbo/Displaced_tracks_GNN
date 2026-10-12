@@ -1,0 +1,28 @@
+# Stage 1 B control: acorn InteractionGNN scaled up (hidden 256, 12 iterations), recipe otherwise unchanged.
+model: InteractionGNN
+stage: edge_classifier
+accelerator: gpu
+devices: 1
+nodes: 1
+log_wandb: false
+num_workers: [4, 4, 4]
+edge_cut: 0.5
+undirected: true
+undirected_message_passing: true
+node_features: [r, phi, z]
+node_scales: [1000, 3.14, 1000]
+hidden: 256
+n_graph_iters: 12
+nb_node_layer: 2
+nb_edge_layer: 2
+layernorm: true
+batchnorm: false
+aggregation: sum
+hidden_activation: SiLU
+output_activation: Tanh
+warmup: 5
+scheduler: StepLR
+lr: 0.001
+factor: 0.9
+patience: 10
+max_epochs: 100

@@ -1,0 +1,41 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:22:32 -0700
+Subject: [PATCH 4/7] graph_construction: raise when a condition mask matches
+ no graph size
+
+map_value_to_edges returned an all-True mask when the condition's length
+matched none of E, T or N, which silently ignores the condition. With a
+wrong-length prompt condition, all 14,319 non-prompt true edges of a
+TrackML event got positive weight in the metric-learning path, i.e. a
+prompt-masked (PMASK) training silently became the natural one. Raise a
+ValueError that reports the sizes instead.
+
+gd-displaced patch 0004 (plan item d).
+---
+ acorn/stages/graph_construction/utils.py | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/acorn/stages/graph_construction/utils.py b/acorn/stages/graph_construction/utils.py
+index 140a8c25..6d6a8027 100644
+--- a/acorn/stages/graph_construction/utils.py
++++ b/acorn/stages/graph_construction/utils.py
+@@ -170,9 +170,15 @@ def map_value_to_edges(event, value_mask, edges, true_edges=None, truth_map=None
+         # print("Value mask is of shape (N)")
+         return map_nodes_to_edges(value_mask, edges)
+     else:
+-        # Unsure what shape value mask is, simply "ignore" it by returning a mask of all True
+-        # print("Unsure what shape value mask is, simply ignore it by returning a mask of all True")
+-        return torch.ones_like(edges[0], dtype=torch.bool)
++        # Upstream returned an all-True mask here, i.e. silently dropped the
++        # condition (a PMASK weighting rule then weighted every true edge).
++        raise ValueError(
++            "map_value_to_edges: condition mask of length"
++            f" {value_mask.shape[0]} matches none of E="
++            f"{None if edges is None else edges.shape[1]}, T="
++            f"{None if true_edges is None else true_edges.shape[1]} (or E/2, T/2),"
++            f" N={event.num_nodes}"
++        )
+ 
+ 
+ def map_edges_to_edges(edges_mask, edges):

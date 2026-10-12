@@ -1,0 +1,132 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:24:10 -0700
+Subject: [PATCH 6/7] TrackMLReader: deterministic event split from id lists
+
+The reader split events with an unseeded random_split over a list whose
+order came from glob, so train/val/test differed between runs and machines.
+
+New config option `split_lists: {trainset: ids.txt, valset: ..., testset: ...}`
+takes each set from a text file of event ids (one per line, '#' comments),
+e.g. the frozen lists written from the gd manifest. Listed events without
+all four input files raise, overlapping lists raise, and unknown keys
+raise. Without split_lists, complete events are sorted by id and split
+80/10/10 with a generator seeded by `split_seed` (default 0).
+
+gd-displaced patch 0006 (plan item f).
+---
+ .../data_reading/models/trackml_reader.py     | 83 +++++++++++++++----
+ 1 file changed, 69 insertions(+), 14 deletions(-)
+
+diff --git a/acorn/stages/data_reading/models/trackml_reader.py b/acorn/stages/data_reading/models/trackml_reader.py
+index d7a6abb6..a155d51f 100644
+--- a/acorn/stages/data_reading/models/trackml_reader.py
++++ b/acorn/stages/data_reading/models/trackml_reader.py
+@@ -13,13 +13,31 @@
+ # limitations under the License.
+ 
+ import os
++import warnings
+ import numpy as np
++import torch
+ from torch.utils.data import random_split
+ import trackml.dataset
+ 
+ from ..data_reading_stage import EventReader
+ from . import trackml_utils
+ 
++INPUT_TERMS = ["truth", "hits", "particles", "cells"]
++SPLIT_NAMES = ("trainset", "valset", "testset")
++
++
++def read_event_id_list(path):
++    """Read event ids from a text file: one integer per line, '#' starts a comment."""
++    ids = []
++    with open(os.path.expanduser(os.path.expandvars(path))) as f:
++        for line in f:
++            line = line.split("#", 1)[0].strip()
++            if line:
++                ids.append(int(line))
++    if len(set(ids)) != len(ids):
++        raise ValueError(f"Duplicate event ids in {path}")
++    return ids
++
+ 
+ class TrackMLReader(EventReader):
+     def __init__(self, config):
+@@ -29,24 +47,61 @@ class TrackMLReader(EventReader):
+         """
+ 
+         input_dir = self.config["input_dir"]
+-        self.raw_events = self.get_file_names(
+-            input_dir, filename_terms=["truth", "hits", "particles", "cells"]
+-        )
+-
+-        # Very opinionated: We split the data by 80/10/10: train/val/test
+-        self.trainset, self.valset, self.testset = random_split(
+-            self.raw_events,
+-            [
+-                int(len(self.raw_events) * 0.8),
+-                int(len(self.raw_events) * 0.1),
+-                len(self.raw_events)
+-                - int(len(self.raw_events) * 0.8)
+-                - int(len(self.raw_events) * 0.1),
+-            ],
++        self.raw_events = sorted(
++            self.get_file_names(input_dir, filename_terms=INPUT_TERMS),
++            key=lambda event: int(event["event_id"]),
+         )
++        self.trainset, self.valset, self.testset = self._split_events(self.raw_events)
+         self.get_detector()
+         self.get_module_lookup()
+ 
++    def _split_events(self, events):
++        """Deterministic train/val/test split.
++
++        With `split_lists: {trainset: a.txt, valset: b.txt, testset: c.txt}` each
++        set holds exactly the listed event ids (in file order); a listed id without
++        all four input files raises, and the lists must be disjoint. Omitted sets
++        are empty. Without `split_lists`, complete events sorted by id are split
++        80/10/10 with a generator seeded by `split_seed` (default 0), replacing
++        the unseeded random_split, whose result also depended on glob order.
++        """
++        complete = {
++            int(e["event_id"]): e for e in events if all(t in e for t in INPUT_TERMS)
++        }
++        n_incomplete = len(events) - len(complete)
++        split_lists = self.config.get("split_lists")
++
++        if not split_lists:
++            if n_incomplete:
++                warnings.warn(f"Dropping {n_incomplete} events with missing input files")
++            ordered = [complete[i] for i in sorted(complete)]
++            n_train, n_val = int(len(ordered) * 0.8), int(len(ordered) * 0.1)
++            generator = torch.Generator().manual_seed(int(self.config.get("split_seed", 0)))
++            return random_split(
++                ordered,
++                [n_train, n_val, len(ordered) - n_train - n_val],
++                generator=generator,
++            )
++
++        unknown = set(split_lists) - set(SPLIT_NAMES)
++        if unknown:
++            raise ValueError(f"split_lists keys must be in {SPLIT_NAMES}, got {unknown}")
++        splits, seen = [], set()
++        for name in SPLIT_NAMES:
++            ids = read_event_id_list(split_lists[name]) if split_lists.get(name) else []
++            missing = [i for i in ids if i not in complete]
++            if missing:
++                raise FileNotFoundError(
++                    f"{name}: {len(missing)} listed events lack input files in"
++                    f" {self.config['input_dir']}, e.g. {missing[:5]}"
++                )
++            overlap = seen.intersection(ids)
++            if overlap:
++                raise ValueError(f"{name} overlaps another split: {sorted(overlap)[:5]}")
++            seen.update(ids)
++            splits.append([complete[i] for i in ids])
++        return splits
++
+     def get_detector(self):
+         # Let's get the detector
+         self.detector, self.detector_dims = trackml_utils.load_detector(

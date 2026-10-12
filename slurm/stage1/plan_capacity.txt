@@ -1,0 +1,5 @@
+# NAME CONFIG ARM SEED EPOCHS  (S1TAG=capacity; full budget as Canto-B / acorn: 30 epochs over all 7999 arm (i) training graphs)
+# Supervisor feedback round 1, point 4b (capacity-matched control): the acorn IGNN recipe with hidden 147 (347,803
+# parameters; Canto classifier 347,777, acorn 263,937) on the arm (i) seed 0 base graphs (runs/baseline_v1/armi_s0/
+# ml_graphs, as Canto-B). Submitted and followed by slurm/stage1/capacity_chain.sh (GPU constraint, val read-out).
+ignn147 configs/stage1/ignn_capacity.yaml i 0 30

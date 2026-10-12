@@ -1,0 +1,102 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:24:32 -0700
+Subject: [PATCH 7/7] Filter: evaluate in fixed 2M-edge chunks instead of
+ catching OOM
+
+memory_robust_eval ran the whole graph, caught CUDA out-of-memory errors
+and retried with the batch halved (cloning the batch for every piece).
+A 10M-edge full-event graph peaks at 41.7 GB in fp32, so it only worked on
+40 GB A100s by surviving an OOM, and an OOM on one DDP rank can
+desynchronise the collectives.
+
+Compute the node inputs once and evaluate the per-edge MLP over
+torch.split(edge_index, eval_chunk_size) (default 2,000,000). The MLP acts
+on each edge independently, so the logits equal a single pass (unless
+batchnorm is enabled in training mode, as before); no batch.clone().
+GNNFilter is unchanged.
+
+gd-displaced patch 0007 (plan item g).
+---
+ acorn/stages/edge_classifier/models/filter.py | 58 +++++++------------
+ 1 file changed, 22 insertions(+), 36 deletions(-)
+
+diff --git a/acorn/stages/edge_classifier/models/filter.py b/acorn/stages/edge_classifier/models/filter.py
+index 535a4816..06e24d11 100644
+--- a/acorn/stages/edge_classifier/models/filter.py
++++ b/acorn/stages/edge_classifier/models/filter.py
+@@ -116,14 +116,16 @@ class Filter(EdgeClassifierStage, FilterMixin):
+             track_running_stats=hparams["track_running_stats"],
+         )
+ 
+-    def forward(self, batch):
+-        x = torch.stack(
++    def node_inputs(self, batch):
++        return torch.stack(
+             [batch[feature] for feature in self.hparams["node_features"]], dim=-1
+         ).float()
+-        output = self.net(
+-            torch.cat([x[batch.edge_index[0]], x[batch.edge_index[1]]], dim=-1)
+-        )
+-        return output.squeeze(-1)
++
++    def edge_logits(self, x, edge_index):
++        return self.net(torch.cat([x[edge_index[0]], x[edge_index[1]]], dim=-1)).squeeze(-1)
++
++    def forward(self, batch):
++        return self.edge_logits(self.node_inputs(batch), batch.edge_index)
+ 
+     def training_step(self, batch, batch_idx):
+         if self.hparams["ratio"] not in [0, None]:
+@@ -182,37 +184,21 @@ class Filter(EdgeClassifierStage, FilterMixin):
+ 
+     def memory_robust_eval(self, batch):
+         """
+-        A recursive function that splits the batch into smaller batches and evaluates them one by one. If there is a memory error, it splits the batch in half and tries again.
++        Evaluate the edge logits in fixed chunks of `eval_chunk_size` edges
++        (default 2M). The per-edge MLP makes the result identical to a single
++        pass; peak memory is bounded by the chunk size and the batch is never
++        cloned. This replaces an OOM-catch loop that halved the batch after a
++        CUDA OOM: that relied on surviving an OOM (41.7 GB peak measured on
++        40 GB A100s) and, under DDP, could desynchronise the ranks.
+         """
+-        n = 1
+-        if hasattr(self, "cached_n"):
+-            n = self.cached_n
+-
+-        while n <= 128:
+-            try:
+-                output = self.split_batch(batch, n)
+-                self.cached_n = n
+-                return output
+-            except RuntimeError as e:
+-                if "out of memory" in str(e):
+-                    n *= 2
+-                else:
+-                    raise e
+-
+-        raise RuntimeError("Splitting into 128 parts was not enough")
+-
+-    def split_batch(self, batch, n):
+-        warnings.warn(f"Splitting batch due to memory error in {n} parts")
+-        if hasattr(torch.cuda, "empty_cache"):
+-            torch.cuda.empty_cache()
+-
+-        outputs = []
+-        for edge_index in torch.tensor_split(batch.edge_index, n, dim=1):
+-            subbatch = batch.clone()
+-            subbatch.edge_index = edge_index.clone()
+-            outputs.append(self(subbatch))
+-            del subbatch
+-
++        chunk_size = int(self.hparams.get("eval_chunk_size", 2_000_000))
++        if chunk_size <= 0:
++            raise ValueError(f"eval_chunk_size must be positive, got {chunk_size}")
++        x = self.node_inputs(batch)
++        outputs = [
++            self.edge_logits(x, edge_index)
++            for edge_index in torch.split(batch.edge_index, chunk_size, dim=1)
++        ]
+         return torch.cat(outputs)
+ 
+ 

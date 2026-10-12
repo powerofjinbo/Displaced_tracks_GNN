@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+*.so
+.ipynb_checkpoints/
+wandb/
+lightning_logs/
+*.ckpt
+.claude/
+
+# rendered video and its intermediates (regenerate: python -m hnl.plots.canto_video render)
+figures/video/**/*.mp4
+figures/video/*.mp4
+figures/video/frames/
+figures/video/check/
+figures/video/preview/
+figures/video/clips/
+figures/video/*.wav
+figures/video/narration/*.wav
+figures/video/voice_samples/*.wav
+paper/scratch/
+
+# local build products and private material
+*.whl
+paper/*.log
+paper/*.blg
+paper/*.aux
+paper/*.out
+paper_zh/

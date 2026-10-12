@@ -1,0 +1,197 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:23:38 -0700
+Subject: [PATCH 5/7] Flatten event_id before naming or saving stage outputs
+
+Each stage that batches events through a DataLoader wraps the string
+event_id in another list, and several savers index it with [0]. After
+metric learning -> GNN -> track building, outputs were written as
+event['000021009'].pyg.gz, which also breaks subdir_size sharding
+(_shard_path cannot parse the id). If the id was already a plain string,
+event_id[0] silently took its first character.
+
+Add loading_utils.flatten_event_id (unwraps any list/tuple nesting,
+rejects multi-event containers), use it wherever an output file name is
+built (metric learning, edge classifier, track-building stage,
+walkthrough), and store the flat id in the saved graph.
+
+gd-displaced patch 0005 (plan item e).
+---
+ .../edge_classifier/edge_classifier_stage.py      | 10 ++++------
+ .../graph_construction/models/metric_learning.py  | 13 ++++++++-----
+ acorn/stages/track_building/models/walkthrough.py |  9 +++++++--
+ .../stages/track_building/track_building_stage.py | 13 +++++++------
+ acorn/utils/loading_utils.py                      | 15 +++++++++++++++
+ 5 files changed, 41 insertions(+), 19 deletions(-)
+
+diff --git a/acorn/stages/edge_classifier/edge_classifier_stage.py b/acorn/stages/edge_classifier/edge_classifier_stage.py
+index b93674f4..54ea90f0 100644
+--- a/acorn/stages/edge_classifier/edge_classifier_stage.py
++++ b/acorn/stages/edge_classifier/edge_classifier_stage.py
+@@ -30,6 +30,7 @@ from acorn.utils import eval_utils
+ from acorn.utils.version_utils import get_pyg_data_keys
+ from acorn.utils.loading_utils import (
+     add_variable_name_prefix_in_pyg,
++    flatten_event_id,
+     remove_variable_name_prefix_in_pyg,
+     infer_num_nodes,
+     load_pyg,
+@@ -514,9 +515,7 @@ class EdgeClassifierStage(LightningModule):
+         3. Append the stage config to the `config` attribute of the graph
+         """
+         dataset = self.predict_dataloader()[dataloader_idx].dataset
+-        event_id = (
+-            batch.event_id[0] if isinstance(batch.event_id, list) else batch.event_id
+-        )
++        event_id = flatten_event_id(batch.event_id)
+         if pyg_exists(
+             os.path.join(
+                 self.hparams["stage_dir"],
+@@ -548,9 +547,8 @@ class EdgeClassifierStage(LightningModule):
+ 
+         datatype = dataset.data_name
+         os.makedirs(os.path.join(self.hparams["stage_dir"], datatype), exist_ok=True)
+-        event_id = (
+-            event.event_id[0] if isinstance(event.event_id, list) else event.event_id
+-        )
++        event_id = flatten_event_id(event.event_id)
++        event.event_id = event_id  # store flat, not the collated [event_id]
+         if not self.hparams.get("variable_with_prefix"):
+             event = remove_variable_name_prefix_in_pyg(event)
+         save_pyg(
+diff --git a/acorn/stages/graph_construction/models/metric_learning.py b/acorn/stages/graph_construction/models/metric_learning.py
+index d484d2b5..638ec2de 100644
+--- a/acorn/stages/graph_construction/models/metric_learning.py
++++ b/acorn/stages/graph_construction/models/metric_learning.py
+@@ -27,7 +27,11 @@ from .utils import make_mlp, build_edges, graph_intersection
+ from ..utils import build_signal_edges  # handle_weighting
+ from acorn.utils import handle_weighting
+ from acorn.utils.version_utils import get_pyg_data_keys
+-from acorn.utils.loading_utils import remove_variable_name_prefix_in_pyg, save_pyg
++from acorn.utils.loading_utils import (
++    flatten_event_id,
++    remove_variable_name_prefix_in_pyg,
++    save_pyg,
++)
+ from acorn.stages.track_building.utils import rearrange_by_distance
+ 
+ 
+@@ -488,10 +492,9 @@ class MetricLearning(GraphConstructionStage, LightningModule):
+         event.config.append(self.hparams)
+         os.makedirs(os.path.join(self.hparams["stage_dir"], datatype), exist_ok=True)
+ 
+-        # event.event_id might be of format [event_id] in which case convert to str
+-        event_id = (
+-            event.event_id[0] if isinstance(event.event_id, list) else event.event_id
+-        )
++        # event.event_id may be nested ([event_id], [[event_id]]): store it flat
++        event_id = flatten_event_id(event.event_id)
++        event.event_id = event_id
+         if not self.hparams.get("variable_with_prefix"):
+             event = remove_variable_name_prefix_in_pyg(event)
+         save_pyg(
+diff --git a/acorn/stages/track_building/models/walkthrough.py b/acorn/stages/track_building/models/walkthrough.py
+index d3869133..69c27caf 100644
+--- a/acorn/stages/track_building/models/walkthrough.py
++++ b/acorn/stages/track_building/models/walkthrough.py
+@@ -29,7 +29,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+ 
+ # Local imports
+ from ..track_building_stage import TrackBuildingStage
+-from acorn.utils.loading_utils import remove_variable_name_prefix_in_pyg, save_pyg
++from acorn.utils.loading_utils import (
++    flatten_event_id,
++    remove_variable_name_prefix_in_pyg,
++    save_pyg,
++)
+ 
+ 
+ class Walkthrough(TrackBuildingStage):
+@@ -125,8 +129,9 @@ class Walkthrough(TrackBuildingStage):
+             if not self.hparams.get("variable_with_prefix"):
+                 graph = remove_variable_name_prefix_in_pyg(graph)
+             # TODO: Graph name file??
++            graph.event_id = flatten_event_id(graph.event_id)
+             save_pyg(
+                 graph,
+-                os.path.join(output_dir, f"event{graph.event_id[0]}.pyg"),
++                os.path.join(output_dir, f"event{graph.event_id}.pyg"),
+                 subdir=self.hparams.get("subdir_size", None),
+             )
+diff --git a/acorn/stages/track_building/track_building_stage.py b/acorn/stages/track_building/track_building_stage.py
+index 228b1e33..cd3c1434 100644
+--- a/acorn/stages/track_building/track_building_stage.py
++++ b/acorn/stages/track_building/track_building_stage.py
+@@ -43,6 +43,7 @@ from acorn.utils import (
+ from . import utils
+ from acorn.utils.loading_utils import (
+     add_variable_name_prefix_in_pyg,
++    flatten_event_id,
+     infer_num_nodes,
+     load_pyg,
+     remove_variable_name_prefix_in_pyg,
+@@ -318,6 +319,7 @@ class TrackBuildingStage:
+             self.hparams["stage_dir"], f"{os.path.basename(output_dir)}_tracks"
+         )
+         os.makedirs(tracks_dir, exist_ok=True)
++        event_id = flatten_event_id(graph.event_id)
+ 
+         if self.hparams.get("save_tracks_as_csv", False):
+             _delimiter = ","
+@@ -329,12 +331,12 @@ class TrackBuildingStage:
+                 # in ACORN yaml config file with 'event_prefix' : "<any_prefix_you_want>_RUNNUMBER" (The run number is mandatory, otherwise it will not work in Athena.)
+                 # in Athena with 'csvPrefix' : "<any_prefix_you_want>" (without the RUNNUMBER, it is already handled by Athena.)
+ 
+-                filename += f"{graph.event_id[0].lstrip('0')}.csv"
++                filename += f"{event_id.lstrip('0')}.csv"
+             else:
+-                filename += f"event{graph.event_id[0]}.csv"
++                filename += f"event{event_id}.csv"
+         else:
+             _delimiter = " "
+-            filename = f"{self.event_prefix}event{graph.event_id[0]}.txt"
++            filename = f"{self.event_prefix}event{event_id}.txt"
+ 
+         output_file = os.path.join(tracks_dir, filename)
+         rows = [
+@@ -347,12 +349,11 @@ class TrackBuildingStage:
+     def save_graph(self, graph, output_dir):
+         if not self.hparams.get("variable_with_prefix"):
+             graph = remove_variable_name_prefix_in_pyg(graph)
++        graph.event_id = flatten_event_id(graph.event_id)
+ 
+         save_pyg(
+             graph,
+-            os.path.join(
+-                output_dir, f"{self.event_prefix}event{graph.event_id[0]}.pyg"
+-            ),
++            os.path.join(output_dir, f"{self.event_prefix}event{graph.event_id}.pyg"),
+             subdir=self.hparams.get("subdir_size", None),
+         )
+         return graph
+diff --git a/acorn/utils/loading_utils.py b/acorn/utils/loading_utils.py
+index 73c6a8ff..09a74f0d 100644
+--- a/acorn/utils/loading_utils.py
++++ b/acorn/utils/loading_utils.py
+@@ -34,6 +34,21 @@ from .mapping_utils import (
+ from .version_utils import get_pyg_data_keys
+ 
+ 
++def flatten_event_id(event_id):
++    """Return the event id as a plain string.
++
++    DataLoader collation wraps string attributes in a list at every stage that
++    batches events, so after metric learning and the GNN an event_id can be
++    [['000021009']]. Unwrap any nesting of lists/tuples; reject empty or
++    multi-event containers instead of guessing.
++    """
++    while isinstance(event_id, (list, tuple)):
++        if len(event_id) != 1:
++            raise ValueError(f"Expected a single event id, got {event_id!r}")
++        event_id = event_id[0]
++    return str(event_id)
++
++
+ def _shard_path(path, subdir):
+     """Insert a shard subdirectory (event_id // subdir) before the filename in path.
+ 

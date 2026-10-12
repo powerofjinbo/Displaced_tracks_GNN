@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Jinbo Zhang <jinboz1@uci.edu>
+Date: Mon, 28 Sep 2026 17:21:46 -0700
+Subject: [PATCH 1/7] track_building: match reconstructed tracks on
+ hit_id[track_edges]
+
+load_reconstruction_df used graph.track_edges (node indices) as if they
+were hit ids. Whenever node-level hard_cuts removed hits, every particle
+was attached to the wrong hits: connected components on the truth graph
+scored 0.000 efficiency on a hard-cut TrackML event (should be 1.000).
+
+gd-displaced patch 0001 (plan item a).
+---
+ acorn/stages/track_building/utils.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/acorn/stages/track_building/utils.py b/acorn/stages/track_building/utils.py
+index afec1763..531a5e1f 100644
+--- a/acorn/stages/track_building/utils.py
++++ b/acorn/stages/track_building/utils.py
+@@ -38,7 +38,9 @@ def load_reconstruction_df(graph):
+ 
+     reco_df = pd.DataFrame({"hit_id": hit_id, "track_id": graph.hit_track_labels})
+ 
+-    node_id = graph.track_edges.reshape(-1)
++    # track_edges hold node indices, not hit ids. They only coincide when no
++    # node-level cut (e.g. hard_cuts) has been applied, so map through hit_id.
++    node_id = hit_id[graph.track_edges.reshape(-1)]
+     pids = graph.track_particle_id.repeat(2)
+     pid_df = pd.DataFrame({"hit_id": node_id, "particle_id": pids})
+     pid_df.drop_duplicates(subset=["hit_id", "particle_id"], inplace=True)

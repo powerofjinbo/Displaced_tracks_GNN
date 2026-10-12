@@ -1,0 +1,651 @@
+{
+ "name": "far_trainsplit_v1",
+ "created_utc": "2026-10-07T07:21:56+00:00",
+ "status": "Diagnostic only, on the HNL TRAINING split (hnl10_100 and hnl15_200 train events), which neither ttbar-trained pipeline has seen. Nothing is chosen on it; results/final_selection_v1.json and the paper files are untouched.",
+ "test_data": "No test event, test graph, test score or test output was read or evaluated: the feature-store tars were opened per split (<sample>_train.tar, <sample>_val.tar, ttbar_train.tar), every run file used is a train or val file. While locating the learned-triplet union settings, the configuration record RUN/ltf_union_graphs/report_test/build.json of the three seeds (settings and file paths only, no event data, score or truth-derived number) was displayed once; its values were not used.",
+ "git": {
+  "head_at_analysis": "97309dfb961ce4427450b06417137cce9dccb715 (src/slurm dirty: 4 files)",
+  "code_sha256_at_analysis": {
+   "src/hnl/eval/far_trainsplit.py": "e49f43745841070b3d2fc5599c78847bc71fa51f938f3796d6ec1a2f8cbba9be",
+   "slurm/feedback/far_trainsplit.sbatch": "9a9bfebb8c50c97f5105f088672c7506718645fe75fbb83f76a87156e2e27066",
+   "slurm/feedback/far_trainsplit_graphs.sbatch": "cd48e8d613e342cc8c36d815e32eea4d5a6670227cb497b1b431d161aeb6c19e",
+   "slurm/feedback/far_trainsplit_repeat.sbatch": "3b54b7802d8308c8e9d2795f7f8e387d039d09f4c472d4dc3e48302fd502205a"
+  },
+  "note": "the module and job scripts were uncommitted while the jobs ran and are committed together with this file. The analysis code is the one of code_sha256_at_analysis (job 6713002); afterwards only the report code (run_report and its tables) was extended, and the Polars AVX2 compat line of slurm/baseline/_common.sh was added to the three job scripts (the graph jobs, submitted before, ran on A30 nodes, which have AVX2)."
+ },
+ "jobs": {
+  "population": {
+   "job": "6712856",
+   "name": "fts_pop",
+   "start_utc": "2026-10-07T06:17:02",
+   "end_utc": "2026-10-07T06:21:50",
+   "elapsed": "00:04:48",
+   "node": "submit37",
+   "state": "COMPLETED",
+   "partition": "submit-gpu",
+   "cpus": "4"
+  },
+  "graphs_s0": {
+   "job": "6712869",
+   "name": "fts_graphs_s0",
+   "start_utc": "2026-10-07T06:22:43",
+   "end_utc": "2026-10-07T06:35:49",
+   "elapsed": "00:13:06",
+   "node": "submit23-1",
+   "state": "COMPLETED",
+   "partition": "submit-gpu-express",
+   "cpus": "16"
+  },
+  "graphs_s1": {
+   "job": "6712870",
+   "name": "fts_graphs_s1",
+   "start_utc": "2026-10-07T06:35:50",
+   "end_utc": "2026-10-07T06:47:43",
+   "elapsed": "00:11:53",
+   "node": "submit23-1",
+   "state": "COMPLETED",
+   "partition": "submit-gpu-express",
+   "cpus": "16"
+  },
+  "graphs_s2": {
+   "job": "6712871",
+   "name": "fts_graphs_s2",
+   "start_utc": "2026-10-07T06:54:34",
+   "end_utc": "2026-10-07T07:04:41",
+   "elapsed": "00:10:07",
+   "node": "submit23-1",
+   "state": "COMPLETED",
+   "partition": "submit-gpu-express",
+   "cpus": "16"
+  },
+  "repeat_s0": {
+   "job": "6712959",
+   "name": "fts_repeat",
+   "start_utc": "2026-10-07T06:47:44",
+   "end_utc": "2026-10-07T06:54:33",
+   "elapsed": "00:06:49",
+   "node": "submit23-1",
+   "state": "COMPLETED",
+   "partition": "submit-gpu-express",
+   "cpus": "8"
+  },
+  "analyze": {
+   "job": "6713002",
+   "name": "fts_analyze",
+   "start_utc": "2026-10-07T07:05:09",
+   "end_utc": "2026-10-07T07:12:29",
+   "elapsed": "00:07:20",
+   "node": "submit37",
+   "state": "COMPLETED",
+   "partition": "submit-gpu",
+   "cpus": "16"
+  }
+ },
+ "population": {
+  "train_events": 15999,
+  "train_events_with_particles": 15999,
+  "primary_daughters": 9759,
+  "far_ge200": 333,
+  "far_ge300": 96,
+  "events_ge200": 322,
+  "events_ge300": 95,
+  "val_far_ge200": 51,
+  "val_far_ge300": 19,
+  "val_events": 49,
+  "elapsed_s": 198.2
+ },
+ "checks": "66 of 66 (plus 6 information rows)",
+ "failed_checks": [],
+ "repeatability": {
+  "0": {
+   "canto_l": {
+    "events": 49,
+    "edges_equal": 49,
+    "run1_run2_bitwise_equal_events": 0,
+    "run1_run2_max_abs_diff": 2.6226043701171875e-06,
+    "run1_stored_bitwise_equal_events": 0,
+    "run1_stored_max_abs_diff": 3.7550926208496094e-06,
+    "run2_stored_bitwise_equal_events": 0,
+    "run2_stored_max_abs_diff": 2.562999725341797e-06
+   },
+   "acorn_ttbar": {
+    "events": 49,
+    "edges_equal": 49,
+    "run1_run2_bitwise_equal_events": 0,
+    "run1_run2_max_abs_diff": 6.377696990966797e-06,
+    "run1_stored_bitwise_equal_events": 0,
+    "run1_stored_max_abs_diff": 7.867813110351562e-06,
+    "run2_stored_bitwise_equal_events": 0,
+    "run2_stored_max_abs_diff": 8.463859558105469e-06
+   },
+   "seed": "0",
+   "slurm_job": "6712959"
+  }
+ },
+ "trainset_truncation_check": {
+  "checkpoint": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/gnn/artifacts/best-epoch=28-val_loss=0.052177.ckpt",
+  "graph": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ltf_union_graphs/trainset.tar:event100000000.pyg.gz",
+  "model_class": "TruncSymmetricTripletIGNN",
+  "dataset_class": "TruncationGraphDataset",
+  "nodes_stored": 971,
+  "nodes_trainset_item": 856,
+  "nodes_valset_item": 971,
+  "edges_stored": 12164,
+  "edges_trainset_item": 9116,
+  "edges_valset_item": 12164
+ },
+ "truncation": {
+  "ttbar_train_events": 7999,
+  "events_with_tracks": 7999,
+  "tracks_ge5_hits": 1354880,
+  "target_tracks_ge5_hits": 514094,
+  "fs_node_check": {
+   "events": 20,
+   "identical": 20
+  }
+ },
+ "specs": [
+  {
+   "key": "Canto-L (frozen: learned merging)|0",
+   "label": "Canto-L (frozen: learned merging)",
+   "seed": 0,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+   "wp": "mwslmerge 0.05 (trackbuild_val_lmerge)",
+   "family": "mwslmerge",
+   "param": 0.05,
+   "grid": "trackbuild_val_lmerge",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "008419aea96a3f53f20e37290fbeb17f37a67f92f063d494f01e4ea8b4f3027a"
+  },
+  {
+   "key": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)|0",
+   "label": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)",
+   "seed": 0,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+   "wp": "mwslayermerge 0.2 (trackbuild_val_ext)",
+   "family": "mwslayermerge",
+   "param": 0.2,
+   "grid": "trackbuild_val_ext",
+   "merge_model": null,
+   "cut": 0.2,
+   "merge_model_sha256": ""
+  },
+  {
+   "key": "Canto-L (frozen: learned merging)|1",
+   "label": "Canto-L (frozen: learned merging)",
+   "seed": 1,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+   "wp": "mwslmerge 0.03 (trackbuild_val_lmerge)",
+   "family": "mwslmerge",
+   "param": 0.03,
+   "grid": "trackbuild_val_lmerge",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "f538cf2a81a37133cce92c45b188390bd9b7c69d97d448e7617b00e75d1df5ea"
+  },
+  {
+   "key": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)|1",
+   "label": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)",
+   "seed": 1,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+   "wp": "mwslayermerge 0.2 (trackbuild_val_ext)",
+   "family": "mwslayermerge",
+   "param": 0.2,
+   "grid": "trackbuild_val_ext",
+   "merge_model": null,
+   "cut": 0.2,
+   "merge_model_sha256": ""
+  },
+  {
+   "key": "Canto-L (frozen: learned merging)|2",
+   "label": "Canto-L (frozen: learned merging)",
+   "seed": 2,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+   "wp": "mwslmerge 0.1 (trackbuild_val_lmerge)",
+   "family": "mwslmerge",
+   "param": 0.1,
+   "grid": "trackbuild_val_lmerge",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "1a8ae5e80d31035649e5126b855150d575d8f28388ff43c691bc261c6ad58fa6"
+  },
+  {
+   "key": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)|2",
+   "label": "Canto-L + MWS-layer + merging (Canto builder), same builder (not the frozen builder)",
+   "seed": 2,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+   "wp": "mwslayermerge 0.2 (trackbuild_val_ext)",
+   "family": "mwslayermerge",
+   "param": 0.2,
+   "grid": "trackbuild_val_ext",
+   "merge_model": null,
+   "cut": 0.2,
+   "merge_model_sha256": ""
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)|0",
+   "label": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)",
+   "seed": 0,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+   "wp": "mwslmerge 0.03 (trackbuild_val_fb3_all)",
+   "family": "mwslmerge",
+   "param": 0.03,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "f3391be0123ee5aca8cff45c90dbf7b7048516d68fca3442b35fffffc083fb98"
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + merging (Canto builder)|0",
+   "label": "acorn (ttbar) + MWS-layer + merging (Canto builder)",
+   "seed": 0,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+   "wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+   "family": "mwslayermerge",
+   "param": 0.1,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": null,
+   "cut": 0.1,
+   "merge_model_sha256": ""
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)|1",
+   "label": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)",
+   "seed": 1,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+   "wp": "mwslmerge 0.02 (trackbuild_val_fb3_all)",
+   "family": "mwslmerge",
+   "param": 0.02,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "2b36b786cf1db8f95f52f20cd63ba1d2a1612560cc15d86cbb0827f97b97fa47"
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + merging (Canto builder)|1",
+   "label": "acorn (ttbar) + MWS-layer + merging (Canto builder)",
+   "seed": 1,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+   "wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+   "family": "mwslayermerge",
+   "param": 0.1,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": null,
+   "cut": 0.1,
+   "merge_model_sha256": ""
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)|2",
+   "label": "acorn (ttbar) + MWS-layer + learned merging (Canto-L's builder)",
+   "seed": 2,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+   "wp": "mwslmerge 0.05 (trackbuild_val_fb3_all)",
+   "family": "mwslmerge",
+   "param": 0.05,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge/model.joblib",
+   "cut": 0.2,
+   "merge_model_sha256": "8d74cae8549d437fcc175ead40d9faad7f0ea6fbb663dc4ab17dc77242c8962c"
+  },
+  {
+   "key": "acorn (ttbar) + MWS-layer + merging (Canto builder)|2",
+   "label": "acorn (ttbar) + MWS-layer + merging (Canto builder)",
+   "seed": 2,
+   "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+   "wp": "mwslayermerge 0.1 (trackbuild_val_fb3_all)",
+   "family": "mwslayermerge",
+   "param": 0.1,
+   "grid": "trackbuild_val_fb3_all",
+   "merge_model": null,
+   "cut": 0.1,
+   "merge_model_sha256": ""
+  }
+ ],
+ "inputs": [
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/strong_baselines_v3_val_entries.csv",
+   "role": "committed table",
+   "bytes": 30418,
+   "sha256": "cf96a9fdba9c741e8816be52d29388177daed8aee5f6e03704ee79dd645b2417"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/final_selection_v1.json",
+   "role": "committed table",
+   "bytes": 15516,
+   "sha256": "1395f9191c2adc70ad0625c1212c97d0771d265aca86aad17e0fae4f0a9e07e1"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/round4_checks_far_particles.csv",
+   "role": "committed table",
+   "bytes": 232206,
+   "sha256": "e32df8c015dc6fad1e334908e3869b8b5a63c624a3a058a87cf0c3bd56be4e8d"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl10_100_train.txt",
+   "role": "committed table",
+   "bytes": 39294,
+   "sha256": "375034808374c3071b42ca8fca616a50f1e9b14d12df2ece059285e415bf581d"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl15_200_train.txt",
+   "role": "committed table",
+   "bytes": 39299,
+   "sha256": "7d22da3590704ba4842b5df8b20c69f99f113ee5500e9db6777e7cb459806c65"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl10_100_val.txt",
+   "role": "committed table",
+   "bytes": 5094,
+   "sha256": "a3ebe2d0c63c96207106b76045c527f63635482d85824a0509ac1f546b3282eb"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/splits/hnl15_200_val.txt",
+   "role": "committed table",
+   "bytes": 5091,
+   "sha256": "0efe904a4e8572ef411f4845ee77ce030009d72d994c07b593274c244c9d29dd"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/splits/ttbar_train.txt",
+   "role": "committed table",
+   "bytes": 39265,
+   "sha256": "a4b72516363245dfffef31942bc3ad6e95dd6e11aba3ad5c5d6cba6be7c7ef8b"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/docs/dropped_events.tsv",
+   "role": "committed table",
+   "bytes": 1669,
+   "sha256": "174f78afb27bcec071cf70883326737b5170da140361433b919c38ac26323014"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/acorn_fs/v1/hnl10_100_train.tar",
+   "role": "feature store (staged events)",
+   "bytes": 358553600,
+   "sha256": "3472b4e64e841f4785f2baf8876f9366f443bc00f5dd4833b60653493d5a032e"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/acorn_fs/v1/hnl10_100_val.tar",
+   "role": "feature store (staged events)",
+   "bytes": 45721600,
+   "sha256": "b278b6b44f4e1de9f04000c4ac43b851203836d534d65fa21ec0865d13e11139"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/acorn_fs/v1/hnl15_200_train.tar",
+   "role": "feature store (staged events)",
+   "bytes": 357980160,
+   "sha256": "8fe21a8086920e89c4fbc21e009e163575eaca6e01c7c837d001d5c2c1692a70"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/acorn_fs/v1/hnl15_200_val.tar",
+   "role": "feature store (staged events)",
+   "bytes": 45967360,
+   "sha256": "739a76ed00866a9a67a20db89f0d863d0a22c0f9f678f51774557c213fa94b74"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/acorn_fs/v1/ttbar_train.tar",
+   "role": "feature store (first 20 graphs: node check)",
+   "bytes": 526714880,
+   "sha256": "1faabc3d399906b377f5e4c614628939af826a52767978f5206c55e123906867"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/events/v1/meta.json",
+   "role": "derived event tables (hits, particles)",
+   "bytes": 574,
+   "sha256": "69346e13304dd1656fdbf0d7f793e0f0bba842185f72ebd55153704205fe33ca"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ml/artifacts/best-epoch=20-f1=0.356576.ckpt",
+   "role": "metric-learning checkpoint seed 0",
+   "bytes": 50662663,
+   "sha256": "9b6996daa4919db111b48015513226cb4ead7f024272ab879a8bbc601412ccef"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/learned_triplet_filter_v2/model.joblib",
+   "role": "Canto-L triplet GBDT seed 0",
+   "bytes": 2196718,
+   "sha256": "1e71962cb38629e016ebb1e4534c581eed03c7eceaf4e286125b69e4f23d00d2"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/gnn/artifacts/best-epoch=28-val_loss=0.052177.ckpt",
+   "role": "Canto-L GNN checkpoint seed 0",
+   "bytes": 5615437,
+   "sha256": "e04889e22dc70280f0db383b664d59eb695d506bf109deadd22b5deb34c3f8a1"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/gnn_scores/valset.tar",
+   "role": "Canto-L stored val scores seed 0",
+   "bytes": 572252160,
+   "sha256": "f0e2e2e54e7ea9fa7acdd4363b6e2f0e856b9dab5880e195bafd60fc791d2b8e"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/gnn/artifacts/best-epoch=23-val_loss=0.058278.ckpt",
+   "role": "acorn (ttbar) GNN checkpoint seed 0",
+   "bytes": 4261981,
+   "sha256": "1cdc321d3fe9555892088be93f714d66c6283bcacfda69fc019fac4f9e1ad20e"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/gnn_scores/valset.tar",
+   "role": "acorn (ttbar) stored val scores seed 0",
+   "bytes": 514140160,
+   "sha256": "8e8c32f350da113a52d55a8c8eb926bb0f532746b5799db348318003c876eb58"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/ml/artifacts/best-epoch=19-f1=0.358315.ckpt",
+   "role": "metric-learning checkpoint seed 1",
+   "bytes": 50662663,
+   "sha256": "9d505517d74435c53b6fcbf2944b3d1cca819f05866e6cb22ec89fc64b2c1be7"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/learned_triplet_filter_v2/model.joblib",
+   "role": "Canto-L triplet GBDT seed 1",
+   "bytes": 2196718,
+   "sha256": "96465f19b2e4da329cf0e446e025844fbc01b2cb89993de921279ef95fc78d74"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/gnn/artifacts/best-epoch=29-val_loss=0.051051.ckpt",
+   "role": "Canto-L GNN checkpoint seed 1",
+   "bytes": 5615437,
+   "sha256": "15dd13d1105521d620215d06a8848e2a8f33aa8e974fcab4d5cdefcfaa44daa4"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/gnn_scores/valset.tar",
+   "role": "Canto-L stored val scores seed 1",
+   "bytes": 576542720,
+   "sha256": "a3ea6910678d762013c06f0f981bac5a01ffc73dc51ec456563bb98eafd34ad0"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/gnn/artifacts/best-epoch=29-val_loss=0.056590.ckpt",
+   "role": "acorn (ttbar) GNN checkpoint seed 1",
+   "bytes": 4261981,
+   "sha256": "a73a1fb31f4e0873a89a192c1f2eab8ee17f49943f5af18d7b7d71f0bfedc743"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1/gnn_scores/valset.tar",
+   "role": "acorn (ttbar) stored val scores seed 1",
+   "bytes": 515614720,
+   "sha256": "8725215ea8aa5110678f19378c26063fd71e4f274bf2de836d93ed2d56105851"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/ml/artifacts/best-epoch=12-f1=0.354774.ckpt",
+   "role": "metric-learning checkpoint seed 2",
+   "bytes": 50663300,
+   "sha256": "1989f31c234629e157c799c95cefad1d14c18d61662c202cc64ea91bac604ba8"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/learned_triplet_filter_v2/model.joblib",
+   "role": "Canto-L triplet GBDT seed 2",
+   "bytes": 2196718,
+   "sha256": "a594459c324350db947f198f691ade7ed874fc2a514baf3210c74a30a653e4f5"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/gnn/artifacts/best-epoch=28-val_loss=0.044359.ckpt",
+   "role": "Canto-L GNN checkpoint seed 2",
+   "bytes": 5615437,
+   "sha256": "37f95ad7b2abbcd0496cde851f2b4ccc20ddb85fceeb2644f0747ea6201c6bbf"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/gnn_scores/valset.tar",
+   "role": "Canto-L stored val scores seed 2",
+   "bytes": 633702400,
+   "sha256": "72e4a3866c9a4d5521928e29549efda4187719d9346715a4d5172c16f78737c8"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/gnn/artifacts/best-epoch=28-val_loss=0.046033.ckpt",
+   "role": "acorn (ttbar) GNN checkpoint seed 2",
+   "bytes": 4261981,
+   "sha256": "bba2f17c29e2066a090c0ef072b79dea51e022dad359ca29f15338a773987803"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2/gnn_scores/valset.tar",
+   "role": "acorn (ttbar) stored val scores seed 2",
+   "bytes": 595558400,
+   "sha256": "2fdf1612f563eecd30a4c20b7696d6686bdd68a9cb9370847de27c6c6073bd7a"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0/lmerge/model.joblib",
+   "role": "Canto-L LM (frozen) merging GBDT seed 0",
+   "bytes": 2902363,
+   "sha256": "008419aea96a3f53f20e37290fbeb17f37a67f92f063d494f01e4ea8b4f3027a"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1/lmerge/model.joblib",
+   "role": "Canto-L LM (frozen) merging GBDT seed 1",
+   "bytes": 2131971,
+   "sha256": "f538cf2a81a37133cce92c45b188390bd9b7c69d97d448e7617b00e75d1df5ea"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2/lmerge/model.joblib",
+   "role": "Canto-L LM (frozen) merging GBDT seed 2",
+   "bytes": 2902267,
+   "sha256": "1a8ae5e80d31035649e5126b855150d575d8f28388ff43c691bc261c6ad58fa6"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge/model.joblib",
+   "role": "acorn (ttbar) LM merging GBDT seed 0",
+   "bytes": 987387,
+   "sha256": "f3391be0123ee5aca8cff45c90dbf7b7048516d68fca3442b35fffffc083fb98"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge/model.joblib",
+   "role": "acorn (ttbar) LM merging GBDT seed 1",
+   "bytes": 1073691,
+   "sha256": "2b36b786cf1db8f95f52f20cd63ba1d2a1612560cc15d86cbb0827f97b97fa47"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge/model.joblib",
+   "role": "acorn (ttbar) LM merging GBDT seed 2",
+   "bytes": 843339,
+   "sha256": "8d74cae8549d437fcc175ead40d9faad7f0ea6fbb663dc4ab17dc77242c8962c"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0/ltf_union_graphs/trainset.tar",
+   "role": "side check: its first member only",
+   "bytes": 2332549120,
+   "sha256": null
+  }
+ ],
+ "outputs": [
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1.csv",
+   "bytes": 36003,
+   "sha256": "4d9bc9bed21751790faac366c588cb5c4af3908020473f4b14ee1f68f5a1bc85"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_particles.csv",
+   "bytes": 1754190,
+   "sha256": "2534c2cde8d8905c9c3964144b94b486607b7ddc67bcfbb43fbeb705e864a182"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_discordant.csv",
+   "bytes": 8367,
+   "sha256": "8002394309149d09583cdada33b6c6a3a835b91083124aed9cc4de2fffa47c31"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_merge_particles.csv",
+   "bytes": 318024,
+   "sha256": "ba2f8d1a3880dbc2c574136dbe6638946c15c99913f0ee274dd30d33df2faa0f"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_merge_pairs.csv",
+   "bytes": 158106,
+   "sha256": "ceed4e1da297ae39b80c764273face511b10dedd22125b9c1b3b40b9ab044149"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_chain_scores.csv",
+   "bytes": 457106,
+   "sha256": "bdc535286f50b23fb70e1d4a2207a3ce2d759303a44bd03ea14f2137f29ba715"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_truncation.csv",
+   "bytes": 18332,
+   "sha256": "4a6f63e5886ddd4baffc6f5bd5823ecbf11ab0e69675a1d32e8d42b99d7b35c6"
+  },
+  {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/far_trainsplit_v1_checks.csv",
+   "bytes": 9218,
+   "sha256": "ec26ebde2cfecffcc018e931f4ea79977a9924fa943b2bbcc8039b66b8d17c0c"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s0/acorn_ttbar/valset.tar",
+   "bytes": 48496640,
+   "sha256": "4f5087692905b2e22a271914f4d146c58b1189b17ae5e43a377242b61a129f31"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s0/canto_l/valset.tar",
+   "bytes": 53862400,
+   "sha256": "0358030dd831d61c6b101e21559167f9a85acc074638f90fa3be8e0bbbe0a853"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s1/acorn_ttbar/valset.tar",
+   "bytes": 48609280,
+   "sha256": "669050f72f77ac888605d508e653f227054ee771089f51d1ea5c8b490863ab5a"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s1/canto_l/valset.tar",
+   "bytes": 54292480,
+   "sha256": "622528a22dae7ca6a2262d5ea8fa21243fe134a4a769979ac7b86bb82c13accd"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s2/acorn_ttbar/valset.tar",
+   "bytes": 55982080,
+   "sha256": "972e71db732061c6cee949884d52b7da4ea659d8f7b9d96a5acad0d9d6ee536a"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/s2/canto_l/valset.tar",
+   "bytes": 59627520,
+   "sha256": "1b0fb16cdca32d6a7637f2385b0b9fdb27722c32781b55ff77b65b62ae654fe0"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/population_train.parquet",
+   "bytes": 24553,
+   "sha256": "00026b70563daf90891ff53f3706d67589b8c007f565276c553a5afbbf189d00"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/population_val.parquet",
+   "bytes": 9652,
+   "sha256": "98669a91245a805203e15f3d404492610e6c5afcc6f73e7d56f34678b8e84e37"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/population.json",
+   "bytes": 5499,
+   "sha256": "98202b06526c3d2c94e51b5d9fe55a433716cffcb99a0c0c5afdae3eece8eeab"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/analyze_meta.json",
+   "bytes": 28633,
+   "sha256": "f5572f211ed63a773a24c19147319b10917cdd28bccc14ea6f9de07b8b47a34e"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/identity_graphs.csv",
+   "bytes": 32573,
+   "sha256": "795dd892a24cdcde110ebd43d4db93b5e638102a9fb2659e95825aab4f5fb79e"
+  },
+  {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit/repeat_s0.json",
+   "bytes": 711,
+   "sha256": "a6aa3e7212fd053767efbba8aa540f4c690f5a4f670e3f6bd04a31dc4a285fe0"
+  }
+ ],
+ "storage_bytes_under_out": 321718607,
+ "out": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v4/far_trainsplit"
+}

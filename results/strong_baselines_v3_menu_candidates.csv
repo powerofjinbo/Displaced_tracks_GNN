@@ -1,0 +1,64 @@
+run,key,family,working_point,eff_primary,fake_rate_hnl,n_primary,eligible,tied,chosen,arm,seed
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,acwalk,acwalk,"acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",0.9624342599549212,0.024018288253642696,1331.0,True,False,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,acwalkg,acwalkg,"acwalkg 0.01,0.01,0.6 (trackbuild_val_fb3_all)",0.9609316303531179,0.024026334915138302,1331.0,True,False,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.9676934635612322,0.017566960945683077,1331.0,True,False,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.97145003756574,0.016855275061020362,1331.0,True,True,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",0.9722013523666416,0.017031297996518653,1331.0,True,True,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,lmerge,mwslmerge,mwslmerge 0.03 (trackbuild_val_fb3_all),0.9737039819684448,0.01597014351778707,1331.0,True,True,True,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0,cc,cc,CC 0.34 (FR* unreachable: minimum-rate cut),0.9361382419233659,0.02983124041138701,1331.0,False,False,False,i,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,acwalk,acwalk,"acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",0.9383921863260706,0.023972617392234465,1331.0,True,False,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,acwalkg,acwalkg,"acwalkg 0.005,0.005,0.6 (trackbuild_val_fb3_all)",0.9436513899323816,0.02443929112364262,1331.0,True,False,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,walkmerge,walkmerge,"walkmerge 0.2,0.7,1.0 (trackbuild_val_fb3_all)",0.9549211119459053,0.01753642542845892,1331.0,True,False,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9624342599549212,0.01626374001939516,1331.0,True,False,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.02 (trackbuild_val_fb3_all)",0.9669421487603306,0.016545616799245093,1331.0,True,True,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,lmerge,mwslmerge,mwslmerge 0.02 (trackbuild_val_fb3_all),0.9691960931630353,0.014870635303973909,1331.0,True,True,True,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1,cc,cc,CC 0.33,0.9105935386927122,0.02934146650528496,1331.0,True,False,False,i,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,acwalk,acwalk,"acwalk 0.01,0.01,0.6 (trackbuild_val_fb3_all)",0.9616829451540195,0.02599124784511338,1331.0,True,False,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,acwalkg,acwalkg,"acwalkg 0.01,0.01,0.6 (trackbuild_val_fb3_all)",0.9541697971450037,0.025886905857624157,1331.0,True,False,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,walkmerge,walkmerge,"walkmerge 0.2,0.3,1.0 (trackbuild_val_fb3_all)",0.9571750563486101,0.018454608513954425,1331.0,True,False,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9691960931630353,0.0165714236903023,1331.0,True,False,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.02 (trackbuild_val_fb3_all)",0.9752066115702479,0.016870504364901496,1331.0,True,True,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,lmerge,mwslmerge,mwslmerge 0.05 (trackbuild_val_fb3_all),0.9722013523666416,0.015046499198289685,1331.0,True,True,True,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2,cc,cc,CC 0.31 (FR* unreachable: minimum-rate cut),0.9226145755071374,0.029786488557976568,1331.0,False,False,False,i,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,acwalk,acwalk,"acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9849737039819685,0.0154402327372294,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,acwalkg,acwalkg,"acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9849737039819685,0.01540607855388276,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,walkmerge,walkmerge,"walkmerge 0.2,0.3,1.0 (trackbuild_val_fb3_all)",0.9842223891810669,0.015157345647340517,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9842223891810669,0.013954482316486804,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",0.9842223891810669,0.014013000166668803,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,lmerge,mwslmerge,mwslmerge 0.03 (trackbuild_val_fb3_all),0.9879789631855748,0.01343466682624697,1331.0,True,True,True,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0,cc,cc,CC 0.38,0.9631855747558227,0.02904345629325702,1331.0,True,False,False,ii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,acwalk,acwalk,"acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9834710743801653,0.016578816764499512,1331.0,True,True,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,acwalkg,acwalkg,"acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9834710743801653,0.01650660777869077,1331.0,True,True,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.9849737039819685,0.016348377774072602,1331.0,True,True,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,mwsm,mwslayermerge,mwslayermerge 0.2 (trackbuild_val_fb3_all),0.9834710743801653,0.015109843178789845,1331.0,True,True,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,mws2pm,mws2passmerge,"mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",0.9842223891810669,0.015238591337614429,1331.0,True,True,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,lmerge,mwslmerge,mwslmerge 0.2 (trackbuild_val_fb3_all),0.9842223891810669,0.014150600684665126,1331.0,True,True,True,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1,cc,cc,CC 0.36 (FR* unreachable: minimum-rate cut),0.941397445529677,0.029730346546820687,1331.0,False,False,False,ii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,acwalk,acwalk,"acwalk 0.01,0.2,0.4 (trackbuild_val_fb3_all)",0.9819684447783621,0.014719600174581304,1331.0,True,False,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,acwalkg,acwalkg,"acwalkg 0.01,0.2,0.4 (trackbuild_val_fb3_all)",0.9827197595792637,0.014608944286545902,1331.0,True,False,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.9864763335837716,0.014568420692545176,1331.0,True,True,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9834710743801653,0.013900643738298581,1331.0,True,False,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,mws2pm,mws2passmerge,"mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",0.9864763335837716,0.014593271805559707,1331.0,True,True,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,lmerge,mwslmerge,mwslmerge 0.05 (trackbuild_val_fb3_all),0.9872276483846731,0.013453163929452087,1331.0,True,True,True,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2,cc,cc,CC 0.44,0.9639368895567243,0.02880199391715832,1331.0,True,False,False,ii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,acwalk,acwalk,"acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9729526671675433,0.01473699538317901,1331.0,True,True,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,acwalkg,acwalkg,"acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9722013523666416,0.01469630771866701,1331.0,True,False,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.976709241172051,0.013660090696150767,1331.0,True,True,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9759579263711495,0.013537145911277393,1331.0,True,True,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",0.976709241172051,0.013667357800910588,1331.0,True,True,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,lmerge,mwslmerge,mwslmerge 0.2 (trackbuild_val_fb3_all),0.9744552967693464,0.012947755123012238,1331.0,True,True,True,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0,cc,cc,CC 0.37,0.9474079639368895,0.028749765223354488,1331.0,True,False,False,iii,0
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,acwalk,acwalk,"acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9729526671675433,0.015605276782925337,1331.0,True,False,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,acwalkg,acwalkg,"acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9737039819684448,0.015608682998647561,1331.0,True,False,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.976709241172051,0.014756216521486147,1331.0,True,False,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,mwsm,mwslayermerge,mwslayermerge 0.1 (trackbuild_val_fb3_all),0.9797145003756574,0.014436839361856666,1331.0,True,True,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,mws2pm,mws2passmerge,"mws2passmerge 0.1,0.05 (trackbuild_val_fb3_all)",0.980465815176559,0.014630312298432742,1331.0,True,True,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,lmerge,mwslmerge,mwslmerge 0.03 (trackbuild_val_fb3_all),0.9812171299774606,0.014274293873467939,1331.0,True,True,True,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1,cc,cc,CC 0.38,0.9451540195341849,0.02888969113866791,1331.0,True,False,False,iii,1
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,acwalk,acwalk,"acwalk 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9759579263711495,0.01739535639318892,1331.0,True,False,False,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,acwalkg,acwalkg,"acwalkg 0.01,0.15,0.6 (trackbuild_val_fb3_all)",0.9752066115702479,0.017438081554460864,1331.0,True,False,False,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,walkmerge,walkmerge,"walkmerge 0.2,0.5,1.0 (trackbuild_val_fb3_all)",0.9827197595792637,0.016139028153543022,1331.0,True,True,False,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,mwsm,mwslayermerge,mwslayermerge 0.2 (trackbuild_val_fb3_all),0.9789631855747558,0.017142369918785837,1331.0,True,False,False,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,mws2pm,mws2passmerge,"mws2passmerge 0.2,0.1 (trackbuild_val_fb3_all)",0.9789631855747558,0.01723983616828126,1331.0,True,False,False,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,lmerge,mwslmerge,mwslmerge 0.05 (trackbuild_val_fb3_all),0.9812171299774606,0.014624104145489335,1331.0,True,True,True,iii,2
+/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2,cc,cc,CC 0.38,0.9586776859504132,0.028316875403150744,1331.0,True,False,False,iii,2

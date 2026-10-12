@@ -1,0 +1,22 @@
+# NAME CONFIG ARM SEED EPOCHS  (priority order)
+# Reduced-cost screening of the symmetry ladder on the ttbar-trained arm (i) seed 0 metric-learning graphs, run with
+# LIMIT_TRAIN=4000 (the first 4000 of the 7999 sorted ttbar training graphs, the same every epoch: acorn's train loader
+# does not shuffle) and S1TAG=screen_ttbar:
+# the baseline IGNN at the same reduced budget is the reference (DECISIONS.md 2026-10-03, symmetry ladder screening).
+# (symregion and triplet run at full budget in plan_v1.txt)
+ignn configs/baseline/gnn_train.yaml i 0 15
+sym configs/stage1/triplet_sym.yaml i 0 15
+blind configs/stage1/triplet_blind.yaml i 0 15
+rz configs/stage1/triplet_rz.yaml i 0 15
+# added 2026-10-03 (design synthesis 4.2, DECISIONS R1-R4): L1, L3 at screen budget (named l1, l3: the job names
+# s1_symregion_i_s0 / s1_triplet_i_s0 belong to the full-budget v1 runs) and the truncation-augmented rungs
+l1 configs/stage1/triplet_symregion.yaml i 0 15
+sym_trunc configs/stage1/triplet_sym_trunc.yaml i 0 15
+symregion_trunc configs/stage1/triplet_symregion_trunc.yaml i 0 15
+ignn_trunc configs/stage1/ignn_trunc.yaml i 0 15
+l3 configs/stage1/triplet.yaml i 0 15
+triplet_trunc configs/stage1/triplet_trunc.yaml i 0 15
+# added 2026-10-04: the DeZoort IN and IN-L (hnl.models.dezoort_in) on the same graphs and budget, as the user's
+# requested reference (DeZoort / acorn / ours on the same LLP dataset)
+dzin configs/stage1/dezoort_in.yaml i 0 15
+dzinl configs/stage1/dezoort_inl.yaml i 0 15

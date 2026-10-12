@@ -1,0 +1,8 @@
+# Runs for slurm/stage1/express_driver.sh: JOBNAME RUN_DIR EXPORTS NAME CONFIG ARM SEED EPOCHS [NEEDS]
+# (JOBNAME = s1_<NAME>_<ARM>_s<SEED>, the name the chains and the Stage-1 orchestrator use; EXPORTS go to --export=ALL,...)
+# Supervisor feedback point 4: the capacity-matched IGNN (slurm/stage1/capacity_chain.sh does the read-out)
+s1_ignn147_i_s0 $HNL_DATA/runs/stage1_capacity/ignn147/armi_s0 S1TAG=capacity ignn147 configs/stage1/ignn_capacity.yaml i 0 30
+s1_ignn147_screen_i_s0 $HNL_DATA/runs/stage1_capacity/ignn147_screen/armi_s0 S1TAG=capacity,LIMIT_TRAIN=4000 ignn147_screen configs/stage1/ignn_capacity.yaml i 0 15
+# Training-sample study, arms (ii) HNL and (iii) ttbar + HNL (slurm/stage1/ts_chain.sh does the read-out)
+s1_l1tl_ii_s0 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armii_s0 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml ii 0 30 $HNL_DATA/runs/baseline_v1_ts/armii_s0/ltf_union_graphs.done
+s1_l1tl_iii_s0 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armiii_s0 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml iii 0 30 $HNL_DATA/runs/baseline_v1_ts/armiii_s0/ltf_union_graphs.done

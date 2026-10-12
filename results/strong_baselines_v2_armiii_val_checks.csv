@@ -1,0 +1,584 @@
+check,ours,reference,ok
+round 1 val row Canto-L (frozen: learned merging): eff_primary,0.9909842223891809,0.9909842223891808,True
+round 1 val row Canto-L (frozen: learned merging): eff_primary_sd,0.0019877921195076034,0.0019877921195076,True
+round 1 val row Canto-L (frozen: learned merging): eff_hnl_targets,0.9917808219178083,0.9917808219178084,True
+round 1 val row Canto-L (frozen: learned merging): eff_hnl_targets_sd,0.0014497267457888611,0.0014497267457888,True
+round 1 val row Canto-L (frozen: learned merging): eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val row Canto-L (frozen: learned merging): eff_w_muons_sd,0.0,0.0,True
+round 1 val row Canto-L (frozen: learned merging): eff_ttbar_prompt,0.963132328943873,0.963132328943873,True
+round 1 val row Canto-L (frozen: learned merging): eff_ttbar_prompt_sd,0.003712871469820227,0.0037128714698202,True
+round 1 val row Canto-L (frozen: learned merging): fake_rate_hnl,0.010266086316425184,0.0102660863164251,True
+round 1 val row Canto-L (frozen: learned merging): fake_rate_hnl_sd,0.00041189554605961106,0.0004118955460596,True
+round 1 val row Canto-L (frozen: learned merging): k_n_d0_100,489/501,489/501,True
+round 1 val row Canto-L (frozen: learned merging): k_n_d0_300,50/57,50/57,True
+round 1 val entries Canto-L (frozen: learned merging): entries,3,3,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 working point,mwslmerge 0.05 (trackbuild_val_lmerge),mwslmerge 0.05 (trackbuild_val_lmerge),True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 eff_primary,0.9887302779864763,0.9887302779864764,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 eff_hnl_targets,0.9901369863013698,0.9901369863013698,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 eff_ttbar_prompt,0.9658456984554666,0.9658456984554666,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s0 fake_rate_hnl,0.0107084619104889,0.0107084619104889,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 working point,mwslmerge 0.03 (trackbuild_val_lmerge),mwslmerge 0.03 (trackbuild_val_lmerge),True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 eff_primary,0.9924868519909842,0.9924868519909842,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 eff_hnl_targets,0.9928767123287672,0.9928767123287672,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 eff_ttbar_prompt,0.9646502979014079,0.964650297901408,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s1 fake_rate_hnl,0.009893617931754577,0.0098936179317545,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 working point,mwslmerge 0.1 (trackbuild_val_lmerge),mwslmerge 0.1 (trackbuild_val_lmerge),True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 eff_primary,0.9917355371900827,0.9917355371900828,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 eff_hnl_targets,0.9923287671232877,0.9923287671232875,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 eff_ttbar_prompt,0.9589009904747448,0.9589009904747448,True
+round 1 val entries Canto-L (frozen: learned merging): armi_s2 fake_rate_hnl,0.010196179107032069,0.010196179107032,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_primary",0.9561733032807412,0.9561733032807412,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_primary_sd",0.012801781035944945,0.0128017810359449,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_hnl_targets",0.9587214611872147,0.9587214611872148,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_hnl_targets_sd",0.012947440071924964,0.0129474400719249,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_w_muons",0.9875156054931337,0.9875156054931336,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_w_muons_sd",0.002745640149516792,0.0027456401495167,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_ttbar_prompt",0.845559308312145,0.845559308312145,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: eff_ttbar_prompt_sd",0.020801180343260194,0.0208011803432601,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: fake_rate_hnl",0.02919193225241201,0.029191932252412,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: fake_rate_hnl_sd",0.0004816570191386227,0.0004816570191386,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: k_n_d0_100",473/501,473/501,True
+"round 1 val row acorn (HNL) + CC, best cut <= FR*: k_n_d0_300",46/57,46/57,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: entries",3,3,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 working point",CC 0.38,CC 0.38,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 eff_primary",0.9631855747558227,0.9631855747558228,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 eff_hnl_targets",0.9632876712328767,0.9632876712328768,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 eff_w_muons",0.9882289994649546,0.9882289994649546,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 eff_ttbar_prompt",0.8551288376152708,0.8551288376152708,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s0 fake_rate_hnl",0.02904345629325702,0.029043456293257,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 working point",CC 0.36 (FR* unreachable: minimum-rate cut),CC 0.36 (FR* unreachable: minimum-rate cut),True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 eff_primary",0.941397445529677,0.941397445529677,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 eff_hnl_targets",0.9441095890410959,0.944109589041096,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 eff_w_muons",0.9844836811128946,0.9844836811128946,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 eff_ttbar_prompt",0.8216955713255664,0.8216955713255664,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s1 fake_rate_hnl",0.029730346546820687,0.0297303465468206,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 working point",CC 0.44,CC 0.44,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 eff_primary",0.9639368895567243,0.9639368895567244,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 eff_hnl_targets",0.9687671232876712,0.9687671232876712,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 eff_w_muons",0.9898341359015517,0.9898341359015516,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 eff_ttbar_prompt",0.8598535159955979,0.8598535159955979,True
+"round 1 val entries acorn (HNL) + CC, best cut <= FR*: armii_s2 fake_rate_hnl",0.02880199391715832,0.0288019939171583,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_primary",0.9383921863260706,0.9383921863260706,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_primary_sd",0.002602630815280094,0.00260263081528,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_hnl_targets",0.9388127853881278,0.9388127853881278,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_hnl_targets_sd",0.004595340867729353,0.0045953408677293,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_w_muons",0.9814517567326556,0.9814517567326556,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_w_muons_sd",0.0047955518672191414,0.0047955518672191,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_ttbar_prompt",0.8210377847773014,0.8210377847773014,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): eff_ttbar_prompt_sd",0.003425184636381114,0.0034251846363811,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): fake_rate_hnl",0.029302549452094064,0.029302549452094,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): fake_rate_hnl_sd",0.00045499728989696874,0.0004549972898969,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): k_n_d0_100",468/501,468/501,True
+"round 1 val row acorn (HNL) + CC, preregistered cut (claims' reference): k_n_d0_300",46/57,46/57,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): entries",3,3,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 working point",CC 0.26,CC 0.26,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 eff_primary",0.9368895567242674,0.9368895567242674,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 eff_hnl_targets",0.9358904109589041,0.935890410958904,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 eff_w_muons",0.9759229534510433,0.9759229534510432,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 eff_ttbar_prompt",0.8240863724336838,0.8240863724336838,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s0 fake_rate_hnl",0.029352781115273164,0.0293527811152731,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 working point",CC 0.36 (FR* unreachable: minimum-rate cut),CC 0.36 (FR* unreachable: minimum-rate cut),True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 eff_primary",0.941397445529677,0.941397445529677,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 eff_hnl_targets",0.9441095890410959,0.944109589041096,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 eff_w_muons",0.9844836811128946,0.9844836811128946,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 eff_ttbar_prompt",0.8216955713255664,0.8216955713255664,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s1 fake_rate_hnl",0.029730346546820687,0.0297303465468206,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 working point",CC 0.27,CC 0.27,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 eff_primary",0.9368895567242674,0.9368895567242674,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 eff_hnl_targets",0.9364383561643835,0.9364383561643836,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 eff_w_muons",0.9839486356340289,0.9839486356340288,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 eff_ttbar_prompt",0.8173314105726538,0.8173314105726538,True
+"round 1 val entries acorn (HNL) + CC, preregistered cut (claims' reference): armii_s2 fake_rate_hnl",0.028824520694188335,0.0288245206941883,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_primary",0.9231154520410718,0.9231154520410718,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_primary_sd",0.012779715323990096,0.01277971532399,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_hnl_targets",0.9329680365296804,0.9329680365296804,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_hnl_targets_sd",0.011933805460397922,0.0119338054603979,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_w_muons",0.9869805600142679,0.986980560014268,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_w_muons_sd",0.003135080405073496,0.0031350804050734,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_ttbar_prompt",0.8722945365767268,0.8722945365767268,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): eff_ttbar_prompt_sd",0.009364318643939799,0.0093643186439397,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): fake_rate_hnl",0.02965306515821618,0.0296530651582161,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): fake_rate_hnl_sd",0.00027077845644978894,0.0002707784564497,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): k_n_d0_100",447/501,447/501,True
+"round 1 val row acorn (ttbar) + CC, preregistered cut (= best cut): k_n_d0_300",37/57,37/57,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): entries",3,3,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 working point",CC 0.34 (FR* unreachable: minimum-rate cut),CC 0.34 (FR* unreachable: minimum-rate cut),True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 eff_primary",0.9361382419233659,0.936138241923366,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 eff_hnl_targets",0.9463013698630137,0.9463013698630136,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 eff_w_muons",0.9834135901551632,0.9834135901551632,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 eff_ttbar_prompt",0.8820538119995446,0.8820538119995446,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s0 fake_rate_hnl",0.02983124041138701,0.029831240411387,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 working point",CC 0.33,CC 0.33,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 eff_primary",0.9105935386927122,0.9105935386927122,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 eff_hnl_targets",0.9232876712328767,0.9232876712328768,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 eff_w_muons",0.9892990904226859,0.989299090422686,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 eff_ttbar_prompt",0.8714470039087701,0.8714470039087701,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s1 fake_rate_hnl",0.02934146650528496,0.0293414665052849,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 working point",CC 0.31 (FR* unreachable: minimum-rate cut),CC 0.31 (FR* unreachable: minimum-rate cut),True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 eff_primary",0.9226145755071374,0.9226145755071374,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 eff_hnl_targets",0.9293150684931507,0.9293150684931508,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 eff_w_muons",0.9882289994649546,0.9882289994649546,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 eff_ttbar_prompt",0.8633827938218663,0.8633827938218663,True
+"round 1 val entries acorn (ttbar) + CC, preregistered cut (= best cut): armi_s2 fake_rate_hnl",0.029786488557976568,0.0297864885579765,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_primary,0.9834710743801652,0.9834710743801652,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_primary_sd,0.001502629601803196,0.0015026296018031,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_hnl_targets,0.9866666666666667,0.9866666666666668,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_hnl_targets_sd,0.0013789651936567508,0.0013789651936567,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_w_muons,0.9973247726056714,0.9973247726056714,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_w_muons_sd,0.0005350454788656811,0.0005350454788656,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_ttbar_prompt,0.9418428143144473,0.9418428143144472,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): eff_ttbar_prompt_sd,0.0018393632992110627,0.001839363299211,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): fake_rate_hnl,0.015579549892103408,0.0155795498921034,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): fake_rate_hnl_sd,0.0009374052134954304,0.0009374052134954,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): k_n_d0_100,485/501,485/501,True
+round 1 val row acorn (HNL) + acorn's CC + walkthrough (CCandWalk): k_n_d0_300,47/57,47/57,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): entries,3,3,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 working point,"acwalk 0.01,0.15,0.6 (trackbuild_val_acwalk_all)","acwalk 0.01,0.15,0.6 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 eff_primary,0.9849737039819685,0.9849737039819684,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 eff_hnl_targets,0.9879452054794521,0.987945205479452,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 eff_w_muons,0.9967897271268058,0.9967897271268058,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 eff_ttbar_prompt,0.9431330879283518,0.9431330879283518,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s0 fake_rate_hnl,0.0154402327372294,0.0154402327372294,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 working point,"acwalk 0.01,0.15,0.6 (trackbuild_val_acwalk_all)","acwalk 0.01,0.15,0.6 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 eff_primary,0.9834710743801653,0.9834710743801652,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 eff_hnl_targets,0.9868493150684932,0.9868493150684932,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 eff_ttbar_prompt,0.9426587226291222,0.9426587226291222,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s1 fake_rate_hnl,0.016578816764499512,0.0165788167644995,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 working point,"acwalk 0.01,0.2,0.4 (trackbuild_val_acwalk_all)","acwalk 0.01,0.2,0.4 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 eff_primary,0.9819684447783621,0.981968444778362,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 eff_hnl_targets,0.9852054794520548,0.9852054794520548,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 eff_w_muons,0.9973247726056714,0.9973247726056714,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 eff_ttbar_prompt,0.9397366323858677,0.9397366323858676,True
+round 1 val entries acorn (HNL) + acorn's CC + walkthrough (CCandWalk): armii_s2 fake_rate_hnl,0.014719600174581304,0.0147196001745813,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_primary",0.9837215126471325,0.9837215126471324,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_primary_sd",0.0011476523152907315,0.0011476523152907,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_hnl_targets",0.9868493150684933,0.9868493150684932,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_hnl_targets_sd",0.0010958904109589218,0.0010958904109589,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_w_muons_sd",0.0005350454788656811,0.0005350454788656,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_ttbar_prompt",0.9420262355634828,0.9420262355634828,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_ttbar_prompt_sd",0.0008530841486136174,0.0008530841486136,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): fake_rate_hnl",0.015507210206373146,0.0155072102063731,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): fake_rate_hnl_sd",0.0009528653581206748,0.0009528653581206,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): k_n_d0_100",485/501,485/501,True
+"round 1 val row acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): k_n_d0_300",47/57,47/57,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): entries",3,3,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 working point","acwalkg 0.01,0.15,0.6 (trackbuild_val_acwalk_all)","acwalkg 0.01,0.15,0.6 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 eff_primary",0.9849737039819685,0.9849737039819684,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 eff_hnl_targets",0.9879452054794521,0.987945205479452,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 eff_w_muons",0.9967897271268058,0.9967897271268058,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 eff_ttbar_prompt",0.9429623164206292,0.9429623164206292,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s0 fake_rate_hnl",0.01540607855388276,0.0154060785538827,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 working point","acwalkg 0.01,0.15,0.6 (trackbuild_val_acwalk_all)","acwalkg 0.01,0.15,0.6 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 eff_primary",0.9834710743801653,0.9834710743801652,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 eff_hnl_targets",0.9868493150684932,0.9868493150684932,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 eff_w_muons",0.9978598180845372,0.9978598180845372,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 eff_ttbar_prompt",0.9418238397024781,0.941823839702478,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s1 fake_rate_hnl",0.01650660777869077,0.0165066077786907,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 working point","acwalkg 0.01,0.2,0.4 (trackbuild_val_acwalk_all)","acwalkg 0.01,0.2,0.4 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 eff_primary",0.9827197595792637,0.9827197595792636,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 eff_hnl_targets",0.9857534246575342,0.9857534246575342,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 eff_ttbar_prompt",0.9412925505673408,0.9412925505673408,True
+"round 1 val entries acorn (HNL) + acorn's CC + walkthrough, score-guided (CCandWalk): armii_s2 fake_rate_hnl",0.014608944286545902,0.0146089442865459,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_primary,0.98572501878287,0.98572501878287,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_primary_sd,0.0007513148009015702,0.0007513148009015,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_hnl_targets,0.9883105022831051,0.9883105022831052,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_hnl_targets_sd,0.0003163563118846995,0.0003163563118846,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_w_muons,0.9975031210986267,0.9975031210986268,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_w_muons_sd,0.0006178173025035864,0.0006178173025035,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_ttbar_prompt,0.9438035242179298,0.9438035242179298,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): eff_ttbar_prompt_sd,0.0020090103145651112,0.0020090103145651,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): fake_rate_hnl,0.015408367526729999,0.0154083675267299,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): fake_rate_hnl_sd,0.0008941875183704456,0.0008941875183704,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): k_n_d0_100,485/501,485/501,True
+round 1 val row acorn (HNL) + walkthrough + merging (Canto builder family): k_n_d0_300,51/57,51/57,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): entries,3,3,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 working point,"walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 eff_primary,0.98572501878287,0.98572501878287,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 eff_hnl_targets,0.9884931506849315,0.9884931506849316,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 eff_w_muons,0.9967897271268058,0.9967897271268058,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 eff_ttbar_prompt,0.9441766915866571,0.9441766915866572,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s0 fake_rate_hnl,0.015308304113572223,0.0153083041135722,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 working point,"walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 eff_primary,0.9849737039819685,0.9849737039819684,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 eff_hnl_targets,0.9879452054794521,0.987945205479452,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 eff_ttbar_prompt,0.9416340935827863,0.9416340935827864,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s1 fake_rate_hnl,0.016348377774072602,0.0163483777740726,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 working point,"walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 eff_primary,0.9864763335837716,0.9864763335837716,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 eff_hnl_targets,0.9884931506849315,0.9884931506849316,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 eff_ttbar_prompt,0.9455997874843459,0.945599787484346,True
+round 1 val entries acorn (HNL) + walkthrough + merging (Canto builder family): armii_s2 fake_rate_hnl,0.014568420692545176,0.0145684206925451,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_primary,0.9837215126471325,0.9837215126471324,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_primary_sd,0.0004337718025466396,0.0004337718025466,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_hnl_targets,0.9863013698630136,0.9863013698630136,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_hnl_targets_sd,0.0009490689356541626,0.0009490689356541,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_w_muons,0.9975031210986267,0.9975031210986268,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_w_muons_sd,0.0006178173025035864,0.0006178173025035,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_ttbar_prompt,0.9489835932855173,0.9489835932855172,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): eff_ttbar_prompt_sd,0.003960758036007994,0.0039607580360079,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): fake_rate_hnl,0.014321656411191742,0.0143216564111917,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): fake_rate_hnl_sd,0.0006831203653734021,0.0006831203653734,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): k_n_d0_100,485/501,485/501,True
+round 1 val row acorn (HNL) + MWS-layer + merging (Canto builder): k_n_d0_300,51/57,51/57,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): entries,3,3,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 working point,mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 eff_primary,0.9842223891810669,0.9842223891810667,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 eff_hnl_targets,0.9873972602739726,0.9873972602739726,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 eff_w_muons,0.9967897271268058,0.9967897271268058,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 eff_ttbar_prompt,0.9523357747334067,0.9523357747334068,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s0 fake_rate_hnl,0.013954482316486804,0.0139544823164868,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 working point,mwslayermerge 0.2 (trackbuild_val_ext),mwslayermerge 0.2 (trackbuild_val_ext),True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 eff_primary,0.9834710743801653,0.9834710743801652,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 eff_hnl_targets,0.9857534246575342,0.9857534246575342,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 eff_ttbar_prompt,0.9446131076619483,0.9446131076619484,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s1 fake_rate_hnl,0.015109843178789845,0.0151098431787898,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 working point,mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 eff_primary,0.9834710743801653,0.9834710743801652,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 eff_hnl_targets,0.9857534246575342,0.9857534246575342,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 eff_ttbar_prompt,0.9500018974611969,0.9500018974611968,True
+round 1 val entries acorn (HNL) + MWS-layer + merging (Canto builder): armii_s2 fake_rate_hnl,0.013900643738298581,0.0139006437382985,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_primary,0.9541697971450037,0.9541697971450036,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_primary_sd,0.013668974754816158,0.0136689747548161,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_hnl_targets,0.9638356164383562,0.9638356164383562,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_hnl_targets_sd,0.01045412823470623,0.0104541282347062,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_w_muons,0.9971464241127163,0.9971464241127164,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_w_muons_sd,0.00030890865125176117,0.0003089086512517,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_ttbar_prompt,0.9442589149051902,0.9442589149051902,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): eff_ttbar_prompt_sd,0.005261148159516992,0.0052611481595169,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): fake_rate_hnl,0.02466071783033018,0.0246607178303301,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): fake_rate_hnl_sd,0.0011524990442836295,0.0011524990442836,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): k_n_d0_100,458/501,458/501,True
+round 1 val row acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): k_n_d0_300,36/57,36/57,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): entries,3,3,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 working point,"acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)","acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 eff_primary,0.9624342599549212,0.9624342599549212,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 eff_hnl_targets,0.9704109589041096,0.9704109589041096,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 eff_w_muons,0.9967897271268058,0.9967897271268058,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 eff_ttbar_prompt,0.9481613601001859,0.948161360100186,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s0 fake_rate_hnl,0.024018288253642696,0.0240182882536426,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 working point,"acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)","acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 eff_primary,0.9383921863260706,0.9383921863260706,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 eff_hnl_targets,0.9517808219178082,0.9517808219178082,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 eff_w_muons,0.9973247726056714,0.9973247726056714,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 eff_ttbar_prompt,0.9463397973511442,0.9463397973511442,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s1 fake_rate_hnl,0.023972617392234465,0.0239726173922344,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 working point,"acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)","acwalk 0.01,0.01,0.6 (trackbuild_val_acwalk_all)",True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 eff_primary,0.9616829451540195,0.9616829451540196,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 eff_hnl_targets,0.9693150684931506,0.9693150684931506,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 eff_w_muons,0.9973247726056714,0.9973247726056714,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 eff_ttbar_prompt,0.9382755872642404,0.9382755872642404,True
+round 1 val entries acorn (ttbar) + acorn's CC + walkthrough (CCandWalk): armi_s2 fake_rate_hnl,0.02599124784511338,0.0259912478451133,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_primary",0.9529176058101677,0.9529176058101676,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_primary_sd",0.00870790816464498,0.0087079081646449,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_hnl_targets",0.9629223744292238,0.9629223744292238,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_hnl_targets_sd",0.006894825968283762,0.0068948259682837,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_w_muons",0.9971464241127163,0.9971464241127164,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_w_muons_sd",0.00030890865125176117,0.0003089086512517,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_ttbar_prompt",0.9431204381870391,0.9431204381870392,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): eff_ttbar_prompt_sd",0.004679669175467938,0.0046796691754679,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): fake_rate_hnl",0.024784177298801693,0.0247841772988016,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): fake_rate_hnl_sd",0.0009770572723067814,0.0009770572723067,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): k_n_d0_100",459/501,459/501,True
+"round 1 val row acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): k_n_d0_300",37/57,37/57,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): entries",3,3,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 working point","acwalkg 0.01,0.01,0.6 (trackbuild_val_acwalk_all)","acwalkg 0.01,0.01,0.6 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 eff_primary",0.9609316303531179,0.960931630353118,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 eff_hnl_targets",0.9693150684931506,0.9693150684931506,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 eff_ttbar_prompt",0.9469280103221889,0.9469280103221888,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s0 fake_rate_hnl",0.024026334915138302,0.0240263349151383,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 working point","acwalkg 0.005,0.005,0.6 (trackbuild_val_acwalk_all)","acwalkg 0.005,0.005,0.6 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 eff_primary",0.9436513899323816,0.9436513899323816,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 eff_hnl_targets",0.9556164383561644,0.9556164383561644,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 eff_w_muons",0.9967897271268058,0.9967897271268058,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 eff_ttbar_prompt",0.9445372092140716,0.9445372092140716,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s1 fake_rate_hnl",0.02443929112364262,0.0244392911236426,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 working point","acwalkg 0.01,0.01,0.6 (trackbuild_val_acwalk_all)","acwalkg 0.01,0.01,0.6 (trackbuild_val_acwalk_all)",True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 eff_primary",0.9541697971450037,0.9541697971450036,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 eff_hnl_targets",0.9638356164383561,0.963835616438356,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 eff_ttbar_prompt",0.9378960950248567,0.9378960950248568,True
+"round 1 val entries acorn (ttbar) + acorn's CC + walkthrough, score-guided (CCandWalk): armi_s2 fake_rate_hnl",0.025886905857624157,0.0258869058576241,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_primary,0.9599298772852493,0.9599298772852491,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_primary_sd,0.006817258997654009,0.006817258997654,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_hnl_targets,0.9678538812785389,0.9678538812785388,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_hnl_targets_sd,0.00559691450083818,0.0055969145008381,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_w_muons_sd,0.0,0.0,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_ttbar_prompt,0.9518487596928643,0.9518487596928644,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): eff_ttbar_prompt_sd,0.004663831990668113,0.0046638319906681,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): fake_rate_hnl,0.017887343267750582,0.0178873432677505,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): fake_rate_hnl_sd,0.0005815634397326496,0.0005815634397326,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): k_n_d0_100,451/501,451/501,True
+round 1 val row acorn (ttbar) + walkthrough + merging (Canto builder family): k_n_d0_300,42/57,42/57,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): entries,3,3,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 working point,"walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 eff_primary,0.9676934635612322,0.9676934635612322,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 eff_hnl_targets,0.9742465753424657,0.9742465753424656,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 eff_ttbar_prompt,0.956054798679367,0.956054798679367,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s0 fake_rate_hnl,0.017566960945683077,0.017566960945683,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 working point,"walkmerge 0.2,0.7,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.7,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 eff_primary,0.9549211119459053,0.9549211119459052,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 eff_hnl_targets,0.9638356164383561,0.963835616438356,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 eff_ttbar_prompt,0.9526583431368828,0.9526583431368828,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s1 fake_rate_hnl,0.01753642542845892,0.0175364254284589,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 working point,"walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)","walkmerge 0.2,0.5,1.0 (trackbuild_val_ext)",True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 eff_primary,0.9571750563486101,0.95717505634861,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 eff_hnl_targets,0.9654794520547946,0.9654794520547946,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 eff_ttbar_prompt,0.946833137262343,0.946833137262343,True
+round 1 val entries acorn (ttbar) + walkthrough + merging (Canto builder family): armi_s2 fake_rate_hnl,0.01855864342910975,0.0185586434291097,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_primary,0.9676934635612322,0.9676934635612322,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_primary_sd,0.004691959427797406,0.0046919594277974,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_hnl_targets,0.9746118721461188,0.9746118721461188,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_hnl_targets_sd,0.0033480005077302873,0.0033480005077302,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_w_muons,0.996968075619761,0.996968075619761,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_w_muons_sd,0.0015445432562589982,0.0015445432562589,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_ttbar_prompt,0.9602734874071824,0.9602734874071824,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): eff_ttbar_prompt_sd,0.002642199103203024,0.002642199103203,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): fake_rate_hnl,0.016563479590239277,0.0165634795902392,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): fake_rate_hnl_sd,0.00029584752476907836,0.000295847524769,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): k_n_d0_100,466/501,466/501,True
+round 1 val row acorn (ttbar) + MWS-layer + merging (Canto builder): k_n_d0_300,42/57,42/57,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): entries,3,3,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 working point,mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 eff_primary,0.97145003756574,0.97145003756574,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 eff_hnl_targets,0.9775342465753425,0.9775342465753424,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 eff_ttbar_prompt,0.9615953853743691,0.9615953853743692,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s0 fake_rate_hnl,0.016855275061020362,0.0168552750610203,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 working point,mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 eff_primary,0.9624342599549212,0.9624342599549212,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 eff_hnl_targets,0.9709589041095891,0.9709589041095892,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 eff_w_muons,0.9951845906902087,0.9951845906902088,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 eff_ttbar_prompt,0.961993852225722,0.961993852225722,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s1 fake_rate_hnl,0.01626374001939516,0.0162637400193951,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 working point,mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 eff_primary,0.9691960931630353,0.9691960931630352,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 eff_hnl_targets,0.9753424657534246,0.9753424657534246,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 eff_ttbar_prompt,0.9572312246214565,0.9572312246214564,True
+round 1 val entries acorn (ttbar) + MWS-layer + merging (Canto builder): armi_s2 fake_rate_hnl,0.0165714236903023,0.0165714236903023,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_primary,0.9914850989231154,0.9914850989231154,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_primary_sd,0.0017350872101866866,0.0017350872101866,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_hnl_targets,0.9921461187214612,0.9921461187214612,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_hnl_targets_sd,0.0012654252475389263,0.0012654252475389,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_w_muons_sd,0.0,0.0,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_ttbar_prompt,0.9606276801639405,0.9606276801639404,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): eff_ttbar_prompt_sd,0.0035282575383611594,0.0035282575383611,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): fake_rate_hnl,0.011215181529280591,0.0112151815292805,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): fake_rate_hnl_sd,0.0008814292253147125,0.0008814292253147,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): k_n_d0_100,489/501,489/501,True
+round 1 val row Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): k_n_d0_300,49/57,49/57,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): entries,3,3,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 working point,mwslayermerge 0.2 (trackbuild_val_ext),mwslayermerge 0.2 (trackbuild_val_ext),True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 eff_primary,0.9894815927873779,0.989481592787378,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 eff_hnl_targets,0.9906849315068493,0.9906849315068492,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 eff_ttbar_prompt,0.9636636180790102,0.9636636180790102,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s0 fake_rate_hnl,0.012218374588516951,0.0122183745885169,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 working point,mwslayermerge 0.2 (trackbuild_val_ext),mwslayermerge 0.2 (trackbuild_val_ext),True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 eff_primary,0.9924868519909842,0.9924868519909842,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 eff_hnl_targets,0.9928767123287672,0.9928767123287672,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 eff_ttbar_prompt,0.9614625630905848,0.9614625630905848,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s1 fake_rate_hnl,0.010564856240964267,0.0105648562409642,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 working point,mwslayermerge 0.2 (trackbuild_val_ext),mwslayermerge 0.2 (trackbuild_val_ext),True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 eff_primary,0.9924868519909842,0.9924868519909842,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 eff_hnl_targets,0.9928767123287672,0.9928767123287672,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 eff_w_muons,0.9978598180845372,0.9978598180845372,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 eff_ttbar_prompt,0.9567568593222269,0.9567568593222268,True
+round 1 val entries Canto-L + MWS-layer + merging (same builder as the headline baseline; not the frozen builder): armi_s2 fake_rate_hnl,0.01086231375836056,0.0108623137583605,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_primary",0.9504132231404959,0.950413223140496,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_primary_sd",0.0072454175514597725,0.0072454175514597,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_hnl_targets",0.9570776255707764,0.9570776255707764,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_hnl_targets_sd",0.006696001015460588,0.0066960010154605,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_w_muons",0.9912609238451934,0.9912609238451934,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_w_muons_sd",0.0015445432562590621,0.001544543256259,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_ttbar_prompt",0.8584430698392218,0.8584430698392218,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): eff_ttbar_prompt_sd",0.010942567309386324,0.0109425673093863,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): fake_rate_hnl",0.02865211058839105,0.028652110588391,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): fake_rate_hnl_sd",0.00029863319894378785,0.0002986331989437,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): k_n_d0_100",462/501,462/501,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): k_n_d0_300",42/57,42/57,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): entries",3,3,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 working point",CC 0.37,CC 0.37,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 eff_primary",0.9474079639368895,0.9474079639368896,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 eff_hnl_targets",0.9512328767123288,0.9512328767123288,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 eff_w_muons",0.9903691813804173,0.9903691813804172,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 eff_ttbar_prompt",0.8525862396113999,0.8525862396113999,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s0 fake_rate_hnl",0.028749765223354488,0.0287497652233544,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 working point",CC 0.38,CC 0.38,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 eff_primary",0.9451540195341849,0.9451540195341848,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 eff_hnl_targets",0.9556164383561644,0.9556164383561644,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 eff_w_muons",0.9930444087747459,0.993044408774746,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 eff_ttbar_prompt",0.8516754582368791,0.8516754582368791,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s1 fake_rate_hnl",0.02888969113866791,0.0288896911386679,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 working point",CC 0.38,CC 0.38,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 eff_primary",0.9586776859504132,0.9586776859504132,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 eff_hnl_targets",0.9643835616438357,0.9643835616438357,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 eff_w_muons",0.9903691813804173,0.9903691813804172,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 eff_ttbar_prompt",0.8710675116693863,0.8710675116693863,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (best cut <= FR*): armiii_s2 fake_rate_hnl",0.028316875403150744,0.0283168754031507,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_primary",0.9393939393939394,0.9393939393939394,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_primary_sd",0.022718215820038305,0.0227182158200383,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_hnl_targets",0.9463013698630137,0.9463013698630136,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_hnl_targets_sd",0.02412826176033315,0.0241282617603331,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_w_muons",0.9887640449438203,0.9887640449438204,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_w_muons_sd",0.006509109181699558,0.0065091091816995,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_ttbar_prompt",0.857949729928023,0.857949729928023,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): eff_ttbar_prompt_sd",0.008405760241026204,0.0084057602410262,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): fake_rate_hnl",0.028934581135382068,0.028934581135382,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): fake_rate_hnl_sd",0.00018956814180343156,0.0001895681418034,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): k_n_d0_100",459/501,459/501,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): k_n_d0_300",42/57,42/57,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): entries",3,3,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 working point",CC 0.26,CC 0.26,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 eff_primary",0.9143501126972201,0.91435011269722,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 eff_hnl_targets",0.9189041095890411,0.9189041095890412,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 eff_w_muons",0.9812734082397003,0.9812734082397004,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 eff_ttbar_prompt",0.8546734469280103,0.8546734469280103,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s0 fake_rate_hnl",0.028771487063640536,0.0287714870636405,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 working point",CC 0.38,CC 0.38,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 eff_primary",0.9451540195341849,0.9451540195341848,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 eff_hnl_targets",0.9556164383561644,0.9556164383561644,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 eff_w_muons",0.9930444087747459,0.993044408774746,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 eff_ttbar_prompt",0.8516754582368791,0.8516754582368791,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s1 fake_rate_hnl",0.02888969113866791,0.0288896911386679,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 working point",CC 0.39,CC 0.39,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 eff_primary",0.9586776859504132,0.9586776859504132,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 eff_hnl_targets",0.9643835616438357,0.9643835616438357,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 eff_w_muons",0.9919743178170144,0.9919743178170144,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 eff_ttbar_prompt",0.8675002846191795,0.8675002846191795,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + CC (prereg. cut rule): armiii_s2 fake_rate_hnl",0.02914256520383776,0.0291425652038377,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_primary",0.9782118707738543,0.9782118707738544,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_primary_sd",0.001987792119507582,0.0019877921195075,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_hnl_targets",0.9815525114155251,0.9815525114155252,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_hnl_targets_sd",0.0025894880143849585,0.0025894880143849,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_w_muons",0.9971464241127163,0.9971464241127164,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_w_muons_sd",0.00030890865125176117,0.0003089086512517,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_ttbar_prompt",0.9569592551832314,0.9569592551832314,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): eff_ttbar_prompt_sd",0.0007161083246864754,0.0007161083246864,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): fake_rate_hnl",0.015038785063973298,0.0150387850639732,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): fake_rate_hnl_sd",0.0018764764872764394,0.0018764764872764,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): k_n_d0_100",479/501,479/501,True
+"ranking v3 row acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): k_n_d0_300",47/57,47/57,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): entries",3,3,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 working point",mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 eff_primary",0.9759579263711495,0.9759579263711496,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 eff_hnl_targets",0.9786301369863014,0.9786301369863014,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 eff_w_muons",0.9967897271268058,0.9967897271268058,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 eff_ttbar_prompt",0.9566240370384426,0.9566240370384426,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s0 fake_rate_hnl",0.013537145911277393,0.0135371459112773,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 working point",mwslayermerge 0.1 (trackbuild_val_ext),mwslayermerge 0.1 (trackbuild_val_ext),True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 eff_primary",0.9797145003756574,0.9797145003756574,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 eff_hnl_targets",0.9835616438356164,0.9835616438356164,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 eff_ttbar_prompt",0.9577814883685629,0.9577814883685628,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s1 fake_rate_hnl",0.014436839361856666,0.0144368393618566,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 working point",mwslayermerge 0.2 (trackbuild_val_ext),mwslayermerge 0.2 (trackbuild_val_ext),True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 eff_primary",0.9789631855747558,0.9789631855747558,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 eff_hnl_targets",0.9824657534246576,0.9824657534246576,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 eff_w_muons",0.9973247726056714,0.9973247726056714,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 eff_ttbar_prompt",0.9564722401426891,0.9564722401426892,True
+"ranking v3 entries acorn IGNN, ttbar+HNL-trained + Canto builder (MWS-layer + merging): armiii_s2 fake_rate_hnl",0.017142369918785837,0.0171423699187858,True
+preregistered cut armiii_s0 = working_points cuts_at_FR_star,0.26,0.26,True
+preregistered cut armiii_s1 = working_points cuts_at_FR_star,0.38,0.38,True
+preregistered cut armiii_s2 = working_points cuts_at_FR_star,0.39,0.39,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary value_new,0.9909842223891809,0.9909842223891808,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary value_base,0.98572501878287,0.98572501878287,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary difference,0.005259203606310936,0.0052592036063109,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary sigma_boot,0.002716588189325555,0.0027165881893255,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary sigma_seeds,0.0012268919322730772,0.001226891932273,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) primary sigma,0.002980791036597477,0.0029807910365974,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 value_new,0.9760479041916167,0.9760479041916168,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 value_base,0.9680638722554891,0.9680638722554892,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 difference,0.007984031936127622,0.0079840319361276,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma_boot,0.011289788892834282,0.0112897888928342,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma_seeds,0.003992015968063858,0.0039920159680638,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_100_300 sigma,0.011974787043369128,0.0119747870433691,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 value_new,0.8771929824561404,0.8771929824561404,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 value_base,0.8947368421052632,0.8947368421052632,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 difference,-0.01754385964912275,-0.0175438596491227,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma_boot,0.06153684421956185,0.0615368442195618,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma_seeds,0.03508771929824562,0.0350877192982456,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_d0_ge300 sigma,0.07083735767273579,0.0708373576727357,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets value_new,0.9917808219178083,0.9917808219178084,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets value_base,0.9883105022831051,0.9883105022831052,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets difference,0.003470319634703123,0.0034703196347031,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma_boot,0.0020573673035747084,0.0020573673035747,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma_seeds,0.0008566969424335249,0.0008566969424335,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) hnl_targets sigma,0.0022286071598631324,0.0022286071598631,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons value_new,0.9978598180845372,0.9978598180845372,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons value_base,0.9975031210986267,0.9975031210986268,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons difference,0.00035669698591045407,0.0003566969859104,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons sigma_boot,0.00035608873609489815,0.0003560887360948,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons sigma_seeds,0.00035669698591045407,0.0003566969859104,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) w_muons sigma,0.0005040158010730068,0.000504015801073,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt value_new,0.963132328943873,0.963132328943873,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt value_base,0.9438035242179298,0.9438035242179298,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt difference,0.019328804725943227,0.0193288047259432,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma_boot,0.0008351258262442003,0.0008351258262442,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma_seeds,0.0024373166252687276,0.0024373166252687,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) ttbar_prompt sigma,0.0025764214479528378,0.0025764214479528,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate value_new,0.010266086316425184,0.0102660863164251,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate value_base,0.015408367526729999,0.0154083675267299,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate difference,-0.0051422812103048155,-0.0051422812103048,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate sigma_boot,0.00022430971145193565,0.0002243097114519,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate sigma_seeds,0.0005683981171893637,0.0005683981171893,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (HNL) + walkthrough + merging (Canto builder family) fake_rate sigma,0.0006110574983387932,0.0006110574983387,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_new,0.9909842223891809,0.9909842223891808,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary value_base,0.9676934635612322,0.9676934635612322,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary difference,0.023290758827948732,0.0232907588279487,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_boot,0.003758883087738582,0.0037588830877385,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma_seeds,0.0029419835022465985,0.0029419835022465,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) primary sigma,0.004773307971918248,0.0047733079719182,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_new,0.9760479041916167,0.9760479041916168,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 value_base,0.9301397205588823,0.9301397205588824,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 difference,0.04590818363273441,0.0459081836327344,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_boot,0.0144289735083617,0.0144289735083617,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma_seeds,0.009362107305036787,0.0093621073050367,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_100_300 sigma,0.017200125862796088,0.017200125862796,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_new,0.8771929824561404,0.8771929824561404,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 value_base,0.7368421052631579,0.7368421052631579,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 difference,0.14035087719298256,0.1403508771929825,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_boot,0.061116647266794145,0.0611166472667941,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma_seeds,0.03508771929824562,0.0350877192982456,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_d0_ge300 sigma,0.07047263737569508,0.070472637375695,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_new,0.9917808219178083,0.9917808219178084,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets value_base,0.9746118721461188,0.9746118721461188,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets difference,0.01716894977168948,0.0171689497716894,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_boot,0.0028998297060852532,0.0028998297060852,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma_seeds,0.0021064041268805175,0.0021064041268805,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) hnl_targets sigma,0.00358412481228455,0.0035841248122845,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_new,0.9978598180845372,0.9978598180845372,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons value_base,0.996968075619761,0.996968075619761,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons difference,0.0008917424647761907,0.0008917424647761,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_boot,0.000513685941666298,0.0005136859416662,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma_seeds,0.0008917424647761537,0.0008917424647761,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) w_muons sigma,0.001029115090818632,0.0010291150908186,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_new,0.963132328943873,0.963132328943873,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt value_base,0.9602734874071824,0.9602734874071824,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt difference,0.0028588415366905817,0.0028588415366905,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_boot,0.0006297963688856162,0.0006297963688856,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma_seeds,0.002631009353358002,0.002631009353358,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) ttbar_prompt sigma,0.0027053379980547347,0.0027053379980547,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_new,0.010266086316425184,0.0102660863164251,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate value_base,0.016563479590239277,0.0165634795902392,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate difference,-0.006297393273814093,-0.006297393273814,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_boot,0.00023601516629636699,0.0002360151662963,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma_seeds,0.00029279327108373214,0.0002927932710837,True
+round 1 val differences: Canto-L (frozen: learned merging) - acorn (ttbar) + MWS-layer + merging (Canto builder) fake_rate sigma,0.0003760732087158212,0.0003760732087158,True

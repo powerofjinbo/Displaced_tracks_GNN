@@ -1,0 +1,140 @@
+
+===== full: 150 val events; targets 165310; |d0| >= 10 mm: 2010
+eff all targets 0.9964 | prompt (|d0|<1) 0.9983 | |d0|>=10 0.8682 | |d0|>=100 20/49
+             n  share   eff  graph_ok  pt_med  ratio_med  nhits_med
+category                                                           
+K_S       1045  0.520 0.993     0.995   1.308      0.095      7.000
+Lambda     394  0.196 0.972     0.995   1.442      0.064      6.000
+other      571  0.284 0.567     0.534   1.210      0.275      8.000
+lost |d0|>=10: 265 by outcome: {'graph': 214, 'contaminated': 25, 'gnn': 23, 'split': 3} | category: {'other': 247, 'Lambda': 11, 'K_S': 7} | inward: 40
+high-score (>=0.5) wrong edges per hit, |d0|>=10: found 0.0083 lost 0.0295; prompt 0.0017
+|d0|>=100 by category: {'K_S': {'sum': 9, 'size': 9}, 'other': {'sum': 11, 'size': 40}} outcome of lost: {'graph': 21, 'gnn': 7, 'contaminated': 1}
+
+eff by |d0| [mm] (main project's bins) x generation (gen0: event generator; gen>=1: detector simulation):
+                mean            size        
+gen             gen0 gen>=1     gen0  gen>=1
+d0                                          
+[1.0, 3.0)     0.996  0.757 2572.000  37.000
+[3.0, 10.0)    0.993  0.702 2683.000 104.000
+[10.0, 30.0)   0.988  0.540 1289.000 239.000
+[30.0, 100.0)  0.970  0.394  263.000 170.000
+[100.0, 300.0) 1.000  0.237   10.000  38.000
+[300.0, inf)     NaN  1.000      NaN   1.000
+|d0|>=10 by generation: {'gen0': {'sum': 1539, 'size': 1562}, 'gen>=1': {'sum': 206, 'size': 448}} | lost by generation: {'gen>=1': 242, 'gen0': 23} | gen>=1 by category: {'other': 448}
+
+eff by |d0|/r_first x pT [GeV]:
+                 mean                                           size                                    
+pt         (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0] (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0]
+ratio                                                                                                   
+[0.0, 0.2)      0.958      0.965      0.961         1.000   1040.000    375.000    230.000         2.000
+[0.2, 0.4)      0.613      0.667      0.750           NaN    142.000     24.000      4.000           NaN
+[0.4, 0.7)      0.336      0.474      0.667           NaN    113.000     19.000      3.000           NaN
+[0.7, 1.0)      0.137      0.286        NaN           NaN     51.000      7.000        NaN           NaN
+graph-stage ok by |d0|/r_first x pT:
+pt          (0.0, 1.5]  (1.5, 2.0]  (2.0, 5.0]  (5.0, 1000.0]
+ratio                                                        
+[0.0, 0.2)       0.959       0.989       1.000          1.000
+[0.2, 0.4)       0.535       0.625       0.500            NaN
+[0.4, 0.7)       0.274       0.316       0.333            NaN
+[0.7, 1.0)       0.098       0.143         NaN            NaN
+eff by |d0|/r_first x category:
+            mean                  size                
+category     K_S Lambda other      K_S  Lambda   other
+ratio                                                 
+[0.0, 0.2) 0.994  0.972 0.789 1021.000 394.000 232.000
+[0.2, 0.4) 0.958    NaN 0.568   24.000     NaN 146.000
+[0.4, 0.7)   NaN    NaN 0.363      NaN     NaN 135.000
+[0.7, 1.0)   NaN    NaN 0.155      NaN     NaN  58.000
+
+===== 1gev: 150 val events; targets 165310; |d0| >= 10 mm: 2010
+eff all targets 0.9975 | prompt (|d0|<1) 0.9992 | |d0|>=10 0.8821 | |d0|>=100 25/49
+             n  share   eff  graph_ok  pt_med  ratio_med  nhits_med
+category                                                           
+K_S       1045  0.520 0.994     0.995   1.308      0.095      7.000
+Lambda     394  0.196 0.990     0.995   1.442      0.064      6.000
+other      571  0.284 0.602     0.532   1.210      0.275      8.000
+lost |d0|>=10: 237 by outcome: {'graph': 210, 'gnn': 16, 'contaminated': 9, 'split': 2} | category: {'other': 227, 'K_S': 6, 'Lambda': 4} | inward: 38
+high-score (>=0.5) wrong edges per hit, |d0|>=10: found 0.0028 lost 0.0062; prompt 0.0003
+|d0|>=100 by category: {'K_S': {'sum': 9, 'size': 9}, 'other': {'sum': 16, 'size': 40}} outcome of lost: {'graph': 20, 'gnn': 4}
+
+eff by |d0| [mm] (main project's bins) x generation (gen0: event generator; gen>=1: detector simulation):
+                mean            size        
+gen             gen0 gen>=1     gen0  gen>=1
+d0                                          
+[1.0, 3.0)     0.997  0.784 2572.000  37.000
+[3.0, 10.0)    0.997  0.673 2683.000 104.000
+[10.0, 30.0)   0.992  0.565 1289.000 239.000
+[30.0, 100.0)  0.992  0.429  263.000 170.000
+[100.0, 300.0) 1.000  0.368   10.000  38.000
+[300.0, inf)     NaN  1.000      NaN   1.000
+|d0|>=10 by generation: {'gen0': {'sum': 1550, 'size': 1562}, 'gen>=1': {'sum': 223, 'size': 448}} | lost by generation: {'gen>=1': 225, 'gen0': 12} | gen>=1 by category: {'other': 448}
+
+eff by |d0|/r_first x pT [GeV]:
+                 mean                                           size                                    
+pt         (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0] (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0]
+ratio                                                                                                   
+[0.0, 0.2)      0.957      0.981      0.991         1.000   1040.000    375.000    230.000         2.000
+[0.2, 0.4)      0.655      0.708      0.750           NaN    142.000     24.000      4.000           NaN
+[0.4, 0.7)      0.407      0.474      0.667           NaN    113.000     19.000      3.000           NaN
+[0.7, 1.0)      0.157      0.286        NaN           NaN     51.000      7.000        NaN           NaN
+graph-stage ok by |d0|/r_first x pT:
+pt          (0.0, 1.5]  (1.5, 2.0]  (2.0, 5.0]  (5.0, 1000.0]
+ratio                                                        
+[0.0, 0.2)       0.958       0.989       1.000          1.000
+[0.2, 0.4)       0.542       0.583       0.500            NaN
+[0.4, 0.7)       0.274       0.316       0.333            NaN
+[0.7, 1.0)       0.098       0.143         NaN            NaN
+eff by |d0|/r_first x category:
+            mean                  size                
+category     K_S Lambda other      K_S  Lambda   other
+ratio                                                 
+[0.0, 0.2) 0.994  0.990 0.810 1021.000 394.000 232.000
+[0.2, 0.4) 1.000    NaN 0.610   24.000     NaN 146.000
+[0.4, 0.7)   NaN    NaN 0.422      NaN     NaN 135.000
+[0.7, 1.0)   NaN    NaN 0.172      NaN     NaN  58.000
+
+===== HNL val, Canto-L (i) s0: 1331 primary-population daughters; pT median 7.87 GeV; share with pT <= 1.5 GeV 0.043; share with |d0|/r_first >= 0.2 0.511
+graph-stage ok by |d0|/r_first x pT:
+                 mean                                           size                                    
+pt         (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0] (0.0, 1.5] (1.5, 2.0] (2.0, 5.0] (5.0, 1000.0]
+ratio                                                                                                   
+[0.0, 0.2)      0.917      1.000      1.000         0.998         12          8         79           552
+[0.2, 0.4)      1.000      1.000      1.000         1.000         16          9        104           269
+[0.4, 0.7)      1.000      0.960      0.989         0.987         12         25         93            77
+[0.7, 1.0)      1.000      0.889      0.974         1.000         17          9         39            10
+graph + classifier ok by |d0|/r_first x pT:
+pt          (0.0, 1.5]  (1.5, 2.0]  (2.0, 5.0]  (5.0, 1000.0]
+ratio                                                        
+[0.0, 0.2)       0.917       1.000       0.987          0.978
+[0.2, 0.4)       1.000       1.000       0.962          0.974
+[0.4, 0.7)       0.917       0.920       0.957          0.974
+[0.7, 1.0)       0.824       0.667       0.923          0.900
+
+TrackML |d0|>=10 (full): pT median 1.30; share pT <= 1.5 0.670; share ratio >= 0.2 0.181
+
+== training exposure (train events)
+train: 1399 events, 1533161 targets, 1095.9 per event
+                targets    per_event      frac
+ad0                                           
+[0.0, 1.0)      1466320  1048.120086  0.956403
+[1.0, 10.0)       48798    34.880629  0.031828
+[10.0, 30.0)      13554     9.688349  0.008841
+[30.0, 100.0)      4137     2.957112  0.002698
+[100.0, 300.0)      348     0.248749  0.000227
+[300.0, inf)          4     0.002859  0.000003
+
+|d0| >= 10 mm: 18043 targets (12.90 per event, 0.0118 of the targets)
+species     e     p     pi    All
+category                         
+K_S         0   744   8867   9611
+Lambda      0  3283     71   3354
+conversion  1     1      0      2
+other       0  2637   2439   5076
+All         1  6665  11377  18043
+
+|d0| >= 100 mm: 352 targets
+species     p   pi  All
+category               
+K_S         1   29   30
+other     169  153  322
+All       170  182  352
