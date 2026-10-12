@@ -70,7 +70,9 @@ bash env/make_env.sh --stage build,smoke   # on a GPU node: FRNN, acorn 99d15341
 source env/activate.sh
 ```
 
-`env/lock.txt` records the versions of the environment used for the results. The job scripts in `slurm/` carry the
+`HNL_ROOT` and `HNL_DATA` (the samples and derived data) must be exported in every shell before `env/activate.sh`;
+otherwise `env/env.sh` falls back to the subMIT locations. `env/lock.txt` records the versions of the environment
+used for the results. The job scripts in `slurm/` carry the
 site's paths (`#SBATCH -o` lines, `source` lines and partition names) and need adapting elsewhere.
 
 ## Data

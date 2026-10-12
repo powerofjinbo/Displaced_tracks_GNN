@@ -7,6 +7,10 @@ patches/acorn/
     Licensed under the Apache License, Version 2.0 (LICENSES/acorn-Apache-2.0.txt); the patches are distributed
     under the same licence.
 
+src/hnl/trackbuild/acorn_walk.py
+    Contains modified copies of four functions of acorn's cc_and_walk_utils.py (marked in the file), under the same
+    copyright and the Apache License, Version 2.0.
+
 figures/video/fonts/
     Noto Sans, SIL Open Font License 1.1 (figures/video/fonts/OFL-LICENSE.txt).
 

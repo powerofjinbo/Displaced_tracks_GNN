@@ -73,6 +73,11 @@ def track_labels(n: int, all_trks: dict) -> np.ndarray:
 
 
 # ---- fast exact copies of acorn's walk loops (cc_and_walk_utils at 99d15341) -------------------------------------
+# The functions down to AcornCCWalk are modified copies of find_next_hits, build_roads, get_tracks and
+# get_tracks_score_guided of acorn/stages/track_building/models/cc_and_walk_utils.py (gitlab.cern.ch/gnn4itkteam/acorn,
+# 99d15341). Copyright (C) 2023 CERN for the benefit of the ATLAS collaboration; licensed under the Apache License,
+# Version 2.0 (LICENSES/acorn-Apache-2.0.txt). Changes: the used hits are held in a set instead of being collected
+# again with np.unique at every step; the tracks are unchanged (tests/test_acorn_walk.py).
 
 def _find_next_hits(G, current_hit, used: set, n_used: int, score_name: str, th_min: float, th_add: float):
     """acorn find_next_hits with used_hits of n_used distinct hits, of which only `used` can be neighbours."""
