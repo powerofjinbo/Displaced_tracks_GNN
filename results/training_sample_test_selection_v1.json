@@ -1,0 +1,46 @@
+{
+ "created_utc": "2026-10-12T22:38:54Z",
+ "purpose": "Post-freeze, descriptive one-time test of the training-sample study runs (DECISIONS.md 2026-10-12 22:24 UTC; docs/feedback/test_use_ledger.md R11). Not a selection: results/final_selection_v1.json and the claims are unchanged. Input of slurm/stage1/final_test.sbatch only (pipelines l1tl_ii / l1tl_iii, seed 0).",
+ "working_points": "results/working_points_v1.json",
+ "working_points_sha256": "186ac8dd9c8652f8a20dd2402eb7e6254d86789f4d60bdb8468371d743888d16",
+ "FR_star": 0.02936834277897644,
+ "e_star": 0.011791817004015985,
+ "reference_arm": "ii",
+ "grid": "trackbuild_val_ext,trackbuild_val_lmerge,trackbuild_val",
+ "rules": "family mwslmerge (the frozen Canto-L family); per run on val: FR* configuration by the builder rule with the one-standard-error tie rule and LLP-blind configuration by the section-6c rule (hnl.eval.final_select.run_rows, as hnl.eval.training_sample_board), e* cut from RUN/edge_tpr_estar_efpr.json (final_select.cut_e)",
+ "candidate": null,
+ "pipelines": {
+  "l1tl_ii": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl",
+   "graphs": "ltf_union_graphs",
+   "graphs_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s0",
+   "training_sample": "arm (ii), HNL",
+   "family": "mwslmerge",
+   "seeds": {
+    "0": {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+     "cut_e": 0.21,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0/lmerge/model.joblib",
+     "config": "mwslmerge,0.2",
+     "llp_blind_config": "mwslmerge,0.2"
+    }
+   }
+  },
+  "l1tl_iii": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl",
+   "graphs": "ltf_union_graphs",
+   "graphs_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s0",
+   "training_sample": "arm (iii), ttbar+HNL",
+   "family": "mwslmerge",
+   "seeds": {
+    "0": {
+     "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+     "cut_e": 0.19,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0/lmerge/model.joblib",
+     "config": "mwslmerge,0.3",
+     "llp_blind_config": "mwslmerge,0.03"
+    }
+   }
+  }
+ }
+}

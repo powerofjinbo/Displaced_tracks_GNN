@@ -1,0 +1,28 @@
+[
+ {
+  "label": "Canto-L (HNL): learned triplet union, learned merging (training-sample study, one seed, post-freeze)",
+  "short": "Canto-L (HNL)",
+  "group": "Canto (training sample)",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+    "sub": "trackbuild_test",
+    "cut": 0,
+    "wp": "mwslmerge 0.2 (trackbuild_test, configuration 0)"
+   }
+  ]
+ },
+ {
+  "label": "Canto-L (ttbar+HNL): learned triplet union, learned merging (training-sample study, one seed, post-freeze)",
+  "short": "Canto-L (ttbar+HNL)",
+  "group": "Canto (training sample)",
+  "entries": [
+   {
+    "run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+    "sub": "trackbuild_test",
+    "cut": 0,
+    "wp": "mwslmerge 0.3 (trackbuild_test, configuration 0)"
+   }
+  ]
+ }
+]

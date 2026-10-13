@@ -54,13 +54,17 @@ detector without pileup. Canto is also tested on the TrackML challenge, with pil
 
 The models were frozen on validation and evaluated once on the test sets (6,999 HNL events and the ttbar test set);
 this evaluation decides the three [preregistered claims](docs/preregistration.md), which hold for Canto-L against
-acorn (HNL) with connected components at its preregistered cut. The comparisons with the acorn builders chosen on
-validation are post-freeze and descriptive. Canto is trained on ttbar only; acorn (HNL) on the HNL signal.
+acorn (HNL) with its own builder, connected components (CC), at its preregistered cut. Every column has a track
+builder (first row): Canto's was chosen on validation from its builder menu and frozen before the test; the first
+two acorn columns run the best builder of the same menu, chosen on validation per seed (post-freeze, descriptive),
+so that the comparison isolates the graph and the edge classifier. MWS: Mutex Watershed keeping the hits of one
+detector layer apart. Canto is trained on ttbar only; acorn (HNL) on the HNL signal.
 Efficiencies in percent; uncertainties combine the event bootstrap and the spread of three training seeds; bold: the
 best value of each row among the columns shown.
 
-| | Canto-L | Canto-H | Canto-B | acorn (ttbar),<br>builder chosen<br>on validation | acorn (HNL),<br>builder chosen<br>on validation | acorn (HNL),<br>CC at the<br>preregistered cut |
+| | Canto-L | Canto-H | Canto-B | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | 99.08 ± 0.15 | **99.18 ± 0.13** | 98.43 ± 0.26 | 96.28 ± 0.56 | 97.98 ± 0.20 | 92.57 ± 0.47 |
 | \|d₀\| 100–300 mm | **98.57 ± 0.39** | 98.40 ± 0.43 | 97.03 ± 0.88 | 91.84 ± 1.80 | 96.75 ± 0.59 | 91.72 ± 1.12 |
 | \|d₀\| ≥ 300 mm (found / total, three seeds pooled) | 94 / 108 | 99 / 108 | 97 / 108 | 96 / 108 | **101 / 108** | 98 / 108 |
@@ -88,8 +92,9 @@ best value of each row among the columns shown.
   them). K<sub>S</sub> and Λ daughters are absent from ttbar events, so the ttbar-trained models never saw one;
   acorn (HNL) was trained on events that contain them. Photon conversions are in every model's training events.
 
-| | Canto-L | Canto-H | Canto-B | acorn (ttbar),<br>builder chosen<br>on validation | acorn (HNL),<br>builder chosen<br>on validation | acorn (HNL),<br>CC at the<br>preregistered cut |
+| | Canto-L | Canto-H | Canto-B | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | K<sub>S</sub> and Λ daughters in HNL events | 98.49 ± 0.44 | 98.60 ± 0.43 | **98.74 ± 0.40** | 98.27 ± 0.42 | 97.97 ± 0.45 | 88.35 ± 1.57 |
 | e± from photon conversions in ttbar events | 78.27 ± 1.30 | 72.94 ± 1.51 | **78.61 ± 1.36** | 76.29 ± 1.44 | 74.25 ± 1.36 | 44.29 ± 2.62 |
 
