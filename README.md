@@ -35,34 +35,76 @@ for prompt particles lose many of them. Canto has two aims:
 
 - **Higher reconstruction efficiency for the displaced particles of a known signal.** Canto keeps the three stages of
   the Exa.TrkX pipeline (graph construction, edge classification, track building) and changes each one for particles
-  produced off the vertex. Trained on the HNL signal, Canto-L finds 99.17 ± 0.32 % of the displaced HNL daughters on
-  validation, against 98.65 ± 0.31 % for acorn trained on the same events (one Canto seed). Even trained without the
-  signal, Canto-L finds 99.08 ± 0.15 % of them on the one-time test, 1.10 ± 0.22 points more than the signal-trained
-  acorn (post-freeze).
+  produced off the vertex. Trained on the HNL signal, Canto-L (HNL) finds 99.17 ± 0.32 % of the displaced HNL
+  daughters on validation, against 98.65 ± 0.31 % for acorn (HNL) trained on the same events (one Canto seed): it
+  loses 0.83 % of them, acorn 1.35 %.
 - **Strong generalization to displaced particles it has not seen.** A search for long-lived particles whose
   properties are not known in advance cannot train its tracker on the signal it looks for. Trained on generic
-  top-quark pair (ttbar) events, Canto finds as many displaced HNL daughters as when it is trained on the signal, and
-  it finds K<sub>S</sub> and Λ daughters, which ttbar events do not contain, as well as the baselines that were
-  trained on events containing them.
+  top-quark pair (ttbar) events, Canto-L (ttbar) finds as many displaced HNL daughters as when it is trained on the
+  signal; on the one-time test it finds 99.08 ± 0.15 % of them, 1.10 ± 0.22 points more than acorn (HNL) trained on
+  the signal (post-freeze), and it finds K<sub>S</sub> and Λ daughters, which ttbar events do not contain, as well
+  as the baselines that were trained on events containing them.
 
 The benchmark is a public sample of heavy neutral leptons (HNLs), pp → W → μN, N → νμ⁺μ⁻, in the ACTS generic
 detector without pileup. Canto is also tested on the TrackML challenge, with pileup 200 and noise hits.
 
 ## Results
 
-### Displaced-track efficiency: HNL benchmark, test sets
+The results come in three parts: (1) a known signal: Canto-L (HNL), trained on the HNL signal, on displaced and
+far-displaced daughters; (2) generalization: Canto (ttbar), trained on generic ttbar events only, on the HNL signal
+and on a second displaced population absent from its training events; (3) the TrackML challenge, with pileup 200.
+The training sample of each model is in parentheses. MWS: Mutex Watershed that keeps the hits of one detector layer
+apart. Efficiencies and rates in percent; bold: the best value of each row among the columns shown.
 
-The models were frozen on validation and evaluated once on the test sets (6,999 HNL events and the ttbar test set);
-this evaluation decides the three [preregistered claims](docs/preregistration.md), which hold for Canto-L against
+### 1. A known signal: Canto-L (HNL), trained on the HNL signal
+
+When the signal is known, the tracker can be trained on it. Canto-L and acorn were each trained on the HNL signal
+and on ttbar + HNL, and run with the same track builder, its setting chosen per seed on validation. Validation
+events; one Canto-L seed per training sample, three acorn seeds; uncertainties from the event bootstrap and the seed
+spread.
+
+| | Canto-L (HNL) | acorn (HNL) | Canto-L (ttbar+HNL) | acorn (ttbar+HNL) |
+|:---|:---:|:---:|:---:|:---:|
+| *Track builder* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* |
+| *Training seeds* | *1* | *3* | *1* | *3* |
+| Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | 99.17 ± 0.32 | 98.65 ± 0.31 | **99.25 ± 0.31** | 97.90 ± 0.40 |
+| \|d₀\| 100–300 mm | **98.8** | 97.2 | **98.8** | 95.6 |
+| \|d₀\| ≥ 300 mm (found / total, seeds pooled) | **18 / 19** | 52 / 57 | **18 / 19** | 48 / 57 |
+| Prompt tracks in ttbar (\|d₀\| < 1 mm) | **96.7** | 94.9 | 96.4 | 95.2 |
+| Fake-track rate (lower is better) | 1.02 | 1.37 | **1.01** | 1.39 |
+
+- **Fewer displaced daughters lost.** acorn (HNL) loses 1.35 % of the displaced daughters, 1.6 times the 0.83 % of
+  Canto-L (HNL); trained on ttbar + HNL, acorn loses 2.10 %, 2.8 times Canto-L's 0.75 %. Paired on the same events,
+  Canto-L minus acorn is +0.53 ± 0.37 points trained on HNL (z = 1.4, not resolved) and +1.35 ± 0.43 points trained
+  on ttbar + HNL (z = 3.1), at a lower fake-track rate. Prompt W muons: 99.8 % for all four.
+- **The largest displacements.** Training on the signal teaches Canto-L the far tail that ttbar events lack: at a
+  common edge working point, the edge efficiency of HNL daughters with \|d₀\| ≥ 300 mm is 93.2 % trained on HNL
+  against 77.7 % trained on ttbar (seed 0, 103 edges), and 96.1 % against 93.6 % at 100–300 mm.
+- **Status.** These two Canto-L runs are not part of the frozen selection. Their one-time test, with settings
+  chosen on validation and committed before any test job
+  ([selection](results/training_sample_test_selection_v1.json), [read-out](results/training_sample_spec_test_v1.json)),
+  is queued; its numbers will replace the validation ones here.
+
+### 2. Generalization: Canto (ttbar), trained without the signal
+
+A search for long-lived particles whose properties are not known in advance cannot train its tracker on the signal
+it looks for. Canto (ttbar) never saw an HNL decay, a K<sub>S</sub> or a Λ.
+
+**Signal training adds nothing measurable to Canto's displaced efficiency.** On validation, with the builder above,
+Canto-L (ttbar) finds 99.10 ± 0.27 % of the displaced HNL daughters and Canto-L (HNL) 99.17 ± 0.32 %: +0.08 ± 0.33
+points from training on the signal. acorn gains +1.48 ± 0.35 points (97.17 ± 0.44 % to 98.65 ± 0.31 %); the difference between the two
+gains is +1.40 ± 0.47 points (z = 3.0).
+
+**On the HNL test sets, Canto (ttbar) finds more displaced daughters than acorn trained on the signal.** The models
+were frozen on validation and evaluated once on the test sets (6,999 HNL events and the ttbar test set); this
+evaluation decides the three [preregistered claims](docs/preregistration.md), which hold for Canto-L against
 acorn (HNL) with its own builder, connected components (CC), at its preregistered cut. Every column has a track
 builder (first row): Canto's was chosen on validation from its builder menu and frozen before the test; the first
 two acorn columns run the best builder of the same menu, chosen on validation per seed (post-freeze, descriptive),
-so that the comparison isolates the graph and the edge classifier. MWS: Mutex Watershed keeping the hits of one
-detector layer apart. Canto is trained on ttbar only; acorn (HNL) on the HNL signal.
-Efficiencies in percent; uncertainties combine the event bootstrap and the spread of three training seeds; bold: the
-best value of each row among the columns shown.
+so that the comparison isolates the graph and the edge classifier. Uncertainties combine the event bootstrap and the
+spread of three training seeds.
 
-| | Canto-L | Canto-H | Canto-B | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
+| | Canto-L (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | 99.08 ± 0.15 | **99.18 ± 0.13** | 98.43 ± 0.26 | 96.28 ± 0.56 | 97.98 ± 0.20 | 92.57 ± 0.47 |
@@ -72,42 +114,69 @@ best value of each row among the columns shown.
 | Prompt tracks in ttbar (\|d₀\| < 1 mm) | 96.32 ± 0.24 | 96.22 ± 0.16 | **96.58 ± 0.13** | 95.40 ± 0.22 | 94.84 ± 0.20 | 81.67 ± 0.33 |
 | Fake-track rate (lower is better) | **1.02 ± 0.03** | 1.42 ± 0.04 | 1.29 ± 0.05 | 1.52 ± 0.03 | 1.36 ± 0.03 | 2.86 ± 0.05 |
 
-- In a post-freeze comparison, Canto-L finds **1.10 ± 0.22 points** more displaced daughters than acorn trained on
-  the HNL signal with its builder chosen on validation, at a lower fake-track rate.
-- With the signal in training for both (validation, learned merging): Canto-L (HNL) finds 99.17 ± 0.32 % and acorn
-  (HNL) 98.65 ± 0.31 %, +0.53 ± 0.37 points (paired; one Canto seed; not resolved). Canto-L trained on ttbar+HNL
-  finds 99.25 ± 0.31 %. The one-time test of these two Canto-L runs is in progress.
-- Above 300 mm acorn (HNL) finds 101 of 108 daughters (three seeds pooled) against 94 for Canto-L; with 36 daughters
-  per seed, the difference is not resolved.
-- On the evaluation sample of Wang et al. (Exa.TrkX large-radius tracking) and with their definitions, Canto-L finds
-  99.14 ± 0.05 % of all tracks against their published 95.61 ± 0.06 % (post-freeze).
+- Canto-L (ttbar) finds **1.10 ± 0.22 points** more displaced daughters than acorn (HNL) with the same builder
+  family chosen on validation (post-freeze), at a lower fake-track rate, and 6.50 ± 0.48 points more than acorn
+  (HNL) with connected components at its preregistered cut.
+- The exception is the far tail: above 300 mm acorn (HNL) finds 101 of 108 daughters (three seeds pooled) against
+  94 for Canto-L (ttbar); with 36 daughters per seed, the difference is not resolved. This is the range that signal
+  training improves (section 1).
+- On the evaluation sample of Wang et al. (Exa.TrkX large-radius tracking) and with their definitions, Canto-L
+  (ttbar) finds 99.14 ± 0.05 % of all tracks against their published 95.61 ± 0.06 % (post-freeze).
 
-### Generalization to unseen signals
+**A second population of displaced particles**, used in no selection (test sets, post-freeze, nothing chosen on
+them). K<sub>S</sub> and Λ daughters are absent from ttbar events, so the ttbar-trained models never saw one;
+acorn (HNL) was trained on events that contain them. Photon conversions are in every model's training events.
 
-- **The HNL signal is not in Canto's training events.** On validation, Canto-L trained on ttbar finds as many
-  displaced daughters as the same pipeline trained on the HNL signal, +0.08 ± 0.33 points apart (one HNL-trained
-  seed), whereas acorn gains 1.48 ± 0.35 points from training on the signal. The exception is the far tail,
-  \|d₀\| ≥ 300 mm, which ttbar events do not teach.
-- **A second population of displaced particles**, used in no selection (test sets, post-freeze, nothing chosen on
-  them). K<sub>S</sub> and Λ daughters are absent from ttbar events, so the ttbar-trained models never saw one;
-  acorn (HNL) was trained on events that contain them. Photon conversions are in every model's training events.
-
-| | Canto-L | Canto-H | Canto-B | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
+| | Canto-L (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | K<sub>S</sub> and Λ daughters in HNL events | 98.49 ± 0.44 | 98.60 ± 0.43 | **98.74 ± 0.40** | 98.27 ± 0.42 | 97.97 ± 0.45 | 88.35 ± 1.57 |
 | e± from photon conversions in ttbar events | 78.27 ± 1.30 | 72.94 ± 1.51 | **78.61 ± 1.36** | 76.29 ± 1.44 | 74.25 ± 1.36 | 44.29 ± 2.62 |
 
-### TrackML challenge, throughput phase
+### 3. TrackML challenge, throughput phase
 
-Canto-L, retrained with four cluster features added to the inputs of its embedding on 1,399 throughput-phase events
-(one seed) and evaluated once on 300 test events with pileup 200, finds 99.65 ± 0.01 % of the targets at a
-fake-track rate of 1.68 ± 0.01 %, and 88.2 ± 0.5 % of the targets with \|d₀\| ≥ 10 mm. Recounted after the freeze
-with the evaluation code of three published GNN studies on this phase, none of their efficiencies is higher. With all
-hits and the EggNet code its fake rate is 12.6 times EggNet's; connected components at an edge score of 0.8, chosen
-on validation for EggNet's fake rate, find 99.37 ± 0.01 % of the particles against 95.87 ± 0.03 %, at a fake rate
-not resolved from EggNet's (0.173 ± 0.003 % against 0.19 ± 0.01 %). Details:
+Canto-L was retrained on 1,399 TrackML throughput-phase events (pileup 200, noise hits; one seed), with four cluster
+features added to the inputs of its embedding and the HNL fake-rate working point kept, not re-tuned. It was
+evaluated once on 300 test events; uncertainties from the event bootstrap. Details:
 [TrackML model card](docs/model_card_canto_l_trackml.md).
+
+| Test condition | Target efficiency | Fake-track rate | \|d₀\| ≥ 10 mm | \|d₀\| ≥ 100 mm (found / total) | TrackML score |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| All hits (pileup 200, noise) | 99.65 ± 0.01 | 1.68 ± 0.01 | 88.2 ± 0.5 | 31 / 69 | 0.9660 ± 0.0001 |
+| Noise hits removed | 99.66 ± 0.01 | 1.29 ± 0.01 | 88.5 ± 0.5 | 29 / 69 | 0.9676 ± 0.0001 |
+| Hits of particles with p<sub>T</sub> > 1 GeV | 99.77 ± 0.01 | 0.055 ± 0.004 | 89.0 ± 0.5 | 33 / 69 | – |
+
+**Comparison with published GNN trackers.** Only studies that, like our test, used throughput-phase events are
+compared. Each comparison runs the reference's own evaluation code on our test events; published values as quoted
+(Liu et al. quote no uncertainties). A Canto-L row marked *at FR ≤ x* uses a working point chosen on validation for
+that reference's fake rate.
+
+| Benchmark (evaluation code) | Model | Efficiency | Fake rate |
+|:---|:---|:---:|:---:|
+| TrackML-1GeV (EggNet code; Calafiura et al.) | EC | 98.98 ± 0.09 | 0.12 |
+| | EggNet | 99.56 ± 0.03 | 0.06 |
+| | Canto-L | 99.56 ± 0.01 | **0.008 ± 0.001** |
+| | Canto-L *at FR ≤ 0.12* | **99.67 ± 0.01** | 0.039 ± 0.003 |
+| TrackML-1GeV (HierarchicalGNN code; Liu et al.) | BC-HGNN | 98.55 | 1.23 |
+| | Canto-L | **99.77 ± 0.01** | **0.26 ± 0.01** |
+| Full TrackML (EggNet code; Chan et al.) | EggNet | 95.87 ± 0.03 | 0.19 ± 0.01 |
+| | Canto-L | **99.41 ± 0.01** | 2.40 ± 0.01 |
+| | Canto-L *at FR ≤ 0.19* | 99.37 ± 0.01 | **0.173 ± 0.003** |
+| Full TrackML (HierarchicalGNN code; Liu et al.) | EC-GNN | 96.35 | 55.58 |
+| | BC-HGNN | 97.86 | 36.71 |
+| | Canto-L | **99.65 ± 0.01** | **34.94 ± 0.11** |
+
+- In every benchmark Canto-L's efficiency is the highest or equal to the highest within the errors. At its own
+  working point its fake rate with all hits and the EggNet code is 12.6 times EggNet's; at the working point chosen
+  for EggNet's fake rate, it finds 99.37 % of the particles against 95.87 %, at a fake rate not resolved from
+  EggNet's (1.7 σ).
+- **Displaced particles in TrackML.** TrackML is a benchmark for prompt tracking: 1.2 % of the validation targets
+  have \|d₀\| ≥ 10 mm. On validation (all hits), Canto-L finds 1,539 of the 1,562 such particles from the event generator
+  (98.5 %; mostly K<sub>S</sub> and Λ daughters: 99.3 % and 97.2 %), and 206 of the 448 produced by the detector
+  simulation in material interactions (46.0 %). 214 of the 265 losses occur at graph construction, for particles
+  that cross the detector obliquely (large \|d₀\| / r<sub>first</sub>) at low p<sub>T</sub>
+  ([diagnostic](results/trackml_displaced_diag_v1.txt)). The \|d₀\| ≥ 100 mm bin, 69 test targets, is reported,
+  not claimed.
 
 <details>
 <summary><b>Every dataset and every model in one card</b> (validation, test, external sample, second displaced
