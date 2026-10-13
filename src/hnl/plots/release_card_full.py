@@ -1,5 +1,5 @@
 """One "model release" card with every result of the study, in the look of hnl.plots.release_card (colours, bold row
-title over a muted subtitle; the first place of each row bold, lightly filled and framed in orange). Seventeen columns: Canto-L/H/B, Canto-L trained on HNL and on ttbar+HNL (validation only), acorn with its
+title over a muted subtitle; the first place of each row bold, lightly filled and framed in orange). Seventeen columns: Canto-L/H/B, Canto-L trained on HNL and on ttbar+HNL (one seed each), acorn with its
 val-best builder (three training samples), acorn + CC at the preregistered cut (two), DeZoort IN / IN-L, Wang et al.'s
 published values (external sample only) and the published TrackML references of the throughput phase. Six bands,
 each a full-width row:
@@ -15,6 +15,10 @@ Every number is read from a result file; only labels are typed here:
   results/second_population_v2.csv      V0 daughters and conversion e+-
   results/training_sample_bins_v1.csv   Canto-L trained on HNL / ttbar+HNL (values, primary sigma, |d0|-bin k/n)
   results/training_sample_val_mwslmerge.csv     the same runs' per-seed k/n (cross-checked against the values)
+  results/bootstrap_ts_test_v1.csv      the same runs on test (post-freeze, R11): pooled HNL test and ttbar_test rows,
+                                        with Canto-L's seed sd for their seed term
+  results/training_sample_test_v1.csv   the same runs on test: per sample, Wang et al.'s definitions, second population
+  results/training_sample_paired_test_v1.csv    the same runs' test sigmas (cross-check of the HNL test band)
   results/model_table_v1.md             training events, parameters and steps (edge classifier)
   docs/paper_facts.md                   Wang et al.'s published values (one line each, cross-checked against the
                                         "published" rows of results/published_definitions_comparison.csv)
@@ -67,8 +71,8 @@ COLUMNS = [
     ("CL", "Canto-L", ("{n} · ttbar", "learned merging"), 0),
     ("CH", "Canto-H", ("{n} · ttbar", "walkthrough + merging"), 0),
     ("CB", "Canto-B", ("{n} · ttbar", "learned merging"), 0),
-    ("CLH", "Canto-L (HNL)", ("{n} · HNL", "validation only", "learned merging {wp}"), 0),
-    ("CLTH", "Canto-L\n(ttbar+HNL)", ("{n} · ttbar+HNL", "validation only", "learned merging {wp}"), 0),
+    ("CLH", "Canto-L (HNL)", ("{n} · HNL", "test post-freeze", "learned merging {wp}"), 0),
+    ("CLTH", "Canto-L\n(ttbar+HNL)", ("{n} · ttbar+HNL", "test post-freeze", "learned merging {wp}"), 0),
     ("AH", "acorn (HNL)", ("{n} · HNL", "learned merging"), 1),
     ("ATH", "acorn (ttbar+HNL)", ("{n} · ttbar+HNL", "learned merging"), 1),
     ("A", "acorn", ("{n} · ttbar", "learned merging"), 1),
@@ -252,6 +256,9 @@ class Sources:
         self.SP = Csv("results/second_population_v2.csv")
         self.TS = Csv("results/training_sample_bins_v1.csv")
         self.TSV = Csv("results/training_sample_val_mwslmerge.csv")
+        self.TST = Csv("results/bootstrap_ts_test_v1.csv")
+        self.TSR = Csv("results/training_sample_test_v1.csv")
+        self.TSP = Csv("results/training_sample_paired_test_v1.csv")
         self.fsel = json.load(open(os.path.join(REPO, "results/final_selection_v1.json")))
         self.split_tp = json.load(open(os.path.join(REPO, "configs/trackml/split_tp_v1.json")))
         self.mt = model_table()
@@ -305,6 +312,48 @@ class Sources:
             seed = _f(self.TS.one(model="Canto-L (ttbar)")[TS_SEED_SD[q]]) if q in TS_SEED_SD else None
             s_test = float(np.hypot(binom, seed or 0.0))
         return Cell(float(r[vcol]), sigma, kn, src=src, s_test=s_test)
+
+    def ts_test(self, col: str, q: str, qd: str) -> Cell:
+        """Canto-L trained on HNL or on ttbar+HNL on the pooled HNL test sets and ttbar_test (one seed, post-freeze):
+        value, bootstrap sd and k/n from bootstrap_ts_test_v1.csv; σ = bootstrap and the seed sd of Canto-L (ttbar)
+        in quadrature (paper Sec. II), which must equal the model row of training_sample_paired_test_v1.csv; that
+        file's Canto-L rows must equal bootstrap_v1.csv's."""
+        r = self.TST.one(table="test_release_card", short=TS_MODEL[col], quantity=q)
+        cl = self.TST.one(table="test_release_card", short="Canto-L", quantity=q)
+        ref = self.BS.one(table="test_release_card", short="Canto-L", quantity=q)
+        if abs(float(cl.value) - float(ref.value)) > 1e-9 or abs(float(cl.seed_sd) - float(ref.seed_sd)) > 1e-9:
+            raise SystemExit(f"Canto-L test {q}: {self.TST.src(cl)} vs {self.BS.src(ref)}")
+        sigma = float(np.hypot(float(r.boot_sd), float(cl.seed_sd)))
+        p = self.TSP.one(quantity=qd, kind="model", label=TS_MODEL[col])
+        if abs(float(p.value) - float(r.value)) > 1e-9 or abs(float(p.sigma) - sigma) > 1e-9:
+            raise SystemExit(f"{col} test {q}: {self.TST.src(r)} vs {self.TSP.src(p)}")
+        return Cell(float(r.value), sigma, f"{int(r.k_pooled)}/{int(r.n_pooled)}", src=self.TST.src(r))
+
+    def _ts_r(self, col: str, block: str, sset: str, q: str, pop=None, seed_sd: float = 0.0, src: str = "") -> Cell:
+        """A one-seed cell of training_sample_test_v1.csv; σ = its bootstrap sd and Canto-L's seed sd in quadrature."""
+        eq = dict(block=block, set=sset, quantity=q, model=TS_MODEL[col])
+        if pop is not None:
+            eq["population"] = pop
+        r = self.TSR.one(**eq)
+        if int(r.n_seeds) != 1:
+            raise SystemExit(f"{col}: {r.n_seeds} seeds in {self.TSR.src(r)}")
+        return Cell(float(r.value), float(np.hypot(float(r.sigma_boot), seed_sd)), f"{int(r.k)}/{int(r.n)}",
+                    src=f"{self.TSR.src(r)} (seed term {src})")
+
+    def ts_ps(self, sset: str, col: str) -> Cell:
+        c = self.PS.one(split="test", set=sset, model=PS_MODEL["CL"])
+        return self._ts_r(col, "per_sample", sset, "eff_primary", seed_sd=float(c.s_seeds), src=self.PS.src(c))
+
+    def ts_pd(self, col: str, q: str) -> Cell:
+        c = self.PD.one(set="test_external", model="canto_l", quantity=q)
+        return self._ts_r(col, "published_definitions", "test_external", q, seed_sd=float(c.sd_seeds),
+                          src=self.PD.src(c))
+
+    def ts_sp(self, event_set: str, pop: str, col: str) -> Cell:
+        c = self.SP.one(split="test", kind="efficiency", event_set=event_set, population=pop, quantity="all",
+                        model=SP_MODEL["CL"])
+        return self._ts_r(col, "second_population", event_set, "all", pop=pop, seed_sd=float(c.seed_sd),
+                          src=self.SP.src(c))
 
     def ps(self, split: str, sset: str, col: str) -> Cell:
         r = self.PS.one(split=split, set=sset, model=PS_MODEL[col])
@@ -440,9 +489,11 @@ def build(S: Sources) -> tuple[list, dict]:
             S.canto_check(table, split, q, qd)
             cells = {c: S.bs(table, c, q) for c in ("CL", "CH", "CB", "AHcc", "Acc")}
             cells.update({c: S.lm(split, c, qd) for c in LM})
-            if val_only:                                  # DeZoort and the Canto-L training-sample runs: val only
+            if val_only:                                  # DeZoort: val only
                 cells.update({c: S.bs(table, c, q) for c in ("DZ", "DZL")})
                 cells.update({c: S.ts(c, q) for c in TS_MODEL})
+            else:                                         # the Canto-L training-sample runs: one seed, post-freeze
+                cells.update({c: S.ts_test(c, q, qd) for c in TS_MODEL})
             sub = sub.format(ttbar=ttbar)
             if per_seed:
                 sub += f" · {_n(BS.one(table=table, short='Canto-L', quantity=q).n_per_seed)} per seed"
@@ -461,10 +512,12 @@ def build(S: Sources) -> tuple[list, dict]:
     items.append(Band("HNL samples · one-time blind test",
                       f"pooled HNL test (hnl10_100_test, hnl15_200_test, hnl15_100_external; "
                       f"{_n(ev('test', 'hnl_test_pooled'))} events) and ttbar_test · frozen models and working points, "
-                      "evaluated once · DeZoort was not evaluated on test"))
+                      "evaluated once · Canto-L (HNL) and Canto-L (ttbar+HNL): one seed, trained after the freeze, settings fixed on "
+                      "val before their test jobs · DeZoort was not evaluated on test"))
     items += hnl_band("test", "test_release_card", "ttbar_test", False)
     for sset in ("hnl10_100_test", "hnl15_200_test"):
         cells = {c: S.ps("test", sset, c) for c in PS_MODEL}
+        cells.update({c: S.ts_ps(sset, c) for c in TS_MODEL})
         n = PS.one(split="test", set=sset, model=PS_MODEL["CL"]).n_per_seed
         items.append(Row("Displaced tracks", (f"{sset} only · {_n(n)} per seed",), "max", "pct2", cells))
 
@@ -478,6 +531,7 @@ def build(S: Sources) -> tuple[list, dict]:
                       "· all-track, prompt-muon and HNL-daughter rows under Wang et al.'s definitions (Canto, the CC "
                       "columns and Wang et al.'s published values)"))
     cells = {c: S.ps("test", "hnl15_100_external", c) for c in PS_MODEL}
+    cells.update({c: S.ts_ps("hnl15_100_external", c) for c in TS_MODEL})
     n = PS.one(split="test", set="hnl15_100_external", model=PS_MODEL["CL"]).n_per_seed
     items.append(Row("Displaced tracks", (f"|d0| ≥ 10 mm or r_v ≥ 100 mm · {_n(n)} per seed",), "max", "pct2",
                      cells))
@@ -486,6 +540,7 @@ def build(S: Sources) -> tuple[list, dict]:
                                 ("HNL daughters", "Wang et al.'s 'displaced', all |d0|", "displaced", "max"),
                                 ("Fake-track rate", "lower is better", "fake_rate", "min")]:
         cells = {c: S.pd_(c, q) for c in PD_MODEL}
+        cells.update({c: S.ts_pd(c, q) for c in TS_MODEL})
         cells["WG"] = wang[q]
         if q == "displaced":                              # their set is another selection of the same particles
             cells["WG"].note = "their displaced selection"
@@ -507,6 +562,8 @@ def build(S: Sources) -> tuple[list, dict]:
             ("Conversion e±", "val", "ttbar_val", "conv", "ttbar val"),
             ("Conversion e±", "test", "ttbar_test", "conv", "ttbar_test")]:
         cells = {c: S.sp(split, event_set, pop, c) for c in sp_cols}
+        if split == "test":
+            cells.update({c: S.ts_sp(event_set, pop, c) for c in TS_MODEL})
         n = S.SP.one(split=split, kind="efficiency", event_set=event_set, population=pop, quantity="all",
                      model=SP_MODEL["CL"]).n_per_seed
         items.append(Row(title, (f"{what} · {_n(n)} per seed",), "max", "pct2", cells))
@@ -603,7 +660,8 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
          "equals the best cut ≤ FR*. DeZoort IN and IN-L: one seed at the screening budget; they cannot reach FR*. "
          "Canto-L (HNL) and Canto-L (ttbar+HNL): the Canto-L pipeline trained on HNL signal events or on ttbar + HNL, "
          "one seed each, with learned merging at the setting chosen on val by the builder rule at FR* (header); "
-         "evaluated on validation only, not on test, the external sample, the second population or TrackML. "
+         "trained after the freeze, evaluated once on test at settings committed before their test jobs "
+         "(post-freeze, descriptive; not on TrackML). "
          f"TrackML: working point WP-A, chosen on {ctx['n_tm_val']} val events (the highest target efficiency at a "
          "track fake rate ≤ FR*, the HNL value, not re-tuned; one-standard-error tie rule)."),
         ("Seeds and uncertainties.",
@@ -611,9 +669,10 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
          "a cell: the combined uncertainty σ = (σ_boot² + s²/n)^½ of the mean, in percentage points (score units in "
          f"score rows), with σ_boot from an event bootstrap (B = {_n(ctx['B_val'])} on val, {ctx['B_test']} on test) and "
          "s the standard deviation over the n seeds. The |d0| ≥ 300 mm rows show k/n instead (statistics limited). "
-         "Canto-L (HNL) and Canto-L (ttbar+HNL): one seed; the σ of their displaced-track row takes the seed "
-         "standard deviation of Canto-L (trained on ttbar) as its seed term (results/training_sample_bins_v1.md); "
-         "their other rows have no σ in the source and show k/n, or '1 seed, no σ' for the fake rate. TrackML: "
+         "Canto-L (HNL) and Canto-L (ttbar+HNL): one seed; their σ takes the seed standard deviation of Canto-L "
+         "(trained on ttbar) in the same row as its seed term (results/training_sample_bins_v1.md, "
+         "results/training_sample_paired_test_v1.csv); on val only the displaced-track row has a σ in the source, the "
+         "other val rows show k/n, or '1 seed, no σ' for the fake rate. TrackML: "
          "Canto-L has one training seed, σ is its event-bootstrap error (B = 500). Published values carry "
          "the uncertainty quoted by their authors; none is shown where none is quoted (Liu et al.; Calafiura et al.'s "
          "fake rates)."),
@@ -638,7 +697,8 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
         ("Second population.",
          "V0 daughters (charged daughters of K0S and Λ decays) exist only in the HNL samples; the external sample "
          "carries no parent labels and is not used for them. acorn (HNL) and acorn (ttbar+HNL) saw V0 daughters in "
-         "training; Canto and acorn, trained on ttbar, did not. Conversion e±: targets from photon conversions in "
+         "training, as did Canto-L (HNL) and Canto-L (ttbar+HNL); Canto and acorn, trained on ttbar, did not. "
+         "Conversion e±: targets from photon conversions in "
          "ttbar. No row of this band entered any selection."),
         ("TrackML throughput phase.",
          f"Canto-L is retrained on TrackML ({_n(ctx['n_tm_train'])} throughput-phase training events, one seed, run "

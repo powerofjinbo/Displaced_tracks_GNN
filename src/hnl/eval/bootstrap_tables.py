@@ -686,10 +686,12 @@ def run(test_b1000: bool = False, extra_test_spec: str | None = None) -> dict:
     vm = {m.name: m for m in val} | sb
     steps = [vm[k] for _, k, _ in DECOMP]
     fig8 = pd.read_csv(_repo(FIG08))
-    for (lab, k, facts), m, (_, f) in zip(DECOMP, steps, fig8[fig8.filled].iterrows()):
+    by_lab = {lab: (m, facts) for (lab, _, facts), m in zip(DECOMP, steps)}
+    for _, f in fig8[fig8["kind"] == "step"].iterrows():  # source: "bootstrap_v1 <n>. <DECOMP step label>"
+        m, facts = by_lab[f.source.split(". ", 1)[1]]
         v = summary(m, "eff_primary")
         digits = len(facts.split(".")[1])
-        checks.append((f"fig08 row '{f.row}' ({facts} %)", v["value"], float(f.eff_primary),
+        checks.append((f"fig08 step {f.x} ({facts} %)", v["value"], float(f.eff_primary),
                        abs(v["value"] - float(f.eff_primary)) <= 1e-6 and f"{100 * v['value']:.{digits}f}" == facts))
     # the R6 rows of the staircase are the ranking rows themselves (runs and configurations checked in val_ranking)
     vdiff = []
