@@ -1,8 +1,8 @@
 # Model card: Canto-L on TrackML (run canto_l_v1/seed0_x1)
 
-Status 2026-10-12 04:50 UTC: the selection is frozen and the one-time test read-out is running. Filled in: the test
-set in all three conditions and T2 C-1GeV and C-nonoise. Pending: T2 C-full (scored with the memory-bounded forward,
-array 6773056; grid 6771390). Test numbers were read once, after the freeze; nothing was
+Status 2026-10-13 23:10 UTC: the selection is frozen and the one-time test read-out is complete: the test set
+and T2 in all three conditions (T2 C-full scored with the memory-bounded forward, array 6773056; grid 6809352, run
+as 75 blocks of 4 events, DECISIONS 2026-10-13). Test numbers were read once, after the freeze; nothing was
 chosen on them. The comparisons with published numbers (section 5.2) use each reference's own evaluation code,
 recomputed after the freeze from the frozen pipeline's test tracks (DECISIONS 2026-10-11).
 
@@ -109,7 +109,7 @@ Percent, except the TrackML score. Val has 150 events, test and T2 have 300. Val
 |---|---|---|---|---|---|---|
 | C-full | val | 99.64 | 1.70 | 0.03 | 86.8 | 0.9662 |
 | C-full | test | 99.65 +- 0.01 | 1.68 +- 0.01 | 0.021 +- 0.002 | 88.2 +- 0.5 | 0.9660 +- 0.0001 |
-| C-full | T2 | pending | | | | |
+| C-full | T2 | 94.42 +- 0.05 | 10.41 +- 0.05 | 0.51 +- 0.01 | 85.8 +- 0.6 | 0.5989 +- 0.0005 |
 | C-nonoise | val | 99.64 | 1.30 | 0.02 | 87.0 | 0.9678 |
 | C-nonoise | test | 99.66 +- 0.01 | 1.29 +- 0.01 | 0.015 +- 0.002 | 88.5 +- 0.5 | 0.9676 +- 0.0001 |
 | C-nonoise | T2 | 94.67 +- 0.05 | 7.94 +- 0.05 | 0.43 +- 0.01 | 86.6 +- 0.6 | 0.6135 +- 0.0005 |
@@ -118,8 +118,8 @@ Percent, except the TrackML score. Val has 150 events, test and T2 have 300. Val
 | C-1GeV | T2 | 95.98 +- 0.04 | 0.80 +- 0.02 | 0.033 +- 0.003 | 87.8 +- 0.6 | - |
 
 Far-displaced targets (|d0| >= 100 mm) on test: 31 of 69 found in C-full (45 +- 6 %), 29 of 69 in C-nonoise
-(42 +- 7 %) and 33 of 69 in C-1GeV (48 +- 6 %); on T2, 29 of 63 in C-nonoise and 30 of 63 in C-1GeV. WP-S, the
-val-score optimum, scores 0.9663 +- 0.0001 on test C-full.
+(42 +- 7 %) and 33 of 69 in C-1GeV (48 +- 6 %); on T2, 24 of 63 in C-full, 29 of 63 in C-nonoise and 30 of 63 in
+C-1GeV. WP-S, the val-score optimum, scores 0.9663 +- 0.0001 on test C-full.
 
 The TrackML score weights differ between the phases (results/trackml_score_weights_v1.txt, `python -m
 hnl.trackml.score_weights`; truth weights only): particles produced in the detector simulation (barcode generation
