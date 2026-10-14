@@ -6,8 +6,10 @@
  "lcg_view": "/cvmfs/sft.cern.ch/lcg/views/LCG_97apython3/x86_64-centos7-gcc9-opt/setup.sh",
  "shim": "/work/submit/jinboz1/hnl/acts/shim",
  "binds": ["/cvmfs", "/work"],
- "default_build": "/work/submit/jinboz1/hnl/acts/build-v15",
- "default_acts_detectors": "/work/submit/jinboz1/hnl/acts/geometry/detectors.csv",
+ "default_build": "/work/submit/jinboz1/hnl/acts/build-v15-zmirror",
+ "default_module_map": "configs/trackml/module_map_acts_zmirror_v1.csv",
+ "unpatched_build": "/work/submit/jinboz1/hnl/acts/build-v15",
+ "unpatched_acts_detectors": "/work/submit/jinboz1/hnl/acts/geometry/detectors.csv",
  "trackml_detectors": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/detectors.csv",
  "trackml_detectors_md5": "440dbb939f62cc94de563de8cdae47d1",
  "field_map": {

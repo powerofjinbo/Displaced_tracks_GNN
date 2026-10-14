@@ -1,0 +1,490 @@
+{
+ "rule": "ACTS v15: per (algorithm, event) a std::mt19937 seeded with (seed + Cantor(algorithm, event)) mod 2^32, Cantor(a, e) = (a + e)(a + e + 1)/2 + e, algorithm numbers from 1 (RandomNumbers.cpp, Sequencer.cpp)",
+ "new_sets": {
+  "hval": {
+   "k": 0,
+   "base_seed": 600000001,
+   "gun_seed": 600000008,
+   "fatras_seed": 600000014,
+   "streams": 16000,
+   "range": [
+    600000015,
+    600516633
+   ],
+   "coincidences": 0
+  },
+  "closure": {
+   "k": 1,
+   "base_seed": 610000001,
+   "gun_seed": 610000008,
+   "fatras_seed": 610000014,
+   "streams": 16000,
+   "range": [
+    610000015,
+    610516633
+   ],
+   "coincidences": 0
+  },
+  "htest": {
+   "k": 2,
+   "base_seed": 620000001,
+   "gun_seed": 620000008,
+   "fatras_seed": 620000014,
+   "streams": 16000,
+   "range": [
+    620000015,
+    620516633
+   ],
+   "coincidences": 0
+  }
+ },
+ "algorithms": [
+  1,
+  16
+ ],
+ "new_events": [
+  0,
+  999
+ ],
+ "earlier_families": 907,
+ "earlier_streams": 57641680,
+ "coincidences_with_earlier": [],
+ "coincidences_between_new_sets_and_pilot": {
+  "hval/closure": 0,
+  "hval/htest": 0,
+  "closure/htest": 0,
+  "hval/pilot": 0,
+  "closure/pilot": 0,
+  "htest/pilot": 0
+ },
+ "numpy_first_word_clashes": {
+  "hval": [],
+  "closure": [],
+  "htest": []
+ },
+ "numpy_first_words_distinct_between_sets": true,
+ "numpy_note": "the second word of every new numpy entropy tuple is an overlay id 50,000,000 + 1,000,000 k + host with k in {0, 1, 2}; earlier tuples carry an event number below 24,000 or a pilot id with k = 9, so no tuple can coincide even where a first word does",
+ "base_seeds_distinct": true,
+ "families": [
+  {
+   "name": "ttbar validation (spec v1)",
+   "base": 150001,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "docs/new_samples_spec.md s4, s8"
+  },
+  {
+   "name": "ttbar validation (spec v1)",
+   "base": 150001,
+   "offset": 13,
+   "events": [
+    0,
+    999
+   ],
+   "source": "docs/new_samples_spec.md s4, s8"
+  },
+  {
+   "name": "generic_iso_v1",
+   "base": 250001,
+   "offset": 0,
+   "events": [
+    0,
+    7999
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "generic_iso_v1",
+   "base": 250001,
+   "offset": 13,
+   "events": [
+    0,
+    7999
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "generic_dense_v1",
+   "base": 350001,
+   "offset": 0,
+   "events": [
+    0,
+    7999
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "generic_dense_v1",
+   "base": 350001,
+   "offset": 13,
+   "events": [
+    0,
+    7999
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "hss15_100_v1",
+   "base": 450001,
+   "offset": 0,
+   "events": [
+    0,
+    1499
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "hss15_100_v1",
+   "base": 450001,
+   "offset": 13,
+   "events": [
+    0,
+    1499
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "hss40_300_v1",
+   "base": 550001,
+   "offset": 0,
+   "events": [
+    0,
+    1499
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "hss40_300_v1",
+   "base": 550001,
+   "offset": 13,
+   "events": [
+    0,
+    1499
+   ],
+   "source": "docs/new_samples_spec.md s3-4"
+  },
+  {
+   "name": "generic_iso_x1",
+   "base": 260001,
+   "offset": 0,
+   "events": [
+    8000,
+    23999
+   ],
+   "source": "docs/new_samples_spec.md s9"
+  },
+  {
+   "name": "generic_iso_x1",
+   "base": 260001,
+   "offset": 13,
+   "events": [
+    8000,
+    23999
+   ],
+   "source": "docs/new_samples_spec.md s9"
+  },
+  {
+   "name": "hnl5_50",
+   "base": 650001,
+   "offset": 0,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl5_50",
+   "base": 650001,
+   "offset": 13,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl15_500",
+   "base": 750001,
+   "offset": 0,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl15_500",
+   "base": 750001,
+   "offset": 13,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl20_200",
+   "base": 850001,
+   "offset": 0,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl20_200",
+   "base": 850001,
+   "offset": 13,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl10_100_ref",
+   "base": 1050001,
+   "offset": 0,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl10_100_ref",
+   "base": 1050001,
+   "offset": 13,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl15_200_ref",
+   "base": 1150001,
+   "offset": 0,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "hnl15_200_ref",
+   "base": 1150001,
+   "offset": 13,
+   "events": [
+    0,
+    2999
+   ],
+   "source": "docs/hnl_points_spec.md s5"
+  },
+  {
+   "name": "overlay pilot (H-P dry run, base 990101)",
+   "base": 990114,
+   "offset": 0,
+   "events": [
+    0,
+    4
+   ],
+   "source": "results/pileup_hp/hp_summary.md s3.1"
+  },
+  {
+   "name": "overlay dry run and gun probe (base 990001)",
+   "base": 990014,
+   "offset": 0,
+   "events": [
+    0,
+    599
+   ],
+   "source": "slurm/acts/hp_field_gates.sbatch"
+  },
+  {
+   "name": "C1 gun sample (base 910001)",
+   "base": 910014,
+   "offset": 0,
+   "events": [
+    0,
+    1999
+   ],
+   "source": "results/pileup_hp/c1_v1.md"
+  },
+  {
+   "name": "F1 field probe",
+   "base": 790,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "slurm/acts/hp_field_gates.sbatch"
+  },
+  {
+   "name": "emulation Fatras packs",
+   "base": 20261014,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "pileup_design/hp_overlay/emul/fatras_out/fatras.json"
+  },
+  {
+   "name": "G0 smoke test",
+   "base": 4242,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "pileup_design/hp_geometry/smoke_fatras.sbatch"
+  },
+  {
+   "name": "design-study probes",
+   "base": 1,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "pileup_design/field_material/acts_probe.py"
+  },
+  {
+   "name": "design-study probes",
+   "base": 777,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "pileup_design/hit_format/acts_planar.py"
+  },
+  {
+   "name": "ACTS default --rnd-seed",
+   "base": 1234567890,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "src-v15 CommonOptions.cpp"
+  },
+  {
+   "name": "seeds in job logs",
+   "base": 20261005,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "logs/*.out"
+  },
+  {
+   "name": "seeds in job logs",
+   "base": 20261005,
+   "offset": 13,
+   "events": [
+    0,
+    999
+   ],
+   "source": "logs/*.out"
+  },
+  {
+   "name": "seeds in job logs",
+   "base": 20261006,
+   "offset": 0,
+   "events": [
+    0,
+    999
+   ],
+   "source": "logs/*.out"
+  },
+  {
+   "name": "seeds in job logs",
+   "base": 20261006,
+   "offset": 13,
+   "events": [
+    0,
+    999
+   ],
+   "source": "logs/*.out"
+  }
+ ],
+ "pilot_ranges_expanded": {
+  "ranges": [
+   [
+    961001,
+    972001
+   ],
+   [
+    991001,
+    992001
+   ],
+   [
+    9710001,
+    9760001
+   ],
+   [
+    9810001,
+    9930001
+   ],
+   [
+    9960001,
+    10000001
+   ],
+   [
+    10110001,
+    10160001
+   ],
+   [
+    10210001,
+    10280001
+   ],
+   [
+    10410001,
+    10420001
+   ],
+   [
+    10510001,
+    10520001
+   ],
+   [
+    10610001,
+    10610001
+   ],
+   [
+    10700001,
+    10700001
+   ],
+   [
+    10710001,
+    10770001
+   ],
+   [
+    31000001,
+    31000001
+   ]
+  ],
+  "extra": [
+   10700002,
+   10230001
+  ],
+  "step": 1000,
+  "events": [
+   0,
+   3999
+  ],
+  "offsets": [
+   0,
+   13
+  ]
+ },
+ "pass": true
+}

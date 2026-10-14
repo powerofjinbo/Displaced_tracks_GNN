@@ -1,0 +1,6 @@
+sample,split,events,targets,population,prompt,gun_particles_with_hits,gun_targets,population_rv_ge_100,population_rv_lt_100,population_d0_ge_300
+generic_iso_x1,train,9568,620885,11233,588964,33927,13289,9621,1612,319
+generic_iso_x1,val,1583,101930,1836,96610,5559,2174,1603,233,64
+generic_iso_x1,test,4849,312494,5796,296236,17157,6968,4862,934,166
+generic_iso_v1,test,2384,155019,2914,146985,8450,3428,2514,400,96
+generic_iso (union),test,7233,467513,8710,443221,25607,10396,7376,1334,262

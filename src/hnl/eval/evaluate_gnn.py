@@ -50,10 +50,11 @@ def _event_id(g) -> str:
 
 
 def evaluate_event(path: str, cuts: list[float], hnl_pairs: dict, keep_ids: dict | None = None,
-                   muons: dict | None = None):
+                   muons: dict | None = None, labels_out: dict | None = None):
     """keep_ids: event_id (str) -> particle ids whose rows are written (default: every particle); matching always
     uses every hit and particle of the event. muons: event_id -> (muon-target particle ids, outlier hit rows) for the
-    muon-target edge counts (*_mu) and their "clean" variant without edges touching an outlier hit (*_mu_clean)."""
+    muon-target edge counts (*_mu) and their "clean" variant without edges touching an outlier hit (*_mu_clean).
+    labels_out: if given, receives the CC track labels of every cut, keyed (event id, cut index)."""
     from acorn.utils.loading_utils import load_pyg
     g = load_pyg(path[:-3] if path.endswith(".gz") else path, weights_only=False)
     eid = _event_id(g)
@@ -109,6 +110,8 @@ def evaluate_event(path: str, cuts: list[float], hnl_pairs: dict, keep_ids: dict
     for k, s in enumerate(cuts):
         keep = sc > s
         labels = C.cc_labels(n, np.stack([a[keep], b[keep]]))
+        if labels_out is not None:
+            labels_out[(eid, k)] = labels
         m = fm.match(labels)
         dm[k], nsm[k], conn[k] = m["dm_matched"], m["n_sm_tracks"], m["connected"]
         # the same cut with every fake edge removed: the loss from missed true edges alone

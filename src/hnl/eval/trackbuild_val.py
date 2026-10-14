@@ -248,7 +248,8 @@ def _merge_model():
 
 
 def evaluate_event(path: str, cfgs: list[tuple], hnl_pairs: dict, keep_ids: dict | None = None, layers=None,
-                   geometry=None):
+                   geometry=None, labels_out: dict | None = None):
+    """labels_out: if given, receives the track labels of every configuration, keyed (event id, config index)."""
     eid, pid, r, phi, z, R, a, b, sc, vtx = load_scored(path, with_vtx=True)
     L = None if layers is None else layers[int(eid)]
     if L is not None:
@@ -327,6 +328,8 @@ def evaluate_event(path: str, cfgs: list[tuple], hnl_pairs: dict, keep_ids: dict
             lab = AT.apply(st[0], st[1], st[2], cfg[1])
         else:
             lab = build(cfg, n, a, b, sc, R, (r, phi, z), vtx)
+        if labels_out is not None:
+            labels_out[(eid, i)] = np.asarray(lab)
         m = fm.match(lab)
         dm[i], nsm[i] = m["dm_matched"], m["n_sm_tracks"]
         row = {"event_id": int(eid), "config": i, "n_tracks_ge5": m["n_tracks_ge5"], "n_fake": m["n_fake"]}

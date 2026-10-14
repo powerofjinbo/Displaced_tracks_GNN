@@ -1,0 +1,59 @@
+{
+ "sample": "generic_iso_x1",
+ "dir": "generic_iso_x1",
+ "n_files": 96,
+ "structure": {
+  "missing": [],
+  "unexpected": [],
+  "tars": 32,
+  "sidecars": 64,
+  "members": 16000
+ },
+ "n_events": 16000,
+ "dropped": [],
+ "unreadable": [],
+ "checks": {
+  "gun_particles": 64000,
+  "gun_particles_with_hits": 56643,
+  "barcode_vs_sidecar_mismatch": 0,
+  "gun_pdg_mismatch": 0,
+  "gun_initial_vs_sidecar_max_dp": 4.612056085306904e-05,
+  "gun_vertex_vs_sidecar_max_dr": 4.0850078807323416e-05,
+  "gun_d0_vs_sidecar_max_diff_mm": 0.00010862452160154135,
+  "particles_with_hits": 3291744,
+  "without_initial_state": 0,
+  "sidecar_pdg_mismatch": 0,
+  "sidecar_xmode": [
+   "measured"
+  ],
+  "gun_component": [
+   "iso"
+  ],
+  "sidecar_events": 16000,
+  "sidecar_event_range": [
+   8000,
+   23999
+  ],
+  "gun_events": 16000,
+  "gun_particles_per_event": [
+   4
+  ],
+  "dropped_duplicate_hits": 0,
+  "measurements": 33224521,
+  "pull_abs_gt5": 42
+ },
+ "regression_generic_iso_v1": {
+  "events": 1000,
+  "rows": 207781,
+  "rows_ref": 207781,
+  "identical": true,
+  "columns_differing": []
+ },
+ "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/truth_generic_iso_x1.parquet",
+ "truth_table_sha256": "1cf9df9da8c3edabf30001f941ee429c7b332bb671f05611be2c42fd7ec309eb",
+ "events_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/events_generic_iso_x1.parquet",
+ "events_table_sha256": "f85f8d0506696a4857152dcb87bc077e43ddc20de03f5937f985782db58a5f91",
+ "git": "8c21fe111520980cf630ebcaf624c4be8f5ece66",
+ "slurm_job": "6820016",
+ "finished_utc": "2026-10-14T19:50:22+00:00"
+}

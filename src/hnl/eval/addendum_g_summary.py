@@ -18,7 +18,20 @@ Bins (fixed before the test read-out): |d0| and r_v as docs/preregistration.md s
 (the gun reaches 800 mm), first-hit radius, |d0| / r_first, pT, and for the dense component the number of other
 targets within Delta R < 0.05 (initial directions).
 
-    python -m hnl.eval.addendum_g summary --set val|test|hss
+The test set's generic_iso part is the union test split (RESULTS T1 deviation 13a: the T1 test events and the
+extension's test events, one bootstrap table over the union ordered by event number, numpy default_rng(12345)); no
+claim is evaluated on either part alone.
+
+HNL points (set hnl; evaluation only, no claim; docs/addendum_g_t2_readouts.md section 4): per point the populations of
+hnl.eval.addendum_g_truth (P_HNL with the fitted |d0| and r_v of docs/definitions.md, as in the Zenodo samples, and
+with the exact ones), N-daughter targets, W-muon targets, all targets and the track fake rate; bins of the N-daughter
+targets in fitted and exact |d0| and r_v (fitted r_v with a "no vertex" bin); each new point beside its in-stack
+reference (hnl5_50 and hnl20_200 beside hnl10_100_ref, hnl15_500 beside hnl15_200_ref) with the difference point minus
+reference (independent samples: each with its own bootstrap table, numpy default_rng(12351-12355); seed terms of both).
+
+The read-outs of RESULTS T1 deviation 15 are in hnl.eval.addendum_g_readouts.
+
+    python -m hnl.eval.addendum_g summary --set val|test|hss|hnl
 """
 
 from __future__ import annotations
@@ -31,13 +44,17 @@ import numpy as np
 import pandas as pd
 
 from hnl.eval import bootstrap as BS
-from hnl.eval.addendum_g import LABELS, OUT, REPO, SETS, T1, _git, _truth, model_seeds
+from hnl.eval.addendum_g import (LABELS, OUT, REFERENCE, REPO, SETS, SPLIT_STEM, _git, _truth, model_seeds,
+                                  split_events)
 from hnl.eval.bootstrap import linear_combination, make_weights, seed_mean
 
 DATA = os.environ.get("HNL_DATA", "/ceph/submit/data/user/j/jinboz1/hnl_lrt")
 BOOT_DIR = os.path.join(DATA, "derived", "bootstrap", "generated_v1")
 BOOT_SEED = {("generic_iso", "test"): 12345, ("generic_dense", "test"): 12346, ("hss15_100", "all"): 12347,
-             ("hss40_300", "all"): 12348, ("generic_iso", "val"): 12349, ("generic_dense", "val"): 12350}
+             ("hss40_300", "all"): 12348, ("generic_iso", "val"): 12349, ("generic_dense", "val"): 12350,
+             ("generic_iso", "union_test"): 12345,          # the claims' table (deviation 13a); ("generic_iso", "test")
+             ("hnl5_50", "all"): 12351, ("hnl20_200", "all"): 12352, ("hnl15_500", "all"): 12353,   # is never used
+             ("hnl10_100_ref", "all"): 12354, ("hnl15_200_ref", "all"): 12355}
 MARGIN = 1.0
 FR_GUARD = 0.5
 D0_BINS = [0, 0.1, 1, 3, 10, 30, 100, 300, np.inf]
@@ -90,12 +107,13 @@ def neighbours(t: pd.DataFrame) -> np.ndarray:
 
 
 class Data:
-    """Truth, splits, bootstrap tables and every model-seed's per-particle / per-event results of one set."""
+    """Truth, splits, bootstrap tables and every model-seed's per-particle / per-event results of one set (eval_root:
+    the evaluation outputs, default DATA/runs/addendum_g_v1/eval)."""
 
-    def __init__(self, set_: str):
+    def __init__(self, set_: str, eval_root: str | None = None):
         self.set = set_
         self.parts = SETS[set_]
-        from hnl.data.splits import read_split
+        self.eval_root = eval_root or os.path.join(OUT, "eval")
         from hnl.data.convert import read_table
         t = _truth([s for s, _ in self.parts])
         rf = []
@@ -107,9 +125,11 @@ class Data:
         t = t.merge(pd.concat(rf, ignore_index=True), on=["sample", "event", "particle_id"], how="left")
         self.units, self.w, self.truth = {}, {}, {}
         for s, sp in self.parts:
-            u = np.sort(read_split(s, sp))
+            u = split_events(s, sp)
             self.units[s], self.w[s] = u, boot_table(s, sp, u)
             ts = t[(t["sample"] == s) & t.event.isin(u)].copy()
+            if len(np.setdiff1d(u, ts.event.unique())):
+                raise RuntimeError(f"{s} {sp}: {len(np.setdiff1d(u, ts.event.unique()))} events without truth rows")
             ts["pos"] = np.searchsorted(u, ts.event.to_numpy())
             if s.startswith("generic"):
                 ts["gun"] = ts.gun.fillna(False).astype(bool)
@@ -118,7 +138,7 @@ class Data:
         self.res, self._flags = {}, {}
         for m in LABELS:
             for seed in model_seeds(m):
-                d = os.path.join(OUT, "eval", f"{m}_s{seed}", set_)
+                d = os.path.join(self.eval_root, f"{m}_s{seed}", set_)
                 if os.path.exists(os.path.join(d, "per_particle.parquet")):
                     self.res[(m, seed)] = (pd.read_parquet(os.path.join(d, "per_particle.parquet")),
                                            pd.read_parquet(os.path.join(d, "per_event.parquet")),
@@ -139,7 +159,10 @@ class Data:
         x = pp.set_index(["event_id", "particle_id"])
         x = x[~x.index.duplicated()]
         got = x.reindex(key)
-        self._flags[key0] = pd.DataFrame({"dm": got.dm_matched.to_numpy(), "ceil": got.dm_ceiling.to_numpy()})
+        f = {"dm": got.dm_matched.to_numpy(), "ceil": got.dm_ceiling.to_numpy()}
+        if "dm_lx" in got:                     # label-exchange read-out (hnl.eval.addendum_g_readouts)
+            f["lx"] = got.dm_lx.to_numpy()
+        self._flags[key0] = pd.DataFrame(f)
         return self._flags[key0]
 
     def eff(self, model: str, sample: str, mask: np.ndarray, what: str = "dm"):
@@ -160,7 +183,9 @@ class Data:
                 reps.append((self.w[sample] @ num) / (self.w[sample] @ den))
         return pts, reps, int(mask.sum())
 
-    def fake(self, model: str, sample: str):
+    def fake(self, model: str, sample: str, col: str = "n_fake", exclude_events=()):
+        """(points per seed, replicates per seed) of the track fake rate on one sample (col n_fake_lx: under the
+        label-exchange emulation); exclude_events: event numbers left out (their units contribute nothing)."""
         from hnl.data.acorn_store import SAMPLE_CODE
         u = self.units[sample]
         pts, reps = [], []
@@ -170,8 +195,11 @@ class Data:
             ev = (pe.event_id % 100_000_000).to_numpy()
             if len(ev) != len(u) or not np.array_equal(np.sort(ev), u):
                 raise RuntimeError(f"{model} s{seed} {sample}: per-event rows do not cover the split")
+            if len(exclude_events):
+                keep = ~np.isin(ev, list(exclude_events))
+                pe, ev = pe[keep], ev[keep]
             pos = np.searchsorted(u, ev)
-            nf = np.bincount(pos, weights=pe.n_fake.to_numpy(float), minlength=len(u))
+            nf = np.bincount(pos, weights=pe[col].to_numpy(float), minlength=len(u))
             nt = np.bincount(pos, weights=pe.n_tracks_ge5.to_numpy(float), minlength=len(u))
             pts.append(nf.sum() / nt.sum())
             reps.append((self.w[sample] @ nf) / (self.w[sample] @ nt))
@@ -186,6 +214,11 @@ def _row(label, sample, pop, model, pts, reps, n, **kw) -> dict:
 
 
 def populations(sample: str, t: pd.DataFrame) -> dict:
+    if sample in SPLIT_STEM:                   # HNL points (hnl.eval.addendum_g_truth)
+        hd = (t.category == "hnl").to_numpy() & t.is_target.to_numpy(bool)
+        return {"P_HNL (fitted |d0|, r_v)": t.in_pop.to_numpy(bool),
+                "P_HNL (exact |d0|, r_v)": t.in_pop_exact.to_numpy(bool), "N-daughter targets": hd,
+                "W-muon targets": t.prompt.to_numpy(bool), "all targets": t.is_target.to_numpy(bool)}
     if sample.startswith("generic"):
         name = "P_G" if sample == "generic_iso" else "P_dense"
         return {name: t.in_pop.to_numpy(bool), "displaced-source targets": (t.gun & t.is_target).to_numpy(bool),
@@ -223,6 +256,20 @@ def bin_rows(D: Data) -> list[dict]:
         P = populations(s, t)
         pname = next(iter(P))
         base = P[pname]
+        if s in SPLIT_STEM:                    # HNL points: every N-daughter target, fitted and exact |d0| and r_v
+            pname = "N-daughter targets"
+            base = P[pname]
+            for var, x in (("|d0| fitted [mm]", t.d0_fit.to_numpy()), ("|d0| exact [mm]", t.d0_exact.to_numpy()),
+                           ("r_v fitted [mm]", t.rv_fit.to_numpy()), ("r_v exact [mm]", t.rv_exact.to_numpy()),
+                           ("first-hit radius [mm]", t.r_first.to_numpy()), ("pT [GeV]", t.pt.to_numpy())):
+                edges = D0_BINS if "d0" in var else RV_BINS if "r_v" in var else RF_BINS if "radius" in var else PT_BINS
+                for lo, hi in zip(edges[:-1], edges[1:]):
+                    mask = base & (x >= lo) & (x < hi)
+                    if mask.sum():
+                        specs.append((s, pname, var, f"[{lo:g}, {hi:g})", mask))
+                if var == "r_v fitted [mm]" and (base & np.isnan(x)).sum():
+                    specs.append((s, pname, var, "no vertex", base & np.isnan(x)))
+            continue
         bins = [("|d0| [mm]", t.d0.to_numpy(), D0_BINS), ("first-hit radius [mm]", t.r_first.to_numpy(), RF_BINS),
                 ("pT [GeV]", t.pt.to_numpy(), PT_BINS)]
         if s.startswith("generic"):
@@ -267,12 +314,34 @@ def g1(D: Data) -> dict:
         outcome = "does not hold, inconclusive" + ("" if guard else " (fake-rate guard fails)")
     n = int(mask.sum())
     return {"claim": "G1", "A": LABELS["canto_l_ttbar"], "B": LABELS["acorn_hnl_lm"], "population": "P_G",
-            "split": "generic_iso test", "n_targets": n, "eff_A": float(np.mean(A[0])), "eff_B": float(np.mean(Bm[0])),
+            "split": "generic_iso union test (T1 deviation 13a)" if D.parts[0][1] == "union_test" else "generic_iso test",
+            "n_targets": n, "eff_A": float(np.mean(A[0])), "eff_B": float(np.mean(Bm[0])),
             "eff_A_seeds": A[0], "eff_B_seeds": Bm[0], "delta_points": d, "sigma_points": sg,
             "sigma_boot_points": 100 * diff["sigma_boot"], "sigma_seeds_points": 100 * diff["sigma_seeds"],
             "delta_minus_2sigma": d - 2 * sg, "delta_plus_2sigma": d + 2 * sg, "margin": MARGIN,
             "fake_rate_A": float(np.mean(fa[0])), "fake_rate_B": float(np.mean(fb[0])), "fake_rate_diff_points": dfr,
             "fake_rate_guard_ok": bool(guard), "outcome": outcome, "underpowered": n < 1000}
+
+
+def point_rows(D: Data) -> list[dict]:
+    """HNL points: each new point beside its in-stack reference, per model and population (and the fake rate):
+    efficiency of the point and of the reference and their difference (independent samples, seed terms of both)."""
+    rows = []
+    for p, ref in REFERENCE.items():
+        if p not in D.truth or ref not in D.truth:
+            continue
+        for m in D.models():
+            for pop in list(populations(p, D.truth[p]))[:4] + ["track fake rate"]:
+                if pop == "track fake rate":
+                    a, b = D.fake(m, p), D.fake(m, ref)
+                else:
+                    a = D.eff(m, p, populations(p, D.truth[p])[pop])[:2]
+                    b = D.eff(m, ref, populations(ref, D.truth[ref])[pop])[:2]
+                d = linear_combination([(1.0, a[0], a[1]), (-1.0, b[0], b[1])])
+                rows.append({"point": p, "reference": ref, "model": m, "label": LABELS[m], "population": pop,
+                             "point_mean": float(np.mean(a[0])), "reference_mean": float(np.mean(b[0])),
+                             "delta_points": 100 * d["value"], "sigma_points": 100 * d["sigma"]})
+    return rows
 
 
 def differences(D: Data) -> list[dict]:
@@ -296,20 +365,28 @@ def _pc(x, d=2):
     return "" if x is None or (isinstance(x, float) and np.isnan(x)) else f"{100 * x:.{d}f}"
 
 
-def markdown(D: Data, main: pd.DataFrame, bins: pd.DataFrame, diffs: pd.DataFrame, claim: dict | None) -> str:
+def markdown(D: Data, main: pd.DataFrame, bins: pd.DataFrame, diffs: pd.DataFrame, claim: dict | None,
+             points: pd.DataFrame | None = None) -> str:
     title = {"val": "Addendum G: frozen models on the generic val split (pipeline check; nothing chosen)",
              "test": "Addendum G, step T2: frozen models on the generic test split (claim G1)",
-             "hss": "h -> s s samples: frozen models (evaluation only, no claim)"}[D.set]
+             "hss": "h -> s s samples: frozen models (evaluation only, no claim)",
+             "hnl": "HNL points: frozen models (evaluation only, no claim)"}[D.set]
+    if any(r[2].get("dry_outputs") for r in D.res.values()):
+        title = "DRY RUN on placeholder outputs made from truth (no model; code test only): " + title
     L = [f"# {title}", "",
          f"Written {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} by `hnl.eval.addendum_g_summary` "
          f"(git {_git()[:7]}). Frozen models and settings: `results/addendum_g_models_v1.json`. Populations: "
-         "`results/addendum_g_t1_v1.md`. Labels of these samples are the simulation's own (correct); the frozen models "
+         + {"hnl": "`hnl.eval.addendum_g_truth` (counts: `results/hnl_points_truth_v1.md`, "
+                   "`docs/addendum_g_t2_readouts.md` section 4)",
+            "test": "`results/addendum_g_t1_v1.md` and, for the extension, `results/addendum_g_t1_x1_v1.md` (union "
+                    "test split, T1 deviation 13a)"}.get(D.set, "`results/addendum_g_t1_v1.md`")
+         + ". Labels of these samples are the simulation's own (correct); the frozen models "
          "were trained and selected on the Zenodo labels, which carry the same-module label exchange "
          "(`docs/new_samples_spec.md` section 8). Efficiencies in percent, 3-seed mean +- sigma (sigma^2 = "
          "sigma_boot^2 + s_seeds^2 / 3; one-seed models: bootstrap only); B = 500 event resamplings per split.", ""]
     if claim:
         L += ["## Claim G1", "",
-              f"- P_G targets on the generic_iso test split: {claim['n_targets']}"
+              f"- P_G targets on the {claim['split']}: {claim['n_targets']}"
               f"{' (underpowered: fewer than 1,000)' if claim['underpowered'] else ''}.",
               f"- {claim['A']}: {_pc(claim['eff_A'])} % (seeds " + ", ".join(_pc(x) for x in claim['eff_A_seeds']) + ")",
               f"- {claim['B']}: {_pc(claim['eff_B'])} % (seeds " + ", ".join(_pc(x) for x in claim['eff_B_seeds']) + ")",
@@ -317,7 +394,7 @@ def markdown(D: Data, main: pd.DataFrame, bins: pd.DataFrame, diffs: pd.DataFram
               f"{claim['sigma_boot_points']:.2f}, seeds {claim['sigma_seeds_points']:.2f}); Delta - 2 sigma = "
               f"{claim['delta_minus_2sigma']:+.2f} against -{MARGIN:.1f}; Delta + 2 sigma = "
               f"{claim['delta_plus_2sigma']:+.2f}.",
-              f"- Track fake rate on the generic_iso test split: {_pc(claim['fake_rate_A'])} % against "
+              f"- Track fake rate on the {claim['split']}: {_pc(claim['fake_rate_A'])} % against "
               f"{_pc(claim['fake_rate_B'])} % ({claim['fake_rate_diff_points']:+.2f} points; guard <= +{FR_GUARD} "
               f"{'met' if claim['fake_rate_guard_ok'] else 'NOT met'}).",
               f"- **Outcome: {claim['outcome']}.**", ""]
@@ -360,6 +437,23 @@ def markdown(D: Data, main: pd.DataFrame, bins: pd.DataFrame, diffs: pd.DataFram
                 cells.append(f"{_pc(r['mean'], 1)} ({_pc(r['ceiling'], 1)})")
             L.append(f"| {b} | {int(gb.n.iloc[0])} | " + " | ".join(cells) + " |")
         L.append("")
+    if points is not None and len(points):
+        L += ["## Each new point beside its in-stack reference", "",
+              "Efficiency (fake rate) in percent, 3-seed means; difference point minus reference in points, independent "
+              "samples (each with its own bootstrap table; seed terms of both). Descriptive, no claim.", ""]
+        for (p, ref), g in points.groupby(["point", "reference"], sort=False):
+            pops = list(dict.fromkeys(g.population))
+            L += [f"**{p} beside {ref}**", "", "| model | " + " | ".join(f"{q}: point / reference / difference"
+                                                                           for q in pops) + " |",
+                  "|---|" + "---|" * len(pops)]
+            for m in [x for x in D.models() if x in g.model.unique()]:
+                cells = []
+                for q in pops:
+                    r = g[(g.model == m) & (g.population == q)].iloc[0]
+                    cells.append(f"{_pc(r['point_mean'])} / {_pc(r['reference_mean'])} / {r['delta_points']:+.2f} +- "
+                                 f"{r['sigma_points']:.2f}")
+                L.append(f"| {LABELS[m]} | " + " | ".join(cells) + " |")
+            L.append("")
     if D.set == "val":
         ref = pd.read_csv(os.path.join(REPO, "results", "strong_baselines_v3_val_entries.csv"))
         L += ["## Pipeline check against the Zenodo val events", "",
@@ -377,25 +471,32 @@ def markdown(D: Data, main: pd.DataFrame, bins: pd.DataFrame, diffs: pd.DataFram
     return "\n".join(L)
 
 
-def summary(set_: str) -> None:
-    D = Data(set_)
+STEM = {"val": "addendum_g_val_v1", "test": "addendum_g_g1_v1", "hss": "hss_eval_v1", "hnl": "hnl_points_eval_v1"}
+
+
+def summary(set_: str, out_dir: str | None = None, eval_root: str | None = None) -> None:
+    D = Data(set_, eval_root)
     missing = [m for m in (MAIN if set_ != "hss" else MAIN) if m not in D.models()]
     if missing:
         print(f"[summary] models without complete results: {missing}")
     main = pd.DataFrame(main_rows(D))
     bins = pd.DataFrame(bin_rows(D))
-    diffs = pd.DataFrame(differences(D)) if "canto_l_ttbar" in D.models() else pd.DataFrame()
+    diffs = pd.DataFrame(differences(D)) if "canto_l_ttbar" in D.models() and set_ != "hnl" else pd.DataFrame()
     claim = g1(D) if set_ == "test" and {"canto_l_ttbar", "acorn_hnl_lm"} <= set(D.models()) else None
-    stem = {"val": "addendum_g_val_v1", "test": "addendum_g_g1_v1", "hss": "hss_eval_v1"}[set_]
-    res = os.path.join(REPO, "results")
+    points = pd.DataFrame(point_rows(D)) if set_ == "hnl" else None
+    stem = STEM[set_]
+    res = out_dir or os.path.join(REPO, "results")
+    os.makedirs(res, exist_ok=True)
     main.to_csv(os.path.join(res, f"{stem}.csv"), index=False)
     bins.to_csv(os.path.join(res, f"{stem}_bins.csv"), index=False)
     if len(diffs):
         diffs.to_csv(os.path.join(res, f"{stem}_differences.csv"), index=False)
+    if points is not None and len(points):
+        points.to_csv(os.path.join(res, f"{stem}_points.csv"), index=False)
     if claim:
         with open(os.path.join(res, f"{stem}_claim.json"), "w") as f:
             json.dump(claim, f, indent=1, default=float)
-    md = markdown(D, main, bins, diffs, claim)
+    md = markdown(D, main, bins, diffs, claim, points)
     with open(os.path.join(res, f"{stem}.md"), "w") as f:
         f.write(md)
     print(md)

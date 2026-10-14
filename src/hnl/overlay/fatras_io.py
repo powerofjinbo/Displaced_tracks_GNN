@@ -8,6 +8,13 @@ Sim hits: event<NNNNNNNNN>-hits.csv (particle_id, geometry_id, tx, ty, tz, tt, t
 deltapz, deltae, index). `pack_sim_hits` keeps one row per hit with the Fatras event number, the barcode, the decoded
 geometry id (hnl.geometry.ids layout: volume, layer, sensitive), the true position and momentum at the surface and the
 hit index along the particle, and can delete the CSV files afterwards (slurm/overlay/fatras.sbatch).
+Beside it, `<out stem>_particles.parquet` lists the particles Fatras simulated (event, particle_id, in the initial and
+in the final state), so that the particles it did not simulate stay known after the CSV files are removed.
+
+Particles Fatras did not simulate. v15 `ActsFatras::Simulation` erases a particle whose propagation fails from the
+initial-state output, keeps none of its hits and only logs it ("event N particle id=(...) failed to simulate with
+error ..."). `failed_particles` reads these lines; `simulation_status` classifies every input particle as simulated,
+failed (logged) or below pMin (never simulated, by the selection) and checks that the log and the output agree.
 
     python -m hnl.overlay.fatras_io pack --sim-dir DIR --out FILE.parquet [--remove-csv]
 """
@@ -38,6 +45,12 @@ PACK_SCHEMA = pa.schema([
     ("index", pa.int32()),
 ])
 _EVENT_RE = re.compile(r"event(\d{9})-hits\.csv$")
+SIM_PARTICLES_SCHEMA = pa.schema([("event", pa.int32()), ("particle_id", pa.uint64()), ("initial", pa.bool_()),
+                                  ("final", pa.bool_())])
+# v15 FatrasSimulation: "event <n> particle id=(<vertex primary>|<vertex secondary>|<particle>|<generation>|<sub>)
+# |pdg=...|p=... failed to simulate with error <category>:<code>: <message>"
+_FAILED_RE = re.compile(r"event (\d+) particle id=\((\d+)\|(\d+)\|(\d+)\|(\d+)\|(\d+)\)\S* failed to simulate with "
+                        r"error (.*)$")
 
 
 def particles_path(directory: str, event: int) -> str:
@@ -83,8 +96,27 @@ def pack_frame(h: pd.DataFrame, event: int) -> pa.Table:
     ], schema=PACK_SCHEMA)
 
 
+def sim_particles_path(out: str) -> str:
+    """The simulated-particle list written beside a packed sim-hit file."""
+    return os.path.splitext(out)[0] + "_particles.parquet"
+
+
+def sim_particles_frame(directory: str, event: int) -> pa.Table:
+    """(event, particle_id, initial, final) of every particle in the initial or final state of one Fatras event."""
+    ids = {}
+    for k in ("initial", "final"):
+        p = os.path.join(directory, f"event{int(event):09d}-particles_{k}.csv")
+        ids[k] = (pd.read_csv(p, usecols=["particle_id"], dtype={"particle_id": np.uint64}).particle_id.to_numpy()
+                  if os.path.exists(p) else np.zeros(0, np.uint64))
+    allp = np.union1d(ids["initial"], ids["final"]).astype(np.uint64)
+    return pa.Table.from_arrays([pa.array(np.full(len(allp), event, np.int32)), pa.array(allp),
+                                 pa.array(np.isin(allp, ids["initial"])), pa.array(np.isin(allp, ids["final"]))],
+                                schema=SIM_PARTICLES_SCHEMA)
+
+
 def pack_sim_hits(directory: str, out: str, remove_csv: bool = False) -> dict:
-    """All event*-hits.csv of a Fatras output directory -> one parquet file (one row group per event)."""
+    """All event*-hits.csv of a Fatras output directory -> one parquet file (one row group per event), and the
+    simulated particles of every event -> `sim_particles_path(out)`."""
     events = sim_hit_events(directory)
     if not events:
         raise FileNotFoundError(f"no event*-hits.csv in {directory}")
@@ -95,7 +127,12 @@ def pack_sim_hits(directory: str, out: str, remove_csv: bool = False) -> dict:
             t = pack_frame(read_sim_hits(directory, e), e)
             w.write_table(t, row_group_size=max(t.num_rows, 1))
             n += t.num_rows
+    pout = sim_particles_path(out)
+    with pq.ParquetWriter(pout + ".tmp", SIM_PARTICLES_SCHEMA, compression="zstd") as w:
+        for e in events:
+            w.write_table(sim_particles_frame(directory, e))
     os.replace(tmp, out)
+    os.replace(pout + ".tmp", pout)
     removed = 0
     if remove_csv:
         for e in events:
@@ -105,6 +142,57 @@ def pack_sim_hits(directory: str, out: str, remove_csv: bool = False) -> dict:
                     os.remove(p)
                     removed += 1
     return {"events": len(events), "hits": int(n), "out": out, "csv_removed": removed}
+
+
+def barcode(vprim, vsec, particle, gen=0, sub=0) -> np.ndarray:
+    """ACTS v15 barcode (vertex primary [52, 64), vertex secondary [40, 52), particle [24, 40), generation [16, 24),
+    sub-particle [0, 16); scripts/acts/gun.py `barcode`, hnl.geometry.ids.decode_barcode) as uint64."""
+    f = [np.asarray(x, np.uint64) for x in (vprim, vsec, particle, gen, sub)]
+    return ((f[0] << np.uint64(52)) | (f[1] << np.uint64(40)) | (f[2] << np.uint64(24)) | (f[3] << np.uint64(16))
+            | f[4]).astype(np.uint64)
+
+
+def failed_particles(log_text: str) -> pd.DataFrame:
+    """Every particle a v15 Fatras log reports as failed: event, particle_id (barcode, uint64) and the error text."""
+    rows = [m.groups() for m in map(_FAILED_RE.search, log_text.splitlines()) if m]
+    if not rows:
+        return pd.DataFrame({"event": np.zeros(0, np.int64), "particle_id": np.zeros(0, np.uint64),
+                             "error": np.zeros(0, object)})
+    a = np.array([r[:6] for r in rows], np.int64)
+    return pd.DataFrame({"event": a[:, 0], "particle_id": barcode(*a[:, 1:].T), "error": [r[6] for r in rows]})
+
+
+def simulation_status(inputs: pd.DataFrame, simulated: pd.DataFrame, failed: pd.DataFrame,
+                      pmin_gev: float) -> pd.DataFrame:
+    """Status of every input particle (columns event, particle_id, q, px, py, pz): 'simulated' (in Fatras's initial
+    state), 'failed' (logged as failed) or 'below_pmin' (charged with p <= pMin, or neutral: not selected).
+    simulated: event, particle_id, initial (`sim_particles_frame`); failed: `failed_particles`. Raises if an input
+    particle is missing from the output without a reason, if a logged failure was simulated or is not an input, or if
+    the output holds a particle that is not an input (v15 makes no secondaries with these settings)."""
+    inp =inputs.assign(event=inputs.event.astype(np.int64), particle_id=inputs.particle_id.astype(np.uint64))
+    ini = simulated[simulated.initial.astype(bool)][["event", "particle_id"]].astype(
+        {"event": np.int64, "particle_id": np.uint64})
+    fl = failed[["event", "particle_id"]].astype({"event": np.int64, "particle_id": np.uint64})
+    if fl.duplicated().any():
+        raise ValueError("a particle is logged as failed twice")
+    j = inp.merge(ini.assign(sim=True), on=["event", "particle_id"], how="outer", indicator="_s")
+    if (j._s == "right_only").any():
+        raise ValueError(f"{int((j._s == 'right_only').sum())} simulated particles are not inputs")
+    j = j.drop(columns="_s").merge(fl.assign(fail=True), on=["event", "particle_id"], how="outer", indicator="_f")
+    if (j._f == "right_only").any():
+        raise ValueError(f"{int((j._f == 'right_only').sum())} logged failures are not inputs")
+    sim, fail = j.sim.fillna(False).astype(bool).to_numpy(), j.fail.fillna(False).astype(bool).to_numpy()
+    if (sim & fail).any():
+        raise ValueError("a particle is both simulated and logged as failed")
+    p = np.sqrt(j.px.to_numpy(np.float64) ** 2 + j.py.to_numpy(np.float64) ** 2 + j.pz.to_numpy(np.float64) ** 2)
+    below = (j.q.to_numpy() == 0) | (p <= pmin_gev)
+    unexplained = ~sim & ~fail & ~below
+    if unexplained.any():
+        raise ValueError(f"{int(unexplained.sum())} input particles above pMin are neither simulated nor logged as "
+                         f"failed")
+    status = np.where(sim, "simulated", np.where(fail, "failed", "below_pmin"))
+    out = j.drop(columns=["sim", "fail", "_f"]).assign(status=status)
+    return out.sort_values(["event", "particle_id"], kind="stable").reset_index(drop=True)
 
 
 def read_packed(path: str, columns=None, events=None) -> pd.DataFrame:

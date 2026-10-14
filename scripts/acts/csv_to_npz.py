@@ -16,14 +16,21 @@ Per event:
 Sidecar truth_<first>.npz: per particle with hits, its INITIAL state (production vertex and momentum,
 particles_initial.csv), and per event the numbers of dropped duplicate hits and of measurements.
 
+With --tar PATH the events are not written as files but as the members `<event>.npz` of one uncompressed tar (the
+layout of hnl.data.shards; members hold the bytes np.savez writes, fixed member metadata: mtime 0, uid/gid 0, mode
+0444), written under PATH.part and renamed when complete; the sidecar is then also written under a temporary name and
+renamed, and neither PATH nor the sidecar may exist yet. Without --tar nothing changes (one file per event).
+
     python scripts/acts/csv_to_npz.py CSVDIR --detectors detectors.csv --out SAMPLEDIR --first N --events N
-        [--x measured|truth] [--sidecar PATH] [--keep-csv]
+        [--x measured|truth] [--sidecar PATH] [--tar PATH] [--keep-csv]
 """
 from __future__ import annotations
 
 import argparse
+import io
 import os
 import sys
+import tarfile
 
 import numpy as np
 import pandas as pd
@@ -116,6 +123,23 @@ def convert(csvdir: str, ev: int, surf: pd.DataFrame, xmode: str):
     return ev_npz, side, stats
 
 
+def npz_bytes(ev: dict) -> bytes:
+    """The bytes np.savez writes for the event (as a file)."""
+    buf = io.BytesIO()
+    np.savez(buf, **ev)
+    return buf.getvalue()
+
+
+def add_member(tf: tarfile.TarFile, name: str, data: bytes):
+    ti = tarfile.TarInfo(name)
+    ti.size = len(data)
+    ti.mtime = 0
+    ti.mode = 0o444
+    ti.uid = ti.gid = 0
+    ti.uname = ti.gname = ""
+    tf.addfile(ti, io.BytesIO(data))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("csvdir")
@@ -126,16 +150,28 @@ def main():
     ap.add_argument("--x", choices=["measured", "truth"], default="measured")
     ap.add_argument("--sidecar")
     ap.add_argument("--keep-csv", action="store_true")
+    ap.add_argument("--tar", help="write the events as members of this tar instead of files (hnl.data.shards)")
     a = ap.parse_args()
     surf = surfaces(a.detectors)
     os.makedirs(a.out, exist_ok=True)
+    tf = None
+    if a.tar:
+        if not a.sidecar:
+            raise SystemExit("--tar needs --sidecar")
+        for path in (a.tar, a.sidecar):
+            if os.path.exists(path):
+                raise SystemExit(f"{path} exists: not overwriting")
+        tf = tarfile.open(a.tar + ".part", "w", format=tarfile.USTAR_FORMAT)
     sides, stats = [], []
     for ev in range(a.first, a.first + a.events):
         e, side, st = convert(a.csvdir, ev, surf, a.x)
-        tmp = os.path.join(a.out, f".{ev}.npz.tmp")
-        with open(tmp, "wb") as f:
-            np.savez(f, **e)
-        os.replace(tmp, os.path.join(a.out, f"{ev}.npz"))
+        if tf is not None:
+            add_member(tf, f"{ev}.npz", npz_bytes(e))
+        else:
+            tmp = os.path.join(a.out, f".{ev}.npz.tmp")
+            with open(tmp, "wb") as f:
+                np.savez(f, **e)
+            os.replace(tmp, os.path.join(a.out, f"{ev}.npz"))
         side = side.assign(event=ev)
         sides.append(side)
         stats.append({"event": ev, **st})
@@ -145,9 +181,17 @@ def main():
     S = pd.concat(sides, ignore_index=True)
     T = pd.DataFrame(stats)
     path = a.sidecar or os.path.join(a.out, f"truth_{a.first}.npz")
-    np.savez(path, **{f"p_{c}": S[c].to_numpy(np.uint64 if c == "particle_id" else
-                                              np.int64 if c in ("event", "particle_type", "process") else np.float64)
-                      for c in S.columns}, **{f"e_{c}": T[c].to_numpy() for c in T.columns}, xmode=np.array(a.x))
+    arrays = {**{f"p_{c}": S[c].to_numpy(np.uint64 if c == "particle_id" else
+                                         np.int64 if c in ("event", "particle_type", "process") else np.float64)
+                 for c in S.columns}, **{f"e_{c}": T[c].to_numpy() for c in T.columns}, "xmode": np.array(a.x)}
+    if tf is not None:
+        tf.close()
+        stmp = path + ".part.npz"
+        np.savez(stmp, **arrays)
+        os.replace(stmp, path)
+        os.replace(a.tar + ".part", a.tar)
+    else:
+        np.savez(path, **arrays)
     print(f"{len(T)} events; measurements {int(T.n_meas.sum())}; dropped duplicate hits {int(T.n_dup.sum())}; "
           f"|pull| > 5: {int(T.res_abs_gt5.sum())}; pull sd {T.res_sigma0.mean():.3f} / {T.res_sigma1.mean():.3f}")
 

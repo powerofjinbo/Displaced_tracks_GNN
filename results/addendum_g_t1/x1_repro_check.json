@@ -1,0 +1,29 @@
+{
+ "stored": "generic_iso_v1",
+ "repro_dir": "/work/submit/jinboz1/hnl/acts/repro_x1/generic_iso_v1",
+ "first": 7500,
+ "events": 500,
+ "git": "3d80f02119769f9a4d6aeba0bf4040d424cabfeb",
+ "slurm_job": "6819943",
+ "events_identical": 500,
+ "events_different": [],
+ "n_events_different": 0,
+ "sidecars": {
+  "truth": {
+   "keys": 19,
+   "different": []
+  },
+  "gun_truth": {
+   "keys": 19,
+   "different": []
+  }
+ },
+ "reader_identity": {
+  "events": 500,
+  "bytes_identical": 500,
+  "arrays_identical_load_event_from": 500,
+  "arrays_identical_iter": 500
+ },
+ "pass": true,
+ "finished_utc": "2026-10-14T19:41:37+00:00"
+}

@@ -1,0 +1,772 @@
+{
+ "shard_identity": {
+  "submit77": {
+   "events": 500,
+   "first": 0,
+   "last": 5130,
+   "git": "5a20f5bf304eec5c72e36a76de57b3df6f35ec00",
+   "slurm_job": "6820073",
+   "scratch": "/work/submit/jinboz1/hnl/tmp/addendum_g_t2/identity77",
+   "member_bytes_identical": 500,
+   "arrays_identical": 500,
+   "tables": {
+    "hits": {
+     "rows": 1060570,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    },
+    "particles": {
+     "rows": 257761,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    },
+    "edges": {
+     "rows": 955262,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    }
+   },
+   "graphs": {
+    "built": 500,
+    "host": "submit77.mit.edu",
+    "shards_vs_npz_identical": 500,
+    "shards_vs_npz_max_abs_diff": {},
+    "shards_vs_production_val_tar_identical": 0,
+    "shards_vs_production_max_abs_diff": {
+     "eta": 4.76837158203125e-07
+    },
+    "production_val_tar_host": "the prepare job 6810986 (submit37)"
+   },
+   "verdict": "identical"
+  },
+  "submit37": {
+   "events": 500,
+   "first": 0,
+   "last": 5130,
+   "git": "5a20f5bf304eec5c72e36a76de57b3df6f35ec00",
+   "slurm_job": "6820074",
+   "scratch": "/work/submit/jinboz1/hnl/tmp/addendum_g_t2/identity37",
+   "member_bytes_identical": 500,
+   "arrays_identical": 500,
+   "tables": {
+    "hits": {
+     "rows": 1060570,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    },
+    "particles": {
+     "rows": 257761,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    },
+    "edges": {
+     "rows": 955262,
+     "npz_vs_shards": "identical",
+     "production_vs_shards": "identical"
+    }
+   },
+   "graphs": {
+    "built": 500,
+    "host": "submit37.mit.edu",
+    "shards_vs_npz_identical": 500,
+    "shards_vs_npz_max_abs_diff": {},
+    "shards_vs_production_val_tar_identical": 500,
+    "shards_vs_production_max_abs_diff": {},
+    "production_val_tar_host": "the prepare job 6810986 (submit37)"
+   },
+   "verdict": "identical"
+  },
+  "note": "first run (job 6820019, submit77) superseded: its array comparison lacked equal_nan for the NaN eta values of particle tables and it compared graphs only with the production tar (commit 5a20f5b)"
+ },
+ "val_check": {
+  "git": "7d5e19859a43a61cc25765bb79d7f11419a46aad",
+  "slurm_job": "6820092",
+  "eval_root_tracks": "/work/submit/jinboz1/hnl/tmp/addendum_g_t2/eval_val_tracks",
+  "summary_default_outputs": {
+   ".csv": "identical",
+   "_bins.csv": "identical",
+   "_differences.csv": "identical",
+   ".md": "identical"
+  },
+  "summary_tracks_outputs": {
+   ".csv": "identical",
+   "_bins.csv": "identical",
+   "_differences.csv": "identical",
+   ".md": "identical"
+  },
+  "re_evaluation": {
+   "canto_l_ttbar_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3343740
+   },
+   "canto_l_ttbar_s1": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3335943
+   },
+   "canto_l_ttbar_s2": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3322899
+   },
+   "acorn_hnl_lm_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3397051
+   },
+   "acorn_hnl_lm_s1": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3387515
+   },
+   "acorn_hnl_lm_s2": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3404768
+   },
+   "acorn_ttbar_lm_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3362438
+   },
+   "acorn_ttbar_lm_s1": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3333432
+   },
+   "acorn_ttbar_lm_s2": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3326587
+   },
+   "acorn_hnl_cc_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3365942
+   },
+   "acorn_hnl_cc_s1": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3261453
+   },
+   "acorn_hnl_cc_s2": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3377654
+   },
+   "canto_l_hnl_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3380636
+   },
+   "canto_l_tthnl_s0": {
+    "per_particle": "identical",
+    "per_event": "identical",
+    "tracks_rows": 3342652
+   }
+  },
+  "verdict": "identical"
+ },
+ "hnl_points_truth": {
+  "hnl10_100_ref": {
+   "particles_with_hits": 413915,
+   "without_initial_state": 0,
+   "sidecar_pdg_mismatch": 0,
+   "events": 3000,
+   "n_daughter_rows": 4059,
+   "daughter_pairs_with_unequal_r_prod_mm": 0,
+   "n_daughter_targets": 2868,
+   "P_HNL_fitted": 1966,
+   "P_HNL_exact": 1977,
+   "P_HNL_both": 1959,
+   "w_muon_targets": 2726,
+   "daughter_targets_without_fitted_vertex": 142,
+   "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/truth_hnl10_100_ref.parquet",
+   "sha256": "b706d9810430330f69f6b74e10a622379e1624b9e480aaf961e68186fb5e36c8",
+   "git": "3e40db954012ac8db8d828c8ce7bba78bdbe81a6",
+   "slurm_job": "6820024"
+  },
+  "hnl15_200_ref": {
+   "particles_with_hits": 412388,
+   "without_initial_state": 0,
+   "sidecar_pdg_mismatch": 0,
+   "events": 3000,
+   "n_daughter_rows": 3692,
+   "daughter_pairs_with_unequal_r_prod_mm": 0,
+   "n_daughter_targets": 2403,
+   "P_HNL_fitted": 1800,
+   "P_HNL_exact": 1822,
+   "P_HNL_both": 1800,
+   "w_muon_targets": 2738,
+   "daughter_targets_without_fitted_vertex": 190,
+   "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/truth_hnl15_200_ref.parquet",
+   "sha256": "e192e9c6f0c6d2fe7757253d252f74701d422b75c8750d27fdb5e082965fb73a",
+   "git": "3e40db954012ac8db8d828c8ce7bba78bdbe81a6",
+   "slurm_job": "6820025"
+  },
+  "hnl15_500": {
+   "particles_with_hits": 419569,
+   "without_initial_state": 0,
+   "sidecar_pdg_mismatch": 0,
+   "events": 3000,
+   "n_daughter_rows": 2371,
+   "daughter_pairs_with_unequal_r_prod_mm": 0,
+   "n_daughter_targets": 1290,
+   "P_HNL_fitted": 1051,
+   "P_HNL_exact": 1061,
+   "P_HNL_both": 1051,
+   "w_muon_targets": 2737,
+   "daughter_targets_without_fitted_vertex": 145,
+   "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/truth_hnl15_500.parquet",
+   "sha256": "b5cd1a83a6bbeb373c47245ceca4a14a35fd9f7795a2c61fdbf84f4474d9a4f7",
+   "git": "3e40db954012ac8db8d828c8ce7bba78bdbe81a6",
+   "slurm_job": "6820023"
+  },
+  "hnl20_200": {
+   "particles_with_hits": 418983,
+   "without_initial_state": 0,
+   "sidecar_pdg_mismatch": 0,
+   "events": 3000,
+   "n_daughter_rows": 3900,
+   "daughter_pairs_with_unequal_r_prod_mm": 0,
+   "n_daughter_targets": 2715,
+   "P_HNL_fitted": 1967,
+   "P_HNL_exact": 1991,
+   "P_HNL_both": 1964,
+   "w_muon_targets": 2748,
+   "daughter_targets_without_fitted_vertex": 273,
+   "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/truth_hnl20_200.parquet",
+   "sha256": "7d4f7e8f0ccc578f69f4042627e40042633095c8b96719b5c9c5fb1392a5f420",
+   "git": "3e40db954012ac8db8d828c8ce7bba78bdbe81a6",
+   "slurm_job": "6820022"
+  },
+  "hnl5_50": {
+   "particles_with_hits": 423444,
+   "without_initial_state": 0,
+   "sidecar_pdg_mismatch": 0,
+   "events": 3000,
+   "n_daughter_rows": 3996,
+   "daughter_pairs_with_unequal_r_prod_mm": 0,
+   "n_daughter_targets": 2793,
+   "P_HNL_fitted": 1714,
+   "P_HNL_exact": 1725,
+   "P_HNL_both": 1709,
+   "w_muon_targets": 2726,
+   "daughter_targets_without_fitted_vertex": 78,
+   "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/truth_hnl5_50.parquet",
+   "sha256": "5ceb83ef60fc38692238ab3efe62ba9ddf86dfa7c0656878cb25e6eae2e0d2db",
+   "git": "3e40db954012ac8db8d828c8ce7bba78bdbe81a6",
+   "slurm_job": "6820021"
+  },
+  "committed_P_HNL_fitted_results_hnl_points_truth_v1_md": {
+   "hnl10_100_ref": 1966,
+   "hnl5_50": 1714,
+   "hnl20_200": 1967,
+   "hnl15_200_ref": 1800,
+   "hnl15_500": 1051
+  }
+ },
+ "generic_iso_fits": {
+  "union_test": {
+   "list": "union_test",
+   "events": 7233,
+   "gun_particles_with_hits": 25607,
+   "without_fit": 6336,
+   "llp_vertices_accepted": 7116,
+   "table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/fits_generic_iso_union_test.parquet",
+   "sha256": "c5c9231a270e92549da3ba17a81d5edc0f07940be9fcd9f169e8f463074e3393",
+   "git": "40abd71018a8d2af21d1d79fc8dbc54ab21ca6ac",
+   "slurm_job": "6820108",
+   "finished_utc": "2026-10-14T20:14:07+00:00"
+  },
+  "val": {
+   "list": "val",
+   "events": 806,
+   "gun_particles_with_hits": 2866,
+   "without_fit": 747,
+   "llp_vertices_accepted": 763,
+   "table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t2/fits_generic_iso_val.parquet",
+   "sha256": "4b4c5da6cdefcf572256f8b65a54c76153390915df00911faedbd534d872ec68",
+   "git": "5a20f5bf304eec5c72e36a76de57b3df6f35ec00",
+   "slurm_job": "6820075",
+   "finished_utc": "2026-10-14T19:57:59+00:00"
+  }
+ },
+ "prepare_inputs": {
+  "prepare_inputs_6820026.json": {
+   "convert": [
+    {
+     "sample": "hnl5_50",
+     "first": 0,
+     "hits": 719193,
+     "particles": 189954,
+     "edges": 646808
+    },
+    {
+     "sample": "hnl5_50",
+     "first": 500,
+     "hits": 694581,
+     "particles": 183079,
+     "edges": 624930
+    },
+    {
+     "sample": "hnl5_50",
+     "first": 1000,
+     "hits": 674342,
+     "particles": 179596,
+     "edges": 606574
+    },
+    {
+     "sample": "hnl5_50",
+     "first": 1500,
+     "hits": 724222,
+     "particles": 190420,
+     "edges": 651473
+    },
+    {
+     "sample": "hnl5_50",
+     "first": 2000,
+     "hits": 708502,
+     "particles": 186382,
+     "edges": 637470
+    },
+    {
+     "sample": "hnl5_50",
+     "first": 2500,
+     "hits": 693607,
+     "particles": 182724,
+     "edges": 623748
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 0,
+     "hits": 674540,
+     "particles": 177761,
+     "edges": 606822
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 500,
+     "hits": 721784,
+     "particles": 189665,
+     "edges": 649311
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 1000,
+     "hits": 667553,
+     "particles": 178393,
+     "edges": 600281
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 1500,
+     "hits": 720150,
+     "particles": 189763,
+     "edges": 647585
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 2000,
+     "hits": 703639,
+     "particles": 185417,
+     "edges": 632906
+    },
+    {
+     "sample": "hnl20_200",
+     "first": 2500,
+     "hits": 676915,
+     "particles": 179799,
+     "edges": 608693
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 0,
+     "hits": 691750,
+     "particles": 184006,
+     "edges": 622049
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 500,
+     "hits": 701755,
+     "particles": 186340,
+     "edges": 631114
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 1000,
+     "hits": 687181,
+     "particles": 182483,
+     "edges": 617948
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 1500,
+     "hits": 684975,
+     "particles": 183387,
+     "edges": 615925
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 2000,
+     "hits": 706370,
+     "particles": 187716,
+     "edges": 635191
+    },
+    {
+     "sample": "hnl15_500",
+     "first": 2500,
+     "hits": 694472,
+     "particles": 184991,
+     "edges": 624707
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 0,
+     "hits": 678274,
+     "particles": 178904,
+     "edges": 610169
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 500,
+     "hits": 686427,
+     "particles": 181202,
+     "edges": 617459
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 1000,
+     "hits": 690825,
+     "particles": 182263,
+     "edges": 621400
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 1500,
+     "hits": 701502,
+     "particles": 185134,
+     "edges": 631129
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 2000,
+     "hits": 662802,
+     "particles": 177122,
+     "edges": 596033
+    },
+    {
+     "sample": "hnl10_100_ref",
+     "first": 2500,
+     "hits": 697773,
+     "particles": 184246,
+     "edges": 627498
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 0,
+     "hits": 680300,
+     "particles": 181468,
+     "edges": 611692
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 500,
+     "hits": 679666,
+     "particles": 182487,
+     "edges": 611092
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 1000,
+     "hits": 663766,
+     "particles": 177513,
+     "edges": 596853
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 1500,
+     "hits": 666365,
+     "particles": 179202,
+     "edges": 599165
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 2000,
+     "hits": 708601,
+     "particles": 187357,
+     "edges": 637371
+    },
+    {
+     "sample": "hnl15_200_ref",
+     "first": 2500,
+     "hits": 694563,
+     "particles": 183313,
+     "edges": 624700
+    }
+   ],
+   "tars": {
+    "hnl5_50_all.tar": {
+     "events": 3000,
+     "bytes": 135895040
+    },
+    "hnl20_200_all.tar": {
+     "events": 3000,
+     "bytes": 134430720
+    },
+    "hnl15_500_all.tar": {
+     "events": 3000,
+     "bytes": 134481920
+    },
+    "hnl10_100_ref_all.tar": {
+     "events": 3000,
+     "bytes": 133038080
+    },
+    "hnl15_200_ref_all.tar": {
+     "events": 3000,
+     "bytes": 132290560
+    }
+   },
+   "git": "5a20f5bf304eec5c72e36a76de57b3df6f35ec00",
+   "slurm_job": "6820026"
+  },
+  "prepare_inputs_6820107.json": {
+   "convert": [
+    {
+     "sample": "generic_iso",
+     "first": 8000,
+     "hits": 330471,
+     "particles": 79872,
+     "edges": 297729
+    },
+    {
+     "sample": "generic_iso",
+     "first": 8500,
+     "hits": 317075,
+     "particles": 76763,
+     "edges": 285579
+    },
+    {
+     "sample": "generic_iso",
+     "first": 9000,
+     "hits": 341575,
+     "particles": 82012,
+     "edges": 307723
+    },
+    {
+     "sample": "generic_iso",
+     "first": 9500,
+     "hits": 294919,
+     "particles": 71743,
+     "edges": 265574
+    },
+    {
+     "sample": "generic_iso",
+     "first": 10000,
+     "hits": 302691,
+     "particles": 72845,
+     "edges": 272670
+    },
+    {
+     "sample": "generic_iso",
+     "first": 10500,
+     "hits": 266094,
+     "particles": 64869,
+     "edges": 239600
+    },
+    {
+     "sample": "generic_iso",
+     "first": 11000,
+     "hits": 329123,
+     "particles": 79256,
+     "edges": 296501
+    },
+    {
+     "sample": "generic_iso",
+     "first": 11500,
+     "hits": 309830,
+     "particles": 74276,
+     "edges": 279137
+    },
+    {
+     "sample": "generic_iso",
+     "first": 12000,
+     "hits": 320889,
+     "particles": 77046,
+     "edges": 289184
+    },
+    {
+     "sample": "generic_iso",
+     "first": 12500,
+     "hits": 301935,
+     "particles": 73030,
+     "edges": 271986
+    },
+    {
+     "sample": "generic_iso",
+     "first": 13000,
+     "hits": 303333,
+     "particles": 73008,
+     "edges": 273292
+    },
+    {
+     "sample": "generic_iso",
+     "first": 13500,
+     "hits": 334984,
+     "particles": 80769,
+     "edges": 301778
+    },
+    {
+     "sample": "generic_iso",
+     "first": 14000,
+     "hits": 271902,
+     "particles": 65164,
+     "edges": 245066
+    },
+    {
+     "sample": "generic_iso",
+     "first": 14500,
+     "hits": 293861,
+     "particles": 70468,
+     "edges": 264637
+    },
+    {
+     "sample": "generic_iso",
+     "first": 15000,
+     "hits": 327738,
+     "particles": 78554,
+     "edges": 295219
+    },
+    {
+     "sample": "generic_iso",
+     "first": 15500,
+     "hits": 303369,
+     "particles": 73770,
+     "edges": 273281
+    },
+    {
+     "sample": "generic_iso",
+     "first": 16000,
+     "hits": 321529,
+     "particles": 77215,
+     "edges": 289670
+    },
+    {
+     "sample": "generic_iso",
+     "first": 16500,
+     "hits": 326992,
+     "particles": 79343,
+     "edges": 294552
+    },
+    {
+     "sample": "generic_iso",
+     "first": 17000,
+     "hits": 272922,
+     "particles": 65758,
+     "edges": 245828
+    },
+    {
+     "sample": "generic_iso",
+     "first": 17500,
+     "hits": 332395,
+     "particles": 79901,
+     "edges": 299519
+    },
+    {
+     "sample": "generic_iso",
+     "first": 18000,
+     "hits": 317940,
+     "particles": 77047,
+     "edges": 286308
+    },
+    {
+     "sample": "generic_iso",
+     "first": 18500,
+     "hits": 291104,
+     "particles": 71069,
+     "edges": 262188
+    },
+    {
+     "sample": "generic_iso",
+     "first": 19000,
+     "hits": 333038,
+     "particles": 80435,
+     "edges": 300053
+    },
+    {
+     "sample": "generic_iso",
+     "first": 19500,
+     "hits": 310159,
+     "particles": 74797,
+     "edges": 279240
+    },
+    {
+     "sample": "generic_iso",
+     "first": 20000,
+     "hits": 321847,
+     "particles": 78400,
+     "edges": 289883
+    },
+    {
+     "sample": "generic_iso",
+     "first": 20500,
+     "hits": 298991,
+     "particles": 71567,
+     "edges": 269441
+    },
+    {
+     "sample": "generic_iso",
+     "first": 21000,
+     "hits": 330703,
+     "particles": 80292,
+     "edges": 297885
+    },
+    {
+     "sample": "generic_iso",
+     "first": 21500,
+     "hits": 343358,
+     "particles": 82323,
+     "edges": 309260
+    },
+    {
+     "sample": "generic_iso",
+     "first": 22000,
+     "hits": 334973,
+     "particles": 80577,
+     "edges": 301735
+    },
+    {
+     "sample": "generic_iso",
+     "first": 22500,
+     "hits": 289744,
+     "particles": 71004,
+     "edges": 260960
+    },
+    {
+     "sample": "generic_iso",
+     "first": 23000,
+     "hits": 334739,
+     "particles": 80922,
+     "edges": 301588
+    },
+    {
+     "sample": "generic_iso",
+     "first": 23500,
+     "hits": 335665,
+     "particles": 80244,
+     "edges": 302478
+    }
+   ],
+   "tars": {
+    "generic_iso_x1_test.tar": {
+     "events": 4849,
+     "bytes": 319784960
+    }
+   },
+   "git": "e0c4307214f40478884947d44301eb87786949e1",
+   "slurm_job": "6820107"
+  }
+ }
+}

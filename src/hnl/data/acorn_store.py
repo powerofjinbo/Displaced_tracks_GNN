@@ -36,9 +36,14 @@ SPLITS = {"ttbar": ("train", "val", "test"), "hnl10_100": ("train", "val", "test
 GENERATED_CODE = {"generic_iso": 5, "generic_dense": 6, "hss15_100": 7, "hss40_300": 8}
 GENERATED_SPLITS = {"generic_iso": ("train", "val", "test"), "generic_dense": ("train", "val", "test"),
                     "hss15_100": ("all",), "hss40_300": ("all",)}
+# the HNL points (hnl.data.shards.POINTS; evaluation only, addendum G step T2), also only with HNL_GENERATED=1; their
+# split lists are splits/hnl_<m>_<ctau>_all.txt (hnl.eval.addendum_g.SPLIT_STEM). Two-digit codes: their event ids have
+# ten digits, and parse_event_id reads every digit before the last eight as the code.
+POINT_CODE = {"hnl5_50": 10, "hnl20_200": 11, "hnl15_500": 12, "hnl10_100_ref": 13, "hnl15_200_ref": 14}
 if os.environ.get("HNL_GENERATED") == "1":
     SAMPLE_CODE.update(GENERATED_CODE)
     SPLITS.update(GENERATED_SPLITS)
+    SAMPLE_CODE.update(POINT_CODE)
 CODE_SAMPLE = {v: k for k, v in SAMPLE_CODE.items()}
 DERIVED = os.path.join(os.environ.get("HNL_DATA", "/ceph/submit/data/user/j/jinboz1/hnl_lrt"), "derived")
 
@@ -48,7 +53,7 @@ def event_id(sample: str, index: int) -> str:
 
 
 def parse_event_id(eid: str) -> tuple[str, int]:
-    return CODE_SAMPLE[int(eid[0])], int(eid[1:])
+    return CODE_SAMPLE[int(eid[:-8])], int(eid[-8:])
 
 
 def orient_outward(edges: np.ndarray, r: np.ndarray, z: np.ndarray) -> np.ndarray:
@@ -99,12 +104,14 @@ def _serialise(g: Data) -> bytes:
     return gzip.compress(buf.getvalue(), compresslevel=1)
 
 
-def build_tar(sample: str, split: str, out: str) -> dict:
-    events = read_split(sample, split)
-    path = os.path.join(out, f"{sample}_{split}.tar")
+def build_tar(sample: str, split: str, out: str, events=None, name: str | None = None, root: str | None = None) -> dict:
+    """The tar of one (sample, split): the split list's events (or the given ones) from the event tables under root
+    (default derived/events/v1), as <out>/<name> (default <sample>_<split>.tar)."""
+    events = read_split(sample, split) if events is None else np.sort(np.asarray(events, dtype=np.int64))
+    path = os.path.join(out, name or f"{sample}_{split}.tar")
     if os.path.exists(path):
         raise FileExistsError(path)
-    root = os.path.join(DERIVED, "events", "v1")
+    root = root or os.path.join(DERIVED, "events", "v1")
     n_written = 0
     tmp = path + ".tmp"
     with tarfile.open(tmp, "w") as tar:

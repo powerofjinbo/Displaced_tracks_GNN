@@ -18,6 +18,9 @@ Per overlay event:
 4. `check_event`: the converter gate of plan section 10 on the merged tables, read back as int64 (unique positive
    particle ids, gun vertex field 1001-1010, gun weights 0, host weights summing to the expected value within 1e-6,
    n_hits equal to the hit count, host rows unchanged).
+Before step 1, `sim_provenance` checks the Fatras run (seed = base seed + 13; a module table that belongs to the
+build) and `sim_status` finds the gun particles Fatras did not simulate (failed propagation or p <= pMin): they keep
+their particle row with no hits and are listed in the sidecar (sim_failed_particles, sim_below_pmin_particles).
 5. `write_set`: <root>/{hits,particles,ptype}/<set>/shard_<first>.parquet (first = event // 500 * 500, one row group
    per event, increasing ids; the schemas and encodings of the converter) and meta_<set>.json in the layout of the
    converter's meta files, so hnl.trackml.convert.read_table(table, events, root=<root>) reads them unchanged. The
@@ -372,22 +375,132 @@ def write_csv_tar(path: str, members: dict[int, dict[str, bytes]]) -> dict:
     return {"tar": path, "events": len(members), "bytes": os.path.getsize(path), "sha256": C.sha256_file(path)}
 
 
+# ------------------------------------------------------------------------------------------------ simulation record
+PATCHED_BUILD_PREFIX = "build-v15-zmirror"        # z-mirror builds of plan section 3 (G0: docs/pileup_overlay_hp_g0.md)
+UNPATCHED_BUILD = "build-v15"
+
+
+def sim_provenance(sim_dir: str, gev: dict, lookup_path: str) -> dict:
+    """Build, seed and field map of the Fatras run in sim_dir (sim_summary.json of scripts/acts/overlay_sim.py sim, or
+    fatras.json of slurm/overlay/fatras.sbatch). Raises if the Fatras seed is not the set's base seed + 13 (plan
+    section 7) or if the module-id lookup does not belong to the build: the patched table only with a z-mirror build,
+    the unpatched one only with build-v15 (the patch moves every -z endcap module, plan section 3)."""
+    p_sum, p_json = os.path.join(sim_dir, "sim_summary.json"), os.path.join(sim_dir, "fatras.json")
+    if os.path.exists(p_sum):
+        with open(p_sum) as fh:
+            s = json.load(fh)
+        rec = {"record": "sim_summary.json", "build": s["build"], "seed": int(s["seed"]),
+               "field_map": s["field_map"], "field_map_md5": s["field_map_md5"], "pmin_gev": s["fatras"]["pmin_gev"],
+               "executable_md5": s.get("executable_md5"), "events": s.get("events"),
+               "logged_particle_failures": s.get("particle_failures")}
+    elif os.path.exists(p_json):
+        with open(p_json) as fh:
+            s = json.load(fh)
+        rec = {"record": "fatras.json", "build": s["build"], "seed": int(s["rnd_seed"]), "field_map": s["map"],
+               "field_map_sha256": s["map_sha256"], "pmin_gev": float(s["pmin_gev"]), "events": s.get("events")}
+    else:
+        raise FileNotFoundError(f"{sim_dir}: neither sim_summary.json nor fatras.json (unknown Fatras settings)")
+    if rec["seed"] != int(gev["fatras_seed"]):
+        raise ValueError(f"Fatras seed {rec['seed']} differs from the set's base seed + 13 = {gev['fatras_seed']}")
+    build = os.path.basename(os.path.normpath(rec["build"]))
+    lk = os.path.abspath(lookup_path)
+    if lk == os.path.abspath(D.PATCHED_LOOKUP) and not build.startswith(PATCHED_BUILD_PREFIX):
+        raise ValueError(f"the patched module table needs hits of a z-mirror build, not {build}")
+    if lk == os.path.abspath(D.UNPATCHED_LOOKUP) and build != UNPATCHED_BUILD:
+        raise ValueError(f"the unpatched module table needs hits of {UNPATCHED_BUILD}, not {build}")
+    return rec
+
+
+def sim_status(sim_path: str, gun_dir: str, gev: dict, pmin_gev: float) -> pd.DataFrame:
+    """Fatras status of every gun particle of the set (hnl.overlay.fatras_io.simulation_status): from the simulated-
+    particle list beside the packed hits and the failures in fatras.log of the same directory."""
+    sim_dir = os.path.dirname(os.path.abspath(sim_path))
+    p_sim, p_log = FIO.sim_particles_path(sim_path), os.path.join(sim_dir, "fatras.log")
+    for f in (p_sim, p_log):
+        if not os.path.exists(f):
+            raise FileNotFoundError(f"{f} is missing: without it the gun particles Fatras dropped are unknown")
+    with open(p_log) as fh:
+        failed = FIO.failed_particles(fh.read())
+    simulated = pd.read_parquet(p_sim)
+    inputs = pd.concat([pd.read_csv(FIO_path(gun_dir, int(ev["fatras_event"])), dtype={"particle_id": np.uint64})
+                        .assign(event=int(ev["fatras_event"])) for ev in gev["events"]], ignore_index=True)
+    events = inputs.event.unique()
+    return FIO.simulation_status(inputs[["event", "particle_id", "q", "px", "py", "pz"]],
+                                 simulated[simulated.event.isin(events)], failed[failed.event.isin(events)], pmin_gev)
+
+
 # ------------------------------------------------------------------------------------------------ assembly
+SEED_RULES = ("emulation: default_rng([base + 13, overlay id, 1]); digitiser cell factors: "
+              "default_rng([base + 13, overlay id]); gun: default_rng([base + 7, overlay id]); Fatras: base + 13")
+
+
+def overlay_hash(tables_path: str) -> str:
+    """The version of everything applied after Fatras: the emulation hash (its tables and emulate.py), the digitiser
+    (digitise.py, which carries the pixel charge spread as the per-cell factor CELL_SIGMA since gate C1) and the seed
+    rules. The plan's emulation hash (section 4.4, fixed at the end of H-T0.5) predates the move of the charge spread
+    into the digitiser; this hash covers both."""
+    import hashlib
+    from hnl.overlay import emulate as EM
+    h = hashlib.sha256(EM.emulation_hash(tables_path).encode())
+    with open(os.path.abspath(D.__file__), "rb") as fh:
+        h.update(fh.read())
+    h.update(f"CELL_SIGMA={D.CELL_SIGMA!r};{SEED_RULES}".encode())
+    return h.hexdigest()
+
+
+def gun_event(sim_hits: pd.DataFrame, particles: pd.DataFrame, lookup, modules: D.Modules, tables, base_seed: int,
+              event: int) -> dict:
+    """Emulation and digitisation of one gun event: sim_hits = the packed Fatras hits of the event
+    (hnl.overlay.fatras_io), particles = its Fatras input (ACTS barcodes), tables = hnl.overlay.emulate.Tables. Returns
+    the emulation flags, the digitised hits, the TrackML members and their gzip CSV bytes (deterministic in the
+    inputs, the seed rule of `assemble` and the overlay event id)."""
+    from hnl.overlay import emulate as EM
+    s = sim_hits.reset_index(drop=True)
+    pinfo = pd.DataFrame({"particle_id": particles.particle_id.to_numpy(np.uint64),
+                          "pdg": particles.particle_type.to_numpy(np.int64),
+                          "p": np.sqrt(particles.px ** 2 + particles.py ** 2 + particles.pz ** 2).to_numpy()})
+    rng = np.random.default_rng([base_seed + 13, int(event), EMULATION_STREAM])
+    vol, lay, mod = lookup.from_geometry_id(s.geometry_id.to_numpy(np.uint64))
+    if (mod < 0).any():
+        raise RuntimeError(f"overlay event {event}: {int((mod < 0).sum())} sim hits on modules missing from the lookup")
+    em = EM.emulate(pd.DataFrame({"particle_id": s.particle_id.to_numpy(np.uint64), "volume": vol, "layer": lay,
+                                  "module": mod, "order": s["index"].to_numpy(),
+                                  **{c: s[c].to_numpy(np.float64) for c in ("tx", "ty", "tpx", "tpy", "tpz")}}),
+                    pinfo, tables, rng)
+    k = em["keep"]
+    dig = D.digitise_on_modules(s[k].reset_index(drop=True), vol[k], lay[k], mod[k], modules,
+                                rng=D.event_rng(base_seed + 13, int(event)))
+    mem = gun_members(dig, particles)
+    return {"emulation": em, "digitised": dig, "members": mem, "gz": members_gz(mem)}
+
+
 def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path: str, lookup_path: str,
              host_root: str = T.DERIVED_TP, emulation_seed: int | None = None, csv_tar: str | None = None,
              overwrite: bool = False) -> dict:
     """Emulation, digitisation, conversion, merge and storage of a gun set made by hnl.overlay.gun (gun_dir) and
-    simulated by slurm/overlay/fatras.sbatch (sim_path = packed sim hits). Seeds from base_seed + 13 (the Fatras and
-    digitisation seed of spec v1 section 4): the digitiser's per-cell charge factor draws from
-    hnl.overlay.digitise.event_rng(base + 13, overlay id) = default_rng([base + 13, id]), the emulation from the
-    independent stream default_rng([base + 13, id, EMULATION_STREAM])."""
+    simulated by scripts/acts/overlay_sim.py sim or slurm/overlay/fatras.sbatch, then packed by hnl.overlay.fatras_io
+    (sim_path = packed sim hits; the simulated-particle list, fatras.log and the run record lie beside it). Seeds from
+    base_seed + 13 (the Fatras and digitisation seed of spec v1 section 4): the digitiser's per-cell charge factor
+    draws from hnl.overlay.digitise.event_rng(base + 13, overlay id) = default_rng([base + 13, id]), the emulation
+    from the independent stream default_rng([base + 13, id, EMULATION_STREAM]). Gun particles that Fatras dropped
+    (failed propagation) or never simulated (p <= pMin) keep their particle row with no hits, as in TrackML; the
+    sidecar lists them per event and gun_truth_<set>.parquet carries the status (column sim_status)."""
     from hnl.overlay import emulate as EM
     with open(os.path.join(gun_dir, "gun_events.json")) as fh:
         gev = json.load(fh)
     truth = pd.read_parquet(os.path.join(gun_dir, "gun_truth.parquet"))
     sim = pd.read_parquet(sim_path)
+    prov = sim_provenance(os.path.dirname(os.path.abspath(sim_path)), gev, lookup_path)
+    status = sim_status(sim_path, gun_dir, gev, prov["pmin_gev"])
+    st_key = pd.Series(status.status.to_numpy(), index=pd.MultiIndex.from_arrays(
+        [status.event.to_numpy(np.int64), status.particle_id.to_numpy(np.uint64)]))
+    truth["sim_status"] = st_key.reindex(pd.MultiIndex.from_arrays(
+        [truth.fatras_event.to_numpy(np.int64), truth.acts_barcode.to_numpy(np.uint64)])).to_numpy()
+    if truth.sim_status.isna().any():
+        raise RuntimeError("gun truth rows without a Fatras status")
     tab = EM.Tables.load(tables_path)
     ehash = EM.emulation_hash(tables_path)
+    ohash = overlay_hash(tables_path)
     mods = D.Modules.load()
     lookup = D.load_lookup(lookup_path)
     det = C.load_detectors()
@@ -397,24 +510,12 @@ def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path:
         oid, host, fe = int(ev["overlay_event"]), int(ev["host"]), int(ev["fatras_event"])
         parts = pd.read_csv(FIO_path(gun_dir, fe), dtype={"particle_id": np.uint64})
         s = sim[sim.event == fe].reset_index(drop=True)
-        tr = truth[truth.event == oid]
-        pinfo = pd.DataFrame({"particle_id": parts.particle_id.to_numpy(np.uint64),
-                              "pdg": parts.particle_type.to_numpy(np.int64),
-                              "p": np.sqrt(parts.px ** 2 + parts.py ** 2 + parts.pz ** 2).to_numpy()})
-        rng = np.random.default_rng([base + 13, oid, EMULATION_STREAM])
-        vol, lay, mod = lookup.from_geometry_id(s.geometry_id.to_numpy(np.uint64))
-        if (mod < 0).any():
-            raise RuntimeError(f"overlay event {oid}: {int((mod < 0).sum())} sim hits on modules missing from the "
-                               f"lookup")
-        em = EM.emulate(pd.DataFrame({"particle_id": s.particle_id.to_numpy(np.uint64), "volume": vol, "layer": lay,
-                                      "module": mod, "order": s["index"].to_numpy(),
-                                      **{c: s[c].to_numpy(np.float64) for c in ("tx", "ty", "tpx", "tpy", "tpz")}}),
-                        pinfo, tab, rng)
-        k = em["keep"]
-        dig = D.digitise_on_modules(s[k].reset_index(drop=True), vol[k], lay[k], mod[k], mods,
-                                    rng=D.event_rng(base + 13, oid))
-        mem = gun_members(dig, parts)
-        gz = members_gz(mem)
+        st = status[status.event == fe]
+        lost = st[st.status != "simulated"]
+        if np.isin(s.particle_id.to_numpy(np.uint64), lost.particle_id.to_numpy(np.uint64)).any():
+            raise RuntimeError(f"overlay event {oid}: sim hits of a particle that Fatras did not simulate")
+        g = gun_event(s, parts, lookup, mods, tab, base, oid)
+        em, dig, gz = g["emulation"], g["digitised"], g["gz"]
         gtab, dq = convert_gun(gz, oid, det)
         host_t = host_tables(host, host_root)
         merged, rm = merge_event(host_t, gtab, oid)
@@ -433,13 +534,21 @@ def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path:
                      "dropped_hits": int(em["dropped"].sum()), "digitiser": dig.stats,
                      "gun_dq_max_outside_mm": dq["max_outside_mm"],
                      "gun_categories": {str(c): int((cat == c).sum()) for c in np.unique(cat)},
+                     "sim_failed_particles": [int(x) for x in GUN.trackml_particle_id(
+                         lost[lost.status == "failed"].particle_id.to_numpy(np.uint64))],
+                     "sim_below_pmin_particles": [int(x) for x in GUN.trackml_particle_id(
+                         lost[lost.status == "below_pmin"].particle_id.to_numpy(np.uint64))],
                      "hs_vertex": ev["hs_vertex"]})
         stats.append(dig.stats)
-    meta_extra = {"emulation_hash": ehash, "emulation_tables": tables_path, "lookup": lookup_path,
+    meta_extra = {"emulation_hash": ehash, "overlay_hash": ohash, "seed_rules": SEED_RULES,
+                  "emulation_tables": tables_path, "lookup": lookup_path,
+                  "lookup_sha256": C.sha256_file(lookup_path), "sim": prov,
+                  "sim_status_counts": {str(k): int(v) for k, v in status.status.value_counts().items()},
                   "gun": {k: v for k, v in gev.items() if k != "events"}, "host_root": host_root}
     meta = write_set(set_name, merged_all, root, meta_extra, overwrite=overwrite)
-    side_rec = {"set": set_name, "emulation_hash": ehash, "gun_particles": "gun_truth_" + set_name + ".parquet",
-                "events": side}
+    side_rec = {"set": set_name, "emulation_hash": ehash, "overlay_hash": ohash,
+                "gun_particles": "gun_truth_" + set_name + ".parquet",
+                "sim": prov, "sim_status_counts": meta_extra["sim_status_counts"], "events": side}
     with open(os.path.join(root, f"sidecar_{set_name}.json"), "w") as fh:
         json.dump(side_rec, fh, indent=1)
     truth.to_parquet(os.path.join(root, f"gun_truth_{set_name}.parquet"), index=False)

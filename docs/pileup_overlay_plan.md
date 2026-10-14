@@ -2,6 +2,9 @@
 
 Status: design only (2026-10-14). Nothing has been produced or run. Version 2 revises version 1 after a physics
 review and a hygiene review. Section 16 lists what changed and which review points were checked and not adopted.
+Update at H-T0 (2026-10-14): step H-P is done, truth only (`results/pileup_hp/hp_summary.md`). The text that H-P made
+stale is updated in place, and section 16 lists each change. Addendum H (`docs/preregistration_pileup.md`) binds where
+it differs from this plan.
 
 The plan rests on four studies made on 2026-10-14: geometry, field and material, hit format, and study design. They
 have no written reports. Their scripts, JSON outputs and logs are in `/work/submit/jinboz1/hnl/pileup_design/<topic>/`,
@@ -100,11 +103,14 @@ rings off the TrackML plane.
    gives a radially outward v axis, w = side * z and u = v x w. TrackML's endcap rotations follow this construction
    within 1.5e-6 (geometry study, login-node check).
 2. Dump `detectors.csv` from the patched build and rerun `geometry/compare_modules.py` and `footprint.py` (gate G0,
-   section 10). That the patch reproduces TrackML exactly is inferred from the source and the measured symmetries. It
-   has not been built or dumped. G0 runs before addendum H is committed (section 9).
-3. Regenerate the endcap id table from the patched dump. The present tables, `geometry/out/module_map.csv` and
-   `hit_format/out/module_map_acts_v15_to_trackml.csv`, agree on all modules (`plan/map_agreement.txt`) but hold for
-   the unpatched build only. The order of ACTS sensitive ids on the patched -z side is not known yet.
+   section 10). Done at step H-P (`docs/pileup_overlay_hp_g0.md`, commit 9c070f3). The patched build
+   `build-v15-zmirror` was dumped, and G0 passes for all 18,728 modules. The largest difference is 3.75 um, in volume
+   17, which the patch does not touch; it is the rounding of TrackML's file.
+3. Regenerate the endcap id table from the patched dump. The tables of the design study, `geometry/out/module_map.csv`
+   and `hit_format/out/module_map_acts_v15_to_trackml.csv`, hold for the unpatched build only. The -z id order is now
+   known: in the patched build the -z module with id m is the exact z-mirror of the +z module with id m, and TrackML
+   numbers its modules the same way. The new table is `configs/trackml/module_map_acts_zmirror_v1.csv` (sha256
+   88178fd6...), a bijection in every (volume, layer).
 4. Barrel ids pass unchanged, and endcap ids go through the regenerated table. The digitiser takes every module frame
    from the TrackML `detectors.csv`.
 
@@ -198,6 +204,7 @@ changes the fit there by less than 10 %, while at 1.5-2 m it triples the width o
 | Nuclear interactions | not available | present in ActsFatras but not wired into the v15 `FatrasSimulation`; emulated (section 4.4) |
 | Decays in flight | absent in v15 Fatras, and absent in TrackML truth | v15 simulates charged particles with `ActsFatras::NoDecay` (`FatrasSimulation.cpp` L84). TrackML truth has no decay products: 20 training events hold 15,629 prompt charged kaons, and only 5 muons are produced at 5-1,000 mm, all from the generator (`plan_revision/decay_check2.json`, job 6812742). With decays simulated, several per cent of these kaons would give a muon inside the tracker, hundreds in all. Central K and pions also reach the last barrel layer equally often (section 4.4). Nothing to emulate |
 | Seeds | `seed + Cantor(algorithm, event)` as in spec v1 section 4; base seeds in section 7 | |
+| Navigator losses | kept and recorded (H-T0 update) | The v15 navigator loses about 2 % of gun particles on every build ("Interpolation out of bounds"), 2.9 % of isolated ones with pT > 1 GeV and r_v >= 100 mm (`results/pileup_hp/f1_containment_v1.md`). Fatras removes such a particle with all its hits and only logs it. `hnl.overlay.fatras_io` reads every failure from `fatras.log`; the lost particle keeps its particle row with no hits, the sidecar lists it per event (`sim_failed_particles`), and the gun truth table carries `sim_status`. Targets are defined on the simulated hits, and the loss rate is reported (DECISIONS 2026-10-14) |
 
 ### 4.3 Material
 
@@ -293,8 +300,8 @@ therefore quotes W and dE and does not convert them to radiation lengths.
 | Hit inefficiency, strip disks | not measured | not measured | as for the pixel disks, after measuring both |
 | Hadronic stops | 88.9 % of central pions with pT > 2 GeV reach the last barrel layer (K 88.8 %, p 88.0 %, mu 100 %); per-layer stop probability 0.6-2.6 % for pions | 100 % reach it | truncate gun hadron tracks with the per-layer hazards, measured in bins of p; endcap hazards measured first |
 | Noise | 16.07 % of hits | - | none added; the host has its own |
-| Pixel charge | 5-95 % spread of +-5 % (barrel) to +-15 % (endcap) around the path length | deterministic | multiply by a factor resampled from TrackML's normal-incidence ratio (barrel 0.909-1.087, endcap 0.851-1.149) |
-| Hit resolution | pixel residual MAD u / v: 3.9 / 3.9 um (barrel), 17.2 / 9.4 um (endcap) | prototype digitiser 3.1 / 1.8 um and 5.0 / 2.5 um | none yet; if gate C1 fails, a Gaussian smear per volume and incidence bin, fitted on training events |
+| Pixel charge | 5-95 % spread of +-5 % (barrel) to +-15 % (endcap) around the path length | deterministic | H-T0 update: no per-hit factor. The digitiser draws one factor per pixel cell from N(1, 0.100), measured on TrackML's raw cells; this alone gives TrackML's per-hit spread (`results/pileup_hp/c1_v1.md`) |
+| Hit resolution | pixel residual MAD u / v: 3.9 / 3.9 um (barrel), 17.2 / 9.4 um (endcap) | prototype digitiser 3.1 / 1.8 um and 5.0 / 2.5 um | H-T0 update: none. The production digitiser passes C1 without a smear (section 5.2) |
 
 **The geometric part of the pixel-disk holes.** Each TrackML pixel disk has two rings, at r = 30-102 mm and
 104-176 mm (`detectors.csv`, volumes 7 and 9). The radial gap between them makes holes without any inefficiency. The
@@ -311,7 +318,9 @@ Sources:
 - Residuals: `hit_format/out/resid.json` (calib events) and `pydigi.json` (`resid_uv_mm`, job 6812142).
 - Noise share: `field_material/particle_stats.json` (job 6812137).
 
-The emulation version is fixed by a hash at the end of H-T0.5 (section 9).
+The emulation version is fixed by a hash at the end of H-T0.5 (section 9). H-T0 update: the fixed hash is
+`overlay_hash` (`hnl.overlay.writer`), a sha256 over the emulation hash, `digitise.py`, the per-cell charge spread and
+the seed rules. The emulation hash alone no longer covers the charge spread, which moved into the digitiser.
 
 ## 5. Hit record and features
 
@@ -342,6 +351,8 @@ The production digitiser grows from the prototype `hit_format/analysis.py cmd_py
 - The drift is tilted by the GenericDetector Lorentz angle towards the readout side (pixels -1, strips +1). Cells sit
   on the TrackML pitch grid of the table below.
 - Pixel cell value = path length in mm times the charge factor of section 4.4. Strip cell value = 1.
+  H-T0 update: the factor is drawn per pixel cell from N(1, 0.100), not per hit. TrackML's raw cells show a scatter
+  of that width from cell to cell, uncorrelated between the cells of one hit (`results/pileup_hp/c1_v1.md`).
 
 | Sensor | pitch u x v |
 |---|---|
@@ -350,7 +361,8 @@ The production digitiser grows from the prototype `hit_format/analysis.py cmd_py
 | long strip | 120 um x 10.8 mm (barrel), 10.4 mm (endcap) |
 
 - Hit position = value-weighted centroid of the cell centres plus the Lorentz shift, rounded to 6 significant digits
-  as in the TrackML CSV.
+  as in the TrackML CSV. H-T0 update: a strip hit sits at the plain mean of its strip centres, as in TrackML's raw
+  cells, where every strip value is 1.
 - Every module crossing becomes its own hit, including a second hit on one module. nhits is counted after
   digitisation. In the prototype 14 of 92,240 sim hits produced no cell.
 - With the patched geometry the sim hits lie on the TrackML planes already, so no 3 mm move is needed. The digitiser
@@ -372,6 +384,11 @@ TrackML's, most of all in the pixel endcaps.
 Sources: `hit_format/out/resid.json` (`trackml`, calib events) and `pydigi.json` (`resid_uv_mm`). The strip v
 residual spans the strip length and is not compared. The prototype ran on a muon gun whose angles differ from TrackML's,
 and the cause of the gap was not checked. Gate C1 compares the widths in matched incidence bins before any model run.
+
+H-T0 update: C1 found the causes (`results/pileup_hp/c1_v1.md`). In the pixel endcaps the prototype's muon sample was
+far more inclined in u than TrackML's hits; on TrackML's own truth the digitiser gives 17.3 / 9.3 um. In the pixel
+barrel the per-cell charge factor was missing. The production digitiser passes C1 at matched incidence (514 counted
+bins, none fails), so no resolution smear is needed.
 
 The features follow each particle's true local direction. In pixel endcap 7, displaced targets with pT above 1 GeV
 have larger clusters than prompt ones. Their mean ncells is 2.41 against 1.53 (`hit_format/out/tables.json`,
@@ -430,7 +447,11 @@ have larger clusters than prompt ones. Their mean ncells is 2.41 against 1.53 (`
 | Set | H-val | closure | H-test | H-train (H3 only) | pilots |
 |---|---|---|---|---|---|
 | set index k | 0 | 1 | 2 | 3 | 9 |
-| base seed (section 7) | 650001 | 950001 | 750001 | 850001 | - |
+| base seed (section 7) | fixed by addendum H, section 2 | same | same | - (no H-train set) | 990101 (H-P dry run) |
+
+H-T0 update: the version-2 base seeds (650001, 950001, 750001, 850001) are not used. 650001, 750001 and 850001 are
+the bases of the HNL points hnl5_50, hnl15_500 and hnl20_200 (`docs/hnl_points_spec.md` section 5), so the overlay's
+Fatras runs would have repeated their streams. Addendum H fixes new bases and checks them by enumeration.
 
 - **Code changes** (committed, small). `events.table_root` sends ids >= 50,000,000 to `derived/overlay_v1` (one line). A
   C-hs truth filter sits next to C-1GeV and C-nonoise. `collision_reuse` gets an argument for its signature file, and a
@@ -481,9 +502,12 @@ section 1), so no range changes. The changes come from the study_design jobs 681
 
 1. **No Pythia.** The LLPs start at the host's hard-scatter vertex.
 2. **8 isolated and 2 dense LLPs per host.** Azimuths are drawn in sequence so that LLP directions are at least
-   Delta R = 0.8 apart. This costs 0.88 redraws per LLP. Then 0.16 % of isolated targets have another LLP's target
-   within Delta R < 0.05, as in G's two-LLP layout (`yield_overlap_train.json`, `overlap_mc`). The gun adds about 126
-   hits per host (`study_design/gun_hits.json`), about 0.1 % of the hits of a host event.
+   Delta R = 0.8 apart. This costs 0.88 redraws per LLP. H-T0 update: the implemented gun (`hnl.overlay.gun`) needs
+   0.58 azimuth redraws per LLP over 30,000 LLPs (`results/pileup_hp/emulation_overlay_v1.md`). The study's 0.88
+   includes cases where its Monte Carlo kept eta fixed and gave up. The five dry-run hosts gave 0.38. Then 0.16 % of
+   isolated targets have another LLP's target within Delta R < 0.05, as in G's two-LLP layout
+   (`yield_overlap_train.json`, `overlap_mc`). The gun adds about 126 hits per host (`study_design/gun_hits.json`),
+   about 0.1 % of the hits of a host event.
 3. **Barcodes** as in section 5.3, with score weight 0.
 4. **Seeds.** One base seed per set (table in section 5.4). Fatras and digitisation use base + 13, as in spec v1
    section 4.
@@ -536,7 +560,8 @@ this project and has free choices: emulation, LLPs per host, hosts. These should
 exists. The skeleton mirrors addendum G.
 
 - **Section 1, purpose.** The pileup version of the generic gun (supervisor, 2026-10-14).
-- **Section 2, sample.** This document plus a spec v2 section. The emulation hash is fixed at the end of H-T0.5.
+- **Section 2, sample.** This document plus a spec v2 section. The emulation hash is fixed at the end of H-T0.5
+  (H-T0 update: `overlay_hash`, section 4.4).
 - **Section 3, splits.** H-val = tp_v1 val. Closure = tp_v1 val with native targets simulated again (gate V1). H-test
   = the first 600 part03 events by the hash rule. All are recorded in `configs/trackml/split_h_v1.json`.
 - **Section 4, population and metric.** As in section 8 here.
@@ -589,7 +614,8 @@ with similar odds. The rows with all displaced targets are dominated by secondar
   part03 and no overlay is made.
 - **H-T0.5 (val).** Produce the H-val and closure overlays and run the frozen model on them in C-full. The rules:
   1. Emulation and digitiser changes are decided only on the truth gates and on V1, V2 and V3. Each change is logged.
-  2. The model's results on the gun targets of H-val stay blinded until the emulation hash is committed. The
+  2. The model's results on the gun targets of H-val stay blinded until the emulation hash (H-T0 update:
+     `overlay_hash`) is committed. The
      evaluation at this step skips them in every condition, and nobody inspects tracks of gun particles. Truth-level
      features of gun hits (V3) are not blinded.
   3. At most three passes, each with one emulation version through all val gates. If V1 still fails after the third
@@ -671,7 +697,10 @@ All thresholds below are fixed at H-T0. Checks marked descriptive have no pass r
 - **V2, host integrity.** Overlaid val events against the stored val outputs: prompt efficiency and fake rate within
   0.05 points, TrackML score within 0.001.
 - **V3, features (descriptive).** Cluster features and residuals of gun hits against native tracks in incidence bins
-  and signed eta, and same-module near-coincidences. C1 carries the pass rules for the same quantities.
+  and signed eta, and same-module near-coincidences. C1 carries the pass rules for the same quantities. H-T0 update:
+  tp_v1 stores true hit positions and momenta for the 200 calibration events only, and val events carry no truth
+  kinematics. The native residuals and incidence of V3 therefore come from the calibration events (the C1 reference),
+  and the hosts' own targets enter with cluster features only (`results/pileup_hp/hp_summary.md` section 3.6).
 
 ## 11. Budget
 
@@ -706,7 +735,9 @@ exceed 75 GPU-h in total, so H3 needs the user's approval in either form.
 1. **H1 sits at the margin** (section 9). At the matched val value it holds or is inconclusive with similar odds. The
    projection is stated in advance, and the result is reported in any case.
 2. **The geometry patch is not verified.** One build settles it (G0, before H-T0). If it fails, route C remains, with
-   5.9-7.0 % of gun hits moved or dropped, reported as a systematic.
+   5.9-7.0 % of gun hits moved or dropped, reported as a systematic. H-T0 update: settled. The patched build passes
+   G0 for all 18,728 modules, the -z id order is known, and containment passes on the gun probe
+   (`docs/pileup_overlay_hp_g0.md`, `results/pileup_hp/f1_containment_v1.md`).
 3. **Field asymmetry and large |z|.** The field centre sits near z = -0.15 m, and the map follows the data on both
    sides. The map is constrained by data up to |z| of about 2.95 m and r of about 1.03 m, and clamped beyond. At
    |z| = 2.5-3 m the fit variants differ by up to 0.26 T (section 4.1). Mirroring one half there does not worsen the
@@ -828,3 +859,26 @@ Every review point was checked against the files before it was adopted.
 | "acorn never trained on TrackML"; zero-shot attribution | confirmed | wording scoped to this project; numbers attributed to Canto-B seed 0 |
 | T2 used for two things | confirmed | steps renamed H-P, H-T0 ... H-T4 |
 | Style of `docs/paper_rewrite_brief.md` | confirmed by a sentence scan | numbers moved into tables, long sentences split, semicolon chains broken, the brief's banned coined term for the gun targets removed (`style_scan.py`) |
+
+### Update at H-T0 (2026-10-14)
+
+Step H-P made some text of version 2 stale (`results/pileup_hp/hp_summary.md` section 4). Each change below is marked
+"H-T0 update" in place. The original text stays where it records what version 2 planned. Addendum H
+(`docs/preregistration_pileup.md`) binds where it differs from this plan.
+
+| Text | Change | Source |
+|---|---|---|
+| Section 3, items 2 and 3 | the patched build is built and dumped, G0 passes, the -z id order is known, and the new id table is committed | `docs/pileup_overlay_hp_g0.md` (commit 9c070f3) |
+| Risk 2 | marked settled | same; `results/pileup_hp/f1_containment_v1.md` |
+| Section 4.2 | row for the gun particles lost by the v15 navigator and their record in the sidecar | `f1_containment_v1.md`; `hp_summary.md` section 3.2; DECISIONS 2026-10-14 |
+| Section 4.4 | the per-cell charge factor replaces the per-hit factor; no resolution smear; the fixed hash is `overlay_hash` | `results/pileup_hp/c1_v1.md`; `hp_summary.md` section 3.2 |
+| Section 5.2 | per-cell factor, strip hits at the plain mean, and the causes of the prototype's narrow residuals | `c1_v1.md` |
+| Section 5.4 | the version-2 base seeds are dropped, since three of them are HNL-point bases; addendum H fixes new ones | `docs/hnl_points_spec.md` section 5; `results/pileup_hp/h_seed_check_v1.json` |
+| Section 7, item 2 | 0.58 azimuth redraws per LLP for the implemented gun (30,000 LLPs), not 0.88; 0.38 on the five dry-run hosts | `results/pileup_hp/emulation_overlay_v1.md`; `hp_summary.md` section 3.6 |
+| Section 9 (addendum skeleton, H-T0.5 rule 2) | the hash fixed at H-T0.5 is `overlay_hash` | DECISIONS 2026-10-14, H-P choice 4 |
+| Section 10, V3 | native residuals and incidence come from the calibration events, because val events carry no truth kinematics | `hp_summary.md` section 3.6 |
+
+Decisions taken since version 2 and recorded in DECISIONS 2026-10-14 are not repeated here. They are D3, D4 and D13,
+and the five H-P choices: navigator losses kept and recorded, C1 read at matched incidence with a confirmation on
+H-val, the emulation gate read as the full-sample closure, `overlay_hash` fixed, and the pilot seed 990101. Addendum H
+states each of them.

@@ -34,7 +34,10 @@ from hnl.truth import labels as L
 SHARD = 500
 
 
-def event_tables(ev: dict, sample: str, event: int) -> dict[str, pd.DataFrame]:
+def event_tables(ev: dict, sample: str, event: int, info=None) -> dict[str, pd.DataFrame]:
+    """info: the sample's hnl.data.npz.Sample when it is not in SAMPLES (the tar-sharded HNL points of
+    hnl.data.shards.POINTS); only its labeled / kind fields are used."""
+    info = SAMPLES[sample] if info is None else info
     x, pid, te, P = ev["x"], ev["pid"], ev["layerless_true_edges"], ev["particles"]
     n = len(pid)
     xyz = cylindrical_to_cartesian(x)
@@ -58,10 +61,10 @@ def event_tables(ev: dict, sample: str, event: int) -> dict[str, pd.DataFrame]:
     order = hx.order_hits(pid, te)
     heads = order[np.r_[True, pid[order][1:] != pid[order][:-1]]]
     r_first = pd.Series(x[heads, 0].astype(np.float64), index=pid[heads]).reindex(ids).to_numpy()
-    if SAMPLES[sample].labeled:
+    if info.labeled:
         lab = L.labels_from_table(P)
         is_hnl, is_w = lab["hnl_daughter"], lab["w_muon"]
-    elif SAMPLES[sample].kind == "generic":    # generated samples: no HNL / W categories (truth in their sidecars)
+    elif info.kind == "generic":    # generated samples: no HNL / W categories (truth in their sidecars)
         is_hnl = is_w = np.zeros(len(P), dtype=bool)
     else:
         is_hnl, is_w = L.hnl_daughter_rule_first_pair(P), L.w_muon_rule(P)

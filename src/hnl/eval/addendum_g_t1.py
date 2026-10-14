@@ -151,7 +151,12 @@ def envelope_excess(ev: dict) -> tuple[float, int, int]:
 
 def scan_event(args):
     key, i = args
-    ev = npz.load_event(key, i, check=True)
+    return scan_loaded(npz.load_event(key, i, check=True), i)
+
+
+def scan_loaded(ev: dict, i: int):
+    """Event checks and per-particle table values of one loaded event (also used for the tar-sharded extension,
+    hnl.eval.addendum_g_t1_x1)."""
     st, _ = event_checks(ev)
     mx, nbad, nunseen = envelope_excess(ev)
     fmt_ok = all(bool(st[k]) for k in FORMAT_TRUE) and all(int(st[k]) == 0 for k in FORMAT_ZERO)
@@ -220,27 +225,10 @@ def vertex_tags(t: pd.DataFrame, m_s: float | None) -> pd.DataFrame:
     return out
 
 
-def cmd_scan(a) -> None:
-    s = _sample(a.sample)
-    os.makedirs(OUT_DATA, exist_ok=True)
-    os.makedirs(OUT_REPO, exist_ok=True)
-    # checksums of every file of the sample and its sidecars
-    files = sorted(glob.glob(os.path.join(s.root, s.dirname, "*")) +
-                   glob.glob(os.path.join(s.root, s.dirname + "_truth", "*")), key=_natural)
-    with cf.ProcessPoolExecutor(a.workers) as ex:
-        sums = list(ex.map(sha256_file, files, chunksize=64))
-    with open(os.path.join(OUT_REPO, f"{s.dirname}.sha256"), "w") as f:
-        for h, p in zip(sums, files):
-            f.write(f"{h}  {os.path.relpath(p, s.root)}\n")
-    print(f"[t1] {a.sample}: {len(files)} files checksummed", flush=True)
-    # event checks and per-particle table values
-    with cf.ProcessPoolExecutor(a.workers) as ex:
-        res = list(ex.map(scan_event, [(a.sample, i) for i in range(s.n_events)], chunksize=20))
-    ev = pd.DataFrame([r[0] for r in res])
-    parts = pd.concat([r[1] for r in res], ignore_index=True)
-    print(f"[t1] {a.sample}: {len(ev)} events, {int(ev.dropped.sum())} dropped, {len(parts)} particles with hits",
-          flush=True)
-    # initial state from the truth sidecar
+def truth_table(s: npz.Sample, parts: pd.DataFrame, generic: bool, m_s: float | None) -> tuple[pd.DataFrame, dict]:
+    """The per-particle truth table of a sample (one row per particle with hits) from the scanned table values and
+    the sample's truth sidecars (<root>/<dirname>_truth/truth_*.npz, and gun_truth_*.npz for a generic component),
+    with the checks of the sidecars; populations as in the module docstring."""
     tr = load_sidecar(s, "truth")
     side = pd.DataFrame({"event": tr["p_event"].astype(np.int32), "particle_id": tr["p_particle_id"].astype(np.int64),
                          "p_pdg": tr["p_particle_type"], "p_q": tr["p_q"],
@@ -256,7 +244,7 @@ def cmd_scan(a) -> None:
     t["r_prod"] = np.hypot(t.p_vx, t.p_vy)
     t["d0"] = d0_exact(t.p_vx.to_numpy(), t.p_vy.to_numpy(), t.p_px.to_numpy(), t.p_py.to_numpy(), t.q.to_numpy())
     t["is_target"] = (t.pt > 1.0) & (np.abs(t.eta) < 4.0) & (t.n_hits >= 5)
-    if a.sample in COMPONENT:
+    if generic:
         g = load_sidecar(s, "gun_truth")
         gun = pd.DataFrame({"event": g["event"].astype(np.int32), "particle_id": g["particle_id"].astype(np.int64),
                             "llp": g["llp"], "n_prongs": g["n_prongs"], "llp_mass": g["llp_mass"],
@@ -288,7 +276,7 @@ def cmd_scan(a) -> None:
         t["prompt"] = t.is_target & ~t.gun & (t.d0 < 1.0)
     else:
         t["mass"] = np.abs(npz_mass(t.pdg.to_numpy()))
-        tags = vertex_tags(t, HSS_MASS[a.sample])
+        tags = vertex_tags(t, m_s)
         t = t.drop(columns=["mass"]).merge(tags, on=["event", "particle_id"], how="left", validate="one_to_one")
         t["v0_daughter"] = t.v0_daughter.fillna(False).astype(bool)
         t["s_ee_daughter"] = t.s_ee_daughter.fillna(False).astype(bool)
@@ -300,6 +288,30 @@ def cmd_scan(a) -> None:
     chk.update({"particles_with_hits": len(t), "without_initial_state": int((~t.has_initial).sum()),
                 "sidecar_pdg_mismatch": int((t.p_pdg.notna() & (t.p_pdg != t.pdg)).sum())})
     t = t.drop(columns=["p_pdg", "p_q"])
+    return t, chk
+
+
+def cmd_scan(a) -> None:
+    s = _sample(a.sample)
+    os.makedirs(OUT_DATA, exist_ok=True)
+    os.makedirs(OUT_REPO, exist_ok=True)
+    # checksums of every file of the sample and its sidecars
+    files = sorted(glob.glob(os.path.join(s.root, s.dirname, "*")) +
+                   glob.glob(os.path.join(s.root, s.dirname + "_truth", "*")), key=_natural)
+    with cf.ProcessPoolExecutor(a.workers) as ex:
+        sums = list(ex.map(sha256_file, files, chunksize=64))
+    with open(os.path.join(OUT_REPO, f"{s.dirname}.sha256"), "w") as f:
+        for h, p in zip(sums, files):
+            f.write(f"{h}  {os.path.relpath(p, s.root)}\n")
+    print(f"[t1] {a.sample}: {len(files)} files checksummed", flush=True)
+    # event checks and per-particle table values
+    with cf.ProcessPoolExecutor(a.workers) as ex:
+        res = list(ex.map(scan_event, [(a.sample, i) for i in range(s.n_events)], chunksize=20))
+    ev = pd.DataFrame([r[0] for r in res])
+    parts = pd.concat([r[1] for r in res], ignore_index=True)
+    print(f"[t1] {a.sample}: {len(ev)} events, {int(ev.dropped.sum())} dropped, {len(parts)} particles with hits",
+          flush=True)
+    t, chk = truth_table(s, parts, a.sample in COMPONENT, HSS_MASS.get(a.sample))
     tpath = os.path.join(OUT_DATA, f"truth_{a.sample}.parquet")
     epath = os.path.join(OUT_DATA, f"events_{a.sample}.parquet")
     t.to_parquet(tpath, index=False)

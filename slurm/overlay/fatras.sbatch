@@ -4,7 +4,10 @@
 # Settings of section 4.2: the TrackML-like RZ field map, pMin 0.1 GeV (D6), bremsstrahlung off (D7), multiple
 # scattering and ionisation on, hits on sensitive surfaces only.
 #   sbatch --export=ALL,IN=DIR,OUT=DIR,NEV=N,SEED=S[,BUILD=/work/.../build-v15-zmirror][,MAP=file] fatras.sbatch
-# BUILD defaults to the unpatched build-v15 (correct everywhere except the -z strip endcaps, plan section 3).
+# BUILD defaults to the z-mirror build that passed G0 (docs/pileup_overlay_hp_g0.md); the unpatched build-v15 differs
+# from TrackML in the -z strip endcaps (plan section 3). The Fatras output is kept in OUT/fatras.log: v15 only logs the
+# particles it fails to simulate, and hnl.overlay.writer reads them from there (production chain:
+# slurm/overlay/overlay_set.sbatch).
 #SBATCH -J ov_fatras
 #SBATCH -p submit-gpu-express
 #SBATCH --exclude=submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
@@ -14,7 +17,7 @@
 #SBATCH -o /work/submit/jinboz1/hnl/pileup_design/hp_overlay/logs/%x_%j.out
 set -euo pipefail
 A=/work/submit/jinboz1/hnl/acts
-BUILD=${BUILD:-$A/build-v15}
+BUILD=${BUILD:-$A/build-v15-zmirror}
 MAP=${MAP:-/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt}
 PMIN=${PMIN:-0.1}
 IMG=/cvmfs/unpacked.cern.ch/registry.hub.docker.com/atlas/centos7-atlasos:latest-gcc8
@@ -29,7 +32,8 @@ apptainer exec --cleanenv -B /cvmfs -B /work $IMG bash -c "
   $BUILD/bin/ActsExampleFatrasGeneric -n $NEV -j ${SLURM_CPUS_PER_TASK:-8} --rnd-seed $SEED \
     --input-dir $IN --output-dir $OUT --output-csv \
     --bf-map-file $MAP --bf-map-type rz \
-    --fatras-pmin-gev $PMIN --fatras-em-radiation 0 --fatras-hits sensitive"
+    --fatras-pmin-gev $PMIN --fatras-em-radiation 0 --fatras-hits sensitive" 2>&1 | tee "$OUT/fatras.log"
+echo "particle failures logged: $(grep -c 'failed to simulate' "$OUT/fatras.log" || true)"
 echo "fatras done in $(( $(date +%s) - t0 )) s"
 case "$BUILD" in *zmirror*) touch "$OUT/PATCHED" ;; esac
 printf '{"build": "%s", "map": "%s", "map_sha256": "%s", "pmin_gev": %s, "rnd_seed": %s, "events": %s, "radiation": 0, "hits": "sensitive", "slurm_job": "%s", "host": "%s", "seconds": %s}\n' \
