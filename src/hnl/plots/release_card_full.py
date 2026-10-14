@@ -175,6 +175,7 @@ GEOM = dict(dpi=100, margin=0.5, lw=4.25, cw=2.16, top_gap=3.0, gh=0.55, hh=1.62
             rtitle=15.5, rsub=11.5, rsub_lh=0.21, val=18.5, val_dy=0.14, text=15.0, second=11.0, second_dy=-0.25,
             btitle=17.0, bsub=12.5, bsub_lh=0.25, notes=11.5, notes_head=12.5, notes_lh=0.235, notes_gap=0.5, notes_cols=3)
 BAND_FILL = "#ECEAE2"
+BOLD_FIRST_HEADER = True                                  # the first column's name in bold (Canto-L on this card)
 CANTO_FILL = "#F6E7DF"
 
 
@@ -870,7 +871,7 @@ def render(items: list, nts: list, out: str, hdr: dict) -> list[str]:
         y = top - 0.3
         for line in names:
             ax.text(xt, y, line, ha="left", va="center", fontsize=st["name"], color=INK,
-                    weight="bold" if i == 0 else "normal")
+                    weight="bold" if i == 0 and BOLD_FIRST_HEADER else "normal")
             y -= st["name_lh"]
         y -= 0.03
         n = hdr["n_seeds"].get(key)
