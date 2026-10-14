@@ -1,6 +1,7 @@
 """One "model release" card with every result of the study, in the look of hnl.plots.release_card (colours, bold row
-title over a muted subtitle; the first place of each row bold, lightly filled and framed in orange). Seventeen columns: Canto-L/H/B, Canto-L trained on HNL and on ttbar+HNL (one seed each), acorn with its
-val-best builder (three training samples), acorn + CC at the preregistered cut (two), DeZoort IN / IN-L, Wang et al.'s
+title over a muted subtitle; the first place of each row bold, lightly filled and framed in orange). Seventeen columns: Canto-L trained on ttbar, on HNL and on ttbar+HNL (one seed each for the last two),
+Canto-H/B, acorn with its val-best builder (the same three training samples), acorn + CC at the preregistered cut
+(ttbar, HNL), DeZoort IN / IN-L, Wang et al.'s
 published values (external sample only) and the published TrackML references of the throughput phase. Six bands,
 each a full-width row:
 HNL validation, HNL one-time test, Wang et al.'s external sample, the second population, the TrackML throughput-phase
@@ -68,16 +69,16 @@ SUBTITLE = ("Displaced-track reconstruction in HNL events (ACTS generic detector
 # (key, header ("\n": explicit line break), header note lines ({n}: seeds and {wp}: the builder setting, both read
 # from the result files), group)
 COLUMNS = [
-    ("CL", "Canto-L", ("{n} · ttbar", "learned merging"), 0),
-    ("CH", "Canto-H", ("{n} · ttbar", "walkthrough + merging"), 0),
-    ("CB", "Canto-B", ("{n} · ttbar", "learned merging"), 0),
+    ("CL", "Canto-L (ttbar)", ("{n} · ttbar", "learned merging", "TrackML rows: retrained"), 0),
     ("CLH", "Canto-L (HNL)", ("{n} · HNL", "test post-freeze", "learned merging {wp}"), 0),
     ("CLTH", "Canto-L\n(ttbar+HNL)", ("{n} · ttbar+HNL", "test post-freeze", "learned merging {wp}"), 0),
+    ("CH", "Canto-H", ("{n} · ttbar", "walkthrough + merging"), 0),
+    ("CB", "Canto-B", ("{n} · ttbar", "learned merging"), 0),
+    ("A", "acorn (ttbar)", ("{n} · ttbar", "learned merging"), 1),
     ("AH", "acorn (HNL)", ("{n} · HNL", "learned merging"), 1),
     ("ATH", "acorn (ttbar+HNL)", ("{n} · ttbar+HNL", "learned merging"), 1),
-    ("A", "acorn", ("{n} · ttbar", "learned merging"), 1),
+    ("Acc", "acorn (ttbar)\n+ CC", ("{n} · ttbar", "prereg. cut = best cut"), 2),
     ("AHcc", "acorn (HNL)\n+ CC", ("{n} · HNL", "prereg. cut"), 2),
-    ("Acc", "acorn + CC", ("{n} · ttbar", "prereg. cut = best cut"), 2),
     ("DZ", "DeZoort IN", ("{n} · ttbar", "lowest fake rate"), 3),
     ("DZL", "DeZoort IN-L", ("{n} · ttbar", "lowest fake rate"), 3),
     ("WG", "Wang et al.", ("ACAT 2021 · HNL-trained", "attention GNN + DBSCAN"), 4),
@@ -175,7 +176,6 @@ GEOM = dict(dpi=100, margin=0.5, lw=4.25, cw=2.16, top_gap=3.0, gh=0.55, hh=1.62
             rtitle=15.5, rsub=11.5, rsub_lh=0.21, val=18.5, val_dy=0.14, text=15.0, second=11.0, second_dy=-0.25,
             btitle=17.0, bsub=12.5, bsub_lh=0.25, notes=11.5, notes_head=12.5, notes_lh=0.235, notes_gap=0.5, notes_cols=3)
 BAND_FILL = "#ECEAE2"
-BOLD_FIRST_HEADER = True                                  # the first column's name in bold (Canto-L on this card)
 CANTO_FILL = "#F6E7DF"
 
 
@@ -654,11 +654,12 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
          f"HNL samples: every model at a track fake rate ≤ FR* = {fr} on pooled HNL val (preregistered); a model or "
          "seed that cannot reach FR* is at its lowest fake rate. Canto: the builder of each branch chosen on val by "
          "rule R6 with the one-standard-error rule (within one binomial standard error of the best efficiency, the "
-         "lowest fake rate); Canto-L selected by rule R8 and frozen before the test (results/final_selection_v1.json). "
-         "acorn (HNL), acorn (ttbar+HNL) and acorn: acorn's interaction network with the val-best builder of the full "
-         "menu, chosen per seed (MWS-layer + learned merging for every seed). acorn (HNL) + CC and acorn + CC: "
-         "connected components at the preregistered cut rule, the reference of the preregistered claims; for acorn it "
-         "equals the best cut ≤ FR*. DeZoort IN and IN-L: one seed at the screening budget; they cannot reach FR*. "
+         "lowest fake rate); Canto-L (ttbar) selected by rule R8 and frozen before the test "
+         "(results/final_selection_v1.json). "
+         "acorn (ttbar), acorn (HNL) and acorn (ttbar+HNL): acorn's interaction network with the val-best builder of "
+         "the full menu, chosen per seed (MWS-layer + learned merging for every seed). acorn (ttbar) + CC and "
+         "acorn (HNL) + CC: connected components at the preregistered cut rule, the reference of the preregistered "
+         "claims; for acorn (ttbar) it equals the best cut ≤ FR*. DeZoort IN and IN-L: one seed at the screening budget; they cannot reach FR*. "
          "Canto-L (HNL) and Canto-L (ttbar+HNL): the Canto-L pipeline trained on HNL signal events or on ttbar + HNL, "
          "one seed each, with learned merging at the setting chosen on val by the builder rule at FR* (header); "
          "trained after the freeze, evaluated once on test at settings committed before their test jobs "
@@ -671,7 +672,7 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
          f"score rows), with σ_boot from an event bootstrap (B = {_n(ctx['B_val'])} on val, {ctx['B_test']} on test) and "
          "s the standard deviation over the n seeds. The |d0| ≥ 300 mm rows show k/n instead (statistics limited). "
          "Canto-L (HNL) and Canto-L (ttbar+HNL): one seed; their σ takes the seed standard deviation of Canto-L "
-         "(trained on ttbar) in the same row as its seed term (results/training_sample_bins_v1.md, "
+         "(ttbar) in the same row as its seed term (results/training_sample_bins_v1.md, "
          "results/training_sample_paired_test_v1.csv); on val only the displaced-track row has a σ in the source, the "
          "other val rows show k/n, or '1 seed, no σ' for the fake rate. TrackML: "
          "Canto-L has one training seed, σ is its event-bootstrap error (B = 500). Published values carry "
@@ -698,7 +699,7 @@ def notes(ctx: dict) -> list[tuple[str, str]]:
         ("Second population.",
          "V0 daughters (charged daughters of K0S and Λ decays) exist only in the HNL samples; the external sample "
          "carries no parent labels and is not used for them. acorn (HNL) and acorn (ttbar+HNL) saw V0 daughters in "
-         "training, as did Canto-L (HNL) and Canto-L (ttbar+HNL); Canto and acorn, trained on ttbar, did not. "
+         "training, as did Canto-L (HNL) and Canto-L (ttbar+HNL); the models trained on ttbar only did not. "
          "Conversion e±: targets from photon conversions in "
          "ttbar. No row of this band entered any selection."),
         ("TrackML throughput phase.",
@@ -871,7 +872,7 @@ def render(items: list, nts: list, out: str, hdr: dict) -> list[str]:
         y = top - 0.3
         for line in names:
             ax.text(xt, y, line, ha="left", va="center", fontsize=st["name"], color=INK,
-                    weight="bold" if i == 0 and BOLD_FIRST_HEADER else "normal")
+                    weight="bold" if i == 0 else "normal")
             y -= st["name_lh"]
         y -= 0.03
         n = hdr["n_seeds"].get(key)

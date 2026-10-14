@@ -186,14 +186,6 @@ that reference's fake rate.
   not claimed.
 
 <details>
-<summary><b>The training-sample card</b>: Canto-L and acorn, each trained on the HNL signal, on ttbar + HNL and on ttbar,
-with the same track builder (validation and test)</summary>
-<br>
-<p align="center"><img src="figures/release/canto_card_training_sample.png" width="100%" alt="Release card of the training-sample study"></p>
-<p align="center"><a href="figures/release/canto_card_training_sample.pdf">PDF</a> · <a href="figures/release/canto_card_training_sample.png">full-size PNG</a></p>
-</details>
-
-<details>
 <summary><b>Every dataset and every model in one card</b> (validation, test, external sample, second displaced
 population, TrackML, training)</summary>
 <br>
@@ -248,7 +240,7 @@ the site's paths and partition names.
 | Canto variants (graphs, edge classifier, builders) | `slurm/stage1/orchestrate_s1.sh slurm/stage1/plan_final_{base,union,learned}.txt` |
 | selection on validation, then the one-time test | `python -m hnl.eval.final_select`, `slurm/stage1/final_test_chain.sh` |
 | TrackML pipeline and test | `slurm/trackml/` (`_common.sh` documents the run layout) |
-| release cards (read the stored evaluation outputs, which are not in the repository) | `python -m hnl.plots.release_card_full --out figures/release/canto_card_full`, `python -m hnl.plots.release_card_training_sample --out figures/release/canto_card_training_sample` |
+| release card (reads the stored evaluation outputs, which are not in the repository) | `python -m hnl.plots.release_card_full --out figures/release/canto_card_full` |
 | tests | `pytest` (tests marked `data` or `gpu` need the samples or a CUDA device) |
 
 ## Repository layout
