@@ -1,0 +1,37 @@
+{
+ "version": "overlay_sim_v1",
+ "plan": "docs/pileup_overlay_plan.md (design v2, bd7e357): sections 2.1 step 2, 4.1 (field), 4.2 (Fatras settings), 10 (F1, containment)",
+ "executable": "ActsExampleFatrasGeneric",
+ "container": "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/atlas/centos7-atlasos:latest-gcc8",
+ "lcg_view": "/cvmfs/sft.cern.ch/lcg/views/LCG_97apython3/x86_64-centos7-gcc9-opt/setup.sh",
+ "shim": "/work/submit/jinboz1/hnl/acts/shim",
+ "binds": ["/cvmfs", "/work"],
+ "default_build": "/work/submit/jinboz1/hnl/acts/build-v15",
+ "default_acts_detectors": "/work/submit/jinboz1/hnl/acts/geometry/detectors.csv",
+ "trackml_detectors": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/detectors.csv",
+ "trackml_detectors_md5": "440dbb939f62cc94de563de8cdae47d1",
+ "field_map": {
+  "path": "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+  "md5": "b5ad1cc518df604a7765706c0fef1d28",
+  "type": "rz",
+  "provenance": "Maxwell loop-model fit to TrackML truth of the calib training events (field_material/fit_loops.py, job 6812150), written by field_material/make_map.py (job 6812219): r 0-3000 mm, z -6000-6000 mm, 20 mm steps, r fastest; loop model clamped beyond r = 1150 mm and |z| = 3100 mm",
+  "loop_fit": "/work/submit/jinboz1/hnl/pileup_design/field_material/loops_fit.npz",
+  "loop_fit_md5": "1248f23331030f2eedf92c8ef46e9ec9"
+ },
+ "fatras": {
+  "pmin_gev": 0.1,
+  "em_scattering": true,
+  "em_ionisation": true,
+  "em_radiation": false,
+  "em_photonconversion": true,
+  "hits": "sensitive"
+ },
+ "notes": {
+  "pmin_gev": "decision D6: TrackML particles with hits start at pT = 0.100 GeV; Fatras cuts on p",
+  "em_radiation": "decision D7: bremsstrahlung off, as TrackML truth shows no brem loss",
+  "em_photonconversion": "left at the v15 default; the gun writes no photons and with bremsstrahlung off Fatras makes none, so it has no effect",
+  "decays": "nothing to set: v15 Fatras simulates charged particles with ActsFatras::NoDecay (FatrasSimulation.cpp L84), and TrackML truth has no decay products (plan section 4.2)",
+  "seed": "Fatras seed = set base seed + 13 (plan section 7, spec v1 section 4); per-event streams = seed + Cantor(algorithm, event number)"
+ },
+ "seed_offset": 13
+}

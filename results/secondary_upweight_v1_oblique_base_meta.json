@@ -1,0 +1,14 @@
+{
+ "started_utc": "2026-10-14T14:19:03.309784+00:00",
+ "slurm_job": "6811085",
+ "host": "submit37.mit.edu",
+ "s0": 0.2,
+ "population": 1331,
+ "events": 855,
+ "runs": [
+  "ref=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/ref/armi_s0:i",
+  "secwctrl=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/secwctrl/armi_s0:i",
+  "secw18=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/secw18/armi_s0:i"
+ ],
+ "elapsed_s": 36.8
+}

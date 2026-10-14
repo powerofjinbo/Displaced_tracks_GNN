@@ -4,6 +4,10 @@ ACTS Python bindings (slurm/acts/produce.sbatch sets up the environment):
     geometry  DIR                                   detectors.csv of the GenericDetector
     pythia    DIR --process ttbar|hss15|hss40 --first N --events N --seed S
               Pythia8 events at 14 TeV with the beam spot below, written as event<N>-particles_gen.csv
+    pythia    DIR --process hnl --mass M --ctau C [--decay majorana_va] [--ecm GEV] ...
+              W -> mu N, N -> mu mu nu with the card of hnl_card.py (docs/hnl_points_spec.md); the production of
+              the HNL points uses hnl_pythia.cc, which writes the same particles plus the generator's parent codes,
+              and this ACTS-generator form serves as its cross-check
     sim       DIR --stem STEM --first N --events N --seed S
               reads event<N>-<STEM>.csv, runs Fatras (EM processes on, hits on sensitive surfaces, pMin 0.5 GeV) and
               the smearing digitisation of the GenericDetector, writes particles_initial / particles_final / hits /
@@ -57,14 +61,15 @@ def run_geometry(out: str):
     del det
 
 
-def run_pythia(out: str, process: str, first: int, events: int, seed: int, threads: int):
+def run_pythia(out: str, process: str, first: int, events: int, seed: int, threads: int,
+               settings: list[str] | None = None, ecm_gev: float = 14000.0):
     rnd = acts.examples.RandomNumbers(seed=seed)
     gen = acts.examples.EventGenerator.Generator(
         multiplicity=acts.examples.FixedMultiplicityGenerator(n=1),
         vertex=acts.examples.GaussianVertexGenerator(stddev=BEAMSPOT, mean=acts.Vector4(0, 0, 0, 0)),
         particles=acts.examples.pythia8.Pythia8Generator(
             level=acts.logging.WARNING, pdgBeam0=acts.PdgParticle.eProton, pdgBeam1=acts.PdgParticle.eProton,
-            cmsEnergy=14 * u.TeV, settings=PROCESSES[process]))
+            cmsEnergy=ecm_gev * u.GeV, settings=settings if settings is not None else PROCESSES[process]))
     evgen = acts.examples.EventGenerator(level=acts.logging.WARNING, generators=[gen],
                                          outputParticles="particles_gen", randomNumbers=rnd)
     s = acts.examples.Sequencer(events=events, skip=first, numThreads=threads, logLevel=acts.logging.WARNING)
@@ -110,7 +115,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("mode", choices=["geometry", "pythia", "sim"])
     ap.add_argument("dir")
-    ap.add_argument("--process", choices=sorted(PROCESSES))
+    ap.add_argument("--process", choices=sorted(PROCESSES) + ["hnl"])
+    # HNL points (hnl_card.py); the other processes keep 14 TeV
+    ap.add_argument("--mass", type=float)
+    ap.add_argument("--ctau", type=float)
+    ap.add_argument("--ecm", type=float, default=None)
+    ap.add_argument("--decay", default=None, help="N decay form of hnl_card.DECAYS")
     ap.add_argument("--stem", default="particles_input")
     ap.add_argument("--first", type=int, default=0)
     ap.add_argument("--events", type=int, default=1)
@@ -120,8 +130,14 @@ def main():
     os.makedirs(a.dir, exist_ok=True)
     if a.mode == "geometry":
         run_geometry(a.dir)
+    elif a.mode == "pythia" and a.process == "hnl":
+        import hnl_card
+        st = hnl_card.settings(a.mass, a.ctau, a.decay or hnl_card.DEFAULT_DECAY)
+        run_pythia(a.dir, a.process, a.first, a.events, a.seed, a.threads, settings=st,
+                   ecm_gev=a.ecm if a.ecm is not None else hnl_card.ECM_GEV)
     elif a.mode == "pythia":
-        run_pythia(a.dir, a.process, a.first, a.events, a.seed, a.threads)
+        run_pythia(a.dir, a.process, a.first, a.events, a.seed, a.threads,
+                   ecm_gev=a.ecm if a.ecm is not None else 14000.0)
     else:
         run_sim(a.dir, a.stem, a.first, a.events, a.seed, a.threads)
 

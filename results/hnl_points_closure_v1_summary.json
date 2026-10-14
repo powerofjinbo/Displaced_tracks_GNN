@@ -1,0 +1,158 @@
+{
+ "hnl10_100": {
+  "tests": 58,
+  "p_below_0.01": 1,
+  "p_below_0.001": 0,
+  "expected_below_0.01": 0.58,
+  "known_difference_tests": 2,
+  "pilot_events": 4000,
+  "zenodo_events": 8999,
+  "w_t0_sigma_ns_zenodo": 4.900962536965204,
+  "w_t0_sigma_ns_pilot": 4.9909399990523236,
+  "rv_fit_minus_true_median_mm": -0.0015777950978019817,
+  "rv_fit_minus_true_mad_mm": 0.19119258907379333,
+  "d0_fit_minus_true_median_mm": -0.00041528358509779206,
+  "d0_fit_minus_true_mad_mm": 0.05295613916447117,
+  "proper_decay_length_mean_mm": 101.8643728108339,
+  "proper_decay_length_err_mm": 1.6226498898333916,
+  "n_tries_gt1": 0,
+  "zenodo_truth": {
+   "events": 8999,
+   "events_with_one_w_muon": 8999,
+   "w_muon_at_vertex_1_alone": 8999,
+   "w_plus_events": 5217,
+   "events_by_number_of_n_daughters": {
+    "2": 8912,
+    "1": 87
+   },
+   "n_daughters_muons": 17911,
+   "n_daughters_total": 17911,
+   "two_daughter_events_opposite_charge": 8912,
+   "two_daughter_events_same_vertex": 8912,
+   "events_with_other_particle_at_n_vertex": 0,
+   "n_sign_equals_w_sign": 8999,
+   "events_with_n_daughters": 8999,
+   "rows_k0s_per_event": 0.0,
+   "rows_lambda_per_event": 0.0,
+   "rows_k0l_per_event": 8.183798199799977,
+   "parent_k0s_per_event": 9.942771419046561,
+   "parent_lambda_per_event": 5.35515057228581,
+   "secondaries_with_nonzero_parent": 0,
+   "events_with_gen0_particle_besides_w_muon_at_vertex_1": 1129,
+   "photons_with_parent_24": 0,
+   "photon_parent_codes_top": {
+    "111": 1074550,
+    "221": 62011,
+    "223": 8165,
+    "331": 2866,
+    "3212": 2726,
+    "-3212": 2538,
+    "-13": 663,
+    "13": 498
+   },
+   "w_muon_t0_sigma_ns": 4.901540582911304,
+   "w_muon_t0_n": 4240,
+   "hits_per_event": 1361.7787531947995,
+   "rows_per_event": 364.04722746971885,
+   "particles_with_hits_per_event": 138.06322924769418,
+   "m_mumu_over_mN_mean_end_state": 0.5391795546018032,
+   "pairs_m_mumu_above_mN": 218,
+   "pairs_m_above_mN_share_if_a_daughter_ends_beyond_1100mm": 0.07125307125307126,
+   "pairs_m_above_mN_share_otherwise": 0.002474022761009401,
+   "daughter_p_ratio_opposite_over_same_charge_to_w": [
+    0.9803316239472736,
+    0.027575479850891923
+   ],
+   "w_muon_eta_abs_gt_4": 0.07600844538282031,
+   "w_muon_pt_quantiles_50_90_95_99": [
+    30.0,
+    42.4,
+    47.19,
+    60.75
+   ]
+  }
+ },
+ "driver_vs_acts": {
+  "hnl10_100": {
+   "tests": 17,
+   "p_below_0.01": 0
+  },
+  "hnl15_200": {
+   "tests": 17,
+   "p_below_0.01": 0
+  }
+ },
+ "hnl15_200": {
+  "tests": 58,
+  "p_below_0.01": 1,
+  "p_below_0.001": 1,
+  "expected_below_0.01": 0.58,
+  "known_difference_tests": 2,
+  "pilot_events": 4000,
+  "zenodo_events": 8999,
+  "w_t0_sigma_ns_zenodo": 4.913056505286359,
+  "w_t0_sigma_ns_pilot": 5.054584460005749,
+  "rv_fit_minus_true_median_mm": 0.006439539741137423,
+  "rv_fit_minus_true_mad_mm": 0.1528532977464785,
+  "d0_fit_minus_true_median_mm": 0.0009644502050432102,
+  "d0_fit_minus_true_mad_mm": 0.055767587720403355,
+  "proper_decay_length_mean_mm": 197.5451124905284,
+  "proper_decay_length_err_mm": 3.121510372614871,
+  "n_tries_gt1": 0,
+  "zenodo_truth": {
+   "events": 8999,
+   "events_with_one_w_muon": 8999,
+   "w_muon_at_vertex_1_alone": 8999,
+   "w_plus_events": 5218,
+   "events_by_number_of_n_daughters": {
+    "2": 8949,
+    "1": 50
+   },
+   "n_daughters_muons": 17948,
+   "n_daughters_total": 17948,
+   "two_daughter_events_opposite_charge": 8949,
+   "two_daughter_events_same_vertex": 8949,
+   "events_with_other_particle_at_n_vertex": 0,
+   "n_sign_equals_w_sign": 8999,
+   "events_with_n_daughters": 8999,
+   "rows_k0s_per_event": 0.0,
+   "rows_lambda_per_event": 0.0,
+   "rows_k0l_per_event": 8.175908434270475,
+   "parent_k0s_per_event": 9.937993110345595,
+   "parent_lambda_per_event": 5.371041226802978,
+   "secondaries_with_nonzero_parent": 0,
+   "events_with_gen0_particle_besides_w_muon_at_vertex_1": 1112,
+   "photons_with_parent_24": 0,
+   "photon_parent_codes_top": {
+    "111": 1073581,
+    "221": 62003,
+    "223": 8093,
+    "331": 2901,
+    "3212": 2734,
+    "-3212": 2563,
+    "-13": 659,
+    "13": 481
+   },
+   "w_muon_t0_sigma_ns": 4.913635431406943,
+   "w_muon_t0_n": 4244,
+   "hits_per_event": 1360.6881875763975,
+   "rows_per_event": 363.94443827091897,
+   "particles_with_hits_per_event": 137.97010778975442,
+   "m_mumu_over_mN_mean_end_state": 0.527601589554878,
+   "pairs_m_mumu_above_mN": 180,
+   "pairs_m_above_mN_share_if_a_daughter_ends_beyond_1100mm": 0.049570756023262254,
+   "pairs_m_above_mN_share_otherwise": 0.00018733608092918696,
+   "daughter_p_ratio_opposite_over_same_charge_to_w": [
+    0.9656347428769222,
+    0.02688306856519305
+   ],
+   "w_muon_eta_abs_gt_4": 0.07434159351039005,
+   "w_muon_pt_quantiles_50_90_95_99": [
+    29.57,
+    41.69,
+    46.43,
+    59.57
+   ]
+  }
+ }
+}

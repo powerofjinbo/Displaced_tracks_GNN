@@ -1,0 +1,33 @@
+{
+ "file": "module_map_acts_zmirror_v1.csv",
+ "sha256": "88178fd6590e1077814489047ab3cb8d91723df9be20fa9cd05a460b151af9de",
+ "rows": 18728,
+ "columns": [
+  "volume_id",
+  "layer_id",
+  "acts_module_id",
+  "trackml_module_id"
+ ],
+ "meaning": "ACTS v15 GenericDetector with the z-mirror patch (sensitive id = acts_module_id) -> TrackML detectors.csv module id, within the same (volume, layer); nearest module centre",
+ "patch": "/work/submit/jinboz1/hnl/hnl-displaced/patches/acts_v15/0001-GenericDetector-z-mirror-negative-endcaps.patch",
+ "patch_sha256": "c7b22d68f2bc564d90f8c0c90113828b32eeaadc59614a6874868d66ba9fa1b5",
+ "build": "/work/submit/jinboz1/hnl/acts/build-v15-zmirror",
+ "acts_dump": "/work/submit/jinboz1/hnl/pileup_design/hp_geometry/dump_zmirror/modules.csv",
+ "acts_dump_sha256": "2460d67998bef4baf026acac99feeefc08126708a45612ce91fe05b1ca48abbf",
+ "trackml_detectors": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/detectors.csv",
+ "trackml_detectors_sha256": "e01684d65c088794618b916655f989dae6f099de4ecc7a462987e97b4037639a",
+ "g0_pass": true,
+ "g0_tolerance_mm": 0.004,
+ "g0_max_um": {
+  "d_centre": 3.7442429185560226,
+  "d_plane": 3.734995943175168,
+  "d_corner": 3.7544602336097785,
+  "d_corner_set": 3.7544602336097785
+ },
+ "bijective": true,
+ "barrel_identity": true,
+ "endcap_same_id_frac": 0.021573604060913704,
+ "slurm_job": "6819551",
+ "created": "2026-10-14",
+ "producer": "python -m hnl.overlay.modules g0 (src/hnl/overlay/modules.py)"
+}

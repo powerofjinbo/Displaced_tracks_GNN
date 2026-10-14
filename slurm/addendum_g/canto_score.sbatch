@@ -4,6 +4,7 @@
 # DATA/runs/addendum_g_v1/<model>_s<seed>/<set>/scored/testset.tar. Usage: sbatch slurm/addendum_g/canto_score.sbatch MODEL SEED SET
 #SBATCH -J g_score
 #SBATCH -p submit-gpu-express
+#SBATCH --constraint=nvidia_a30|nvidia_rtx6000|Tesla_v100
 #SBATCH --gres=gpu:1
 #SBATCH -c 8
 #SBATCH --mem=32G

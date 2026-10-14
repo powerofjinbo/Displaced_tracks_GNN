@@ -399,3 +399,75 @@ def summary(set_: str) -> None:
     with open(os.path.join(res, f"{stem}.md"), "w") as f:
         f.write(md)
     print(md)
+
+
+def val_sanity() -> None:
+    """Inputs for a power estimate of claim G1 from the generic val split (requested before any test read; nothing is
+    chosen from them except the sample size): per model and seed, P_G efficiency (k / n) and track fake rate on
+    generic_iso val; the paired val differences Canto-L (ttbar) minus each baseline with their bootstrap and seed
+    terms; and, labelled as a projection, the same sigma at the test split's P_G count (bootstrap term scaled by
+    sqrt(n_val / n_test), seed term unchanged). Writes results/addendum_g_val_sanity_v1.{md,csv}."""
+    D = Data("val")
+    s = "generic_iso"
+    t = D.truth[s]
+    mask = t.in_pop.to_numpy(bool)
+    n_val = int(mask.sum())
+    t1 = pd.read_csv(os.path.join(REPO, "results", "addendum_g_t1_v1.csv")).set_index(["sample", "split"])
+    n_test = int(t1.loc[("generic_iso", "test"), "population"])
+    rows = []
+    for m in [x for x in MAIN if x in D.models()]:
+        pts, reps, n = D.eff(m, s, mask)
+        fp, fr = D.fake(m, s)
+        sm, fm = seed_mean(pts, reps), seed_mean(fp, fr)
+        for i, seed in enumerate(model_seeds(m)):
+            rows.append({"kind": "model", "model": LABELS[m], "seed": seed, "n": n, "k": int(round(pts[i] * n)),
+                         "eff": pts[i], "fake_rate": fp[i]})
+        rows.append({"kind": "model mean", "model": LABELS[m], "seed": "mean", "n": n, "eff": sm["mean"],
+                     "sigma_boot": sm["sigma_boot"], "s_seeds": sm["s_seeds"], "sigma": sm["sigma"],
+                     "fake_rate": fm["mean"], "fake_rate_sigma": fm["sigma"]})
+    A = D.eff("canto_l_ttbar", s, mask)
+    fa = D.fake("canto_l_ttbar", s)
+    for m in ("acorn_hnl_lm", "acorn_ttbar_lm", "acorn_hnl_cc"):
+        Bm = D.eff(m, s, mask)
+        fb = D.fake(m, s)
+        d = linear_combination([(1.0, A[0], A[1]), (-1.0, Bm[0], Bm[1])])
+        sb_test = d["sigma_boot"] * np.sqrt(n_val / n_test)
+        sg_test = float(np.sqrt(sb_test ** 2 + d["sigma_seeds"] ** 2))
+        per_seed = [a - b for a, b in zip(A[0], Bm[0])]
+        rows.append({"kind": "difference", "model": f"Canto-L (ttbar) - {LABELS[m]}", "seed": "mean", "n": n_val,
+                     "delta_points": 100 * d["value"], "sigma_boot_points": 100 * d["sigma_boot"],
+                     "sigma_seeds_points": 100 * d["sigma_seeds"], "sigma_points": 100 * d["sigma"],
+                     "per_seed_delta_points": ";".join(f"{100 * x:.3f}" for x in per_seed),
+                     "fake_rate_diff_points": 100 * (np.mean(fa[0]) - np.mean(fb[0])),
+                     "projected_n_test": n_test, "projected_sigma_boot_points": 100 * sb_test,
+                     "projected_sigma_points": 100 * sg_test})
+    tab = pd.DataFrame(rows)
+    tab.to_csv(os.path.join(REPO, "results", "addendum_g_val_sanity_v1.csv"), index=False)
+    L = ["# Addendum G: val inputs for a power estimate of claim G1 (generic_iso val; nothing chosen)", "",
+         f"Written {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} by "
+         f"`hnl.eval.addendum_g_summary.val_sanity` (git {_git()[:7]}), from the frozen models on the generic_iso val "
+         f"split ({len(D.units[s])} events, {n_val} P_G targets). Requested before any test read, for a check of the "
+         "sample size; no model, configuration or definition is chosen from these numbers. Statistics as in the "
+         "module docstring (B = 500, val bootstrap table default_rng(12349)).", "",
+         "## Per model and seed (P_G, generic_iso val)", "", "| model | seed | k / n | efficiency [%] | track fake rate [%] |",
+         "|---|---|---|---|---|"]
+    for _, r in tab[tab.kind == "model"].iterrows():
+        L.append(f"| {r['model']} | {r['seed']} | {int(r['k'])} / {int(r['n'])} | {100 * r['eff']:.2f} | "
+                 f"{100 * r['fake_rate']:.2f} |")
+    L += ["", "| model | 3-seed mean [%] | sigma_boot | s_seeds | sigma | fake rate [%] |", "|---|---|---|---|---|---|"]
+    for _, r in tab[tab.kind == "model mean"].iterrows():
+        L.append(f"| {r['model']} | {100 * r['eff']:.2f} | {100 * r['sigma_boot']:.2f} | {100 * r['s_seeds']:.2f} | "
+                 f"{100 * r['sigma']:.2f} | {100 * r['fake_rate']:.2f} +- {100 * r['fake_rate_sigma']:.2f} |")
+    L += ["", "## Paired differences (points)", "",
+          "| difference | Delta | sigma_boot | sigma_seeds | sigma | per seed | fake-rate difference | projected sigma_boot / "
+          f"sigma at n = {n_test} |", "|---|---|---|---|---|---|---|---|"]
+    for _, r in tab[tab.kind == "difference"].iterrows():
+        L.append(f"| {r['model']} | {r['delta_points']:+.2f} | {r['sigma_boot_points']:.2f} | "
+                 f"{r['sigma_seeds_points']:.2f} | {r['sigma_points']:.2f} | {r['per_seed_delta_points']} | "
+                 f"{r['fake_rate_diff_points']:+.2f} | {r['projected_sigma_boot_points']:.2f} / "
+                 f"{r['projected_sigma_points']:.2f} |")
+    L += ["", "Projection: the bootstrap term scaled by sqrt(n_val / n_test) with n_test the P_G count of the generic_iso "
+          "test split (T1), the seed term unchanged; it assumes the test split behaves like val and is not a result.", ""]
+    with open(os.path.join(REPO, "results", "addendum_g_val_sanity_v1.md"), "w") as f:
+        f.write("\n".join(L))
+    print("\n".join(L))

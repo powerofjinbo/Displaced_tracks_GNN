@@ -1,0 +1,36 @@
+diff --git a/Core/src/Geometry/TrackingVolume.cpp b/Core/src/Geometry/TrackingVolume.cpp
+index 6403a6e..5605a4c 100644
+--- a/Core/src/Geometry/TrackingVolume.cpp
++++ b/Core/src/Geometry/TrackingVolume.cpp
+@@ -664,6 +664,31 @@ std::vector<Acts::LayerIntersection> Acts::TrackingVolume::compatibleLayers(
+               ? nullptr
+               : tLayer->nextLayer(gctx, position, options.navDir * direction);
+     }
++    // Fallback (hnl-displaced patch 0002): the walk above follows the layer
++    // binning in the sign of the direction only. A particle that starts inside
++    // the volume moving inwards on a line that misses the inner layers finds
++    // nothing, although the line meets the outer layers further on; the
++    // navigator then targets the volume boundary and can lose the particle.
++    // When the walk finds no layer, test every confined layer.
++    if (lIntersections.empty()) {
++      for (const auto& layerPtr : m_confinedLayers->arrayObjects()) {
++        const Layer* layer = layerPtr.get();
++        if (layer == nullptr || layer == options.startObject ||
++            !layer->resolve(options)) {
++          continue;
++        }
++        auto atIntersection =
++            layer->surfaceOnApproach(gctx, position, direction, options);
++        auto path = atIntersection.intersection.pathLength;
++        bool withinLimit =
++            (path * path <= options.pathLimit * options.pathLimit);
++        if (atIntersection &&
++            (atIntersection.object != options.targetSurface) && withinLimit) {
++          lIntersections.push_back(LayerIntersection(
++              atIntersection.intersection, layer, atIntersection.object));
++        }
++      }
++    }
+     // sort them accordingly to the navigation direction
+     if (options.navDir == forward) {
+       std::sort(lIntersections.begin(), lIntersections.end());

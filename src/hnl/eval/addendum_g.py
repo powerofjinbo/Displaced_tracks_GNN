@@ -453,7 +453,12 @@ def main(argv=None):
             p.add_argument("--workers", type=int, default=int(os.environ.get("SLURM_CPUS_PER_TASK", "1")))
     p = sub.add_parser("summary")
     p.add_argument("--set", required=True, choices=list(SETS))
+    sub.add_parser("val-sanity")
     a = ap.parse_args(argv)
+    if a.cmd == "val-sanity":
+        from hnl.eval import addendum_g_summary as S
+        S.val_sanity()
+        return
     if a.cmd == "summary":
         from hnl.eval import addendum_g_summary as S
         S.summary(a.set)

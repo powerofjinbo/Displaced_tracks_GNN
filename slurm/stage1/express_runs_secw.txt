@@ -1,0 +1,5 @@
+# Runs for slurm/stage1/express_driver.sh (SPEC=slurm/stage1/express_runs_secw.txt, STATE=$HNL_DATA/runs/_express_driver_secw,
+# CONSTRAINT=nvidia_a30): the secondary-particle upweighting test (docs/secondary_upweight_plan.md), screening budget
+# (LIMIT_TRAIN=4000, 15 epochs, arm i seed 0 base graphs). JOBNAME RUN_DIR EXPORTS NAME CONFIG ARM SEED EPOCHS [NEEDS]
+s1_secw18_i_s0 $HNL_DATA/runs/stage1_secw/secw18/armi_s0 S1TAG=secw,LIMIT_TRAIN=4000 secw18 configs/stage1/triplet_symregion_trunc_secw18.yaml i 0 15
+s1_secwctrl_i_s0 $HNL_DATA/runs/stage1_secw/secwctrl/armi_s0 S1TAG=secw,LIMIT_TRAIN=4000 secwctrl configs/stage1/triplet_symregion_trunc.yaml i 0 15

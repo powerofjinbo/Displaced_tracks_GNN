@@ -10,10 +10,11 @@ set -euo pipefail
 cd /work/submit/jinboz1/hnl/hnl-displaced
 SET=$1; AFTER=${2:-}
 O=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/addendum_g_v1
-case $SET in   # blocks: union per Canto run; evaluation for Canto-L (ttbar), acorn + LM, acorn + CC, Canto-L (HNL / ttbar+HNL)
-    val)  UB=1; EB_C=2; EB_A=2; EB_CC=1; EB_TS=8 ;;
-    test) UB=4; EB_C=8; EB_A=8; EB_CC=2; EB_TS=32 ;;
-    hss)  UB=3; EB_C=6; EB_A=6; EB_CC=2; EB_TS=24 ;;
+case $SET in   # blocks: union for Canto-L (ttbar) / for Canto-L (HNL, ttbar+HNL) (val: 410 events took 12 / 25-53 min);
+               # evaluation for Canto-L (ttbar), acorn + LM, acorn + CC, Canto-L (HNL / ttbar+HNL)
+    val)  UB=4; UB_TS=4; EB_C=2; EB_A=2; EB_CC=1; EB_TS=8 ;;
+    test) UB=12; UB_TS=24; EB_C=8; EB_A=8; EB_CC=2; EB_TS=16 ;;
+    hss)  UB=8; UB_TS=16; EB_C=6; EB_A=6; EB_CC=2; EB_TS=12 ;;
 esac
 dep() { [ -n "$1" ] && echo "--dependency=afterok:$1" || true; }
 declare -A AJ
@@ -30,13 +31,14 @@ ev() {   # MODEL SEED DEPJOB NBLOCKS
     EV="$EV:$j"
     echo "eval $1 s$2 ($nb blocks) -> $j"
 }
-for spec in canto_l_ttbar:0:i:$EB_C canto_l_ttbar:1:i:$EB_C canto_l_ttbar:2:i:$EB_C canto_l_hnl:0:ii:$EB_TS canto_l_tthnl:0:iii:$EB_TS; do
-    IFS=: read -r M S ARM NB <<< "$spec"
+for spec in canto_l_ttbar:0:i:$EB_C:$UB canto_l_ttbar:1:i:$EB_C:$UB canto_l_ttbar:2:i:$EB_C:$UB \
+            canto_l_hnl:0:ii:$EB_TS:$UB_TS canto_l_tthnl:0:iii:$EB_TS:$UB_TS; do
+    IFS=: read -r M S ARM NB UBM <<< "$spec"
     u=""; c=""
     if [ ! -e "$O/${M}_s${S}/$SET/scored/done" ]; then
-        u=$(sbatch --parsable --array=0-$((UB - 1)) $(dep "${AJ[$ARM$S]}") -J "g_union_${M}_s${S}_$SET" slurm/addendum_g/canto_union.sbatch "$M" "$S" "$SET" "$UB")
+        u=$(sbatch --parsable --array=0-$((UBM - 1)) $(dep "${AJ[$ARM$S]}") -J "g_union_${M}_s${S}_$SET" slurm/addendum_g/canto_union.sbatch "$M" "$S" "$SET" "$UBM")
         c=$(sbatch --parsable --dependency=afterok:$u -J "g_score_${M}_s${S}_$SET" slurm/addendum_g/canto_score.sbatch "$M" "$S" "$SET")
-        echo "$M s$S: union $u ($UB blocks), score $c"
+        echo "$M s$S: union $u ($UBM blocks), score $c"
     fi
     ev "$M" "$S" "$c" "$NB"
 done

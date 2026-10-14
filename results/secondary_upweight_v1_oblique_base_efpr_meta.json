@@ -1,0 +1,16 @@
+{
+ "slurm_job": "6811086",
+ "host": "submit37.mit.edu",
+ "cuts": {
+  "ref": 0.28,
+  "secwctrl": 0.27,
+  "secw18": 0.58
+ },
+ "population": 1331,
+ "runs": [
+  "ref=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/ref/armi_s0:i:0.28",
+  "secwctrl=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/secwctrl/armi_s0:i:0.27",
+  "secw18=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_secw/secw18/armi_s0:i:0.58"
+ ],
+ "elapsed_s": 28.9
+}

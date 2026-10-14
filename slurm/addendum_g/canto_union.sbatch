@@ -8,7 +8,7 @@
 #SBATCH -p submit-gpu-express,submit,submit-gpu
 #SBATCH --exclude=submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
 #SBATCH -c 16
-#SBATCH --mem=32G
+#SBATCH --mem=64G
 #SBATCH -t 01:00:00
 #SBATCH -o /work/submit/jinboz1/hnl/logs/%x_%A_%a.out
 set -euo pipefail

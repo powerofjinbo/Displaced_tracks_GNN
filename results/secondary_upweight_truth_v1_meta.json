@@ -1,0 +1,7 @@
+{
+ "slurm_job": "6810483",
+ "host": "submit77.mit.edu",
+ "events": 7999,
+ "graphs": 500,
+ "elapsed_s": 37.4
+}

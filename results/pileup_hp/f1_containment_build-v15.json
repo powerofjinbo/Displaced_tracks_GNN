@@ -1,0 +1,2295 @@
+{
+ "step": "H-P",
+ "plan": "docs/pileup_overlay_plan.md section 10 (F1, containment)",
+ "settings": "overlay_sim_v1",
+ "fatras": {
+  "pmin_gev": 0.1,
+  "em_scattering": true,
+  "em_ionisation": true,
+  "em_radiation": false,
+  "em_photonconversion": true,
+  "hits": "sensitive"
+ },
+ "field_reference": {
+  "loop_fit": "/work/submit/jinboz1/hnl/pileup_design/field_material/loops_fit.npz",
+  "loop_fit_md5": "1248f23331030f2eedf92c8ef46e9ec9",
+  "nodes_vs_loop_model_max_abs_T": 0.0,
+  "map_vs_loop_model_max_abs_T": 5e-07,
+  "map_grid": {
+   "r_mm": [
+    0.0,
+    3000.0,
+    151
+   ],
+   "z_mm": [
+    -6000.0,
+    6000.0,
+    601
+   ]
+  },
+  "closure": {
+   "tracks": 2000,
+   "spacings_mm": [
+    50,
+    200,
+    400,
+    800
+   ],
+   "nsub6": {
+    "by_segment_length": {
+     "path_50mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 13261,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8571,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6809,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5749,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4945,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 4099,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 13531,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8847,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 7080,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5932,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 5044,
+       "mean_MeV": -0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 4249,
+       "mean_MeV": 0.0001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      }
+     ],
+     "path_200mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 11556,
+       "mean_MeV": -0.0001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8370,
+       "mean_MeV": -0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6651,
+       "mean_MeV": -0.0005,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5668,
+       "mean_MeV": -0.0009,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4816,
+       "mean_MeV": -0.0003,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 3438,
+       "mean_MeV": 0.0017,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 11752,
+       "mean_MeV": -0.0001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8624,
+       "mean_MeV": -0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6936,
+       "mean_MeV": -0.0004,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5797,
+       "mean_MeV": -0.0007,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4942,
+       "mean_MeV": -0.0012,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 3567,
+       "mean_MeV": 0.0035,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.011
+      }
+     ],
+     "path_400mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 9248,
+       "mean_MeV": -0.0006,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.002
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8081,
+       "mean_MeV": -0.002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6434,
+       "mean_MeV": -0.0044,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.005
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5545,
+       "mean_MeV": -0.0072,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.008
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4668,
+       "mean_MeV": -0.0018,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.005
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 2576,
+       "mean_MeV": 0.0119,
+       "sem_MeV": 0.0003,
+       "rms_MeV": 0.02
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 9356,
+       "mean_MeV": -0.0006,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8361,
+       "mean_MeV": -0.0015,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6718,
+       "mean_MeV": -0.003,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.005
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5636,
+       "mean_MeV": -0.0057,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.008
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4818,
+       "mean_MeV": -0.0084,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.015
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 2676,
+       "mean_MeV": 0.021,
+       "sem_MeV": 0.001,
+       "rms_MeV": 0.057
+      }
+     ],
+     "path_800mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 4461,
+       "mean_MeV": -0.006,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.016
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 7521,
+       "mean_MeV": -0.0184,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.021
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6067,
+       "mean_MeV": -0.0371,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.04
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5248,
+       "mean_MeV": -0.0506,
+       "sem_MeV": 0.0004,
+       "rms_MeV": 0.058
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4435,
+       "mean_MeV": -0.0016,
+       "sem_MeV": 0.0006,
+       "rms_MeV": 0.038
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 905,
+       "mean_MeV": 0.0702,
+       "sem_MeV": 0.0029,
+       "rms_MeV": 0.113
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 4484,
+       "mean_MeV": -0.0058,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.016
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 7834,
+       "mean_MeV": -0.0137,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.019
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6305,
+       "mean_MeV": -0.0263,
+       "sem_MeV": 0.0002,
+       "rms_MeV": 0.033
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5319,
+       "mean_MeV": -0.0457,
+       "sem_MeV": 0.0005,
+       "rms_MeV": 0.057
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4600,
+       "mean_MeV": -0.0372,
+       "sem_MeV": 0.0013,
+       "rms_MeV": 0.099
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 938,
+       "mean_MeV": 0.1452,
+       "sem_MeV": 0.0093,
+       "rms_MeV": 0.319
+      }
+     ]
+    },
+    "max_abs_mean_MeV": 0.1452
+   },
+   "nsub96": {
+    "by_segment_length": {
+     "path_50mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 13261,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8571,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6809,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5749,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4945,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 4099,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 13531,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8847,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 7080,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5932,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 5044,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 4249,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      }
+     ],
+     "path_200mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 11556,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8370,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6651,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5668,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4816,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 3438,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 11752,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8624,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6936,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5797,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4942,
+       "mean_MeV": 0.0,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 3567,
+       "mean_MeV": 0.0001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      }
+     ],
+     "path_400mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 9248,
+       "mean_MeV": 0.0003,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 8081,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6434,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5545,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4668,
+       "mean_MeV": 0.0003,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 2576,
+       "mean_MeV": 0.0003,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 9356,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 8361,
+       "mean_MeV": 0.0001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.0
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6718,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5636,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4818,
+       "mean_MeV": 0.0002,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 2676,
+       "mean_MeV": 0.0004,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.001
+      }
+     ],
+     "path_800mm": [
+      {
+       "side": "+z",
+       "absz_mm": "0-500",
+       "n": 4461,
+       "mean_MeV": 0.0019,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.005
+      },
+      {
+       "side": "+z",
+       "absz_mm": "500-1000",
+       "n": 7521,
+       "mean_MeV": 0.0009,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1000-1500",
+       "n": 6067,
+       "mean_MeV": 0.0011,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "+z",
+       "absz_mm": "1500-2000",
+       "n": 5248,
+       "mean_MeV": 0.0014,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2000-2500",
+       "n": 4435,
+       "mean_MeV": 0.0017,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "+z",
+       "absz_mm": "2500-3100",
+       "n": 905,
+       "mean_MeV": 0.0021,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "-z",
+       "absz_mm": "0-500",
+       "n": 4484,
+       "mean_MeV": 0.0014,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "-z",
+       "absz_mm": "500-1000",
+       "n": 7834,
+       "mean_MeV": 0.0007,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.002
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1000-1500",
+       "n": 6305,
+       "mean_MeV": 0.001,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.003
+      },
+      {
+       "side": "-z",
+       "absz_mm": "1500-2000",
+       "n": 5319,
+       "mean_MeV": 0.0011,
+       "sem_MeV": 0.0,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2000-2500",
+       "n": 4600,
+       "mean_MeV": 0.0015,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.004
+      },
+      {
+       "side": "-z",
+       "absz_mm": "2500-3100",
+       "n": 938,
+       "mean_MeV": 0.0024,
+       "sem_MeV": 0.0001,
+       "rms_MeV": 0.005
+      }
+     ]
+    },
+    "max_abs_mean_MeV": 0.0024
+   }
+  }
+ },
+ "field_probe": {
+  "sim": {
+   "build": "/work/submit/jinboz1/hnl/acts/build-v15",
+   "executable_md5": "be83bdb8bb6bb288a99b24fe88f57436",
+   "field_map": "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+   "field_map_md5": "b5ad1cc518df604a7765706c0fef1d28",
+   "seed": 790,
+   "first_event": 0,
+   "events": 1000,
+   "events_processed": 1000,
+   "particle_failures": 1,
+   "error_lines": 2,
+   "fatal_lines": 0,
+   "wall_s": 8.5,
+   "args": [
+    "ActsExampleFatrasGeneric",
+    "--input-dir",
+    "/work/submit/jinboz1/hnl/pileup_design/hp_field/build-v15/field_in",
+    "--output-dir",
+    "/work/submit/jinboz1/hnl/pileup_design/hp_field/build-v15/field_sim",
+    "--output-csv",
+    "--bf-map-file",
+    "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+    "--bf-map-type",
+    "rz",
+    "--fatras-pmin-gev",
+    "0.1",
+    "--fatras-em-scattering",
+    "true",
+    "--fatras-em-ionisation",
+    "true",
+    "--fatras-em-radiation",
+    "false",
+    "--fatras-em-photonconversion",
+    "true",
+    "--fatras-hits",
+    "sensitive",
+    "--rnd-seed",
+    "790",
+    "-j",
+    "8",
+    "--skip",
+    "0",
+    "-n",
+    "1000"
+   ]
+  },
+  "checks": {
+   "input_particles": 100000,
+   "input_charged_above_pmin": 100000,
+   "final_outside_world": 8,
+   "simulated": 99999,
+   "final": 99999,
+   "charged_above_pmin_not_simulated": 1,
+   "charged_at_or_below_pmin_simulated": 0,
+   "simulated_not_in_input": 0,
+   "secondaries": 0,
+   "simulated_with_p_below_0.5_GeV": 0,
+   "electron_crossings": 245138,
+   "electron_frac_energy_loss_median": 4.6e-05,
+   "electron_frac_energy_loss_p99": 0.000901,
+   "electron_max_frac_energy_loss": 0.999754,
+   "electron_crossings_frac_loss_above_1pct": 126
+  },
+  "f1": {
+   "segments": 395245,
+   "segments_beyond_last_band": 0,
+   "nsub": 96,
+   "bands": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 116172,
+     "mean_MeV": 0.003,
+     "sem_MeV": 0.0066,
+     "rms_MeV": 2.251,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 36494,
+     "mean_MeV": 0.0007,
+     "sem_MeV": 0.0134,
+     "rms_MeV": 2.552,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 19894,
+     "mean_MeV": -0.0164,
+     "sem_MeV": 0.0135,
+     "rms_MeV": 1.911,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 13943,
+     "mean_MeV": -0.012,
+     "sem_MeV": 0.0189,
+     "rms_MeV": 2.237,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 6109,
+     "mean_MeV": -0.0141,
+     "sem_MeV": 0.029,
+     "rms_MeV": 2.266,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 5146,
+     "mean_MeV": -0.0292,
+     "sem_MeV": 0.0307,
+     "rms_MeV": 2.204,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 116941,
+     "mean_MeV": -0.0113,
+     "sem_MeV": 0.0065,
+     "rms_MeV": 2.232,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 36419,
+     "mean_MeV": 0.0001,
+     "sem_MeV": 0.013,
+     "rms_MeV": 2.476,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 19408,
+     "mean_MeV": -0.0046,
+     "sem_MeV": 0.0073,
+     "rms_MeV": 1.022,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 13680,
+     "mean_MeV": -0.0009,
+     "sem_MeV": 0.0066,
+     "rms_MeV": 0.776,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 5980,
+     "mean_MeV": 0.0058,
+     "sem_MeV": 0.0099,
+     "rms_MeV": 0.765,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 5059,
+     "mean_MeV": 0.0034,
+     "sem_MeV": 0.008,
+     "rms_MeV": 0.568,
+     "pass": true
+    }
+   ],
+   "regions": [
+    {
+     "side": "+z",
+     "region": "long-strip barrel",
+     "n": 10172,
+     "mean_MeV": -0.0301,
+     "sem_MeV": 0.0223,
+     "rms_MeV": 2.247,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "long-strip endcap",
+     "n": 4298,
+     "mean_MeV": -0.0446,
+     "sem_MeV": 0.0507,
+     "rms_MeV": 3.325,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "pixel barrel",
+     "n": 78157,
+     "mean_MeV": 0.0239,
+     "sem_MeV": 0.0089,
+     "rms_MeV": 2.501,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "pixel endcap",
+     "n": 15972,
+     "mean_MeV": 0.0019,
+     "sem_MeV": 0.0155,
+     "rms_MeV": 1.955,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "short-strip barrel",
+     "n": 62382,
+     "mean_MeV": -0.0246,
+     "sem_MeV": 0.0084,
+     "rms_MeV": 2.092,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "short-strip endcap",
+     "n": 26777,
+     "mean_MeV": -0.0085,
+     "sem_MeV": 0.012,
+     "rms_MeV": 1.966,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "long-strip barrel",
+     "n": 10155,
+     "mean_MeV": -0.0089,
+     "sem_MeV": 0.021,
+     "rms_MeV": 2.117,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "long-strip endcap",
+     "n": 4262,
+     "mean_MeV": 0.0192,
+     "sem_MeV": 0.0104,
+     "rms_MeV": 0.678,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "pixel barrel",
+     "n": 78515,
+     "mean_MeV": -0.008,
+     "sem_MeV": 0.0088,
+     "rms_MeV": 2.476,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "pixel endcap",
+     "n": 16059,
+     "mean_MeV": -0.0083,
+     "sem_MeV": 0.0121,
+     "rms_MeV": 1.532,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "short-strip barrel",
+     "n": 62581,
+     "mean_MeV": -0.0088,
+     "sem_MeV": 0.0082,
+     "rms_MeV": 2.058,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "short-strip endcap",
+     "n": 25915,
+     "mean_MeV": -0.002,
+     "sem_MeV": 0.0034,
+     "rms_MeV": 0.555,
+     "pass": true
+    }
+   ],
+   "bands_after_start_surface": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 116172,
+     "mean_MeV": 0.0045,
+     "sem_MeV": 0.0064,
+     "rms_MeV": 2.17
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 36494,
+     "mean_MeV": -0.0051,
+     "sem_MeV": 0.0129,
+     "rms_MeV": 2.457
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 19894,
+     "mean_MeV": -0.01,
+     "sem_MeV": 0.0126,
+     "rms_MeV": 1.778
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 13943,
+     "mean_MeV": -0.008,
+     "sem_MeV": 0.0183,
+     "rms_MeV": 2.163
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 6109,
+     "mean_MeV": -0.0223,
+     "sem_MeV": 0.0281,
+     "rms_MeV": 2.197
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 5146,
+     "mean_MeV": -0.0315,
+     "sem_MeV": 0.0294,
+     "rms_MeV": 2.111
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 116941,
+     "mean_MeV": -0.0141,
+     "sem_MeV": 0.0063,
+     "rms_MeV": 2.148
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 36419,
+     "mean_MeV": -0.0036,
+     "sem_MeV": 0.0125,
+     "rms_MeV": 2.381
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 19408,
+     "mean_MeV": -0.0052,
+     "sem_MeV": 0.0052,
+     "rms_MeV": 0.73
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 13680,
+     "mean_MeV": 0.0023,
+     "sem_MeV": 0.0045,
+     "rms_MeV": 0.523
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 5980,
+     "mean_MeV": 0.003,
+     "sem_MeV": 0.0067,
+     "rms_MeV": 0.517
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 5059,
+     "mean_MeV": 0.0028,
+     "sem_MeV": 0.0001,
+     "rms_MeV": 0.006
+    }
+   ],
+   "bands_nsub6": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 116172,
+     "mean_MeV": 0.0029,
+     "sem_MeV": 0.0066,
+     "rms_MeV": 2.251
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 36494,
+     "mean_MeV": 0.0,
+     "sem_MeV": 0.0134,
+     "rms_MeV": 2.552
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 19894,
+     "mean_MeV": -0.0201,
+     "sem_MeV": 0.0136,
+     "rms_MeV": 1.911
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 13943,
+     "mean_MeV": -0.0219,
+     "sem_MeV": 0.0189,
+     "rms_MeV": 2.237
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 6109,
+     "mean_MeV": -0.0213,
+     "sem_MeV": 0.029,
+     "rms_MeV": 2.266
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 5146,
+     "mean_MeV": -0.0047,
+     "sem_MeV": 0.0307,
+     "rms_MeV": 2.204
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 116941,
+     "mean_MeV": -0.0113,
+     "sem_MeV": 0.0065,
+     "rms_MeV": 2.232
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 36419,
+     "mean_MeV": -0.0004,
+     "sem_MeV": 0.013,
+     "rms_MeV": 2.476
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 19408,
+     "mean_MeV": -0.0076,
+     "sem_MeV": 0.0073,
+     "rms_MeV": 1.022
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 13680,
+     "mean_MeV": -0.0093,
+     "sem_MeV": 0.0066,
+     "rms_MeV": 0.776
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 5980,
+     "mean_MeV": -0.0248,
+     "sem_MeV": 0.0099,
+     "rms_MeV": 0.766
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 5059,
+     "mean_MeV": 0.1,
+     "sem_MeV": 0.0084,
+     "rms_MeV": 0.608
+    }
+   ],
+   "all_bands_populated": true,
+   "max_abs_mean_MeV": 0.0292,
+   "pass": true,
+   "particle_failures": 1,
+   "gate_pass": false
+  }
+ },
+ "gun_probe": {
+  "sim": {
+   "build": "/work/submit/jinboz1/hnl/acts/build-v15",
+   "executable_md5": "be83bdb8bb6bb288a99b24fe88f57436",
+   "field_map": "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+   "field_map_md5": "b5ad1cc518df604a7765706c0fef1d28",
+   "seed": 990014,
+   "first_event": 0,
+   "events": 600,
+   "events_processed": 600,
+   "particle_failures": 337,
+   "error_lines": 674,
+   "fatal_lines": 0,
+   "wall_s": 5.0,
+   "args": [
+    "ActsExampleFatrasGeneric",
+    "--input-dir",
+    "/work/submit/jinboz1/hnl/pileup_design/hp_field/build-v15/gun_in",
+    "--output-dir",
+    "/work/submit/jinboz1/hnl/pileup_design/hp_field/build-v15/gun_sim",
+    "--output-csv",
+    "--bf-map-file",
+    "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+    "--bf-map-type",
+    "rz",
+    "--fatras-pmin-gev",
+    "0.1",
+    "--fatras-em-scattering",
+    "true",
+    "--fatras-em-ionisation",
+    "true",
+    "--fatras-em-radiation",
+    "false",
+    "--fatras-em-photonconversion",
+    "true",
+    "--fatras-hits",
+    "sensitive",
+    "--rnd-seed",
+    "990014",
+    "-j",
+    "8",
+    "--skip",
+    "0",
+    "-n",
+    "600"
+   ]
+  },
+  "checks": {
+   "input_particles": 16174,
+   "input_charged_above_pmin": 16153,
+   "final_outside_world": 38,
+   "simulated": 15816,
+   "final": 15816,
+   "charged_above_pmin_not_simulated": 337,
+   "charged_at_or_below_pmin_simulated": 0,
+   "simulated_not_in_input": 0,
+   "secondaries": 0,
+   "simulated_with_p_below_0.5_GeV": 839,
+   "electron_crossings": 11530,
+   "electron_frac_energy_loss_median": 2.7e-05,
+   "electron_frac_energy_loss_p99": 0.0012,
+   "electron_max_frac_energy_loss": 0.032954,
+   "electron_crossings_frac_loss_above_1pct": 3
+  },
+  "f1": {
+   "segments": 36730,
+   "segments_beyond_last_band": 0,
+   "nsub": 96,
+   "bands": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 7832,
+     "mean_MeV": -0.0132,
+     "sem_MeV": 0.0239,
+     "rms_MeV": 2.12,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 3899,
+     "mean_MeV": -0.0369,
+     "sem_MeV": 0.0382,
+     "rms_MeV": 2.386,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 2370,
+     "mean_MeV": -0.0076,
+     "sem_MeV": 0.04,
+     "rms_MeV": 1.947,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 2167,
+     "mean_MeV": -0.0798,
+     "sem_MeV": 0.0499,
+     "rms_MeV": 2.325,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 973,
+     "mean_MeV": -0.114,
+     "sem_MeV": 0.0763,
+     "rms_MeV": 2.382,
+     "pass": false
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 856,
+     "mean_MeV": 0.0218,
+     "sem_MeV": 0.0783,
+     "rms_MeV": 2.29,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 7862,
+     "mean_MeV": -0.0472,
+     "sem_MeV": 0.0241,
+     "rms_MeV": 2.14,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 4177,
+     "mean_MeV": -0.0171,
+     "sem_MeV": 0.038,
+     "rms_MeV": 2.454,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 2524,
+     "mean_MeV": -0.0035,
+     "sem_MeV": 0.0188,
+     "rms_MeV": 0.947,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 2140,
+     "mean_MeV": -0.0187,
+     "sem_MeV": 0.0152,
+     "rms_MeV": 0.703,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 1008,
+     "mean_MeV": 0.0008,
+     "sem_MeV": 0.0218,
+     "rms_MeV": 0.693,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 922,
+     "mean_MeV": -0.0032,
+     "sem_MeV": 0.0193,
+     "rms_MeV": 0.586,
+     "pass": true
+    }
+   ],
+   "regions": [
+    {
+     "side": "+z",
+     "region": "long-strip barrel",
+     "n": 2212,
+     "mean_MeV": -0.0189,
+     "sem_MeV": 0.0452,
+     "rms_MeV": 2.124,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "long-strip endcap",
+     "n": 932,
+     "mean_MeV": -0.1012,
+     "sem_MeV": 0.1058,
+     "rms_MeV": 3.232,
+     "pass": false
+    },
+    {
+     "side": "+z",
+     "region": "pixel barrel",
+     "n": 2315,
+     "mean_MeV": 0.0029,
+     "sem_MeV": 0.0534,
+     "rms_MeV": 2.568,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "pixel endcap",
+     "n": 878,
+     "mean_MeV": -0.0537,
+     "sem_MeV": 0.0735,
+     "rms_MeV": 2.177,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "short-strip barrel",
+     "n": 7753,
+     "mean_MeV": -0.0366,
+     "sem_MeV": 0.0233,
+     "rms_MeV": 2.051,
+     "pass": true
+    },
+    {
+     "side": "+z",
+     "region": "short-strip endcap",
+     "n": 4007,
+     "mean_MeV": -0.0176,
+     "sem_MeV": 0.0319,
+     "rms_MeV": 2.02,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "long-strip barrel",
+     "n": 2378,
+     "mean_MeV": -0.0282,
+     "sem_MeV": 0.045,
+     "rms_MeV": 2.196,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "long-strip endcap",
+     "n": 983,
+     "mean_MeV": -0.0247,
+     "sem_MeV": 0.022,
+     "rms_MeV": 0.689,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "pixel barrel",
+     "n": 2289,
+     "mean_MeV": -0.0162,
+     "sem_MeV": 0.0538,
+     "rms_MeV": 2.574,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "pixel endcap",
+     "n": 761,
+     "mean_MeV": -0.0358,
+     "sem_MeV": 0.0611,
+     "rms_MeV": 1.686,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "short-strip barrel",
+     "n": 8188,
+     "mean_MeV": -0.041,
+     "sem_MeV": 0.0227,
+     "rms_MeV": 2.058,
+     "pass": true
+    },
+    {
+     "side": "-z",
+     "region": "short-strip endcap",
+     "n": 4034,
+     "mean_MeV": -0.0004,
+     "sem_MeV": 0.0091,
+     "rms_MeV": 0.577,
+     "pass": true
+    }
+   ],
+   "bands_after_start_surface": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 7832,
+     "mean_MeV": -0.0085,
+     "sem_MeV": 0.023,
+     "rms_MeV": 2.037
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 3899,
+     "mean_MeV": -0.0483,
+     "sem_MeV": 0.0367,
+     "rms_MeV": 2.292
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 2370,
+     "mean_MeV": 0.0148,
+     "sem_MeV": 0.0374,
+     "rms_MeV": 1.82
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 2167,
+     "mean_MeV": -0.0668,
+     "sem_MeV": 0.0478,
+     "rms_MeV": 2.228
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 973,
+     "mean_MeV": -0.1116,
+     "sem_MeV": 0.0726,
+     "rms_MeV": 2.266
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 856,
+     "mean_MeV": 0.0232,
+     "sem_MeV": 0.0766,
+     "rms_MeV": 2.241
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 7862,
+     "mean_MeV": -0.0374,
+     "sem_MeV": 0.0231,
+     "rms_MeV": 2.051
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 4177,
+     "mean_MeV": -0.0296,
+     "sem_MeV": 0.0362,
+     "rms_MeV": 2.337
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 2524,
+     "mean_MeV": -0.0065,
+     "sem_MeV": 0.0119,
+     "rms_MeV": 0.597
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 2140,
+     "mean_MeV": -0.0078,
+     "sem_MeV": 0.0082,
+     "rms_MeV": 0.382
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 1008,
+     "mean_MeV": -0.0006,
+     "sem_MeV": 0.0126,
+     "rms_MeV": 0.401
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 922,
+     "mean_MeV": 0.0052,
+     "sem_MeV": 0.0007,
+     "rms_MeV": 0.023
+    }
+   ],
+   "bands_nsub6": [
+    {
+     "side": "+z",
+     "absz_mm": "0-500",
+     "n": 7832,
+     "mean_MeV": -0.0133,
+     "sem_MeV": 0.0239,
+     "rms_MeV": 2.12
+    },
+    {
+     "side": "+z",
+     "absz_mm": "500-1000",
+     "n": 3899,
+     "mean_MeV": -0.0374,
+     "sem_MeV": 0.0382,
+     "rms_MeV": 2.386
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1000-1500",
+     "n": 2370,
+     "mean_MeV": -0.0108,
+     "sem_MeV": 0.04,
+     "rms_MeV": 1.947
+    },
+    {
+     "side": "+z",
+     "absz_mm": "1500-2000",
+     "n": 2167,
+     "mean_MeV": -0.0914,
+     "sem_MeV": 0.0499,
+     "rms_MeV": 2.325
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2000-2500",
+     "n": 973,
+     "mean_MeV": -0.1254,
+     "sem_MeV": 0.0763,
+     "rms_MeV": 2.383
+    },
+    {
+     "side": "+z",
+     "absz_mm": "2500-3100",
+     "n": 856,
+     "mean_MeV": 0.0528,
+     "sem_MeV": 0.0783,
+     "rms_MeV": 2.292
+    },
+    {
+     "side": "-z",
+     "absz_mm": "0-500",
+     "n": 7862,
+     "mean_MeV": -0.0472,
+     "sem_MeV": 0.0241,
+     "rms_MeV": 2.14
+    },
+    {
+     "side": "-z",
+     "absz_mm": "500-1000",
+     "n": 4177,
+     "mean_MeV": -0.0172,
+     "sem_MeV": 0.038,
+     "rms_MeV": 2.454
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1000-1500",
+     "n": 2524,
+     "mean_MeV": -0.0059,
+     "sem_MeV": 0.0189,
+     "rms_MeV": 0.947
+    },
+    {
+     "side": "-z",
+     "absz_mm": "1500-2000",
+     "n": 2140,
+     "mean_MeV": -0.0279,
+     "sem_MeV": 0.0152,
+     "rms_MeV": 0.704
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2000-2500",
+     "n": 1008,
+     "mean_MeV": -0.0451,
+     "sem_MeV": 0.0219,
+     "rms_MeV": 0.698
+    },
+    {
+     "side": "-z",
+     "absz_mm": "2500-3100",
+     "n": 922,
+     "mean_MeV": 0.1,
+     "sem_MeV": 0.0202,
+     "rms_MeV": 0.623
+    }
+   ],
+   "all_bands_populated": true,
+   "max_abs_mean_MeV": 0.114,
+   "pass": false,
+   "particle_failures": 337,
+   "gate_pass": false
+  },
+  "hosts": {
+   "hosts": "val",
+   "n_hosts": 150,
+   "per_host": 4,
+   "seed": 990001,
+   "events": 600,
+   "first_azimuth_rejected_per_llp": 0.22633333333333333,
+   "eta_redraws_per_llp": 0.0005
+  }
+ },
+ "beff_vs_trackml": {
+  "trackml_segments": "/work/submit/jinboz1/hnl/pileup_design/field_material/segments_calib200.parquet",
+  "trackml_events": {
+   "events": 200,
+   "first": 21000,
+   "last": 21339
+  },
+  "rows": [
+   {
+    "absz_mm": "0-500",
+    "r_mm": "0-200",
+    "sim+z": 1.9882,
+    "trackml+z": 1.9876,
+    "n_sim+z": 40752,
+    "n_trackml+z": 45209,
+    "diff+z": 0.0006,
+    "sim-z": 1.9931,
+    "trackml-z": 1.9983,
+    "n_sim-z": 40956,
+    "n_trackml-z": 44056,
+    "diff-z": -0.0052,
+    "sim_asym": -0.0049,
+    "trackml_asym": -0.0107
+   },
+   {
+    "absz_mm": "0-500",
+    "r_mm": "200-600",
+    "sim+z": 1.9848,
+    "trackml+z": 1.9874,
+    "n_sim+z": 34043,
+    "n_trackml+z": 29723,
+    "diff+z": -0.0026,
+    "sim-z": 1.9965,
+    "trackml-z": 2.0002,
+    "n_sim-z": 34257,
+    "n_trackml-z": 28492,
+    "diff-z": -0.0037,
+    "sim_asym": -0.0117,
+    "trackml_asym": -0.0128
+   },
+   {
+    "absz_mm": "0-500",
+    "r_mm": "600-1100",
+    "sim+z": 2.0019,
+    "trackml+z": 1.9984,
+    "n_sim+z": 9231,
+    "n_trackml+z": 7248,
+    "diff+z": 0.0035,
+    "sim-z": 2.0131,
+    "trackml-z": 2.0101,
+    "n_sim-z": 9316,
+    "n_trackml-z": 7024,
+    "diff-z": 0.003,
+    "sim_asym": -0.0112,
+    "trackml_asym": -0.0117
+   },
+   {
+    "absz_mm": "500-1000",
+    "r_mm": "0-200",
+    "sim+z": 1.9024,
+    "trackml+z": 1.911,
+    "n_sim+z": 3173,
+    "n_trackml+z": 6476,
+    "diff+z": -0.0086,
+    "sim-z": 1.9393,
+    "trackml-z": 1.9546,
+    "n_sim-z": 3202,
+    "n_trackml-z": 6473,
+    "diff-z": -0.0153,
+    "sim_asym": -0.0369,
+    "trackml_asym": -0.0436
+   },
+   {
+    "absz_mm": "500-1000",
+    "r_mm": "200-600",
+    "sim+z": 1.9037,
+    "trackml+z": 1.9035,
+    "n_sim+z": 11335,
+    "n_trackml+z": 11984,
+    "diff+z": 0.0002,
+    "sim-z": 1.9516,
+    "trackml-z": 1.9518,
+    "n_sim-z": 11240,
+    "n_trackml-z": 11383,
+    "diff-z": -0.0002,
+    "sim_asym": -0.0479,
+    "trackml_asym": -0.0483
+   },
+   {
+    "absz_mm": "500-1000",
+    "r_mm": "600-1100",
+    "sim+z": 1.9243,
+    "trackml+z": 1.9229,
+    "n_sim+z": 6237,
+    "n_trackml+z": 5460,
+    "diff+z": 0.0014,
+    "sim-z": 1.9674,
+    "trackml-z": 1.965,
+    "n_sim-z": 6173,
+    "n_trackml-z": 5282,
+    "diff-z": 0.0024,
+    "sim_asym": -0.0431,
+    "trackml_asym": -0.0421
+   },
+   {
+    "absz_mm": "1000-1500",
+    "r_mm": "0-200",
+    "sim+z": 1.6727,
+    "trackml+z": 1.6782,
+    "n_sim+z": 410,
+    "n_trackml+z": 2620,
+    "diff+z": -0.0055,
+    "sim-z": 1.8048,
+    "trackml-z": 1.7919,
+    "n_sim-z": 402,
+    "n_trackml-z": 2680,
+    "diff-z": 0.0129,
+    "sim_asym": -0.1321,
+    "trackml_asym": -0.1137
+   },
+   {
+    "absz_mm": "1000-1500",
+    "r_mm": "200-600",
+    "sim+z": 1.7022,
+    "trackml+z": 1.6798,
+    "n_sim+z": 7249,
+    "n_trackml+z": 9782,
+    "diff+z": 0.0224,
+    "sim-z": 1.8105,
+    "trackml-z": 1.7975,
+    "n_sim-z": 6949,
+    "n_trackml-z": 9821,
+    "diff-z": 0.013,
+    "sim_asym": -0.1083,
+    "trackml_asym": -0.1177
+   },
+   {
+    "absz_mm": "1000-1500",
+    "r_mm": "600-1100",
+    "sim+z": 1.7374,
+    "trackml+z": 1.7266,
+    "n_sim+z": 3320,
+    "n_trackml+z": 3204,
+    "diff+z": 0.0108,
+    "sim-z": 1.8413,
+    "trackml-z": 1.8345,
+    "n_sim-z": 3335,
+    "n_trackml-z": 2798,
+    "diff-z": 0.0068,
+    "sim_asym": -0.1039,
+    "trackml_asym": -0.1079
+   },
+   {
+    "absz_mm": "1500-2000",
+    "r_mm": "0-200",
+    "sim+z": null,
+    "trackml+z": null,
+    "n_sim+z": 0,
+    "n_trackml+z": 7,
+    "diff+z": null,
+    "sim-z": null,
+    "trackml-z": null,
+    "n_sim-z": 0,
+    "n_trackml-z": 6,
+    "diff-z": null,
+    "sim_asym": null,
+    "trackml_asym": null
+   },
+   {
+    "absz_mm": "1500-2000",
+    "r_mm": "200-600",
+    "sim+z": 1.1669,
+    "trackml+z": 1.1398,
+    "n_sim+z": 4380,
+    "n_trackml+z": 8128,
+    "diff+z": 0.0271,
+    "sim-z": 1.4899,
+    "trackml-z": 1.4069,
+    "n_sim-z": 4370,
+    "n_trackml-z": 8471,
+    "diff-z": 0.083,
+    "sim_asym": -0.323,
+    "trackml_asym": -0.2671
+   },
+   {
+    "absz_mm": "1500-2000",
+    "r_mm": "600-1100",
+    "sim+z": 1.2828,
+    "trackml+z": 1.2144,
+    "n_sim+z": 3488,
+    "n_trackml+z": 3475,
+    "diff+z": 0.0684,
+    "sim-z": 1.5506,
+    "trackml-z": 1.4855,
+    "n_sim-z": 3288,
+    "n_trackml-z": 3318,
+    "diff-z": 0.0651,
+    "sim_asym": -0.2678,
+    "trackml_asym": -0.2711
+   },
+   {
+    "absz_mm": "2000-2500",
+    "r_mm": "0-200",
+    "sim+z": null,
+    "trackml+z": 0.5251,
+    "n_sim+z": 0,
+    "n_trackml+z": 514,
+    "diff+z": null,
+    "sim-z": null,
+    "trackml-z": 0.7664,
+    "n_sim-z": 0,
+    "n_trackml-z": 557,
+    "diff-z": null,
+    "sim_asym": null,
+    "trackml_asym": -0.2413
+   },
+   {
+    "absz_mm": "2000-2500",
+    "r_mm": "200-600",
+    "sim+z": 0.1793,
+    "trackml+z": 0.2354,
+    "n_sim+z": 1455,
+    "n_trackml+z": 4122,
+    "diff+z": -0.0561,
+    "sim-z": 0.5881,
+    "trackml-z": 0.6573,
+    "n_sim-z": 1442,
+    "n_trackml-z": 4332,
+    "diff-z": -0.0692,
+    "sim_asym": -0.4088,
+    "trackml_asym": -0.4219
+   },
+   {
+    "absz_mm": "2000-2500",
+    "r_mm": "600-1100",
+    "sim+z": 0.1696,
+    "trackml+z": 0.1483,
+    "n_sim+z": 1493,
+    "n_trackml+z": 1741,
+    "diff+z": 0.0213,
+    "sim-z": 0.626,
+    "trackml-z": 0.6879,
+    "n_sim-z": 1433,
+    "n_trackml-z": 1686,
+    "diff-z": -0.0619,
+    "sim_asym": -0.4564,
+    "trackml_asym": -0.5396
+   },
+   {
+    "absz_mm": "2500-3000",
+    "r_mm": "0-200",
+    "sim+z": null,
+    "trackml+z": null,
+    "n_sim+z": 0,
+    "n_trackml+z": 0,
+    "diff+z": null,
+    "sim-z": null,
+    "trackml-z": null,
+    "n_sim-z": 0,
+    "n_trackml-z": 0,
+    "diff-z": null,
+    "sim_asym": null,
+    "trackml_asym": null
+   },
+   {
+    "absz_mm": "2500-3000",
+    "r_mm": "200-600",
+    "sim+z": -0.3879,
+    "trackml+z": -0.2796,
+    "n_sim+z": 1030,
+    "n_trackml+z": 3377,
+    "diff+z": -0.1083,
+    "sim-z": -0.1123,
+    "trackml-z": -0.1102,
+    "n_sim-z": 1014,
+    "n_trackml-z": 3532,
+    "diff-z": -0.0021,
+    "sim_asym": -0.2756,
+    "trackml_asym": -0.1694
+   },
+   {
+    "absz_mm": "2500-3000",
+    "r_mm": "600-1100",
+    "sim+z": -0.5131,
+    "trackml+z": -0.4788,
+    "n_sim+z": 1297,
+    "n_trackml+z": 1740,
+    "diff+z": -0.0343,
+    "sim-z": -0.0201,
+    "trackml-z": -0.2143,
+    "n_sim-z": 1295,
+    "n_trackml-z": 1758,
+    "diff-z": 0.1942,
+    "sim_asym": -0.493,
+    "trackml_asym": -0.2645
+   }
+  ],
+  "max_abs_diff_T": 0.1942
+ },
+ "containment": {
+  "tol_mm": 0.004,
+  "hits": 84290,
+  "unmapped": 0,
+  "not_in_trackml": 0,
+  "off_plane": 5587,
+  "outside_bounds": 814,
+  "failed": 6083,
+  "frac_failed": 0.072168,
+  "max_abs_w_mm": 3.00012,
+  "max_out_of_bounds_mm": 9.727242,
+  "per_volume": {
+   "7": {
+    "hits": 2228,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.0,
+    "max_out_of_bounds_mm": -0.00548
+   },
+   "8": {
+    "hits": 8303,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.000712,
+    "max_out_of_bounds_mm": -0.00012
+   },
+   "9": {
+    "hits": 2206,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 6.1e-05,
+    "max_out_of_bounds_mm": -0.009119
+   },
+   "12": {
+    "hits": 8966,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 2765,
+    "outside_bounds": 595,
+    "failed": 3120,
+    "frac_failed": 0.347981,
+    "max_abs_w_mm": 3.00012,
+    "max_out_of_bounds_mm": 7.788682
+   },
+   "13": {
+    "hits": 27695,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.000706,
+    "max_out_of_bounds_mm": -0.000844
+   },
+   "14": {
+    "hits": 8611,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.00012,
+    "max_out_of_bounds_mm": -0.003726
+   },
+   "16": {
+    "hits": 5829,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 2822,
+    "outside_bounds": 219,
+    "failed": 2963,
+    "frac_failed": 0.50832,
+    "max_abs_w_mm": 3.00012,
+    "max_out_of_bounds_mm": 9.727242
+   },
+   "17": {
+    "hits": 14961,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.003832,
+    "max_out_of_bounds_mm": -2.4e-05
+   },
+   "18": {
+    "hits": 5491,
+    "unmapped": 0,
+    "not_in_trackml": 0,
+    "off_plane": 0,
+    "outside_bounds": 0,
+    "failed": 0,
+    "frac_failed": 0.0,
+    "max_abs_w_mm": 0.00012,
+    "max_out_of_bounds_mm": -0.004895
+   }
+  },
+  "particles": 15376,
+  "particles_with_failed_hit": 3545,
+  "pass": false,
+  "module_map": {
+   "built_from": "/work/submit/jinboz1/hnl/acts/geometry/detectors.csv",
+   "md5": "e1dfc6998539c69e5f8536e53064ff68",
+   "modules": 18728,
+   "agreement": [
+    {
+     "file": "/work/submit/jinboz1/hnl/pileup_design/hit_format/out/module_map_acts_v15_to_trackml.csv",
+     "modules_compared": 18728,
+     "modules_in_file": 18728,
+     "agree": 18728
+    },
+    {
+     "file": "/work/submit/jinboz1/hnl/pileup_design/geometry/out/module_map.csv",
+     "modules_compared": 18728,
+     "modules_in_file": 18728,
+     "agree": 18728
+    }
+   ],
+   "max_centre_distance_mm": 3.0,
+   "modules_with_centre_distance_above_tol": 624
+  },
+  "field_probe_hits": {
+   "tol_mm": 0.004,
+   "hits": 1225200,
+   "unmapped": 0,
+   "not_in_trackml": 0,
+   "off_plane": 67932,
+   "outside_bounds": 10234,
+   "failed": 72819,
+   "frac_failed": 0.059434,
+   "max_abs_w_mm": 3.00012,
+   "max_out_of_bounds_mm": 9.651932,
+   "pass": false
+  }
+ },
+ "gates": {
+  "F1": {
+   "rule": "no particle failures; |mean bending residual| <= 0.1 MeV in every |z| band, separately for +z and -z (field probe)",
+   "pass": false,
+   "max_abs_mean_MeV": 0.0292,
+   "bands_pass": true,
+   "nsub": 96,
+   "scoring_closure_max_abs_mean_MeV": 0.0024,
+   "particle_failures": 1,
+   "gun_probe_particle_failures": 337,
+   "gun_probe_bands_pass": false,
+   "gun_probe_same_rule_pass": false,
+   "gun_probe_max_abs_mean_MeV": 0.114
+  },
+  "containment": {
+   "rule": "every gun hit on its TrackML module plane and inside its bounds (tolerance 4 um); every mapped id in TrackML detectors.csv",
+   "pass": false,
+   "hits": 84290,
+   "failed": 6083
+  }
+ }
+}

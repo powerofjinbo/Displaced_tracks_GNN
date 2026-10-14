@@ -1,0 +1,211 @@
+{
+ "verify_problems": [],
+ "events": [
+  {
+   "overlay_event": 59021117,
+   "host": 21117,
+   "host_hits_stored": 106225,
+   "rows": 106340,
+   "gun_hits": 115,
+   "gun_hits_are_last_rows": true,
+   "hid_continuous": true,
+   "host_rows_identical_xyz_pid": true,
+   "event_n_nodes": 106340,
+   "true_edges": 79762,
+   "host_true_edges": 79672,
+   "gun_true_edges": 90,
+   "mixed_true_edges": 0,
+   "host_true_edges_identical": true,
+   "particle_ids_unique_positive_int64": true,
+   "gun_vertex_range": [
+    1001,
+    1010
+   ],
+   "host_vertex_max": 192,
+   "gun_weight_max": 0.0,
+   "host_weight_sum": 1.0,
+   "gun_particles": 26,
+   "gun_particles_with_hits": 25,
+   "gun_hits_per_llp": 11.5,
+   "gun_targets": 8,
+   "P_P_targets": 4,
+   "P_D_targets": 4,
+   "gun_categories": {
+    "other": 26
+   },
+   "gun_species_with_hits": {
+    "211": 7,
+    "321": 6,
+    "11": 5,
+    "13": 4,
+    "2212": 3
+   },
+   "modules_with_gun_and_host_hits": 93,
+   "min_dR_gun_target_other_llp": 0.226,
+   "gun_targets_with_other_llp_target_within_0.05": 0,
+   "emulation": {
+    "sim_hits": 119,
+    "stopped_hits": 2,
+    "dropped_hits": 2
+   },
+   "digitiser": {
+    "n_sim": 115,
+    "n_unknown_module": 0,
+    "n_in_plane": 0,
+    "n_no_cells": 0,
+    "n_hits": 115,
+    "n_cells": 258,
+    "max_abs_w_moved_mm": 0.0006163029511796481,
+    "n_outside_bounds": 0,
+    "max_outside_mm": 0.0
+   },
+   "gun_dq_max_outside_mm": 0.0,
+   "hs_vertex": {
+    "vx": 0.008169,
+    "vy": -0.002848,
+    "vz": 88.4048,
+    "n_at_vertex": 142,
+    "n_vertex1_prompt": 143
+   }
+  },
+  {
+   "overlay_event": 59021124,
+   "host": 21124,
+   "host_hits_stored": 121140,
+   "rows": 121275,
+   "gun_hits": 135,
+   "gun_hits_are_last_rows": true,
+   "hid_continuous": true,
+   "host_rows_identical_xyz_pid": true,
+   "event_n_nodes": 121275,
+   "true_edges": 92991,
+   "host_true_edges": 92880,
+   "gun_true_edges": 111,
+   "mixed_true_edges": 0,
+   "host_true_edges_identical": true,
+   "particle_ids_unique_positive_int64": true,
+   "gun_vertex_range": [
+    1001,
+    1010
+   ],
+   "host_vertex_max": 221,
+   "gun_weight_max": 0.0,
+   "host_weight_sum": 1.0,
+   "gun_particles": 24,
+   "gun_particles_with_hits": 24,
+   "gun_hits_per_llp": 13.5,
+   "gun_targets": 15,
+   "P_P_targets": 7,
+   "P_D_targets": 3,
+   "gun_categories": {
+    "other": 24
+   },
+   "gun_species_with_hits": {
+    "211": 10,
+    "2212": 5,
+    "321": 5,
+    "11": 4
+   },
+   "modules_with_gun_and_host_hits": 116,
+   "min_dR_gun_target_other_llp": 0.403,
+   "gun_targets_with_other_llp_target_within_0.05": 0,
+   "emulation": {
+    "sim_hits": 143,
+    "stopped_hits": 5,
+    "dropped_hits": 3
+   },
+   "digitiser": {
+    "n_sim": 135,
+    "n_unknown_module": 0,
+    "n_in_plane": 0,
+    "n_no_cells": 0,
+    "n_hits": 135,
+    "n_cells": 294,
+    "max_abs_w_moved_mm": 0.0027477600909652233,
+    "n_outside_bounds": 0,
+    "max_outside_mm": 0.0
+   },
+   "gun_dq_max_outside_mm": 0.0,
+   "hs_vertex": {
+    "vx": 0.018667,
+    "vy": -0.025659,
+    "vz": -5.48034,
+    "n_at_vertex": 163,
+    "n_vertex1_prompt": 175
+   }
+  },
+  {
+   "overlay_event": 59021127,
+   "host": 21127,
+   "host_hits_stored": 120242,
+   "rows": 120346,
+   "gun_hits": 104,
+   "gun_hits_are_last_rows": true,
+   "hid_continuous": true,
+   "host_rows_identical_xyz_pid": true,
+   "event_n_nodes": 120346,
+   "true_edges": 92286,
+   "host_true_edges": 92203,
+   "gun_true_edges": 83,
+   "mixed_true_edges": 0,
+   "host_true_edges_identical": true,
+   "particle_ids_unique_positive_int64": true,
+   "gun_vertex_range": [
+    1001,
+    1010
+   ],
+   "host_vertex_max": 205,
+   "gun_weight_max": 0.0,
+   "host_weight_sum": 1.0000001192092896,
+   "gun_particles": 24,
+   "gun_particles_with_hits": 21,
+   "gun_hits_per_llp": 10.4,
+   "gun_targets": 8,
+   "P_P_targets": 2,
+   "P_D_targets": 4,
+   "gun_categories": {
+    "other": 24
+   },
+   "gun_species_with_hits": {
+    "211": 8,
+    "13": 4,
+    "2212": 4,
+    "11": 3,
+    "321": 2
+   },
+   "modules_with_gun_and_host_hits": 88,
+   "min_dR_gun_target_other_llp": 1.871,
+   "gun_targets_with_other_llp_target_within_0.05": 0,
+   "emulation": {
+    "sim_hits": 109,
+    "stopped_hits": 4,
+    "dropped_hits": 1
+   },
+   "digitiser": {
+    "n_sim": 104,
+    "n_unknown_module": 0,
+    "n_in_plane": 0,
+    "n_no_cells": 0,
+    "n_hits": 104,
+    "n_cells": 227,
+    "max_abs_w_moved_mm": 0.0006469950263892077,
+    "n_outside_bounds": 0,
+    "max_outside_mm": 0.0
+   },
+   "gun_dq_max_outside_mm": 0.0,
+   "hs_vertex": {
+    "vx": -0.01033,
+    "vy": 8e-06,
+    "vz": -7.19035,
+    "n_at_vertex": 180,
+    "n_vertex1_prompt": 187
+   }
+  }
+ ],
+ "emulation_hash": "2be64cc023c5b48a754a5d15618c1edf71a9f54726f2a5804cfa31177dc38b5d",
+ "files": [
+  "hits/pilot/shard_59021000.parquet",
+  "particles/pilot/shard_59021000.parquet",
+  "ptype/pilot/shard_59021000.parquet"
+ ]
+}

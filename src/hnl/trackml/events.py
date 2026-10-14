@@ -51,6 +51,10 @@ TRACKML_CODE = 9
 # 1000-9999 (derived/v1: T2, the smoke and dev events 1000-1099), throughput from 21000 (training_part01 / 02).
 DERIVED_TP = os.path.join(EXT, "derived", "tp_v1")
 TP_FIRST_ID = 21000
+# Pileup overlay tables (docs/pileup_overlay_plan.md section 5.4, decision D9; written by hnl.overlay.writer): overlay
+# ids 50,000,000 + 1,000,000 k + host id, above every TrackML id.
+DERIVED_OVERLAY = os.path.join(EXT, "derived", "overlay_v1")
+OVERLAY_FIRST_ID = 50_000_000
 # Module-frame resolutions of TrackML (plan section 6.5, configs/trackml/res_v1.json, measured on the 200 calibration
 # events): they replace the ttbar table in the hit sigmas of hnl.graphs.helix_union (legs, candidate triplets and the
 # features of the learned triplet support) in every process that imports this module, i.e. every TrackML stage. HNL
@@ -201,8 +205,9 @@ def _event_from(h: pd.DataFrame, p: pd.DataFrame | None, e: int) -> Event:
 
 
 def table_root(event: int) -> str:
-    """The tables holding an event: derived/tp_v1 for throughput-phase ids (>= 21000), else derived/v1."""
-    return DERIVED_TP if int(event) >= TP_FIRST_ID else DERIVED
+    """The tables holding an event: derived/overlay_v1 for overlay ids (>= 50,000,000), derived/tp_v1 for
+    throughput-phase ids (>= 21000), else derived/v1."""
+    return DERIVED_OVERLAY if int(event) >= OVERLAY_FIRST_ID else DERIVED_TP if int(event) >= TP_FIRST_ID else DERIVED
 
 
 def iter_events(events, chunk: int = 25, root: str | None = None, particles: bool = True):
