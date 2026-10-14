@@ -30,9 +30,16 @@ from hnl.data.convert import SHARD, read_table
 from hnl.data.splits import read_split
 
 SAMPLE_CODE = {"ttbar": 1, "hnl10_100": 2, "hnl15_100": 3, "hnl15_200": 4}
-CODE_SAMPLE = {v: k for k, v in SAMPLE_CODE.items()}
 SPLITS = {"ttbar": ("train", "val", "test"), "hnl10_100": ("train", "val", "test"),
           "hnl15_200": ("train", "val", "test"), "hnl15_100": ("external",)}
+# the generated samples (hnl.data.npz.GENERATED), only with HNL_GENERATED=1; splits of addendum G section 3
+GENERATED_CODE = {"generic_iso": 5, "generic_dense": 6, "hss15_100": 7, "hss40_300": 8}
+GENERATED_SPLITS = {"generic_iso": ("train", "val", "test"), "generic_dense": ("train", "val", "test"),
+                    "hss15_100": ("all",), "hss40_300": ("all",)}
+if os.environ.get("HNL_GENERATED") == "1":
+    SAMPLE_CODE.update(GENERATED_CODE)
+    SPLITS.update(GENERATED_SPLITS)
+CODE_SAMPLE = {v: k for k, v in SAMPLE_CODE.items()}
 DERIVED = os.path.join(os.environ.get("HNL_DATA", "/ceph/submit/data/user/j/jinboz1/hnl_lrt"), "derived")
 
 

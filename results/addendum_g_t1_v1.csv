@@ -1,0 +1,9 @@
+sample,split,events,targets,population,prompt,gun_particles_with_hits,gun_targets,population_rv_ge_100,population_rv_lt_100,population_d0_ge_300,pop_electrons,pop_muons,pop_hadrons,pop_s_ee,pop_v0_tagged
+generic_iso,train,4810,311128,5799,295037,17058.0,6836.0,4898.0,901.0,163.0,,,,,
+generic_iso,val,806,52280,956,49557,2866.0,1111.0,826.0,130.0,38.0,,,,,
+generic_iso,test,2384,155019,2914,146985,8450.0,3428.0,2514.0,400.0,96.0,,,,,
+generic_dense,train,4780,320682,16123,292098,47697.0,19377.0,13985.0,2138.0,279.0,,,,,
+generic_dense,val,835,55891,2747,51122,8260.0,3249.0,2406.0,341.0,50.0,,,,,
+generic_dense,test,2385,161604,7782,147619,23883.0,9290.0,6768.0,1014.0,163.0,,,,,
+hss15_100,all,1500,55167,8294,41381,,,,,,785.0,313.0,7196.0,531.0,1167.0
+hss40_300,all,1500,56856,9719,42147,,,,,,758.0,329.0,8632.0,513.0,1265.0

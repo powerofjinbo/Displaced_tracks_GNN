@@ -1,0 +1,19 @@
+{
+ "sample": "hss15_100",
+ "dir": "hss15_100_v1",
+ "n_files": 1503,
+ "n_events": 1500,
+ "dropped": [],
+ "checks": {
+  "particles_with_hits": 255335,
+  "without_initial_state": 0,
+  "sidecar_pdg_mismatch": 0
+ },
+ "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/truth_hss15_100.parquet",
+ "truth_table_sha256": "02dbbb6610facf26433019196d3a9cb4b6ea6c1ba127f20f9004ba092f27800c",
+ "events_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/events_hss15_100.parquet",
+ "events_table_sha256": "b1df202245deeaafdbd104f3f9bc5ee3af3c07184daa73a19eda17e44ee021c2",
+ "git": "dcba763ff279b85cf9d76154932926fbed4c9c7e",
+ "slurm_job": "6810907",
+ "finished_utc": "2026-10-14T12:29:08+00:00"
+}

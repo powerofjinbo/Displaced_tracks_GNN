@@ -33,6 +33,7 @@ git add results/working_points_v1.json
 git commit -q -m "Working points v1: the preregistered val working points from all 3 arms x 3 seeds (before any test evaluation)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+" || { log "git commit failed: stopping"; exit 1; }
 log "working points committed as $(git rev-parse HEAD) (sha256 $(sha256sum "$WP" | cut -c1-16))"
 python -m hnl.train.chain_check --run "$B/armi_s0" --wp "$WP" || { log "chain check failed: stopping"; exit 1; }
 JOBS=""

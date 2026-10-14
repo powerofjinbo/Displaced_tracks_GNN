@@ -1,0 +1,35 @@
+check,code,events,condition,quantity,published,ours,sd,edge_removal_draws,ours_hit_weighted,ours_minus_published,min_over_400_event_windows,max_over_400_event_windows
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,0% of edges removed,Eff,98.72,98.72,0.0,1.0,98.79,0.0,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,0% of edges removed,FR,5.87,6.09,0.0,1.0,5.96,0.22,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,10% of edges removed,Eff,96.21,96.41,0.17,20.0,96.5,0.2,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,10% of edges removed,FR,15.53,15.79,0.31,20.0,15.66,0.26,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,20% of edges removed,Eff,92.31,92.39,0.26,20.0,92.48,0.08,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,20% of edges removed,FR,24.4,25.1,0.43,20.0,25.0,0.7,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,30% of edges removed,Eff,85.81,86.21,0.22,20.0,86.3,0.4,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,30% of edges removed,FR,33.48,34.29,0.22,20.0,34.2,0.81,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,40% of edges removed,Eff,77.26,77.42,0.2,20.0,77.53,0.16,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,40% of edges removed,FR,42.99,43.64,0.28,20.0,43.58,0.65,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,50% of edges removed,Eff,64.81,64.96,0.35,20.0,65.07,0.15,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",authors' 10 test events,50% of edges removed,FR,53.12,53.84,0.37,20.0,53.78,0.72,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,0% of edges removed,Eff,98.72,98.93,0.0,1.0,98.92,0.21,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,0% of edges removed,FR,5.87,5.95,0.0,1.0,5.97,0.08,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,10% of edges removed,Eff,96.21,96.61,0.03,20.0,96.6,0.4,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,10% of edges removed,FR,15.53,15.79,0.05,20.0,15.8,0.26,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,20% of edges removed,Eff,92.31,92.59,0.03,20.0,92.58,0.28,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,20% of edges removed,FR,24.4,25.07,0.06,20.0,25.07,0.67,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,30% of edges removed,Eff,85.81,86.42,0.04,20.0,86.42,0.61,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,30% of edges removed,FR,33.48,34.27,0.04,20.0,34.27,0.79,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,40% of edges removed,Eff,77.26,77.58,0.06,20.0,77.58,0.32,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,40% of edges removed,FR,42.99,43.7,0.07,20.0,43.7,0.71,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,50% of edges removed,Eff,64.81,65.26,0.06,20.0,65.27,0.45,,
+"Liu et al. Table 3, Truth-CC (TrackML-1GeV)","refports.liu (fork, strict >50%)",all 340 released events,50% of edges removed,FR,53.12,53.78,0.06,20.0,53.77,0.66,,
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 1 hit (alternative)",our accuracy-phase non-test events (1470),full events,particles per 400 events [k],467.0,468.7,2.2,,,1.7,463.0,471.9
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 2 hits (alternative)",our accuracy-phase non-test events (1470),full events,particles per 400 events [k],467.0,459.9,2.2,,,-7.1,454.2,463.1
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"refports.eggnet targets: pid != 0, pT >= 1 GeV, >= 3 hits, no eta cut (the code's)",our accuracy-phase non-test events (1470),full events,particles per 400 events [k],467.0,452.3,2.1,,,-14.7,446.8,455.4
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 5 hits (alternative)",our accuracy-phase non-test events (1470),full events,particles per 400 events [k],467.0,437.3,2.0,,,-29.7,431.9,440.2
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"our targets: pT > 1 GeV, |eta| < 4, >= 5 hits",our accuracy-phase non-test events (1470),full events,particles per 400 events [k],467.0,437.3,2.0,,,-29.7,431.9,440.2
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 1 hit (alternative)",our throughput-phase non-test events (1549),full events,particles per 400 events [k],467.0,469.9,1.2,,,2.9,465.3,472.5
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 2 hits (alternative)",our throughput-phase non-test events (1549),full events,particles per 400 events [k],467.0,461.3,1.2,,,-5.7,456.8,463.9
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"refports.eggnet targets: pid != 0, pT >= 1 GeV, >= 3 hits, no eta cut (the code's)",our throughput-phase non-test events (1549),full events,particles per 400 events [k],467.0,453.7,1.2,,,-13.3,449.3,456.2
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"pT >= 1 GeV, >= 5 hits (alternative)",our throughput-phase non-test events (1549),full events,particles per 400 events [k],467.0,438.6,1.1,,,-28.4,434.2,441.1
+Chan et al. p. 4: 'About 467K particles' over 400 test events (full TrackML),"our targets: pT > 1 GeV, |eta| < 4, >= 5 hits",our throughput-phase non-test events (1549),full events,particles per 400 events [k],467.0,438.6,1.1,,,-28.4,434.2,441.1

@@ -1,0 +1,8 @@
+# Runs for slurm/stage1/express_driver.sh (SPEC=slurm/stage1/express_runs_ts_seeds.txt, STATE=$HNL_DATA/runs/_express_driver_ts_seeds):
+# JOBNAME RUN_DIR EXPORTS NAME CONFIG ARM SEED EPOCHS [NEEDS]
+# Training-sample study, seeds 1 and 2 of arms (ii) HNL and (iii) ttbar + HNL (docs/training_sample_study.md section 9;
+# slurm/stage1/ts_seeds_chain.sh does the val chain). Same lines as seed 0 in express_runs.txt with the seed changed.
+s1_l1tl_ii_s1 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armii_s1 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml ii 1 30 $HNL_DATA/runs/baseline_v1_ts/armii_s1/ltf_union_graphs.done
+s1_l1tl_ii_s2 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armii_s2 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml ii 2 30 $HNL_DATA/runs/baseline_v1_ts/armii_s2/ltf_union_graphs.done
+s1_l1tl_iii_s1 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armiii_s1 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml iii 1 30 $HNL_DATA/runs/baseline_v1_ts/armiii_s1/ltf_union_graphs.done
+s1_l1tl_iii_s2 $HNL_DATA/runs/stage1_final_learned_ts/l1tl/armiii_s2 S1TAG=final_learned_ts,TAG=v1_ts,GRAPHS_SUBDIR=ltf_union_graphs l1tl configs/stage1/triplet_symregion_trunc.yaml iii 2 30 $HNL_DATA/runs/baseline_v1_ts/armiii_s2/ltf_union_graphs.done

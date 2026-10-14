@@ -1,0 +1,37 @@
+condition,model,config,target_population,min_hits,metric,value_pct,boot_std_pct,n_events,n_targets,n_matched_targets,targets_per_400_events,eggnet_published_pct,eggnet_published_err_pct,diff_pct,diff_err_pct,diff_sigma,reproduces_table_vi
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,efficiency,95.9897,0.0353639,300,350996,336920,467995,95.87,0.03,0.119698,0.0463746,2.58111,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,duplication_rate,0.167696,0.00705758,300,350996,336920,467995,2.76,0.02,-2.5923,0.0212087,-122.228,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,fake_rate,2.40345,0.0113193,300,350996,336920,467995,0.19,0.01,2.21345,0.0151039,146.549,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,efficiency,97.7736,0.025083,300,344592,336920,459456,95.87,0.03,1.9036,0.0391045,48.6799,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,duplication_rate,0.167696,0.00705758,300,344592,336920,459456,2.76,0.02,-2.5923,0.0212087,-122.228,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,fake_rate,2.40345,0.0113193,300,344592,336920,459456,0.19,0.01,2.21345,0.0151039,146.549,
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,efficiency,99.4099,0.0131745,300,338753,336754,451671,95.87,0.03,3.53989,0.0327654,108.038,"yes (identical value, bootstrap sd and per-event counts)"
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,duplication_rate,0.167778,0.00706148,300,338753,336754,451671,2.76,0.02,-2.59222,0.02121,-122.217,"yes (identical value, bootstrap sd and per-event counts)"
+all hits (C-full),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,fake_rate,2.40345,0.0113193,300,338753,336754,451671,0.19,0.01,2.21345,0.0151039,146.549,"yes (identical value, bootstrap sd and per-event counts)"
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 1 hit",1,efficiency,95.9159,0.0372704,300,350996,336661,467995,95.87,0.03,0.0459079,0.0478443,0.959526,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 1 hit",1,duplication_rate,1.69696,0.0354213,300,350996,336661,467995,2.76,0.02,-1.06304,0.0406777,-26.1333,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 1 hit",1,fake_rate,0.172704,0.00292573,300,350996,336661,467995,0.19,0.01,-0.017296,0.0104192,-1.66001,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 2 hits",2,efficiency,97.6984,0.0270108,300,344592,336661,459456,95.87,0.03,1.82844,0.0403681,45.2941,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 2 hits",2,duplication_rate,1.69696,0.0354213,300,344592,336661,459456,2.76,0.02,-1.06304,0.0406777,-26.1333,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 2 hits",2,fake_rate,0.172704,0.00292573,300,344592,336661,459456,0.19,0.01,-0.017296,0.0104192,-1.66001,
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 3 hits",3,efficiency,99.3718,0.0146636,300,338753,336625,451671,95.87,0.03,3.50181,0.0333919,104.87,"yes (identical value, bootstrap sd and per-event counts)"
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 3 hits",3,duplication_rate,1.69714,0.0354242,300,338753,336625,451671,2.76,0.02,-1.06286,0.0406801,-26.1272,"yes (identical value, bootstrap sd and per-event counts)"
+all hits (C-full),"Canto-L (CC), WP-R-P3",WP-R-P3,"pT >= 1 GeV, >= 3 hits",3,fake_rate,0.172704,0.00292573,300,338753,336625,451671,0.19,0.01,-0.017296,0.0104192,-1.66001,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,efficiency,96.094,0.0362499,300,350996,337286,467995,99.56,0.03,-3.46603,0.0470537,-73.661,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,duplication_rate,0.132232,0.00653448,300,350996,337286,467995,1.29,0.02,-1.15777,0.0210404,-55.0259,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 1 hit",1,fake_rate,0.00770859,0.00148792,300,350996,337286,467995,0.06,,-0.0522914,,,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,efficiency,97.8798,0.0261043,300,344592,337286,459456,99.56,0.03,-1.68019,0.0397672,-42.2506,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,duplication_rate,0.132232,0.00653448,300,344592,337286,459456,1.29,0.02,-1.15777,0.0210404,-55.0259,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 2 hits",2,fake_rate,0.00770859,0.00148792,300,344592,337286,459456,0.06,,-0.0522914,,,
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,efficiency,99.5646,0.0122395,300,338753,337278,451671,99.56,0.03,0.0045795,0.0324007,0.14134,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,duplication_rate,0.132235,0.00653463,300,338753,337278,451671,1.29,0.02,-1.15776,0.0210405,-55.0256,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (LM), WP-A",WP-A,"pT >= 1 GeV, >= 3 hits",3,fake_rate,0.00770859,0.00148792,300,338753,337278,451671,0.06,,-0.0522914,,,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 1 hit",1,efficiency,96.1965,0.0353682,300,350996,337646,467995,99.56,0.03,-3.36346,0.0463779,-72.523,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 1 hit",1,duplication_rate,0.774776,0.0226152,300,350996,337646,467995,1.29,0.02,-0.515224,0.0301902,-17.0659,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 1 hit",1,fake_rate,0.0393904,0.00340559,300,350996,337646,467995,0.06,,-0.0206096,,,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 2 hits",2,efficiency,97.9843,0.0249146,300,344592,337646,459456,99.56,0.03,-1.57572,0.0389966,-40.4065,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 2 hits",2,duplication_rate,0.774776,0.0226152,300,344592,337646,459456,1.29,0.02,-0.515224,0.0301902,-17.0659,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 2 hits",2,fake_rate,0.0393904,0.00340559,300,344592,337646,459456,0.06,,-0.0206096,,,
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 3 hits",3,efficiency,99.6688,0.0108687,300,338753,337631,451671,99.56,0.03,0.108785,0.0319081,3.40933,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 3 hits",3,duplication_rate,0.77481,0.0226161,300,338753,337631,451671,1.29,0.02,-0.51519,0.0301909,-17.0644,"yes (identical value, bootstrap sd and per-event counts)"
+TrackML-1GeV (C-1GeV),"Canto-L (WT+M), WP-R-P4",WP-R-P4,"pT >= 1 GeV, >= 3 hits",3,fake_rate,0.0393904,0.00340559,300,338753,337631,451671,0.06,,-0.0206096,,,"yes (identical value, bootstrap sd and per-event counts)"

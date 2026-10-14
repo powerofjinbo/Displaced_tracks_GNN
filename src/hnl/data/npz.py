@@ -43,6 +43,7 @@ class Sample:
     labeled: bool                 # particles[:, 12] carries the parent PDG code
     hnl_mass_gev: float | None = None
     hnl_ctau_mm: float | None = None
+    root: str | None = None       # data root of the sample when it is not UNPACKED (the generated samples)
 
 
 SAMPLES: dict[str, Sample] = {
@@ -55,12 +56,28 @@ SAMPLES: dict[str, Sample] = {
     )
 }
 
+# The samples produced in this project with ACTS v15 (docs/new_samples_spec.md; evaluated under preregistration
+# addendum G, docs/preregistration_new_sample.md). Registered only when HNL_GENERATED=1, so that nothing that iterates
+# over SAMPLES changes otherwise. parent_pid is 0 everywhere (unlabeled); truth lives in the samples' sidecars.
+GENERATED_ROOT = os.path.join(DATA_ROOT, "generated")
+GENERATED: dict[str, Sample] = {
+    s.key: s
+    for s in (
+        Sample("generic_iso", "generic_iso_v1", 8000, "generic", False, root=GENERATED_ROOT),
+        Sample("generic_dense", "generic_dense_v1", 8000, "generic", False, root=GENERATED_ROOT),
+        Sample("hss15_100", "hss15_100_v1", 1500, "generic", False, root=GENERATED_ROOT),
+        Sample("hss40_300", "hss40_300_v1", 1500, "generic", False, root=GENERATED_ROOT),
+    )
+}
+if os.environ.get("HNL_GENERATED") == "1":
+    SAMPLES.update(GENERATED)
+
 
 def event_path(sample: str, index: int, root: str = UNPACKED) -> str:
     s = SAMPLES[sample]
     if not 0 <= index < s.n_events:
         raise IndexError(f"{sample}: event {index} outside 0..{s.n_events - 1}")
-    return os.path.join(root, s.dirname, f"{index}.npz")
+    return os.path.join(s.root if s.root is not None else root, s.dirname, f"{index}.npz")
 
 
 def load_event(sample: str, index: int, root: str = UNPACKED, check: bool = True) -> dict[str, np.ndarray]:

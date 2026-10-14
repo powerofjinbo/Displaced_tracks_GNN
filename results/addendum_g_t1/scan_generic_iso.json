@@ -1,0 +1,26 @@
+{
+ "sample": "generic_iso",
+ "dir": "generic_iso_v1",
+ "n_files": 8032,
+ "n_events": 8000,
+ "dropped": [],
+ "checks": {
+  "gun_particles": 32000,
+  "gun_particles_with_hits": 28374,
+  "barcode_vs_sidecar_mismatch": 0,
+  "gun_pdg_mismatch": 0,
+  "gun_initial_vs_sidecar_max_dp": 6.859708264528308e-05,
+  "gun_vertex_vs_sidecar_max_dr": 4.0097996672301906e-05,
+  "gun_d0_vs_sidecar_max_diff_mm": 0.00010530829166555122,
+  "particles_with_hits": 1649655,
+  "without_initial_state": 0,
+  "sidecar_pdg_mismatch": 0
+ },
+ "truth_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/truth_generic_iso.parquet",
+ "truth_table_sha256": "ce2e0d9b6a25d76bb2255fe5ac62e2162a0b056313b14aec9d5a46256cea9324",
+ "events_table": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/derived/generated_v1/t1/events_generic_iso.parquet",
+ "events_table_sha256": "013fc97388d44f8f792f5ff04d4abbe831ed9510f5c453c5e4c5b21e2dbc7efa",
+ "git": "dcba763ff279b85cf9d76154932926fbed4c9c7e",
+ "slurm_job": "6810887",
+ "finished_utc": "2026-10-14T12:28:02+00:00"
+}

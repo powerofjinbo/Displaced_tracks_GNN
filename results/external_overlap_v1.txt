@@ -1,0 +1,32 @@
+# External sample (hnl15_100, Wang et al.'s evaluation events) against our other events
+
+Job 6810500, 2026-10-14 09:26 UTC; truth and hits only (scripts/diagnostics/external_overlap.py).
+
+External events: 4999 (splits/hnl15_100_external.txt).
+
+## identical hits (x, y, z to 1e-3 mm)
+
+- external events sharing the hash with another external event: 0
+- ttbar: 9999 events; external events with an identical one: 0 (by split of the match: {})
+- hnl10_100: 9999 events; external events with an identical one: 0 (by split of the match: {})
+- hnl15_200: 9999 events; external events with an identical one: 0 (by split of the match: {})
+
+## identical generation-0 record
+
+- external events sharing the hash with another external event: 0
+- ttbar: 9999 events; external events with an identical one: 0 (by split of the match: {})
+- hnl10_100: 9999 events; external events with an identical one: 0 (by split of the match: {})
+- hnl15_200: 9999 events; external events with an identical one: 0 (by split of the match: {})
+
+## Shared underlying-event particles (generation 0, category other, pT > 0.5 GeV, coarse key)
+
+- external: 583197 particles in 4999 events (116.7 per event)
+- against ttbar (9999 events): per external event, the largest number shared with one ttbar event: median 0, 90% 1, 99% 1, max 1; external events with >= 5 shared: 0, >= 10: 0
+  largest pairs (external event, other event, its split, shared): (2, 4745, val, 1); (3, 5788, train, 1); (6, 8932, train, 1); (7, 4294, train, 1); (7, 7153, train, 1)
+- against hnl10_100 (9999 events): per external event, the largest number shared with one hnl10_100 event: median 0, 90% 1, 99% 1, max 1; external events with >= 5 shared: 0, >= 10: 0
+  largest pairs (external event, other event, its split, shared): (2, 2858, train, 1); (3, 7081, train, 1); (12, 5201, train, 1); (12, 5969, train, 1); (21, 4740, train, 1)
+- against hnl15_200 (9999 events): per external event, the largest number shared with one hnl15_200 event: median 0, 90% 1, 99% 1, max 1; external events with >= 5 shared: 0, >= 10: 0
+  largest pairs (external event, other event, its split, shared): (2, 2858, train, 1); (12, 5201, train, 1); (12, 5969, train, 1); (21, 4740, train, 1); (22, 9407, val, 1)
+- against hnl15_100 (4999 events): per external event, the largest number shared with one hnl15_100 event: median 0, 90% 1, 99% 1, max 1; external events with >= 5 shared: 0, >= 10: 0
+
+Elapsed 68 s.

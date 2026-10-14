@@ -61,6 +61,8 @@ def event_tables(ev: dict, sample: str, event: int) -> dict[str, pd.DataFrame]:
     if SAMPLES[sample].labeled:
         lab = L.labels_from_table(P)
         is_hnl, is_w = lab["hnl_daughter"], lab["w_muon"]
+    elif SAMPLES[sample].kind == "generic":    # generated samples: no HNL / W categories (truth in their sidecars)
+        is_hnl = is_w = np.zeros(len(P), dtype=bool)
     else:
         is_hnl, is_w = L.hnl_daughter_rule_first_pair(P), L.w_muon_rule(P)
     pt = P[:, COL["pt"]]

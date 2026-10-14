@@ -1,0 +1,1054 @@
+population,candidate,panel,reading,lo,hi,ours,paper,frac_with_value,n_candidate,n_without_value
+prompt,"W muons, >= 5 hits",pt,pt,1,4,53,,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,4,7,102,,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,7,10,131,131.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,10,13,193,191.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,13,16,213,214.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,16,19,266,266.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,19,22,317,315.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,22,25,365,367.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",pt,pt,25,28,437,435.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",z0,truth z0,-200,0,2369,2390.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",z0,truth z0,0,200,2330,2354.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,0,25,1628,1656.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,25,50,1305,1308.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,50,75,924,940.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,75,100,541,548.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,100,125,186,183.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,|z0|,125,150,78,77.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),0,25,1628,1656.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),25,50,1304,1308.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),50,75,924,940.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),75,100,542,548.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),100,125,186,183.0,1.0,4744,0
+prompt,"W muons, >= 5 hits",radius,sqrt(d0^2 + z0^2),125,150,78,77.0,1.0,4744,0
+displaced,all daughter targets,pt,pt,1,4,1202,613.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,4,7,1035,501.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,7,10,842,431.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,10,13,703,375.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,13,16,551,273.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,16,19,439,244.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,19,22,293,158.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,22,25,192,101.0,1.0,5623,0
+displaced,all daughter targets,pt,pt,25,28,167,90.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,0,50,4357,1084.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,50,100,807,645.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,100,150,255,358.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,150,200,90,268.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,200,250,54,186.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,250,300,34,147.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,300,350,11,93.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,350,400,7,41.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,400,450,4,34.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,450,500,2,26.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,500,550,0,,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,550,600,1,0.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,600,650,1,,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,650,700,0,0.0,1.0,5623,0
+displaced,all daughter targets,d0,truth |d0|,700,750,0,0.0,1.0,5623,0
+displaced,all daughter targets,d0,r_v,0,50,1967,1084.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,50,100,1125,645.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,100,150,701,358.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,150,200,469,268.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,200,250,409,186.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,250,300,236,147.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,300,350,136,93.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,350,400,72,41.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,400,450,48,34.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,450,500,37,26.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,500,550,8,,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,550,600,2,0.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,600,650,3,,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,650,700,1,0.0,0.9272630268539925,5623,409
+displaced,all daughter targets,d0,r_v,700,750,0,0.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,truth z0,-2000,-1800,4,0.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-1800,-1600,2,,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-1600,-1400,2,19.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-1400,-1200,4,20.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-1200,-1000,5,42.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-1000,-800,33,78.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-800,-600,57,109.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-600,-400,133,155.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-400,-200,361,266.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,-200,0,2212,757.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,0,200,2267,756.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,200,400,316,257.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,400,600,120,153.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,600,800,51,97.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,800,1000,24,76.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,1000,1200,11,56.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,1200,1400,8,27.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,1400,1600,3,8.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,1600,1800,3,11.0,1.0,5623,0
+displaced,all daughter targets,z0,truth z0,1800,2000,0,0.0,1.0,5623,0
+displaced,all daughter targets,z0,vertex z,-2000,-1800,2,0.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-1800,-1600,10,,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-1600,-1400,27,19.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-1400,-1200,33,20.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-1200,-1000,67,42.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-1000,-800,135,78.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-800,-600,161,109.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-600,-400,265,155.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-400,-200,462,266.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,-200,0,1505,757.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,0,200,1416,756.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,200,400,461,257.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,400,600,247,153.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,600,800,145,97.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,800,1000,134,76.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,1000,1200,73,56.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,1200,1400,43,27.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,1400,1600,16,8.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,1600,1800,10,11.0,0.9272630268539925,5623,409
+displaced,all daughter targets,z0,vertex z,1800,2000,1,0.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,0,25,1149,107.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,25,50,818,204.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,50,75,618,218.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,75,100,507,193.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,100,125,363,177.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,125,150,338,136.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,150,175,267,128.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,175,200,202,112.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,200,225,229,103.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,225,250,180,95.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,250,275,133,118.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,r_v,275,300,103,75.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,0,25,201,107.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,25,50,401,204.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,50,75,431,218.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,75,100,375,193.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,100,125,355,177.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,125,150,282,136.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,150,175,245,128.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,175,200,203,112.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,200,225,196,103.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,225,250,197,95.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,250,275,172,118.0,0.9272630268539925,5623,409
+displaced,all daughter targets,radius,3D vertex distance,275,300,125,75.0,0.9272630268539925,5623,409
+displaced,mu+ only,pt,pt,1,4,613,613.0,1.0,2803,0
+displaced,mu+ only,pt,pt,4,7,495,501.0,1.0,2803,0
+displaced,mu+ only,pt,pt,7,10,413,431.0,1.0,2803,0
+displaced,mu+ only,pt,pt,10,13,347,375.0,1.0,2803,0
+displaced,mu+ only,pt,pt,13,16,276,273.0,1.0,2803,0
+displaced,mu+ only,pt,pt,16,19,214,244.0,1.0,2803,0
+displaced,mu+ only,pt,pt,19,22,154,158.0,1.0,2803,0
+displaced,mu+ only,pt,pt,22,25,93,101.0,1.0,2803,0
+displaced,mu+ only,pt,pt,25,28,95,90.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,0,50,2163,1084.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,50,100,420,645.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,100,150,113,358.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,150,200,59,268.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,200,250,20,186.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,250,300,16,147.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,300,350,5,93.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,350,400,4,41.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,400,450,1,34.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,450,500,1,26.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,500,550,0,,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,550,600,1,0.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,600,650,0,,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,650,700,0,0.0,1.0,2803,0
+displaced,mu+ only,d0,truth |d0|,700,750,0,0.0,1.0,2803,0
+displaced,mu+ only,d0,r_v,0,50,985,1084.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,50,100,561,645.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,100,150,350,358.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,150,200,236,268.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,200,250,203,186.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,250,300,121,147.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,300,350,69,93.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,350,400,37,41.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,400,450,28,34.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,450,500,15,26.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,500,550,3,,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,550,600,0,0.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,600,650,2,,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,650,700,1,0.0,0.931501962183375,2803,192
+displaced,mu+ only,d0,r_v,700,750,0,0.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,truth z0,-2000,-1800,1,0.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-1800,-1600,0,,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-1600,-1400,0,19.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-1400,-1200,3,20.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-1200,-1000,2,42.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-1000,-800,13,78.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-800,-600,31,109.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-600,-400,74,155.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-400,-200,171,266.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,-200,0,1091,757.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,0,200,1133,756.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,200,400,167,257.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,400,600,58,153.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,600,800,29,97.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,800,1000,13,76.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,1000,1200,8,56.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,1200,1400,3,27.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,1400,1600,1,8.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,1600,1800,2,11.0,1.0,2803,0
+displaced,mu+ only,z0,truth z0,1800,2000,0,0.0,1.0,2803,0
+displaced,mu+ only,z0,vertex z,-2000,-1800,1,0.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-1800,-1600,5,,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-1600,-1400,14,19.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-1400,-1200,15,20.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-1200,-1000,32,42.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-1000,-800,66,78.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-800,-600,80,109.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-600,-400,135,155.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-400,-200,231,266.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,-200,0,753,757.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,0,200,709,756.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,200,400,231,257.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,400,600,128,153.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,600,800,74,97.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,800,1000,64,76.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,1000,1200,35,56.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,1200,1400,22,27.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,1400,1600,8,8.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,1600,1800,7,11.0,0.931501962183375,2803,192
+displaced,mu+ only,z0,vertex z,1800,2000,1,0.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,0,25,574,107.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,25,50,411,204.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,50,75,310,218.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,75,100,251,193.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,100,125,180,177.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,125,150,170,136.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,150,175,134,128.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,175,200,102,112.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,200,225,112,103.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,225,250,91,95.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,250,275,66,118.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,r_v,275,300,55,75.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,0,25,100,107.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,25,50,203,204.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,50,75,215,218.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,75,100,185,193.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,100,125,178,177.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,125,150,140,136.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,150,175,122,128.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,175,200,103,112.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,200,225,98,103.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,225,250,98,95.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,250,275,87,118.0,0.931501962183375,2803,192
+displaced,mu+ only,radius,3D vertex distance,275,300,62,75.0,0.931501962183375,2803,192
+displaced,mu- only,pt,pt,1,4,589,613.0,1.0,2820,0
+displaced,mu- only,pt,pt,4,7,540,501.0,1.0,2820,0
+displaced,mu- only,pt,pt,7,10,429,431.0,1.0,2820,0
+displaced,mu- only,pt,pt,10,13,356,375.0,1.0,2820,0
+displaced,mu- only,pt,pt,13,16,275,273.0,1.0,2820,0
+displaced,mu- only,pt,pt,16,19,225,244.0,1.0,2820,0
+displaced,mu- only,pt,pt,19,22,139,158.0,1.0,2820,0
+displaced,mu- only,pt,pt,22,25,99,101.0,1.0,2820,0
+displaced,mu- only,pt,pt,25,28,72,90.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,0,50,2194,1084.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,50,100,387,645.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,100,150,142,358.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,150,200,31,268.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,200,250,34,186.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,250,300,18,147.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,300,350,6,93.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,350,400,3,41.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,400,450,3,34.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,450,500,1,26.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,500,550,0,,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,550,600,0,0.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,600,650,1,,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,650,700,0,0.0,1.0,2820,0
+displaced,mu- only,d0,truth |d0|,700,750,0,0.0,1.0,2820,0
+displaced,mu- only,d0,r_v,0,50,982,1084.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,50,100,564,645.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,100,150,351,358.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,150,200,233,268.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,200,250,206,186.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,250,300,115,147.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,300,350,67,93.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,350,400,35,41.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,400,450,20,34.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,450,500,22,26.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,500,550,5,,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,550,600,2,0.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,600,650,1,,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,650,700,0,0.0,0.923049645390071,2820,217
+displaced,mu- only,d0,r_v,700,750,0,0.0,0.923049645390071,2820,217
+displaced,mu- only,z0,truth z0,-2000,-1800,3,0.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-1800,-1600,2,,1.0,2820,0
+displaced,mu- only,z0,truth z0,-1600,-1400,2,19.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-1400,-1200,1,20.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-1200,-1000,3,42.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-1000,-800,20,78.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-800,-600,26,109.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-600,-400,59,155.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-400,-200,190,266.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,-200,0,1121,757.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,0,200,1134,756.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,200,400,149,257.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,400,600,62,153.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,600,800,22,97.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,800,1000,11,76.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,1000,1200,3,56.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,1200,1400,5,27.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,1400,1600,2,8.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,1600,1800,1,11.0,1.0,2820,0
+displaced,mu- only,z0,truth z0,1800,2000,0,0.0,1.0,2820,0
+displaced,mu- only,z0,vertex z,-2000,-1800,1,0.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-1800,-1600,5,,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-1600,-1400,13,19.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-1400,-1200,18,20.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-1200,-1000,35,42.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-1000,-800,69,78.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-800,-600,81,109.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-600,-400,130,155.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-400,-200,231,266.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,-200,0,752,757.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,0,200,707,756.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,200,400,230,257.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,400,600,119,153.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,600,800,71,97.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,800,1000,70,76.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,1000,1200,38,56.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,1200,1400,21,27.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,1400,1600,8,8.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,1600,1800,3,11.0,0.923049645390071,2820,217
+displaced,mu- only,z0,vertex z,1800,2000,0,0.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,0,25,575,107.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,25,50,407,204.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,50,75,308,218.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,75,100,256,193.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,100,125,183,177.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,125,150,168,136.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,150,175,133,128.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,175,200,100,112.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,200,225,117,103.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,225,250,89,95.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,250,275,67,118.0,0.923049645390071,2820,217
+displaced,mu- only,radius,r_v,275,300,48,75.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,0,25,101,107.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,25,50,198,204.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,50,75,216,218.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,75,100,190,193.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,100,125,177,177.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,125,150,142,136.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,150,175,123,128.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,175,200,100,112.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,200,225,98,103.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,225,250,99,95.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,250,275,85,118.0,0.923049645390071,2820,217
+displaced,mu- only,radius,3D vertex distance,275,300,63,75.0,0.923049645390071,2820,217
+displaced,higher-pT daughter (target),pt,pt,1,4,119,613.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,4,7,371,501.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,7,10,423,431.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,10,13,451,375.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,13,16,436,273.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,16,19,382,244.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,19,22,284,158.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,22,25,191,101.0,1.0,3022,0
+displaced,higher-pT daughter (target),pt,pt,25,28,166,90.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,0,50,2564,1084.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,50,100,352,645.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,100,150,70,358.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,150,200,18,268.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,200,250,13,186.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,250,300,3,147.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,300,350,2,93.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,350,400,0,41.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,400,450,0,34.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,450,500,0,26.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,500,550,0,,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,550,600,0,0.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,600,650,0,,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,650,700,0,0.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,truth |d0|,700,750,0,0.0,1.0,3022,0
+displaced,higher-pT daughter (target),d0,r_v,0,50,1019,1084.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,50,100,584,645.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,100,150,363,358.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,150,200,249,268.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,200,250,216,186.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,250,300,127,147.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,300,350,76,93.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,350,400,40,41.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,400,450,23,34.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,450,500,17,26.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,500,550,6,,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,550,600,0,0.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,600,650,1,,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,650,700,1,0.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),d0,r_v,700,750,0,0.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,truth z0,-2000,-1800,0,0.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-1800,-1600,0,,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-1600,-1400,0,19.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-1400,-1200,0,20.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-1200,-1000,1,42.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-1000,-800,5,78.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-800,-600,14,109.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-600,-400,43,155.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-400,-200,163,266.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,-200,0,1285,757.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,0,200,1299,756.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,200,400,146,257.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,400,600,47,153.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,600,800,13,97.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,800,1000,4,76.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,1000,1200,0,56.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,1200,1400,1,27.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,1400,1600,0,8.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,1600,1800,0,11.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,truth z0,1800,2000,0,0.0,1.0,3022,0
+displaced,higher-pT daughter (target),z0,vertex z,-2000,-1800,1,0.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-1800,-1600,6,,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-1600,-1400,12,19.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-1400,-1200,19,20.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-1200,-1000,36,42.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-1000,-800,73,78.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-800,-600,83,109.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-600,-400,137,155.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-400,-200,243,266.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,-200,0,779,757.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,0,200,731,756.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,200,400,245,257.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,400,600,130,153.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,600,800,78,97.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,800,1000,68,76.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,1000,1200,40,56.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,1200,1400,25,27.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,1400,1600,8,8.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,1600,1800,6,11.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),z0,vertex z,1800,2000,1,0.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,0,25,590,107.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,25,50,429,204.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,50,75,324,218.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,75,100,260,193.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,100,125,191,177.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,125,150,172,136.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,150,175,140,128.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,175,200,109,112.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,200,225,119,103.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,225,250,97,95.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,250,275,73,118.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,r_v,275,300,54,75.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,0,25,103,107.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,25,50,206,204.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,50,75,222,218.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,75,100,195,193.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,100,125,183,177.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,125,150,146,136.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,150,175,123,128.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,175,200,107,112.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,200,225,99,103.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,225,250,102,95.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,250,275,90,118.0,0.900727994705493,3022,300
+displaced,higher-pT daughter (target),radius,3D vertex distance,275,300,67,75.0,0.900727994705493,3022,300
+displaced,lower-pT daughter (target),pt,pt,1,4,1083,613.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,4,7,664,501.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,7,10,419,431.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,10,13,252,375.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,13,16,115,273.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,16,19,57,244.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,19,22,9,158.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,22,25,1,101.0,1.0,2601,0
+displaced,lower-pT daughter (target),pt,pt,25,28,1,90.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,0,50,1793,1084.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,50,100,455,645.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,100,150,185,358.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,150,200,72,268.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,200,250,41,186.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,250,300,31,147.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,300,350,9,93.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,350,400,7,41.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,400,450,4,34.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,450,500,2,26.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,500,550,0,,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,550,600,1,0.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,600,650,1,,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,650,700,0,0.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,truth |d0|,700,750,0,0.0,1.0,2601,0
+displaced,lower-pT daughter (target),d0,r_v,0,50,948,1084.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,50,100,541,645.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,100,150,338,358.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,150,200,220,268.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,200,250,193,186.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,250,300,109,147.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,300,350,60,93.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,350,400,32,41.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,400,450,25,34.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,450,500,20,26.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,500,550,2,,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,550,600,2,0.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,600,650,2,,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,650,700,0,0.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),d0,r_v,700,750,0,0.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,truth z0,-2000,-1800,4,0.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-1800,-1600,2,,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-1600,-1400,2,19.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-1400,-1200,4,20.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-1200,-1000,4,42.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-1000,-800,28,78.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-800,-600,43,109.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-600,-400,90,155.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-400,-200,198,266.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,-200,0,927,757.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,0,200,968,756.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,200,400,170,257.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,400,600,73,153.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,600,800,38,97.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,800,1000,20,76.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,1000,1200,11,56.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,1200,1400,7,27.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,1400,1600,3,8.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,1600,1800,3,11.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,truth z0,1800,2000,0,0.0,1.0,2601,0
+displaced,lower-pT daughter (target),z0,vertex z,-2000,-1800,1,0.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-1800,-1600,4,,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-1600,-1400,15,19.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-1400,-1200,14,20.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-1200,-1000,31,42.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-1000,-800,62,78.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-800,-600,78,109.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-600,-400,128,155.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-400,-200,219,266.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,-200,0,726,757.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,0,200,685,756.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,200,400,216,257.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,400,600,117,153.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,600,800,67,97.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,800,1000,66,76.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,1000,1200,33,56.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,1200,1400,18,27.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,1400,1600,8,8.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,1600,1800,4,11.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),z0,vertex z,1800,2000,0,0.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,0,25,559,107.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,25,50,389,204.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,50,75,294,218.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,75,100,247,193.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,100,125,172,177.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,125,150,166,136.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,150,175,127,128.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,175,200,93,112.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,200,225,110,103.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,225,250,83,95.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,250,275,60,118.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,r_v,275,300,49,75.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,0,25,98,107.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,25,50,195,204.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,50,75,209,218.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,75,100,180,193.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,100,125,172,177.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,125,150,136,136.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,150,175,122,128.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,175,200,96,112.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,200,225,97,103.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,225,250,95,95.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,250,275,82,118.0,0.9580930411380238,2601,109
+displaced,lower-pT daughter (target),radius,3D vertex distance,275,300,58,75.0,0.9580930411380238,2601,109
+displaced,highest-pT target per event,pt,pt,1,4,186,613.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,4,7,405,501.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,7,10,438,431.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,10,13,461,375.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,13,16,438,273.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,16,19,384,244.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,19,22,284,158.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,22,25,191,101.0,1.0,3152,0
+displaced,highest-pT target per event,pt,pt,25,28,166,90.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,0,50,2617,1084.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,50,100,375,645.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,100,150,87,358.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,150,200,27,268.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,200,250,21,186.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,250,300,13,147.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,300,350,4,93.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,350,400,3,41.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,400,450,2,34.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,450,500,1,26.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,500,550,0,,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,550,600,1,0.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,600,650,1,,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,650,700,0,0.0,1.0,3152,0
+displaced,highest-pT target per event,d0,truth |d0|,700,750,0,0.0,1.0,3152,0
+displaced,highest-pT target per event,d0,r_v,0,50,1037,1084.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,50,100,587,645.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,100,150,375,358.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,150,200,253,268.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,200,250,223,186.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,250,300,135,147.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,300,350,81,93.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,350,400,48,41.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,400,450,36,34.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,450,500,27,26.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,500,550,8,,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,550,600,2,0.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,600,650,3,,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,650,700,1,0.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,d0,r_v,700,750,0,0.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,truth z0,-2000,-1800,0,0.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-1800,-1600,0,,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-1600,-1400,0,19.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-1400,-1200,0,20.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-1200,-1000,2,42.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-1000,-800,14,78.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-800,-600,22,109.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-600,-400,52,155.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-400,-200,181,266.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,-200,0,1297,757.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,0,200,1330,756.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,200,400,152,257.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,400,600,58,153.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,600,800,24,97.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,800,1000,9,76.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,1000,1200,2,56.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,1200,1400,2,27.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,1400,1600,1,8.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,1600,1800,2,11.0,1.0,3152,0
+displaced,highest-pT target per event,z0,truth z0,1800,2000,0,0.0,1.0,3152,0
+displaced,highest-pT target per event,z0,vertex z,-2000,-1800,2,0.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-1800,-1600,9,,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-1600,-1400,19,19.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-1400,-1200,22,20.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-1200,-1000,45,42.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-1000,-800,77,78.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-800,-600,89,109.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-600,-400,143,155.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-400,-200,245,266.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,-200,0,783,757.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,0,200,742,756.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,200,400,251,257.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,400,600,137,153.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,600,800,79,97.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,800,1000,77,76.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,1000,1200,47,56.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,1200,1400,29,27.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,1400,1600,10,8.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,1600,1800,8,11.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,z0,vertex z,1800,2000,1,0.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,0,25,602,107.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,25,50,435,204.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,50,75,325,218.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,75,100,262,193.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,100,125,196,177.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,125,150,179,136.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,150,175,142,128.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,175,200,111,112.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,200,225,124,103.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,225,250,99,95.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,250,275,74,118.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,r_v,275,300,61,75.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,0,25,103,107.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,25,50,206,204.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,50,75,222,218.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,75,100,195,193.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,100,125,183,177.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,125,150,147,136.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,150,175,127,128.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,175,200,107,112.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,200,225,99,103.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,225,250,104,95.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,250,275,90,118.0,0.8934010152284264,3152,336
+displaced,highest-pT target per event,radius,3D vertex distance,275,300,68,75.0,0.8934010152284264,3152,336
+displaced,same charge as the W muon,pt,pt,1,4,608,613.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,4,7,489,501.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,7,10,414,431.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,10,13,361,375.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,13,16,298,273.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,16,19,222,244.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,19,22,152,158.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,22,25,96,101.0,1.0,2817,0
+displaced,same charge as the W muon,pt,pt,25,28,78,90.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,0,50,2199,1084.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,50,100,377,645.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,100,150,124,358.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,150,200,51,268.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,200,250,32,186.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,250,300,21,147.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,300,350,5,93.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,350,400,4,41.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,400,450,2,34.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,450,500,1,26.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,500,550,0,,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,550,600,1,0.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,600,650,0,,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,650,700,0,0.0,1.0,2817,0
+displaced,same charge as the W muon,d0,truth |d0|,700,750,0,0.0,1.0,2817,0
+displaced,same charge as the W muon,d0,r_v,0,50,981,1084.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,50,100,558,645.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,100,150,351,358.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,150,200,236,268.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,200,250,208,186.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,250,300,118,147.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,300,350,66,93.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,350,400,40,41.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,400,450,24,34.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,450,500,16,26.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,500,550,3,,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,550,600,2,0.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,600,650,3,,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,650,700,0,0.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,d0,r_v,700,750,0,0.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,truth z0,-2000,-1800,2,0.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-1800,-1600,0,,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-1600,-1400,0,19.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-1400,-1200,2,20.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-1200,-1000,5,42.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-1000,-800,13,78.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-800,-600,32,109.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-600,-400,67,155.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-400,-200,174,266.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,-200,0,1109,757.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,0,200,1140,756.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,200,400,165,257.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,400,600,56,153.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,600,800,27,97.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,800,1000,14,76.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,1000,1200,5,56.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,1200,1400,2,27.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,1400,1600,2,8.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,1600,1800,0,11.0,1.0,2817,0
+displaced,same charge as the W muon,z0,truth z0,1800,2000,0,0.0,1.0,2817,0
+displaced,same charge as the W muon,z0,vertex z,-2000,-1800,1,0.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-1800,-1600,3,,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-1600,-1400,13,19.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-1400,-1200,14,20.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-1200,-1000,32,42.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-1000,-800,69,78.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-800,-600,80,109.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-600,-400,132,155.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-400,-200,235,266.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,-200,0,753,757.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,0,200,703,756.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,200,400,228,257.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,400,600,124,153.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,600,800,74,97.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,800,1000,67,76.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,1000,1200,40,56.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,1200,1400,24,27.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,1400,1600,8,8.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,1600,1800,5,11.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,z0,vertex z,1800,2000,1,0.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,0,25,573,107.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,25,50,408,204.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,50,75,304,218.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,75,100,254,193.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,100,125,183,177.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,125,150,168,136.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,150,175,134,128.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,175,200,102,112.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,200,225,116,103.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,225,250,92,95.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,250,275,66,118.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,r_v,275,300,52,75.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,0,25,101,107.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,25,50,199,204.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,50,75,216,218.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,75,100,184,193.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,100,125,177,177.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,125,150,141,136.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,150,175,123,128.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,175,200,101,112.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,200,225,99,103.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,225,250,98,95.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,250,275,87,118.0,0.9250976215832446,2817,211
+displaced,same charge as the W muon,radius,3D vertex distance,275,300,62,75.0,0.9250976215832446,2817,211
+displaced,opposite charge to the W muon,pt,pt,1,4,594,613.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,4,7,546,501.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,7,10,428,431.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,10,13,342,375.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,13,16,253,273.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,16,19,217,244.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,19,22,141,158.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,22,25,96,101.0,1.0,2806,0
+displaced,opposite charge to the W muon,pt,pt,25,28,89,90.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,0,50,2158,1084.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,50,100,430,645.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,100,150,131,358.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,150,200,39,268.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,200,250,22,186.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,250,300,13,147.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,300,350,6,93.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,350,400,3,41.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,400,450,2,34.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,450,500,1,26.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,500,550,0,,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,550,600,0,0.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,600,650,1,,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,650,700,0,0.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,truth |d0|,700,750,0,0.0,1.0,2806,0
+displaced,opposite charge to the W muon,d0,r_v,0,50,986,1084.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,50,100,567,645.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,100,150,350,358.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,150,200,233,268.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,200,250,201,186.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,250,300,118,147.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,300,350,70,93.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,350,400,32,41.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,400,450,24,34.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,450,500,21,26.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,500,550,5,,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,550,600,0,0.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,600,650,0,,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,650,700,1,0.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,d0,r_v,700,750,0,0.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,truth z0,-2000,-1800,2,0.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-1800,-1600,2,,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-1600,-1400,2,19.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-1400,-1200,2,20.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-1200,-1000,0,42.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-1000,-800,20,78.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-800,-600,25,109.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-600,-400,66,155.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-400,-200,187,266.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,-200,0,1103,757.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,0,200,1127,756.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,200,400,151,257.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,400,600,64,153.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,600,800,24,97.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,800,1000,10,76.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,1000,1200,6,56.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,1200,1400,6,27.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,1400,1600,1,8.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,1600,1800,3,11.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,truth z0,1800,2000,0,0.0,1.0,2806,0
+displaced,opposite charge to the W muon,z0,vertex z,-2000,-1800,1,0.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-1800,-1600,7,,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-1600,-1400,14,19.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-1400,-1200,19,20.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-1200,-1000,35,42.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-1000,-800,66,78.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-800,-600,81,109.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-600,-400,133,155.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-400,-200,227,266.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,-200,0,752,757.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,0,200,713,756.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,200,400,233,257.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,400,600,123,153.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,600,800,71,97.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,800,1000,67,76.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,1000,1200,33,56.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,1200,1400,19,27.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,1400,1600,8,8.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,1600,1800,5,11.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,z0,vertex z,1800,2000,0,0.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,0,25,576,107.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,25,50,410,204.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,50,75,314,218.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,75,100,253,193.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,100,125,180,177.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,125,150,170,136.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,150,175,133,128.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,175,200,100,112.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,200,225,113,103.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,225,250,88,95.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,250,275,67,118.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,r_v,275,300,51,75.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,0,25,100,107.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,25,50,202,204.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,50,75,215,218.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,75,100,191,193.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,100,125,178,177.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,125,150,141,136.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,150,175,122,128.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,175,200,102,112.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,200,225,97,103.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,225,250,99,95.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,250,275,85,118.0,0.9294369208838203,2806,198
+displaced,opposite charge to the W muon,radius,3D vertex distance,275,300,63,75.0,0.9294369208838203,2806,198
+displaced,first daughter in barcode order,pt,pt,1,4,617,613.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,4,7,578,501.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,7,10,424,431.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,10,13,358,375.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,13,16,260,273.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,16,19,192,244.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,19,22,128,158.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,22,25,87,101.0,1.0,2785,0
+displaced,first daughter in barcode order,pt,pt,25,28,61,90.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,0,50,2170,1084.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,50,100,382,645.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,100,150,128,358.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,150,200,46,268.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,200,250,26,186.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,250,300,20,147.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,300,350,4,93.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,350,400,6,41.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,400,450,2,34.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,450,500,0,26.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,500,550,0,,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,550,600,1,0.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,600,650,0,,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,650,700,0,0.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,truth |d0|,700,750,0,0.0,1.0,2785,0
+displaced,first daughter in barcode order,d0,r_v,0,50,978,1084.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,50,100,560,645.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,100,150,345,358.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,150,200,229,268.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,200,250,206,186.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,250,300,119,147.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,300,350,70,93.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,350,400,36,41.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,400,450,21,34.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,450,500,21,26.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,500,550,4,,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,550,600,2,0.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,600,650,1,,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,650,700,0,0.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,d0,r_v,700,750,0,0.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,truth z0,-2000,-1800,0,0.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-1800,-1600,2,,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-1600,-1400,1,19.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-1400,-1200,2,20.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-1200,-1000,3,42.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-1000,-800,14,78.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-800,-600,27,109.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-600,-400,69,155.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-400,-200,181,266.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,-200,0,1066,757.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,0,200,1140,756.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,200,400,159,257.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,400,600,62,153.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,600,800,23,97.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,800,1000,12,76.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,1000,1200,7,56.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,1200,1400,6,27.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,1400,1600,3,8.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,1600,1800,2,11.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,truth z0,1800,2000,0,0.0,1.0,2785,0
+displaced,first daughter in barcode order,z0,vertex z,-2000,-1800,1,0.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-1800,-1600,3,,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-1600,-1400,14,19.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-1400,-1200,14,20.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-1200,-1000,38,42.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-1000,-800,67,78.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-800,-600,81,109.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-600,-400,133,155.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-400,-200,233,266.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,-200,0,742,757.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,0,200,704,756.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,200,400,232,257.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,400,600,123,153.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,600,800,69,97.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,800,1000,69,76.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,1000,1200,38,56.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,1200,1400,19,27.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,1400,1600,7,8.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,1600,1800,5,11.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,z0,vertex z,1800,2000,0,0.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,0,25,575,107.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,25,50,403,204.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,50,75,306,218.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,75,100,254,193.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,100,125,176,177.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,125,150,169,136.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,150,175,132,128.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,175,200,97,112.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,200,225,117,103.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,225,250,89,95.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,250,275,66,118.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,r_v,275,300,53,75.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,0,25,99,107.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,25,50,201,204.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,50,75,214,218.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,75,100,186,193.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,100,125,175,177.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,125,150,136,136.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,150,175,124,128.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,175,200,100,112.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,200,225,98,103.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,225,250,99,95.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,250,275,88,118.0,0.9307001795332136,2785,193
+displaced,first daughter in barcode order,radius,3D vertex distance,275,300,59,75.0,0.9307001795332136,2785,193
+displaced,second daughter in barcode order,pt,pt,1,4,585,613.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,4,7,457,501.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,7,10,418,431.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,10,13,345,375.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,13,16,291,273.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,16,19,247,244.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,19,22,165,158.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,22,25,105,101.0,1.0,2838,0
+displaced,second daughter in barcode order,pt,pt,25,28,106,90.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,0,50,2187,1084.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,50,100,425,645.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,100,150,127,358.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,150,200,44,268.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,200,250,28,186.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,250,300,14,147.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,300,350,7,93.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,350,400,1,41.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,400,450,2,34.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,450,500,2,26.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,500,550,0,,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,550,600,0,0.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,600,650,1,,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,650,700,0,0.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,truth |d0|,700,750,0,0.0,1.0,2838,0
+displaced,second daughter in barcode order,d0,r_v,0,50,989,1084.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,50,100,565,645.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,100,150,356,358.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,150,200,240,268.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,200,250,203,186.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,250,300,117,147.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,300,350,66,93.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,350,400,36,41.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,400,450,27,34.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,450,500,16,26.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,500,550,4,,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,550,600,0,0.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,600,650,2,,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,650,700,1,0.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,d0,r_v,700,750,0,0.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,truth z0,-2000,-1800,4,0.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-1800,-1600,0,,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-1600,-1400,1,19.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-1400,-1200,2,20.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-1200,-1000,2,42.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-1000,-800,19,78.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-800,-600,30,109.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-600,-400,64,155.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-400,-200,180,266.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,-200,0,1146,757.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,0,200,1127,756.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,200,400,157,257.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,400,600,58,153.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,600,800,28,97.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,800,1000,12,76.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,1000,1200,4,56.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,1200,1400,2,27.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,1400,1600,0,8.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,1600,1800,1,11.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,truth z0,1800,2000,0,0.0,1.0,2838,0
+displaced,second daughter in barcode order,z0,vertex z,-2000,-1800,1,0.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-1800,-1600,7,,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-1600,-1400,13,19.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-1400,-1200,19,20.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-1200,-1000,29,42.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-1000,-800,68,78.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-800,-600,80,109.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-600,-400,132,155.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-400,-200,229,266.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,-200,0,763,757.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,0,200,712,756.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,200,400,229,257.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,400,600,124,153.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,600,800,76,97.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,800,1000,65,76.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,1000,1200,35,56.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,1200,1400,24,27.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,1400,1600,9,8.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,1600,1800,5,11.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,z0,vertex z,1800,2000,1,0.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,0,25,574,107.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,25,50,415,204.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,50,75,312,218.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,75,100,253,193.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,100,125,187,177.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,125,150,169,136.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,150,175,135,128.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,175,200,105,112.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,200,225,112,103.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,225,250,91,95.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,250,275,67,118.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,r_v,275,300,50,75.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,0,25,102,107.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,25,50,200,204.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,50,75,217,218.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,75,100,189,193.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,100,125,180,177.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,125,150,146,136.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,150,175,121,128.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,175,200,103,112.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,200,225,98,103.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,225,250,98,95.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,250,275,84,118.0,0.9238900634249472,2838,216
+displaced,second daughter in barcode order,radius,3D vertex distance,275,300,66,75.0,0.9238900634249472,2838,216

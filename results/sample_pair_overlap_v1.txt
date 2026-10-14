@@ -1,0 +1,35 @@
+# Shared underlying-event particles between our samples (positive control of external_overlap_v1)
+
+Job 6810509, 2026-10-14 09:27 UTC; truth only (scripts/diagnostics/sample_pair_overlap.py). Per event of sample A, the largest number of coarse-key particles shared with one event of sample B.
+
+## ttbar vs hnl10_100
+- largest shared per ttbar event: median 0, 90% 1, 99% 1, max 1
+- pairs with >= 10 shared: 0; of them with the same event index: 0; by split pair: {}
+- same-index pairs with any shared particle: 0; median shared among them 0
+
+## ttbar vs hnl15_200
+- largest shared per ttbar event: median 0, 90% 1, 99% 1, max 1
+- pairs with >= 10 shared: 0; of them with the same event index: 0; by split pair: {}
+- same-index pairs with any shared particle: 0; median shared among them 0
+
+## ttbar vs hnl15_100
+- largest shared per ttbar event: median 0, 90% 1, 99% 1, max 1
+- pairs with >= 10 shared: 0; of them with the same event index: 0; by split pair: {}
+- same-index pairs with any shared particle: 0; median shared among them 0
+
+## hnl10_100 vs hnl15_200
+- largest shared per hnl10_100 event: median 102, 90% 191, 99% 259, max 374
+- pairs with >= 10 shared: 9312; of them with the same event index: 9312; by split pair: {('test', 'test'): 938, ('train', 'train'): 7442, ('val', 'val'): 932}
+- same-index pairs with any shared particle: 9400; median shared among them 108
+
+## hnl10_100 vs hnl15_100
+- largest shared per hnl10_100 event: median 0, 90% 1, 99% 1, max 1
+- pairs with >= 10 shared: 0; of them with the same event index: 0; by split pair: {}
+- same-index pairs with any shared particle: 0; median shared among them 0
+
+## hnl15_200 vs hnl15_100
+- largest shared per hnl15_200 event: median 0, 90% 1, 99% 1, max 1
+- pairs with >= 10 shared: 0; of them with the same event index: 0; by split pair: {}
+- same-index pairs with any shared particle: 0; median shared among them 0
+
+Elapsed 6 s.

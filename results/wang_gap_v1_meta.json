@@ -1,0 +1,383 @@
+{
+ "created_utc": "2026-10-14T09:56:05Z",
+ "git": "50408b6646797b4f442ccf36b4081c034cc05b42 (src dirty: src/hnl/eval/secondary_truth.py, src/hnl/eval/secondary_upweight.py, src/hnl/eval/wang_gap.py, src/hnl/models/secondary_weight.py, src/hnl/trackml/eggnet_denominator.py, src/hnl/trackml/port_closure.py)",
+ "slurm_job": "6810554",
+ "ledger": "docs/feedback/test_use_ledger.md R12",
+ "test_use": "post-freeze, descriptive; no configuration, cut, model or rule chosen on test",
+ "entries": {
+  "acorn_hnl_cc_sstar": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+    "eval_test",
+    0.4,
+    "CC 0.40"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+    "eval_test",
+    0.4,
+    "CC 0.40"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+    "eval_test",
+    0.4,
+    "CC 0.40"
+   ]
+  ],
+  "acorn_hnl_cc_best": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/published_defs_v1/armii_s0/eval_test_bestcut",
+    0.38,
+    "CC 0.38 (post-freeze CC on the stored test scores)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+    "eval_test",
+    0.36,
+    "CC 0.36 (FR* unreachable on val: minimum-rate cut)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/published_defs_v1/armii_s2/eval_test_bestcut",
+    0.44,
+    "CC 0.44 (post-freeze CC on the stored test scores)"
+   ]
+  ],
+  "acorn_tt_cc": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "eval_test",
+    0.34,
+    "CC 0.34 (FR* unreachable on val: minimum-rate cut)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "eval_test",
+    0.33,
+    "CC 0.33"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "eval_test",
+    0.31,
+    "CC 0.31 (FR* unreachable on val: minimum-rate cut)"
+   ]
+  ],
+  "acorn_hnl_lm": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s0/lmerge_test",
+    0.0,
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s1/lmerge_test",
+    0.0,
+    "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armii_s2/lmerge_test",
+    0.0,
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  ],
+  "acorn_tt_lm": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s0/lmerge_test",
+    0.0,
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s1",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s1/lmerge_test",
+    0.0,
+    "mwslmerge 0.02 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armi_s2",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armi_s2/lmerge_test",
+    0.0,
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  ],
+  "acorn_tthnl_lm": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s0/lmerge_test",
+    0.0,
+    "mwslmerge 0.2 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s1/lmerge_test",
+    0.0,
+    "mwslmerge 0.03 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/feedback_v3/strong_baselines_a2/armiii_s2/lmerge_test",
+    0.0,
+    "mwslmerge 0.05 (chosen on val in trackbuild_val_fb3_all; test configuration 0)"
+   ]
+  ],
+  "canto_l": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "trackbuild_test",
+    0.0,
+    "mwslmerge 0.05 (trackbuild_test, configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "trackbuild_test",
+    0.0,
+    "mwslmerge 0.03 (trackbuild_test, configuration 0)"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "trackbuild_test",
+    0.0,
+    "mwslmerge 0.1 (trackbuild_test, configuration 0)"
+   ]
+  ],
+  "canto_l_hnl": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+    "trackbuild_test",
+    0.0,
+    "mwslmerge 0.2 (trackbuild_test, configuration 0)"
+   ]
+  ],
+  "canto_l_tthnl": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+    "trackbuild_test",
+    0.0,
+    "mwslmerge 0.3 (trackbuild_test, configuration 0)"
+   ]
+  ],
+  "canto_l_cc": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/wang_gap_v1/stage1_final_learned_l1tl_armi_s0/eval_test_bestcut",
+    0.35,
+    "CC 0.35"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s1",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/wang_gap_v1/stage1_final_learned_l1tl_armi_s1/eval_test_bestcut",
+    0.39,
+    "CC 0.39"
+   ],
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned/l1tl/armi_s2",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/wang_gap_v1/stage1_final_learned_l1tl_armi_s2/eval_test_bestcut",
+    0.39,
+    "CC 0.39"
+   ]
+  ],
+  "canto_l_hnl_cc": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/wang_gap_v1/stage1_final_learned_ts_l1tl_armii_s0/eval_test_bestcut",
+    0.38,
+    "CC 0.38"
+   ]
+  ],
+  "canto_l_tthnl_cc": [
+   [
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+    "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/wang_gap_v1/stage1_final_learned_ts_l1tl_armiii_s0/eval_test_bestcut",
+    0.4,
+    "CC 0.40"
+   ]
+  ]
+ },
+ "working_points": {
+  "acorn_hnl_cc_sstar": "CC 0.40 / CC 0.40 / CC 0.40",
+  "acorn_hnl_cc_best": "CC 0.38 / CC 0.36 / CC 0.44",
+  "acorn_tt_cc": "CC 0.34 / CC 0.33 / CC 0.31",
+  "acorn_hnl_lm": "mwslmerge 0.03 / mwslmerge 0.2 / mwslmerge 0.05",
+  "acorn_tt_lm": "mwslmerge 0.03 / mwslmerge 0.02 / mwslmerge 0.05",
+  "acorn_tthnl_lm": "mwslmerge 0.2 / mwslmerge 0.03 / mwslmerge 0.05",
+  "canto_l": "mwslmerge 0.05 / mwslmerge 0.03 / mwslmerge 0.1",
+  "canto_l_hnl": "mwslmerge 0.2",
+  "canto_l_tthnl": "mwslmerge 0.3",
+  "canto_l_cc": "CC 0.35 / CC 0.39 / CC 0.39",
+  "canto_l_hnl_cc": "CC 0.38",
+  "canto_l_tthnl_cc": "CC 0.40"
+ },
+ "tables": "hnl.eval.bootstrap B 500 seed 12345",
+ "checks": [
+  [
+   "results/published_definitions_comparison.csv canto_l all_track",
+   true,
+   "0.991403962250 +- 0.000506174906 (346344) vs 0.991403962250 +- 0.000506174906 (346344.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv canto_l prompt",
+   true,
+   "0.996486790332 +- 0.000898804568 (14182) vs 0.996486790332 +- 0.000898804568 (14182.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv canto_l displaced",
+   true,
+   "0.992234275891 +- 0.001493413184 (16738) vs 0.992234275891 +- 0.001493413184 (16738.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv canto_l fake_rate",
+   true,
+   "0.010255129268 +- 0.000298169041 (17609) vs 0.010255129268 +- 0.000298169041 (17609.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_sstar all_track",
+   true,
+   "0.955399645625 +- 0.003403951776 (333766) vs 0.955399645625 +- 0.003403951776 (333766.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_sstar prompt",
+   true,
+   "0.982996065205 +- 0.001896727529 (13990) vs 0.982996065205 +- 0.001896727529 (13990.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_sstar displaced",
+   true,
+   "0.954117019385 +- 0.004282659132 (16095) vs 0.954117019385 +- 0.004282659132 (16095.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_sstar fake_rate",
+   true,
+   "0.029247976004 +- 0.001384731844 (49281) vs 0.029247976004 +- 0.001384731844 (49281.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_best all_track",
+   true,
+   "0.954744136918 +- 0.003699632013 (333537) vs 0.954744136918 +- 0.003699632013 (333537.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_best prompt",
+   true,
+   "0.982504215852 +- 0.002395562269 (13983) vs 0.982504215852 +- 0.002395562269 (13983.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_best displaced",
+   true,
+   "0.951330843559 +- 0.006074833292 (16048) vs 0.951330843559 +- 0.006074833292 (16048.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_hnl_best fake_rate",
+   true,
+   "0.029023970931 +- 0.000419255169 (48885) vs 0.029023970931 +- 0.000419255169 (48885.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_ttbar all_track",
+   true,
+   "0.956550363965 +- 0.001421583429 (334168) vs 0.956550363965 +- 0.001421583429 (334168.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_ttbar prompt",
+   true,
+   "0.981731309725 +- 0.001834966963 (13972) vs 0.981731309725 +- 0.001834966963 (13972.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_ttbar displaced",
+   true,
+   "0.921216432509 +- 0.007428393657 (15540) vs 0.921216432509 +- 0.007428393657 (15540.0)"
+  ],
+  [
+   "results/published_definitions_comparison.csv acorn_ttbar fake_rate",
+   true,
+   "0.029532335519 +- 0.000498072667 (49674) vs 0.029532335519 +- 0.000498072667 (49674.0)"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (HNL) all_track",
+   true,
+   "0.991532774004 +- 0.000390147350 vs 0.991532774004 +- 0.000390147350"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (HNL) prompt",
+   true,
+   "0.996416526138 +- 0.000921891046 vs 0.996416526138 +- 0.000921891046"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (HNL) displaced",
+   true,
+   "0.989685221412 +- 0.001541187315 vs 0.989685221412 +- 0.001541187315"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (HNL) fake_rate",
+   true,
+   "0.010189358208 +- 0.000228715554 vs 0.010189358208 +- 0.000228715554"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (ttbar+HNL) all_track",
+   true,
+   "0.991180688542 +- 0.000408704478 vs 0.991180688542 +- 0.000408704478"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (ttbar+HNL) prompt",
+   true,
+   "0.996205733558 +- 0.000938331413 vs 0.996205733558 +- 0.000938331413"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (ttbar+HNL) displaced",
+   true,
+   "0.991285790503 +- 0.001434187459 vs 0.991285790503 +- 0.001434187459"
+  ],
+  [
+   "results/training_sample_test_v1.csv Canto-L (ttbar+HNL) fake_rate",
+   true,
+   "0.010134066714 +- 0.000232489509 vs 0.010134066714 +- 0.000232489509"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (HNL) val-best (MWS-layer + learned merging) s0 primary k",
+   true,
+   "3784 vs 3784"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (HNL) val-best (MWS-layer + learned merging) s1 primary k",
+   true,
+   "3779 vs 3779"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (HNL) val-best (MWS-layer + learned merging) s2 primary k",
+   true,
+   "3793 vs 3793"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar) val-best (MWS-layer + learned merging) s0 primary k",
+   true,
+   "3755 vs 3755"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar) val-best (MWS-layer + learned merging) s1 primary k",
+   true,
+   "3682 vs 3682"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar) val-best (MWS-layer + learned merging) s2 primary k",
+   true,
+   "3726 vs 3726"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar+HNL) val-best (MWS-layer + learned merging) s0 primary k",
+   true,
+   "3754 vs 3754"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar+HNL) val-best (MWS-layer + learned merging) s1 primary k",
+   true,
+   "3769 vs 3769"
+  ],
+  [
+   "results/per_sample_v1.csv acorn (ttbar+HNL) val-best (MWS-layer + learned merging) s2 primary k",
+   true,
+   "3772 vs 3772"
+  ]
+ ]
+}
