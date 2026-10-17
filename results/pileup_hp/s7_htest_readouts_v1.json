@@ -1,0 +1,1632 @@
+{
+ "record": "addendum H section 7 read-outs on H-test (no claim; both fake rates of section 6 at WP-A)",
+ "set": "htest",
+ "code": "hnl.overlay.readouts at f180d0a (pinned by R15)",
+ "conditions": {
+  "full": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/htest_full",
+   "sha256": {
+    "per_event.parquet": "1ea53f8742026c7fb12a8cfc59ddd503e3dae0761926862e1202c8b80b7ae6d7",
+    "loss.parquet": "048345131a461dcac758c4a367a21caf67d19a52ab73688186d17acd451424c7",
+    "summary.json": "c1ad451f95a5ccb77e7555c7d602733ef47531192bc37ef4c7f923b99d146f3b"
+   },
+   "inputs": {
+    "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/htest_full",
+    "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/htest_full/scores",
+    "grid_per_event_sha256": "776a91228b41fd8f24b08abc6d82793a55468e0affb2ab1e508c2000b37152e0",
+    "kind": "grid"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3"
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1"
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8"
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 600,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp03_v1/twins_htest_v1.json",
+    "sha256": "191f4b66ea1c0bc0f4bfdb389a52e7af5e96f7b61261ccad2ff7b27ffcfa6aeb"
+   },
+   "blocks": [
+    {
+     "block": 0,
+     "elapsed_s": 385.5,
+     "slurm_job": "6839758",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 1,
+     "elapsed_s": 1118.6,
+     "slurm_job": "6839759",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 2,
+     "elapsed_s": 634.0,
+     "slurm_job": "6839760",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 3,
+     "elapsed_s": 510.2,
+     "slurm_job": "6839761",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 4,
+     "elapsed_s": 441.8,
+     "slurm_job": "6839805",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 5,
+     "elapsed_s": 344.3,
+     "slurm_job": "6839764",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 6,
+     "elapsed_s": 378.2,
+     "slurm_job": "6839765",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 7,
+     "elapsed_s": 301.7,
+     "slurm_job": "6839766",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 8,
+     "elapsed_s": 560.3,
+     "slurm_job": "6839768",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 9,
+     "elapsed_s": 306.8,
+     "slurm_job": "6839769",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 10,
+     "elapsed_s": 316.4,
+     "slurm_job": "6839806",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 11,
+     "elapsed_s": 421.3,
+     "slurm_job": "6839772",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 12,
+     "elapsed_s": 406.9,
+     "slurm_job": "6839773",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 13,
+     "elapsed_s": 302.4,
+     "slurm_job": "6839807",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 14,
+     "elapsed_s": 291.8,
+     "slurm_job": "6839775",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 15,
+     "elapsed_s": 573.4,
+     "slurm_job": "6839776",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 16,
+     "elapsed_s": 427.3,
+     "slurm_job": "6839778",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 17,
+     "elapsed_s": 278.0,
+     "slurm_job": "6839780",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 18,
+     "elapsed_s": 398.6,
+     "slurm_job": "6839781",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 19,
+     "elapsed_s": 279.8,
+     "slurm_job": "6839783",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 20,
+     "elapsed_s": 395.8,
+     "slurm_job": "6839784",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 21,
+     "elapsed_s": 726.6,
+     "slurm_job": "6839785",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 22,
+     "elapsed_s": 314.8,
+     "slurm_job": "6839808",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 23,
+     "elapsed_s": 480.6,
+     "slurm_job": "6839787",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 24,
+     "elapsed_s": 322.1,
+     "slurm_job": "6839788",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 25,
+     "elapsed_s": 320.8,
+     "slurm_job": "6839791",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 26,
+     "elapsed_s": 372.0,
+     "slurm_job": "6839792",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 27,
+     "elapsed_s": 368.2,
+     "slurm_job": "6839793",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 28,
+     "elapsed_s": 295.3,
+     "slurm_job": "6839794",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 29,
+     "elapsed_s": 334.5,
+     "slurm_job": "6839795",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 30,
+     "elapsed_s": 310.2,
+     "slurm_job": "6839809",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 31,
+     "elapsed_s": 500.8,
+     "slurm_job": "6839797",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 32,
+     "elapsed_s": 469.8,
+     "slurm_job": "6839798",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 33,
+     "elapsed_s": 313.8,
+     "slurm_job": "6839799",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 34,
+     "elapsed_s": 397.1,
+     "slurm_job": "6839800",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 35,
+     "elapsed_s": 336.6,
+     "slurm_job": "6839801",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 36,
+     "elapsed_s": 345.2,
+     "slurm_job": "6839811",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 37,
+     "elapsed_s": 550.7,
+     "slurm_job": "6839803",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 38,
+     "elapsed_s": 561.5,
+     "slurm_job": "6839804",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 39,
+     "elapsed_s": 469.2,
+     "slurm_job": "6839754",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    }
+   ],
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.017043777180088565,
+      "sd_boot": 8.637322029105812e-05,
+      "num": 77247,
+      "den": 4532270
+     },
+     "duplicate_rate": {
+      "value": 0.00025861433836077603,
+      "sd_boot": 1.906021371017815e-05,
+      "num": 172,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9946653274854417,
+      "sd_boot": 0.00010210618720531379,
+      "num": 661535,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.059166666666666666,
+      "sd_boot": 0.003154064930292707,
+      "num": 355,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.004595647727419835,
+      "sd_boot": 0.00024285223688896867,
+      "num": 355,
+      "den": 77247
+     },
+     "host_prompt_efficiency": {
+      "value": 0.998231904373777,
+      "sd_boot": 5.5097817553820864e-05,
+      "num": 629507,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.017036535673939753,
+      "sd_boot": 8.63596030669487e-05,
+      "num": 77123,
+      "den": 4526918
+     },
+     "host_trackml_score": {
+      "value": 0.9659371624115081,
+      "events": 600
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9982902455561123,
+        "sd_boot": 0.0001240709016883189,
+        "num": 101595,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.017286204829127377,
+        "sd_boot": 0.00019314681541824686,
+        "num": 12686,
+        "den": 733880
+       },
+       "host_trackml_score": 0.9659138755647513
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9982206775795921,
+        "sd_boot": 6.334696179360944e-05,
+        "num": 527912,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.016988229487814255,
+        "sd_boot": 9.655399665649329e-05,
+        "num": 64437,
+        "den": 3793038
+       },
+       "host_trackml_score": 0.9659415980013664
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.01741997987441902,
+      "sd_boot": 8.61229772703934e-05,
+      "num": 79026,
+      "den": 4536515
+     },
+     "duplicate_rate": {
+      "value": 0.00023305361887162955,
+      "sd_boot": 1.763958138506484e-05,
+      "num": 155,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9944443024404472,
+      "sd_boot": 0.00010550566266712815,
+      "num": 661388,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.07666666666666666,
+      "sd_boot": 0.0034963883137114926,
+      "num": 460,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.005820869081061929,
+      "sd_boot": 0.0002621758840184251,
+      "num": 460,
+      "den": 79026
+     },
+     "host_prompt_efficiency": {
+      "value": 0.998089188134889,
+      "sd_boot": 5.702017599229066e-05,
+      "num": 629417,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.01740778357029388,
+      "sd_boot": 8.601417869793928e-05,
+      "num": 78877,
+      "den": 4531134
+     },
+     "host_trackml_score": {
+      "value": 0.9661931497273664,
+      "events": 600
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.998162505281569,
+        "sd_boot": 0.00013476182708478118,
+        "num": 101582,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.01767127427571054,
+        "sd_boot": 0.0001882802165525739,
+        "num": 12981,
+        "den": 734582
+       },
+       "host_trackml_score": 0.9661855646967457
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9980750794644259,
+        "sd_boot": 6.604542860314794e-05,
+        "num": 527835,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.01735680164528235,
+        "sd_boot": 9.581959630204387e-05,
+        "num": 65896,
+        "den": 3796552
+       },
+       "host_trackml_score": 0.9661945944951037
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.041625464319472276,
+      "sd_boot": 0.00020061159365819444,
+      "num": 186984,
+      "den": 4492058
+     },
+     "duplicate_rate": {
+      "value": 0.007547930107971486,
+      "sd_boot": 0.00014392930254760985,
+      "num": 5020,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9908402409924776,
+      "sd_boot": 0.00016109913899622333,
+      "num": 658991,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.019666666666666666,
+      "sd_boot": 0.0020288010857323385,
+      "num": 118,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.0006310700380781244,
+      "sd_boot": 6.498018522804258e-05,
+      "num": 118,
+      "den": 186984
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9955361531947823,
+      "sd_boot": 0.00012118200237702781,
+      "num": 627807,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.04164512494495719,
+      "sd_boot": 0.00020064996699282756,
+      "num": 186879,
+      "den": 4487416
+     },
+     "host_trackml_score": {
+      "value": 0.9427458037357728,
+      "events": 600
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9954799595161592,
+        "sd_boot": 0.00028576513546833625,
+        "num": 101309,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.041589586511098856,
+        "sd_boot": 0.000442040894620231,
+        "num": 30238,
+        "den": 727057
+       },
+       "host_trackml_score": 0.942708556936214
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9955469667374488,
+        "sd_boot": 0.00013520164190075886,
+        "num": 526498,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.04165586317689348,
+        "sd_boot": 0.00022129678403562023,
+        "num": 156641,
+        "den": 3760359
+       },
+       "host_trackml_score": 0.94275289836426
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 3072,
+      "outcome": {
+       "contaminated": 19,
+       "found": 2259,
+       "gnn": 298,
+       "graph": 483,
+       "split": 13
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 14,
+        "found": 1086,
+        "gnn": 153,
+        "graph": 252,
+        "split": 7
+       },
+       "-": {
+        "contaminated": 5,
+        "found": 1173,
+        "gnn": 145,
+        "graph": 231,
+        "split": 6
+       }
+      }
+     },
+     "P_D": {
+      "n": 1985,
+      "outcome": {
+       "contaminated": 16,
+       "found": 1537,
+       "gnn": 166,
+       "graph": 257,
+       "split": 9
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 11,
+        "found": 778,
+        "gnn": 92,
+        "graph": 144,
+        "split": 2
+       },
+       "-": {
+        "contaminated": 5,
+        "found": 759,
+        "gnn": 74,
+        "graph": 113,
+        "split": 7
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 880,
+      "outcome": {
+       "contaminated": 1,
+       "found": 870,
+       "gnn": 1,
+       "graph": 8
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 0,
+        "found": 442,
+        "gnn": 1,
+        "graph": 5
+       },
+       "-": {
+        "contaminated": 1,
+        "found": 428,
+        "gnn": 0,
+        "graph": 3
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 5937,
+      "outcome": {
+       "contaminated": 36,
+       "found": 4666,
+       "gnn": 465,
+       "graph": 748,
+       "split": 22
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 25,
+        "found": 2306,
+        "gnn": 246,
+        "graph": 401,
+        "split": 9
+       },
+       "-": {
+        "contaminated": 11,
+        "found": 2360,
+        "gnn": 219,
+        "graph": 347,
+        "split": 13
+       }
+      }
+     }
+    }
+   }
+  },
+  "1gev": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/htest_1gev",
+   "sha256": {
+    "per_event.parquet": "ec874d20eb8320e450a2aaf62e3ff1f9e333e43d5ffa8718bafead07eadc7952",
+    "loss.parquet": "9bf3e4afb9ede1ca49f32ed0e62542200ac6372831b4c4186f35da7767b3ddc7",
+    "summary.json": "d9840ff363b0db347af1ff5828d6d4c6c9000b7f7f36b714498167f1b7cf151c"
+   },
+   "inputs": {
+    "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/htest_1gev",
+    "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/htest_1gev/scores",
+    "grid_per_event_sha256": "468daf7f8b23b4b2af4514e3cfbaeee9c9a1181398c6e5e73fc4e6eeeab356d3",
+    "kind": "grid"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3"
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1"
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8"
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 600,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp03_v1/twins_htest_v1.json",
+    "sha256": "191f4b66ea1c0bc0f4bfdb389a52e7af5e96f7b61261ccad2ff7b27ffcfa6aeb"
+   },
+   "blocks": [
+    {
+     "block": 0,
+     "elapsed_s": 54.4,
+     "slurm_job": "6839815",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 1,
+     "elapsed_s": 57.6,
+     "slurm_job": "6839816",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 2,
+     "elapsed_s": 54.8,
+     "slurm_job": "6839817",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 3,
+     "elapsed_s": 55.2,
+     "slurm_job": "6839818",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 4,
+     "elapsed_s": 54.7,
+     "slurm_job": "6839819",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 5,
+     "elapsed_s": 35.4,
+     "slurm_job": "6839820",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 6,
+     "elapsed_s": 55.9,
+     "slurm_job": "6839821",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 7,
+     "elapsed_s": 49.0,
+     "slurm_job": "6839822",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 8,
+     "elapsed_s": 55.5,
+     "slurm_job": "6839823",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 9,
+     "elapsed_s": 56.3,
+     "slurm_job": "6839824",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 10,
+     "elapsed_s": 38.4,
+     "slurm_job": "6839825",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 11,
+     "elapsed_s": 60.7,
+     "slurm_job": "6839826",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 12,
+     "elapsed_s": 67.7,
+     "slurm_job": "6839827",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 13,
+     "elapsed_s": 37.1,
+     "slurm_job": "6839828",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 14,
+     "elapsed_s": 58.4,
+     "slurm_job": "6839829",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 15,
+     "elapsed_s": 54.4,
+     "slurm_job": "6839830",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 16,
+     "elapsed_s": 31.8,
+     "slurm_job": "6839831",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 17,
+     "elapsed_s": 55.0,
+     "slurm_job": "6839832",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 18,
+     "elapsed_s": 32.0,
+     "slurm_job": "6839833",
+     "host": "submit37.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    },
+    {
+     "block": 19,
+     "elapsed_s": 53.4,
+     "slurm_job": "6839834",
+     "host": "submit77.mit.edu",
+     "git": "2df366fdbd8099508ed799a5398b522b54acbb4e",
+     "code_sha256": "83cd2c36b6a188b929d5c6c5e1af4570e3704ac6d71b7e7e1cea64158ca63174"
+    }
+   ],
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.0006907267291595504,
+      "sd_boot": 3.5000827758354885e-05,
+      "num": 457,
+      "den": 661622
+     },
+     "duplicate_rate": {
+      "value": 0.00010073930622193019,
+      "sd_boot": 1.2090360236541797e-05,
+      "num": 67,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9956817419780689,
+      "sd_boot": 9.805310191963589e-05,
+      "num": 662211,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.005333333333333333,
+      "sd_boot": 0.001077864310492074,
+      "num": 32,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.0700218818380744,
+      "sd_boot": 0.013520077768372142,
+      "num": 32,
+      "den": 457
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9992451896698815,
+      "sd_boot": 3.626073488558407e-05,
+      "num": 630146,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.0006466032031961976,
+      "sd_boot": 3.349181435585901e-05,
+      "num": 425,
+      "den": 657281
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9992826892275644,
+        "sd_boot": 8.015391281586457e-05,
+        "num": 101696,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.0005745773089059483,
+        "sd_boot": 7.256037937652063e-05,
+        "num": 61,
+        "den": 106165
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9992379735011431,
+        "sd_boot": 4.288582074690085e-05,
+        "num": 528450,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.0006604780118886042,
+        "sd_boot": 3.73372539918586e-05,
+        "num": 364,
+        "den": 551116
+       }
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.0006816591371797449,
+      "sd_boot": 3.434369335820449e-05,
+      "num": 451,
+      "den": 661621
+     },
+     "duplicate_rate": {
+      "value": 9.322144754865182e-05,
+      "sd_boot": 1.1719801772197007e-05,
+      "num": 62,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9956667062607224,
+      "sd_boot": 9.857421768902273e-05,
+      "num": 662201,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.005833333333333334,
+      "sd_boot": 0.001124347011065299,
+      "num": 35,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.07760532150776053,
+      "sd_boot": 0.01416147932856945,
+      "num": 35,
+      "den": 451
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9992309180459927,
+      "sd_boot": 3.652541182697863e-05,
+      "num": 630137,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.0006344434318368887,
+      "sd_boot": 3.2939581735646306e-05,
+      "num": 417,
+      "den": 657269
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9992433845277049,
+        "sd_boot": 8.299828452198837e-05,
+        "num": 101692,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.0005557596480816872,
+        "sd_boot": 7.242222368660439e-05,
+        "num": 59,
+        "den": 106161
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9992285190780803,
+        "sd_boot": 4.301593060909877e-05,
+        "num": 528445,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.0006496004412928138,
+        "sd_boot": 3.607321310094979e-05,
+        "num": 358,
+        "den": 551108
+       }
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.008817813850500573,
+      "sd_boot": 0.00020717112949022215,
+      "num": 5858,
+      "den": 664337
+     },
+     "duplicate_rate": {
+      "value": 0.0058609226216878195,
+      "sd_boot": 0.00013744897530822386,
+      "num": 3898,
+      "den": 665083
+     },
+     "efficiency_all_targets": {
+      "value": 0.9916927661660274,
+      "sd_boot": 0.00015733996510019764,
+      "num": 659558,
+      "den": 665083
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.0065,
+      "sd_boot": 0.0012446747399196972,
+      "num": 39,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.006657562307954934,
+      "sd_boot": 0.0012614580943555286,
+      "num": 39,
+      "den": 5858
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9964828375794057,
+      "sd_boot": 0.00011363746054046794,
+      "num": 628404,
+      "den": 630622
+     },
+     "host_fake_rate": {
+      "value": 0.008810752782601981,
+      "sd_boot": 0.0002072059011188725,
+      "num": 5819,
+      "den": 660443
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9965313602374004,
+        "sd_boot": 0.00025206022278410775,
+        "num": 101416,
+        "den": 101769
+       },
+       "host_fake_rate": {
+        "value": 0.00872744316850246,
+        "sd_boot": 0.00042567040789208194,
+        "num": 931,
+        "den": 106675
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9964735001975974,
+        "sd_boot": 0.00012439741309116248,
+        "num": 526988,
+        "den": 528853
+       },
+       "host_fake_rate": {
+        "value": 0.008826801115268488,
+        "sd_boot": 0.0002183902414931323,
+        "num": 4888,
+        "den": 553768
+       }
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 3072,
+      "outcome": {
+       "contaminated": 4,
+       "found": 2198,
+       "gnn": 351,
+       "graph": 517,
+       "split": 2
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 1,
+        "found": 1046,
+        "gnn": 191,
+        "graph": 273,
+        "split": 1
+       },
+       "-": {
+        "contaminated": 3,
+        "found": 1152,
+        "gnn": 160,
+        "graph": 244,
+        "split": 1
+       }
+      }
+     },
+     "P_D": {
+      "n": 1985,
+      "outcome": {
+       "contaminated": 8,
+       "found": 1541,
+       "gnn": 163,
+       "graph": 269,
+       "split": 4
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 2,
+        "found": 776,
+        "gnn": 99,
+        "graph": 148,
+        "split": 2
+       },
+       "-": {
+        "contaminated": 6,
+        "found": 765,
+        "gnn": 64,
+        "graph": 121,
+        "split": 2
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 880,
+      "outcome": {
+       "found": 865,
+       "gnn": 6,
+       "graph": 8,
+       "split": 1
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 440,
+        "gnn": 3,
+        "graph": 4,
+        "split": 1
+       },
+       "-": {
+        "found": 425,
+        "gnn": 3,
+        "graph": 4,
+        "split": 0
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 5937,
+      "outcome": {
+       "contaminated": 12,
+       "found": 4604,
+       "gnn": 520,
+       "graph": 794,
+       "split": 7
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 3,
+        "found": 2262,
+        "gnn": 293,
+        "graph": 425,
+        "split": 4
+       },
+       "-": {
+        "contaminated": 9,
+        "found": 2342,
+        "gnn": 227,
+        "graph": 369,
+        "split": 3
+       }
+      }
+     }
+    }
+   }
+  },
+  "hs": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/htest_hs",
+   "sha256": {
+    "per_event.parquet": "1cd86ac6f72a4bc415b71e001dd7a7beca60b9498ab7f14544616fac793f0f5f",
+    "loss.parquet": "485610cebc6af1a49e5c965fa25acd5959e13b5d02916a867a7d10b24bfdf3a3",
+    "summary.json": "cbdcdbbb3cae90a88dc977923419aa59dbbe7a1f6ee8ad5de7f625e95f62cb8b"
+   },
+   "inputs": {
+    "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/htest_hs",
+    "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/htest_hs/scores",
+    "grid_per_event_sha256": "f5afda2d74a87bb7135580f6b113bd5fd091fc6cf3ceb7f593ec1229ef74501c",
+    "kind": "grid"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3"
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1"
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8"
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 600,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/tp03_v1/twins_htest_v1.json",
+    "sha256": "191f4b66ea1c0bc0f4bfdb389a52e7af5e96f7b61261ccad2ff7b27ffcfa6aeb"
+   },
+   "blocks": null,
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.006607510092162388,
+      "sd_boot": 0.0003233647182310727,
+      "num": 694,
+      "den": 105032
+     },
+     "duplicate_rate": {
+      "value": 0.000259691203550687,
+      "sd_boot": 8.112279089420982e-05,
+      "num": 11,
+      "den": 42358
+     },
+     "efficiency_all_targets": {
+      "value": 0.9630766325133386,
+      "sd_boot": 0.001140921004875667,
+      "num": 40794,
+      "den": 42358
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.010166666666666666,
+      "sd_boot": 0.0012854260323385673,
+      "num": 61,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.08789625360230548,
+      "sd_boot": 0.010683246637116933,
+      "num": 61,
+      "den": 694
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9979068550497122,
+      "sd_boot": 0.0002786896756684158,
+      "num": 34326,
+      "den": 34398
+     },
+     "host_fake_rate": {
+      "value": 0.006342663918845915,
+      "sd_boot": 0.00032456486642214963,
+      "num": 634,
+      "den": 99958
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9974946313528991,
+        "sd_boot": 0.0006703321888212416,
+        "num": 5574,
+        "den": 5588
+       },
+       "host_fake_rate": {
+        "value": 0.007120444122616461,
+        "sd_boot": 0.001072978428236069,
+        "num": 118,
+        "den": 16572
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9979868101353697,
+        "sd_boot": 0.0003029922372504212,
+        "num": 28752,
+        "den": 28810
+       },
+       "host_fake_rate": {
+        "value": 0.006188089127671312,
+        "sd_boot": 0.00032235982265046444,
+        "num": 516,
+        "den": 83386
+       }
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.006549075228694088,
+      "sd_boot": 0.00031638135619125495,
+      "num": 688,
+      "den": 105053
+     },
+     "duplicate_rate": {
+      "value": 0.00016525803862316445,
+      "sd_boot": 6.298402809977818e-05,
+      "num": 7,
+      "den": 42358
+     },
+     "efficiency_all_targets": {
+      "value": 0.9629821993484111,
+      "sd_boot": 0.0011358649954580685,
+      "num": 40790,
+      "den": 42358
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.011666666666666667,
+      "sd_boot": 0.0013762231255482153,
+      "num": 70,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.10174418604651163,
+      "sd_boot": 0.011636216586991571,
+      "num": 70,
+      "den": 688
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9977324263038548,
+      "sd_boot": 0.0002868409384918997,
+      "num": 34320,
+      "den": 34398
+     },
+     "host_fake_rate": {
+      "value": 0.006202915370224005,
+      "sd_boot": 0.0003189342320859739,
+      "num": 620,
+      "den": 99953
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9967788117394416,
+        "sd_boot": 0.0007450106009935741,
+        "num": 5570,
+        "den": 5588
+       },
+       "host_fake_rate": {
+        "value": 0.006941510231182471,
+        "sd_boot": 0.0010919162802836403,
+        "num": 115,
+        "den": 16567
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.9979173897952099,
+        "sd_boot": 0.0003063670913973083,
+        "num": 28750,
+        "den": 28810
+       },
+       "host_fake_rate": {
+        "value": 0.006056172498980644,
+        "sd_boot": 0.00031648146639937444,
+        "num": 505,
+        "den": 83386
+       }
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.028185549205856385,
+      "sd_boot": 0.0014830517637832413,
+      "num": 2905,
+      "den": 103067
+     },
+     "duplicate_rate": {
+      "value": 0.00703527078710043,
+      "sd_boot": 0.0007771372217551187,
+      "num": 298,
+      "den": 42358
+     },
+     "efficiency_all_targets": {
+      "value": 0.9485575334057321,
+      "sd_boot": 0.0014689415612797534,
+      "num": 40179,
+      "den": 42358
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.015333333333333332,
+      "sd_boot": 0.0018359606788653701,
+      "num": 92,
+      "den": 6000
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.03166953528399311,
+      "sd_boot": 0.00394401007230458,
+      "num": 92,
+      "den": 2905
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9931391359962789,
+      "sd_boot": 0.0008112422083060034,
+      "num": 34162,
+      "den": 34398
+     },
+     "host_fake_rate": {
+      "value": 0.02852565077626682,
+      "sd_boot": 0.0015386768697282238,
+      "num": 2813,
+      "den": 98613
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 96,
+       "host_prompt_efficiency": {
+        "value": 0.9931997136721546,
+        "sd_boot": 0.002346868517520949,
+        "num": 5550,
+        "den": 5588
+       },
+       "host_fake_rate": {
+        "value": 0.02589115896680778,
+        "sd_boot": 0.0037433513437181505,
+        "num": 422,
+        "den": 16299
+       }
+      },
+      "twin": {
+       "events": 504,
+       "host_prompt_efficiency": {
+        "value": 0.993127386324193,
+        "sd_boot": 0.0008228291228484462,
+        "num": 28612,
+        "den": 28810
+       },
+       "host_fake_rate": {
+        "value": 0.029047306655004008,
+        "sd_boot": 0.0017178910146854996,
+        "num": 2391,
+        "den": 82314
+       }
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 3072,
+      "outcome": {
+       "contaminated": 3,
+       "found": 2122,
+       "gnn": 406,
+       "graph": 537,
+       "split": 4
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 2,
+        "found": 1011,
+        "gnn": 209,
+        "graph": 287,
+        "split": 3
+       },
+       "-": {
+        "contaminated": 1,
+        "found": 1111,
+        "gnn": 197,
+        "graph": 250,
+        "split": 1
+       }
+      }
+     },
+     "P_D": {
+      "n": 1985,
+      "outcome": {
+       "contaminated": 6,
+       "found": 1495,
+       "gnn": 206,
+       "graph": 275,
+       "split": 3
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 4,
+        "found": 740,
+        "gnn": 130,
+        "graph": 151,
+        "split": 2
+       },
+       "-": {
+        "contaminated": 2,
+        "found": 755,
+        "gnn": 76,
+        "graph": 124,
+        "split": 1
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 880,
+      "outcome": {
+       "found": 861,
+       "gnn": 9,
+       "graph": 8,
+       "split": 2
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 438,
+        "gnn": 4,
+        "graph": 4,
+        "split": 2
+       },
+       "-": {
+        "found": 423,
+        "gnn": 5,
+        "graph": 4,
+        "split": 0
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 5937,
+      "outcome": {
+       "contaminated": 9,
+       "found": 4478,
+       "gnn": 621,
+       "graph": 820,
+       "split": 9
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 6,
+        "found": 2189,
+        "gnn": 343,
+        "graph": 442,
+        "split": 7
+       },
+       "-": {
+        "contaminated": 3,
+        "found": 2289,
+        "gnn": 278,
+        "graph": 378,
+        "split": 2
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -24,6 +24,7 @@ import time
 import numpy as np
 import torch
 
+from hnl.overlay import grant as GRANT
 from hnl.trackml import events as E
 from hnl.trackml import sectors as S
 
@@ -31,6 +32,8 @@ A30_USABLE_GB = 24 * 2**30 / 1e9 - 1.0
 
 
 def cmd_base_check(a):
+    # overlay ids only under a grant of kind model (addendum H; never plumb: no number from a pilot output, D6)
+    GRANT.check([int(x) for x in a.events.split(",")], "model", "full", out=a.out)
     rows = []
     gpu = E.Embedder(a.ml_ckpt, "cuda")
     cpu = E.Embedder(a.ml_ckpt, "cpu")
@@ -65,6 +68,8 @@ def cmd_sectors(a):
     from acorn.utils.loading_utils import load_datafiles_in_dir
     from hnl.trackml import classifier as CL
     from hnl.trackml.probe import CLASSIFIER_CONFIG
+    paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")), os.path.basename(a.store.rstrip("/"))))
+    GRANT.check_store(paths[:a.max_events], "model", out=a.out)   # overlay events only under a grant (addendum H)
     dev = torch.device("cuda")
     if a.ckpt:
         from hnl.trackml.infer import load_model
@@ -74,7 +79,6 @@ def cmd_sectors(a):
         hp = CL.model_hparams({**cfg, "input_dir": "/nonexistent", "stage_dir": "/nonexistent", "data_split": [0, 0, 0]})
         torch.manual_seed(0)
         model = CL.TrackMLCanto(hp).to(dev)
-    paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")), os.path.basename(a.store.rstrip("/"))))
     rows = []
     for p in paths[:a.max_events]:
         ev = CL.load_event_graph(p)

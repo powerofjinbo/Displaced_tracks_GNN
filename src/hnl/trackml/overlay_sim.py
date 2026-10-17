@@ -172,6 +172,22 @@ def event_range(directory: str, first: int | None = None, events: int | None = N
     return lo - ev[0], lo, n
 
 
+def event_blocks(directory: str, stem: str = "particles") -> list[tuple[int, int, int]]:
+    """(skip, first, n) of every run of consecutive event files in a directory, for one sequencer call each. The v15
+    sequencer numbers events from the smallest file (CsvParticleReader::availableEvents), starts at that number +
+    --skip and reads event<N>-<stem>.csv for event N, so each run keeps its own event numbers, and with them its ACTS
+    streams seed + Cantor(algorithm, N), however the files of a set are spread over jobs (addendum H section 2)."""
+    ev = event_files(directory, stem)
+    if not ev:
+        raise FileNotFoundError(f"no event*-{stem}.csv in {directory}")
+    blocks, lo = [], ev[0]
+    for a, b in zip(ev, ev[1:] + [None]):
+        if b != a + 1:
+            blocks.append((lo - ev[0], lo, a + 1 - lo))
+            lo = b
+    return blocks
+
+
 _FAILED = re.compile(r"event (\d+) particle (\S+) failed to simulate with error")
 _PROCESSED = re.compile(r"Processed (\d+) events")
 

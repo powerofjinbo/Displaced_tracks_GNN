@@ -78,6 +78,62 @@ def test_event_range(tmp_path):
         OS.event_range(str(tmp_path), 5, 2)          # event 4 missing below the requested range
 
 
+def test_event_blocks(tmp_path):
+    for e in (3, 4, 5, 9, 36, 37, 600):
+        (tmp_path / f"event{e:09d}-particles.csv").write_text("x\n")
+    (tmp_path / f"event{1:09d}-hits.csv").write_text("x\n")                  # another stem: ignored
+    assert OS.event_blocks(str(tmp_path)) == [(0, 3, 3), (6, 9, 1), (33, 36, 2), (597, 600, 1)]
+    with pytest.raises(FileNotFoundError):
+        OS.event_blocks(str(tmp_path), stem="nothing")
+
+
+def test_run_sim_simulates_every_file_under_its_own_number(tmp_path, monkeypatch):
+    """Event files 0-2, 36 and 600 (a val job and a spare, say): one sequencer call per run of consecutive numbers,
+    with --skip counted from the smallest file, one fatras.log, and the event numbers, calls and container in
+    sim_summary.json."""
+    import json
+    import subprocess
+    S = _script()
+    inp, out = tmp_path / "in", tmp_path / "out"
+    inp.mkdir()
+    for e in (0, 1, 2, 36, 600):
+        (inp / f"event{e:09d}-particles.csv").write_text("x\n")
+    build = tmp_path / "build"
+    (build / "bin").mkdir(parents=True)
+    (build / "bin" / "ActsExampleFatrasGeneric").write_bytes(b"exe")
+    fmap = tmp_path / "map.txt"
+    fmap.write_text("0 0 0 2\n")
+    calls = []
+    monkeypatch.setattr(S.OS, "container_command", lambda st, b, args, paths: list(args))
+
+    def runner(cmd, **kw):
+        n = int(cmd[cmd.index("-n") + 1])
+        calls.append((int(cmd[cmd.index("--skip") + 1]), n))
+        return subprocess.CompletedProcess(cmd, 0, stdout=f"x INFO Processed {n} events in 1 s (wall clock)\n")
+
+    rc = S.run_sim(str(inp), str(out), str(build), 600_000_014, None, None, 2, OS.SETTINGS_PATH, str(fmap), False,
+                   runner=runner)
+    assert rc == 0 and calls == [(0, 3), (36, 1), (600, 1)]
+    with open(out / "sim_summary.json") as fh:
+        s = json.load(fh)
+    assert s["fatras_events"] == [0, 1, 2, 36, 600] and s["events"] == 5 and s["events_processed"] == 5
+    assert [c["first_event"] for c in s["calls"]] == [0, 36, 600] and s["seed"] == 600_000_014
+    st = OS.load_settings()
+    assert s["container"] == st["container"] and s["lcg_view"] == st["lcg_view"]
+    assert s["container_resolved"] == os.path.realpath(st["container"])
+    assert (out / "fatras.log").read_text().count("Processed") == 3
+    # a call that processes fewer events than asked fails the run
+    out2 = tmp_path / "out2"
+    rc = S.run_sim(str(inp), str(out2), str(build), 1, None, None, 1, OS.SETTINGS_PATH, str(fmap), False,
+                   runner=lambda cmd, **kw: subprocess.CompletedProcess(cmd, 0, stdout="Processed 1 events\n"))
+    assert rc == 5
+    # --first / --events keep the single call of the earlier interface
+    out3, calls[:] = tmp_path / "out3", []
+    assert S.run_sim(str(inp), str(out3), str(build), 1, 1, 2, 1, OS.SETTINGS_PATH, str(fmap), False,
+                     runner=runner) == 0
+    assert calls == [(1, 2)]
+
+
 def test_parse_fatras_log():
     text = "\n".join([
         "12:23:02    Simulation     ERROR     Step failed with MagneticFieldError:1: Interpolation out of bounds",

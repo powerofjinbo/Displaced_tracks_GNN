@@ -1,0 +1,83 @@
+{
+ "set": "test",
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "selection_file": "/work/submit/jinboz1/hnl/hnl-displaced/results/addendum_g_selection_v1.json",
+ "selection_sha256": "8760d31934e7671b857ecf8fa6be3d3be91b295062e93a9197a4bf533a21200a",
+ "written_utc": "2026-10-17T21:12:49+00:00",
+ "git": "9d107489cfdcc3d582583f51b4bb3652337a7ad4",
+ "claims": [
+  {
+   "claim": "G2",
+   "sensitivity": false,
+   "A": "Canto-L (ttbar)",
+   "B": "acorn (ttbar+G)",
+   "population": "P_G",
+   "split": "generic_iso union test (T1 deviation 13a)",
+   "n_targets": 8710,
+   "eff_A": 0.9694221201683888,
+   "eff_B": 0.9455797933409874,
+   "eff_A_seeds": [
+    0.9684270952927669,
+    0.9723306544202066,
+    0.9675086107921929
+   ],
+   "eff_B_seeds": [
+    0.9411021814006889,
+    0.9435132032146958,
+    0.9521239954075775
+   ],
+   "delta_points": 2.3842326827401394,
+   "sigma_points": 0.4067429091514769,
+   "sigma_boot_points": 0.17798093638907123,
+   "sigma_seeds_points": 0.3657356701595785,
+   "fake_rate_A": 0.0054838384739537,
+   "fake_rate_B": 0.004152862385150485,
+   "fake_rate_diff_points": 0.1330976088803215,
+   "z": 5.861768279412628,
+   "delta_minus_2sigma": 1.5707468644371856,
+   "delta_plus_2sigma": 3.1977185010430933,
+   "margin": 1.0,
+   "fake_rate_guard_ok": true,
+   "outcome": "holds",
+   "underpowered": false
+  },
+  {
+   "claim": "G3",
+   "sensitivity": false,
+   "A": "Canto-L (ttbar+G)",
+   "B": "acorn (ttbar+G)",
+   "population": "P_G",
+   "split": "generic_iso union test (T1 deviation 13a)",
+   "n_targets": 8710,
+   "eff_A": 0.9766551856104094,
+   "eff_B": 0.9455797933409874,
+   "eff_A_seeds": [
+    0.9701492537313433,
+    0.9737083811710677,
+    0.9861079219288175
+   ],
+   "eff_B_seeds": [
+    0.9411021814006889,
+    0.9435132032146958,
+    0.9521239954075775
+   ],
+   "delta_points": 3.107539226942202,
+   "sigma_points": 0.613716527983957,
+   "sigma_boot_points": 0.17548680853526025,
+   "sigma_seeds_points": 0.5880921328761269,
+   "fake_rate_A": 0.0011107906334341066,
+   "fake_rate_B": 0.004152862385150485,
+   "fake_rate_diff_points": -0.3042071751716378,
+   "z": 5.063476516023429,
+   "threshold_sigma": 3.0,
+   "fake_rate_not_higher": true,
+   "outcome": "holds",
+   "underpowered": false
+  }
+ ],
+ "code_test": false
+}

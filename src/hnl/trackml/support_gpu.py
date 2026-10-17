@@ -291,6 +291,9 @@ def main(argv=None):
     c.add_argument("--max-triplets", type=float, default=2e7)
     c.add_argument("--field-map", default=None, help="field map of the run (graph_choice.json field_map); default none")
     a = ap.parse_args(argv)
+    from hnl.overlay import grant as GRANT
+    # overlay ids only under a grant of kind model (addendum H; never plumb: no number from a pilot output, D6)
+    GRANT.check([int(x) for x in a.events.split(",")], "model", "full", out=a.out)
     import joblib
     from hnl.trackml.config import threads
     threads()

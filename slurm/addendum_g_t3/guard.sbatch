@@ -3,7 +3,7 @@
 # acorn arm (i) (hnl.eval.addendum_g_t3 guard -> RUN/guard_val.json). Usage: sbatch guard.sbatch acorn|canto S
 #SBATCH -J g3_guard
 #SBATCH -p submit-gpu-express,submit-gpu,submit
-#SBATCH --exclude=submit00,submit01,submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
+#SBATCH --exclude=submit00,submit01,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
 #SBATCH -c 24
 #SBATCH --mem=48G
 #SBATCH -t 01:00:00

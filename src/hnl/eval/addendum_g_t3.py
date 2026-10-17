@@ -759,7 +759,7 @@ def main(argv=None):
     ub.add_argument("--split", required=True, choices=["train", "val"])
     ub.add_argument("--block", type=int, required=True)
     ub.add_argument("--n-blocks", type=int, required=True)
-    ub.add_argument("--workers", type=int, default=14)
+    ub.add_argument("--workers", type=int, default=10)
     ug = sub.add_parser("union-gather")
     ug.add_argument("--seed", type=int, required=True)
     ug.add_argument("--split", required=True, choices=["train", "val"])

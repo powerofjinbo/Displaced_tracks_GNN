@@ -5,7 +5,7 @@
 # themselves are the same). Packed to G/ltf_union_graphs/<split>set.tar. Usage: sbatch union.sbatch S train|val
 #SBATCH -J g3_union
 #SBATCH -p submit,submit-gpu
-#SBATCH --exclude=submit00,submit01,submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
+#SBATCH --exclude=submit00,submit01,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
 #SBATCH -c 28
 #SBATCH --mem=56G
 #SBATCH -t 1-00:00:00

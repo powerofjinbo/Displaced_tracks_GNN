@@ -1,0 +1,46 @@
+=== EXCL=-1
+union 7233 = t1 2384 + x1 4849 True 0 dense 2385
+exclude iso truth event -1 (event_id 499999999 ) in union: False P_G targets in it: 0
+P_G mine 8710 in_pop col 8710 agree True
+P_dense mine 7782 in_pop col 7782
+stored iso table equal mine True True
+stored dense table equal mine True True
+canto_ttbar 0 events 9618 coverage_exact True dups 0 iso eff 96.8427% fr 0.5117% n 8710 miss 0 | dense eff 97.4171% fr 0.5183% miss 0
+canto_ttbar 1 events 9618 coverage_exact True dups 0 iso eff 97.2331% fr 0.5099% n 8710 miss 0 | dense eff 97.2758% fr 0.5391% miss 0
+canto_ttbar 2 events 9618 coverage_exact True dups 0 iso eff 96.7509% fr 0.6236% n 8710 miss 0 | dense eff 96.9160% fr 0.6498% miss 0
+acorn_g 0 events 9618 coverage_exact True dups 0 iso eff 94.1102% fr 0.3983% n 8710 miss 0 | dense eff 96.1192% fr 0.4494% miss 0
+acorn_g 1 events 9618 coverage_exact True dups 0 iso eff 94.3513% fr 0.3745% n 8710 miss 0 | dense eff 96.3506% fr 0.4333% miss 0
+acorn_g 2 events 9618 coverage_exact True dups 0 iso eff 95.2124% fr 0.4730% n 8710 miss 0 | dense eff 96.1964% fr 0.5354% miss 0
+canto_g 0 events 9618 coverage_exact True dups 0 iso eff 97.0149% fr 0.1078% n 8710 miss 0 | dense eff 98.4194% fr 0.1314% miss 0
+canto_g 1 events 9618 coverage_exact True dups 0 iso eff 97.3708% fr 0.1088% n 8710 miss 0 | dense eff 98.3295% fr 0.1321% miss 0
+canto_g 2 events 9618 coverage_exact True dups 0 iso eff 98.6108% fr 0.1166% n 8710 miss 0 | dense eff 98.8692% fr 0.1323% miss 0
+G2: effA 96.9422 effB 94.5580 D 2.3842 sigma 0.4067 (boot 0.1780 [ddof0 0.1778], seeds 0.3657) D-2s 1.5707 D/s 5.862 frA 0.5484 frB 0.4153 dfr 0.1331
+  seedsA [96.843 97.233 96.751] seedsB [94.11  94.351 95.212]
+G3: effA 97.6655 effB 94.5580 D 3.1075 sigma 0.6137 (boot 0.1755 [ddof0 0.1753], seeds 0.5881) D-2s 1.8801 D/s 5.063 frA 0.1111 frB 0.4153 dfr -0.3042
+  seedsA [97.015 97.371 98.611] seedsB [94.11  94.351 95.212]
+dense canto_ttbar 97.2029
+dense acorn_g 96.2221
+dense canto_g 98.5394
+=== EXCL=1592
+union 7233 = t1 2384 + x1 4849 True 0 dense 2385
+exclude iso truth event 1592 (event_id 500001592 ) in union: True P_G targets in it: 1
+P_G mine 8709 in_pop col 8710 agree False
+P_dense mine 7782 in_pop col 7782
+stored iso table equal mine True True
+stored dense table equal mine True True
+canto_ttbar 0 events 9618 coverage_exact True dups 0 iso eff 96.8423% fr 0.5117% n 8709 miss 0 | dense eff 97.4171% fr 0.5183% miss 0
+canto_ttbar 1 events 9618 coverage_exact True dups 0 iso eff 97.2327% fr 0.5099% n 8709 miss 0 | dense eff 97.2758% fr 0.5391% miss 0
+canto_ttbar 2 events 9618 coverage_exact True dups 0 iso eff 96.7505% fr 0.6237% n 8709 miss 0 | dense eff 96.9160% fr 0.6498% miss 0
+acorn_g 0 events 9618 coverage_exact True dups 0 iso eff 94.1095% fr 0.3984% n 8709 miss 0 | dense eff 96.1192% fr 0.4494% miss 0
+acorn_g 1 events 9618 coverage_exact True dups 0 iso eff 94.3507% fr 0.3746% n 8709 miss 0 | dense eff 96.3506% fr 0.4333% miss 0
+acorn_g 2 events 9618 coverage_exact True dups 0 iso eff 95.2118% fr 0.4731% n 8709 miss 0 | dense eff 96.1964% fr 0.5354% miss 0
+canto_g 0 events 9618 coverage_exact True dups 0 iso eff 97.0146% fr 0.1078% n 8709 miss 0 | dense eff 98.4194% fr 0.1314% miss 0
+canto_g 1 events 9618 coverage_exact True dups 0 iso eff 97.3705% fr 0.1088% n 8709 miss 0 | dense eff 98.3295% fr 0.1321% miss 0
+canto_g 2 events 9618 coverage_exact True dups 0 iso eff 98.6106% fr 0.1167% n 8709 miss 0 | dense eff 98.8692% fr 0.1323% miss 0
+G2: effA 96.9419 effB 94.5574 D 2.3845 sigma 0.4068 (boot 0.1780 [ddof0 0.1778], seeds 0.3658) D-2s 1.5709 D/s 5.862 frA 0.5485 frB 0.4154 dfr 0.1331
+  seedsA [96.842 97.233 96.75 ] seedsB [94.11  94.351 95.212]
+G3: effA 97.6653 effB 94.5574 D 3.1079 sigma 0.6138 (boot 0.1755 [ddof0 0.1753], seeds 0.5882) D-2s 1.8803 D/s 5.063 frA 0.1111 frB 0.4154 dfr -0.3043
+  seedsA [97.015 97.371 98.611] seedsB [94.11  94.351 95.212]
+dense canto_ttbar 97.2029
+dense acorn_g 96.2221
+dense canto_g 98.5394

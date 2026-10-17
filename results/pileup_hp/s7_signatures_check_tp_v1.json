@@ -1,0 +1,29 @@
+{
+ "ours": {
+  "n_hosts": 150,
+  "n_hs_twin": 140,
+  "n_collisions": 21883,
+  "n_collisions_twin": 16721,
+  "collision_twin_fraction": 0.7641091258054198,
+  "n_train_events": 1399,
+  "n_train_collisions": 203901
+ },
+ "gnn_displaced": {
+  "n_collisions": 21883,
+  "n_collisions_twin": 16721,
+  "n_hs": 150,
+  "n_hs_twin": 140
+ },
+ "rows": {
+  "ours_only": 0,
+  "gnn_displaced_only": 0,
+  "both": 225784
+ },
+ "partition": {
+  "signatures_with_several_sids": 0,
+  "sids_with_several_signatures": 0
+ },
+ "hs_twin_agree": 150,
+ "pass": true,
+ "written_utc": "2026-10-16T21:31:41+00:00"
+}

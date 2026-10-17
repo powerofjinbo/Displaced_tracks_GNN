@@ -36,6 +36,7 @@ import time
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
 from hnl.trackml import config as CFG
 from hnl.trackml import events as E
 
@@ -136,6 +137,7 @@ def cmd_radii(a, cfg):
     _threads()
     dens = [float(x) for x in cfg["graph"]["densities"]]
     evs = CFG.event_set(a.events, cfg)[:int(cfg["graph"]["radii_events"])]
+    GRANT.check(evs, "model", "full", out=a.out)     # overlay ids only under a grant (addendum H; never plumb, D6)
     emb_f = E.Embedder(a.ml_ckpt, _device(a.device))
     per = []
     for ev in E.iter_events(evs, particles=False):
@@ -152,9 +154,10 @@ def cmd_radii(a, cfg):
 def cmd_ltf_data(a, cfg):
     from hnl.graphs import learned_triplet_filter as LT
     _threads()
+    evs = CFG.event_set(a.events, cfg)
+    GRANT.check(evs, "model", "full", out=a.out)     # overlay ids only under a grant (addendum H; never plumb, D6)
     radii = json.load(open(a.radii))["radii"]
     r_w = float(cfg["support"]["data_rw_factor"]) * max(float(v) for v in radii.values())
-    evs = CFG.event_set(a.events, cfg)
     cap = float(cfg["support"]["max_negative_rows"]) / len(evs)
     fmap = E.FieldMap(CFG.repo_path(a.field_map)) if a.field_map else None
     emb_f = E.Embedder(a.ml_ckpt, _device(a.device))
@@ -197,6 +200,8 @@ def cmd_scan(a, cfg):
     from hnl.eval.matching import FastMatch
     from hnl.trackml.probe import cap_binding
     _threads()
+    evs = CFG.event_set(a.events, cfg)[:a.max_events]
+    GRANT.check(evs, "model", "full", out=a.out)     # overlay ids only under a grant (addendum H; never plumb, D6)
     g = cfg["graph"]
     radii = {float(k): float(v) for k, v in json.load(open(a.radii))["radii"].items()}
     ops = [(float(t), int(k)) for t in g["taus"] for k in g["ks"]]
@@ -204,7 +209,6 @@ def cmd_scan(a, cfg):
     sup = Support(a.ltf_model, _support_backend(a.support_backend, device), device)
     fmap = E.FieldMap(CFG.repo_path(a.field_map)) if a.field_map else None
     emb_f = E.Embedder(a.ml_ckpt, device)
-    evs = CFG.event_set(a.events, cfg)[:a.max_events]
     rows = []
     os.makedirs(a.out, exist_ok=True)
     for ev in E.iter_events(evs):
@@ -291,13 +295,14 @@ def cmd_choose(a, cfg):
 # ------------------------------------------------------------------------------------------------ additions
 def cmd_additions(a, cfg):
     from hnl.trackml.convert import storage_check
+    evs = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
+    GRANT.check(evs, ("model", "plumb"), a.condition, out=a.out)        # overlay ids only under a grant (addendum H)
     _threads()
     ch = json.load(open(a.graph_choice))
     fmap = E.FieldMap(CFG.repo_path(ch["field_map"])) if ch.get("field_map") else None
     device = _device(a.device)
     sup = Support(ch["ltf_model"], _support_backend(a.support_backend, device), device)
     emb_f = E.Embedder(ch["ml_ckpt"], device)
-    evs = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
     os.makedirs(a.out, exist_ok=True)
     done = set()
     for f in os.listdir(a.out):
@@ -339,10 +344,11 @@ def cmd_additions(a, cfg):
 # ------------------------------------------------------------------------------------------------ event store
 def cmd_stage(a, cfg):
     from hnl.trackml.classifier import save_event_graph
+    evs = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
+    GRANT.check(evs, ("model", "plumb"), a.condition, out=a.dest)       # overlay ids only under a grant (addendum H)
     _threads()
     ch = json.load(open(a.graph_choice))
     device = _device(a.device)
-    evs = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
     sides = [json.load(open(os.path.join(a.additions, f))) for f in os.listdir(a.additions)
              if f.endswith(".parquet.json")]
     backends = {s_["backend"] for s_ in sides}
@@ -382,6 +388,7 @@ def cmd_fs(a, cfg):
     import yaml
     from hnl.trackml.ml import fs_features, stage_fs
     evs = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
+    GRANT.check(evs, "model", a.condition, out=a.dest)   # overlay ids only under a grant (addendum H; never plumb)
     feats = []
     if a.ml_config:
         with open(CFG.repo_path(a.ml_config)) as fh:

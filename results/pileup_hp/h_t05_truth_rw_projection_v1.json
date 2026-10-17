@@ -1,0 +1,248 @@
+{
+ "what": "addendum H step H-T0.5.1: H-val P_P yield and the reweighted val projection of section 6 with the H-val gun truth after the emulation (truth on the gun side; stored val outputs of native targets)",
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "yield": {
+  "set": "hval",
+  "events": 150,
+  "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+  "gun_particles": 3994,
+  "gun_targets": 1517,
+  "P_P": 793,
+  "P_D": 508,
+  "P_P_per_isolated_llp": 0.6608333333333334,
+  "P_D_per_dense_llp": 1.6933333333333334,
+  "P_P_by_region": {
+   "central": 373,
+   "fwd+": 222,
+   "fwd-": 198
+  },
+  "P_P_central_share": 0.4703656998738966,
+  "P_P_with_soft_sibling": 69,
+  "P_P_ratio_ge_0p2": 0.45901639344262296,
+  "P_P_abs_d0_ge_100": 0.21185372005044137,
+  "projected_htest_P_P": 3172,
+  "projected_htest_P_P_poisson_sigma": 113,
+  "projected_htest_central_P_P": 1492,
+  "statistics_check": "H1 is labelled underpowered if H-test holds fewer than 1000 P_P targets after any restriction; the H-test count is committed at H-T1 (section 6)"
+ },
+ "gun_bins": {
+  "0,0": 0.0492,
+  "0,1": 0.0921,
+  "0,2": 0.2018,
+  "1,0": 0.1715,
+  "1,1": 0.2257,
+  "1,2": 0.2547,
+  "2,0": 0.0013,
+  "2,1": 0.0013,
+  "2,2": 0.0025
+ },
+ "gun_probe_bins": {
+  "0,0": 0.0522,
+  "0,1": 0.0799,
+  "0,2": 0.193,
+  "1,0": 0.1792,
+  "1,1": 0.2351,
+  "1,2": 0.257,
+  "2,0": 0.0003,
+  "2,1": 0.0009,
+  "2,2": 0.0024
+ },
+ "gun_probe_pp_like": 3331,
+ "gun_probe_ratio_ge_0p2": 0.4524166916841789,
+ "gun_probe_d0_ge_100": 0.21134794356049236,
+ "code": {
+  "script": "results/pileup_hp/h_t05_truth_rw_projection.py",
+  "native_side_from": "results/pileup_hp/addendum_h_inputs/rw_projection.py (c0d689a)",
+  "gun_probe_record": "results/pileup_hp/addendum_h_inputs/rw_projection.json"
+ },
+ "n_targets_projected": [
+  3172,
+  2894,
+  2160
+ ],
+ "reweighted": [
+  {
+   "population": "gen-0, |d0|>=10 or rv>=100",
+   "n_native": 3276,
+   "gun_coverage": 0.995,
+   "delta_rw_pts": -1.749,
+   "sigma_val_pts": 1.34,
+   "n_eff": 73.1,
+   "cells": {
+    "0,0": {
+     "n_native": 834,
+     "gun_share": 0.0492,
+     "delta_pts": -0.12,
+     "eff_full": 0.993
+    },
+    "0,1": {
+     "n_native": 732,
+     "gun_share": 0.0921,
+     "delta_pts": 0.14,
+     "eff_full": 0.999
+    },
+    "0,2": {
+     "n_native": 4,
+     "gun_share": 0.2018,
+     "delta_pts": 0.0,
+     "eff_full": 1.0
+    },
+    "1,0": {
+     "n_native": 966,
+     "gun_share": 0.1715,
+     "delta_pts": -0.93,
+     "eff_full": 0.98
+    },
+    "1,1": {
+     "n_native": 720,
+     "gun_share": 0.2257,
+     "delta_pts": -1.39,
+     "eff_full": 0.979
+    },
+    "1,2": {
+     "n_native": 20,
+     "gun_share": 0.2547,
+     "delta_pts": -5.0,
+     "eff_full": 0.95
+    },
+    "2,0": {
+     "n_native": 0,
+     "gun_share": 0.0013,
+     "delta_pts": null,
+     "eff_full": null
+    },
+    "2,1": {
+     "n_native": 0,
+     "gun_share": 0.0013,
+     "delta_pts": null,
+     "eff_full": null
+    },
+    "2,2": {
+     "n_native": 0,
+     "gun_share": 0.0025,
+     "delta_pts": null,
+     "eff_full": null
+    }
+   },
+   "projection": {
+    "3172": {
+     "sigma_proj": 0.203,
+     "delta_minus_2sigma": -2.156,
+     "p_hold": 0.2,
+     "p_inconclusive": 0.2,
+     "p_fail": 0.6
+    },
+    "2894": {
+     "sigma_proj": 0.213,
+     "delta_minus_2sigma": -2.175,
+     "p_hold": 0.19,
+     "p_inconclusive": 0.21,
+     "p_fail": 0.59
+    },
+    "2160": {
+     "sigma_proj": 0.247,
+     "delta_minus_2sigma": -2.242,
+     "p_hold": 0.18,
+     "p_inconclusive": 0.24,
+     "p_fail": 0.57
+    }
+   }
+  },
+  {
+   "population": "all gens, |d0|>=10 or rv>=100",
+   "n_native": 3747,
+   "gun_coverage": 0.995,
+   "delta_rw_pts": -3.439,
+   "sigma_val_pts": 0.857,
+   "n_eff": 971.2,
+   "cells": {
+    "0,0": {
+     "n_native": 837,
+     "gun_share": 0.0492,
+     "delta_pts": -0.12,
+     "eff_full": 0.992
+    },
+    "0,1": {
+     "n_native": 784,
+     "gun_share": 0.0921,
+     "delta_pts": -0.26,
+     "eff_full": 0.976
+    },
+    "0,2": {
+     "n_native": 278,
+     "gun_share": 0.2018,
+     "delta_pts": -2.88,
+     "eff_full": 0.439
+    },
+    "1,0": {
+     "n_native": 992,
+     "gun_share": 0.1715,
+     "delta_pts": -0.71,
+     "eff_full": 0.971
+    },
+    "1,1": {
+     "n_native": 771,
+     "gun_share": 0.2257,
+     "delta_pts": -1.3,
+     "eff_full": 0.949
+    },
+    "1,2": {
+     "n_native": 85,
+     "gun_share": 0.2547,
+     "delta_pts": -9.41,
+     "eff_full": 0.494
+    },
+    "2,0": {
+     "n_native": 0,
+     "gun_share": 0.0013,
+     "delta_pts": null,
+     "eff_full": null
+    },
+    "2,1": {
+     "n_native": 0,
+     "gun_share": 0.0013,
+     "delta_pts": null,
+     "eff_full": null
+    },
+    "2,2": {
+     "n_native": 0,
+     "gun_share": 0.0025,
+     "delta_pts": null,
+     "eff_full": null
+    }
+   },
+   "projection": {
+    "3172": {
+     "sigma_proj": 0.474,
+     "delta_minus_2sigma": -4.387,
+     "p_hold": 0.0,
+     "p_inconclusive": 0.06,
+     "p_fail": 0.94
+    },
+    "2894": {
+     "sigma_proj": 0.496,
+     "delta_minus_2sigma": -4.431,
+     "p_hold": 0.0,
+     "p_inconclusive": 0.07,
+     "p_fail": 0.93
+    },
+    "2160": {
+     "sigma_proj": 0.574,
+     "delta_minus_2sigma": -4.588,
+     "p_hold": 0.0,
+     "p_inconclusive": 0.11,
+     "p_fail": 0.89
+    }
+   }
+  }
+ ],
+ "reweighted_with_probe_cells": {
+  "gen-0, |d0|>=10 or rv>=100": {
+   "delta_rw_pts": -1.78
+  },
+  "all gens, |d0|>=10 or rv>=100": {
+   "delta_rw_pts": -3.445
+  }
+ },
+ "seconds": 11.9
+}

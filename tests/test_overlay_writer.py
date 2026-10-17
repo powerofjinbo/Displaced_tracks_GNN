@@ -121,7 +121,19 @@ def test_overlay_ids_and_table_root():
     assert EV.table_root(59_021_117) == EV.DERIVED_OVERLAY and EV.table_root(50_000_000) == EV.DERIVED_OVERLAY
     assert EV.table_root(49_999_999) == EV.DERIVED_TP and EV.table_root(21117) == EV.DERIVED_TP
     assert EV.table_root(1000) == C.DERIVED
-    assert W.overlay_id("htrain", 22999) < 10 ** 8 and max(W.overlay_id(s, 999_999) for s in W.SETS) < 2 ** 31
+    assert max(W.overlay_id(s, 999_999) for s in W.SETS) < 10 ** 8 < 2 ** 31
+    assert "htrain" not in W.SETS                                      # no H-train set in addendum H
+    with pytest.raises(KeyError):
+        W.overlay_id("htrain", 22999)
+
+
+def test_sets_carry_the_addendum_seeds():
+    from hnl.overlay import split_h as SH
+    assert W.SETS == {"hval": (0, 600_000_001), "closure": (1, 610_000_001), "htest": (2, 620_000_001),
+                      "pilot": (9, 990_101)}
+    split = SH.load_split()
+    assert {n: (v["k"], v["base_seed"]) for n, v in split["sets"].items()} == W.SETS
+    assert all(SH.base_seed(n) == W.SETS[n][1] for n in W.SETS)
 
 
 def test_gun_members_layout(modules):

@@ -2,12 +2,22 @@
 sections 5.4, 6 and 9).
 
 `make` writes configs/trackml/split_h_v1.json at H-T0: the overlay sets with their set index k and base seed, the
-H-val and closure hosts (tp_v1 val), the pilot hosts, the H-test hash rule and the excluded sets. training_part03 is
-not streamed at H-T0, so the H-test ids are fixed by the rule alone; `htest` applies it at H-T1 to the list of complete
-part03 events that pass the converter's data-quality rule, and the result is added to the file then.
+H-val and closure hosts (tp_v1 val), the pilot hosts, the H-test hash rule with its per-event and per-set checks and
+the return rule, the Fatras event numbering and the excluded sets. training_part03 is not streamed at H-T0, so the
+H-test ids are fixed by the rule alone; `htest` applies it at H-T1 to the list of complete part03 events that pass the
+converter's data-quality rule, and the result is added to the file then.
 
-Hash rule: key(id) = int(sha256("canto-trackml-overlay-v1:<id>").hexdigest()[:8], 16); events in increasing key,
-ties by increasing id; the first N_HTEST are H-test, the rest are spares in that order.
+Hash rule: key(id) = int(sha256("canto-trackml-overlay-v1:<id>").hexdigest()[:8], 16) with <id> the decimal event id
+without leading zeros (23001, not the file name's 000023001); events in increasing key, ties by increasing id; the
+first N_HTEST are H-test, the rest are spares in that order.
+
+Fatras event numbers (`fatras_event_numbers`) are fixed per host before its set is simulated, so that a set split
+over several jobs, or a dropped host, shifts no ACTS stream: H-val and closure = position of the host in the val list
+(increasing id), 0-149; H-test = rank of the host in the hash order of all eligible part03 events (H-test hosts 0-599,
+spares from 600; a spare that replaces a dropped host keeps its own rank); pilot = position in the pilot list, 0-4
+(as the H-P dry run). Production numbers must lie in the range of the seed check (0 to N_EVENT_NEW - 1). The drivers
+(hnl.overlay.gun, hnl.overlay.closure, slurm/overlay/*.sbatch) read the base seed (`base_seed`) and these numbers from
+the committed split file.
 
 `seeds` checks the production base seeds by enumeration, as for generic_iso_x1 (RESULTS.md, addendum G T1 deviation
 13): every ACTS stream of a new set, (base + 13) + Cantor(algorithm, event) mod 2^32 for algorithms 1-16 and Fatras
@@ -19,6 +29,7 @@ default_rng([base + 13, overlay id, 1])) carry the overlay id (>= 50,000,000, se
 their second word; the check confirms that no new entropy tuple equals one of the pilot set or of an earlier sample.
 
     python -m hnl.overlay.split_h make [--out configs/trackml/split_h_v1.json]
+    python -m hnl.overlay.split_h fatras --set hval --hosts 21117,21124     (prints the Fatras event numbers)
     python -m hnl.overlay.split_h seeds [--out results/pileup_hp/h_seed_check_v1.json]
     python -m hnl.overlay.split_h htest --eligible FILE [--out FILE]      (H-T1 only; FILE = one id per line)
 """
@@ -110,8 +121,109 @@ def _sha(ids) -> str:
     return hashlib.sha256(",".join(str(int(i)) for i in ids).encode()).hexdigest()
 
 
+def htest_hosts(split: dict) -> list[int]:
+    """The evaluated H-test hosts in increasing id: the htest list recorded at H-T1 after the drops of htest_dropped
+    (one record {"host", "reason", "replacement"} per drop, in the order of the drops). A drop removes a host of the
+    current list and gives a reason; its replacement must be the first spare in hash order (htest_spares) that has not
+    joined the list before. No id leaves htest or htest_spares, so no rank and no Fatras event number changes. Raises
+    LookupError before H-T1 and ValueError for a record that breaks the rule."""
+    if split.get("htest") is None or split.get("htest_spares") is None:
+        raise LookupError("the H-test hosts and spares are added to the split file at H-T1")
+    htest, spares = [int(i) for i in split["htest"]], [int(i) for i in split["htest_spares"]]
+    if len(set(htest)) != len(htest) or set(htest) & set(spares):
+        raise ValueError("htest repeats an id or shares one with htest_spares")
+    cur, joined = set(htest), set(htest)
+    for d in split.get("htest_dropped") or []:
+        h, r = int(d["host"]), int(d["replacement"])
+        if not str(d.get("reason") or "").strip():
+            raise ValueError(f"the drop of host {h} gives no reason")
+        if h not in cur:
+            raise ValueError(f"dropped host {h} is not in the current H-test list")
+        nxt = next((s for s in spares if s not in joined), None)
+        if r != nxt:
+            raise ValueError(f"host {h} is replaced by {r}, not by the next spare in hash order ({nxt})")
+        cur.remove(h)
+        cur.add(r)
+        joined.add(r)
+    return sorted(cur)
+
+
+def htest_sha256(split: dict) -> str:
+    """sha256 of the evaluated H-test host ids (`htest_hosts`, increasing, comma-joined): the H-test list sha256 that
+    ledger entry R15 names (first 8 hex digits at least)."""
+    return _sha(htest_hosts(split))
+
+
 def overlay_id(set_name: str, host: int) -> int:
     return OVERLAY_FIRST_ID + 1_000_000 * SETS[set_name][0] + int(host)
+
+
+# ------------------------------------------------------------------------------------------------ reading the split
+def load_split(path: str = OUT_SPLIT) -> dict:
+    with open(path) as fh:
+        return json.load(fh)
+
+
+def split_sha256(path: str = OUT_SPLIT) -> str:
+    with open(path, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()
+
+
+def base_seed(set_name: str, split: dict | None = None, path: str = OUT_SPLIT) -> int:
+    """The base seed of a set as the split file records it (fixed at H-T0)."""
+    split = load_split(path) if split is None else split
+    if set_name not in split["sets"]:
+        raise KeyError(f"no set {set_name!r} in the split file (sets: {sorted(split['sets'])})")
+    return int(split["sets"][set_name]["base_seed"])
+
+
+def parse_hosts(hosts) -> list[int]:
+    """Host ids from a list or from a string separated by commas or colons; no id twice."""
+    if isinstance(hosts, str):
+        hosts = [x for x in hosts.replace(":", ",").split(",") if x.strip()]
+    out = [int(h) for h in hosts]
+    if len(set(out)) != len(out):
+        raise ValueError("a host is listed twice")
+    return out
+
+
+def fatras_order(set_name: str, split: dict) -> list[int]:
+    """The host order that numbers the Fatras events of a set (module docstring): position = Fatras event number."""
+    if set_name in ("hval", "closure"):
+        order = [int(i) for i in split[set_name]]
+        if order != sorted(order):
+            raise ValueError(f"the {set_name} list of the split file is not in increasing id")
+        return order
+    if set_name == "pilot":
+        return [int(i) for i in split["sets"]["pilot"]["hosts"]]
+    if set_name == "htest":
+        if split.get("htest") is None or split.get("htest_spares") is None:
+            raise LookupError("the H-test hosts and spares are added to the split file at H-T1; before that no H-test "
+                              "host has a Fatras event number")
+        htest, spares = [int(i) for i in split["htest"]], [int(i) for i in split["htest_spares"]]
+        order = hash_order([*htest, *spares])
+        if sorted(order[:N_HTEST]) != sorted(htest) or order[N_HTEST:] != spares:
+            raise ValueError("htest and htest_spares of the split file do not follow the hash rule")
+        return order
+    raise KeyError(f"no Fatras numbering for set {set_name!r}")
+
+
+def fatras_event_numbers(set_name: str, hosts, split: dict | None = None, path: str = OUT_SPLIT) -> dict[int, int]:
+    """{host: Fatras event number} of the given hosts of a set by the rule of the split file (module docstring). Every
+    host must belong to the set; production numbers must lie in the seed check's range 0..N_EVENT_NEW - 1."""
+    split = load_split(path) if split is None else split
+    hosts = parse_hosts(hosts)
+    rank = {h: i for i, h in enumerate(fatras_order(set_name, split))}
+    missing = [h for h in hosts if h not in rank]
+    if missing:
+        raise KeyError(f"{len(missing)} hosts are not in the {set_name} list of the split file, first {missing[:5]}")
+    out = {h: rank[h] for h in hosts}
+    if set_name in PRODUCTION:
+        high = sorted(n for n in out.values() if n >= N_EVENT_NEW)
+        if high:
+            raise ValueError(f"Fatras event numbers {high[:5]} lie beyond the seed check (events 0-{N_EVENT_NEW - 1}); "
+                             "extend `seeds` before simulating them")
+    return out
 
 
 def make_split(out: str = OUT_SPLIT) -> dict:
@@ -132,8 +244,13 @@ def make_split(out: str = OUT_SPLIT) -> dict:
                          role="H1 (H-T2), read once")
     sets["pilot"].update(hosts=pilot, n_hosts=len(pilot), role="H-P dry run only; not used for any result",
                          note="hosts = the first five tp_v1 val ids in increasing key('" + PILOT_PREFIX + "', id); "
-                              "base seed 990101 (recorded at H-P). An earlier three-host dry run (21117, 21124, 21127) "
-                              "used base 990001 in scratch")
+                              "base seed 990101 (recorded at H-P), Fatras events 0-4. An earlier three-host dry run "
+                              "(21117, 21124, 21127) used base 990001 in scratch. The V1 closure dry run (job 6820120, "
+                              "results/pileup_hp/v1_machinery_v1.md) used the closure ids 51,021,289-51,021,835 of "
+                              "these five hosts with the pilot base 990101 and Fatras events 0-4, so its numpy tuples "
+                              "begin with 990114 and its ACTS streams equal those of the gun pilot; its tables were "
+                              "written to pileup_design/hp_dryrun/closure_v1, not to the production root, and enter "
+                              "no result")
     rec = {
         "version": VERSION,
         "addendum": "docs/preregistration_pileup.md (addendum H)",
@@ -153,12 +270,70 @@ def make_split(out: str = OUT_SPLIT) -> dict:
             "eligible": ("every complete training_part03 event (all four CSV members present and non-empty) that "
                          "passes the data-quality rule of hnl.trackml.convert.event_tables"),
             "key": "int(sha256('canto-trackml-overlay-v1:<id>').hexdigest()[:8], 16)",
+            "id_format": ("<id> is the decimal event id without leading zeros (for example "
+                          "'canto-trackml-overlay-v1:21117' for the member event000021117-hits.csv), not the "
+                          "zero-padded file name"),
             "order": "increasing key, ties by increasing id",
             "htest": f"the first {N_HTEST} eligible events in that order",
-            "spares": ("the remaining eligible events in that order; no model reads them. A host whose overlay "
-                       "fails a per-event check at H-T1 is dropped with its reason and replaced by the next spare"),
+            "spares": ("the remaining eligible events in that order; no model reads them. A host dropped by a "
+                       "per-event check is replaced by the next spare in that order"),
+            "record_at_h_t1": ("htest = the first 600 eligible ids in hash order, listed in increasing id; "
+                               "htest_spares = the remaining eligible ids in hash order; htest_dropped = one record "
+                               "{host, reason, replacement} per dropped host, in the order of the drops, the "
+                               "replacement being the first spare in hash order that has not joined the list "
+                               "before. Every eligible id stays in htest or htest_spares, so no rank, and no Fatras "
+                               "event number, changes. The evaluated H-test hosts are htest after the replacements "
+                               "(hnl.overlay.split_h.htest_hosts); the sha256 of their ids in increasing order, "
+                               "comma-joined (hnl.overlay.split_h.htest_sha256), is the H-test list sha256 that ledger "
+                               "entry R15 names, and slurm/overlay/guard_h.sh passes only their overlay ids"),
+            "per_event_checks": {
+                "rule": ("a host is dropped with its reason, and replaced by the next spare, only for a property of "
+                         "the host event itself; where possible these are checked before the gun of that host is "
+                         "simulated. The spare keeps its own Fatras event number (fatras_event_rule)"),
+                "checks": ["no hard-scatter vertex by the rule of hnl.overlay.gun (hard_scatter_vertex)",
+                           "host weights that do not sum to one within 1e-6 in the host's own stored rows",
+                           ("host particles that break a precondition of the merge, such as a vertex field above "
+                            "1000 or a repeated particle id")],
+            },
+            "per_set_checks": {
+                "rule": "every other check is a check of the whole set and stops H-T1 when it fails",
+                "checks": [("the per-set truth checks of addendum H section 9.2 (converter, weight sums after the "
+                            "merge, containment, host rows), and any Fatras failure other than a logged navigator "
+                            "loss"),
+                           ("Version: overlay_hash and every value of the provenance manifest equal the committed "
+                            "ones (configs/trackml/overlay_version_h_v1.json), and the base seed equals that of this "
+                            "file"),
+                           ("No earlier read: the part03 ids are disjoint from every id in split_tp_v1.json and "
+                            "split_v1.json, and no part03 event has the same hits (a hash of x, y, z and module over "
+                            "all hits) as a tp_v1 event"),
+                           "the H-test overlay reads its hosts from derived/tp03_v1, named explicitly"],
+            },
+            "return_rule": ("after a per-set failure the cause is found on truth and logged in RESULTS.md. A fix that "
+                            "touches neither overlay_hash nor a file of the manifest (a driver or a check) rebuilds "
+                            "the H-test set and is not a pass. A fix that touches either one returns to H-T0.5 once, "
+                            "if a pass remains: H-val and closure are made again with the fixed version, every val "
+                            "gate runs again, the new overlay_hash and manifest are committed and marked 'made after "
+                            "the H-val estimate', and the H-val estimate is computed again and reported beside the "
+                            "first. If no pass remains, H becomes descriptive"),
             "code": "hnl.overlay.split_h.htest_lists",
             "fixed_at": "H-T0 (rule); ids at H-T1, before any model reads an overlay of a part03 event",
+        },
+        "fatras_event_rule": {
+            "hval": "position of the host in the hval list of this file (increasing id): 0-149",
+            "closure": "position of the host in the closure list of this file (the hval list, increasing id): 0-149",
+            "htest": ("rank of the host in the hash order of all eligible training_part03 events (htest_rule), from "
+                      f"0: the {N_HTEST} H-test hosts take 0-{N_HTEST - 1} and the spares {N_HTEST} onward"),
+            "pilot": "position of the host in the pilot host list (increasing id): 0-4, the numbers of the H-P dry run",
+            "fixed": ("before the set is simulated. A host keeps its number when a set is split over several jobs and "
+                      "when another host is dropped; a spare that replaces a dropped host keeps its own rank"),
+            "seed_check": (f"the seed check covers Fatras events 0-{N_EVENT_NEW - 1}; a host of rank {N_EVENT_NEW} or "
+                           "more needs the check extended before it is simulated, and the code refuses it until then"),
+            "streams": ("ACTS: (base + 13) + Cantor(algorithm, Fatras event number) mod 2^32, the event number being "
+                        "that of the particle file event<N>-particles.csv. The numpy streams of the gun, the "
+                        "digitiser and the emulation carry the overlay id, not the Fatras event number"),
+            "code": ("hnl.overlay.split_h.fatras_event_numbers; the drivers pass the numbers explicitly "
+                     "(hnl.overlay.gun, hnl.overlay.closure make, slurm/overlay/overlay_set.sbatch and "
+                     "closure_set.sbatch)"),
         },
         "v1_prompt_subset_rule": ("the first 3,000 prompt gen-0 val targets (|d0| < 1 mm and r_v < 1 mm) in "
                                   "increasing int(sha256('canto-trackml-overlay-v1-prompt:<event>:<particle_id>')"
@@ -166,6 +341,7 @@ def make_split(out: str = OUT_SPLIT) -> dict:
                                   "particle_id = the native id in decimal"),
         "htest": None,
         "htest_spares": None,
+        "htest_dropped": None,
         "excluded": {
             "tp_v1 train (1,399 stored)": "no evaluation; emulation inputs from truth only",
             "tp_v1 test (300)": "read once for the model card; excluded",
@@ -290,11 +466,20 @@ def main(argv=None):
     h = sub.add_parser("htest")
     h.add_argument("--eligible", required=True)
     h.add_argument("--out", default=None)
+    f = sub.add_parser("fatras")
+    f.add_argument("--set", required=True, choices=sorted(SETS))
+    f.add_argument("--hosts", required=True, help="host ids separated by commas or colons")
+    f.add_argument("--split", default=OUT_SPLIT)
     a = ap.parse_args(argv)
     if a.cmd == "make":
         r = make_split(a.out)
         print(json.dumps({"sha256": r["sha256"], "pilot": r["sets"]["pilot"]["hosts"],
                           "sets": {k: v["base_seed"] for k, v in r["sets"].items()}}, indent=1))
+    elif a.cmd == "fatras":
+        split = load_split(a.split)
+        fe = fatras_event_numbers(a.set, a.hosts, split)
+        print(json.dumps({"set": a.set, "base_seed": base_seed(a.set, split),
+                          "fatras_events": {str(k): v for k, v in fe.items()}}, indent=1))
     elif a.cmd == "seeds":
         r = seed_check(a.out)
         print(json.dumps({k: r[k] for k in ("new_sets", "coincidences_with_earlier",

@@ -33,6 +33,7 @@ import numpy as np
 
 import hnl.trackbuild.merge_fragments as MF
 import hnl.truth.helix as HX
+from hnl.overlay import grant as GRANT
 from hnl.trackml import seqmerge as SM
 
 FIT_KEYS = ("rms", "zrms", "n_out", "z0", "cot", "d0", "R", "xc", "yc", "sigma")
@@ -222,6 +223,7 @@ def _cuts_of(name: str):
 
 def cmd_reference(a):
     """Filtered pass (merge_sequential) against the unfiltered definition on one full event (see the module doc)."""
+    GRANT.check([a.event], "eval", out=a.out)        # overlay ids only under a grant (addendum H)
     from hnl.trackml.trackbuild import merge_fragments_fast
     from hnl.trackbuild.merge_fragments import merge_fragments
     t0 = time.time()
@@ -394,6 +396,7 @@ def cmd_timing(a):
     import concurrent.futures as cf
     import pandas as pd
     from hnl.eval.trackbuild_val import configs
+    GRANT.check(a.events, "eval", out=a.out)         # overlay ids only under a grant (addendum H)
     cfgs = [_parse_cfg(c) for c in a.configs.split(";")] if a.configs else configs(a.builders.split(","))
     events = [int(e) for e in a.events.split(",")]
     cut_sets = a.cut_sets.split(",")
@@ -496,6 +499,7 @@ def cmd_options(a):
     """Exact pass against the options of plan section 6.7 / task point 5 on one event: tighter sequential windows
     (exact for their window), the any-order pass only, chunked _merge (H only); time, partition differences against
     the exact labels, and DM efficiency / fake rate. Per configuration and cut set."""
+    GRANT.check([a.event], "eval", out=a.out)        # overlay ids only under a grant (addendum H)
     from hnl.trackml import events as E
     from hnl.trackml.evaluate import event_counts
     from hnl.trackml.trackbuild import EventState, cut_set, merge_fragments_fast, read_scores
@@ -554,6 +558,7 @@ def cmd_anycheck(a):
     unchanged _merge on the merges) against its definition: every any-order candidate (the candidate search verified
     identical to the original loops) handed to the unchanged _merge, with per-candidate cuts from a fit of that very
     batch for a cut set. Per configuration and cut set on one full event."""
+    GRANT.check([a.event], "eval", out=a.out)        # overlay ids only under a grant (addendum H)
     import hnl.trackml.trackbuild as TBM
     os.makedirs(a.out, exist_ok=True)
     TBM.PREFIT_PROCS = a.n_proc
@@ -659,6 +664,7 @@ def cmd_profile(a):
     import concurrent.futures as cf
     import pandas as pd
     from hnl.eval.trackbuild_val import configs
+    GRANT.check(a.events, "eval", out=a.out)         # overlay ids only under a grant (addendum H)
     cfgs = configs(a.builders.split(","))
     events = [int(e) for e in a.events.split(",")]
     os.makedirs(a.out, exist_ok=True)

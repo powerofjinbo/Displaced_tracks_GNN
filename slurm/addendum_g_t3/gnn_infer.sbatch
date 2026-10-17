@@ -3,7 +3,7 @@
 # Usage: sbatch slurm/addendum_g_t3/gnn_infer.sbatch S
 #SBATCH -J g3_gnn_infer
 #SBATCH -p submit-gpu-express
-#SBATCH --constraint=nvidia_a30|Tesla_v100|nvidia_rtx6000|nvidia_gtx1080
+#SBATCH --constraint=nvidia_a30|Tesla_v100|nvidia_rtx6000
 #SBATCH --gres=gpu:1
 #SBATCH -c 8
 #SBATCH --mem=32G

@@ -135,6 +135,11 @@ def cmd_check(a) -> None:
     from hnl.trackml import classifier as CL
     from hnl.trackml import infer as INF
     from hnl.trackml.events import event_from_eid
+    from hnl.overlay import grant as GRANT
+    paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")), os.path.basename(a.store.rstrip("/"))))
+    # overlay events only under a grant of kind model (addendum H): never plumb, since this compares stored scores of
+    # the events (no number from a pilot plumbing output, decision D6)
+    GRANT.check_store(paths[:a.events], "model")
     torch.set_num_threads(int(os.environ.get("OMP_NUM_THREADS", "8")))
     model = INF.load_model(a.ckpt, "cpu")
     spec = INF.sector_layout({}, "full")
@@ -146,7 +151,6 @@ def cmd_check(a) -> None:
             if side.get("ckpt_sha256") != sha:
                 raise SystemExit(f"{f}: stored scores come from another checkpoint")
             stored[f] = side
-    paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")), os.path.basename(a.store.rstrip("/"))))
     rows = []
     for p in paths[:a.events]:
         ev = CL.load_event_graph(p)

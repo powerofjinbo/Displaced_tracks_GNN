@@ -108,3 +108,49 @@ def test_region_names_cover_the_volumes():
         "pixel barrel", "pixel endcap", "short-strip barrel", "short-strip endcap", "long-strip barrel",
         "long-strip endcap"}
     assert C.module_key is not None
+
+
+def test_host_root_and_host_list_of_a_set(tmp_path):
+    """Hosts are read from the root the set's meta records, checked against the set's rule (H-test: tp03_v1; a dry
+    root for the pilot only); the host list of a set comes from split_h_v1.json (H-test: the evaluated hosts, a
+    dropped host replaced)."""
+    from hnl.overlay import hosts as HR
+    from hnl.overlay import split_h as SH
+    assert TC.set_host_root("pilot", {}) == HR.DERIVED_TP                           # sets made before it was recorded
+    assert TC.set_host_root("hval", {"host_root": HR.DERIVED_TP}) == HR.DERIVED_TP
+    assert TC.set_host_root("htest", {"host_root": HR.DERIVED_TP03}) == HR.DERIVED_TP03
+    # a dry root of the set's directory name: the pilot only; H-val, closure and H-test are refused (R7)
+    dry, dry03 = tmp_path / "tp_v1", tmp_path / "tp03_v1"
+    dry.mkdir()
+    dry03.mkdir()
+    assert TC.set_host_root("pilot", {"host_root": str(dry)}) == str(dry)
+    with pytest.raises(ValueError):
+        TC.set_host_root("pilot", {"host_root": str(dry03)})                        # not the pilot's name either
+    for name, root in (("hval", dry), ("closure", dry), ("htest", dry03)):
+        with pytest.raises(ValueError):
+            TC.set_host_root(name, {"host_root": str(root)})
+    assert TC.DRY_HOST_ROOT_SETS == ("pilot",)
+    with pytest.raises(ValueError):
+        TC.set_host_root("htest", {"host_root": HR.DERIVED_TP})                      # H-test never reads tp_v1
+    with pytest.raises(ValueError):
+        TC.set_host_root("htest", {})
+    with pytest.raises(ValueError):
+        TC.set_host_root("hval", {"host_root": HR.DERIVED_TP03})
+    split = {**SH.load_split(), "htest": [300001, 300002], "htest_spares": [300003, 300004],
+             "htest_dropped": [{"host": 300001, "reason": "x", "replacement": 300003}]}
+    assert TC.hosts_of_set("htest", split) == {300002, 300003}
+    assert TC.hosts_of_set("pilot", split) == {21289, 21332, 21610, 21753, 21835}
+    assert len(TC.hosts_of_set("hval", split)) == 150 and TC.hosts_of_set("closure", split) == TC.hosts_of_set("hval",
+                                                                                                              split)
+
+
+def test_containment_rule_of_section_9_2():
+    ok = {"max_abs_w_moved_mm": 0.00375, "max_outside_mm": 0.0, "n_outside_bounds": 0, "n_unknown_module": 0}
+    ev = lambda e, **d: {"overlay_event": e, "digitiser": {**ok, **d}}                     # noqa: E731
+    r = TC.containment_checks([ev(1), ev(2)])
+    assert r["pass"] and r["max_abs_w_moved_mm"] == 0.00375 and r["tolerance_mm"] == 0.004
+    bad = TC.containment_checks([ev(1), ev(2, max_abs_w_moved_mm=0.0041), ev(3, max_outside_mm=0.005,
+                                                                            n_outside_bounds=1),
+                                 ev(4, n_unknown_module=2)])
+    assert not bad["pass"] and len(bad["problems"]) == 3
+    assert [p.split(":")[0] for p in bad["problems"]] == ["event 2", "event 3", "event 4"]

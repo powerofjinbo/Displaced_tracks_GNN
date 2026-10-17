@@ -2,6 +2,7 @@
 each LLP, barcodes and the TrackML particle-id encoding (vertex field 1001-1010, positive int64), reproducibility."""
 
 import io
+import os
 
 import numpy as np
 import pandas as pd
@@ -125,7 +126,8 @@ def test_placement_redraw_rate_and_separation():
 
 def test_make_gun_set_writes_fatras_inputs(tmp_path):
     hv = {21117: HS, 21124: {"vx": 0.0, "vy": 0.0, "vz": -80.0}}
-    rec = GUN.make_gun_set(hv, {21117: 59021117, 21124: 59021124}, 990001, str(tmp_path))
+    rec = GUN.make_gun_set(hv, {21117: 59021117, 21124: 59021124}, 990001, str(tmp_path),
+                           fatras_events={21117: 0, 21124: 1})
     assert [e["overlay_event"] for e in rec["events"]] == [59021117, 59021124]
     p0 = pd.read_csv(FIO.particles_path(str(tmp_path / "fatras_in"), 0), dtype={"particle_id": np.uint64})
     ref, _ = GUN.make_gun_event(HS, np.random.default_rng([990001 + 7, 59021117]), 59021117, 21117)
@@ -133,3 +135,54 @@ def test_make_gun_set_writes_fatras_inputs(tmp_path):
     assert np.allclose(p0.px.to_numpy(), ref.px.to_numpy())
     tr = pd.read_parquet(tmp_path / "gun_truth.parquet")
     assert set(tr.event) == {59021117, 59021124} and set(tr.fatras_event) == {0, 1}
+
+
+def test_make_gun_set_uses_the_given_fatras_event_numbers(tmp_path):
+    """A host's Fatras input file carries its own number (gaps allowed), and its gun particles depend on its overlay id
+    only: the same host made alone, in another job, gives the same file under the same number."""
+    hv = {21117: HS, 21124: {"vx": 0.0, "vy": 0.0, "vz": -80.0}, 21289: {"vx": 0.02, "vy": 0.0, "vz": 5.0}}
+    oid = {h: 50_000_000 + h for h in hv}
+    fe = {21117: 0, 21124: 1, 21289: 36}
+    rec = GUN.make_gun_set(hv, oid, 600_000_001, str(tmp_path / "all"), fatras_events=fe)
+    assert {e["host"]: e["fatras_event"] for e in rec["events"]} == fe
+    assert rec["fatras_seed"] == 600_000_014
+    fin = tmp_path / "all" / "fatras_in"
+    assert sorted(os.listdir(fin)) == [os.path.basename(FIO.particles_path(str(fin), n)) for n in (0, 1, 36)]
+    GUN.make_gun_set({21289: hv[21289]}, {21289: oid[21289]}, 600_000_001, str(tmp_path / "one"),
+                     fatras_events={21289: 36})
+    a = (fin / os.path.basename(FIO.particles_path(str(fin), 36))).read_bytes()
+    b = (tmp_path / "one" / "fatras_in" / os.path.basename(FIO.particles_path(str(fin), 36))).read_bytes()
+    assert a == b
+    tr = pd.read_parquet(tmp_path / "all" / "gun_truth.parquet")
+    assert dict(zip(tr.host, tr.fatras_event)) == fe
+
+
+@pytest.mark.parametrize("fe", [{21117: 0}, {21117: 0, 21124: 0}, {21117: -1, 21124: 2},
+                                {21117: 0, 21124: 1, 21127: 2}])
+def test_fatras_event_numbers_must_be_one_distinct_number_per_host(tmp_path, fe):
+    hv = {21117: HS, 21124: HS}
+    with pytest.raises(ValueError):
+        GUN.make_gun_set(hv, {21117: 50_021_117, 21124: 50_021_124}, 600_000_001, str(tmp_path), fatras_events=fe)
+
+
+def test_resolve_seeds_reads_the_split_file(capsys):
+    from hnl.overlay import split_h as SH
+    split = SH.load_split()
+    val = split["hval"]
+    hosts = [val[5], val[0], val[149]]
+    base, fe, rec = GUN.resolve_seeds("hval", hosts, None, None)
+    assert base == split["sets"]["hval"]["base_seed"] == 600_000_001
+    assert fe == {val[5]: 5, val[0]: 0, val[149]: 149}
+    assert rec["set"] == "hval" and rec["split_h"]["base_seed_from_split"] and rec["split_h"]["fatras_events_from_split"]
+    assert rec["split_h"]["sha256"] == SH.split_sha256() and rec["split_h"]["path"] == "configs/trackml/split_h_v1.json"
+    assert capsys.readouterr().out == ""
+    base, fe, rec = GUN.resolve_seeds("closure", f"{val[1]}:{val[2]}", 990101, "7:9")
+    assert base == 990101 and fe == {val[1]: 7, val[2]: 9}
+    assert not rec["split_h"]["base_seed_from_split"] and not rec["split_h"]["fatras_events_from_split"]
+    assert "Version check" in capsys.readouterr().out
+    with pytest.raises(KeyError):
+        GUN.resolve_seeds("pilot", [21117], None, None)              # not a pilot host
+    with pytest.raises(LookupError):
+        GUN.resolve_seeds("htest", [21117], None, None)              # no H-test list before H-T1
+    with pytest.raises(ValueError):
+        GUN.resolve_seeds("hval", [val[0], val[1]], None, "3")

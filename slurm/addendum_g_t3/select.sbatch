@@ -2,7 +2,7 @@
 # Addendum G T3: the selection on generic_iso val (hnl.eval.addendum_g_t3 select) -> results/addendum_g_selection_v1.json
 #SBATCH -J g3_select
 #SBATCH -p submit-gpu-express,submit-gpu,submit
-#SBATCH --exclude=submit00,submit01,submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
+#SBATCH --exclude=submit00,submit01,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
 #SBATCH -c 2
 #SBATCH --mem=32G
 #SBATCH -t 01:00:00

@@ -17,9 +17,20 @@ Per host event:
   stores them negative), so the encoder refuses anything outside 1001-1010. Gun hit weights are 0 (D10, set by the
   digitiser's truth member).
 - Random numbers: numpy.random.default_rng([base_seed + 7, overlay event id]) per event, as spec v1 section 4.
+- Base seed and Fatras event numbers (addendum H section 2): from configs/trackml/split_h_v1.json
+  (hnl.overlay.split_h.base_seed and fatras_event_numbers). The Fatras event number of a host is fixed by the set's
+  rule (H-val, closure: position in the val list; H-test: rank in the hash order; pilot: position in the pilot list),
+  so a set split over several jobs or a dropped host shifts no ACTS stream. `make_gun_set` takes the numbers
+  explicitly; --base-seed and --fatras-events override the split file for dry runs, and the set's Version check
+  (hnl.overlay.writer.version_check) then fails.
 
-    python -m hnl.overlay.gun --hosts 21117,21124 --set pilot --base-seed 990001 --out DIR
-writes DIR/fatras_in/event<i>-particles.csv (i = position in the host list), DIR/gun_truth.parquet and
+- Host root (addendum H section 9.4): the hosts' particles are read from the set's root (hnl.overlay.hosts.host_root:
+  derived/tp_v1 for H-val, closure and pilot; derived/tp03_v1 for H-test, which must be named with --host-root);
+  gun_events.json records it and hnl.overlay.writer.assemble refuses another root.
+
+    python -m hnl.overlay.gun --hosts 21289,21332 --set pilot --out DIR [--base-seed S] [--fatras-events 0,1]
+        [--host-root DIR [--dry-host-root]]
+writes DIR/fatras_in/event<N>-particles.csv (N = the host's Fatras event number), DIR/gun_truth.parquet and
 DIR/gun_events.json.
 """
 
@@ -35,6 +46,7 @@ import pandas as pd
 
 from hnl.geometry.ids import decode_barcode
 from hnl.overlay import fatras_io as FIO
+from hnl.overlay import split_h as SH
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 GUN_V1 = os.path.join(REPO, "scripts", "acts", "gun.py")
@@ -169,15 +181,29 @@ def trackml_fields(pid) -> dict[str, np.ndarray]:
             "secondary": (p >> 12) & 0xFFF, "process": p & 0xFFF}
 
 
-def make_gun_set(host_vertices: dict[int, dict], overlay_ids: dict[int, int], base_seed: int, out_dir: str) -> dict:
+def check_fatras_events(overlay_ids: dict[int, int], fatras_events: dict[int, int]) -> dict[int, int]:
+    """One distinct, non-negative Fatras event number per host of overlay_ids."""
+    fe = {int(h): int(n) for h, n in fatras_events.items()}
+    if set(fe) != {int(h) for h in overlay_ids}:
+        raise ValueError("Fatras event numbers must be given for exactly the hosts of the set")
+    if any(n < 0 for n in fe.values()) or len(set(fe.values())) != len(fe):
+        raise ValueError("Fatras event numbers must be distinct and non-negative")
+    return fe
+
+
+def make_gun_set(host_vertices: dict[int, dict], overlay_ids: dict[int, int], base_seed: int, out_dir: str, *,
+                 fatras_events: dict[int, int], record: dict | None = None) -> dict:
     """Fatras input and truth of a set of overlay events. host_vertices: {host: hard_scatter_vertex}; overlay_ids:
-    {host: overlay id}. Fatras event i = position of the host in sorted order of the overlay ids."""
+    {host: overlay id}; fatras_events: {host: Fatras event number} (the split file's rule, module docstring); record:
+    extra provenance for gun_events.json (set name, split file). The gun stream of a host depends on its overlay id
+    only, and its ACTS streams on its Fatras event number only."""
+    fe = check_fatras_events(overlay_ids, fatras_events)
     fin = os.path.join(out_dir, "fatras_in")
     os.makedirs(fin, exist_ok=True)
     order = sorted(overlay_ids, key=lambda h: overlay_ids[h])
     T, events = [], []
-    for i, host in enumerate(order):
-        oid = overlay_ids[host]
+    for host in order:
+        oid, i = overlay_ids[host], fe[int(host)]
         rng = np.random.default_rng([base_seed + SEED_OFFSET, oid])
         parts, tr = make_gun_event(host_vertices[host], rng, oid, host)
         FIO.write_particles(parts, fin, i)
@@ -187,9 +213,10 @@ def make_gun_set(host_vertices: dict[int, dict], overlay_ids: dict[int, int], ba
                        "hs_vertex": host_vertices[host]})
     truth = pd.concat(T, ignore_index=True)
     truth.to_parquet(os.path.join(out_dir, "gun_truth.parquet"), index=False)
-    rec = {"base_seed": base_seed, "seed_rule": "default_rng([base_seed + 7, overlay event id])",
-           "fatras_seed": base_seed + 13, "n_iso": N_ISO, "n_dense": N_DENSE, "dr_min": DR_MIN,
-           "gun_v1": os.path.relpath(GUN_V1, REPO), "events": events,
+    rec = {**(record or {}), "base_seed": base_seed, "seed_rule": "default_rng([base_seed + 7, overlay event id])",
+           "fatras_seed": base_seed + 13, "fatras_event_rule": "per host, hnl.overlay.split_h.fatras_event_numbers",
+           "n_iso": N_ISO, "n_dense": N_DENSE, "dr_min": DR_MIN, "gun_v1": os.path.relpath(GUN_V1, REPO),
+           "events": events,
            "phi_redraws_per_llp": float(truth.drop_duplicates(["event", "llp"]).phi_redraws.mean()),
            "eta_redraws": int(truth.drop_duplicates(["event", "llp"]).eta_redraws.sum())}
     with open(os.path.join(out_dir, "gun_events.json"), "w") as fh:
@@ -197,24 +224,68 @@ def make_gun_set(host_vertices: dict[int, dict], overlay_ids: dict[int, int], ba
     return rec
 
 
-def main(argv=None):
-    from hnl.overlay import writer as W
+def split_record(set_name: str, base: int, split: dict, split_path: str, explicit_fatras: bool) -> dict:
+    """What the driver took from the split file (for gun_events.json / closure_events.json and the set's meta)."""
+    want = SH.base_seed(set_name, split)
+    a = os.path.abspath(split_path)
+    return {"set": set_name, "split_h": {"path": os.path.relpath(a, REPO) if a.startswith(REPO + "/") else a,
+                                         "sha256": SH.split_sha256(split_path), "base_seed": want,
+                                         "base_seed_from_split": int(base) == want,
+                                         "fatras_events_from_split": not explicit_fatras}}
+
+
+def resolve_seeds(set_name: str, hosts: list[int], base_seed: int | None, fatras_events: str | None,
+                  split_path: str = SH.OUT_SPLIT) -> tuple[int, dict[int, int], dict]:
+    """Base seed and Fatras event numbers of a driver call: the split file's unless given explicitly (dry runs)."""
+    split = SH.load_split(split_path)
+    hosts = SH.parse_hosts(hosts)
+    base = SH.base_seed(set_name, split) if base_seed is None else int(base_seed)
+    if fatras_events is None:
+        fe = SH.fatras_event_numbers(set_name, hosts, split)
+    else:
+        nums = [int(x) for x in fatras_events.replace(":", ",").split(",") if x.strip()]
+        if len(nums) != len(hosts):
+            raise ValueError(f"{len(nums)} Fatras event numbers for {len(hosts)} hosts")
+        fe = dict(zip(hosts, nums))
+    rec = split_record(set_name, base, split, split_path, fatras_events is not None)
+    if not rec["split_h"]["base_seed_from_split"] or fatras_events is not None:
+        print(f"note: base seed {base} or the Fatras event numbers taken from the command line, not from the split "
+              "file; the Version check fails a set whose values differ from the file's (dry runs only)", flush=True)
+    return base, fe, rec
+
+
+def host_vertices(hosts, root: str) -> dict[int, dict]:
+    """{host: hard_scatter_vertex} from the hosts' stored particles under `root` (hnl.overlay.hosts.host_root)."""
     from hnl.trackml.convert import read_table
-    from hnl.trackml.throughput import DERIVED_TP
+    p = read_table("particles", [int(h) for h in hosts], ["event", "particle_id", "vx", "vy", "vz"], root=root)
+    hv = {int(h): hard_scatter_vertex(g) for h, g in p.groupby("event")}
+    missing = sorted(set(int(h) for h in hosts) - set(hv))
+    if missing:
+        raise KeyError(f"hosts without particles in {root}: {missing[:5]}")
+    return hv
+
+
+def main(argv=None):
+    from hnl.overlay import hosts as HR
+    from hnl.overlay import writer as W
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--hosts", required=True, help="comma-separated host event ids (tp_v1)")
+    ap.add_argument("--hosts", required=True, help="host event ids separated by commas or colons")
     ap.add_argument("--set", required=True, choices=sorted(W.SETS))
-    ap.add_argument("--base-seed", type=int, default=None)
+    ap.add_argument("--base-seed", type=int, default=None, help="default: the set's base seed in split_h_v1.json")
+    ap.add_argument("--fatras-events", default=None, help="Fatras event numbers, one per host in --hosts order "
+                    "(default: the rule of split_h_v1.json)")
+    ap.add_argument("--split", default=SH.OUT_SPLIT)
+    ap.add_argument("--host-root", default=None, help="the hosts' tables (default derived/tp_v1; H-test: required, "
+                    "derived/tp03_v1)")
+    ap.add_argument("--dry-host-root", action="store_true", help="accept a dry host root named like the set's")
     ap.add_argument("--out", required=True)
     a = ap.parse_args(argv)
-    hosts = [int(x) for x in a.hosts.split(",")]
-    k, base = W.SETS[a.set]
-    base = a.base_seed if a.base_seed is not None else base
-    if base is None:
-        raise SystemExit(f"set {a.set} has no base seed; pass --base-seed")
-    p = read_table("particles", hosts, ["event", "particle_id", "vx", "vy", "vz"], root=DERIVED_TP)
-    hv = {h: hard_scatter_vertex(g) for h, g in p.groupby("event")}
-    rec = make_gun_set(hv, {h: W.overlay_id(a.set, h) for h in hosts}, base, a.out)
+    hosts = SH.parse_hosts(a.hosts)
+    root = HR.host_root(a.set, a.host_root, dry=a.dry_host_root)
+    base, fe, rec0 = resolve_seeds(a.set, hosts, a.base_seed, a.fatras_events, a.split)
+    hv = host_vertices(hosts, root)
+    rec = make_gun_set(hv, {h: W.overlay_id(a.set, h) for h in hosts}, base, a.out, fatras_events=fe,
+                       record={**rec0, "host_root": root})
     print(json.dumps({k_: v for k_, v in rec.items() if k_ != "events"}, indent=1))
 
 

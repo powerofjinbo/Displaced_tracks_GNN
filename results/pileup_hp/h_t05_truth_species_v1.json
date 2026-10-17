@@ -1,0 +1,92 @@
+{
+ "what": "addendum H H-T0.5.1: species shares of gun particles with hits, H-val against the generic train split (descriptive, truth only)",
+ "set": "hval",
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "hval": {
+  "iso": {
+   "with_hits": {
+    "n": 2271,
+    "e": 0.1995,
+    "mu": 0.1885,
+    "pi": 0.1982,
+    "K": 0.192,
+    "p": 0.2219,
+    "other": 0.0
+   },
+   "targets": {
+    "n": 928,
+    "e": 0.1778,
+    "mu": 0.1681,
+    "pi": 0.1994,
+    "K": 0.2047,
+    "p": 0.25,
+    "other": 0.0
+   }
+  },
+  "dense": {
+   "with_hits": {
+    "n": 1522,
+    "e": 0.0499,
+    "mu": 0.0473,
+    "pi": 0.7043,
+    "K": 0.1452,
+    "p": 0.0532,
+    "other": 0.0
+   },
+   "targets": {
+    "n": 589,
+    "e": 0.0509,
+    "mu": 0.0577,
+    "pi": 0.6757,
+    "K": 0.1613,
+    "p": 0.0543,
+    "other": 0.0
+   }
+  }
+ },
+ "generic_train": {
+  "iso": {
+   "train_events": 4810,
+   "with_hits": {
+    "n": 17058,
+    "e": 0.1805,
+    "mu": 0.1968,
+    "pi": 0.2051,
+    "K": 0.2064,
+    "p": 0.2113,
+    "other": 0.0
+   },
+   "targets": {
+    "n": 6836,
+    "e": 0.1293,
+    "mu": 0.1995,
+    "pi": 0.2014,
+    "K": 0.2272,
+    "p": 0.2425,
+    "other": 0.0
+   }
+  },
+  "dense": {
+   "train_events": 4780,
+   "with_hits": {
+    "n": 47697,
+    "e": 0.0449,
+    "mu": 0.0476,
+    "pi": 0.6966,
+    "K": 0.156,
+    "p": 0.0549,
+    "other": 0.0
+   },
+   "targets": {
+    "n": 19377,
+    "e": 0.033,
+    "mu": 0.0467,
+    "pi": 0.6958,
+    "K": 0.1641,
+    "p": 0.0604,
+    "other": 0.0
+   }
+  }
+ },
+ "code": "results/pileup_hp/h_t05_truth_species.py"
+}

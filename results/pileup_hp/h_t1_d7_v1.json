@@ -1,0 +1,70 @@
+{
+ "record": "addendum H decision D7",
+ "schema": 1,
+ "set": "htest",
+ "step": "H-T1 step 5",
+ "restriction": null,
+ "flags": [
+  "C1 confirmation (u bias, volumes 12 and 9)"
+ ],
+ "lost_share": 0.028078385492834163,
+ "descriptive": false,
+ "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+ "passes": [
+  "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+ ],
+ "derivation": {
+  "how": "restriction, flags, descriptive state and passes of the committed H-val record; the navigator-loss share of H-test",
+  "htest_hosts": 600
+ },
+ "gates": {
+  "per-set truth checks, H-test": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "failed_checks": [],
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  }
+ },
+ "nav_losses": {
+  "gun_particles": 16049,
+  "lost": 339,
+  "pp_like": 6838,
+  "pp_like_lost": 192,
+  "pp_like_lost_share": 0.028078385492834163
+ },
+ "inputs": {
+  "truth_checks": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t1_truth_checks_htest_v1.json",
+   "sha256": "c39761000afa77a9f13b8d01bca30a9fc1a0255011eda3a6046b003d5aac4675"
+  },
+  "gun_content": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t1_truth_gun_content_htest_v1.json",
+   "sha256": "e0f7301f1011a65fba70a8427b95b4d18ae57f9a7e350ab619536e94251ddbe6"
+  }
+ },
+ "metas": {
+  "htest": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_htest.json",
+   "sha256": "d068605e004a8b93131cefcacf6ce731bf4b5950319ffd19c8a7abcdff55b161",
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  }
+ },
+ "version_record": {
+  "path": "configs/trackml/overlay_version_h_v1.json",
+  "sha256": "27f2c215a72975336569aedf0a4b22b9529e2fcf167239205395d59dd2ad8496",
+  "committed": true,
+  "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+ },
+ "hval_record": {
+  "path": "results/pileup_hp/h_t05_d7_v1.json",
+  "sha256": "fdb9baabac4ceb36d9385482661af66747784dce3255dcb510729d010bb151fd"
+ },
+ "rules": "docs/preregistration_pileup.md sections 6, 7, 9.3 and 10 (decision D7): the P_P restriction (forward fallback, decision D12), the failed flag gates, the navigator-loss share and the descriptive state of the decisive H1 runs; derived mechanically from the gate outputs of the committed version (hnl.overlay.d7record)",
+ "code": {
+  "module": "hnl.overlay.d7record",
+  "sha256": "f47d7c5d0c04976d7099fbbed4a3f0cd545290624b05beb64173337b694ba933",
+  "git": "4556981c1a1455012dcab930a63df5ae272fe0b9",
+  "repo_git": "4556981c1a1455012dcab930a63df5ae272fe0b9"
+ },
+ "written_utc": "2026-10-17T00:04:59+00:00"
+}

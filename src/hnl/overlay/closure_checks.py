@@ -21,6 +21,9 @@ Checks (pass or fail):
   native's exactly; vprim = native vprim + 1024; is_hard_scatter is False.
 - production: every closure event recomputed from the packed sim hits with the set's seeds gives byte-identical CSV
   members, and their frozen conversion equals the stored closure rows.
+- containment: hnl.overlay.truth_checks.containment_checks on the closure events' digitiser records (4 um).
+- version: hnl.overlay.writer.version_check (base seed and Fatras event numbers against split_h_v1.json, overlay_hash
+  and provenance manifest recorded; against the committed version file once it exists).
 Descriptive: Fatras status per population; category of the closure row against the native's; and the truth-level
 closure of the re-simulated tracks against their native tracks (hit counts, target flag, pixel hits, r_first, the
 set of crossed layers, the distance of the first hits, and cluster features of hits on the same layer).
@@ -465,8 +468,10 @@ def cmd_run(a) -> dict:
     pr = pairs(ctx)
     out["converter_view"] = converter_view(ctx, pr)
     out["production"] = production_replay(ctx)
+    out["version"] = W.version_check(ctx["set"], ctx["meta"], ctx["side"], committed=W.load_version())
+    out["containment"] = TC.containment_checks(ctx["side"]["events"])
     print(f"[closure checks] converter view {out['converter_view']['pass']} production {out['production']['pass']} "
-          f"({time.time() - t0:.0f} s)", flush=True)
+          f"version {out['version']['pass']} ({time.time() - t0:.0f} s)", flush=True)
     out["sim_status"] = sim_status(pr)
     out["per_event"] = [{"overlay_event": int(e), "host": int(s["host"]), **s["populations"],
                          "removed_host_hits": s["removed_host_hits"], "removed_weight": s["removed_weight"],
@@ -477,7 +482,8 @@ def cmd_run(a) -> dict:
     out["tracks"] = summarise_tracks(tp)
     out["hits"] = summarise_hits(hit_pairs(ctx, pr))
     out["hits_per_layer"] = hits_per_layer(ctx)
-    out["pass"] = {k: out[k]["pass"] for k in ("population", "ids", "format", "converter_view", "production")}
+    out["pass"] = {k: out[k]["pass"] for k in ("population", "ids", "format", "containment", "converter_view",
+                                                "production", "version")}
     out["seconds"] = round(time.time() - t0, 1)
     os.makedirs(os.path.dirname(os.path.abspath(a.out_json)), exist_ok=True)
     with open(a.out_json, "w") as fh:

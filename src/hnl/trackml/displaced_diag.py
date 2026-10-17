@@ -29,6 +29,8 @@ import time
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
+
 CUTS = (0.1, 0.5, 0.9)
 COLS = ("d0", "rv", "pt", "eta", "n_hits", "n_pixel_hits", "r_first", "vz", "category", "vprim")
 
@@ -114,6 +116,7 @@ def cmd_run(a) -> None:
     cfg = CFG.load(a.config)
     events = CFG.event_set(a.events, cfg)
     events = events[a.block * a.block_size:(a.block + 1) * a.block_size]
+    GRANT.check(events, "eval", a.condition, out=a.out)   # overlay ids only under a grant (addendum H)
     cfgs, names = TB.explicit_configs(a.configs)
     wp = cfgs[names.index("WP-A")]
     import joblib
@@ -204,6 +207,7 @@ def table(df: pd.DataFrame, by: str) -> pd.DataFrame:
 def cmd_summary(a) -> None:
     df = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(os.path.join(a.dir, "diag_*_b*.parquet")))],
                    ignore_index=True)
+    GRANT.check(df.event.unique(), "eval")   # overlay ids only under a grant (addendum H)
     pd.set_option("display.width", 250)
     pd.set_option("display.max_columns", 30)
     pd.set_option("display.float_format", lambda x: f"{x:.3f}")

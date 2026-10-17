@@ -7,9 +7,9 @@
 # Usage: sbatch slurm/addendum_g_t3/gbdt.sbatch S
 #SBATCH -J g3_gbdt
 #SBATCH -p submit-gpu-express,submit-gpu,submit
-#SBATCH --exclude=submit00,submit01,submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
-#SBATCH -c 28
-#SBATCH --mem=56G
+#SBATCH --exclude=submit00,submit01,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
+#SBATCH -c 12
+#SBATCH --mem=32G
 #SBATCH -t 01:00:00
 #SBATCH -o /work/submit/jinboz1/hnl/logs/%x_%j.out
 set -euo pipefail
@@ -23,7 +23,7 @@ OUT=$G/learned_triplet_filter_v2
 mkdir -p "$OUT" "$(dirname "$DATA")"
 echo "git $(git rev-parse HEAD); dirty code: $(git status --porcelain -- src slurm | wc -l); host $(hostname); job $SLURM_JOB_ID; run $G"
 [ -e "$DATA" ] || OMP_NUM_THREADS=1 python -m hnl.graphs.learned_triplet_filter data --ml-run "$G" --split train \
-    --out "$DATA" --max-events 400 --workers "${WORKERS:-16}"
+    --out "$DATA" --max-events 400 --workers "${WORKERS:-8}"
 [ -e "$OUT/model.joblib" ] || OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK python -m hnl.graphs.learned_triplet_filter train \
     --data "$DATA" --out "$OUT/model.joblib"
 touch "$OUT.done"

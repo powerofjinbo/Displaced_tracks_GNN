@@ -1,0 +1,62 @@
+{
+ "what": "local pileup hit density bins of addendum H section 7 (tertiles over the H-val P_P targets, truth)",
+ "set": "hval",
+ "events": 150,
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "meta_hval": {
+  "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_hval.json",
+  "sha256": "8670092ca45b06c26353ad0381cbbbffaada8a9e35413936eab2c7d4f5990c73",
+  "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+ },
+ "definition": "density of a target = mean, over the distinct modules (volume, layer, module) that hold its hits, of the number of host hits on the module in C-full (every hit whose particle is not a gun particle, vertex field 1001-1010; noise hits, pid 0, included); P_P targets of hnl.overlay.h1.gun_targets",
+ "quantile_method": "numpy.quantile, method linear (default), at 1/3 and 2/3",
+ "unit": "host hits per module",
+ "edges": [
+  0.0,
+  4.0,
+  5.714285714285714,
+  null
+ ],
+ "bins": [
+  "[0, q1)",
+  "[q1, q2)",
+  "[q2, inf)"
+ ],
+ "n_pp": 793,
+ "n_per_bin": [
+  243,
+  284,
+  266
+ ],
+ "n_per_bin_region": {
+  "central": [
+   155,
+   127,
+   91
+  ],
+  "fwd+": [
+   45,
+   86,
+   91
+  ],
+  "fwd-": [
+   43,
+   71,
+   84
+  ]
+ },
+ "summary": {
+  "min": 0.8,
+  "median": 4.75,
+  "mean": 5.398528331693527,
+  "max": 34.1,
+  "modules_per_target_mean": 7.204287515762926
+ },
+ "code": {
+  "script": "/work/submit/jinboz1/hnl/pileup_design/h_t05/step4_draft/h_t05_truth_density_bins.py",
+  "sha256": "6468004c8b068dbaba958d9d7194967a7ee69917c62c679f83fdb5ac6a05d01f",
+  "hnl_git": "fb2d1c325757002f28d573aaf0d22784aeafb3d5"
+ },
+ "written_utc": "2026-10-16T12:11:18+00:00",
+ "seconds": 4.6
+}

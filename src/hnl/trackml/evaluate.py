@@ -41,6 +41,8 @@ import json
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
+
 JP_MIN_HITS = 4   # variant J': their "reconstructable" is nhits > min_hits; 4 = "at least five spacepoints" (plan 4.2)
 
 # published numbers (plan section 4.3; value, quoted uncertainty or None)
@@ -271,6 +273,7 @@ def _ref_value(ref: str, key):
 def report(grid: str, condition: str, out: str, B: int = 500, seed: int = 12345) -> pd.DataFrame:
     import os
     counts = pd.read_parquet(os.path.join(grid, "per_event.parquet"))
+    GRANT.check(counts.event.unique(), "eval", condition, out=out)   # overlay ids only under a grant (addendum H)
     cfgs = json.load(open(os.path.join(grid, "configs.json")))
     names_path = os.path.join(grid, "config_names.json")
     names = json.load(open(names_path)) if os.path.exists(names_path) else [None] * len(cfgs)

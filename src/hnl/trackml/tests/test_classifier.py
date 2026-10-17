@@ -107,6 +107,7 @@ def test_frozen_configs(tmp_path):
                                   "P4": {"reached": True, "config": 4, "family": "mwslayer", "params": "0.3"}}}}
     p = tmp_path / "sel.json"
     p.write_text(json.dumps(sel))
+    # since 5089c9a: WP-A in every condition, WP-S in C-full and C-nonoise, each WP-R in its reference's condition
     assert [c["name"] for c in frozen_configs(str(p), "full")] == ["WP-A", "WP-S"]
-    assert [c["name"] for c in frozen_configs(str(p), "nonoise")] == ["WP-R-P1"]
-    assert [c["name"] for c in frozen_configs(str(p), "1gev")] == ["WP-R-P4"]
+    assert [c["name"] for c in frozen_configs(str(p), "nonoise")] == ["WP-A", "WP-S", "WP-R-P1"]
+    assert [c["name"] for c in frozen_configs(str(p), "1gev")] == ["WP-A", "WP-R-P4"]

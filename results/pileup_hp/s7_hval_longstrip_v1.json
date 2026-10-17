@@ -1,0 +1,85 @@
+{
+ "set": "hval",
+ "events": 150,
+ "work": "/work/submit/jinboz1/hnl/pileup_design/h_t05/hval_work",
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "target_miss_share": 0.026,
+ "eps_nominal_long_strip_disks": [
+  0.009821
+ ],
+ "eps_ls": 0.031000137329101562,
+ "miss_share_nominal": {
+  "crossings": 677,
+  "missed": 3,
+  "share": 0.004431314623338257
+ },
+ "miss_share_raised": {
+  "crossings": 664,
+  "missed": 18,
+  "share": 0.02710843373493976
+ },
+ "check_nominal_rerun": {
+  "pass": true,
+  "gun_rows": 3994,
+  "rows_unmatched": 0,
+  "n_hits_differ": 0,
+  "is_target_differ": 0,
+  "events_sidecar_differ": []
+ },
+ "counts_nominal": {
+  "gun_particles": 3994,
+  "targets": 1517,
+  "P_P": 793,
+  "P_D": 508
+ },
+ "counts_raised": {
+  "gun_particles": 3994,
+  "targets": 1514,
+  "P_P": 790,
+  "P_D": 508
+ },
+ "change": {
+  "targets": -3,
+  "P_P": -3,
+  "P_D": 0
+ },
+ "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+ "emulation_tables": "/work/submit/jinboz1/hnl/hnl-displaced/configs/trackml/overlay_emulation_v1.json",
+ "code_sha256": "ee836163351aaea4df1ef6fcd0ba63a10d099ceebdc363a1fd296dad9d2e9ea5",
+ "git": "3e7fd250d6f104bddc1ece5bc3da614a23ec72d5",
+ "slurm_job": "6831188",
+ "host": "submit20.mit.edu",
+ "written_utc": "2026-10-16T21:35:13+00:00",
+ "superseded_first_run": {
+  "job": "6831151",
+  "metric": "every long-strip disk crossing not removed by a stop",
+  "eps_ls": 0.037878990173339844,
+  "miss_share_nominal": {
+   "crossings": 2105,
+   "missed": 5,
+   "share": 0.0023752969121140144
+  },
+  "miss_share_raised": {
+   "crossings": 2105,
+   "missed": 55,
+   "share": 0.026128266033254157
+  },
+  "counts_nominal": {
+   "gun_particles": 3994,
+   "targets": 1517,
+   "P_P": 793,
+   "P_D": 508
+  },
+  "counts_raised": {
+   "gun_particles": 3994,
+   "targets": 1512,
+   "P_P": 789,
+   "P_D": 507
+  },
+  "change": {
+   "targets": -5,
+   "P_P": -4,
+   "P_D": -1
+  }
+ }
+}

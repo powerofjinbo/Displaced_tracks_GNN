@@ -41,13 +41,16 @@ and takes the population, region, hard-scatter flag and category from the native
 
 Seeds and versions: those of the gun sets (hnl.overlay.writer.SEED_RULES): Fatras base + 13, emulation
 default_rng([base + 13, overlay id, 1]), digitiser default_rng([base + 13, overlay id]); the gun's base + 7 stream is
-not used. The production base seed is the closure entry of configs/trackml/split_h_v1.json (`default_base_seed`; the
-older value in hnl.overlay.writer.SETS is not used). The closure set holds no gun LLPs, so the replacement is the only
-change against the stored val event.
+not used. The production base seed is the closure entry of configs/trackml/split_h_v1.json (`default_base_seed`), and
+the Fatras event number of a host is its position in the split file's closure list (increasing id, 0-149;
+hnl.overlay.split_h.fatras_event_numbers), whatever hosts a job holds. The set's meta records the base seed, the
+Fatras event numbers and the provenance manifest (hnl.overlay.writer.provenance_manifest), and
+hnl.overlay.writer.version_check compares them with the split file. The closure set holds no gun LLPs, so the
+replacement is the only change against the stored val event.
 
     python -m hnl.overlay.closure select --out POP.parquet
     python -m hnl.overlay.closure make --hosts 21289:21332 --set closure --population POP.parquet --out DIR \
-        [--base-seed S]
+        [--base-seed S] [--fatras-events N1:N2]          (dry runs only; default: the split file)
     python -m hnl.overlay.closure assemble --set closure --dir DIR --sim DIR/fatras_out/simhits.parquet --root ROOT \
         [--csv-tar TAR]
     python -m hnl.overlay.closure verify --set closure --root ROOT
@@ -68,6 +71,8 @@ import pyarrow.parquet as pq
 
 from hnl.overlay import digitise as D
 from hnl.overlay import fatras_io as FIO
+from hnl.overlay import gun as GUN
+from hnl.overlay import split_h as SH
 from hnl.overlay import writer as W
 from hnl.trackml import convert as C
 from hnl.trackml import throughput as T
@@ -88,7 +93,7 @@ FORWARD_Z_MM = 1000.0
 PROMPT_N = 3000
 PROMPT_SALT = "canto-trackml-overlay-v1-prompt"
 VAL_REGIONS = "/work/submit/jinboz1/hnl/pileup_design/plan_revision/val_regions.json"
-SPLIT_H = os.path.join(W.REPO, "configs", "trackml", "split_h_v1.json")
+SPLIT_H = SH.OUT_SPLIT
 # GeV (PDG); the Fatras input needs a mass, TrackML stores none. Unknown species raise.
 MASS = {11: 0.000510999, 13: 0.105658, 211: 0.139570, 321: 0.493677, 2212: 0.938272, 3112: 1.197449,
         3222: 1.18937, 3312: 1.32171, 3334: 1.67245}
@@ -140,8 +145,7 @@ def closure_barcode(index) -> np.ndarray:
 
 def default_base_seed(set_name: str = "closure", path: str = SPLIT_H) -> int:
     """The production base seed of a set from split_h_v1.json (fixed at H-T0)."""
-    with open(path) as fh:
-        return int(json.load(fh)["sets"][set_name]["base_seed"])
+    return SH.base_seed(set_name, path=path)
 
 
 def generation(pid) -> np.ndarray:
@@ -261,17 +265,20 @@ def closure_population(table: pd.DataFrame, hosts) -> pd.DataFrame:
 
 # ------------------------------------------------------------------------------------------------ Fatras input
 def make_closure_set(pop: pd.DataFrame, overlay_ids: dict[int, int], base_seed: int, out_dir: str,
-                     population_sha256: str | None = None) -> dict:
+                     population_sha256: str | None = None, *, fatras_events: dict[int, int],
+                     record: dict | None = None) -> dict:
     """Fatras input and closure truth of a set of closure events. pop: `closure_population` rows of the hosts;
-    overlay_ids: {host: overlay id}. Fatras event i = position of the host in sorted overlay ids (as the gun sets).
-    Writes out_dir/fatras_in/event<i>-particles.csv, closure_truth.parquet and closure_events.json (the layout of
+    overlay_ids: {host: overlay id}; fatras_events: {host: Fatras event number} (the split file's rule, as for the gun
+    sets); record: extra provenance for closure_events.json (set name, split file). Writes
+    out_dir/fatras_in/event<N>-particles.csv, closure_truth.parquet and closure_events.json (the layout of
     hnl.overlay.gun's gun_events.json, read by hnl.overlay.writer.sim_provenance and sim_status)."""
+    fe = GUN.check_fatras_events(overlay_ids, fatras_events)
     fin = os.path.join(out_dir, "fatras_in")
     os.makedirs(fin, exist_ok=True)
     order = sorted(overlay_ids, key=lambda h: overlay_ids[h])
     truth, events = [], []
-    for i, host in enumerate(order):
-        oid = overlay_ids[host]
+    for host in order:
+        oid, i = overlay_ids[host], fe[int(host)]
         r = pop[pop.event == host].sort_values("particle_id", kind="stable").reset_index(drop=True)
         if not len(r):
             raise ValueError(f"host {host}: no closure particle")
@@ -299,7 +306,8 @@ def make_closure_set(pop: pd.DataFrame, overlay_ids: dict[int, int], base_seed: 
     t = pd.concat(truth, ignore_index=True)
     t["acts_barcode"] = t.acts_barcode.astype(np.uint64)
     t.to_parquet(os.path.join(out_dir, "closure_truth.parquet"), index=False)
-    rec = {"kind": "closure", "base_seed": int(base_seed), "fatras_seed": int(base_seed) + 13,
+    rec = {**(record or {}), "kind": "closure", "base_seed": int(base_seed), "fatras_seed": int(base_seed) + 13,
+           "fatras_event_rule": "per host, hnl.overlay.split_h.fatras_event_numbers",
            "seed_rules": W.SEED_RULES, "id_rule": "closure particle_id = native particle_id + 2^62",
            "barcode_rule": f"ACTS barcode ({BARCODE_VPRIM}, 0, rank of the native id in its host, 0, 0)",
            "population_sha256": population_sha256, "events": events,
@@ -545,14 +553,15 @@ def assemble(set_name: str, closure_dir: str, sim_path: str, root: str, tables_p
                      "sim_below_pmin_particles": [int(bc_to_tml[int(b)]) for b in
                                                   lost[lost.status == "below_pmin"].particle_id.to_numpy(np.uint64)]})
     meta_extra = {"kind": "closure", "emulation_hash": ehash, "overlay_hash": ohash, "seed_rules": W.SEED_RULES,
-                  "id_rule": cev["id_rule"], "barcode_rule": cev["barcode_rule"], "emulation_tables": tables_path,
-                  "lookup": lookup_path, "lookup_sha256": C.sha256_file(lookup_path), "sim": prov,
+                  **W.set_seeds(cev), "id_rule": cev["id_rule"], "barcode_rule": cev["barcode_rule"],
+                  "emulation_tables": tables_path, "lookup": lookup_path, "lookup_sha256": C.sha256_file(lookup_path),
+                  "sim": prov, "manifest": W.provenance_manifest(prov, tables_path, lookup_path),
                   "sim_status_counts": {str(k): int(v) for k, v in status.status.value_counts().items()},
                   "closure": {k: v for k, v in cev.items() if k != "events"}, "host_root": host_root,
                   "closure_code_sha256": _sha256_self()}
     meta = W.write_set(set_name, merged_all, root, meta_extra, overwrite=overwrite)
     side_rec = {"set": set_name, "kind": "closure", "emulation_hash": ehash, "overlay_hash": ohash,
-                "closure_particles": f"closure_truth_{set_name}.parquet", "sim": prov,
+                "base_seed": base, "closure_particles": f"closure_truth_{set_name}.parquet", "sim": prov,
                 "sim_status_counts": meta_extra["sim_status_counts"], "events": side}
     with open(os.path.join(root, f"sidecar_{set_name}.json"), "w") as fh:
         json.dump(side_rec, fh, indent=1)
@@ -628,6 +637,9 @@ def main(argv=None):
     m.add_argument("--set", default="closure", choices=["closure"])
     m.add_argument("--population", required=True)
     m.add_argument("--base-seed", type=int, default=None, help="default: the closure base seed of split_h_v1.json")
+    m.add_argument("--fatras-events", default=None, help="Fatras event numbers, one per host in --hosts order "
+                   "(default: the rule of split_h_v1.json)")
+    m.add_argument("--split", default=SPLIT_H)
     m.add_argument("--out", required=True)
     a_ = sub.add_parser("assemble")
     a_.add_argument("--set", default="closure", choices=["closure"])
@@ -647,11 +659,11 @@ def main(argv=None):
         print(json.dumps({k: rec[k] for k in ("events", "counts", "selected", "prompt_subset", "val_regions")},
                          indent=1))
     elif a.cmd == "make":
-        hosts = [int(x) for x in a.hosts.replace(":", ",").split(",") if x]
-        base = a.base_seed if a.base_seed is not None else default_base_seed(a.set)
+        hosts = SH.parse_hosts(a.hosts)
+        base, fe, rec0 = GUN.resolve_seeds(a.set, hosts, a.base_seed, a.fatras_events, a.split)
         pop = closure_population(pd.read_parquet(a.population), hosts)
         rec = make_closure_set(pop, {h: W.overlay_id(a.set, h) for h in hosts}, base, a.out,
-                               C.sha256_file(a.population))
+                               C.sha256_file(a.population), fatras_events=fe, record=rec0)
         print(json.dumps({k: v_ for k, v_ in rec.items() if k != "events"}, indent=1))
     elif a.cmd == "assemble":
         r = assemble(a.set, a.dir, a.sim, a.root, a.tables, a.lookup, csv_tar=a.csv_tar, overwrite=a.overwrite)

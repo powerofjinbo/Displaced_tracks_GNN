@@ -1,0 +1,14 @@
+{
+ "decision": "DECISIONS.md 2026-10-16: addendum H section 9.3 after the failed C1 confirmation (reading A)",
+ "first_overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+ "flag": "C1 confirmation (u bias, volumes 12 and 9)",
+ "part1_bias_u_volumes": [
+  12
+ ],
+ "part2_failed": [
+  {
+   "volume": 9,
+   "quantity": "bias_u"
+  }
+ ]
+}

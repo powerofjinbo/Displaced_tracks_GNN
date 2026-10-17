@@ -25,10 +25,10 @@ POLL=${POLL:-120}
 MAX_CHUNKS=${MAX_CHUNKS:-80}
 NOPROG=${NOPROG:-3}
 NBLK=${NBLK:-4}
-NU_TRAIN=${NU_TRAIN:-23}     # union blocks (<= 700 events each, 1-h jobs)
-NU_VAL=${NU_VAL:-7}
+NU_TRAIN=${NU_TRAIN:-50}     # union blocks (<= 320 events each, 1-h jobs on 12 CPUs)
+NU_VAL=${NU_VAL:-15}
 GPU_STOP=${GPU_STOP:-230}
-EXC=submit00,submit01,submit20-1,submit21-1,submit22-1,submit23-1,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
+EXC=submit00,submit01,submit60,submit62,submit63,submit64,submit65,submit66,submit67,submit68,submit71,submit72,submit73
 # CPU jobs in 1-h pieces on the express tier first (the CPU partition is saturated; DECISIONS 2026-10-03)
 CPU=(-p submit-gpu-express,submit-gpu,submit -t 01:00:00 "--exclude=$EXC")
 EXPRESS=(-p submit-gpu-express -t 01:00:00 --gres=gpu:1)
@@ -57,7 +57,11 @@ sub() {   # NAME SBATCH-ARGS... -> job id (env without OMP_NUM_THREADS, so activ
         log "sbatch failed for $name: $out" >&2
     fi
 }
-queued() { squeue -h -u "$USER" -n "$1" -o %i 2>/dev/null | wc -l; }
+queued() {   # jobs of this name queued or running; 99 (never "none") if squeue fails
+    local out
+    out=$(squeue -h -u "$USER" -n "$1" -o %i 2>/dev/null) || { echo 99; return; }
+    [ -z "$out" ] && echo 0 || wc -l <<< "$out"
+}
 attempts() { [ -e "$STATE/$1.jobs" ] && wc -l < "$STATE/$1.jobs" || echo 0; }
 
 gpu_hours() {   # elapsed hours of every GPU job of T3 (names g3_ml_*, g3_gnn_*, g3_canto_*) since the driver's first job
@@ -138,6 +142,30 @@ log "addendum G T3 driver start pid $$ on $(hostname); seeds $SEEDS"
 while true; do
     [ -e "$STATE/STOP" ] && { log "STOP file found, exiting"; rm -f "$HB"; exit 0; }
     [ "${DRY_RUN:-0}" = 1 ] || echo "$(hostname) $$ $(date -u +%FT%TZ)" > "$HB"
+    # skip the pass while the Slurm controller is unreachable: an empty squeue would read as "no chunk queued"
+    if ! squeue -h -u "$USER" -o %i > /dev/null 2>&1; then
+        log "squeue failed (controller unreachable?): pass skipped"; sleep "$POLL"; continue
+    fi
+    # CPU jobs (and the training-graph scores) at --nice=20 while G1 of addendum G T2 goes first on the scarce
+    # express/GPU-partition CPUs (coordinator, 2026-10-15): first while the union arrays 6820144/6820148/6820152 ran,
+    # then (17:50-18:15 UTC) until g_summary_test 6820173 had started, then (from 18:38 UTC) until g_readouts_test
+    # 6820174 has started; then pending T3 CPU jobs return to nice 0, once per period (STATE/nice_period<k>_ended)
+    G1_GATE=${G1_GATE:-6820174}
+    NICE_FLAG=$STATE/nice_period3_ended
+    g1s=$(sacct -j "$G1_GATE" -X -n -o State 2>/dev/null | head -n 1 | tr -d ' ')
+    if [ -z "$g1s" ] || [ "$g1s" = PENDING ]; then
+        NICE=(--nice=20)
+    else
+        NICE=()
+        if [ ! -e "$NICE_FLAG" ]; then
+            log "G1 job $G1_GATE is $g1s: T3 CPU jobs back to nice 0"
+            for j in $(squeue -h -u "$USER" -t PENDING -o "%i %j %y" | awk '$2 ~ /^g3_(union|gbdt|lmerge|grid|gridmerge|guard|uniongather|scoretr)/ && $3 > 0 {print $1}'); do
+                scontrol update JobId="$j" Nice=0 || log "nice reset failed for $j"
+            done
+            date -u +%FT%TZ > "$NICE_FLAG"
+        fi
+    fi
+    CPU=(-p submit-gpu-express,submit-gpu,submit -t 01:00:00 "--exclude=$EXC" "${NICE[@]}")
     gh=$(gpu_hours)
     GPU_OK=1
     if awk -v g="$gh" -v s="$GPU_STOP" 'BEGIN {exit !(g >= s)}'; then
@@ -154,7 +182,7 @@ while true; do
             once "g3_ml_infer_s$S" "$A/ml_infer.done" "${EXPRESS[@]}" --constraint="nvidia_a30|Tesla_v100" "$D/ml_infer.sbatch" "$S"
         fi
         if [ -e "$A/ml_infer.done" ]; then
-            chunked "g3_gnn_train_s$S" "$A/gnn_train.done" "$A/gnn" "nvidia_a30|Tesla_v100|nvidia_rtx6000|nvidia_gtx1080" \
+            chunked "g3_gnn_train_s$S" "$A/gnn_train.done" "$A/gnn" "nvidia_a30|Tesla_v100|nvidia_rtx6000" \
                 "$D/gnn_train.sbatch" "$S"
             # Canto-L pieces on the same embedding
             [ -e "$G/ml" ] || { ln -s "$A/ml" "$G/ml"; ln -s "$A/ml_graphs" "$G/ml_graphs"; log "seed $S: $G/ml, ml_graphs -> $A"; }
@@ -162,11 +190,11 @@ while true; do
         fi
         if [ -e "$A/gnn_train.done" ] && [ "$GPU_OK" = 1 ]; then
             once "g3_gnn_infer_s$S" "$A/gnn_infer.done" "${EXPRESS[@]}" \
-                --constraint="nvidia_a30|Tesla_v100|nvidia_rtx6000|nvidia_gtx1080" "$D/gnn_infer.sbatch" "$S"
+                --constraint="nvidia_a30|Tesla_v100|nvidia_rtx6000" "$D/gnn_infer.sbatch" "$S"
         fi
         if [ -e "$A/gnn_infer.done" ] && [ "$GPU_OK" = 1 ]; then
-            N_EVENTS=2000 ACCEL=gpu once "g3_scoretr_acorn_s$S" "$A/score_train.done" "${EXPRESS[@]}" -c 8 --mem=48G \
-                --constraint="nvidia_a30|Tesla_v100|nvidia_rtx6000|nvidia_gtx1080" \
+            N_EVENTS=2000 ACCEL=gpu once "g3_scoretr_acorn_s$S" "$A/score_train.done" "${EXPRESS[@]}" "${NICE[@]}" -c 8 --mem=48G \
+                --constraint="nvidia_a30|Tesla_v100|nvidia_rtx6000" \
                 "$HNL_REPO/slurm/stage1/score_split_sample.sbatch" "$A" "$A/ml_graphs" train
         fi
         [ -e "$A/score_train.done" ] && once "g3_lmerge_acorn_s$S" "$A/lmerge.done" "${CPU[@]}" "$D/lmerge.sbatch" "$A"
@@ -195,7 +223,7 @@ while true; do
             chunked "g3_canto_train_s$S" "$C/eval.done" "$C/gnn" "nvidia_a30|Tesla_v100|nvidia_rtx6000" "$D/canto_train.sbatch" "$S"
         fi
         if [ -e "$C/eval.done" ] && [ "$GPU_OK" = 1 ]; then
-            N_EVENTS=2000 ACCEL=gpu once "g3_scoretr_canto_s$S" "$C/score_train.done" "${EXPRESS[@]}" -c 8 --mem=48G \
+            N_EVENTS=2000 ACCEL=gpu once "g3_scoretr_canto_s$S" "$C/score_train.done" "${EXPRESS[@]}" "${NICE[@]}" -c 8 --mem=48G \
                 --constraint="nvidia_a30|Tesla_v100|nvidia_rtx6000" \
                 "$HNL_REPO/slurm/stage1/score_split_sample.sbatch" "$C" "$G/ltf_union_graphs" train
         fi

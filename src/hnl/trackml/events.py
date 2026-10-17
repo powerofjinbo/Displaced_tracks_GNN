@@ -43,6 +43,7 @@ from dataclasses import dataclass, field, replace
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
 from hnl.trackml.convert import DERIVED, event_index, read_table
 from hnl.trackml.split import EXT, REPO
 
@@ -323,6 +324,9 @@ class Embedder:
 
     def __call__(self, ev: Event, chunk: int = 65536):
         import torch
+        # choke point (addendum H): an embedding network runs on an overlay event only under a grant of kind model or
+        # plumb (hnl.overlay.grant; a no-op without a git call for TrackML ids)
+        GRANT.check([ev.event], ("model", "plumb"))
         x = self.inputs(ev).to(self.device)
         with torch.inference_mode():
             return torch.cat([torch.nn.functional.normalize(self.net(x[i:i + chunk])) for i in range(0, len(x), chunk)])

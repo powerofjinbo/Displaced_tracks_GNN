@@ -1,8 +1,9 @@
 """Truth-only checks of a stored overlay set before any model run (docs/pileup_overlay_plan.md section 10). No model is
 run and no model output is read. Inputs: the stored set (ROOT/{hits,particles,ptype}/<set>, meta, sidecar and gun truth
 of hnl.overlay.writer), the work directory of slurm/overlay/overlay_set.sbatch (gun events, packed sim hits, the
-gun-only CSV tar), the hosts' tp_v1 tables (hits and particles; development hosts are tp_v1 val events) and, for
-C1 and V3, the hits and truth of TrackML calibration training events.
+gun-only CSV tar), the hosts' stored tables (hits and particles) from the host root the set's meta records
+(`set_host_root`: derived/tp_v1 for H-val and the pilot, derived/tp03_v1 for H-test, addendum H section 9.4; a dry
+host root for the pilot only) and, for C1 and V3, the hits and truth of TrackML calibration training events.
 
 Checks.
 - format: hnl.overlay.writer.verify_set; the frozen read path (hnl.trackml.events.load_events with the table_root of
@@ -11,11 +12,18 @@ Checks.
   true edge, every X1 cluster feature computable (hnl.trackml.events.cluster_feature), every (volume, layer, module)
   in TrackML's detectors.csv (track building raises otherwise), particle ids unique and positive as int64, gun vertex
   fields 1001-1010, host vertex fields below 1001, gun particles = the gun truth table, n_hits = hit counts, gun
-  particles that Fatras did not simulate without hits, the stored gun positions = the CSV members, hosts in tp_v1 val.
+  particles that Fatras did not simulate without hits, the stored gun positions = the CSV members, hosts in the set's
+  host list of split_h_v1.json (`hosts_of_set`; H-val and pilot also in tp_v1 val). The frozen read path must find a
+  production set in the production overlay root; a pilot dry run in a scratch root reports that check only.
+- containment (`containment_checks`): from the digitiser record of each event, no crossing moved by more than 4 um
+  onto its TrackML module plane and no true point more than 4 um outside its module's bounds (addendum H section 9.2).
 - weights: gun weights 0 and the host weights summing to one within 1e-6 (H-val rule); the closure rule exercised
   on the stored events: host particles of the V1 (a) definition dropped in memory (hnl.overlay.writer.merge_event),
   the merged event passes hnl.overlay.writer.check_event with the expected sum 1 - (weights of the removed hits) and
   fails with 1.
+- version: hnl.overlay.writer.version_check (base seed of meta and sidecar = that of split_h_v1.json, Fatras seed,
+  Fatras event numbers by the split file's rule, overlay_hash and provenance manifest recorded; against the committed
+  version file once it exists).
 - production: every gun event recomputed from the packed sim hits (hnl.overlay.writer.gun_event: emulation and
   digitiser with the set's seeds) gives byte-identical CSV members, and their frozen conversion equals the stored
   gun rows; the digitiser's cluster values equal the stored ones.
@@ -53,6 +61,7 @@ import pyarrow as pa
 from hnl.overlay import c1 as C1
 from hnl.overlay import digitise as D
 from hnl.overlay import gun as GUN
+from hnl.overlay import split_h as SH
 from hnl.overlay import writer as W
 from hnl.trackml import convert as C
 from hnl.trackml import events as EV
@@ -68,6 +77,7 @@ NEAR_MM = (1.0, 0.1)
 N_BOOT = 200
 PP_D0_MM, PP_RV_MM = 10.0, 100.0                       # P_P / V1 (a): |d0| >= 10 mm or r_v >= 100 mm
 EXPECTED_YIELD_PER_LLP = {"P_P": 0.603, "P_D": 1.687}  # plan section 7 (2 T HNL setup, no emulation)
+DRY_HOST_ROOT_SETS = ("pilot",)                        # the only set whose hosts may come from a dry root
 
 
 # ------------------------------------------------------------------------------------------------ inputs
@@ -86,6 +96,33 @@ def csv_members(tar_path: str) -> dict[int, dict[str, pd.DataFrame]]:
     return out
 
 
+def set_host_root(set_name: str, meta: dict) -> str:
+    """The host root a stored set was made from (its meta's host_root; sets made before it was recorded: tp_v1),
+    checked against the set's rule (hnl.overlay.hosts.host_root: tp_v1 for H-val, closure and pilot, tp03_v1 for
+    H-test). A dry root of the same directory name is accepted for the pilot set (k = 9) only: H-val, closure and
+    H-test must name their production host root, and a meta that names any other root is refused."""
+    from hnl.overlay import hosts as HR
+    hr = meta.get("host_root") or TP
+    try:
+        return HR.host_root(set_name, hr)
+    except ValueError:
+        if set_name not in DRY_HOST_ROOT_SETS:
+            raise
+        return HR.host_root(set_name, hr, dry=True)
+
+
+def hosts_of_set(set_name: str, split: dict | None = None) -> set[int]:
+    """The hosts a set may hold (split_h_v1.json; H-test: the evaluated hosts of hnl.overlay.split_h.htest_hosts)."""
+    split = split or SH.load_split()
+    if set_name in ("hval", "closure"):
+        return {int(h) for h in split[set_name]}
+    if set_name == "pilot":
+        return {int(h) for h in split["sets"]["pilot"]["hosts"]}
+    if set_name == "htest":
+        return set(SH.htest_hosts(split))
+    raise KeyError(set_name)
+
+
 def load_context(set_name: str, work: str, root: str = W.DERIVED_OVERLAY) -> dict:
     with open(os.path.join(root, f"meta_{set_name}.json")) as fh:
         meta = json.load(fh)
@@ -93,11 +130,12 @@ def load_context(set_name: str, work: str, root: str = W.DERIVED_OVERLAY) -> dic
         side = json.load(fh)
     with open(os.path.join(work, "gun", "gun_events.json")) as fh:
         gev = json.load(fh)
+    hroot = set_host_root(set_name, meta)
     events = {int(s["overlay_event"]): s for s in side["events"]}
     stored = {e: W.host_tables(e, root) for e in events}
-    hosts = {e: W.host_tables(s["host"], TP) for e, s in events.items()}
+    hosts = {e: W.host_tables(s["host"], hroot) for e, s in events.items()}
     return {"set": set_name, "root": root, "work": work, "meta": meta, "side": side, "gev": gev, "events": events,
-            "stored": stored, "hosts": hosts,
+            "stored": stored, "hosts": hosts, "host_root": hroot,
             "gun_truth": pd.read_parquet(os.path.join(root, f"gun_truth_{set_name}.parquet")),
             "csv": csv_members(os.path.join(work, f"gun_csv_{set_name}.tar")),
             "sim_path": os.path.join(work, "gun", "fatras_out", "simhits.parquet")}
@@ -147,18 +185,23 @@ def format_checks(ctx: dict) -> dict:
     from hnl.trackml.config import event_set
     det = C.load_detectors()
     ids = sorted(ctx["events"])
-    v = W.verify_set(ctx["set"], ctx["root"])
+    hroot = ctx.get("host_root", TP)
+    v = W.verify_set(ctx["set"], ctx["root"], host_root=hroot)
     default_root = all(os.path.abspath(EV.table_root(e)) == os.path.abspath(ctx["root"]) for e in ids)
     evs = EV.load_events(ids, root=None if default_root else ctx["root"])
-    val = set(event_set("val"))
+    in_set = hosts_of_set(ctx["set"])
     out = {"verify_problems": v["problems"], "events": len(ids), "read_path_default_table_root": default_root,
            "event_set_explicit_list": event_set(",".join(str(e) for e in ids)) == ids,
-           "hosts_in_tp_v1_val": all(int(s["host"]) in val for s in ctx["events"].values()), "per_event": {}}
+           "host_root": hroot, "hosts_in_set": all(int(s["host"]) in in_set for s in ctx["events"].values()),
+           "per_event": {}}
+    if ctx["set"] in ("hval", "closure", "pilot"):
+        val = set(event_set("val"))
+        out["hosts_in_tp_v1_val"] = all(int(s["host"]) in val for s in ctx["events"].values())
     problems = []
     for e in ids:
         s, st, ht = ctx["events"][e], ctx["stored"][e], ctx["hosts"][e]
         ev = evs[e]
-        hev = EV.load_events([s["host"]], root=TP)[s["host"]]
+        hev = EV.load_events([s["host"]], root=hroot)[s["host"]]
         nh, ng, nhost = s["n_gun_hits"], s["n_gun_particles"], ht["hits"].num_rows
         p = st["particles"].to_pandas()
         pid = p.particle_id.to_numpy()
@@ -233,14 +276,46 @@ def format_checks(ctx: dict) -> dict:
         if r["not_simulated_with_hits"]:
             bad.append("hits of a particle that Fatras did not simulate")
         problems += [f"event {e}: {b}" for b in bad]
-    for k in ("read_path_default_table_root", "event_set_explicit_list", "hosts_in_tp_v1_val"):
-        if not out[k]:
+    # a production set must be stored where the frozen read path finds it; a dry run of the pilot may use a scratch
+    # root, and the check is then reported only
+    for k in ("event_set_explicit_list", "hosts_in_set", "hosts_in_tp_v1_val") + (
+            ("read_path_default_table_root",) if ctx["set"] != "pilot" else ()):
+        if k in out and not out[k]:
             problems.append(k)
     out["problems"] = v["problems"] + problems
     out["pass"] = not out["problems"]
     out["max_abs_host_weight_sum_minus_1"] = float(max(abs(r["host_weight_sum"] - 1)
                                                        for r in out["per_event"].values()))
     return out
+
+
+CONTAIN_TOL_MM = 0.004          # addendum H section 9.2, "Containment" (G0's 4 um)
+
+
+def containment_checks(side_events, tol_mm: float = CONTAIN_TOL_MM) -> dict:
+    """Containment of section 9.2 from the digitiser record of every event in the set's sidecar
+    (hnl.overlay.digitise stats): no crossing moved by more than tol_mm onto its TrackML module plane (|w_moved|), no
+    true point more than tol_mm outside its module's bounds, and no crossing on a module missing from detectors.csv.
+    (That every stored hit lies on a module of detectors.csv is the format check.) Works for gun and closure sets."""
+    rows, problems = [], []
+    for s in side_events:
+        d = s["digitiser"]
+        r = {"overlay_event": int(s["overlay_event"]), "max_abs_w_moved_mm": float(d["max_abs_w_moved_mm"]),
+             "max_outside_mm": float(d["max_outside_mm"]), "n_outside_bounds": int(d["n_outside_bounds"]),
+             "n_unknown_module": int(d["n_unknown_module"])}
+        rows.append(r)
+        if r["max_abs_w_moved_mm"] > tol_mm:
+            problems.append(f"event {r['overlay_event']}: a crossing moved {r['max_abs_w_moved_mm'] * 1e3:.2f} um "
+                            "onto its module plane")
+        if r["max_outside_mm"] > tol_mm:
+            problems.append(f"event {r['overlay_event']}: a true point {r['max_outside_mm'] * 1e3:.2f} um outside "
+                            "its module")
+        if r["n_unknown_module"]:
+            problems.append(f"event {r['overlay_event']}: {r['n_unknown_module']} crossings on unknown modules")
+    return {"tolerance_mm": tol_mm, "per_event": rows, "max_abs_w_moved_mm": max((r["max_abs_w_moved_mm"]
+                                                                                   for r in rows), default=0.0),
+            "max_outside_mm": max((r["max_outside_mm"] for r in rows), default=0.0), "problems": problems,
+            "pass": not problems}
 
 
 def weight_rule_checks(ctx: dict) -> dict:
@@ -599,6 +674,10 @@ def cmd_run(a) -> dict:
     print(f"[checks] weights pass={out['weights']['pass']} ({time.time() - t0:.0f} s)", flush=True)
     out["production"] = production_closure(ctx)
     print(f"[checks] production pass={out['production']['pass']} ({time.time() - t0:.0f} s)", flush=True)
+    out["version"] = W.version_check(a.set, ctx["meta"], ctx["side"], committed=W.load_version())
+    print(f"[checks] version pass={out['version']['pass']} {out['version']['problems']}", flush=True)
+    out["containment"] = containment_checks(ctx["side"]["events"])
+    print(f"[checks] containment pass={out['containment']['pass']}", flush=True)
     out["content"] = content(ctx)
     mods = D.Modules.load()
     gun = gun_hit_features(ctx, mods)
@@ -617,7 +696,7 @@ def cmd_run(a) -> dict:
     out["c1_overlay"] = {"reference": {"events": ev, "n_hits": int(len(ref))}, **c1_overlay(ref, gun)}
     print(f"[checks] C1 on the overlay: {out['c1_overlay']['n_bins_counted']} counted bins "
           f"({time.time() - t0:.0f} s)", flush=True)
-    out["pass"] = {k: out[k]["pass"] for k in ("format", "weights", "production")}
+    out["pass"] = {k: out[k]["pass"] for k in ("format", "weights", "containment", "production", "version")}
     out["seconds"] = round(time.time() - t0, 1)
     os.makedirs(os.path.dirname(os.path.abspath(a.out_json)), exist_ok=True)
     with open(a.out_json, "w") as fh:

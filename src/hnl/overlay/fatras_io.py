@@ -9,7 +9,10 @@ deltapz, deltae, index). `pack_sim_hits` keeps one row per hit with the Fatras e
 geometry id (hnl.geometry.ids layout: volume, layer, sensitive), the true position and momentum at the surface and the
 hit index along the particle, and can delete the CSV files afterwards (slurm/overlay/fatras.sbatch).
 Beside it, `<out stem>_particles.parquet` lists the particles Fatras simulated (event, particle_id, in the initial and
-in the final state), so that the particles it did not simulate stay known after the CSV files are removed.
+in the final state), so that the particles it did not simulate stay known after the CSV files are removed, and the
+final state of each (final_vx, final_vy, final_vz [mm], final_px, final_py, final_pz [GeV]; NaN for a particle missing
+from the final state). The final position shows a particle that ends outside the detector world without a log line
+(addendum H section 9.2, content; hnl.overlay.gun_content.silent_exits).
 
 Particles Fatras did not simulate. v15 `ActsFatras::Simulation` erases a particle whose propagation fails from the
 initial-state output, keeps none of its hits and only logs it ("event N particle id=(...) failed to simulate with
@@ -45,8 +48,9 @@ PACK_SCHEMA = pa.schema([
     ("index", pa.int32()),
 ])
 _EVENT_RE = re.compile(r"event(\d{9})-hits\.csv$")
+FINAL_STATE = ("vx", "vy", "vz", "px", "py", "pz")
 SIM_PARTICLES_SCHEMA = pa.schema([("event", pa.int32()), ("particle_id", pa.uint64()), ("initial", pa.bool_()),
-                                  ("final", pa.bool_())])
+                                  ("final", pa.bool_()), *[(f"final_{k}", pa.float64()) for k in FINAL_STATE]])
 # v15 FatrasSimulation: "event <n> particle id=(<vertex primary>|<vertex secondary>|<particle>|<generation>|<sub>)
 # |pdg=...|p=... failed to simulate with error <category>:<code>: <message>"
 _FAILED_RE = re.compile(r"event (\d+) particle id=\((\d+)\|(\d+)\|(\d+)\|(\d+)\|(\d+)\)\S* failed to simulate with "
@@ -102,16 +106,28 @@ def sim_particles_path(out: str) -> str:
 
 
 def sim_particles_frame(directory: str, event: int) -> pa.Table:
-    """(event, particle_id, initial, final) of every particle in the initial or final state of one Fatras event."""
-    ids = {}
+    """(event, particle_id, initial, final, final_vx ... final_pz) of every particle in the initial or final state of
+    one Fatras event; the final-state columns are NaN for a particle without a final state (or a file without them)."""
+    ids, final = {}, None
     for k in ("initial", "final"):
         p = os.path.join(directory, f"event{int(event):09d}-particles_{k}.csv")
-        ids[k] = (pd.read_csv(p, usecols=["particle_id"], dtype={"particle_id": np.uint64}).particle_id.to_numpy()
-                  if os.path.exists(p) else np.zeros(0, np.uint64))
+        t = pd.read_csv(p, dtype={"particle_id": np.uint64}) if os.path.exists(p) else None
+        ids[k] = t.particle_id.to_numpy(np.uint64) if t is not None else np.zeros(0, np.uint64)
+        if k == "final" and t is not None:
+            final = t
     allp = np.union1d(ids["initial"], ids["final"]).astype(np.uint64)
+    cols = []
+    for c in FINAL_STATE:
+        v = np.full(len(allp), np.nan)
+        if final is not None and c in final:
+            f = pd.Series(final[c].to_numpy(np.float64), index=final.particle_id.to_numpy(np.uint64))
+            if f.index.duplicated().any():
+                raise ValueError(f"event {event}: a particle appears twice in the final state")
+            v = f.reindex(allp).to_numpy(np.float64)
+        cols.append(pa.array(v))
     return pa.Table.from_arrays([pa.array(np.full(len(allp), event, np.int32)), pa.array(allp),
-                                 pa.array(np.isin(allp, ids["initial"])), pa.array(np.isin(allp, ids["final"]))],
-                                schema=SIM_PARTICLES_SCHEMA)
+                                 pa.array(np.isin(allp, ids["initial"])), pa.array(np.isin(allp, ids["final"])),
+                                 *cols], schema=SIM_PARTICLES_SCHEMA)
 
 
 def pack_sim_hits(directory: str, out: str, remove_csv: bool = False) -> dict:

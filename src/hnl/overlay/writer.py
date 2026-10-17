@@ -29,8 +29,22 @@ their particle row with no hits and are listed in the sidecar (sim_failed_partic
 
 Event ids: overlay id = 50,000,000 + 1,000,000 k + host (plan section 5.4) with the set index k of SETS.
 
+Seeds, Fatras event numbers and version (addendum H section 2). The base seed of a set and the Fatras event number of
+each host come from configs/trackml/split_h_v1.json (hnl.overlay.split_h.base_seed, fatras_event_numbers); the gun
+driver writes them into gun_events.json and `assemble` copies them into the set's meta and sidecar. The meta also
+records the provenance manifest (`provenance_manifest`: sha256 of the gun, Fatras and merge code, of the Fatras
+settings, the emulation tables and the module table; md5 of the field map and of the Fatras executable; the container
+tag, the directory it resolved to when Fatras ran, and the LCG view), which overlay_hash does not cover. `version_check`
+is the per-set Version check: base seed of meta and sidecar = that of the split file, Fatras seed = base + 13, each
+host's Fatras event number = the split file's rule, overlay_hash and manifest present, and, given the committed
+version file (configs/trackml/overlay_version_h_v1.json, at the end of H-T0.5), overlay_hash and every manifest value
+equal to the committed ones.
+
     python -m hnl.overlay.writer assemble --set pilot --gun-dir DIR --sim DIR/fatras_out/simhits.parquet \
-        --root ROOT [--tables configs/trackml/overlay_emulation_v1.json] [--lookup LOOKUP.csv]
+        --root ROOT [--tables configs/trackml/overlay_emulation_v1.json] [--lookup LOOKUP.csv] [--host-root DIR]
+Host root (addendum H section 9.4): the host rows come from the set's root, hnl.overlay.hosts.host_root (derived/tp_v1
+for H-val, closure and pilot; derived/tp03_v1 for H-test, named with --host-root); assemble refuses a root other than
+the one the gun driver recorded in gun_events.json, and the meta records it.
 """
 
 from __future__ import annotations
@@ -53,6 +67,7 @@ from hnl.data.convert import SHARD
 from hnl.overlay import digitise as D
 from hnl.overlay import fatras_io as FIO
 from hnl.overlay import gun as GUN
+from hnl.overlay import split_h as SH
 from hnl.trackml import convert as C
 from hnl.trackml import throughput as T
 from hnl.trackml.split import EXT, REPO
@@ -60,7 +75,10 @@ from hnl.trackml.split import EXT, REPO
 OVERLAY_FIRST_ID = 50_000_000                       # = hnl.trackml.events.OVERLAY_FIRST_ID
 DERIVED_OVERLAY = os.path.join(EXT, "derived", "overlay_v1")
 TABLES = ("hits", "particles", "ptype")
-SETS = {"hval": (0, 650001), "closure": (1, 950001), "htest": (2, 750001), "htrain": (3, 850001), "pilot": (9, None)}
+# set: (set index k, base seed) of addendum H (hnl.overlay.split_h.SETS, recorded in configs/trackml/split_h_v1.json).
+# The drivers read the base seed from the split file (hnl.overlay.split_h.base_seed); `version_check` compares a stored
+# set with it. No H-train set (no retraining arm in addendum H).
+SETS = {name: (int(k), int(base)) for name, (k, base) in SH.SETS.items()}
 CSV_COLUMNS = {"hits": ["hit_id", "x", "y", "z", "volume_id", "layer_id", "module_id"],
                "cells": ["hit_id", "ch0", "ch1", "value"],
                "particles": ["particle_id", "particle_type", "vx", "vy", "vz", "px", "py", "pz", "q", "nhits"],
@@ -400,6 +418,9 @@ def sim_provenance(sim_dir: str, gev: dict, lookup_path: str) -> dict:
                "field_map_sha256": s["map_sha256"], "pmin_gev": float(s["pmin_gev"]), "events": s.get("events")}
     else:
         raise FileNotFoundError(f"{sim_dir}: neither sim_summary.json nor fatras.json (unknown Fatras settings)")
+    for k in ("container", "container_resolved", "lcg_view", "fatras_events"):      # sim_summary.json since H-T0
+        if k in s:
+            rec[k] = s[k]
     if rec["seed"] != int(gev["fatras_seed"]):
         raise ValueError(f"Fatras seed {rec['seed']} differs from the set's base seed + 13 = {gev['fatras_seed']}")
     build = os.path.basename(os.path.normpath(rec["build"]))
@@ -427,6 +448,124 @@ def sim_status(sim_path: str, gun_dir: str, gev: dict, pmin_gev: float) -> pd.Da
     events = inputs.event.unique()
     return FIO.simulation_status(inputs[["event", "particle_id", "q", "px", "py", "pz"]],
                                  simulated[simulated.event.isin(events)], failed[failed.event.isin(events)], pmin_gev)
+
+
+# ------------------------------------------------------------------------------------------------ version
+# Production code of the provenance manifest (addendum H section 2): the gun, Fatras and the merge, which overlay_hash
+# does not cover. Paths relative to the repository.
+MANIFEST_CODE = ("src/hnl/overlay/gun.py", "src/hnl/overlay/writer.py", "src/hnl/overlay/fatras_io.py",
+                 "src/hnl/overlay/closure.py", "src/hnl/trackml/overlay_sim.py", "src/hnl/trackml/convert.py",
+                 "src/hnl/trackml/throughput.py", "src/hnl/trackml/events.py", "src/hnl/geometry/ids.py",
+                 "scripts/acts/gun.py", "scripts/acts/overlay_sim.py")
+SIM_SETTINGS = os.path.join(REPO, "configs", "trackml", "overlay_sim_v1.json")
+VERSION_FILE = os.path.join(REPO, "configs", "trackml", "overlay_version_h_v1.json")
+
+
+def _repo_rel(path: str) -> str:
+    a = os.path.abspath(path)
+    return os.path.relpath(a, REPO) if a.startswith(REPO.rstrip("/") + "/") else a
+
+
+def provenance_manifest(prov: dict, tables_path: str, lookup_path: str, settings_path: str = SIM_SETTINGS,
+                        repo: str = REPO) -> dict:
+    """The provenance manifest of a set (addendum H section 2) from the Fatras record of the set (`sim_provenance`)
+    and the files in use now: sha256 of MANIFEST_CODE, of the Fatras settings, the emulation tables and the module
+    table; md5 of the field map and of the Fatras executable as the Fatras run recorded them; the container tag, the
+    directory it resolved to when Fatras ran, and the LCG view. Values the Fatras record lacks are None (a run made
+    before H-T0 or by slurm/overlay/fatras.sbatch), and the Version check then fails against a committed manifest."""
+    with open(settings_path) as fh:
+        st = json.load(fh)
+    return {
+        "code_sha256": {f: C.sha256_file(os.path.join(repo, f)) for f in MANIFEST_CODE},
+        "config_sha256": {_repo_rel(p): C.sha256_file(p) for p in (settings_path, tables_path, lookup_path)},
+        "fatras_build": prov.get("build"),
+        "executable": st["executable"],
+        "executable_md5": prov.get("executable_md5"),
+        "field_map": prov.get("field_map"),
+        "field_map_md5": prov.get("field_map_md5"),
+        "container": {"tag": st["container"], "resolved_at_fatras": prov.get("container_resolved"),
+                      "lcg_view": prov.get("lcg_view")},
+    }
+
+
+def _flat(d: dict, prefix: str = "") -> dict:
+    out = {}
+    for k, v in d.items():
+        if isinstance(v, dict):
+            out.update(_flat(v, f"{prefix}{k}."))
+        else:
+            out[f"{prefix}{k}"] = v
+    return out
+
+
+def version_check(set_name: str, meta: dict, sidecar: dict, split: dict | None = None,
+                  committed: dict | None = None, split_path: str = SH.OUT_SPLIT) -> dict:
+    """The Version check of a stored set (addendum H sections 9.2 and 9.4; module docstring). meta, sidecar: the set's
+    meta_<set>.json and sidecar_<set>.json; split: the split file (default: the committed one); committed: the
+    committed version file with "overlay_hash" and "manifest" (None before it exists: only the recorded values are
+    checked)."""
+    split = SH.load_split(split_path) if split is None else split
+    probs = []
+    want = SH.base_seed(set_name, split)
+    b_meta, b_side = meta.get("base_seed"), sidecar.get("base_seed")
+    if b_meta is None or b_side is None:
+        probs.append("the meta or the sidecar records no base seed")
+    elif int(b_meta) != int(b_side):
+        probs.append(f"base seed of the meta ({b_meta}) differs from that of the sidecar ({b_side})")
+    if b_meta is not None and int(b_meta) != want:
+        probs.append(f"base seed {b_meta} differs from that of split_h_v1.json ({want})")
+    if meta.get("emulation_seed_override") is not None:
+        probs.append(f"emulation and digitiser seeded from {meta['emulation_seed_override']}, not the base seed")
+    sim_seed = (meta.get("sim") or {}).get("seed")
+    if sim_seed is None or int(sim_seed) != want + 13:
+        probs.append(f"Fatras seed {sim_seed} differs from the split file's base seed + 13 = {want + 13}")
+    events = sidecar.get("events", [])
+    try:
+        rule = SH.fatras_event_numbers(set_name, [int(e["host"]) for e in events], split)
+    except (LookupError, ValueError) as x:                     # KeyError is a LookupError
+        rule = None
+        probs.append(f"Fatras event numbers cannot be checked against the split file: {x}")
+    wrong = [] if rule is None else [(int(e["host"]), int(e["fatras_event"]), rule[int(e["host"])]) for e in events
+                                     if int(e["fatras_event"]) != rule[int(e["host"])]]
+    if wrong:
+        probs.append(f"{len(wrong)} hosts with a Fatras event number other than the split file's, first "
+                     f"(host, stored, rule) {wrong[:3]}")
+    oh_meta, oh_side = meta.get("overlay_hash"), sidecar.get("overlay_hash")
+    if oh_meta is None or oh_meta != oh_side:
+        probs.append(f"overlay_hash missing or differing between meta ({oh_meta}) and sidecar ({oh_side})")
+    manifest = meta.get("manifest")
+    if not manifest:
+        probs.append("the meta records no provenance manifest")
+    diff = {}
+    if committed is not None:
+        if committed.get("overlay_hash") != oh_meta:
+            probs.append(f"overlay_hash {oh_meta} differs from the committed {committed.get('overlay_hash')}")
+        a, b = _flat(committed.get("manifest") or {}), _flat(manifest or {})
+        diff = {k: [a.get(k), b.get(k)] for k in sorted(set(a) | set(b)) if a.get(k) != b.get(k)}
+        if diff:
+            probs.append(f"{len(diff)} manifest values differ from the committed ones: {sorted(diff)[:5]}")
+    return {"set": set_name, "base_seed": b_meta, "split_base_seed": want, "overlay_hash": oh_meta,
+            "fatras_events_checked": 0 if rule is None else len(events), "committed_version": committed is not None,
+            "manifest_differences": diff, "problems": probs, "pass": not probs}
+
+
+def load_version(path: str = VERSION_FILE, repo: str = REPO) -> dict | None:
+    """The committed version file (overlay_hash and manifest), or None before it exists. A file inside the repository
+    is used only if it is tracked and identical to its version in HEAD; a file on disk that is not committed as is
+    raises RuntimeError (it is never taken for the committed one). A file outside the repository (tests) is read as
+    is."""
+    if not os.path.exists(path):
+        return None
+    a, r = os.path.realpath(path), os.path.realpath(repo)
+    if a.startswith(r.rstrip("/") + "/"):
+        import subprocess
+        rel = os.path.relpath(a, r)
+        git = lambda *x: subprocess.run(["git", "-C", r, *x], capture_output=True).returncode    # noqa: E731
+        if git("ls-files", "--error-unmatch", rel) or git("diff", "--quiet", "HEAD", "--", rel):
+            raise RuntimeError(f"{rel} exists but is not committed as is: the Version check uses the committed file "
+                               "only (commit it, or move the draft out of the repository)")
+    with open(path) as fh:
+        return json.load(fh)
 
 
 # ------------------------------------------------------------------------------------------------ assembly
@@ -488,6 +627,8 @@ def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path:
     from hnl.overlay import emulate as EM
     with open(os.path.join(gun_dir, "gun_events.json")) as fh:
         gev = json.load(fh)
+    if gev.get("host_root") is not None and os.path.realpath(gev["host_root"]) != os.path.realpath(host_root):
+        raise ValueError(f"the gun read its hosts from {gev['host_root']}, assemble from {host_root}")
     truth = pd.read_parquet(os.path.join(gun_dir, "gun_truth.parquet"))
     sim = pd.read_parquet(sim_path)
     prov = sim_provenance(os.path.dirname(os.path.abspath(sim_path)), gev, lookup_path)
@@ -541,12 +682,13 @@ def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path:
                      "hs_vertex": ev["hs_vertex"]})
         stats.append(dig.stats)
     meta_extra = {"emulation_hash": ehash, "overlay_hash": ohash, "seed_rules": SEED_RULES,
-                  "emulation_tables": tables_path, "lookup": lookup_path,
+                  **set_seeds(gev, emulation_seed), "emulation_tables": tables_path, "lookup": lookup_path,
                   "lookup_sha256": C.sha256_file(lookup_path), "sim": prov,
+                  "manifest": provenance_manifest(prov, tables_path, lookup_path),
                   "sim_status_counts": {str(k): int(v) for k, v in status.status.value_counts().items()},
                   "gun": {k: v for k, v in gev.items() if k != "events"}, "host_root": host_root}
     meta = write_set(set_name, merged_all, root, meta_extra, overwrite=overwrite)
-    side_rec = {"set": set_name, "emulation_hash": ehash, "overlay_hash": ohash,
+    side_rec = {"set": set_name, "emulation_hash": ehash, "overlay_hash": ohash, "base_seed": int(gev["base_seed"]),
                 "gun_particles": "gun_truth_" + set_name + ".parquet",
                 "sim": prov, "sim_status_counts": meta_extra["sim_status_counts"], "events": side}
     with open(os.path.join(root, f"sidecar_{set_name}.json"), "w") as fh:
@@ -554,6 +696,18 @@ def assemble(set_name: str, gun_dir: str, sim_path: str, root: str, tables_path:
     truth.to_parquet(os.path.join(root, f"gun_truth_{set_name}.parquet"), index=False)
     tar = write_csv_tar(csv_tar, gz_all) if csv_tar else None
     return {"meta": meta, "sidecar": side_rec, "csv_tar": tar}
+
+
+def set_seeds(gev: dict, emulation_seed: int | None = None) -> dict:
+    """Seed record of a set for its meta: the base seed and Fatras seed of gun_events.json / closure_events.json, the
+    split file's base seed and Fatras event rule as the driver recorded them, and an emulation seed override."""
+    out = {"base_seed": int(gev["base_seed"]), "fatras_seed": int(gev["fatras_seed"]),
+           "fatras_events": {str(int(e["overlay_event"])): int(e["fatras_event"]) for e in gev["events"]}}
+    if gev.get("split_h") is not None:
+        out["split_h"] = gev["split_h"]
+    if emulation_seed is not None and int(emulation_seed) != int(gev["base_seed"]):
+        out["emulation_seed_override"] = int(emulation_seed)
+    return out
 
 
 def FIO_path(gun_dir: str, fatras_event: int) -> str:
@@ -575,13 +729,20 @@ def main(argv=None):
     v = sub.add_parser("verify")
     v.add_argument("--set", required=True, choices=sorted(SETS))
     v.add_argument("--root", required=True)
+    for p_ in (a_, v):
+        p_.add_argument("--host-root", default=None, help="the hosts' tables (hnl.overlay.hosts.host_root: default "
+                        "derived/tp_v1; H-test: required, derived/tp03_v1)")
+        p_.add_argument("--dry-host-root", action="store_true", help="accept a dry host root named like the set's")
     a = ap.parse_args(argv)
+    from hnl.overlay import hosts as HR
+    hroot = HR.host_root(a.set, a.host_root, dry=a.dry_host_root)
     if a.cmd == "assemble":
-        r = assemble(a.set, a.gun_dir, a.sim, a.root, a.tables, a.lookup, csv_tar=a.csv_tar, overwrite=a.overwrite)
+        r = assemble(a.set, a.gun_dir, a.sim, a.root, a.tables, a.lookup, host_root=hroot, csv_tar=a.csv_tar,
+                     overwrite=a.overwrite)
         print(json.dumps({"events": r["meta"]["n_events_converted"], "csv_tar": r["csv_tar"],
                           "sidecar": r["sidecar"]["events"]}, indent=1, default=str))
     else:
-        r = verify_set(a.set, a.root)
+        r = verify_set(a.set, a.root, host_root=hroot)
         print(json.dumps({k: r[k] for k in ("set", "events", "problems")}, indent=1))
         if r["problems"]:
             raise SystemExit(1)

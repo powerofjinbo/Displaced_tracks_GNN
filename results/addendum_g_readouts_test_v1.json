@@ -1,0 +1,177 @@
+{
+ "checks": {
+  "paired_claim_equals_g1": true,
+  "lx": {
+   "canto_l_ttbar_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "canto_l_ttbar",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:36:58+00:00"
+   },
+   "canto_l_ttbar_s1": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "canto_l_ttbar",
+    "seed": 1,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:37:39+00:00"
+   },
+   "canto_l_ttbar_s2": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "canto_l_ttbar",
+    "seed": 2,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:38:14+00:00"
+   },
+   "acorn_hnl_lm_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_lm",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:38:44+00:00"
+   },
+   "acorn_hnl_lm_s1": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_lm",
+    "seed": 1,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:39:13+00:00"
+   },
+   "acorn_hnl_lm_s2": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_lm",
+    "seed": 2,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:39:42+00:00"
+   },
+   "acorn_ttbar_lm_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_ttbar_lm",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:40:16+00:00"
+   },
+   "acorn_ttbar_lm_s1": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_ttbar_lm",
+    "seed": 1,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:40:50+00:00"
+   },
+   "acorn_ttbar_lm_s2": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_ttbar_lm",
+    "seed": 2,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:41:31+00:00"
+   },
+   "acorn_hnl_cc_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_cc",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:42:10+00:00"
+   },
+   "acorn_hnl_cc_s1": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_cc",
+    "seed": 1,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:43:00+00:00"
+   },
+   "acorn_hnl_cc_s2": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "acorn_hnl_cc",
+    "seed": 2,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:43:31+00:00"
+   },
+   "canto_l_hnl_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "canto_l_hnl",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:44:00+00:00"
+   },
+   "canto_l_tthnl_s0": {
+    "mismatches": 0,
+    "hits": 20058193,
+    "hits_exchanged": 1344107,
+    "events": 9618,
+    "model": "canto_l_tthnl",
+    "seed": 0,
+    "set": "test",
+    "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+    "slurm_job": "6820174",
+    "finished_utc": "2026-10-15T19:44:32+00:00"
+   }
+  }
+ },
+ "git": "7604541ceee19a708382d1de9054573fc94d3b09",
+ "eval_root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/addendum_g_v1/eval"
+}

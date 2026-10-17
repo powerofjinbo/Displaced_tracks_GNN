@@ -1,0 +1,1209 @@
+{
+ "record": "addendum H section 7 read-outs on H-val (descriptive val, no claim)",
+ "set": "hval",
+ "code": "hnl.overlay.readouts (052dfe9; run at 3e7fd25)",
+ "conditions": {
+  "full": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/hval_full",
+   "sha256": {
+    "per_event.parquet": "87d67899662a9b472b9244458545d527f10bdfbdcc9c353c1a39a9ab80bd9d99",
+    "loss.parquet": "4d45d1879e81ab2468f239ed75a35e8c406fbe1f2a87eed3d3286e202c9516c7",
+    "summary.json": "d24dd03a3ad6852d2d7ebb3e642292b8dfc4a35cd20917df7050a7fc66f7c258"
+   },
+   "inputs": {
+    "sealed": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/sealed/hval_full",
+    "manifest_sha256": "a88f9e31697c2be24c19bb0768220b7ab4c1208446fc2d1769299dcc29939b55",
+    "kind": "sealed"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3",
+     "val_config": 90
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1",
+     "val_config": 88
+    },
+    {
+     "name": "WP-R-P2",
+     "family": "mwslmerge",
+     "params": "0.5",
+     "val_config": 91
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8",
+     "val_config": 15
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 150,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/signatures_h_v1/twins_tp_v1_val.json",
+    "sha256": "9713c554efb03818db11b95461a14d55c407a14a34461b3e074020c42a93b8ef"
+   },
+   "jobs": [
+    "6831189",
+    "6831190",
+    "6831185"
+   ],
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.017090289102777483,
+      "sd_boot": 0.00019815573511961982,
+      "num": 19356,
+      "den": 1132573
+     },
+     "duplicate_rate": {
+      "value": 0.0002997116773663735,
+      "sd_boot": 4.569357457150595e-05,
+      "num": 50,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9945512417054794,
+      "sd_boot": 0.00019680731356223668,
+      "num": 165918,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.046,
+      "sd_boot": 0.0055701107750088345,
+      "num": 69,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.00356478611283323,
+      "sd_boot": 0.0004320497656956918,
+      "num": 69,
+      "den": 19356
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9983154321613132,
+      "sd_boot": 0.00010426099983772347,
+      "num": 157638,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.017091198735465232,
+      "sd_boot": 0.0001982131244062996,
+      "num": 19333,
+      "den": 1131167
+     },
+     "host_trackml_score": {
+      "value": 0.966147383990524,
+      "events": 150
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9982512655315232,
+        "sd_boot": 0.00030162728410643256,
+        "num": 10846,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.017471883210167342,
+        "sd_boot": 0.000703409077632451,
+        "num": 1350,
+        "den": 77267
+       },
+       "host_trackml_score": 0.9653846531973876
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9983201735593958,
+        "sd_boot": 0.00010322200563044021,
+        "num": 146792,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.01706328873707183,
+        "sd_boot": 0.00018820646136988517,
+        "num": 17983,
+        "den": 1053900
+       },
+       "host_trackml_score": 0.9662018647614624
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.01746538457806542,
+      "sd_boot": 0.00020455520001574557,
+      "num": 19800,
+      "den": 1133671
+     },
+     "duplicate_rate": {
+      "value": 0.00027573474317706364,
+      "sd_boot": 4.1856644961090625e-05,
+      "num": 46,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9943534319984175,
+      "sd_boot": 0.0002008463845202512,
+      "num": 165885,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.068,
+      "sd_boot": 0.007587337715525855,
+      "num": 102,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.005151515151515152,
+      "sd_boot": 0.0005693088475898565,
+      "num": 102,
+      "den": 19800
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9981761070017225,
+      "sd_boot": 0.0001077264951159661,
+      "num": 157616,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.01746071559788599,
+      "sd_boot": 0.00020447416291254574,
+      "num": 19770,
+      "den": 1132256
+     },
+     "host_trackml_score": {
+      "value": 0.9664083711173096,
+      "events": 150
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.998067188219052,
+        "sd_boot": 0.00034916790481329417,
+        "num": 10844,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.017831973413678506,
+        "sd_boot": 0.0007106121669461324,
+        "num": 1379,
+        "den": 77333
+       },
+       "host_trackml_score": 0.9655867252945562
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9981841552241242,
+        "sd_boot": 0.00010757912789417487,
+        "num": 146772,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.017433499885773654,
+        "sd_boot": 0.00019715320447143361,
+        "num": 18391,
+        "den": 1054923
+       },
+       "host_trackml_score": 0.9664670601046489
+      }
+     }
+    },
+    "WP-R-P2": {
+     "fake_rate": {
+      "value": 0.0172829670742166,
+      "sd_boot": 0.00020281510439566986,
+      "num": 19568,
+      "den": 1132213
+     },
+     "duplicate_rate": {
+      "value": 0.00035965401283964823,
+      "sd_boot": 4.696239415680511e-05,
+      "num": 60,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9945872071067633,
+      "sd_boot": 0.00019575101479986598,
+      "num": 165924,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.04,
+      "sd_boot": 0.005388504881560942,
+      "num": 60,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.003066230580539657,
+      "sd_boot": 0.000416532816656336,
+      "num": 60,
+      "den": 19568
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9983407640085115,
+      "sd_boot": 0.00010168730568237945,
+      "num": 157642,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.01728492446136051,
+      "sd_boot": 0.00020316791156504003,
+      "num": 19546,
+      "den": 1130812
+     },
+     "host_trackml_score": {
+      "value": 0.9657664787706753,
+      "events": 150
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9981592268752876,
+        "sd_boot": 0.0003189320122916479,
+        "num": 10845,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.017763507127413026,
+        "sd_boot": 0.0007468160836231956,
+        "num": 1372,
+        "den": 77237
+       },
+       "host_trackml_score": 0.9649366605969408
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9983541781432137,
+        "sd_boot": 0.00010032246758241812,
+        "num": 146797,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.01724983983105142,
+        "sd_boot": 0.00019447278355568068,
+        "num": 18174,
+        "den": 1053575
+       },
+       "host_trackml_score": 0.9658257514973706
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.04160797949534823,
+      "sd_boot": 0.0004206819597306731,
+      "num": 46704,
+      "den": 1122477
+     },
+     "duplicate_rate": {
+      "value": 0.007450832299328047,
+      "sd_boot": 0.000262443886317649,
+      "num": 1243,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9911764882183339,
+      "sd_boot": 0.0002880428045124396,
+      "num": 165355,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.019333333333333334,
+      "sd_boot": 0.003777970341012873,
+      "num": 29,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.0006209318259677972,
+      "sd_boot": 0.0001230829720821442,
+      "num": 29,
+      "den": 46704
+     },
+     "host_prompt_efficiency": {
+      "value": 0.99583291113588,
+      "sd_boot": 0.00023844318310727803,
+      "num": 157246,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.041632069893360185,
+      "sd_boot": 0.00042127203301052784,
+      "num": 46680,
+      "den": 1121251
+     },
+     "host_trackml_score": {
+      "value": 0.9430050147351687,
+      "events": 150
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9943856419696272,
+        "sd_boot": 0.0009585918904589908,
+        "num": 10804,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.04270467282394284,
+        "sd_boot": 0.001760360489745205,
+        "num": 3269,
+        "den": 76549
+       },
+       "host_trackml_score": 0.9410387001447255
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9959398526921429,
+        "sd_boot": 0.00022734397052130522,
+        "num": 146442,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.041553476493775256,
+        "sd_boot": 0.00041445009486758446,
+        "num": 43411,
+        "den": 1044702
+       },
+       "host_trackml_score": 0.9431454657773433
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 793,
+      "outcome": {
+       "contaminated": 5,
+       "found": 591,
+       "gnn": 74,
+       "graph": 122,
+       "split": 1
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 2,
+        "found": 295,
+        "gnn": 33,
+        "graph": 59,
+        "split": 1
+       },
+       "-": {
+        "contaminated": 3,
+        "found": 296,
+        "gnn": 41,
+        "graph": 63,
+        "split": 0
+       }
+      }
+     },
+     "P_D": {
+      "n": 508,
+      "outcome": {
+       "contaminated": 3,
+       "found": 407,
+       "gnn": 45,
+       "graph": 51,
+       "split": 2
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 1,
+        "found": 191,
+        "gnn": 19,
+        "graph": 29,
+        "split": 1
+       },
+       "-": {
+        "contaminated": 2,
+        "found": 216,
+        "gnn": 26,
+        "graph": 22,
+        "split": 1
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 216,
+      "outcome": {
+       "found": 212,
+       "graph": 4
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 116,
+        "graph": 2
+       },
+       "-": {
+        "found": 96,
+        "graph": 2
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 1517,
+      "outcome": {
+       "contaminated": 8,
+       "found": 1210,
+       "gnn": 119,
+       "graph": 177,
+       "split": 3
+      },
+      "by_eta_sign": {
+       "+": {
+        "contaminated": 3,
+        "found": 602,
+        "gnn": 52,
+        "graph": 90,
+        "split": 2
+       },
+       "-": {
+        "contaminated": 5,
+        "found": 608,
+        "gnn": 67,
+        "graph": 87,
+        "split": 1
+       }
+      }
+     }
+    }
+   }
+  },
+  "1gev": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/hval_1gev",
+   "sha256": {
+    "per_event.parquet": "c9fec803e45549bfa51d6ed029579c6f046ea74f995bfd3fcf5eec2ed4d8fcdd",
+    "loss.parquet": "61cbb3ba3153c6d27cfa1bde36ab15eeea12b9b229a596331d93da04fc8be154",
+    "summary.json": "2d7d4d43e4817b03ac936f625b0bbd12d47f5c0f603d67dfb574e12ec01a985c"
+   },
+   "inputs": {
+    "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/hval_1gev",
+    "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/hval_1gev/scores",
+    "grid_per_event_sha256": "3d459bc2df41e693acad39c0b848ddc77feb570eb17672370317119775ff0ed4",
+    "kind": "grid"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3"
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1"
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8"
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 150,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/signatures_h_v1/twins_tp_v1_val.json",
+    "sha256": "9713c554efb03818db11b95461a14d55c407a14a34461b3e074020c42a93b8ef"
+   },
+   "jobs": "6831186",
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.0007111003977341208,
+      "sd_boot": 6.75211915966375e-05,
+      "num": 118,
+      "den": 165940
+     },
+     "duplicate_rate": {
+      "value": 0.00013786737158853182,
+      "sd_boot": 2.915122121359211e-05,
+      "num": 23,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9955642671749777,
+      "sd_boot": 0.00017643584592604445,
+      "num": 166087,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.0026666666666666666,
+      "sd_boot": 0.0016225882707896417,
+      "num": 4,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.03389830508474576,
+      "sd_boot": 0.020772679954320764,
+      "num": 4,
+      "den": 118
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9992210456986523,
+      "sd_boot": 7.566384747948622e-05,
+      "num": 157781,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.0006916846160847011,
+      "sd_boot": 6.782093800884888e-05,
+      "num": 114,
+      "den": 164815
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9987114588127013,
+        "sd_boot": 0.00026056520334661416,
+        "num": 10851,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.0007940709370037057,
+        "sd_boot": 0.00027716714453153185,
+        "num": 9,
+        "den": 11334
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9992587000727698,
+        "sd_boot": 7.79770760937407e-05,
+        "num": 146930,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.000684123767762785,
+        "sd_boot": 7.145388446261854e-05,
+        "num": 105,
+        "den": 153481
+       }
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.0007352320802246677,
+      "sd_boot": 6.782981044537917e-05,
+      "num": 122,
+      "den": 165934
+     },
+     "duplicate_rate": {
+      "value": 0.00013786737158853182,
+      "sd_boot": 2.915122121359211e-05,
+      "num": 23,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9954923363724097,
+      "sd_boot": 0.00017730403483952177,
+      "num": 166075,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.004,
+      "sd_boot": 0.0018657021078879183,
+      "num": 6,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.04918032786885246,
+      "sd_boot": 0.022908338440196706,
+      "num": 6,
+      "den": 122
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9991893808896545,
+      "sd_boot": 7.733803894340138e-05,
+      "num": 157776,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.000703845057005382,
+      "sd_boot": 6.757619239918753e-05,
+      "num": 116,
+      "den": 164809
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9986194201564658,
+        "sd_boot": 0.0002924021130017271,
+        "num": 10850,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.0007941410041471808,
+        "sd_boot": 0.0002772176942398105,
+        "num": 9,
+        "den": 11333
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9992314964057155,
+        "sd_boot": 8.005660503647804e-05,
+        "num": 146926,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.0006971774088456827,
+        "sd_boot": 7.123316235999184e-05,
+        "num": 107,
+        "den": 153476
+       }
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.008697113566656863,
+      "sd_boot": 0.0003576399606030596,
+      "num": 1449,
+      "den": 166607
+     },
+     "duplicate_rate": {
+      "value": 0.005850371942191612,
+      "sd_boot": 0.00024152257679809514,
+      "num": 976,
+      "den": 166827
+     },
+     "efficiency_all_targets": {
+      "value": 0.9918778135433712,
+      "sd_boot": 0.0002706644347090312,
+      "num": 165472,
+      "den": 166827
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.013333333333333334,
+      "sd_boot": 0.0031087754059443994,
+      "num": 20,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.013802622498274672,
+      "sd_boot": 0.003279900503218797,
+      "num": 20,
+      "den": 1449
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9966245313608268,
+      "sd_boot": 0.00020750801756142963,
+      "num": 157371,
+      "den": 157904
+     },
+     "host_fake_rate": {
+      "value": 0.008630217235069241,
+      "sd_boot": 0.0003602803842374374,
+      "num": 1429,
+      "den": 165581
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9957662218131615,
+        "sd_boot": 0.0006547686617465582,
+        "num": 10819,
+        "den": 10865
+       },
+       "host_fake_rate": {
+        "value": 0.010270365168539327,
+        "sd_boot": 0.0010304604673636313,
+        "num": 117,
+        "den": 11392
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9966879535361367,
+        "sd_boot": 0.00021896669057407884,
+        "num": 146552,
+        "den": 147039
+       },
+       "host_fake_rate": {
+        "value": 0.008509037609686814,
+        "sd_boot": 0.00036999453112320846,
+        "num": 1312,
+        "den": 154189
+       }
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 793,
+      "outcome": {
+       "found": 569,
+       "gnn": 97,
+       "graph": 125,
+       "split": 2
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 291,
+        "gnn": 38,
+        "graph": 60,
+        "split": 1
+       },
+       "-": {
+        "found": 278,
+        "gnn": 59,
+        "graph": 65,
+        "split": 1
+       }
+      }
+     },
+     "P_D": {
+      "n": 508,
+      "outcome": {
+       "found": 414,
+       "gnn": 39,
+       "graph": 54,
+       "split": 1
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 192,
+        "gnn": 19,
+        "graph": 30,
+        "split": 0
+       },
+       "-": {
+        "found": 222,
+        "gnn": 20,
+        "graph": 24,
+        "split": 1
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 216,
+      "outcome": {
+       "found": 212,
+       "gnn": 1,
+       "graph": 3
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 115,
+        "gnn": 1,
+        "graph": 2
+       },
+       "-": {
+        "found": 97,
+        "gnn": 0,
+        "graph": 1
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 1517,
+      "outcome": {
+       "found": 1195,
+       "gnn": 137,
+       "graph": 182,
+       "split": 3
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 598,
+        "gnn": 58,
+        "graph": 92,
+        "split": 1
+       },
+       "-": {
+        "found": 597,
+        "gnn": 79,
+        "graph": 90,
+        "split": 2
+       }
+      }
+     }
+    }
+   }
+  },
+  "hs": {
+   "dir": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/readouts/hval_hs",
+   "sha256": {
+    "per_event.parquet": "750b88f8114251cffe07245d723b61ba8308d8013a6d3fc8df70b1af3012f18f",
+    "loss.parquet": "b776e37b4ef5034979f6173c036b71979db1e04daf465b776d672cac1fa9cb70",
+    "summary.json": "ef7ddff133017a160e54cc54e63f364543bfdb8bc2cd81d7abdfa4eefe2f11ad"
+   },
+   "inputs": {
+    "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/hval_hs",
+    "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/hval_hs/scores",
+    "grid_per_event_sha256": "45e2d539028504556dbae356360312c74eed75c7537ff6a277e1d95d0853ac74",
+    "kind": "grid"
+   },
+   "configs": [
+    {
+     "name": "WP-A",
+     "family": "mwslmerge",
+     "params": "0.3"
+    },
+    {
+     "name": "WP-S",
+     "family": "mwslmerge",
+     "params": "0.1"
+    },
+    {
+     "name": "WP-R-P3",
+     "family": "cc",
+     "params": "0.8"
+    }
+   ],
+   "loss_config": "WP-A",
+   "n_events": 150,
+   "twins": {
+    "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/signatures_h_v1/twins_tp_v1_val.json",
+    "sha256": "9713c554efb03818db11b95461a14d55c407a14a34461b3e074020c42a93b8ef"
+   },
+   "jobs": "6831187",
+   "summary": {
+    "WP-A": {
+     "fake_rate": {
+      "value": 0.0072728686994399504,
+      "sd_boot": 0.0007073225087098438,
+      "num": 187,
+      "den": 25712
+     },
+     "duplicate_rate": {
+      "value": 0.00038643609313109847,
+      "sd_boot": 0.00018383124890616325,
+      "num": 4,
+      "den": 10351
+     },
+     "efficiency_all_targets": {
+      "value": 0.9641580523620906,
+      "sd_boot": 0.002119243272098325,
+      "num": 9980,
+      "den": 10351
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.009333333333333334,
+      "sd_boot": 0.002972849456330109,
+      "num": 14,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.0748663101604278,
+      "sd_boot": 0.023257572875145953,
+      "num": 14,
+      "den": 187
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9983231524733501,
+      "sd_boot": 0.00042701298395094454,
+      "num": 8335,
+      "den": 8349
+     },
+     "host_fake_rate": {
+      "value": 0.007182433819002668,
+      "sd_boot": 0.0007180770781694048,
+      "num": 175,
+      "den": 24365
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9964285714285714,
+        "sd_boot": 0.0023468440098621322,
+        "num": 558,
+        "den": 560
+       },
+       "host_fake_rate": {
+        "value": 0.011716461628588167,
+        "sd_boot": 0.004571125530876726,
+        "num": 20,
+        "den": 1707
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9984593657722429,
+        "sd_boot": 0.00045581681058922525,
+        "num": 7777,
+        "den": 7789
+       },
+       "host_fake_rate": {
+        "value": 0.006840850913584606,
+        "sd_boot": 0.0006724063782368359,
+        "num": 155,
+        "den": 22658
+       }
+      }
+     }
+    },
+    "WP-S": {
+     "fake_rate": {
+      "value": 0.007038967099634441,
+      "sd_boot": 0.0006595657596073881,
+      "num": 181,
+      "den": 25714
+     },
+     "duplicate_rate": {
+      "value": 0.00038643609313109847,
+      "sd_boot": 0.00018383124890616325,
+      "num": 4,
+      "den": 10351
+     },
+     "efficiency_all_targets": {
+      "value": 0.9638682252922423,
+      "sd_boot": 0.0021104843103409133,
+      "num": 9977,
+      "den": 10351
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.01,
+      "sd_boot": 0.003006357399590506,
+      "num": 15,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.08287292817679558,
+      "sd_boot": 0.024435399996769008,
+      "num": 15,
+      "den": 181
+     },
+     "host_prompt_efficiency": {
+      "value": 0.998203377650018,
+      "sd_boot": 0.0004422433225898963,
+      "num": 8334,
+      "den": 8349
+     },
+     "host_fake_rate": {
+      "value": 0.006895419471351174,
+      "sd_boot": 0.0006681385127372035,
+      "num": 168,
+      "den": 24364
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9964285714285714,
+        "sd_boot": 0.0023468440098621322,
+        "num": 558,
+        "den": 560
+       },
+       "host_fake_rate": {
+        "value": 0.010557184750733138,
+        "sd_boot": 0.004111646173031701,
+        "num": 18,
+        "den": 1705
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9983309795865964,
+        "sd_boot": 0.00046791440948036844,
+        "num": 7776,
+        "den": 7789
+       },
+       "host_fake_rate": {
+        "value": 0.006619886137958427,
+        "sd_boot": 0.0006353800243067369,
+        "num": 150,
+        "den": 22659
+       }
+      }
+     }
+    },
+    "WP-R-P3": {
+     "fake_rate": {
+      "value": 0.02697663347482842,
+      "sd_boot": 0.0021000042837901424,
+      "num": 680,
+      "den": 25207
+     },
+     "duplicate_rate": {
+      "value": 0.00627958651338035,
+      "sd_boot": 0.0011326270000797496,
+      "num": 65,
+      "den": 10351
+     },
+     "efficiency_all_targets": {
+      "value": 0.9499565259395227,
+      "sd_boot": 0.0026254985364048836,
+      "num": 9833,
+      "den": 10351
+     },
+     "fake_ge5_with_gun_hit_per_llp": {
+      "value": 0.021333333333333333,
+      "sd_boot": 0.004082535482970995,
+      "num": 32,
+      "den": 1500
+     },
+     "share_of_fakes_with_gun_hit": {
+      "value": 0.047058823529411764,
+      "sd_boot": 0.009157424113525523,
+      "num": 32,
+      "den": 680
+     },
+     "host_prompt_efficiency": {
+      "value": 0.9936519343633968,
+      "sd_boot": 0.0013535599155722882,
+      "num": 8296,
+      "den": 8349
+     },
+     "host_fake_rate": {
+      "value": 0.026985382917586308,
+      "sd_boot": 0.0021618550017276352,
+      "num": 648,
+      "den": 24013
+     },
+     "llp_rows_per_event": 10.0,
+     "by_hs_twin": {
+      "no_twin": {
+       "events": 10,
+       "host_prompt_efficiency": {
+        "value": 0.9892857142857143,
+        "sd_boot": 0.0055632581294733155,
+        "num": 554,
+        "den": 560
+       },
+       "host_fake_rate": {
+        "value": 0.04466944609886837,
+        "sd_boot": 0.014639137054899233,
+        "num": 75,
+        "den": 1679
+       }
+      },
+      "twin": {
+       "events": 140,
+       "host_prompt_efficiency": {
+        "value": 0.9939658492746181,
+        "sd_boot": 0.001283207992964532,
+        "num": 7742,
+        "den": 7789
+       },
+       "host_fake_rate": {
+        "value": 0.025655950568639743,
+        "sd_boot": 0.0018952357652355595,
+        "num": 573,
+        "den": 22334
+       }
+      }
+     }
+    },
+    "loss_stage": {
+     "config": "WP-A",
+     "P_P": {
+      "n": 793,
+      "outcome": {
+       "found": 548,
+       "gnn": 113,
+       "graph": 131,
+       "split": 1
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 286,
+        "gnn": 43,
+        "graph": 61,
+        "split": 0
+       },
+       "-": {
+        "found": 262,
+        "gnn": 70,
+        "graph": 70,
+        "split": 1
+       }
+      }
+     },
+     "P_D": {
+      "n": 508,
+      "outcome": {
+       "found": 408,
+       "gnn": 43,
+       "graph": 56,
+       "split": 1
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 188,
+        "gnn": 23,
+        "graph": 30,
+        "split": 0
+       },
+       "-": {
+        "found": 220,
+        "gnn": 20,
+        "graph": 26,
+        "split": 1
+       }
+      }
+     },
+     "other gun targets": {
+      "n": 216,
+      "outcome": {
+       "found": 216
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 118
+       },
+       "-": {
+        "found": 98
+       }
+      }
+     },
+     "all gun targets": {
+      "n": 1517,
+      "outcome": {
+       "found": 1172,
+       "gnn": 156,
+       "graph": 187,
+       "split": 2
+      },
+      "by_eta_sign": {
+       "+": {
+        "found": 592,
+        "gnn": 66,
+        "graph": 91,
+        "split": 0
+       },
+       "-": {
+        "found": 580,
+        "gnn": 90,
+        "graph": 96,
+        "split": 2
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

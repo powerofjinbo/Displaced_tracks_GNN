@@ -170,7 +170,7 @@ def closure_tables(modules, det, host, host_id, seed, work):
     work: an empty directory for the Fatras input and the closure truth."""
     nat = natives_of(host)
     oid = W.overlay_id("closure", host_id)
-    rec = CL.make_closure_set(nat.assign(event=host_id), {host_id: oid}, 990101, work)
+    rec = CL.make_closure_set(nat.assign(event=host_id), {host_id: oid}, 990101, work, fatras_events={host_id: 0})
     truth = pd.read_parquet(os.path.join(work, "closure_truth.parquet"))
     fp = pd.read_csv(W.FIO_path(work, 0), dtype={"particle_id": np.uint64})
     rows = CL.closure_rows(truth, fp)
@@ -184,8 +184,9 @@ def test_make_closure_set_and_rows(modules, det, tmp_path):
     host, _ = host_tables_of(modules, det, HOSTS[0])
     nat = natives_of(host).assign(event=HOSTS[0])
     oid = W.overlay_id("closure", HOSTS[0])
-    rec = CL.make_closure_set(nat, {HOSTS[0]: oid}, 990101, str(tmp_path))
+    rec = CL.make_closure_set(nat, {HOSTS[0]: oid}, 990101, str(tmp_path), fatras_events={HOSTS[0]: 0})
     assert rec["fatras_seed"] == 990114 and rec["events"][0]["overlay_event"] == oid == 51_021_117
+    assert rec["events"][0]["fatras_event"] == 0
     assert rec["events"][0]["n_particles"] == 4 and rec["populations"] == {"a": 2, "b": 1, "c": 1}
     fp = pd.read_csv(W.FIO_path(str(tmp_path), 0), dtype={"particle_id": np.uint64})
     assert list(fp.columns) == FIO.PARTICLE_COLUMNS and (fp.vt == 0).all() and (fp.process == 0).all()
@@ -420,3 +421,30 @@ def test_default_base_seed_is_the_split_h_closure_seed():
     with open(CL.SPLIT_H) as fh:
         s = json.load(fh)["sets"]["closure"]
     assert CL.default_base_seed() == int(s["base_seed"]) and s["k"] == W.SETS["closure"][0] == 1
+    assert CL.default_base_seed() == W.SETS["closure"][1] == 610_000_001
+
+
+def test_make_closure_set_numbers_hosts_by_the_closure_list(modules, det, tmp_path):
+    """Fatras event number = position of the host in the split file's closure list, also for a job with two hosts far
+    apart in that list; a host's Fatras input does not depend on the other hosts of the job."""
+    from hnl.overlay import split_h as SH
+    val = SH.load_split()["closure"]
+    h1, h2 = val[3], val[120]
+    host, _ = host_tables_of(modules, det, HOSTS[0])
+    nat = natives_of(host)
+    pop = pd.concat([nat.assign(event=h1), nat.assign(event=h2)], ignore_index=True)
+    fe = SH.fatras_event_numbers("closure", [h1, h2])
+    assert fe == {h1: 3, h2: 120}
+    rec = CL.make_closure_set(pop, {h: W.overlay_id("closure", h) for h in (h1, h2)}, 610_000_001,
+                              str(tmp_path / "two"), fatras_events=fe)
+    assert {e["host"]: e["fatras_event"] for e in rec["events"]} == fe
+    CL.make_closure_set(pop[pop.event == h2], {h2: W.overlay_id("closure", h2)}, 610_000_001, str(tmp_path / "one"),
+                        fatras_events={h2: 120})
+    a = open(W.FIO_path(str(tmp_path / "two"), 120), "rb").read()
+    assert a == open(W.FIO_path(str(tmp_path / "one"), 120), "rb").read()
+    assert not os.path.exists(W.FIO_path(str(tmp_path / "two"), 0))
+    t = pd.read_parquet(tmp_path / "two" / "closure_truth.parquet")
+    assert dict(zip(t.host, t.fatras_event)) == fe
+    with pytest.raises(ValueError):
+        CL.make_closure_set(pop, {h: W.overlay_id("closure", h) for h in (h1, h2)}, 610_000_001,
+                            str(tmp_path / "bad"), fatras_events={h1: 3})

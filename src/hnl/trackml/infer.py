@@ -33,6 +33,7 @@ import numpy as np
 import pandas as pd
 import torch
 
+from hnl.overlay import grant as GRANT
 from hnl.trackml import classifier as CL
 from hnl.trackml import config as CFG
 from hnl.trackml import sectors as S
@@ -138,7 +139,6 @@ def cmd_score(a, cfg):
     device = a.device or ("cuda" if torch.cuda.is_available() else "cpu")
     CFG.threads()
     spec = sector_layout(cfg, a.sectors)
-    model = None if a.oracle is not None else load_model(a.ckpt, device)
     paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")), os.path.basename(a.store.rstrip("/"))))
     if a.events:            # a named subset of a larger store (e.g. merge_train or dev in the S4 training store)
         want = set(CFG.event_set(a.events, cfg))
@@ -149,6 +149,9 @@ def cmd_score(a, cfg):
         paths = paths[50 * a.block:50 * a.block + 50]
         if not paths:
             raise SystemExit(f"block {a.block}: no events")
+    GRANT.check([event_from_eid(int(os.path.basename(p)[5:].split(".")[0])) for p in paths], ("model", "plumb"),
+                a.condition, out=a.out)        # overlay ids only under a grant (addendum H)
+    model = None if a.oracle is not None else load_model(a.ckpt, device)
     os.makedirs(a.out, exist_ok=True)
     meta = {"ckpt": a.ckpt, "ckpt_sha256": _sha256(a.ckpt) if a.ckpt else None, "oracle_sigma": a.oracle,
             "oracle_means": [a.oracle_true, a.oracle_fake] if a.oracle is not None else None,
@@ -188,10 +191,12 @@ def cmd_g2(a, cfg):
     from hnl.trackml.evaluate import event_counts
     g2 = cfg["classifier"]["gate_g2"]
     CFG.threads()
-    model = load_model(a.ckpt, "cpu")
-    spec = sector_layout(cfg, a.sectors)
     paths = sorted(load_datafiles_in_dir(os.path.dirname(a.store.rstrip("/")),
                                          os.path.basename(a.store.rstrip("/"))))[:int(a.events or g2["events"])]
+    GRANT.check([event_from_eid(int(os.path.basename(p)[5:].split(".")[0])) for p in paths], "model", "full",
+                out=a.out)          # overlay ids only under a grant (addendum H; never plumb, D6)
+    model = load_model(a.ckpt, "cpu")
+    spec = sector_layout(cfg, a.sectors)
     cfgs = [tuple([c.split(",")[0], *[float(x) for x in c.split(",")[1:]]]) for c in g2["configs"]]
     rows = []
     for p in paths:

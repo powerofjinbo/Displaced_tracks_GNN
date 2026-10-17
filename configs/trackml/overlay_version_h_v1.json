@@ -1,0 +1,96 @@
+{
+ "record": "addendum H overlay version (H-T0.5 step 4)",
+ "schema": 1,
+ "rules": "docs/preregistration_pileup.md sections 2, 7, 9.3 and 10 (H-T0.5 step 4); the H-test overlay is built with this overlay_hash and manifest, and the Version check of sections 9.2 and 9.4 (hnl.overlay.writer.version_check) compares every value a set records with them",
+ "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+ "emulation_hash": "2be64cc023c5b48a754a5d15618c1edf71a9f54726f2a5804cfa31177dc38b5d",
+ "passes": [
+  "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+ ],
+ "manifest": {
+  "code_sha256": {
+   "src/hnl/overlay/gun.py": "12142d097220257a72a3f4d4e8e6cd917c9b86de2dc9dcfbdcd7912eae80ca36",
+   "src/hnl/overlay/writer.py": "4b5e6086de5614ec7ead3ddded67f8fdf3daa7b3cde6108491c50920fb71ec88",
+   "src/hnl/overlay/fatras_io.py": "e7f25d72e444c5b7cc961be3f93bde30377af374da00b94ee1931395eb7d0d02",
+   "src/hnl/overlay/closure.py": "bab9e73bfd6068a697c5c93b5dd4eb056c90f0e20fdc478691d20fcce6db76bd",
+   "src/hnl/trackml/overlay_sim.py": "be4869b6314aa55634ba90b932c360fe39f618080309fed14b993c45e5b4c668",
+   "src/hnl/trackml/convert.py": "3f89fe6a3886bedf67b6cb1276c119b4f7b922386cf10c94fc4d46a9400f8fff",
+   "src/hnl/trackml/throughput.py": "5bcfc028400f99c81ad394f567bfc2e98ded33c529d38b7dbd94df4aa0324cc5",
+   "src/hnl/trackml/events.py": "44900748c71f8ff27e7fc0551b5281b122c306b8e535414a1a924fdedbaa2718",
+   "src/hnl/geometry/ids.py": "e64d818e9ff52dcff9bcf8cfb992a22a8df0630d6b6c23fb193a798a9e9cc2eb",
+   "scripts/acts/gun.py": "fa4e220b8a45090ff8775a45d9cac5573279f1ecd9f67d5f36573b46c7b72a23",
+   "scripts/acts/overlay_sim.py": "f4204296b1414ce7dc855ccfdc4a04c70e161a4bcb7d35493ed11a12c6b29aad"
+  },
+  "config_sha256": {
+   "configs/trackml/overlay_sim_v1.json": "d64ddafcf217f850211b90d0c2ec00c68d9aee258a08abe7dac5cda73338602a",
+   "configs/trackml/overlay_emulation_v1.json": "647b08258375fc20db5681fe9cecc675cdff79de0025bc594a4064ffb4feae62",
+   "configs/trackml/module_map_acts_zmirror_v1.csv": "88178fd6590e1077814489047ab3cb8d91723df9be20fa9cd05a460b151af9de"
+  },
+  "fatras_build": "/work/submit/jinboz1/hnl/acts/build-v15-zmirror",
+  "executable": "ActsExampleFatrasGeneric",
+  "executable_md5": "eebe8fae8e359c4b1bcde23ca923056b",
+  "field_map": "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+  "field_map_md5": "b5ad1cc518df604a7765706c0fef1d28",
+  "container": {
+   "tag": "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/atlas/centos7-atlasos:latest-gcc8",
+   "resolved_at_fatras": "/cvmfs/unpacked.cern.ch/.flat/ab/ab24281886428172bd0de6915596894920a8a5cd3b9aa7a057a2a356b03826a0",
+   "lcg_view": "/cvmfs/sft.cern.ch/lcg/views/LCG_97apython3/x86_64-centos7-gcc9-opt/setup.sh"
+  }
+ },
+ "restriction": null,
+ "descriptive": false,
+ "section_9_3": {
+  "pass": 1,
+  "decisive_gates": "every decisive gate passes, except the C1 confirmation, whose only failed rows (part 1 mean u bias of volume 12; part 2 u bias of volume 9) are carried as a flag under the logged decision of DECISIONS 2026-10-16 (reading A)",
+  "c1_flag_decision": {
+   "path": "configs/trackml/overlay_h_c1_flag_v1.json",
+   "sha256": "983c04c1f69af83120ee9695f4131301614c3e97bc833acb3c45df95d76bf640"
+  },
+  "forward_fallback_D12": "does not apply: V1 (a) passes in all and in each region; no restriction",
+  "descriptive": "no: H1 is decided",
+  "d7_record": "results/pileup_hp/h_t05_d7_v1.json (flags, lost share and the gate outcomes)"
+ },
+ "density_bins": {
+  "what": "local pileup hit density of section 7: tertiles over the H-val P_P targets, from truth",
+  "definition": "density of a target = mean, over the distinct modules (volume, layer, module) that hold its hits, of the number of host hits on the module in C-full (every hit whose particle is not a gun particle, vertex field 1001-1010; noise hits, pid 0, included); P_P targets of hnl.overlay.h1.gun_targets",
+  "unit": "host hits per module",
+  "quantile_method": "numpy.quantile, method linear (default), at 1/3 and 2/3",
+  "edges": [
+   0.0,
+   4.0,
+   5.714285714285714,
+   null
+  ],
+  "bins": [
+   "[0, q1)",
+   "[q1, q2)",
+   "[q2, inf)"
+  ],
+  "n_pp": 793,
+  "n_per_bin": [
+   243,
+   284,
+   266
+  ],
+  "source": {
+   "path": "results/pileup_hp/h_t05_truth_density_bins_v1.json",
+   "sha256": "a9eb473c68bfa5503013003c3eb8e44206546026928317b575ffbaa66f018c23",
+   "code": "results/pileup_hp/h_t05_truth_density_bins.py",
+   "code_sha256": "6468004c8b068dbaba958d9d7194967a7ee69917c62c679f83fdb5ac6a05d01f"
+  }
+ },
+ "sources": {
+  "meta_hval": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_hval.json",
+   "sha256": "8670092ca45b06c26353ad0381cbbbffaada8a9e35413936eab2c7d4f5990c73"
+  },
+  "meta_closure": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_closure.json",
+   "sha256": "0048d136eb148f4ac8b90607a196758f834d1a80e7edaf4c2e564995fe62216a"
+  },
+  "emulation_tables": {
+   "path": "configs/trackml/overlay_emulation_v1.json",
+   "sha256": "647b08258375fc20db5681fe9cecc675cdff79de0025bc594a4064ffb4feae62"
+  }
+ }
+}

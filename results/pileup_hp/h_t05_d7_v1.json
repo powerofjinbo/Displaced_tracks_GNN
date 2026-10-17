@@ -1,0 +1,215 @@
+{
+ "record": "addendum H decision D7",
+ "schema": 1,
+ "set": "hval",
+ "step": "H-T0.5 step 4",
+ "restriction": null,
+ "flags": [
+  "C1 confirmation (u bias, volumes 12 and 9)"
+ ],
+ "lost_share": 0.02319004524886878,
+ "descriptive": false,
+ "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+ "passes": [
+  "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+ ],
+ "derivation": {
+  "decisive_failed": [],
+  "fallback": false,
+  "regions_failed_v1a": [],
+  "not_informative": [],
+  "passes": 1,
+  "how": "every decisive gate passes or is not informative: no restriction, not descriptive; the C1 confirmation fails only in rows that the logged decision names (configs/trackml/overlay_h_c1_flag_v1.json) and is carried as the flag 'C1 confirmation (u bias, volumes 12 and 9)', not as a failed decisive gate",
+  "c1_flag": {
+   "used": true,
+   "decision": {
+    "path": "configs/trackml/overlay_h_c1_flag_v1.json",
+    "sha256": "983c04c1f69af83120ee9695f4131301614c3e97bc833acb3c45df95d76bf640",
+    "decision": "DECISIONS.md 2026-10-16: addendum H section 9.3 after the failed C1 confirmation (reading A)",
+    "first_overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+   },
+   "flag": "C1 confirmation (u bias, volumes 12 and 9)",
+   "covered_rows": {
+    "part1_failed_bins": [],
+    "part1_bias_u_volumes": [
+     12
+    ],
+    "part2_failed": [
+     {
+      "volume": 9,
+      "quantity": "bias_u"
+     }
+    ]
+   },
+   "how": "every failed C1 row is one the decision names: the C1 confirmation is carried as a flag, not as a failed decisive gate"
+  }
+ },
+ "gates": {
+  "per-set truth checks, H-val": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "failed_checks": [],
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  },
+  "per-set truth checks, closure": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "failed_checks": [],
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  },
+  "C1 confirmation": {
+   "kind": "decisive",
+   "outcome": "fail",
+   "part1": "fail",
+   "part2": "fail",
+   "part2_failed": [
+    {
+     "volume": 9,
+     "quantity": "bias_u"
+    }
+   ]
+  },
+  "closure truth gate": {
+   "kind": "flag",
+   "outcome": "pass",
+   "counted": 9,
+   "failed_cells": []
+  },
+  "V1 (a)": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "pairs": 3036,
+   "delta": 0.1646903820816874,
+   "limit": 1.0,
+   "passes_in_all": true,
+   "limit_region": 1.5,
+   "regions": {
+    "central": {
+     "pairs": 1170,
+     "delta": -0.2564102564102626,
+     "pass": true
+    },
+    "fwd+": {
+     "pairs": 966,
+     "delta": 0.10351966873706431,
+     "pass": true
+    },
+    "fwd-": {
+     "pairs": 900,
+     "delta": 0.7777777777777715,
+     "pass": true
+    }
+   }
+  },
+  "V1 (c)": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "pairs": 2241,
+   "delta": -0.044622936189199436,
+   "sigma_paired": 0.08219252322468898,
+   "limit": 0.2
+  },
+  "V1-Delta (a)": {
+   "kind": "decisive",
+   "outcome": "pass",
+   "pairs": 3036,
+   "difference": 0.0,
+   "sigma_paired": 0.16243255615064262,
+   "limit": 0.5
+  },
+  "V1 (b)": {
+   "kind": "flag",
+   "outcome": "pass",
+   "pairs": 365,
+   "delta": -0.27397260273972535,
+   "sigma_paired": 2.106140420509492,
+   "limit": 4.212280841018984
+  },
+  "V1 (d)": {
+   "kind": "flag",
+   "outcome": "pass",
+   "pairs": 323,
+   "delta": -0.9287925696594428,
+   "sigma_paired": 2.504894239858339,
+   "limit": 5.009788479716678
+  },
+  "V2": {
+   "kind": "flag",
+   "outcome": "pass",
+   "config": "WP-A",
+   "manifest_sha256": "a88f9e31697c2be24c19bb0768220b7ab4c1208446fc2d1769299dcc29939b55",
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+   "delta_prompt_eff_points": -0.0012665923599053386,
+   "delta_fake_rate_points": 0.005263586968380987,
+   "delta_trackml_score": -1.744342384490949e-05,
+   "within": {
+    "prompt_eff": true,
+    "fake_rate": true,
+    "trackml_score": true
+   }
+  }
+ },
+ "nav_losses": {
+  "gun_particles": 3994,
+  "lost": 77,
+  "pp_like": 1768,
+  "pp_like_lost": 41,
+  "pp_like_lost_share": 0.02319004524886878
+ },
+ "inputs": {
+  "truth_checks": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t05_truth_checks_hval_v1.json",
+   "sha256": "0ba69aa51e749c01cf4af41912140eddf9a22e57038cc3f3a719b5f3800763b1"
+  },
+  "closure_checks": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t05_truth_closure_checks_v1.json",
+   "sha256": "251db20c81299c926dc558063718ef38b0e4f2c18bb7fcc923c5e45a8755c8b8"
+  },
+  "c1_confirm": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t05_truth_c1_confirm_hval_v1.json",
+   "sha256": "af4b26996e61b585f7e3576688b488a3ceebbdfef4f4519eb2524561191ee760"
+  },
+  "closure_gate": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t05_truth_closure_gate_v1.json",
+   "sha256": "437cced47dece12bf56ba601e7a692ffc719cd286c16ec0261b073e221a38e6d"
+  },
+  "v1": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/v1_closure_v1.json",
+   "sha256": "2ba075ac8df8b1c0fc96dcad41fd9b034b64bf203948381ac076a0a43dc48e2a"
+  },
+  "v2": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/v2_hval_v1.json",
+   "sha256": "8e1c64a20ff90babdb7abfd687fe34af7236dcdd4ec27e7d1a1643311e8635dd"
+  },
+  "gun_content": {
+   "path": "/work/submit/jinboz1/hnl/hnl-displaced/results/pileup_hp/h_t05_truth_gun_content_hval_v1.json",
+   "sha256": "6070249d77594734fd3fafa84d4ef4ae12a1f6b6e09c0781c706170f767f190a"
+  },
+  "c1_flag_decision": {
+   "path": "configs/trackml/overlay_h_c1_flag_v1.json",
+   "sha256": "983c04c1f69af83120ee9695f4131301614c3e97bc833acb3c45df95d76bf640"
+  }
+ },
+ "metas": {
+  "hval": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_hval.json",
+   "sha256": "8670092ca45b06c26353ad0381cbbbffaada8a9e35413936eab2c7d4f5990c73",
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  },
+  "closure": {
+   "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_closure.json",
+   "sha256": "0048d136eb148f4ac8b90607a196758f834d1a80e7edaf4c2e564995fe62216a",
+   "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4"
+  }
+ },
+ "version_record": null,
+ "hval_record": null,
+ "rules": "docs/preregistration_pileup.md sections 6, 7, 9.3 and 10 (decision D7): the P_P restriction (forward fallback, decision D12), the failed flag gates, the navigator-loss share and the descriptive state of the decisive H1 runs; derived mechanically from the gate outputs of the committed version (hnl.overlay.d7record)",
+ "code": {
+  "module": "hnl.overlay.d7record",
+  "sha256": "f47d7c5d0c04976d7099fbbed4a3f0cd545290624b05beb64173337b694ba933",
+  "git": "1417d7f9cf6d93d5d3f93f05507abac6804b5701",
+  "repo_git": "1417d7f9cf6d93d5d3f93f05507abac6804b5701"
+ },
+ "written_utc": "2026-10-16T11:26:10+00:00"
+}

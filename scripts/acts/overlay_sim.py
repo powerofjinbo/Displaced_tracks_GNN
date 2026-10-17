@@ -7,7 +7,11 @@ ACTS v15 container (hnl.trackml.overlay_sim). No model is run and no model outpu
         the TrackML-like RZ field map, pMin 0.1 GeV, bremsstrahlung off (configs/trackml/overlay_sim_v1.json) ->
         event<N>-hits.csv, -particles_initial.csv, -particles_final.csv in OUT, plus fatras.log and
         sim_summary.json. Exits with 4 if any particle failed. The build directory is an argument: build-v15 now,
-        the patched build of plan section 3 once it exists.
+        the patched build of plan section 3 once it exists. Without --first and --events every event file of IN is
+        simulated under its own number N, one sequencer call per run of consecutive numbers
+        (hnl.trackml.overlay_sim.event_blocks): the Fatras event numbers of addendum H need not be contiguous in a
+        job. sim_summary.json lists the simulated event numbers, the calls, and the container directory the tag
+        resolved to.
     field-probe OUT --events N --per-event K --seed S
         the particle mix of the field study's probe (field_material/acts_probe.py gen: mu, pi, e in shares
         0.4 / 0.4 / 0.2, p ~ logU(0.5, 20) GeV, eta ~ U(-3, 3), vertex (0, 0, N(0, 55 mm))); with K >= 50 the first
@@ -193,37 +197,57 @@ def gun_probe(out: str, per_host: int, seed: int, hosts_spec: str = VAL_HOSTS) -
 
 # ------------------------------------------------------------------------------------------------ simulation
 def run_sim(inp: str, out: str, build: str, seed: int, first: int | None, events: int | None, threads: int,
-            settings_path: str, field_map: str | None, allow_failures: bool) -> int:
+            settings_path: str, field_map: str | None, allow_failures: bool, runner=subprocess.run) -> int:
     st = OS.load_settings(settings_path)
     fmap = os.path.abspath(field_map or st["field_map"]["path"])
     md5 = OS.file_md5(fmap)
     if field_map is None and md5 != st["field_map"]["md5"]:
         raise ValueError(f"field map md5 {md5} differs from {settings_path}")
-    skip, lo, n = OS.event_range(inp, first, events)
+    blocks = OS.event_blocks(inp) if first is None and events is None else [OS.event_range(inp, first, events)]
     os.makedirs(out, exist_ok=True)
     if os.listdir(out):
         raise FileExistsError(f"{out} is not empty")
-    args = OS.fatras_args(st, os.path.abspath(inp), os.path.abspath(out), seed, threads, skip, n, fmap)
-    cmd = OS.container_command(st, build, args, [inp, out, fmap])
+    container = {"container": st["container"], "container_resolved": os.path.realpath(st["container"]),
+                 "lcg_view": st["lcg_view"]}
     t0 = time.time()
-    proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    texts, calls, rc = [], [], 0
+    for skip, lo, n in blocks:
+        args = OS.fatras_args(st, os.path.abspath(inp), os.path.abspath(out), seed, threads, skip, n, fmap)
+        cmd = OS.container_command(st, build, args, [inp, out, fmap])
+        tb = time.time()
+        proc = runner(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        texts.append(f"# overlay_sim: events {lo}-{lo + n - 1} (--skip {skip} -n {n})\n{proc.stdout}")
+        blog = OS.parse_fatras_log(proc.stdout)
+        calls.append({"skip": skip, "first_event": lo, "events": n, "args": args, "returncode": proc.returncode,
+                      "events_processed": blog["events_processed"], "wall_s": round(time.time() - tb, 1)})
+        if proc.returncode != 0:
+            rc = proc.returncode
+            break
     dt = time.time() - t0
+    text = "".join(texts)
     with open(os.path.join(out, "fatras.log"), "w") as fh:
-        fh.write(proc.stdout)
-    log = OS.parse_fatras_log(proc.stdout)
+        fh.write(text)
+    log = OS.parse_fatras_log(text)
+    done = [c["events_processed"] for c in calls]
+    log["events_processed"] = None if None in done else int(sum(done))
+    n_all = int(sum(n for _, _, n in blocks))
     exe = os.path.join(build, "bin", st["executable"])
     summary = {"input_dir": os.path.abspath(inp), "output_dir": os.path.abspath(out), "build": os.path.abspath(build),
                "executable_md5": OS.file_md5(exe), "settings": st["version"], "fatras": st["fatras"],
-               "field_map": fmap, "field_map_md5": md5, "seed": seed, "first_event": lo, "events": n,
-               "threads": threads, "args": args, "returncode": proc.returncode, "wall_s": round(dt, 1), **log}
+               "field_map": fmap, "field_map_md5": md5, "seed": seed, "first_event": blocks[0][1], "events": n_all,
+               "fatras_events": [lo + i for _, lo, n in blocks for i in range(n)], **container,
+               "threads": threads, "args": calls[0]["args"], "calls": calls, "returncode": rc, "wall_s": round(dt, 1),
+               **log}
     with open(os.path.join(out, "sim_summary.json"), "w") as fh:
         json.dump(summary, fh, indent=1)
     print(json.dumps({k: summary[k] for k in ("returncode", "events_processed", "particle_failures", "error_lines",
-                                              "fatal_lines", "wall_s")}))
-    if proc.returncode != 0:
-        return proc.returncode
-    if log["events_processed"] != n:
-        print(f"processed {log['events_processed']} of {n} events", file=sys.stderr)
+                                              "fatal_lines", "wall_s")} | {"calls": len(calls)}))
+    if rc != 0:
+        return rc
+    short = [c for c in calls if c["events_processed"] != c["events"]]
+    if short:
+        print(f"processed fewer events than requested in {len(short)} calls: "
+              f"{[(c['first_event'], c['events'], c['events_processed']) for c in short][:5]}", file=sys.stderr)
         return 5
     if log["particle_failures"] and not allow_failures:
         return 4

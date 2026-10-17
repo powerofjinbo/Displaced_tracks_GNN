@@ -37,6 +37,7 @@ import time
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
 from hnl.trackml import events as E
 from hnl.trackml import sectors as S
 from hnl.trackml.split import REPO
@@ -184,6 +185,8 @@ def _store(ev: E.Event, pairs: np.ndarray, store: str) -> int:
 def cmd_graphs(a):
     import joblib
     import yaml
+    # overlay ids only under a grant of kind model (addendum H; never plumb: no number from a pilot output, D6)
+    GRANT.check([int(x) for x in a.events.split(",")], "model", "full", out=a.out)
     nth = _threads()
     os.makedirs(a.out, exist_ok=True)
     store = os.path.join(a.out, "store", "valset")
@@ -303,6 +306,7 @@ def _memory_worker(store_file: str, mode: str, spec_json: str, sector: int):
 def cmd_memory(a):
     store = os.path.join(a.store, "valset")
     files = sorted(f for f in os.listdir(store) if f.endswith(".pyg.gz"))
+    GRANT.check_store(files[:a.max_events], "model", out=a.out)   # overlay events only under a grant (addendum H)
     from hnl.trackml import classifier as CL
     jobs = []
     for f in files[:a.max_events]:
@@ -348,6 +352,7 @@ def cmd_memory(a):
 # ------------------------------------------------------------------------------------------------ support exactness
 def cmd_check_support(a):
     import joblib
+    GRANT.check([a.event], "model", "full", out=a.out)            # overlay ids only under a grant (addendum H)
     _threads()
     model = joblib.load(a.ltf_model)
     ev = E.load_events([a.event])[a.event]

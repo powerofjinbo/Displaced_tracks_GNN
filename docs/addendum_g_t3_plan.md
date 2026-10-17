@@ -95,10 +95,26 @@ selection.
 - **D-g5 Chunks and GPU types.** Training runs as resumable 1-h chunks (docs/training_sample_study.md D5) on
   submit-gpu-express: metric learning on A30 or V100 (FRNN has no sm_61 or sm_75 kernel); acorn's edge classifier on
   A30, V100, RTX 6000 or GTX 1080 Ti; the Canto-L classifier on A30, V100 or RTX 6000 (arm (iii)'s ran out of memory on
-  the 11 GB GTX 1080 Ti). Stage 0 ran on A30s in one job per stage. The GPU of every chunk is in its run record.
-- **D-g6 CPU jobs** exclude the A30 and GTX 1080 nodes and run as 1-h pieces on the express tier first (the CPU
-  partition is saturated): the union graphs in blocks of at most 700 events (`hnl.eval.addendum_g_t3 union-block`;
-  each event is built on its own, so the gathered graphs equal a single job's), the menu grids in 4 blocks.
+  the 11 GB GTX 1080 Ti). The GTX 1080 Ti was dropped from acorn's chunks on 2026-10-15 00:30 UTC, after its first
+  chunks, because its chunks take about twice as long and count against the GPU-hour stop (section 8). Stage 0 ran on A30s in one job per stage. The GPU of every chunk is in its run record.
+- **D-g6 CPU jobs** exclude the GTX 1080 nodes (and, until 2026-10-15 ~18:53 UTC, the A30 nodes) and run as 1-h pieces on the express tier first (the CPU
+  partition is saturated): the union graphs in blocks of at most 320 events on 12 CPUs (first 700 on 24 CPUs; changed on
+  2026-10-15 before any block ran, because free memory on the CPU nodes was too fragmented for 48 GB jobs) (`hnl.eval.addendum_g_t3 union-block`;
+  each event is built on its own, so the gathered graphs equal a single job's), the menu grids in 4 blocks. While the G1 test arrays of T2 ran (coordinator, 2026-10-15; submit37 drained for an
+  upgrade since 2026-10-14 20:27 UTC, so these CPUs were scarce), T3's CPU jobs and training-graph scores were
+  submitted at --nice=20 (the first 32 pending ones were set to it by the coordinator), so that G1 ran first. The GTX
+  1080 nodes cannot run the union step (probe 6821144 on submit60: worker processes die; Polars needs AVX2) and stay
+  excluded for CPU work. Two more nice-20 periods (coordinator), while G1's last jobs waited on submit77-1:
+  2026-10-15 ~17:50-18:15 UTC, until g_summary_test 6820173 started; and from 18:38 UTC until g_readouts_test 6820174
+  started (period ended at 19:37:35 UTC). The user lifted the A30 restriction for CPU jobs on 2026-10-15 at ~18:53 UTC (relayed
+  by the coordinator; it supersedes a narrower lane exception that was never put in place): from then on T3's CPU
+  jobs exclude only submit00-01 and the GTX 1080 nodes (Polars needs AVX2), and the coordinator removed the A30 nodes
+  from the exclude lists of the 70 pending jobs (`logs/a30_unexclude.log`). Where a job runs does not change its
+  output: every event is built, scored and evaluated on its own, deterministically. After each split's union blocks were gathered into ltf_union_graphs/<split>set.tar (exact membership
+  checked by `union-gather`), the 195 block tars (3 seeds x 65 blocks) were removed on 2026-10-16 ~07:30 UTC after a
+  size check against the gathered tars (they differ only by the per-tar end-of-archive padding), freeing 20.27 GB
+  (20,268,738,560 bytes); the blocks' reports, provenance and done markers stay, each marked `pruned` (the T2 chain's
+  gather step removes its union blocks the same way).
 - **D-g7 Training-graph scores for learned merging on a GPU** (`score_split_sample.sbatch` with ACCEL=gpu): the CPU
   was the fallback when no GPU was free (`hnl.train.acorn_runner.infer`); float32 numerics differ at the 1e-6 level.
 

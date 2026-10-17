@@ -26,18 +26,21 @@ import time
 import numpy as np
 import pandas as pd
 
+from hnl.overlay import grant as GRANT
+
 
 def cmd_rebuild(a, cfg) -> None:
     from hnl.trackml import config as CFG
     from hnl.trackml import events as E
     from hnl.trackml import trackbuild as TB
     from hnl.trackml.evaluate import event_counts
-    cfgs, names = TB.explicit_configs(a.configs)
     events = CFG.event_set(a.events, cfg, allow_test=a.allow_test)
     if a.block is not None:
         events = events[a.block * a.block_size:(a.block + 1) * a.block_size]
         if not events:
             raise SystemExit(f"block {a.block} of size {a.block_size} is empty")
+    GRANT.check(events, "eval", a.condition, out=a.out)        # overlay ids only under a grant (addendum H), before
+    cfgs, names = TB.explicit_configs(a.configs)               # any input, the merge model or a score is read
     model = None
     if any(c[0] == "mwslmerge" for c in cfgs):
         import joblib

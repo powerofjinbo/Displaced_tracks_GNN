@@ -1,0 +1,13 @@
+sample,population,A,B,delta_points,sigma_points,z
+generic_iso,P_G,Canto-L (ttbar),acorn (HNL) + LM,2.3191733639494783,0.27929769909842683,8.303589221951244
+generic_iso,P_G,Canto-L (ttbar),acorn (ttbar) + LM,5.5759663222349705,0.762114482307046,7.316441888567191
+generic_iso,P_G,Canto-L (ttbar),acorn (HNL) + CC,10.221967087638728,0.636037817646913,16.071319666896443
+generic_iso,displaced-source targets,Canto-L (ttbar),acorn (HNL) + LM,2.0232140566884826,0.23772421072978991,8.510761484820645
+generic_iso,displaced-source targets,Canto-L (ttbar),acorn (ttbar) + LM,4.809542131589096,0.643808187316209,7.470458168042633
+generic_iso,displaced-source targets,Canto-L (ttbar),acorn (HNL) + CC,10.353341028600749,0.7507498573054086,13.790666661943781
+generic_dense,P_dense,Canto-L (ttbar),acorn (HNL) + LM,2.9598218110168717,0.3145558075682793,9.409528420086144
+generic_dense,P_dense,Canto-L (ttbar),acorn (ttbar) + LM,4.5104086353122685,0.8403932762018401,5.367021325654905
+generic_dense,P_dense,Canto-L (ttbar),acorn (HNL) + CC,14.435020988606183,1.099062215268065,13.13394345477106
+generic_dense,displaced-source targets,Canto-L (ttbar),acorn (HNL) + LM,2.608539648367414,0.25719633445947715,10.142211605968301
+generic_dense,displaced-source targets,Canto-L (ttbar),acorn (ttbar) + LM,3.8858988159311103,0.7207524062523999,5.391447579254157
+generic_dense,displaced-source targets,Canto-L (ttbar),acorn (HNL) + CC,14.546106925008973,1.0849356443529652,13.407345404052968

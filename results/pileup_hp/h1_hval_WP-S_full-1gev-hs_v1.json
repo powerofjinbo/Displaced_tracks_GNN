@@ -1,0 +1,453 @@
+{
+ "label": "H-val, frozen Canto-L (TrackML) at WP-S: the val estimate of H1 (no claim)",
+ "set": "hval",
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "events": 150,
+ "sources": {
+  "full": {
+   "sealed": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/sealed/hval_full",
+   "manifest_sha256": "a88f9e31697c2be24c19bb0768220b7ab4c1208446fc2d1769299dcc29939b55",
+   "placeholder": false
+  },
+  "1gev": {
+   "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/hval_1gev",
+   "placeholder": false,
+   "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/hval_1gev/scores",
+   "git": "8daa282be6c9dd2da71b6a75ee2a5f5ec4110d07"
+  },
+  "hs": {
+   "grid": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/grid/hval_hs",
+   "placeholder": false,
+   "scores": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/model/hval_hs/scores",
+   "git": "8daa282be6c9dd2da71b6a75ee2a5f5ec4110d07"
+  }
+ },
+ "restriction_record": {
+  "path": "results/pileup_hp/h_t05_d7_v1.json",
+  "sha256": "fdb9baabac4ceb36d9385482661af66747784dce3255dcb510729d010bb151fd",
+  "restriction": null,
+  "flags": [
+   "C1 confirmation (u bias, volumes 12 and 9)"
+  ],
+  "lost_share": 0.02319004524886878,
+  "descriptive": false
+ },
+ "restriction": null,
+ "h1": {
+  "n_events": 150,
+  "n_pp": 793,
+  "eps_full": 74.27490542244641,
+  "eps_1gev": 71.62673392181588,
+  "delta": 2.648171500630525,
+  "sigma": 1.2048889828362044,
+  "B": 500,
+  "seed": 12345,
+  "ddof": 1,
+  "margin": 1.0,
+  "index_table_check": {
+   "full": {
+    "evaluate_bootstrap_std": 0.01720965466866799,
+    "index_table_std": 0.01720965466866799,
+    "equal": true
+   },
+   "1gev": {
+    "evaluate_bootstrap_std": 0.017212805936401745,
+    "index_table_std": 0.017212805936401745,
+    "equal": true
+   }
+  },
+  "underpowered": true,
+  "flags": [
+   "C1 confirmation (u bias, volumes 12 and 9)"
+  ],
+  "outcome": "holds",
+  "label": "holds; underpowered (fewer than 1,000 P_P targets); flags: C1 confirmation (u bias, volumes 12 and 9)"
+ },
+ "without_soft_siblings": {
+  "pp_with_soft_sibling": 69,
+  "n": 724,
+  "eps_a": 73.34254143646409,
+  "eps_b": 70.58011049723757,
+  "delta": 2.762430939226519,
+  "sigma": 1.2896017654736205,
+  "n_events": 150,
+  "B": 500,
+  "seed": 12345
+ },
+ "bins": {
+  "|d0| [mm]": [
+   {
+    "bin": "[0.0, 0.1)",
+    "n": 0,
+    "delta": NaN
+   },
+   {
+    "bin": "[0.1, 1.0)",
+    "n": 9,
+    "eps_full": 100.0,
+    "eps_1gev": 100.0,
+    "delta": 0.0,
+    "sigma": 0.0
+   },
+   {
+    "bin": "[1.0, 3.0)",
+    "n": 31,
+    "eps_full": 96.7741935483871,
+    "eps_1gev": 80.64516129032258,
+    "delta": 16.129032258064527,
+    "sigma": 8.033680274971898
+   },
+   {
+    "bin": "[3.0, 10.0)",
+    "n": 88,
+    "eps_full": 98.86363636363636,
+    "eps_1gev": 88.63636363636364,
+    "delta": 10.22727272727272,
+    "sigma": 3.2667224224870437
+   },
+   {
+    "bin": "[10.0, 30.0)",
+    "n": 230,
+    "eps_full": 90.8695652173913,
+    "eps_1gev": 85.65217391304348,
+    "delta": 5.217391304347814,
+    "sigma": 1.9554187483407321
+   },
+   {
+    "bin": "[30.0, 100.0)",
+    "n": 267,
+    "eps_full": 74.15730337078652,
+    "eps_1gev": 71.91011235955057,
+    "delta": 2.247191011235955,
+    "sigma": 1.9912679498312365
+   },
+   {
+    "bin": "[100.0, 300.0)",
+    "n": 150,
+    "eps_full": 35.333333333333336,
+    "eps_1gev": 40.666666666666664,
+    "delta": -5.333333333333329,
+    "sigma": 2.8757073154986954
+   },
+   {
+    "bin": "[300.0, inf)",
+    "n": 18,
+    "eps_full": 16.666666666666668,
+    "eps_1gev": 33.333333333333336,
+    "delta": -16.666666666666668,
+    "sigma": 12.07624065808775
+   }
+  ],
+  "r_v [mm]": [
+   {
+    "bin": "[0.0, 10.0)",
+    "n": 0,
+    "delta": NaN
+   },
+   {
+    "bin": "[10.0, 30.0)",
+    "n": 15,
+    "eps_full": 100.0,
+    "eps_1gev": 100.0,
+    "delta": 0.0,
+    "sigma": 0.0
+   },
+   {
+    "bin": "[30.0, 100.0)",
+    "n": 111,
+    "eps_full": 81.98198198198199,
+    "eps_1gev": 83.78378378378379,
+    "delta": -1.8018018018018012,
+    "sigma": 2.2149039755440496
+   },
+   {
+    "bin": "[100.0, 200.0)",
+    "n": 224,
+    "eps_full": 73.66071428571429,
+    "eps_1gev": 75.0,
+    "delta": -1.3392857142857082,
+    "sigma": 1.5219591668787342
+   },
+   {
+    "bin": "[200.0, 300.0)",
+    "n": 219,
+    "eps_full": 72.14611872146119,
+    "eps_1gev": 63.926940639269404,
+    "delta": 8.219178082191789,
+    "sigma": 2.77106379745813
+   },
+   {
+    "bin": "[300.0, 450.0)",
+    "n": 155,
+    "eps_full": 72.25806451612904,
+    "eps_1gev": 70.3225806451613,
+    "delta": 1.9354838709677438,
+    "sigma": 3.1909897069519007
+   },
+   {
+    "bin": "[450.0, 650.0)",
+    "n": 63,
+    "eps_full": 71.42857142857143,
+    "eps_1gev": 65.07936507936508,
+    "delta": 6.349206349206355,
+    "sigma": 4.185805804738292
+   },
+   {
+    "bin": "[650.0, inf)",
+    "n": 6,
+    "eps_full": 50.0,
+    "eps_1gev": 33.333333333333336,
+    "delta": 16.666666666666664,
+    "sigma": 16.73721986893705
+   }
+  ],
+  "first-hit radius [mm]": [
+   {
+    "bin": "[0.0, 50.0)",
+    "n": 14,
+    "eps_full": 100.0,
+    "eps_1gev": 100.0,
+    "delta": 0.0,
+    "sigma": 0.0
+   },
+   {
+    "bin": "[50.0, 100.0)",
+    "n": 55,
+    "eps_full": 80.0,
+    "eps_1gev": 81.81818181818181,
+    "delta": -1.818181818181813,
+    "sigma": 3.096086046473917
+   },
+   {
+    "bin": "[100.0, 200.0)",
+    "n": 203,
+    "eps_full": 77.83251231527093,
+    "eps_1gev": 77.83251231527093,
+    "delta": 0.0,
+    "sigma": 1.3867606225427742
+   },
+   {
+    "bin": "[200.0, 300.0)",
+    "n": 234,
+    "eps_full": 72.22222222222223,
+    "eps_1gev": 68.37606837606837,
+    "delta": 3.846153846153854,
+    "sigma": 2.0598950786978927
+   },
+   {
+    "bin": "[300.0, 500.0)",
+    "n": 228,
+    "eps_full": 71.05263157894737,
+    "eps_1gev": 65.35087719298245,
+    "delta": 5.701754385964918,
+    "sigma": 2.9569589157029137
+   },
+   {
+    "bin": "[500.0, 700.0)",
+    "n": 55,
+    "eps_full": 69.0909090909091,
+    "eps_1gev": 70.9090909090909,
+    "delta": -1.818181818181813,
+    "sigma": 3.9074438589307783
+   },
+   {
+    "bin": "[700.0, inf)",
+    "n": 4,
+    "eps_full": 100.0,
+    "eps_1gev": 75.0,
+    "delta": 25.0,
+    "sigma": 24.71744447826463
+   }
+  ],
+  "|d0| / r_first": [
+   {
+    "bin": "[0.0, 0.05)",
+    "n": 176,
+    "eps_full": 97.1590909090909,
+    "eps_1gev": 86.93181818181819,
+    "delta": 10.22727272727272,
+    "sigma": 2.730025380603651
+   },
+   {
+    "bin": "[0.05, 0.1)",
+    "n": 109,
+    "eps_full": 90.8256880733945,
+    "eps_1gev": 86.23853211009174,
+    "delta": 4.587155963302763,
+    "sigma": 3.130957366753836
+   },
+   {
+    "bin": "[0.1, 0.2)",
+    "n": 144,
+    "eps_full": 83.33333333333333,
+    "eps_1gev": 75.0,
+    "delta": 8.333333333333329,
+    "sigma": 2.6392868238403864
+   },
+   {
+    "bin": "[0.2, 0.4)",
+    "n": 183,
+    "eps_full": 71.5846994535519,
+    "eps_1gev": 72.1311475409836,
+    "delta": -0.546448087431699,
+    "sigma": 2.0881166931678803
+   },
+   {
+    "bin": "[0.4, 0.7)",
+    "n": 117,
+    "eps_full": 43.58974358974359,
+    "eps_1gev": 49.572649572649574,
+    "delta": -5.982905982905983,
+    "sigma": 2.5653693239336173
+   },
+   {
+    "bin": "[0.7, 1.01)",
+    "n": 64,
+    "eps_full": 26.5625,
+    "eps_1gev": 35.9375,
+    "delta": -9.375,
+    "sigma": 4.856067007639266
+   }
+  ],
+  "pT [GeV]": [
+   {
+    "bin": "[1.0, 2.0)",
+    "n": 130,
+    "eps_full": 62.30769230769231,
+    "eps_1gev": 66.92307692307692,
+    "delta": -4.615384615384613,
+    "sigma": 2.5352547977490167
+   },
+   {
+    "bin": "[2.0, 5.0)",
+    "n": 223,
+    "eps_full": 60.53811659192825,
+    "eps_1gev": 64.12556053811659,
+    "delta": -3.587443946188337,
+    "sigma": 1.8650616688356114
+   },
+   {
+    "bin": "[5.0, 10.0)",
+    "n": 186,
+    "eps_full": 73.11827956989248,
+    "eps_1gev": 70.96774193548387,
+    "delta": 2.1505376344086073,
+    "sigma": 2.158020104511092
+   },
+   {
+    "bin": "[10.0, 20.0)",
+    "n": 125,
+    "eps_full": 88.8,
+    "eps_1gev": 80.8,
+    "delta": 8.0,
+    "sigma": 2.9765237318844684
+   },
+   {
+    "bin": "[20.0, inf)",
+    "n": 129,
+    "eps_full": 97.67441860465117,
+    "eps_1gev": 81.3953488372093,
+    "delta": 16.279069767441868,
+    "sigma": 3.589266350235027
+   }
+  ]
+ },
+ "nav_loss_bound": {
+  "lost_share": 0.02319004524886878,
+  "max_abs_bin_deviation": 13.630898266811343,
+  "bound": 0.31610114759008207,
+  "min_pp_per_bin": 20,
+  "bins_used": 26,
+  "bins_below_min": [
+   {
+    "variable": "|d0| [mm]",
+    "bin": "[0.1, 1.0)",
+    "n": 9,
+    "delta": 0.0
+   },
+   {
+    "variable": "|d0| [mm]",
+    "bin": "[300.0, inf)",
+    "n": 18,
+    "delta": -16.666666666666668
+   },
+   {
+    "variable": "r_v [mm]",
+    "bin": "[10.0, 30.0)",
+    "n": 15,
+    "delta": 0.0
+   },
+   {
+    "variable": "r_v [mm]",
+    "bin": "[650.0, inf)",
+    "n": 6,
+    "delta": 16.666666666666664
+   },
+   {
+    "variable": "first-hit radius [mm]",
+    "bin": "[0.0, 50.0)",
+    "n": 14,
+    "delta": 0.0
+   },
+   {
+    "variable": "first-hit radius [mm]",
+    "bin": "[700.0, inf)",
+    "n": 4,
+    "delta": 25.0
+   }
+  ]
+ },
+ "efficiencies": {
+  "pp": {
+   "n": 793,
+   "full": {
+    "eps": 74.27490542244641,
+    "sigma": 1.720965466866799
+   },
+   "1gev": {
+    "eps": 71.62673392181588,
+    "sigma": 1.7212805936401752
+   },
+   "hs": {
+    "eps": 69.1046658259773,
+    "sigma": 1.6667618981316477
+   }
+  },
+  "pd": {
+   "n": 508,
+   "full": {
+    "eps": 79.7244094488189,
+    "sigma": 2.3138025815404175
+   },
+   "1gev": {
+    "eps": 81.2992125984252,
+    "sigma": 2.2672966268977977
+   },
+   "hs": {
+    "eps": 80.31496062992126,
+    "sigma": 2.21869780184468
+   }
+  },
+  "target": {
+   "n": 1517,
+   "full": {
+    "eps": 79.49901120632828,
+    "sigma": 1.2439470662437802
+   },
+   "1gev": {
+    "eps": 78.64205669083718,
+    "sigma": 1.2854698522162522
+   },
+   "hs": {
+    "eps": 77.25774555042848,
+    "sigma": 1.2523224345849344
+   }
+  }
+ },
+ "pp_by_region": {
+  "central": 373,
+  "fwd+": 222,
+  "fwd-": 198
+ },
+ "seconds": 144.2
+}

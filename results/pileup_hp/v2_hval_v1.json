@@ -1,0 +1,172 @@
+{
+ "title": "V2, host change with the gun present (hval, C-full)",
+ "addendum": "docs/preregistration_pileup.md section 9.2 (V2, flag gate) and section 10 (blinding)",
+ "set": "hval",
+ "events": 150,
+ "sealed": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/overlay_h_v1/sealed/hval_full",
+ "manifest_sha256": "a88f9e31697c2be24c19bb0768220b7ab4c1208446fc2d1769299dcc29939b55",
+ "overlay_meta": {
+  "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1/meta_hval.json",
+  "sha256": "8670092ca45b06c26353ad0381cbbbffaada8a9e35413936eab2c7d4f5990c73",
+  "overlay_hash": "3e23b3630f6b7ec54e0b3872e6ab25909fa4cd4f0f2c810ac1b9a434263df1f4",
+  "emulation_hash": "2be64cc023c5b48a754a5d15618c1edf71a9f54726f2a5804cfa31177dc38b5d"
+ },
+ "val_per_event": {
+  "path": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/runs/canto_l_v1/seed0_x1/grid/full/per_event.parquet",
+  "sha256": "dd86b75680ec665f34c56ae2a4ac68b2674ff4cd8aec3d499bb34944c016cde7"
+ },
+ "definitions": {
+  "prompt_eff": "DM-matched host prompt targets / host prompt targets, pooled",
+  "fake_rate": "tracks with >= 5 hits and more than half host hits that DM-match no host particle / such tracks, pooled (blinded; the stored val value counts every track, all of which are host tracks there)",
+  "trackml_score": "mean over events (gun hit weights 0)"
+ },
+ "tolerances": {
+  "prompt_eff_points": 0.05,
+  "fake_rate_points": 0.05,
+  "trackml_score": 0.001
+ },
+ "gate": {
+  "config": "WP-A",
+  "pass": true
+ },
+ "configs": [
+  {
+   "name": "WP-A",
+   "family": "mwslmerge",
+   "params": "0.3",
+   "val_config": 90,
+   "overlay": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9983154321613132,
+    "target_eff": 0.9963583570261932,
+    "n_tracks_ge5": 1131167,
+    "fake_rate": 0.017091198735465232,
+    "trackml_score": 0.966147383990524
+   },
+   "val": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9983280980849123,
+    "target_eff": 0.9963825539894743,
+    "n_tracks_ge5": 1131140,
+    "fake_rate": 0.017038562865781422,
+    "trackml_score": 0.9661648274143689
+   },
+   "delta_prompt_eff_points": -0.0012665923599053386,
+   "delta_fake_rate_points": 0.005263586968380987,
+   "delta_trackml_score": -1.744342384490949e-05,
+   "within": {
+    "prompt_eff": true,
+    "fake_rate": true,
+    "trackml_score": true
+   },
+   "pass": true,
+   "events_host_prompt_targets_differ": []
+  },
+  {
+   "name": "WP-S",
+   "family": "mwslmerge",
+   "params": "0.1",
+   "val_config": 88,
+   "overlay": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9981761070017225,
+    "target_eff": 0.9961829290424051,
+    "n_tracks_ge5": 1132256,
+    "fake_rate": 0.01746071559788599,
+    "trackml_score": 0.9664083711173096
+   },
+   "val": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9982077718107204,
+    "target_eff": 0.9962131752465065,
+    "n_tracks_ge5": 1132226,
+    "fake_rate": 0.01739582026909822,
+    "trackml_score": 0.9664292341972391
+   },
+   "delta_prompt_eff_points": -0.003166480899785551,
+   "delta_fake_rate_points": 0.006489532878777016,
+   "delta_trackml_score": -2.086307992954506e-05,
+   "within": {
+    "prompt_eff": true,
+    "fake_rate": true,
+    "trackml_score": true
+   },
+   "pass": true,
+   "events_host_prompt_targets_differ": []
+  },
+  {
+   "name": "WP-R-P2",
+   "family": "mwslmerge",
+   "params": "0.5",
+   "val_config": 91,
+   "overlay": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9983407640085115,
+    "target_eff": 0.9964007017119352,
+    "n_tracks_ge5": 1130812,
+    "fake_rate": 0.01728492446136051,
+    "trackml_score": 0.9657664787706753
+   },
+   "val": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.9983534299321106,
+    "target_eff": 0.9964248986752162,
+    "n_tracks_ge5": 1130797,
+    "fake_rate": 0.017236515484211578,
+    "trackml_score": 0.9657838022202004
+   },
+   "delta_prompt_eff_points": -0.0012665923599164408,
+   "delta_fake_rate_points": 0.0048408977148931,
+   "delta_trackml_score": -1.7323449525097345e-05,
+   "within": {
+    "prompt_eff": true,
+    "fake_rate": true,
+    "trackml_score": true
+   },
+   "pass": true,
+   "events_host_prompt_targets_differ": []
+  },
+  {
+   "name": "WP-R-P3",
+   "family": "cc",
+   "params": "0.8",
+   "val_config": 15,
+   "overlay": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.99583291113588,
+    "target_eff": 0.9934668199141008,
+    "n_tracks_ge5": 1121251,
+    "fake_rate": 0.041632069893360185,
+    "trackml_score": 0.9430050147351687
+   },
+   "val": {
+    "events": 150,
+    "n_prompt_target": 157904,
+    "prompt_eff": 0.99583291113588,
+    "target_eff": 0.9934728691549211,
+    "n_tracks_ge5": 1121251,
+    "fake_rate": 0.04162671872756412,
+    "trackml_score": 0.9430306259685753
+   },
+   "delta_prompt_eff_points": 0.0,
+   "delta_fake_rate_points": 0.0005351165796065038,
+   "delta_trackml_score": -2.5611233406608314e-05,
+   "within": {
+    "prompt_eff": true,
+    "fake_rate": true,
+    "trackml_score": true
+   },
+   "pass": true,
+   "events_host_prompt_targets_differ": []
+  }
+ ],
+ "written_utc": "2026-10-16T10:07:06+00:00",
+ "git": "9aaaa5017e9da2092a386c4b4c971ecfbf5b764f"
+}

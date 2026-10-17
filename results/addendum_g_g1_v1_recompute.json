@@ -1,0 +1,50 @@
+{
+ "checked_against": "results/addendum_g_g1_v1_claim.json",
+ "script": "scripts/verify/g1_recompute.py (no shared code with hnl.eval.addendum_g_summary)",
+ "run": "2026-10-15 18:3x UTC, login node, 44 s; inputs: T1 truth tables, the union split list, eval/<model>_s<k>/test per_particle and per_event",
+ "recompute": {
+  "events": 7233,
+  "P_G": 8710,
+  "P_G_equals_table_in_pop": true,
+  "target_equals_table": true,
+  "source_equals_table_gun": true,
+  "boot_table_equals_stored": true,
+  "eff_A_seeds": [
+   96.8427,
+   97.2331,
+   96.7509
+  ],
+  "eff_B_seeds": [
+   94.2824,
+   94.7646,
+   94.822
+  ],
+  "eff_A": 96.94221201683888,
+  "eff_B": 94.6230386528894,
+  "delta": 2.3191733639494783,
+  "sigma_boot": 0.16394439763346172,
+  "sigma_seeds": 0.22611819742399497,
+  "sigma": 0.27929769909842683,
+  "delta_minus_2sigma": 1.7605779657526246,
+  "delta_plus_2sigma": 2.877768762146332,
+  "fake_A": 0.5483838473953699,
+  "fake_B": 1.37682493250558,
+  "fake_diff": -0.8284410851102101,
+  "guard_ok": true,
+  "outcome": "holds",
+  "underpowered": false
+ },
+ "max_abs_diff": {
+  "delta_points": 0.0,
+  "sigma_points": 0.0,
+  "sigma_boot_points": 0.0,
+  "sigma_seeds_points": 0.0,
+  "delta_minus_2sigma": 0.0,
+  "delta_plus_2sigma": 0.0,
+  "fake_rate_diff_points": 0.0,
+  "eff_A": 0.0,
+  "eff_B": 0.0,
+  "fake_A": 0.0
+ },
+ "outcome_equal": true
+}

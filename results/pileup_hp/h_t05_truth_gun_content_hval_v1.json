@@ -1,0 +1,570 @@
+{
+ "set": "hval",
+ "root": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/external/trackml/derived/overlay_v1",
+ "work": "/work/submit/jinboz1/hnl/pileup_design/h_t05/hval_work",
+ "events": 150,
+ "nav_losses": {
+  "gun_particles": 3994,
+  "lost": 77,
+  "lost_by_component": {
+   "dense": 26,
+   "iso": 51
+  },
+  "below_pmin": 4,
+  "pp_like": 1768,
+  "pp_like_lost": 41,
+  "pp_like_lost_share": 0.02319004524886878,
+  "bins": {
+   "r_v [mm]": [
+    {
+     "bin": "[0.0, 10.0)",
+     "pp_like": 0,
+     "lost": 0,
+     "share": null
+    },
+    {
+     "bin": "[10.0, 30.0)",
+     "pp_like": 17,
+     "lost": 2,
+     "share": 0.11764705882352941
+    },
+    {
+     "bin": "[30.0, 100.0)",
+     "pp_like": 121,
+     "lost": 3,
+     "share": 0.024793388429752067
+    },
+    {
+     "bin": "[100.0, 200.0)",
+     "pp_like": 257,
+     "lost": 4,
+     "share": 0.01556420233463035
+    },
+    {
+     "bin": "[200.0, 300.0)",
+     "pp_like": 308,
+     "lost": 7,
+     "share": 0.022727272727272728
+    },
+    {
+     "bin": "[300.0, 450.0)",
+     "pp_like": 374,
+     "lost": 10,
+     "share": 0.026737967914438502
+    },
+    {
+     "bin": "[450.0, 650.0)",
+     "pp_like": 419,
+     "lost": 13,
+     "share": 0.031026252983293555
+    },
+    {
+     "bin": "[650.0, inf)",
+     "pp_like": 272,
+     "lost": 2,
+     "share": 0.007352941176470588
+    }
+   ],
+   "eta": [
+    {
+     "bin": "[-inf, -3.0)",
+     "pp_like": 2,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[-3.0, -2.0)",
+     "pp_like": 100,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[-2.0, -1.0)",
+     "pp_like": 277,
+     "lost": 6,
+     "share": 0.021660649819494584
+    },
+    {
+     "bin": "[-1.0, 0.0)",
+     "pp_like": 510,
+     "lost": 12,
+     "share": 0.023529411764705882
+    },
+    {
+     "bin": "[0.0, 1.0)",
+     "pp_like": 460,
+     "lost": 19,
+     "share": 0.041304347826086954
+    },
+    {
+     "bin": "[1.0, 2.0)",
+     "pp_like": 312,
+     "lost": 3,
+     "share": 0.009615384615384616
+    },
+    {
+     "bin": "[2.0, 3.0)",
+     "pp_like": 98,
+     "lost": 1,
+     "share": 0.01020408163265306
+    },
+    {
+     "bin": "[3.0, inf)",
+     "pp_like": 9,
+     "lost": 0,
+     "share": 0.0
+    }
+   ],
+   "|d0| [mm]": [
+    {
+     "bin": "[0.0, 0.1)",
+     "pp_like": 0,
+     "lost": 0,
+     "share": null
+    },
+    {
+     "bin": "[0.1, 1.0)",
+     "pp_like": 18,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[1.0, 3.0)",
+     "pp_like": 47,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[3.0, 10.0)",
+     "pp_like": 133,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[10.0, 30.0)",
+     "pp_like": 364,
+     "lost": 2,
+     "share": 0.005494505494505495
+    },
+    {
+     "bin": "[30.0, 100.0)",
+     "pp_like": 516,
+     "lost": 3,
+     "share": 0.005813953488372093
+    },
+    {
+     "bin": "[100.0, 300.0)",
+     "pp_like": 473,
+     "lost": 18,
+     "share": 0.03805496828752643
+    },
+    {
+     "bin": "[300.0, inf)",
+     "pp_like": 217,
+     "lost": 18,
+     "share": 0.08294930875576037
+    }
+   ],
+   "|d0| / r_v": [
+    {
+     "bin": "[0.0, 0.05)",
+     "pp_like": 322,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[0.05, 0.1)",
+     "pp_like": 223,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[0.1, 0.2)",
+     "pp_like": 281,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[0.2, 0.4)",
+     "pp_like": 292,
+     "lost": 1,
+     "share": 0.003424657534246575
+    },
+    {
+     "bin": "[0.4, 0.7)",
+     "pp_like": 304,
+     "lost": 10,
+     "share": 0.03289473684210526
+    },
+    {
+     "bin": "[0.7, 1.01)",
+     "pp_like": 346,
+     "lost": 30,
+     "share": 0.08670520231213873
+    }
+   ],
+   "pT [GeV]": [
+    {
+     "bin": "[1.0, 2.0)",
+     "pp_like": 312,
+     "lost": 15,
+     "share": 0.04807692307692308
+    },
+    {
+     "bin": "[2.0, 5.0)",
+     "pp_like": 534,
+     "lost": 21,
+     "share": 0.03932584269662921
+    },
+    {
+     "bin": "[5.0, 10.0)",
+     "pp_like": 391,
+     "lost": 5,
+     "share": 0.01278772378516624
+    },
+    {
+     "bin": "[10.0, 20.0)",
+     "pp_like": 245,
+     "lost": 0,
+     "share": 0.0
+    },
+    {
+     "bin": "[20.0, inf)",
+     "pp_like": 286,
+     "lost": 0,
+     "share": 0.0
+    }
+   ],
+   "direction at the vertex": [
+    {
+     "bin": "inward",
+     "pp_like": 214,
+     "lost": 21,
+     "share": 0.09813084112149532
+    },
+    {
+     "bin": "outward",
+     "pp_like": 1554,
+     "lost": 20,
+     "share": 0.01287001287001287
+    }
+   ]
+  }
+ },
+ "silent_exits": {
+  "final_states": true,
+  "simulated": 3913,
+  "without_final_state": 0,
+  "outside": 22,
+  "share": 0.005622284692052134,
+  "particles": [
+   {
+    "fatras_event": 6,
+    "particle_id": 4548636104680538112,
+    "r_end": 1244.9462958245856,
+    "z_end": -4182.82178
+   },
+   {
+    "fatras_event": 10,
+    "particle_id": 4517110563691560960,
+    "r_end": 2055.918880618797,
+    "z_end": -1176.64014
+   },
+   {
+    "fatras_event": 22,
+    "particle_id": 4535124962201042944,
+    "r_end": 2489.1775872280223,
+    "z_end": -859.701904
+   },
+   {
+    "fatras_event": 41,
+    "particle_id": 4521614094599454720,
+    "r_end": 1642.5951914008228,
+    "z_end": -1637.21802
+   },
+   {
+    "fatras_event": 45,
+    "particle_id": 4512606964064190464,
+    "r_end": 2573.6489480714645,
+    "z_end": -1402.25317
+   },
+   {
+    "fatras_event": 48,
+    "particle_id": 4521614094599454720,
+    "r_end": 1385.2660669659258,
+    "z_end": 561.412231
+   },
+   {
+    "fatras_event": 48,
+    "particle_id": 4544132298894737408,
+    "r_end": 1383.204542671787,
+    "z_end": -847.864319
+   },
+   {
+    "fatras_event": 53,
+    "particle_id": 4517110494972084224,
+    "r_end": 1366.9780851582384,
+    "z_end": -707.207825
+   },
+   {
+    "fatras_event": 55,
+    "particle_id": 4508103364436819968,
+    "r_end": 1878.04729779288,
+    "z_end": -303.260284
+   },
+   {
+    "fatras_event": 58,
+    "particle_id": 4548635898522107904,
+    "r_end": 2869.1640824729952,
+    "z_end": -5296.05273
+   },
+   {
+    "fatras_event": 64,
+    "particle_id": 4548635898522107904,
+    "r_end": 908.9960218200082,
+    "z_end": -4355.12207
+   },
+   {
+    "fatras_event": 65,
+    "particle_id": 4508103295717343232,
+    "r_end": 2255.7703020463973,
+    "z_end": -3543.91235
+   },
+   {
+    "fatras_event": 67,
+    "particle_id": 4530621362573672448,
+    "r_end": 2040.348182712886,
+    "z_end": 5736.65576
+   },
+   {
+    "fatras_event": 68,
+    "particle_id": 4548635692363677696,
+    "r_end": 2252.8639153027084,
+    "z_end": -2313.70508
+   },
+   {
+    "fatras_event": 78,
+    "particle_id": 4544132092736307200,
+    "r_end": 1891.7871780290234,
+    "z_end": -3011.34204
+   },
+   {
+    "fatras_event": 101,
+    "particle_id": 4548635898522107904,
+    "r_end": 2021.79552975929,
+    "z_end": -4429.55469
+   },
+   {
+    "fatras_event": 109,
+    "particle_id": 4521614163318931456,
+    "r_end": 1574.3828710213602,
+    "z_end": -2315.64062
+   },
+   {
+    "fatras_event": 121,
+    "particle_id": 4517110494972084224,
+    "r_end": 1843.7858693802616,
+    "z_end": -1701.44653
+   },
+   {
+    "fatras_event": 128,
+    "particle_id": 4544132161455783936,
+    "r_end": 1220.880741232573,
+    "z_end": -440.36972
+   },
+   {
+    "fatras_event": 136,
+    "particle_id": 4526117762946301952,
+    "r_end": 1357.7745838649837,
+    "z_end": -3899.14209
+   },
+   {
+    "fatras_event": 140,
+    "particle_id": 4521614094599454720,
+    "r_end": 2258.422341871826,
+    "z_end": 2147.00269
+   },
+   {
+    "fatras_event": 146,
+    "particle_id": 4512606895344713728,
+    "r_end": 1226.394453038762,
+    "z_end": 3507.00635
+   }
+  ]
+ },
+ "misses": {
+  "fatras": [
+   {
+    "group": "all",
+    "particles": 3913,
+    "with_hits": 3799,
+    "premature": 103,
+    "premature_share": 0.026322514694607717,
+    "premature_2": 48,
+    "with_hole": 292,
+    "hole_share": 0.07462305136723742,
+    "holes_per_crossing_before_last_hit": 0.028783363976415392,
+    "by_loop": 115,
+    "unmatched_hits": 36,
+    "median_max_match_mm": 6.230555685713099,
+    "below_5_hits_by_misses": 36
+   },
+   {
+    "group": "iso",
+    "particles": 2348,
+    "with_hits": 2275,
+    "premature": 57,
+    "premature_share": 0.024275979557069848,
+    "premature_2": 30,
+    "with_hole": 216,
+    "hole_share": 0.0919931856899489,
+    "holes_per_crossing_before_last_hit": 0.03712371024359111,
+    "by_loop": 58,
+    "unmatched_hits": 19,
+    "median_max_match_mm": 6.203881511143016,
+    "below_5_hits_by_misses": 33
+   },
+   {
+    "group": "dense",
+    "particles": 1565,
+    "with_hits": 1524,
+    "premature": 46,
+    "premature_share": 0.02939297124600639,
+    "premature_2": 18,
+    "with_hole": 76,
+    "hole_share": 0.04856230031948882,
+    "holes_per_crossing_before_last_hit": 0.01647834274952919,
+    "by_loop": 57,
+    "unmatched_hits": 17,
+    "median_max_match_mm": 6.2730480098933,
+    "below_5_hits_by_misses": 3
+   },
+   {
+    "group": "pT > 1 GeV",
+    "particles": 2983,
+    "with_hits": 2919,
+    "premature": 8,
+    "premature_share": 0.0026818638954073082,
+    "premature_2": 5,
+    "with_hole": 183,
+    "hole_share": 0.06134763660744217,
+    "holes_per_crossing_before_last_hit": 0.02283477409884195,
+    "by_loop": 0,
+    "unmatched_hits": 28,
+    "median_max_match_mm": 6.08119157368183,
+    "below_5_hits_by_misses": 36
+   },
+   {
+    "group": "P_P-like",
+    "particles": 1727,
+    "with_hits": 1686,
+    "premature": 5,
+    "premature_share": 0.0028951939779965257,
+    "premature_2": 5,
+    "with_hole": 142,
+    "hole_share": 0.08222350897510133,
+    "holes_per_crossing_before_last_hit": 0.034713763702801465,
+    "by_loop": 0,
+    "unmatched_hits": 14,
+    "median_max_match_mm": 6.037250117779985,
+    "below_5_hits_by_misses": 33
+   }
+  ],
+  "stored": [
+   {
+    "group": "all",
+    "particles": 3913,
+    "with_hits": 3793,
+    "premature": 287,
+    "premature_share": 0.07334525939177101,
+    "premature_2": 163,
+    "with_hole": 391,
+    "hole_share": 0.09992333248147202,
+    "holes_per_crossing_before_last_hit": 0.036574195236848996,
+    "by_loop": 115,
+    "unmatched_hits": 35,
+    "median_max_match_mm": 6.5628922979563065,
+    "below_5_hits_by_misses": 99
+   },
+   {
+    "group": "iso",
+    "particles": 2348,
+    "with_hits": 2271,
+    "premature": 148,
+    "premature_share": 0.06303236797274275,
+    "premature_2": 79,
+    "with_hole": 275,
+    "hole_share": 0.11712095400340715,
+    "holes_per_crossing_before_last_hit": 0.04518728222996516,
+    "by_loop": 58,
+    "unmatched_hits": 18,
+    "median_max_match_mm": 6.485780016171261,
+    "below_5_hits_by_misses": 63
+   },
+   {
+    "group": "dense",
+    "particles": 1565,
+    "with_hits": 1522,
+    "premature": 139,
+    "premature_share": 0.08881789137380192,
+    "premature_2": 84,
+    "with_hole": 116,
+    "hole_share": 0.07412140575079872,
+    "holes_per_crossing_before_last_hit": 0.02360655737704918,
+    "by_loop": 57,
+    "unmatched_hits": 17,
+    "median_max_match_mm": 6.662046705234022,
+    "below_5_hits_by_misses": 36
+   },
+   {
+    "group": "pT > 1 GeV",
+    "particles": 2983,
+    "with_hits": 2916,
+    "premature": 151,
+    "premature_share": 0.05062018102581294,
+    "premature_2": 92,
+    "with_hole": 261,
+    "hole_share": 0.08749580958766343,
+    "holes_per_crossing_before_last_hit": 0.03058052591783584,
+    "by_loop": 0,
+    "unmatched_hits": 27,
+    "median_max_match_mm": 6.322079158779429,
+    "below_5_hits_by_misses": 99
+   },
+   {
+    "group": "P_P-like",
+    "particles": 1727,
+    "with_hits": 1684,
+    "premature": 75,
+    "premature_share": 0.04342790966994789,
+    "premature_2": 41,
+    "with_hole": 183,
+    "hole_share": 0.10596409959467284,
+    "holes_per_crossing_before_last_hit": 0.0426791277258567,
+    "by_loop": 0,
+    "unmatched_hits": 13,
+    "median_max_match_mm": 6.244465379852776,
+    "below_5_hits_by_misses": 61
+   }
+  ]
+ },
+ "field_map": "/work/submit/jinboz1/hnl/pileup_design/field_material/trackml_like_rz_map_v1.txt",
+ "settings": {
+  "margin_mm": 20.0,
+  "end_margin_mm": 10.0,
+  "cov_margin_mm": 3.0,
+  "k_modules": 8,
+  "step_mm": 1.0,
+  "sample_every": 2,
+  "path_max_mm": 6200.0,
+  "world_path_end": [
+   1028.538,
+   3001.0
+  ],
+  "world_silent_exit": [
+   1030.0,
+   3002.0
+  ]
+ },
+ "seconds": 68.5
+}

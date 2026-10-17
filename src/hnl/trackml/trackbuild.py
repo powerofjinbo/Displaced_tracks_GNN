@@ -40,6 +40,7 @@ import pandas as pd
 from hnl.trackbuild import builders as TB
 from hnl.trackbuild import learned_merge as LM
 from hnl.trackbuild.merge_fragments import _volume_from_radius
+from hnl.overlay import grant as GRANT
 from hnl.trackml import config as CFG
 from hnl.trackml import events as E
 from hnl.trackml.seqmerge import BinnedCuts, merge_sequential
@@ -316,11 +317,19 @@ def geometry(ev: E.Event) -> dict:
     return {"volume": vol, "layer_id": ev.layer_id, "phi_c": module_phi_c(ev.volume, ev.layer, ev.module)}
 
 
-def read_scores(directory: str, events, condition: str = "full") -> dict[int, tuple]:
+def read_scores(directory: str, events, condition: str = "full", kinds=("eval", "dry")) -> dict[int, tuple]:
     """{event: (a, b, score)} from the scored-edge parquet files of hnl.trackml.infer (KeyError if one is missing;
-    ValueError if a file was scored in another condition)."""
+    ValueError if a file was scored in another condition). Choke point of addendum H: stored scores of overlay events
+    are read only under a grant of one of `kinds` (hnl.overlay.grant; a no-op without a git call for TrackML ids):
+    eval or dry for every caller, blind only where hnl.overlay.blind passes it (the blinded evaluation of the sealed
+    H-val directory); and scores of pilot events (k = 9) only if truth-made placeholders (decision D6: no track is
+    built from the frozen model's plumbing outputs)."""
     import pyarrow.parquet as pq
     want = {int(e) for e in events}
+    kinds = (kinds,) if isinstance(kinds, str) else tuple(kinds)
+    if not set(kinds) <= {"eval", "blind", "dry"}:
+        raise ValueError(f"read_scores takes grants of kind eval, blind or dry, not {kinds}")
+    GRANT.check(sorted(want), kinds)
     out = {}
     for f in sorted(os.listdir(directory)):
         if not f.endswith(".parquet"):
@@ -333,6 +342,10 @@ def read_scores(directory: str, events, condition: str = "full") -> dict[int, tu
         sel = sorted(want & have)
         if not sel:
             continue
+        if side.get("placeholder") != GRANT.PLACEHOLDER and any(
+                GRANT.is_overlay(e) and GRANT.set_index(e) == GRANT.PILOT_K for e in sel):
+            raise PermissionError(f"{f}: scores of pilot events (k = 9) are read as truth-made placeholders only "
+                                  "(decision D6)")
         t = pq.read_table(os.path.join(directory, f), filters=[("event", "in", sel)],
                           columns=["event", "a", "b", "score"]).to_pandas()
         for e, g in t.groupby("event"):
@@ -490,6 +503,7 @@ def cmd_grid(a, cfg):
         events = events[a.block * a.block_size:(a.block + 1) * a.block_size]
         if not events:
             raise SystemExit(f"block {a.block} of size {a.block_size} is empty")
+    GRANT.check(events, "eval", a.condition, out=a.out)        # overlay ids only under a grant (addendum H)
     os.makedirs(a.out, exist_ok=True)
     chunks = [(events[k:k + a.chunk], a.scores, cfgs, a.merge_model, a.condition)
               for k in range(0, len(events), a.chunk)]
@@ -518,6 +532,8 @@ def cmd_grid(a, cfg):
 
 def cmd_grid_merge(a, cfg):
     """The files of an unsplit grid from its event blocks: same configurations, every event of the set exactly once."""
+    # overlay ids only under a grant (addendum H)
+    GRANT.check(CFG.event_set(a.events, cfg, allow_test=a.allow_test)[:a.max_events], "eval", out=a.out)
     cfgs = None
     for d in a.blocks:
         with open(os.path.join(d, "configs.json")) as fh:
@@ -634,6 +650,8 @@ def select(full: pd.DataFrame, fr: float, nonoise: pd.DataFrame | None = None, o
 
 
 def cmd_select(a, cfg):
+    # overlay ids only under a grant (addendum H)
+    GRANT.check_tables([a.grid, a.grid_nonoise, a.grid_1gev], "eval", out=a.out)
     load = lambda d: pd.read_csv(os.path.join(d, "summary.csv")) if d else None
     res = select(load(a.grid), float(cfg["builders"]["fr_target"]), load(a.grid_nonoise), load(a.grid_1gev))
     res.update({"grid": a.grid, "grid_nonoise": a.grid_nonoise, "grid_1gev": a.grid_1gev})
@@ -663,6 +681,7 @@ def _lmerge_events(args):
 def cmd_lmerge_data(a, cfg):
     import concurrent.futures as cf
     events = CFG.event_set(a.events, cfg)
+    GRANT.check(events, "eval", out=a.out)        # overlay ids only under a grant (addendum H)
     chunks = [(events[k:k + 5], a.scores) for k in range(0, len(events), 5)]
     with cf.ProcessPoolExecutor(max_workers=max(a.workers, 1)) as ex:
         res = list(ex.map(_lmerge_events, chunks))
@@ -729,6 +748,7 @@ def merge_profile(scores: str, event: int, s0: float = 0.2) -> dict:
 
 
 def cmd_merge_profile(a, cfg):
+    GRANT.check(CFG.event_set(a.events, cfg)[:1], "eval", out=a.out)   # overlay ids only under a grant (addendum H)
     res = merge_profile(a.scores, int(CFG.event_set(a.events, cfg)[0]), a.s0)
     os.makedirs(a.out, exist_ok=True)
     with open(os.path.join(a.out, "merge_profile.json"), "w") as fh:
@@ -736,6 +756,7 @@ def cmd_merge_profile(a, cfg):
 
 
 def cmd_merge_check(a, cfg):
+    GRANT.check(CFG.event_set(a.events, cfg)[:1], "eval", out=a.out)   # overlay ids only under a grant (addendum H)
     res = merge_check(a.scores, int(CFG.event_set(a.events, cfg)[0]), a.s0, not a.fast_only)
     os.makedirs(a.out, exist_ok=True)
     with open(os.path.join(a.out, "merge_check.json"), "w") as fh:
@@ -753,6 +774,7 @@ def cmd_timing(a, cfg):
             builders = [b for b in builders if b != "mwslmerge"]
         cfgs = grid_configs(builders, cfg["builders"].get("merge_cut_sets", ["H"]))
     events = CFG.event_set(a.events, cfg)[:int(a.max_events or cfg["builders"]["gate_g3"]["events"])]
+    GRANT.check(events, "eval", out=a.out)        # overlay ids only under a grant (addendum H)
     os.makedirs(a.out, exist_ok=True)
     with open(os.path.join(a.out, "configs.json"), "w") as fh:
         json.dump([[x if isinstance(x, str) else float(x) for x in c] for c in cfgs], fh)
