@@ -1,0 +1,384 @@
+{
+ "created_utc": "2026-10-18T01:15:12Z",
+ "git": "5f65c72c0036f243d8360990679e45ff6ab3d4b6 (src/slurm dirty: 3 files)",
+ "purpose": "Post-freeze, descriptive test of seeds 1 and 2 of the training-sample study runs Canto-L (HNL) and Canto-L (ttbar+HNL) (the first author's request, 2026-10-17; docs/feedback/test_use_ledger.md R19). Not a selection: results/final_selection_v1.json and the claims are unchanged. Validation settings only; input of slurm/stage1/final_test_shard.sbatch and final_test_merge.sbatch (pipelines l1tl_ii / l1tl_iii, seeds 1 and 2); seed 0 stays in results/training_sample_test_selection_v1.json.",
+ "working_points": "results/working_points_v1.json",
+ "working_points_sha256": "186ac8dd9c8652f8a20dd2402eb7e6254d86789f4d60bdb8468371d743888d16",
+ "FR_star": 0.02936834277897644,
+ "e_star": 0.011791817004015985,
+ "reference_arm": "ii",
+ "grid": "trackbuild_val_ext,trackbuild_val_lmerge,trackbuild_val",
+ "rules": "family mwslmerge; per run on val: FR* configuration by the builder rule with the one-standard-error tie rule and LLP-blind configuration by the section-6c rule (hnl.eval.final_select.run_rows, as hnl.eval.training_sample_board and training_sample_3seed), e* cut from RUN/edge_tpr_estar_efpr.json (final_select.cut_e); seed 0 reproduces results/training_sample_test_selection_v1.json",
+ "out_root": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12",
+ "outputs": "run and graphs_run are mirror directories under out_root (symbolic links to source_run's gnn and lmerge, and to graphs_source_run / ml_run inputs); every test output is written there",
+ "candidate": null,
+ "pipelines": {
+  "l1tl_ii": {
+   "dir": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl",
+   "graphs": "ltf_union_graphs",
+   "training_sample": "arm (ii), HNL",
+   "family": "mwslmerge",
+   "seeds": {
+    "1": {
+     "run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl/armii_s1",
+     "source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1",
+     "graphs_run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/baseline_v1_ts/armii_s1",
+     "graphs_source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s1",
+     "ml_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1",
+     "test_graphs_source": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/gnn_scores_test/testset.tar",
+     "cut_e": 0.21,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "02e34ee7d91f5dcf3191dd127cde4c40fea71537008d0fde495769e8b111bfe2",
+     "config": "mwslmerge,0.1",
+     "llp_blind_config": "mwslmerge,0.2",
+     "val_working_point": "mwslmerge 0.1 (trackbuild_val_lmerge)",
+     "gnn_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1/gnn/artifacts/best-epoch=27-val_loss=0.047303.ckpt",
+     "gnn_ckpt_sha256": "2ecb2169e6718196467ddbde350c2c9a56b40663d30f4ad7bc2fef3b0cabceaa",
+     "triplet_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s1/learned_triplet_filter_v2/model.joblib",
+     "triplet_model_sha256": "35a851bb6e8817abb3af79499ae7ac6effc157a81a96ed9f81a11bf30148e318",
+     "tau": 0.005,
+     "k": 5,
+     "r_wide": 0.24,
+     "nsig": 5.0,
+     "pt_min": 0.5,
+     "union_ml_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/ml/artifacts/best-epoch=28-f1=0.506467.ckpt"
+    },
+    "2": {
+     "run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl/armii_s2",
+     "source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2",
+     "graphs_run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/baseline_v1_ts/armii_s2",
+     "graphs_source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s2",
+     "ml_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2",
+     "test_graphs_source": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/gnn_scores_test/testset.tar",
+     "cut_e": 0.22,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "dca6e8461341c9835ad2ff00f5385f79c43a33a9838cf3caf50f0de2112a036b",
+     "config": "mwslmerge,0.5",
+     "llp_blind_config": "mwslmerge,0.1",
+     "val_working_point": "mwslmerge 0.5 (trackbuild_val_lmerge)",
+     "gnn_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2/gnn/artifacts/best-epoch=26-val_loss=0.048990.ckpt",
+     "gnn_ckpt_sha256": "955ab9a1690fe94feafc6731e4f5c80a02fa8db339d5c848e1d746e623751cda",
+     "triplet_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s2/learned_triplet_filter_v2/model.joblib",
+     "triplet_model_sha256": "f92bbfa702eeccb603fbd2543492e57dded46a9325907a99e9a64282e012f447",
+     "tau": 0.005,
+     "k": 5,
+     "r_wide": 0.24,
+     "nsig": 5.0,
+     "pt_min": 0.5,
+     "union_ml_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/ml/artifacts/best-epoch=8-f1=0.513817.ckpt"
+    }
+   }
+  },
+  "l1tl_iii": {
+   "dir": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl",
+   "graphs": "ltf_union_graphs",
+   "training_sample": "arm (iii), ttbar+HNL",
+   "family": "mwslmerge",
+   "seeds": {
+    "1": {
+     "run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl/armiii_s1",
+     "source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1",
+     "graphs_run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/baseline_v1_ts/armiii_s1",
+     "graphs_source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s1",
+     "ml_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1",
+     "test_graphs_source": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/gnn_scores_test/testset.tar",
+     "cut_e": 0.19,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1/lmerge/model.joblib",
+     "merge_model_sha256": "49287e85cf4c40d0a2db75cc02e848f1afc6bdacdf039e1798594a133d1908f2",
+     "config": "mwslmerge,0.2",
+     "llp_blind_config": "mwslmerge,0.1",
+     "val_working_point": "mwslmerge 0.2 (trackbuild_val_lmerge)",
+     "gnn_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1/gnn/artifacts/best-epoch=24-val_loss=0.042699.ckpt",
+     "gnn_ckpt_sha256": "c72c7341a271beb7e0cc40bf5b3cf91ebf0e5e48075a2c0e090ff86f82370318",
+     "triplet_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s1/learned_triplet_filter_v2/model.joblib",
+     "triplet_model_sha256": "b795d42e8312eecefa74579c779ff1ed09d679fca325e861f473d32925a70f73",
+     "tau": 0.005,
+     "k": 5,
+     "r_wide": 0.24,
+     "nsig": 5.0,
+     "pt_min": 0.5,
+     "union_ml_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/ml/artifacts/best-epoch=43-f1=0.457575.ckpt"
+    },
+    "2": {
+     "run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/l1tl/armiii_s2",
+     "source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2",
+     "graphs_run": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/baseline_v1_ts/armiii_s2",
+     "graphs_source_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s2",
+     "ml_run": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2",
+     "test_graphs_source": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/gnn_scores_test/testset.tar",
+     "cut_e": 0.2,
+     "merge_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2/lmerge/model.joblib",
+     "merge_model_sha256": "9290569140bd294b0dc7a2b59d8d8e0b9bd0a39f709263e82140835a7afc29f9",
+     "config": "mwslmerge,0.2",
+     "llp_blind_config": "mwslmerge,0.05",
+     "val_working_point": "mwslmerge 0.2 (trackbuild_val_lmerge)",
+     "gnn_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2/gnn/artifacts/best-epoch=23-val_loss=0.048274.ckpt",
+     "gnn_ckpt_sha256": "7376c2f889b8576ad34745d9ea5918d64fd3fbf1cd1c9bc0590c9e7fc443bd36",
+     "triplet_model": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s2/learned_triplet_filter_v2/model.joblib",
+     "triplet_model_sha256": "67119498f5d03d11d8a93e0fb9027bae022ceec4101183e17d17f50f0506a2d4",
+     "tau": 0.005,
+     "k": 5,
+     "r_wide": 0.24,
+     "nsig": 5.0,
+     "pt_min": 0.5,
+     "union_ml_ckpt": "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/ml/artifacts/best-epoch=19-f1=0.456097.ckpt"
+    }
+   }
+  }
+ },
+ "checks": "42 of 42 ok",
+ "check_list": [
+  [
+   "Canto-L (HNL) s0: run = results/training_sample_test_selection_v1.json",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0",
+   true
+  ],
+  [
+   "Canto-L (HNL) s0: FR* configuration = results/training_sample_test_selection_v1.json",
+   "mwslmerge,0.2",
+   "mwslmerge,0.2",
+   true
+  ],
+  [
+   "Canto-L (HNL) s0: LLP-blind configuration = results/training_sample_test_selection_v1.json",
+   "mwslmerge,0.2",
+   "mwslmerge,0.2",
+   true
+  ],
+  [
+   "Canto-L (HNL) s0: e* cut = results/training_sample_test_selection_v1.json",
+   "0.21",
+   "0.21",
+   true
+  ],
+  [
+   "Canto-L (HNL) s0: merge model = results/training_sample_test_selection_v1.json",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0/lmerge/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s0/lmerge/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: one row in results/training_sample_val_3seed_v1.csv",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: FR* working point = results/training_sample_val_3seed_v1.csv",
+   "mwslmerge 0.1 (trackbuild_val_lmerge)",
+   "mwslmerge 0.1 (trackbuild_val_lmerge)",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: run = results/training_sample_val_3seed_v1.csv",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: best checkpoint = val scores' checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1/gnn/artifacts/best-epoch=27-val_loss=0.047303.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1/gnn/artifacts/best-epoch=27-val_loss=0.047303.ckpt",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: checkpoint sha256 = val record",
+   "2ecb2169e6718196467ddbde350c2c9a56b40663d30f4ad7bc2fef3b0cabceaa",
+   "2ecb2169e6718196467ddbde350c2c9a56b40663d30f4ad7bc2fef3b0cabceaa",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: union ML checkpoint = baseline best ML checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/ml/artifacts/best-epoch=28-f1=0.506467.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s1/ml/artifacts/best-epoch=28-f1=0.506467.ckpt",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: union triplet model is the run's",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s1/learned_triplet_filter_v2/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s1/learned_triplet_filter_v2/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (HNL) s1: acorn one-time test done",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: one row in results/training_sample_val_3seed_v1.csv",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: FR* working point = results/training_sample_val_3seed_v1.csv",
+   "mwslmerge 0.5 (trackbuild_val_lmerge)",
+   "mwslmerge 0.5 (trackbuild_val_lmerge)",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: run = results/training_sample_val_3seed_v1.csv",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: best checkpoint = val scores' checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2/gnn/artifacts/best-epoch=26-val_loss=0.048990.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s2/gnn/artifacts/best-epoch=26-val_loss=0.048990.ckpt",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: checkpoint sha256 = val record",
+   "955ab9a1690fe94feafc6731e4f5c80a02fa8db339d5c848e1d746e623751cda",
+   "955ab9a1690fe94feafc6731e4f5c80a02fa8db339d5c848e1d746e623751cda",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: union ML checkpoint = baseline best ML checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/ml/artifacts/best-epoch=8-f1=0.513817.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armii_s2/ml/artifacts/best-epoch=8-f1=0.513817.ckpt",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: union triplet model is the run's",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s2/learned_triplet_filter_v2/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armii_s2/learned_triplet_filter_v2/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (HNL) s2: acorn one-time test done",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s0: run = results/training_sample_test_selection_v1.json",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s0: FR* configuration = results/training_sample_test_selection_v1.json",
+   "mwslmerge,0.3",
+   "mwslmerge,0.3",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s0: LLP-blind configuration = results/training_sample_test_selection_v1.json",
+   "mwslmerge,0.03",
+   "mwslmerge,0.03",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s0: e* cut = results/training_sample_test_selection_v1.json",
+   "0.19",
+   "0.19",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s0: merge model = results/training_sample_test_selection_v1.json",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0/lmerge/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s0/lmerge/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: one row in results/training_sample_val_3seed_v1.csv",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: FR* working point = results/training_sample_val_3seed_v1.csv",
+   "mwslmerge 0.2 (trackbuild_val_lmerge)",
+   "mwslmerge 0.2 (trackbuild_val_lmerge)",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: run = results/training_sample_val_3seed_v1.csv",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: best checkpoint = val scores' checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1/gnn/artifacts/best-epoch=24-val_loss=0.042699.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s1/gnn/artifacts/best-epoch=24-val_loss=0.042699.ckpt",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: checkpoint sha256 = val record",
+   "c72c7341a271beb7e0cc40bf5b3cf91ebf0e5e48075a2c0e090ff86f82370318",
+   "c72c7341a271beb7e0cc40bf5b3cf91ebf0e5e48075a2c0e090ff86f82370318",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: union ML checkpoint = baseline best ML checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/ml/artifacts/best-epoch=43-f1=0.457575.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s1/ml/artifacts/best-epoch=43-f1=0.457575.ckpt",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: union triplet model is the run's",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s1/learned_triplet_filter_v2/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s1/learned_triplet_filter_v2/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s1: acorn one-time test done",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: one row in results/training_sample_val_3seed_v1.csv",
+   "1",
+   "1",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: FR* working point = results/training_sample_val_3seed_v1.csv",
+   "mwslmerge 0.2 (trackbuild_val_lmerge)",
+   "mwslmerge 0.2 (trackbuild_val_lmerge)",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: run = results/training_sample_val_3seed_v1.csv",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: best checkpoint = val scores' checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2/gnn/artifacts/best-epoch=23-val_loss=0.048274.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armiii_s2/gnn/artifacts/best-epoch=23-val_loss=0.048274.ckpt",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: checkpoint sha256 = val record",
+   "7376c2f889b8576ad34745d9ea5918d64fd3fbf1cd1c9bc0590c9e7fc443bd36",
+   "7376c2f889b8576ad34745d9ea5918d64fd3fbf1cd1c9bc0590c9e7fc443bd36",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: union ML checkpoint = baseline best ML checkpoint",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/ml/artifacts/best-epoch=19-f1=0.456097.ckpt",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1/armiii_s2/ml/artifacts/best-epoch=19-f1=0.456097.ckpt",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: union triplet model is the run's",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s2/learned_triplet_filter_v2/model.joblib",
+   "/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/baseline_v1_ts/armiii_s2/learned_triplet_filter_v2/model.joblib",
+   true
+  ],
+  [
+   "Canto-L (ttbar+HNL) s2: acorn one-time test done",
+   "1",
+   "1",
+   true
+  ]
+ ]
+}

@@ -30,3 +30,9 @@ paper/*.blg
 paper/*.aux
 paper/*.out
 paper_zh/
+
+# large or stray local outputs, kept out of the repository
+results/dense_jet_check_v1.csv
+results/dense_jet_check_v1_edges.csv.gz
+paper/figures/contact_sheet.pdf
+/timing.tsv

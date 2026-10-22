@@ -228,7 +228,7 @@ def write_table(rows):
         "summed over seeds. $t\\bar t$ prompt: $t\\bar t$ targets with $|d_0|<1$\\,mm. Every model finds 99.8\\% of the $W$ % N:D14 ; N:" + ts,
         "muons. Uncertainties: Eq.~(\\ref{eq:sigma}). Canto trained on $t\\bar t$ events is the model of the main text.",
         "Perfect classifier: the primary efficiency of the same builder with every true edge of the graph scored one and",
-        "every other edge zero (Sec.~\\ref{sec:graph}); seed~0 only for Canto trained on $t\\bar t$+HNL and on HNL.}",
+        "every other edge zero (Sec.~V\\,C of the main text); for Canto trained on $t\\bar t$+HNL and on HNL this row uses seed~0 only.}",
         "\\begin{ruledtabular}",
         "\\begin{tabular}{lcccccc}",
         "Trained on & \\multicolumn{2}{c}{$t\\bar t$} & \\multicolumn{2}{c}{$t\\bar t$+HNL} & \\multicolumn{2}{c}{HNL} \\\\",

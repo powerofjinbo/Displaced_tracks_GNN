@@ -1,0 +1,714 @@
+Independent recomputation of the R19 / R20 read-outs (ledger R21); scripts/verify/verify_ts_seeds12.py
+compute: git ac60d02b89a6a0bce693ee7dbe90e8d45c8444f0, Slurm job 6854422; no import of hnl.*; stored tables only
+SUMMARY: 678 agree, 0 disagree
+
+== Truth re-derivation (HNL test sets) against the stored derived tables
+  hnl10_100_test: {'n_hits_mismatch': 0, 'target_mismatch': 0, 'category_mismatch': 0}
+  hnl15_200_test: {'n_hits_mismatch': 0, 'target_mismatch': 0, 'category_mismatch': 0}
+  hnl15_100_external: {'n_hits_mismatch': 0, 'target_mismatch': 0, 'category_mismatch': 0}
+  ttbar_test: {'n_hits_mismatch': 0, 'target_mismatch': 0, 'category_mismatch': 0}
+  counts: {'primary_pooled': 5013, 'primary_per_set': {'hnl10_100_test': 603, 'hnl15_200_test': 549, 'hnl15_100_external': 3861}, 'hnl_targets': 7296, 'w_targets': 6442, 'ttbar_prompt': 53140}
+
+== Pooled HNL test, results/bootstrap_ts_test_3seed_v1.csv (test_release_card rows); percent, 2 decimals
+  OK   Canto-L (HNL) eff_primary s0: mine 98.9427 reported 98.9427
+  OK   Canto-L (HNL) eff_primary s1: mine 99.3218 reported 99.3218
+  OK   Canto-L (HNL) eff_primary s2: mine 99.2220 reported 99.2220
+  OK   Canto-L (HNL) eff_primary mean: mine 99.1622 reported 99.1622
+  OK   Canto-L (HNL) eff_primary seed sd: mine 0.1965 reported 0.1965
+  OK   Canto-L (HNL) eff_primary boot sd (Eq. 2): mine 0.1173 reported 0.1173
+  OK   Canto-L (HNL) eff_primary sigma (Eq. 2): mine 0.1631 reported 0.1631
+  OK   Canto-L (HNL) eff_primary k/n pooled: mine 14913/15039 reported 14913/15039
+  OK   Canto-L (HNL) eff_hnl_targets s0: mine 99.0132 reported 99.0132
+  OK   Canto-L (HNL) eff_hnl_targets s1: mine 99.3832 reported 99.3832
+  OK   Canto-L (HNL) eff_hnl_targets s2: mine 99.2599 reported 99.2599
+  OK   Canto-L (HNL) eff_hnl_targets mean: mine 99.2188 reported 99.2188
+  OK   Canto-L (HNL) eff_hnl_targets seed sd: mine 0.1884 reported 0.1884
+  OK   Canto-L (HNL) eff_hnl_targets boot sd (Eq. 2): mine 0.1003 reported 0.1003
+  OK   Canto-L (HNL) eff_hnl_targets sigma (Eq. 2): mine 0.1479 reported 0.1479
+  OK   Canto-L (HNL) eff_hnl_targets k/n pooled: mine 21717/21888 reported 21717/21888
+  OK   Canto-L (HNL) eff_w_muons s0: mine 99.7361 reported 99.7361
+  OK   Canto-L (HNL) eff_w_muons s1: mine 99.7672 reported 99.7672
+  OK   Canto-L (HNL) eff_w_muons s2: mine 99.7361 reported 99.7361
+  OK   Canto-L (HNL) eff_w_muons mean: mine 99.7465 reported 99.7465
+  OK   Canto-L (HNL) eff_w_muons seed sd: mine 0.0179 reported 0.0179
+  OK   Canto-L (HNL) eff_w_muons boot sd (Eq. 2): mine 0.0614 reported 0.0614
+  OK   Canto-L (HNL) eff_w_muons sigma (Eq. 2): mine 0.0622 reported 0.0622
+  OK   Canto-L (HNL) eff_w_muons k/n pooled: mine 19277/19326 reported 19277/19326
+  OK   Canto-L (HNL) eff_ttbar_prompt s0: mine 96.5318 reported 96.5318
+  OK   Canto-L (HNL) eff_ttbar_prompt s1: mine 96.7313 reported 96.7313
+  OK   Canto-L (HNL) eff_ttbar_prompt s2: mine 96.1159 reported 96.1159
+  OK   Canto-L (HNL) eff_ttbar_prompt mean: mine 96.4597 reported 96.4597
+  OK   Canto-L (HNL) eff_ttbar_prompt seed sd: mine 0.3140 reported 0.3140
+  OK   Canto-L (HNL) eff_ttbar_prompt boot sd (Eq. 2): mine 0.1230 reported 0.1230
+  OK   Canto-L (HNL) eff_ttbar_prompt sigma (Eq. 2): mine 0.2191 reported 0.2191
+  OK   Canto-L (HNL) eff_ttbar_prompt k/n pooled: mine 153776/159420 reported 153776/159420
+  OK   Canto-L (HNL) fake_rate_hnl s0: mine 1.0122 reported 1.0122
+  OK   Canto-L (HNL) fake_rate_hnl s1: mine 0.9789 reported 0.9789
+  OK   Canto-L (HNL) fake_rate_hnl s2: mine 0.9972 reported 0.9972
+  OK   Canto-L (HNL) fake_rate_hnl mean: mine 0.9961 reported 0.9961
+  OK   Canto-L (HNL) fake_rate_hnl seed sd: mine 0.0167 reported 0.0167
+  OK   Canto-L (HNL) fake_rate_hnl boot sd (Eq. 2): mine 0.0210 reported 0.0210
+  OK   Canto-L (HNL) fake_rate_hnl sigma (Eq. 2): mine 0.0231 reported 0.0231
+  OK   Canto-L (HNL) fake_rate_hnl k/n pooled: mine 23756/2384966 reported 23756/2384966
+  OK   Canto-L (HNL) d0_0_0.1 s0: mine 100.0000 reported 100.0000
+  OK   Canto-L (HNL) d0_0_0.1 s1: mine 100.0000 reported 100.0000
+  OK   Canto-L (HNL) d0_0_0.1 s2: mine 100.0000 reported 100.0000
+  OK   Canto-L (HNL) d0_0_0.1 mean: mine 100.0000 reported 100.0000
+  OK   Canto-L (HNL) d0_0_0.1 seed sd: mine 0.0000 reported 0.0000
+  OK   Canto-L (HNL) d0_0_0.1 boot sd (Eq. 2): mine 0.0000 reported 0.0000
+  OK   Canto-L (HNL) d0_0_0.1 sigma (Eq. 2): mine 0.0000 reported 0.0000
+  OK   Canto-L (HNL) d0_0_0.1 k/n pooled: mine 285/285 reported 285/285
+  OK   Canto-L (HNL) d0_0.1_1 s0: mine 99.2095 reported 99.2095
+  OK   Canto-L (HNL) d0_0.1_1 s1: mine 99.4071 reported 99.4071
+  OK   Canto-L (HNL) d0_0.1_1 s2: mine 99.2095 reported 99.2095
+  OK   Canto-L (HNL) d0_0.1_1 mean: mine 99.2754 reported 99.2754
+  OK   Canto-L (HNL) d0_0.1_1 seed sd: mine 0.1141 reported 0.1141
+  OK   Canto-L (HNL) d0_0.1_1 boot sd (Eq. 2): mine 0.3452 reported 0.3452
+  OK   Canto-L (HNL) d0_0.1_1 sigma (Eq. 2): mine 0.3514 reported 0.3514
+  OK   Canto-L (HNL) d0_0.1_1 k/n pooled: mine 1507/1518 reported 1507/1518
+  OK   Canto-L (HNL) d0_1_3 s0: mine 99.0769 reported 99.0769
+  OK   Canto-L (HNL) d0_1_3 s1: mine 99.3846 reported 99.3846
+  OK   Canto-L (HNL) d0_1_3 s2: mine 99.0769 reported 99.0769
+  OK   Canto-L (HNL) d0_1_3 mean: mine 99.1795 reported 99.1795
+  OK   Canto-L (HNL) d0_1_3 seed sd: mine 0.1776 reported 0.1776
+  OK   Canto-L (HNL) d0_1_3 boot sd (Eq. 2): mine 0.2965 reported 0.2965
+  OK   Canto-L (HNL) d0_1_3 sigma (Eq. 2): mine 0.3137 reported 0.3137
+  OK   Canto-L (HNL) d0_1_3 k/n pooled: mine 1934/1950 reported 1934/1950
+  OK   Canto-L (HNL) d0_3_10 s0: mine 99.1447 reported 99.1447
+  OK   Canto-L (HNL) d0_3_10 s1: mine 99.5723 reported 99.5723
+  OK   Canto-L (HNL) d0_3_10 s2: mine 99.4298 reported 99.4298
+  OK   Canto-L (HNL) d0_3_10 mean: mine 99.3823 reported 99.3823
+  OK   Canto-L (HNL) d0_3_10 seed sd: mine 0.2178 reported 0.2178
+  OK   Canto-L (HNL) d0_3_10 boot sd (Eq. 2): mine 0.2004 reported 0.2004
+  OK   Canto-L (HNL) d0_3_10 sigma (Eq. 2): mine 0.2366 reported 0.2366
+  OK   Canto-L (HNL) d0_3_10 k/n pooled: mine 4183/4209 reported 4183/4209
+  OK   Canto-L (HNL) d0_10_30 s0: mine 99.1555 reported 99.1555
+  OK   Canto-L (HNL) d0_10_30 s1: mine 99.6026 reported 99.6026
+  OK   Canto-L (HNL) d0_10_30 s2: mine 99.1555 reported 99.1555
+  OK   Canto-L (HNL) d0_10_30 mean: mine 99.3045 reported 99.3045
+  OK   Canto-L (HNL) d0_10_30 seed sd: mine 0.2581 reported 0.2581
+  OK   Canto-L (HNL) d0_10_30 boot sd (Eq. 2): mine 0.1450 reported 0.1450
+  OK   Canto-L (HNL) d0_10_30 sigma (Eq. 2): mine 0.2079 reported 0.2079
+  OK   Canto-L (HNL) d0_10_30 k/n pooled: mine 5997/6039 reported 5997/6039
+  OK   Canto-L (HNL) d0_30_100 s0: mine 98.8054 reported 98.8054
+  OK   Canto-L (HNL) d0_30_100 s1: mine 99.2036 reported 99.2036
+  OK   Canto-L (HNL) d0_30_100 s2: mine 99.4525 reported 99.4525
+  OK   Canto-L (HNL) d0_30_100 mean: mine 99.1538 reported 99.1538
+  OK   Canto-L (HNL) d0_30_100 seed sd: mine 0.3264 reported 0.3264
+  OK   Canto-L (HNL) d0_30_100 boot sd (Eq. 2): mine 0.1670 reported 0.1670
+  OK   Canto-L (HNL) d0_30_100 sigma (Eq. 2): mine 0.2518 reported 0.2518
+  OK   Canto-L (HNL) d0_30_100 k/n pooled: mine 5976/6027 reported 5976/6027
+  OK   Canto-L (HNL) d0_100_300 s0: mine 98.9726 reported 98.9726
+  OK   Canto-L (HNL) d0_100_300 s1: mine 99.1438 reported 99.1438
+  OK   Canto-L (HNL) d0_100_300 s2: mine 98.9726 reported 98.9726
+  OK   Canto-L (HNL) d0_100_300 mean: mine 99.0297 reported 99.0297
+  OK   Canto-L (HNL) d0_100_300 seed sd: mine 0.0989 reported 0.0989
+  OK   Canto-L (HNL) d0_100_300 boot sd (Eq. 2): mine 0.3994 reported 0.3994
+  OK   Canto-L (HNL) d0_100_300 sigma (Eq. 2): mine 0.4035 reported 0.4035
+  OK   Canto-L (HNL) d0_100_300 k/n pooled: mine 1735/1752 reported 1735/1752
+  OK   Canto-L (HNL) d0_300_inf s0: mine 91.6667 reported 91.6667
+  OK   Canto-L (HNL) d0_300_inf s1: mine 91.6667 reported 91.6667
+  OK   Canto-L (HNL) d0_300_inf s2: mine 94.4444 reported 94.4444
+  OK   Canto-L (HNL) d0_300_inf mean: mine 92.5926 reported 92.5926
+  OK   Canto-L (HNL) d0_300_inf seed sd: mine 1.6038 reported 1.6038
+  OK   Canto-L (HNL) d0_300_inf boot sd (Eq. 2): mine 5.0170 reported 5.0170
+  OK   Canto-L (HNL) d0_300_inf sigma (Eq. 2): mine 5.1017 reported 5.1017
+  OK   Canto-L (HNL) d0_300_inf k/n pooled: mine 100/108 reported 100/108
+  OK   Canto-L (HNL) rv_0_10 s0: mine 99.6661 reported 99.6661
+  OK   Canto-L (HNL) rv_0_10 s1: mine 99.6661 reported 99.6661
+  OK   Canto-L (HNL) rv_0_10 s2: mine 99.6661 reported 99.6661
+  OK   Canto-L (HNL) rv_0_10 mean: mine 99.6661 reported 99.6661
+  OK   Canto-L (HNL) rv_0_10 seed sd: mine 0.0000 reported 0.0000
+  OK   Canto-L (HNL) rv_0_10 boot sd (Eq. 2): mine 0.2422 reported 0.2422
+  OK   Canto-L (HNL) rv_0_10 sigma (Eq. 2): mine 0.2422 reported 0.2422
+  OK   Canto-L (HNL) rv_0_10 k/n pooled: mine 1791/1797 reported 1791/1797
+  OK   Canto-L (HNL) rv_10_30 s0: mine 99.6190 reported 99.6190
+  OK   Canto-L (HNL) rv_10_30 s1: mine 99.7143 reported 99.7143
+  OK   Canto-L (HNL) rv_10_30 s2: mine 99.2381 reported 99.2381
+  OK   Canto-L (HNL) rv_10_30 mean: mine 99.5238 reported 99.5238
+  OK   Canto-L (HNL) rv_10_30 seed sd: mine 0.2520 reported 0.2520
+  OK   Canto-L (HNL) rv_10_30 boot sd (Eq. 2): mine 0.1838 reported 0.1838
+  OK   Canto-L (HNL) rv_10_30 sigma (Eq. 2): mine 0.2344 reported 0.2344
+  OK   Canto-L (HNL) rv_10_30 k/n pooled: mine 3135/3150 reported 3135/3150
+  OK   Canto-L (HNL) rv_30_100 s0: mine 98.9464 reported 98.9464
+  OK   Canto-L (HNL) rv_30_100 s1: mine 99.5171 reported 99.5171
+  OK   Canto-L (HNL) rv_30_100 s2: mine 99.2537 reported 99.2537
+  OK   Canto-L (HNL) rv_30_100 mean: mine 99.2391 reported 99.2391
+  OK   Canto-L (HNL) rv_30_100 seed sd: mine 0.2856 reported 0.2856
+  OK   Canto-L (HNL) rv_30_100 boot sd (Eq. 2): mine 0.1692 reported 0.1692
+  OK   Canto-L (HNL) rv_30_100 sigma (Eq. 2): mine 0.2363 reported 0.2363
+  OK   Canto-L (HNL) rv_30_100 k/n pooled: mine 6782/6834 reported 6782/6834
+  OK   Canto-L (HNL) rv_100_200 s0: mine 98.9290 reported 98.9290
+  OK   Canto-L (HNL) rv_100_200 s1: mine 99.3307 reported 99.3307
+  OK   Canto-L (HNL) rv_100_200 s2: mine 99.2637 reported 99.2637
+  OK   Canto-L (HNL) rv_100_200 mean: mine 99.1745 reported 99.1745
+  OK   Canto-L (HNL) rv_100_200 seed sd: mine 0.2152 reported 0.2152
+  OK   Canto-L (HNL) rv_100_200 boot sd (Eq. 2): mine 0.2153 reported 0.2153
+  OK   Canto-L (HNL) rv_100_200 sigma (Eq. 2): mine 0.2486 reported 0.2486
+  OK   Canto-L (HNL) rv_100_200 k/n pooled: mine 4445/4482 reported 4445/4482
+  OK   Canto-L (HNL) rv_200_300 s0: mine 98.8208 reported 98.8208
+  OK   Canto-L (HNL) rv_200_300 s1: mine 99.2925 reported 99.2925
+  OK   Canto-L (HNL) rv_200_300 s2: mine 99.5283 reported 99.5283
+  OK   Canto-L (HNL) rv_200_300 mean: mine 99.2138 reported 99.2138
+  OK   Canto-L (HNL) rv_200_300 seed sd: mine 0.3603 reported 0.3603
+  OK   Canto-L (HNL) rv_200_300 boot sd (Eq. 2): mine 0.2746 reported 0.2746
+  OK   Canto-L (HNL) rv_200_300 sigma (Eq. 2): mine 0.3445 reported 0.3445
+  OK   Canto-L (HNL) rv_200_300 k/n pooled: mine 2524/2544 reported 2524/2544
+  OK   Canto-L (HNL) rv_300_inf s0: mine 99.5726 reported 99.5726
+  OK   Canto-L (HNL) rv_300_inf s1: mine 100.0000 reported 100.0000
+  OK   Canto-L (HNL) rv_300_inf s2: mine 99.7863 reported 99.7863
+  OK   Canto-L (HNL) rv_300_inf mean: mine 99.7863 reported 99.7863
+  OK   Canto-L (HNL) rv_300_inf seed sd: mine 0.2137 reported 0.2137
+  OK   Canto-L (HNL) rv_300_inf boot sd (Eq. 2): mine 0.1567 reported 0.1567
+  OK   Canto-L (HNL) rv_300_inf sigma (Eq. 2): mine 0.1994 reported 0.1994
+  OK   Canto-L (HNL) rv_300_inf k/n pooled: mine 1401/1404 reported 1401/1404
+  OK   Canto-L (HNL) rv_none s0: mine 97.4955 reported 97.4955
+  OK   Canto-L (HNL) rv_none s1: mine 97.6744 reported 97.6744
+  OK   Canto-L (HNL) rv_none s2: mine 98.0322 reported 98.0322
+  OK   Canto-L (HNL) rv_none mean: mine 97.7340 reported 97.7340
+  OK   Canto-L (HNL) rv_none seed sd: mine 0.2733 reported 0.2733
+  OK   Canto-L (HNL) rv_none boot sd (Eq. 2): mine 0.6312 reported 0.6312
+  OK   Canto-L (HNL) rv_none sigma (Eq. 2): mine 0.6506 reported 0.6506
+  OK   Canto-L (HNL) rv_none k/n pooled: mine 1639/1677 reported 1639/1677
+  OK   Canto-L (ttbar+HNL) eff_primary s0: mine 98.9627 reported 98.9627
+  OK   Canto-L (ttbar+HNL) eff_primary s1: mine 99.1422 reported 99.1422
+  OK   Canto-L (ttbar+HNL) eff_primary s2: mine 99.2619 reported 99.2619
+  OK   Canto-L (ttbar+HNL) eff_primary mean: mine 99.1223 reported 99.1223
+  OK   Canto-L (ttbar+HNL) eff_primary seed sd: mine 0.1506 reported 0.1506
+  OK   Canto-L (ttbar+HNL) eff_primary boot sd (Eq. 2): mine 0.1079 reported 0.1079
+  OK   Canto-L (ttbar+HNL) eff_primary sigma (Eq. 2): mine 0.1386 reported 0.1386
+  OK   Canto-L (ttbar+HNL) eff_primary k/n pooled: mine 14907/15039 reported 14907/15039
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets s0: mine 99.0680 reported 99.0680
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets s1: mine 99.1365 reported 99.1365
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets s2: mine 99.2599 reported 99.2599
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets mean: mine 99.1548 reported 99.1548
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets seed sd: mine 0.0972 reported 0.0972
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets boot sd (Eq. 2): mine 0.0969 reported 0.0969
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets sigma (Eq. 2): mine 0.1120 reported 0.1120
+  OK   Canto-L (ttbar+HNL) eff_hnl_targets k/n pooled: mine 21703/21888 reported 21703/21888
+  OK   Canto-L (ttbar+HNL) eff_w_muons s0: mine 99.7516 reported 99.7516
+  OK   Canto-L (ttbar+HNL) eff_w_muons s1: mine 99.7672 reported 99.7672
+  OK   Canto-L (ttbar+HNL) eff_w_muons s2: mine 99.7672 reported 99.7672
+  OK   Canto-L (ttbar+HNL) eff_w_muons mean: mine 99.7620 reported 99.7620
+  OK   Canto-L (ttbar+HNL) eff_w_muons seed sd: mine 0.0090 reported 0.0090
+  OK   Canto-L (ttbar+HNL) eff_w_muons boot sd (Eq. 2): mine 0.0606 reported 0.0606
+  OK   Canto-L (ttbar+HNL) eff_w_muons sigma (Eq. 2): mine 0.0609 reported 0.0609
+  OK   Canto-L (ttbar+HNL) eff_w_muons k/n pooled: mine 19280/19326 reported 19280/19326
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt s0: mine 96.3455 reported 96.3455
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt s1: mine 96.5036 reported 96.5036
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt s2: mine 96.4452 reported 96.4452
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt mean: mine 96.4314 reported 96.4314
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt seed sd: mine 0.0799 reported 0.0799
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt boot sd (Eq. 2): mine 0.1286 reported 0.1286
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt sigma (Eq. 2): mine 0.1366 reported 0.1366
+  OK   Canto-L (ttbar+HNL) eff_ttbar_prompt k/n pooled: mine 153731/159420 reported 153731/159420
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl s0: mine 1.0018 reported 1.0018
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl s1: mine 1.0066 reported 1.0066
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl s2: mine 1.0067 reported 1.0067
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl mean: mine 1.0051 reported 1.0051
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl seed sd: mine 0.0028 reported 0.0028
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl boot sd (Eq. 2): mine 0.0215 reported 0.0215
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl sigma (Eq. 2): mine 0.0215 reported 0.0215
+  OK   Canto-L (ttbar+HNL) fake_rate_hnl k/n pooled: mine 23967/2384620 reported 23967/2384620
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 s0: mine 100.0000 reported 100.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 s1: mine 100.0000 reported 100.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 s2: mine 100.0000 reported 100.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 mean: mine 100.0000 reported 100.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 seed sd: mine 0.0000 reported 0.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 boot sd (Eq. 2): mine 0.0000 reported 0.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 sigma (Eq. 2): mine 0.0000 reported 0.0000
+  OK   Canto-L (ttbar+HNL) d0_0_0.1 k/n pooled: mine 285/285 reported 285/285
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 s0: mine 99.2095 reported 99.2095
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 s1: mine 99.0119 reported 99.0119
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 s2: mine 99.0119 reported 99.0119
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 mean: mine 99.0777 reported 99.0777
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 seed sd: mine 0.1141 reported 0.1141
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 boot sd (Eq. 2): mine 0.3820 reported 0.3820
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 sigma (Eq. 2): mine 0.3877 reported 0.3877
+  OK   Canto-L (ttbar+HNL) d0_0.1_1 k/n pooled: mine 1504/1518 reported 1504/1518
+  OK   Canto-L (ttbar+HNL) d0_1_3 s0: mine 99.2308 reported 99.2308
+  OK   Canto-L (ttbar+HNL) d0_1_3 s1: mine 98.9231 reported 98.9231
+  OK   Canto-L (ttbar+HNL) d0_1_3 s2: mine 99.3846 reported 99.3846
+  OK   Canto-L (ttbar+HNL) d0_1_3 mean: mine 99.1795 reported 99.1795
+  OK   Canto-L (ttbar+HNL) d0_1_3 seed sd: mine 0.2350 reported 0.2350
+  OK   Canto-L (ttbar+HNL) d0_1_3 boot sd (Eq. 2): mine 0.2845 reported 0.2845
+  OK   Canto-L (ttbar+HNL) d0_1_3 sigma (Eq. 2): mine 0.3152 reported 0.3152
+  OK   Canto-L (ttbar+HNL) d0_1_3 k/n pooled: mine 1934/1950 reported 1934/1950
+  OK   Canto-L (ttbar+HNL) d0_3_10 s0: mine 99.2872 reported 99.2872
+  OK   Canto-L (ttbar+HNL) d0_3_10 s1: mine 99.2160 reported 99.2160
+  OK   Canto-L (ttbar+HNL) d0_3_10 s2: mine 99.2872 reported 99.2872
+  OK   Canto-L (ttbar+HNL) d0_3_10 mean: mine 99.2635 reported 99.2635
+  OK   Canto-L (ttbar+HNL) d0_3_10 seed sd: mine 0.0412 reported 0.0412
+  OK   Canto-L (ttbar+HNL) d0_3_10 boot sd (Eq. 2): mine 0.2232 reported 0.2232
+  OK   Canto-L (ttbar+HNL) d0_3_10 sigma (Eq. 2): mine 0.2245 reported 0.2245
+  OK   Canto-L (ttbar+HNL) d0_3_10 k/n pooled: mine 4178/4209 reported 4178/4209
+  OK   Canto-L (ttbar+HNL) d0_10_30 s0: mine 99.2052 reported 99.2052
+  OK   Canto-L (ttbar+HNL) d0_10_30 s1: mine 99.3542 reported 99.3542
+  OK   Canto-L (ttbar+HNL) d0_10_30 s2: mine 99.4536 reported 99.4536
+  OK   Canto-L (ttbar+HNL) d0_10_30 mean: mine 99.3376 reported 99.3376
+  OK   Canto-L (ttbar+HNL) d0_10_30 seed sd: mine 0.1250 reported 0.1250
+  OK   Canto-L (ttbar+HNL) d0_10_30 boot sd (Eq. 2): mine 0.1390 reported 0.1390
+  OK   Canto-L (ttbar+HNL) d0_10_30 sigma (Eq. 2): mine 0.1567 reported 0.1567
+  OK   Canto-L (ttbar+HNL) d0_10_30 k/n pooled: mine 5999/6039 reported 5999/6039
+  OK   Canto-L (ttbar+HNL) d0_30_100 s0: mine 98.8552 reported 98.8552
+  OK   Canto-L (ttbar+HNL) d0_30_100 s1: mine 99.1040 reported 99.1040
+  OK   Canto-L (ttbar+HNL) d0_30_100 s2: mine 99.2036 reported 99.2036
+  OK   Canto-L (ttbar+HNL) d0_30_100 mean: mine 99.0543 reported 99.0543
+  OK   Canto-L (ttbar+HNL) d0_30_100 seed sd: mine 0.1795 reported 0.1795
+  OK   Canto-L (ttbar+HNL) d0_30_100 boot sd (Eq. 2): mine 0.1698 reported 0.1698
+  OK   Canto-L (ttbar+HNL) d0_30_100 sigma (Eq. 2): mine 0.1989 reported 0.1989
+  OK   Canto-L (ttbar+HNL) d0_30_100 k/n pooled: mine 5970/6027 reported 5970/6027
+  OK   Canto-L (ttbar+HNL) d0_100_300 s0: mine 98.8014 reported 98.8014
+  OK   Canto-L (ttbar+HNL) d0_100_300 s1: mine 98.9726 reported 98.9726
+  OK   Canto-L (ttbar+HNL) d0_100_300 s2: mine 98.9726 reported 98.9726
+  OK   Canto-L (ttbar+HNL) d0_100_300 mean: mine 98.9155 reported 98.9155
+  OK   Canto-L (ttbar+HNL) d0_100_300 seed sd: mine 0.0989 reported 0.0989
+  OK   Canto-L (ttbar+HNL) d0_100_300 boot sd (Eq. 2): mine 0.3244 reported 0.3244
+  OK   Canto-L (ttbar+HNL) d0_100_300 sigma (Eq. 2): mine 0.3294 reported 0.3294
+  OK   Canto-L (ttbar+HNL) d0_100_300 k/n pooled: mine 1733/1752 reported 1733/1752
+  OK   Canto-L (ttbar+HNL) d0_300_inf s0: mine 91.6667 reported 91.6667
+  OK   Canto-L (ttbar+HNL) d0_300_inf s1: mine 91.6667 reported 91.6667
+  OK   Canto-L (ttbar+HNL) d0_300_inf s2: mine 94.4444 reported 94.4444
+  OK   Canto-L (ttbar+HNL) d0_300_inf mean: mine 92.5926 reported 92.5926
+  OK   Canto-L (ttbar+HNL) d0_300_inf seed sd: mine 1.6038 reported 1.6038
+  OK   Canto-L (ttbar+HNL) d0_300_inf boot sd (Eq. 2): mine 4.0027 reported 4.0027
+  OK   Canto-L (ttbar+HNL) d0_300_inf sigma (Eq. 2): mine 4.1084 reported 4.1084
+  OK   Canto-L (ttbar+HNL) d0_300_inf k/n pooled: mine 100/108 reported 100/108
+  OK   Canto-L (ttbar+HNL) rv_0_10 s0: mine 99.4992 reported 99.4992
+  OK   Canto-L (ttbar+HNL) rv_0_10 s1: mine 99.4992 reported 99.4992
+  OK   Canto-L (ttbar+HNL) rv_0_10 s2: mine 99.6661 reported 99.6661
+  OK   Canto-L (ttbar+HNL) rv_0_10 mean: mine 99.5548 reported 99.5548
+  OK   Canto-L (ttbar+HNL) rv_0_10 seed sd: mine 0.0964 reported 0.0964
+  OK   Canto-L (ttbar+HNL) rv_0_10 boot sd (Eq. 2): mine 0.2662 reported 0.2662
+  OK   Canto-L (ttbar+HNL) rv_0_10 sigma (Eq. 2): mine 0.2720 reported 0.2720
+  OK   Canto-L (ttbar+HNL) rv_0_10 k/n pooled: mine 1789/1797 reported 1789/1797
+  OK   Canto-L (ttbar+HNL) rv_10_30 s0: mine 99.2381 reported 99.2381
+  OK   Canto-L (ttbar+HNL) rv_10_30 s1: mine 99.2381 reported 99.2381
+  OK   Canto-L (ttbar+HNL) rv_10_30 s2: mine 99.5238 reported 99.5238
+  OK   Canto-L (ttbar+HNL) rv_10_30 mean: mine 99.3333 reported 99.3333
+  OK   Canto-L (ttbar+HNL) rv_10_30 seed sd: mine 0.1650 reported 0.1650
+  OK   Canto-L (ttbar+HNL) rv_10_30 boot sd (Eq. 2): mine 0.2315 reported 0.2315
+  OK   Canto-L (ttbar+HNL) rv_10_30 sigma (Eq. 2): mine 0.2504 reported 0.2504
+  OK   Canto-L (ttbar+HNL) rv_10_30 k/n pooled: mine 3129/3150 reported 3129/3150
+  OK   Canto-L (ttbar+HNL) rv_30_100 s0: mine 99.1220 reported 99.1220
+  OK   Canto-L (ttbar+HNL) rv_30_100 s1: mine 99.2537 reported 99.2537
+  OK   Canto-L (ttbar+HNL) rv_30_100 s2: mine 99.2976 reported 99.2976
+  OK   Canto-L (ttbar+HNL) rv_30_100 mean: mine 99.2245 reported 99.2245
+  OK   Canto-L (ttbar+HNL) rv_30_100 seed sd: mine 0.0914 reported 0.0914
+  OK   Canto-L (ttbar+HNL) rv_30_100 boot sd (Eq. 2): mine 0.1533 reported 0.1533
+  OK   Canto-L (ttbar+HNL) rv_30_100 sigma (Eq. 2): mine 0.1621 reported 0.1621
+  OK   Canto-L (ttbar+HNL) rv_30_100 k/n pooled: mine 6781/6834 reported 6781/6834
+  OK   Canto-L (ttbar+HNL) rv_100_200 s0: mine 98.8621 reported 98.8621
+  OK   Canto-L (ttbar+HNL) rv_100_200 s1: mine 98.9290 reported 98.9290
+  OK   Canto-L (ttbar+HNL) rv_100_200 s2: mine 99.5315 reported 99.5315
+  OK   Canto-L (ttbar+HNL) rv_100_200 mean: mine 99.1075 reported 99.1075
+  OK   Canto-L (ttbar+HNL) rv_100_200 seed sd: mine 0.3686 reported 0.3686
+  OK   Canto-L (ttbar+HNL) rv_100_200 boot sd (Eq. 2): mine 0.1971 reported 0.1971
+  OK   Canto-L (ttbar+HNL) rv_100_200 sigma (Eq. 2): mine 0.2901 reported 0.2901
+  OK   Canto-L (ttbar+HNL) rv_100_200 k/n pooled: mine 4442/4482 reported 4442/4482
+  OK   Canto-L (ttbar+HNL) rv_200_300 s0: mine 99.2925 reported 99.2925
+  OK   Canto-L (ttbar+HNL) rv_200_300 s1: mine 99.7642 reported 99.7642
+  OK   Canto-L (ttbar+HNL) rv_200_300 s2: mine 99.2925 reported 99.2925
+  OK   Canto-L (ttbar+HNL) rv_200_300 mean: mine 99.4497 reported 99.4497
+  OK   Canto-L (ttbar+HNL) rv_200_300 seed sd: mine 0.2723 reported 0.2723
+  OK   Canto-L (ttbar+HNL) rv_200_300 boot sd (Eq. 2): mine 0.2147 reported 0.2147
+  OK   Canto-L (ttbar+HNL) rv_200_300 sigma (Eq. 2): mine 0.2661 reported 0.2661
+  OK   Canto-L (ttbar+HNL) rv_200_300 k/n pooled: mine 2530/2544 reported 2530/2544
+  OK   Canto-L (ttbar+HNL) rv_300_inf s0: mine 100.0000 reported 100.0000
+  OK   Canto-L (ttbar+HNL) rv_300_inf s1: mine 99.7863 reported 99.7863
+  OK   Canto-L (ttbar+HNL) rv_300_inf s2: mine 99.7863 reported 99.7863
+  OK   Canto-L (ttbar+HNL) rv_300_inf mean: mine 99.8575 reported 99.8575
+  OK   Canto-L (ttbar+HNL) rv_300_inf seed sd: mine 0.1234 reported 0.1234
+  OK   Canto-L (ttbar+HNL) rv_300_inf boot sd (Eq. 2): mine 0.0979 reported 0.0979
+  OK   Canto-L (ttbar+HNL) rv_300_inf sigma (Eq. 2): mine 0.1211 reported 0.1211
+  OK   Canto-L (ttbar+HNL) rv_300_inf k/n pooled: mine 1402/1404 reported 1402/1404
+  OK   Canto-L (ttbar+HNL) rv_none s0: mine 97.4955 reported 97.4955
+  OK   Canto-L (ttbar+HNL) rv_none s1: mine 97.1377 reported 97.1377
+  OK   Canto-L (ttbar+HNL) rv_none s2: mine 96.9589 reported 96.9589
+  OK   Canto-L (ttbar+HNL) rv_none mean: mine 97.1974 reported 97.1974
+  OK   Canto-L (ttbar+HNL) rv_none seed sd: mine 0.2733 reported 0.2733
+  OK   Canto-L (ttbar+HNL) rv_none boot sd (Eq. 2): mine 0.6418 reported 0.6418
+  OK   Canto-L (ttbar+HNL) rv_none sigma (Eq. 2): mine 0.6609 reported 0.6609
+  OK   Canto-L (ttbar+HNL) rv_none k/n pooled: mine 1630/1677 reported 1630/1677
+
+== Primary per test set, results/training_sample_test_seeds12_v1.csv (per_sample block); percent
+  OK   Canto-L (HNL) hnl10_100_test s0 value: mine 98.8391 reported 98.8391
+  OK   Canto-L (HNL) hnl10_100_test s0 boot sd: mine 0.4489 reported 0.4489
+  OK   Canto-L (HNL) hnl10_100_test s0 k/n: mine 596/603 reported 596/603
+  OK   Canto-L (HNL) hnl15_200_test s0 value: mine 99.4536 reported 99.4536
+  OK   Canto-L (HNL) hnl15_200_test s0 boot sd: mine 0.3160 reported 0.3160
+  OK   Canto-L (HNL) hnl15_200_test s0 k/n: mine 546/549 reported 546/549
+  OK   Canto-L (HNL) hnl15_100_external s0 value: mine 98.8863 reported 98.8863
+  OK   Canto-L (HNL) hnl15_100_external s0 boot sd: mine 0.1926 reported 0.1926
+  OK   Canto-L (HNL) hnl15_100_external s0 k/n: mine 3818/3861 reported 3818/3861
+  OK   Canto-L (HNL) hnl10_100_test s1 value: mine 99.0050 reported 99.0050
+  OK   Canto-L (HNL) hnl10_100_test s1 boot sd: mine 0.4832 reported 0.4832
+  OK   Canto-L (HNL) hnl10_100_test s1 k/n: mine 597/603 reported 597/603
+  OK   Canto-L (HNL) hnl15_200_test s1 value: mine 98.9071 reported 98.9071
+  OK   Canto-L (HNL) hnl15_200_test s1 boot sd: mine 0.4500 reported 0.4500
+  OK   Canto-L (HNL) hnl15_200_test s1 k/n: mine 543/549 reported 543/549
+  OK   Canto-L (HNL) hnl15_100_external s1 value: mine 99.4302 reported 99.4302
+  OK   Canto-L (HNL) hnl15_100_external s1 boot sd: mine 0.1271 reported 0.1271
+  OK   Canto-L (HNL) hnl15_100_external s1 k/n: mine 3839/3861 reported 3839/3861
+  OK   Canto-L (HNL) hnl10_100_test s2 value: mine 99.3367 reported 99.3367
+  OK   Canto-L (HNL) hnl10_100_test s2 boot sd: mine 0.3260 reported 0.3260
+  OK   Canto-L (HNL) hnl10_100_test s2 k/n: mine 599/603 reported 599/603
+  OK   Canto-L (HNL) hnl15_200_test s2 value: mine 98.9071 reported 98.9071
+  OK   Canto-L (HNL) hnl15_200_test s2 boot sd: mine 0.4415 reported 0.4415
+  OK   Canto-L (HNL) hnl15_200_test s2 k/n: mine 543/549 reported 543/549
+  OK   Canto-L (HNL) hnl15_100_external s2 value: mine 99.2489 reported 99.2489
+  OK   Canto-L (HNL) hnl15_100_external s2 boot sd: mine 0.1485 reported 0.1485
+  OK   Canto-L (HNL) hnl15_100_external s2 k/n: mine 3832/3861 reported 3832/3861
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s0 value: mine 99.0050 reported 99.0050
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s0 boot sd: mine 0.4091 reported 0.4091
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s0 k/n: mine 597/603 reported 597/603
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s0 value: mine 98.3607 reported 98.3607
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s0 boot sd: mine 0.6130 reported 0.6130
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s0 k/n: mine 540/549 reported 540/549
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s0 value: mine 99.0417 reported 99.0417
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s0 boot sd: mine 0.1730 reported 0.1730
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s0 k/n: mine 3824/3861 reported 3824/3861
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s1 value: mine 99.5025 reported 99.5025
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s1 boot sd: mine 0.2871 reported 0.2871
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s1 k/n: mine 600/603 reported 600/603
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s1 value: mine 98.3607 reported 98.3607
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s1 boot sd: mine 0.5574 reported 0.5574
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s1 k/n: mine 540/549 reported 540/549
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s1 value: mine 99.1971 reported 99.1971
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s1 boot sd: mine 0.1503 reported 0.1503
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s1 k/n: mine 3830/3861 reported 3830/3861
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s2 value: mine 99.3367 reported 99.3367
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s2 boot sd: mine 0.3437 reported 0.3437
+  OK   Canto-L (ttbar+HNL) hnl10_100_test s2 k/n: mine 599/603 reported 599/603
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s2 value: mine 99.0893 reported 99.0893
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s2 boot sd: mine 0.3847 reported 0.3847
+  OK   Canto-L (ttbar+HNL) hnl15_200_test s2 k/n: mine 544/549 reported 544/549
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s2 value: mine 99.2748 reported 99.2748
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s2 boot sd: mine 0.1460 reported 0.1460
+  OK   Canto-L (ttbar+HNL) hnl15_100_external s2 k/n: mine 3833/3861 reported 3833/3861
+  OK   Canto-L (HNL) hnl10_100_test 3-seed mean: mine 99.0603 reported 99.0603
+  OK   Canto-L (HNL) hnl10_100_test 3-seed sigma: mine 0.3679 reported 0.3679
+  OK   Canto-L (HNL) hnl10_100_test 3-seed seed sd: mine 0.2533 reported 0.2533
+  OK   Canto-L (HNL) hnl15_200_test 3-seed mean: mine 99.0893 reported 99.0893
+  OK   Canto-L (HNL) hnl15_200_test 3-seed sigma: mine 0.3999 reported 0.3999
+  OK   Canto-L (HNL) hnl15_200_test 3-seed seed sd: mine 0.3155 reported 0.3155
+  OK   Canto-L (HNL) hnl15_100_external 3-seed mean: mine 99.1885 reported 99.1885
+  OK   Canto-L (HNL) hnl15_100_external 3-seed sigma: mine 0.2051 reported 0.2051
+  OK   Canto-L (HNL) hnl15_100_external 3-seed seed sd: mine 0.2769 reported 0.2769
+  OK   Canto-L (ttbar+HNL) hnl10_100_test 3-seed mean: mine 99.2814 reported 99.2814
+  OK   Canto-L (ttbar+HNL) hnl10_100_test 3-seed sigma: mine 0.3390 reported 0.3390
+  OK   Canto-L (ttbar+HNL) hnl10_100_test 3-seed seed sd: mine 0.2533 reported 0.2533
+  OK   Canto-L (ttbar+HNL) hnl15_200_test 3-seed mean: mine 98.6035 reported 98.6035
+  OK   Canto-L (ttbar+HNL) hnl15_200_test 3-seed sigma: mine 0.5050 reported 0.5050
+  OK   Canto-L (ttbar+HNL) hnl15_200_test 3-seed seed sd: mine 0.4207 reported 0.4207
+  OK   Canto-L (ttbar+HNL) hnl15_100_external 3-seed mean: mine 99.1712 reported 99.1712
+  OK   Canto-L (ttbar+HNL) hnl15_100_external 3-seed sigma: mine 0.1346 reported 0.1346
+  OK   Canto-L (ttbar+HNL) hnl15_100_external 3-seed seed sd: mine 0.1187 reported 0.1187
+
+== Paired difference Canto-L (ttbar+HNL) minus Canto-L (HNL), results/training_sample_paired_test_3seed_v1.csv; points, 2 decimals
+  OK   paired primary value: mine -0.0399 reported -0.0399
+  OK   paired primary boot: mine 0.1090 reported 0.1090
+  OK   paired primary seeds: mine 0.1429 reported 0.1429
+  OK   paired primary sigma: mine 0.1798 reported 0.1798
+  OK   paired hnl_d0_100_300 value: mine -0.1142 reported -0.1142
+  OK   paired hnl_d0_100_300 boot: mine 0.4410 reported 0.4410
+  OK   paired hnl_d0_100_300 seeds: mine 0.0807 reported 0.0807
+  OK   paired hnl_d0_100_300 sigma: mine 0.4483 reported 0.4483
+  OK   paired hnl_d0_ge300 value: mine 0.0000 reported 0.0000
+  OK   paired hnl_d0_ge300 boot: mine 4.0483 reported 4.0483
+  OK   paired hnl_d0_ge300 seeds: mine 1.3095 reported 1.3095
+  OK   paired hnl_d0_ge300 sigma: mine 4.2548 reported 4.2548
+  OK   paired hnl_targets value: mine -0.0640 reported -0.0640
+  OK   paired hnl_targets boot: mine 0.0817 reported 0.0817
+  OK   paired hnl_targets seeds: mine 0.1224 reported 0.1224
+  OK   paired hnl_targets sigma: mine 0.1472 reported 0.1472
+  OK   paired w_muons value: mine 0.0155 reported 0.0155
+  OK   paired w_muons boot: mine 0.0221 reported 0.0221
+  OK   paired w_muons seeds: mine 0.0116 reported 0.0116
+  OK   paired w_muons sigma: mine 0.0249 reported 0.0249
+  OK   paired ttbar_prompt value: mine -0.0282 reported -0.0282
+  OK   paired ttbar_prompt boot: mine 0.0392 reported 0.0392
+  OK   paired ttbar_prompt seeds: mine 0.1870 reported 0.1870
+  OK   paired ttbar_prompt sigma: mine 0.1911 reported 0.1911
+  OK   paired fake_rate value: mine 0.0090 reported 0.0090
+  OK   paired fake_rate boot: mine 0.0038 reported 0.0038
+  OK   paired fake_rate seeds: mine 0.0098 reported 0.0098
+  OK   paired fake_rate sigma: mine 0.0105 reported 0.0105
+
+== Generated samples, results/addendum_g_canto_hnl_seeds12_v1.csv (main / points rows); percent, 2 decimals
+  truth checks: {"generic_iso": {"target_mismatch": 0, "gun_mismatch": 0, "pop_mismatch": 0, "d0_negative": 0, "events": 7233, "P_G": 8710}, "hss15_100": {"target_mismatch": 0, "pop_mismatch": 0, "d0_negative": 0, "events": 1500, "P_H": 8294}, "hss40_300": {"target_mismatch": 0, "pop_mismatch": 0, "d0_negative": 0, "events": 1500, "P_H": 9719}, "hnl5_50": {"target_mismatch": 0, "pop_mismatch": 0, "events": 3000, "P_HNL (fitted |d0|, r_v)": 1714}, "hnl20_200": {"target_mismatch": 0, "pop_mismatch": 0, "events": 3000, "P_HNL (fitted |d0|, r_v)": 1967}, "hnl15_500": {"target_mismatch": 0, "pop_mismatch": 0, "events": 3000, "P_HNL (fitted |d0|, r_v)": 1051}, "hnl10_100_ref": {"target_mismatch": 0, "pop_mismatch": 0, "events": 3000, "P_HNL (fitted |d0|, r_v)": 1966}, "hnl15_200_ref": {"target_mismatch": 0, "pop_mismatch": 0, "events": 3000, "P_HNL (fitted |d0|, r_v)": 1800}}
+  OK   Canto-L (HNL) generic_iso|P_G s0: mine 98.1286 reported 98.1286
+  OK   Canto-L (HNL) generic_iso|P_G s1: mine 98.2434 reported 98.2434
+  OK   Canto-L (HNL) generic_iso|P_G s2: mine 98.1056 reported 98.1056
+  OK   Canto-L (HNL) generic_iso|P_G mean: mine 98.1592 reported 98.1592
+  OK   Canto-L (HNL) generic_iso|P_G sigma_boot: mine 0.1261 reported 0.1261
+  OK   Canto-L (HNL) generic_iso|P_G s_seeds: mine 0.0738 reported 0.0738
+  OK   Canto-L (HNL) generic_iso|P_G sigma (Eq. 2): mine 0.1331 reported 0.1331
+  OK   Canto-L (HNL) generic_iso|P_G n: mine 8710 reported 8710; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G s0: mine 97.0494 reported 97.0494
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G s1: mine 97.9104 reported 97.9104
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G s2: mine 97.3479 reported 97.3479
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G mean: mine 97.4359 reported 97.4359
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G sigma_boot: mine 0.1575 reported 0.1575
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G s_seeds: mine 0.4372 reported 0.4372
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G sigma (Eq. 2): mine 0.2975 reported 0.2975
+  OK   Canto-L (ttbar+HNL) generic_iso|P_G n: mine 8710 reported 8710; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) generic_iso|track fake rate s0: mine 0.4408 reported 0.4408
+  OK   Canto-L (HNL) generic_iso|track fake rate s1: mine 0.3718 reported 0.3718
+  OK   Canto-L (HNL) generic_iso|track fake rate s2: mine 0.5065 reported 0.5065
+  OK   Canto-L (HNL) generic_iso|track fake rate mean: mine 0.4397 reported 0.4397
+  OK   Canto-L (HNL) generic_iso|track fake rate sigma_boot: mine 0.0077 reported 0.0077
+  OK   Canto-L (HNL) generic_iso|track fake rate s_seeds: mine 0.0674 reported 0.0674
+  OK   Canto-L (HNL) generic_iso|track fake rate sigma (Eq. 2): mine 0.0397 reported 0.0397
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate s0: mine 0.5192 reported 0.5192
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate s1: mine 0.4651 reported 0.4651
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate s2: mine 0.4736 reported 0.4736
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate mean: mine 0.4860 reported 0.4860
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate sigma_boot: mine 0.0100 reported 0.0100
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate s_seeds: mine 0.0291 reported 0.0291
+  OK   Canto-L (ttbar+HNL) generic_iso|track fake rate sigma (Eq. 2): mine 0.0196 reported 0.0196
+  OK   Canto-L (HNL) hss15_100|P_H s0: mine 93.9233 reported 93.9233
+  OK   Canto-L (HNL) hss15_100|P_H s1: mine 94.7794 reported 94.7794
+  OK   Canto-L (HNL) hss15_100|P_H s2: mine 93.8027 reported 93.8027
+  OK   Canto-L (HNL) hss15_100|P_H mean: mine 94.1685 reported 94.1685
+  OK   Canto-L (HNL) hss15_100|P_H sigma_boot: mine 0.4304 reported 0.4304
+  OK   Canto-L (HNL) hss15_100|P_H s_seeds: mine 0.5325 reported 0.5325
+  OK   Canto-L (HNL) hss15_100|P_H sigma (Eq. 2): mine 0.5289 reported 0.5289
+  OK   Canto-L (HNL) hss15_100|P_H n: mine 8294 reported 8294; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H s0: mine 94.5623 reported 94.5623
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H s1: mine 95.7560 reported 95.7560
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H s2: mine 95.7198 reported 95.7198
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H mean: mine 95.3460 reported 95.3460
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H sigma_boot: mine 0.4254 reported 0.4254
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H s_seeds: mine 0.6789 reported 0.6789
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H sigma (Eq. 2): mine 0.5785 reported 0.5785
+  OK   Canto-L (ttbar+HNL) hss15_100|P_H n: mine 8294 reported 8294; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hss15_100|track fake rate s0: mine 0.2465 reported 0.2465
+  OK   Canto-L (HNL) hss15_100|track fake rate s1: mine 0.2432 reported 0.2432
+  OK   Canto-L (HNL) hss15_100|track fake rate s2: mine 0.2497 reported 0.2497
+  OK   Canto-L (HNL) hss15_100|track fake rate mean: mine 0.2465 reported 0.2465
+  OK   Canto-L (HNL) hss15_100|track fake rate sigma_boot: mine 0.0135 reported 0.0135
+  OK   Canto-L (HNL) hss15_100|track fake rate s_seeds: mine 0.0033 reported 0.0033
+  OK   Canto-L (HNL) hss15_100|track fake rate sigma (Eq. 2): mine 0.0136 reported 0.0136
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate s0: mine 0.2551 reported 0.2551
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate s1: mine 0.2352 reported 0.2352
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate s2: mine 0.2391 reported 0.2391
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate mean: mine 0.2431 reported 0.2431
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate sigma_boot: mine 0.0157 reported 0.0157
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate s_seeds: mine 0.0106 reported 0.0106
+  OK   Canto-L (ttbar+HNL) hss15_100|track fake rate sigma (Eq. 2): mine 0.0169 reported 0.0169
+  OK   Canto-L (HNL) hss40_300|P_H s0: mine 96.1519 reported 96.1519
+  OK   Canto-L (HNL) hss40_300|P_H s1: mine 97.0470 reported 97.0470
+  OK   Canto-L (HNL) hss40_300|P_H s2: mine 96.0798 reported 96.0798
+  OK   Canto-L (HNL) hss40_300|P_H mean: mine 96.4262 reported 96.4262
+  OK   Canto-L (HNL) hss40_300|P_H sigma_boot: mine 0.2753 reported 0.2753
+  OK   Canto-L (HNL) hss40_300|P_H s_seeds: mine 0.5388 reported 0.5388
+  OK   Canto-L (HNL) hss40_300|P_H sigma (Eq. 2): mine 0.4154 reported 0.4154
+  OK   Canto-L (HNL) hss40_300|P_H n: mine 9719 reported 9719; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H s0: mine 96.6869 reported 96.6869
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H s1: mine 97.2528 reported 97.2528
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H s2: mine 97.4997 reported 97.4997
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H mean: mine 97.1465 reported 97.1465
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H sigma_boot: mine 0.2418 reported 0.2418
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H s_seeds: mine 0.4167 reported 0.4167
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H sigma (Eq. 2): mine 0.3411 reported 0.3411
+  OK   Canto-L (ttbar+HNL) hss40_300|P_H n: mine 9719 reported 9719; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hss40_300|track fake rate s0: mine 0.2556 reported 0.2556
+  OK   Canto-L (HNL) hss40_300|track fake rate s1: mine 0.2477 reported 0.2477
+  OK   Canto-L (HNL) hss40_300|track fake rate s2: mine 0.2661 reported 0.2661
+  OK   Canto-L (HNL) hss40_300|track fake rate mean: mine 0.2565 reported 0.2565
+  OK   Canto-L (HNL) hss40_300|track fake rate sigma_boot: mine 0.0127 reported 0.0127
+  OK   Canto-L (HNL) hss40_300|track fake rate s_seeds: mine 0.0092 reported 0.0092
+  OK   Canto-L (HNL) hss40_300|track fake rate sigma (Eq. 2): mine 0.0137 reported 0.0137
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate s0: mine 0.2469 reported 0.2469
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate s1: mine 0.2461 reported 0.2461
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate s2: mine 0.2352 reported 0.2352
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate mean: mine 0.2427 reported 0.2427
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate sigma_boot: mine 0.0143 reported 0.0143
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate s_seeds: mine 0.0065 reported 0.0065
+  OK   Canto-L (ttbar+HNL) hss40_300|track fake rate sigma (Eq. 2): mine 0.0148 reported 0.0148
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s0: mine 99.6499 reported 99.6499
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s1: mine 99.7083 reported 99.7083
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s2: mine 99.7083 reported 99.7083
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) mean: mine 99.6888 reported 99.6888
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.1000 reported 0.1000
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.0337 reported 0.0337
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.1019 reported 0.1019
+  OK   Canto-L (HNL) hnl5_50|P_HNL (fitted |d0|, r_v) n: mine 1714 reported 1714; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s0: mine 99.5333 reported 99.5333
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s1: mine 99.7083 reported 99.7083
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s2: mine 99.2999 reported 99.2999
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) mean: mine 99.5138 reported 99.5138
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.1269 reported 0.1269
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.2049 reported 0.2049
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.1735 reported 0.1735
+  OK   Canto-L (ttbar+HNL) hnl5_50|P_HNL (fitted |d0|, r_v) n: mine 1714 reported 1714; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hnl5_50|track fake rate s0: mine 0.0690 reported 0.0690
+  OK   Canto-L (HNL) hnl5_50|track fake rate s1: mine 0.0524 reported 0.0524
+  OK   Canto-L (HNL) hnl5_50|track fake rate s2: mine 0.0733 reported 0.0733
+  OK   Canto-L (HNL) hnl5_50|track fake rate mean: mine 0.0649 reported 0.0649
+  OK   Canto-L (HNL) hnl5_50|track fake rate sigma_boot: mine 0.0042 reported 0.0042
+  OK   Canto-L (HNL) hnl5_50|track fake rate s_seeds: mine 0.0111 reported 0.0111
+  OK   Canto-L (HNL) hnl5_50|track fake rate sigma (Eq. 2): mine 0.0076 reported 0.0076
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate s0: mine 0.0696 reported 0.0696
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate s1: mine 0.0724 reported 0.0724
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate s2: mine 0.0617 reported 0.0617
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate mean: mine 0.0679 reported 0.0679
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate sigma_boot: mine 0.0043 reported 0.0043
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate s_seeds: mine 0.0055 reported 0.0055
+  OK   Canto-L (ttbar+HNL) hnl5_50|track fake rate sigma (Eq. 2): mine 0.0054 reported 0.0054
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s0: mine 98.4240 reported 98.4240
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s1: mine 98.9324 reported 98.9324
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s2: mine 98.7290 reported 98.7290
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) mean: mine 98.6951 reported 98.6951
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2245 reported 0.2245
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.2559 reported 0.2559
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.2687 reported 0.2687
+  OK   Canto-L (HNL) hnl20_200|P_HNL (fitted |d0|, r_v) n: mine 1967 reported 1967; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s0: mine 98.5765 reported 98.5765
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s1: mine 98.7799 reported 98.7799
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s2: mine 98.3223 reported 98.3223
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) mean: mine 98.5596 reported 98.5596
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2183 reported 0.2183
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.2292 reported 0.2292
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.2553 reported 0.2553
+  OK   Canto-L (ttbar+HNL) hnl20_200|P_HNL (fitted |d0|, r_v) n: mine 1967 reported 1967; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hnl20_200|track fake rate s0: mine 0.0702 reported 0.0702
+  OK   Canto-L (HNL) hnl20_200|track fake rate s1: mine 0.0624 reported 0.0624
+  OK   Canto-L (HNL) hnl20_200|track fake rate s2: mine 0.0814 reported 0.0814
+  OK   Canto-L (HNL) hnl20_200|track fake rate mean: mine 0.0713 reported 0.0713
+  OK   Canto-L (HNL) hnl20_200|track fake rate sigma_boot: mine 0.0042 reported 0.0042
+  OK   Canto-L (HNL) hnl20_200|track fake rate s_seeds: mine 0.0095 reported 0.0095
+  OK   Canto-L (HNL) hnl20_200|track fake rate sigma (Eq. 2): mine 0.0069 reported 0.0069
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate s0: mine 0.0747 reported 0.0747
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate s1: mine 0.0767 reported 0.0767
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate s2: mine 0.0693 reported 0.0693
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate mean: mine 0.0736 reported 0.0736
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate sigma_boot: mine 0.0045 reported 0.0045
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate s_seeds: mine 0.0038 reported 0.0038
+  OK   Canto-L (ttbar+HNL) hnl20_200|track fake rate sigma (Eq. 2): mine 0.0050 reported 0.0050
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s0: mine 98.0019 reported 98.0019
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s1: mine 98.5728 reported 98.5728
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s2: mine 99.1437 reported 99.1437
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) mean: mine 98.5728 reported 98.5728
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2997 reported 0.2997
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.5709 reported 0.5709
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.4455 reported 0.4455
+  OK   Canto-L (HNL) hnl15_500|P_HNL (fitted |d0|, r_v) n: mine 1051 reported 1051; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s0: mine 98.7631 reported 98.7631
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s1: mine 99.0485 reported 99.0485
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s2: mine 99.1437 reported 99.1437
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) mean: mine 98.9851 reported 98.9851
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2393 reported 0.2393
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.1981 reported 0.1981
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.2652 reported 0.2652
+  OK   Canto-L (ttbar+HNL) hnl15_500|P_HNL (fitted |d0|, r_v) n: mine 1051 reported 1051; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hnl15_500|track fake rate s0: mine 0.0665 reported 0.0665
+  OK   Canto-L (HNL) hnl15_500|track fake rate s1: mine 0.0647 reported 0.0647
+  OK   Canto-L (HNL) hnl15_500|track fake rate s2: mine 0.0768 reported 0.0768
+  OK   Canto-L (HNL) hnl15_500|track fake rate mean: mine 0.0693 reported 0.0693
+  OK   Canto-L (HNL) hnl15_500|track fake rate sigma_boot: mine 0.0041 reported 0.0041
+  OK   Canto-L (HNL) hnl15_500|track fake rate s_seeds: mine 0.0065 reported 0.0065
+  OK   Canto-L (HNL) hnl15_500|track fake rate sigma (Eq. 2): mine 0.0056 reported 0.0056
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate s0: mine 0.0685 reported 0.0685
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate s1: mine 0.0676 reported 0.0676
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate s2: mine 0.0668 reported 0.0668
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate mean: mine 0.0676 reported 0.0676
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate sigma_boot: mine 0.0042 reported 0.0042
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate s_seeds: mine 0.0009 reported 0.0009
+  OK   Canto-L (ttbar+HNL) hnl15_500|track fake rate sigma (Eq. 2): mine 0.0042 reported 0.0042
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s0: mine 99.2879 reported 99.2879
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s1: mine 99.6439 reported 99.6439
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s2: mine 99.6439 reported 99.6439
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) mean: mine 99.5253 reported 99.5253
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.1240 reported 0.1240
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.2056 reported 0.2056
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.1716 reported 0.1716
+  OK   Canto-L (HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) n: mine 1966 reported 1966; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s0: mine 99.3896 reported 99.3896
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s1: mine 99.2879 reported 99.2879
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s2: mine 99.6948 reported 99.6948
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) mean: mine 99.4574 reported 99.4574
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.1201 reported 0.1201
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.2118 reported 0.2118
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.1714 reported 0.1714
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|P_HNL (fitted |d0|, r_v) n: mine 1966 reported 1966; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate s0: mine 0.0692 reported 0.0692
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate s1: mine 0.0559 reported 0.0559
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate s2: mine 0.0802 reported 0.0802
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate mean: mine 0.0684 reported 0.0684
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate sigma_boot: mine 0.0039 reported 0.0039
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate s_seeds: mine 0.0122 reported 0.0122
+  OK   Canto-L (HNL) hnl10_100_ref|track fake rate sigma (Eq. 2): mine 0.0081 reported 0.0081
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate s0: mine 0.0732 reported 0.0732
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate s1: mine 0.0620 reported 0.0620
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate s2: mine 0.0632 reported 0.0632
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate mean: mine 0.0661 reported 0.0661
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate sigma_boot: mine 0.0040 reported 0.0040
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate s_seeds: mine 0.0062 reported 0.0062
+  OK   Canto-L (ttbar+HNL) hnl10_100_ref|track fake rate sigma (Eq. 2): mine 0.0053 reported 0.0053
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s0: mine 98.6667 reported 98.6667
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s1: mine 98.8889 reported 98.8889
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s2: mine 99.3889 reported 99.3889
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) mean: mine 98.9815 reported 98.9815
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2064 reported 0.2064
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.3699 reported 0.3699
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.2970 reported 0.2970
+  OK   Canto-L (HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) n: mine 1800 reported 1800; missing in stored tables [0, 0, 0]
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s0: mine 98.6111 reported 98.6111
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s1: mine 98.8889 reported 98.8889
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s2: mine 99.2778 reported 99.2778
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) mean: mine 98.9259 reported 98.9259
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) sigma_boot: mine 0.2257 reported 0.2257
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) s_seeds: mine 0.3349 reported 0.3349
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) sigma (Eq. 2): mine 0.2972 reported 0.2972
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|P_HNL (fitted |d0|, r_v) n: mine 1800 reported 1800; missing in stored tables [0, 0, 0]
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate s0: mine 0.0714 reported 0.0714
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate s1: mine 0.0565 reported 0.0565
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate s2: mine 0.0805 reported 0.0805
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate mean: mine 0.0695 reported 0.0695
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate sigma_boot: mine 0.0042 reported 0.0042
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate s_seeds: mine 0.0121 reported 0.0121
+  OK   Canto-L (HNL) hnl15_200_ref|track fake rate sigma (Eq. 2): mine 0.0081 reported 0.0081
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate s0: mine 0.0705 reported 0.0705
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate s1: mine 0.0734 reported 0.0734
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate s2: mine 0.0662 reported 0.0662
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate mean: mine 0.0700 reported 0.0700
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate sigma_boot: mine 0.0044 reported 0.0044
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate s_seeds: mine 0.0037 reported 0.0037
+  OK   Canto-L (ttbar+HNL) hnl15_200_ref|track fake rate sigma (Eq. 2): mine 0.0049 reported 0.0049
+
+== Selection: committed results/training_sample_test_selection_seeds12_v1.json (1c8cbcf) vs stored test outputs vs builder rule re-applied on val
+  Canto-L (HNL) s0: file FR* mwslmerge,0.2 / LLP-blind mwslmerge,0.2 / cut_e 0.21; stored test FR* mwslmerge,0.2 [OK], stored LLP-blind mwslmerge,0.2 [OK]; builder rule on val -> mwslmerge,0.2 [OK] (e_max 99.17 %, SE 0.25, tied ['mwslmerge,0.01', 'mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 98.87/1.11, mwslmerge,0.01 99.02/1.05, mwslmerge,0.02 99.10/1.03, mwslmerge,0.03 99.17/1.03, mwslmerge,0.05 99.17/1.02, mwslmerge,0.1 99.17/1.02, mwslmerge,0.2 99.17/1.02, mwslmerge,0.3 99.17/1.02, mwslmerge,0.5 99.17/1.03
+  Canto-L (HNL) s1: file FR* mwslmerge,0.1 / LLP-blind mwslmerge,0.2 / cut_e 0.21; stored test FR* mwslmerge,0.1 [OK], stored LLP-blind mwslmerge,0.2 [OK]; builder rule on val -> mwslmerge,0.1 [OK] (e_max 99.17 %, SE 0.25, tied ['mwslmerge,0.01', 'mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 98.80/1.12, mwslmerge,0.01 99.10/1.07, mwslmerge,0.02 99.17/1.02, mwslmerge,0.03 99.17/1.01, mwslmerge,0.05 99.17/1.00, mwslmerge,0.1 99.17/1.00, mwslmerge,0.2 99.17/1.00, mwslmerge,0.3 99.17/1.00, mwslmerge,0.5 99.17/1.01
+  Canto-L (HNL) s2: file FR* mwslmerge,0.5 / LLP-blind mwslmerge,0.1 / cut_e 0.22; stored test FR* mwslmerge,0.5 [OK], stored LLP-blind mwslmerge,0.1 [OK]; builder rule on val -> mwslmerge,0.5 [OK] (e_max 99.25 %, SE 0.24, tied ['mwslmerge,0.005', 'mwslmerge,0.01', 'mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 99.02/1.10, mwslmerge,0.01 99.17/1.05, mwslmerge,0.02 99.25/1.03, mwslmerge,0.03 99.25/1.02, mwslmerge,0.05 99.25/1.02, mwslmerge,0.1 99.25/1.02, mwslmerge,0.2 99.25/1.02, mwslmerge,0.3 99.25/1.02, mwslmerge,0.5 99.25/1.01
+  Canto-L (ttbar+HNL) s0: file FR* mwslmerge,0.3 / LLP-blind mwslmerge,0.03 / cut_e 0.19; stored test FR* mwslmerge,0.3 [OK], stored LLP-blind mwslmerge,0.03 [OK]; builder rule on val -> mwslmerge,0.3 [OK] (e_max 99.25 %, SE 0.24, tied ['mwslmerge,0.01', 'mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 98.87/1.13, mwslmerge,0.01 99.17/1.07, mwslmerge,0.02 99.17/1.02, mwslmerge,0.03 99.17/1.01, mwslmerge,0.05 99.25/1.01, mwslmerge,0.1 99.25/1.01, mwslmerge,0.2 99.25/1.01, mwslmerge,0.3 99.25/1.01, mwslmerge,0.5 99.10/1.03
+  Canto-L (ttbar+HNL) s1: file FR* mwslmerge,0.2 / LLP-blind mwslmerge,0.1 / cut_e 0.19; stored test FR* mwslmerge,0.2 [OK], stored LLP-blind mwslmerge,0.1 [OK]; builder rule on val -> mwslmerge,0.2 [OK] (e_max 99.55 %, SE 0.18, tied ['mwslmerge,0.005', 'mwslmerge,0.01', 'mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 99.40/1.10, mwslmerge,0.01 99.47/1.05, mwslmerge,0.02 99.55/1.02, mwslmerge,0.03 99.55/1.02, mwslmerge,0.05 99.55/1.01, mwslmerge,0.1 99.55/1.01, mwslmerge,0.2 99.55/1.00, mwslmerge,0.3 99.47/1.01, mwslmerge,0.5 99.47/1.04
+  Canto-L (ttbar+HNL) s2: file FR* mwslmerge,0.2 / LLP-blind mwslmerge,0.05 / cut_e 0.2; stored test FR* mwslmerge,0.2 [OK], stored LLP-blind mwslmerge,0.05 [OK]; builder rule on val -> mwslmerge,0.2 [OK] (e_max 99.32 %, SE 0.22, tied ['mwslmerge,0.02', 'mwslmerge,0.03', 'mwslmerge,0.05', 'mwslmerge,0.1', 'mwslmerge,0.2', 'mwslmerge,0.3', 'mwslmerge,0.5']); targets missing in stored test table: 0
+      val mwslmerge eff/fake (%): mwslmerge,0.005 98.87/1.11, mwslmerge,0.01 99.10/1.06, mwslmerge,0.02 99.32/1.03, mwslmerge,0.03 99.32/1.02, mwslmerge,0.05 99.32/1.02, mwslmerge,0.1 99.32/1.01, mwslmerge,0.2 99.32/1.01, mwslmerge,0.3 99.32/1.02, mwslmerge,0.5 99.32/1.03
+  generated-sample eval provenance (builder, cut_e, config) per run and set:
+    canto_l_hnl_s0_test: [['["mwslmerge", 0.2]', '0.21', 'mwslmerge,0.2']]
+    canto_l_hnl_s0_hss: [['["mwslmerge", 0.2]', '0.21', 'mwslmerge,0.2']]
+    canto_l_hnl_s0_hnl: [['["mwslmerge", 0.2]', '0.21', 'mwslmerge,0.2']]
+    canto_l_hnl_s1_test: [['["mwslmerge", 0.1]', '0.21', 'mwslmerge,0.1']]
+    canto_l_hnl_s1_hss: [['["mwslmerge", 0.1]', '0.21', 'mwslmerge,0.1']]
+    canto_l_hnl_s1_hnl: [['["mwslmerge", 0.1]', '0.21', 'mwslmerge,0.1']]
+    canto_l_hnl_s2_test: [['["mwslmerge", 0.5]', '0.22', 'mwslmerge,0.5']]
+    canto_l_hnl_s2_hss: [['["mwslmerge", 0.5]', '0.22', 'mwslmerge,0.5']]
+    canto_l_hnl_s2_hnl: [['["mwslmerge", 0.5]', '0.22', 'mwslmerge,0.5']]
+    canto_l_tthnl_s0_test: [['["mwslmerge", 0.3]', '0.19', 'mwslmerge,0.3']]
+    canto_l_tthnl_s0_hss: [['["mwslmerge", 0.3]', '0.19', 'mwslmerge,0.3']]
+    canto_l_tthnl_s0_hnl: [['["mwslmerge", 0.3]', '0.19', 'mwslmerge,0.3']]
+    canto_l_tthnl_s1_test: [['["mwslmerge", 0.2]', '0.19', 'mwslmerge,0.2']]
+    canto_l_tthnl_s1_hss: [['["mwslmerge", 0.2]', '0.19', 'mwslmerge,0.2']]
+    canto_l_tthnl_s1_hnl: [['["mwslmerge", 0.2]', '0.19', 'mwslmerge,0.2']]
+    canto_l_tthnl_s2_test: [['["mwslmerge", 0.2]', '0.2', 'mwslmerge,0.2']]
+    canto_l_tthnl_s2_hss: [['["mwslmerge", 0.2]', '0.2', 'mwslmerge,0.2']]
+    canto_l_tthnl_s2_hnl: [['["mwslmerge", 0.2]', '0.2', 'mwslmerge,0.2']]
+
+TOTAL: 678 agree, 0 disagree

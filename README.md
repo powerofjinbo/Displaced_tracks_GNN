@@ -35,61 +35,64 @@ for prompt particles lose many of them. Canto has two aims:
 
 - **Higher reconstruction efficiency for the displaced particles of a known signal.** Canto keeps the three stages of
   the Exa.TrkX pipeline (graph construction, edge classification, track building) and changes each one for particles
-  produced off the vertex. Trained on the HNL signal, Canto-L (HNL) finds 98.94 ± 0.24 % of the displaced HNL
+  produced off the vertex. Trained on the HNL signal, Canto (HNL) finds 99.16 ± 0.16 % of the displaced HNL
   daughters on the test sets, against 97.98 ± 0.20 % for acorn (HNL) trained on the same events and run with the same
-  track builder (post-freeze, one Canto seed): it loses 1.06 % of them, acorn 2.02 %.
+  track builder (post-freeze, three seeds each): it loses 0.84 % of them, acorn 2.02 %.
 - **Strong generalization to displaced particles it has not seen.** A search for long-lived particles whose
   properties are not known in advance cannot train its tracker on the signal it looks for. Trained on generic
-  top-quark pair (ttbar) events, Canto-L (ttbar) finds as many displaced HNL daughters as when it is trained on the
+  top-quark pair (ttbar) events, Canto (ttbar) finds as many displaced HNL daughters as when it is trained on the
   signal; on the one-time test it finds 99.08 ± 0.15 % of them, 1.10 ± 0.22 points more than acorn (HNL) trained on
-  the signal (post-freeze), and it finds K<sub>S</sub> and Λ daughters, which ttbar events do not contain, as well
-  as the baselines that were trained on events containing them.
+  the signal (post-freeze). In a preregistered test on particles generated after its design was frozen, it finds
+  96.94 ± 0.23 % of the displaced gun particles, 2.32 ± 0.28 points more than acorn (HNL).
 
 The benchmark is a public sample of heavy neutral leptons (HNLs), pp → W → μN, N → νμ⁺μ⁻, in the ACTS generic
-detector without pileup. Canto is also tested on the TrackML challenge, with pileup 200 and noise hits.
+detector without pileup. Canto is also tested on samples generated after its design was frozen (a displaced particle
+gun, h → ss and new HNL points) and on the TrackML challenge, with pileup 200 and noise hits.
 
 ## Results
 
-The results come in three parts: (1) a known signal: Canto-L (HNL), trained on the HNL signal, on displaced and
+The results come in four parts: (1) a known signal: Canto (HNL), trained on the HNL signal, on displaced and
 far-displaced daughters; (2) generalization: Canto (ttbar), trained on generic ttbar events only, on the HNL signal
-and on a second displaced population absent from its training events; (3) the TrackML challenge, with pileup 200.
-The training sample of each model is in parentheses. MWS: Mutex Watershed that keeps the hits of one detector layer
+and on a second displaced population absent from its training events; (3) particles generated after the design
+freeze; (4) the TrackML challenge, with pileup 200. Canto is the selected pipeline (Canto-L in the code and the
+configurations); the training sample of each model is in parentheses. MWS: Mutex Watershed that keeps the hits of one detector layer
 apart. Efficiencies and rates in percent; bold: the best value of each row among the columns shown.
 
-### 1. A known signal: Canto-L (HNL), trained on the HNL signal
+### 1. A known signal: Canto (HNL), trained on the HNL signal
 
-When the signal is known, the tracker can be trained on it. Canto-L and acorn were each trained on the HNL signal
+When the signal is known, the tracker can be trained on it. Canto and acorn were each trained on the HNL signal
 and on ttbar + HNL, and run with the same track builder, its setting chosen per seed on validation. Test events
-(6,999 HNL events and the ttbar test set), evaluated once; one Canto-L seed per training sample, three acorn seeds;
-uncertainties from the event bootstrap and the seed spread (for a one-seed Canto-L, the spread of the three Canto-L
-(ttbar) seeds).
+(6,999 HNL events and the ttbar test set), evaluated once; three seeds of every model; uncertainties from the event
+bootstrap and the seed spread of each model.
 
-| | Canto-L (HNL) | acorn (HNL) | Canto-L (ttbar+HNL) | acorn (ttbar+HNL) |
+| | Canto (HNL) | acorn (HNL) | Canto (ttbar+HNL) | acorn (ttbar+HNL) |
 |:---|:---:|:---:|:---:|:---:|
 | *Track builder* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* |
-| *Training seeds* | *1* | *3* | *1* | *3* |
-| Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | 98.94 ± 0.24 | 97.98 ± 0.20 | **98.96 ± 0.23** | 97.37 ± 0.31 |
-| \|d₀\| 100–300 mm | **98.97 ± 0.50** | 96.75 ± 0.59 | 98.80 ± 0.54 | 95.49 ± 1.01 |
-| \|d₀\| ≥ 300 mm (found / total, seeds pooled) | 33 / 36 | **101 / 108** | 33 / 36 | 98 / 108 |
-| Prompt muons (W → μ) | 99.74 ± 0.07 | 99.69 ± 0.07 | **99.75 ± 0.06** | 99.65 ± 0.07 |
-| Prompt tracks in ttbar (\|d₀\| < 1 mm) | **96.53 ± 0.36** | 94.84 ± 0.20 | 96.35 ± 0.37 | 95.17 ± 0.34 |
-| Fake-track rate (lower is better) | 1.01 ± 0.04 | 1.36 ± 0.03 | **1.00 ± 0.04** | 1.38 ± 0.05 |
+| *Training seeds* | *3* | *3* | *3* | *3* |
+| Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | **99.16 ± 0.16** | 97.98 ± 0.20 | 99.12 ± 0.14 | 97.37 ± 0.31 |
+| \|d₀\| 100–300 mm | **99.03 ± 0.40** | 96.75 ± 0.59 | 98.92 ± 0.33 | 95.49 ± 1.01 |
+| \|d₀\| ≥ 300 mm (found / total, seeds pooled) | 100 / 108 | **101 / 108** | 100 / 108 | 98 / 108 |
+| Prompt muons (W → μ) | 99.75 ± 0.06 | 99.69 ± 0.07 | **99.76 ± 0.06** | 99.65 ± 0.07 |
+| Prompt tracks in ttbar (\|d₀\| < 1 mm) | **96.46 ± 0.22** | 94.84 ± 0.20 | 96.43 ± 0.14 | 95.17 ± 0.34 |
+| Fake-track rate (lower is better) | **1.00 ± 0.02** | 1.36 ± 0.03 | 1.01 ± 0.02 | 1.38 ± 0.05 |
 
-- **Fewer displaced daughters lost.** acorn (HNL) loses 2.02 % of the displaced daughters, 1.9 times the 1.06 % of
-  Canto-L (HNL); trained on ttbar + HNL, acorn loses 2.63 %, 2.5 times Canto-L's 1.04 %. Paired on the same events,
-  Canto-L minus acorn is +0.96 ± 0.29 points trained on HNL (z = 3.4) and +1.60 ± 0.36 points trained on ttbar + HNL
-  (z = 4.5), at a lower fake-track rate. On validation the two differences were +0.53 ± 0.37 and +1.35 ± 0.43 points.
-- **The largest displacements.** The test sets hold 36 daughters with \|d₀\| ≥ 300 mm per seed: Canto-L (HNL) finds
-  33, acorn (HNL) 101 of 108 over its three seeds and Canto-L (ttbar) 94 of 108; none of these differences is
-  resolved. On validation, at a common edge working point, training on the signal raised Canto-L's edge efficiency
+- **Fewer displaced daughters lost.** acorn (HNL) loses 2.02 % of the displaced daughters, 2.4 times the 0.84 % of
+  Canto (HNL); trained on ttbar + HNL, acorn loses 2.63 %, 3.0 times Canto's 0.88 %. Paired on the same events,
+  Canto minus acorn is +1.18 ± 0.23 points trained on HNL (z = 5.2) and +1.76 ± 0.31 points trained on ttbar + HNL
+  (z = 5.8), at a lower fake-track rate. On validation the two differences were +0.55 ± 0.27 and +1.48 ± 0.38 points.
+- **The largest displacements.** The test sets hold 36 daughters with \|d₀\| ≥ 300 mm per seed. Over three seeds,
+  Canto (HNL) and Canto (ttbar+HNL) each find 100 of 108, acorn (HNL) 101 and Canto (ttbar) 94; none of these
+  differences is resolved. On validation, at a common edge working point, training on the signal raised Canto's edge efficiency
   for these daughters from 77.7 % (trained on ttbar) to 93.2 % (seed 0, 103 edges), and from 93.6 % to 96.1 % at
   100–300 mm.
-- **Status.** Post-freeze and descriptive: these two Canto-L runs are not part of the frozen selection and decide no
-  claim. Their settings were chosen on validation and committed before their test jobs
-  ([selection](results/training_sample_test_selection_v1.json), [read-out](results/training_sample_spec_test_v1.json));
-  results in [training_sample_test_v1.md](results/training_sample_test_v1.md) and
-  [training_sample_paired_test_v1.csv](results/training_sample_paired_test_v1.csv), validation numbers in
-  [training_sample_v1.md](results/training_sample_v1.md).
+- **Status.** Post-freeze and descriptive: Canto (HNL) and Canto (ttbar+HNL) are not part of the frozen selection
+  and decide no claim. Seed 0 of each was tested first and seeds 1 and 2 later; the settings of every seed were chosen
+  on validation and committed before its test job ([seed 0](results/training_sample_test_selection_v1.json),
+  [seeds 1 and 2](results/training_sample_test_selection_seeds12_v1.json),
+  [read-out](results/training_sample_spec_test_3seed_v1.json)). Results in
+  [training_sample_paired_test_3seed_v1.md](results/training_sample_paired_test_3seed_v1.md) (independently
+  recomputed: [verify_ts_seeds12_v1.txt](results/verify_ts_seeds12_v1.txt)), validation numbers in
+  [training_sample_val_3seed_v1.md](results/training_sample_val_3seed_v1.md).
 
 ### 2. Generalization: Canto (ttbar), trained without the signal
 
@@ -97,21 +100,23 @@ A search for long-lived particles whose properties are not known in advance cann
 it looks for. Canto (ttbar) never saw an HNL decay, a K<sub>S</sub> or a Λ.
 
 **Signal training adds nothing measurable to Canto's displaced efficiency.** On the test sets, with the builder
-above, Canto-L (ttbar) finds 99.08 ± 0.15 % of the displaced HNL daughters and Canto-L (HNL) 98.94 ± 0.24 %:
-−0.13 ± 0.26 points from training on the signal. acorn gains +1.70 ± 0.54 points (96.28 ± 0.56 % to
-97.98 ± 0.20 %); the difference between the two gains is +1.84 ± 0.60 points (z = 3.1). On validation the three
-numbers were +0.08 ± 0.33, +1.48 ± 0.35 and +1.40 ± 0.47 points.
+above, Canto (ttbar) finds 99.08 ± 0.15 % of the displaced HNL daughters and Canto (HNL) 99.16 ± 0.16 %:
++0.09 ± 0.19 points from training on the signal. acorn gains +1.70 ± 0.54 points (96.28 ± 0.56 % to
+97.98 ± 0.20 %); the difference between the two gains is +1.62 ± 0.57 points (z = 2.8). On validation the three
+numbers were +0.10 ± 0.24, +1.48 ± 0.35 and +1.38 ± 0.40 points.
 
 **On the HNL test sets, Canto (ttbar) finds more displaced daughters than acorn trained on the signal.** The models
 were frozen on validation and evaluated once on the test sets (6,999 HNL events and the ttbar test set); this
-evaluation decides the three [preregistered claims](docs/preregistration.md), which hold for Canto-L against
-acorn (HNL) with its own builder, connected components (CC), at its preregistered cut. Every column has a track
+evaluation decides three of the seven preregistered claims ([Primary, S1 and S1b](docs/preregistration.md)), which
+hold for Canto against acorn with its own builder, connected components (CC), at its preregistered cut: 6.50 ± 0.48
+points more than acorn (HNL) and 8.70 ± 1.02 points more than acorn (ttbar). Canto-H and Canto-B are the alternative
+graphs of the ablation (hand-cut helix triplets; the base graph). Every column has a track
 builder (first row): Canto's was chosen on validation from its builder menu and frozen before the test; the first
 two acorn columns run the best builder of the same menu, chosen on validation per seed (post-freeze, descriptive),
 so that the comparison isolates the graph and the edge classifier. Uncertainties combine the event bootstrap and the
 spread of three training seeds.
 
-| | Canto-L (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
+| | Canto (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | Displaced HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm) | 99.08 ± 0.15 | **99.18 ± 0.13** | 98.43 ± 0.26 | 96.28 ± 0.56 | 97.98 ± 0.20 | 92.57 ± 0.47 |
@@ -121,30 +126,68 @@ spread of three training seeds.
 | Prompt tracks in ttbar (\|d₀\| < 1 mm) | 96.32 ± 0.24 | 96.22 ± 0.16 | **96.58 ± 0.13** | 95.40 ± 0.22 | 94.84 ± 0.20 | 81.67 ± 0.33 |
 | Fake-track rate (lower is better) | **1.02 ± 0.03** | 1.42 ± 0.04 | 1.29 ± 0.05 | 1.52 ± 0.03 | 1.36 ± 0.03 | 2.86 ± 0.05 |
 
-- Canto-L (ttbar) finds **1.10 ± 0.22 points** more displaced daughters than acorn (HNL) with the same builder
+- Canto (ttbar) finds **1.10 ± 0.22 points** more displaced daughters than acorn (HNL) with the same builder
   family chosen on validation (post-freeze), at a lower fake-track rate, and 6.50 ± 0.48 points more than acorn
   (HNL) with connected components at its preregistered cut.
 - The exception is the far tail: above 300 mm acorn (HNL) finds 101 of 108 daughters (three seeds pooled) against
-  94 for Canto-L (ttbar); with 36 daughters per seed, the difference is not resolved. In this range signal training
-  raises Canto-L's edge efficiency on validation (section 1).
-- On the evaluation sample of Wang et al. (Exa.TrkX large-radius tracking) and with their definitions, Canto-L
+  94 for Canto (ttbar); with 36 daughters per seed, the difference is not resolved. Trained on the signal, Canto
+  (HNL) finds 100 of 108 (section 1).
+- On the evaluation sample of Wang et al. (Exa.TrkX large-radius tracking) and with their definitions, Canto
   (ttbar) finds 99.14 ± 0.05 % of all tracks against their published 95.61 ± 0.06 % (post-freeze).
 
 **A second population of displaced particles**, used in no selection (test sets, post-freeze, nothing chosen on
 them). K<sub>S</sub> and Λ daughters are absent from ttbar events, so the ttbar-trained models never saw one;
 acorn (HNL) was trained on events that contain them. Photon conversions are in every model's training events.
 
-| | Canto-L (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
+| | Canto (ttbar) | Canto-H (ttbar) | Canto-B (ttbar) | acorn (ttbar) | acorn (HNL) | acorn (HNL) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | *Track builder* | *MWS + learned merging* | *walk + helix merging* | *MWS + learned merging* | *MWS + learned merging* | *MWS + learned merging* | *connected components, preregistered cut* |
 | K<sub>S</sub> and Λ daughters in HNL events | 98.49 ± 0.44 | 98.60 ± 0.43 | **98.74 ± 0.40** | 98.27 ± 0.42 | 97.97 ± 0.45 | 88.35 ± 1.57 |
 | e± from photon conversions in ttbar events | 78.27 ± 1.30 | 72.94 ± 1.51 | **78.61 ± 1.36** | 76.29 ± 1.44 | 74.25 ± 1.36 | 44.29 ± 2.62 |
 
-### 3. TrackML challenge, throughput phase
+### 3. Particles generated after the design freeze
 
-Canto-L was retrained on 1,399 TrackML throughput-phase events (pileup 200, noise hits; one seed), with four cluster
-features added to the inputs of its embedding and the HNL fake-rate working point kept, not re-tuned. It was
-evaluated once on 300 test events; uncertainties from the event bootstrap. Details:
+Canto was designed on the validation events of the HNL samples, which differ from one another only in the mass and
+lifetime of the N. After its design was frozen, further samples were generated with Pythia and ACTS in the detector
+of the public samples, and the comparisons on them were preregistered (claims G1–G3). In the generic sample a particle
+gun adds two long-lived particles to each ttbar collision, with decay radii between 1 and 800 mm: in the isolated
+component they decay to e⁺e⁻, μ⁺μ⁻, π⁺π⁻, K⁺K⁻ or pp̄, in the multi-prong component to three to eight charged
+particles. Two h → ss samples put several displaced tracks into one jet, and new HNL points change the mass and
+lifetime of the signal. Test events, evaluated once; three seeds of every model; every model with MWS + learned
+merging. Displaced targets as for the HNL daughters (\|d₀\| ≥ 10 mm or r<sub>v</sub> ≥ 100 mm).
+
+| | Canto (ttbar) | Canto (HNL) | Canto (ttbar+HNL) | acorn (HNL) | acorn (ttbar) |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| Displaced gun particles, isolated (8,710) | 96.94 ± 0.23 | **98.16 ± 0.13** | 97.44 ± 0.30 | 94.62 ± 0.29 | 91.37 ± 0.77 |
+| Displaced gun particles, multi-prong | 97.20 ± 0.23 | 97.19 ± 0.36 | **97.85 ± 0.22** | 94.24 ± 0.31 | 92.69 ± 0.84 |
+| h → ss, m<sub>s</sub> = 40 GeV, cτ = 300 mm | 96.38 ± 0.33 | 96.43 ± 0.42 | **97.15 ± 0.34** | 89.12 ± 0.78 | 87.60 ± 0.72 |
+| h → ss, m<sub>s</sub> = 15 GeV, cτ = 100 mm | 94.42 ± 0.76 | 94.17 ± 0.53 | **95.35 ± 0.58** | 93.06 ± 0.44 | 91.71 ± 0.96 |
+| HNL daughters, m<sub>N</sub> = 5 GeV, cτ = 50 mm | **99.73 ± 0.12** | 99.69 ± 0.10 | 99.51 ± 0.17 | 99.20 ± 0.24 | 99.11 ± 0.22 |
+| HNL daughters, m<sub>N</sub> = 20 GeV, cτ = 200 mm | 98.32 ± 0.35 | **98.70 ± 0.27** | 98.56 ± 0.26 | 96.59 ± 0.50 | 93.46 ± 0.76 |
+| Fake-track rate, isolated gun sample (lower is better) | 0.55 ± 0.04 | **0.44 ± 0.04** | 0.49 ± 0.02 | 1.38 ± 0.08 | 1.18 ± 0.04 |
+
+- **Claim G1.** On the isolated gun particles, which neither model saw in training, Canto (ttbar) finds 2.32 ± 0.28 points
+  more than acorn (HNL), at a fake-track rate of 0.55 % against 1.38 %. The lead holds for every particle species
+  and for the multi-prong decays. Of the 262 isolated gun particles with \|d₀\| ≥ 300 mm, Canto (ttbar) finds
+  86 ± 2 %, acorn (HNL) 83 ± 2 % and acorn (ttbar) 70 % (not ranked).
+- **Claims G2 and G3.** acorn retrained on the ttbar training events and 7,999 generic training events,
+  acorn (ttbar+G), finds 94.56 ± 0.40 % of the isolated displaced gun particles at a fake-track rate of 0.42 %. The
+  frozen Canto (ttbar) finds 2.38 ± 0.41 points more (G2), although its fake rate is higher; Canto (ttbar+G),
+  retrained on the same events, finds 97.67 ± 0.50 %, 3.11 ± 0.61 points more than acorn (ttbar+G) (G3), at a fake
+  rate of 0.11 %.
+- **New HNL points and h → ss.** At 20 GeV the HNL daughters cross the layers at shallow angles; acorn (HNL), trained
+  on the same signal at two other points, drops to 96.59 %. In the h → ss samples Canto's fake-track rate is a
+  quarter to a third of acorn's.
+- Canto (HNL) and Canto (ttbar+HNL) are post-freeze and descriptive here (no claim). Results:
+  [G1](results/addendum_g_g1_v1.md), [G2 and G3](results/addendum_g_t4_test_v1.md),
+  [all samples, all six models](results/addendum_g_canto_hnl_seeds12_v1.md); read-out rules in
+  [addendum_g_t2_readouts.md](docs/addendum_g_t2_readouts.md).
+
+### 4. TrackML challenge, throughput phase
+
+Canto was retrained on 1,399 TrackML throughput-phase events (pileup 200, noise hits; one seed), Canto (TrackML),
+with four cluster features added to the inputs of its embedding and the HNL fake-rate working point kept, not
+re-tuned. It was evaluated once on 300 test events; uncertainties from the event bootstrap. Details:
 [TrackML model card](docs/model_card_canto_l_trackml.md).
 
 | Test condition | Target efficiency | Fake-track rate | \|d₀\| ≥ 10 mm | \|d₀\| ≥ 100 mm (found / total) | TrackML score |
@@ -155,30 +198,37 @@ evaluated once on 300 test events; uncertainties from the event bootstrap. Detai
 
 **Comparison with published GNN trackers.** Only studies that, like our test, used throughput-phase events are
 compared. Each comparison runs the reference's own evaluation code on our test events; published values as quoted
-(Liu et al. quote no uncertainties). A Canto-L row marked *at FR ≤ x* uses a working point chosen on validation for
-that reference's fake rate.
+(Liu et al. quote no uncertainties). A Canto row marked *at FR ≤ x* uses a working point chosen on validation for
+that reference's fake rate. Full TrackML under the EggNet code counts the particles with p<sub>T</sub> ≥ 1 GeV and at
+least one hit, the population that matches the one quoted by Chan et al.; over the code's own population (at least
+three hits) Canto finds 99.41 ± 0.01 %.
 
 | Benchmark (evaluation code) | Model | Efficiency | Fake rate |
 |:---|:---|:---:|:---:|
 | TrackML-1GeV (EggNet code; Calafiura et al.) | EC | 98.98 ± 0.09 | 0.12 |
 | | EggNet | 99.56 ± 0.03 | 0.06 |
-| | Canto-L | 99.56 ± 0.01 | **0.008 ± 0.001** |
-| | Canto-L *at FR ≤ 0.12* | **99.67 ± 0.01** | 0.039 ± 0.003 |
+| | Canto | 99.56 ± 0.01 | **0.008 ± 0.001** |
+| | Canto *at FR ≤ 0.12* | **99.67 ± 0.01** | 0.039 ± 0.003 |
 | TrackML-1GeV (HierarchicalGNN code; Liu et al.) | BC-HGNN | 98.55 | 1.23 |
-| | Canto-L | **99.77 ± 0.01** | **0.26 ± 0.01** |
+| | Canto | **99.77 ± 0.01** | **0.26 ± 0.01** |
 | Full TrackML (EggNet code; Chan et al.) | EggNet | 95.87 ± 0.03 | 0.19 ± 0.01 |
-| | Canto-L | **99.41 ± 0.01** | 2.40 ± 0.01 |
-| | Canto-L *at FR ≤ 0.19* | 99.37 ± 0.01 | **0.173 ± 0.003** |
+| | Canto | **95.99 ± 0.04** | 2.40 ± 0.01 |
+| | Canto *at FR ≤ 0.19* | 95.92 ± 0.04 | **0.173 ± 0.003** |
 | Full TrackML (HierarchicalGNN code; Liu et al.) | EC-GNN | 96.35 | 55.58 |
 | | BC-HGNN | 97.86 | 36.71 |
-| | Canto-L | **99.65 ± 0.01** | **34.94 ± 0.11** |
+| | Canto | **99.65 ± 0.01** | **34.94 ± 0.11** |
 
-- In every benchmark Canto-L's efficiency is the highest or equal to the highest within the errors. At its own
-  working point its fake rate with all hits and the EggNet code is 12.6 times EggNet's; at the working point chosen
-  for EggNet's fake rate, it finds 99.37 % of the particles against 95.87 %, at a fake rate not resolved from
-  EggNet's (1.7 σ).
+- In every benchmark Canto's efficiency is the highest or equal to the highest within the errors. At its own
+  working point its fake rate with all hits and the EggNet code is 12.6 times EggNet's; with connected components
+  at an edge-score cut of 0.8, chosen on validation for EggNet's fake rate, it finds 95.92 % of the particles against
+  95.87 %, at a fake rate not resolved from EggNet's (1.7 σ).
+- **Displaced particles overlaid on pileup (claim H1).** Displaced gun particles, generated as for the generic
+  sample, were overlaid on 600 TrackML events outside the training data. With all hits Canto finds 73.5 % of their
+  3,072 displaced targets; with the noise hits and all particles below 1 GeV removed, 71.5 %. The difference,
+  1.99 ± 0.59 points, satisfies the [preregistered](docs/preregistration_pileup.md) requirement that these hits lower
+  the efficiency by no more than 1 point ([result](results/pileup_hp/h1_htest_WP-A_full-1gev-hs_v1.json)).
 - **Displaced particles in TrackML.** TrackML is a benchmark for prompt tracking: 1.2 % of the validation targets
-  have \|d₀\| ≥ 10 mm. On validation (all hits), Canto-L finds 1,539 of the 1,562 such particles from the event generator
+  have \|d₀\| ≥ 10 mm. On validation (all hits), Canto finds 1,539 of the 1,562 such particles from the event generator
   (98.5 %; mostly K<sub>S</sub> and Λ daughters: 99.3 % and 97.2 %), and 206 of the 448 produced by the detector
   simulation in material interactions (46.0 %). 214 of the 265 losses occur at graph construction, for particles
   that cross the detector obliquely (large \|d₀\| / r<sub>first</sub>) at low p<sub>T</sub>
@@ -197,12 +247,13 @@ population, TrackML, training)</summary>
 
 | stage | acorn / Exa.TrkX | Canto |
 |:---|:---|:---|
-| **Graph** | metric-learning embedding, neighbors within a radius | the same graph, plus the legs of helix-consistent hit triplets (hand-cut support in Canto-H, learned support in Canto-L), which reach the hits of far-displaced tracks |
+| **Graph** | metric-learning embedding, neighbors within a radius | the same graph, plus the legs of helix-consistent hit triplets (learned support in Canto; hand-cut support in the Canto-H variant), which reach the hits of far-displaced tracks |
 | **Edge classifier** | interaction network on hit positions | messages between hit triplets, inputs that do not depend on the production point, and training tracks whose innermost hits are removed at random, so that a track starting far out is not unusual |
-| **Track builder** | connected components of the kept edges | a menu chosen on validation: Mutex Watershed that keeps the hits of one detector layer apart, followed by learned fragment merging (Canto-L, Canto-B), or a walk along high-score edges with helix merging (Canto-H) |
+| **Track builder** | connected components of the kept edges | a menu chosen on validation: Mutex Watershed that keeps the hits of one detector layer apart, followed by learned fragment merging (Canto, Canto-B), or a walk along high-score edges with helix merging (Canto-H) |
 
-The three variants share the edge-classifier design and the builder menu and differ in the graph: **Canto-B** (the
-base graph), **Canto-H** (hand-cut helix triplets) and **Canto-L** (learned triplet support, the selected variant).
+Canto is the selected pipeline, with learned triplet support; in the code and the configurations it is named
+**Canto-L**. Two alternative graphs share its edge-classifier design and builder menu and appear only in the
+ablation: **Canto-B** (the base graph) and **Canto-H** (hand-cut helix triplets).
 Baselines: [acorn](https://gitlab.cern.ch/gnn4itkteam/acorn), the Exa.TrkX pipeline of the ATLAS GNN4ITk project,
 retrained on ttbar, on the HNL signal and on both, and the interaction network of DeZoort et al.
 
@@ -239,6 +290,8 @@ the site's paths and partition names.
 | acorn baselines (metric learning, GNN, evaluation) | `slurm/baseline/orchestrate.sh slurm/baseline/plan_v1.txt` |
 | Canto variants (graphs, edge classifier, builders) | `slurm/stage1/orchestrate_s1.sh slurm/stage1/plan_final_{base,union,learned}.txt` |
 | selection on validation, then the one-time test | `python -m hnl.eval.final_select`, `slurm/stage1/final_test_chain.sh` |
+| generated samples, claims G1–G3 | `slurm/addendum_g/`, `slurm/addendum_g_t3/`, `slurm/addendum_g_t4/` (`hnl.eval.addendum_g*`) |
+| displaced particles overlaid on TrackML, claim H1 | `slurm/overlay/` (`hnl.overlay`) |
 | TrackML pipeline and test | `slurm/trackml/` (`_common.sh` documents the run layout) |
 | release card (reads the stored evaluation outputs, which are not in the repository) | `python -m hnl.plots.release_card_full --out figures/release/canto_card_full` |
 | tests | `pytest` (tests marked `data` or `gpu` need the samples or a CUDA device) |

@@ -808,6 +808,14 @@ def test_guard_refuses_each_forbidden_case(repo_copy):
     t1 = os.path.join(r, HT1)                                             # an H-T1 record that R15 names
     os.makedirs(os.path.dirname(t1), exist_ok=True)              # results/pileup_hp holds the D7 record
     json.dump({"dropped": sp["htest_dropped"]}, open(t1, "w"))
+    led = os.path.join(r, "docs/feedback/test_use_ledger.md")            # the repository's ledger holds R15 since
+    lines, keep, skip = open(led).read().split("\n"), [], False            # H-T2 (f180d0a); this case needs none
+    for line in lines:
+        if line.startswith("### "):
+            skip = line.startswith("### R15.")
+        if not skip:
+            keep.append(line)
+    open(led, "w").write("\n".join(keep))
     git(r, "add", "-A")
     git(r, "commit", "-qm", "H-T1 list")
     commit_record(rc, "d" * 64, meta_sets=("hval", "htest"))

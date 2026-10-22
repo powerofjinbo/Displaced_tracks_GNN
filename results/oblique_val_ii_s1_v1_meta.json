@@ -1,0 +1,12 @@
+{
+ "started_utc": "2026-10-16T00:57:24.701917+00:00",
+ "slurm_job": "6822336",
+ "host": "submit77.mit.edu",
+ "s0": 0.2,
+ "population": 1331,
+ "events": 855,
+ "runs": [
+  "Canto-L (ii) s1=/ceph/submit/data/user/j/jinboz1/hnl_lrt/runs/stage1_final_learned_ts/l1tl/armii_s1:ii"
+ ],
+ "elapsed_s": 19.7
+}

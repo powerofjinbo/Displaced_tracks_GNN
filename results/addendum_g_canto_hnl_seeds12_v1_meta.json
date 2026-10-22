@@ -1,0 +1,188 @@
+{
+ "name": "addendum_g_canto_hnl_seeds12_v1",
+ "git": "6fa9d7b893eaaa1e8262f9898b058721afc7a004",
+ "slurm_job": "6854383",
+ "started_utc": "2026-10-18T17:36:47Z",
+ "eval_root": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/addendum_g/eval",
+ "work": "/work/submit/jinboz1/hnl/runs_extra/ts_seeds12/summary_v2",
+ "ts_seeds": [
+  0,
+  1,
+  2
+ ],
+ "checks": [
+  [
+   "test.csv: rows of the other models (40)",
+   true
+  ],
+  [
+   "test.csv: same keys of the other models",
+   true
+  ],
+  [
+   "test.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "test.csv: Canto-L (HNL) / (ttbar+HNL) rows (20)",
+   true
+  ],
+  [
+   "test.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "test_bins.csv: rows of the other models (284)",
+   true
+  ],
+  [
+   "test_bins.csv: same keys of the other models",
+   true
+  ],
+  [
+   "test_bins.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "test_bins.csv: Canto-L (HNL) / (ttbar+HNL) rows (142)",
+   true
+  ],
+  [
+   "test_bins.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "test_differences.csv: rows of the other models (12)",
+   true
+  ],
+  [
+   "test_differences.csv: same keys of the other models",
+   true
+  ],
+  [
+   "test_differences.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "test_points.csv: no committed file",
+   true
+  ],
+  [
+   "test: claim G1 record identical",
+   true
+  ],
+  [
+   "hss.csv: rows of the other models (80)",
+   true
+  ],
+  [
+   "hss.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hss.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "hss.csv: Canto-L (HNL) / (ttbar+HNL) rows (40)",
+   true
+  ],
+  [
+   "hss.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "hss_bins.csv: rows of the other models (216)",
+   true
+  ],
+  [
+   "hss_bins.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hss_bins.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "hss_bins.csv: Canto-L (HNL) / (ttbar+HNL) rows (108)",
+   true
+  ],
+  [
+   "hss_bins.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "hss_differences.csv: rows of the other models (12)",
+   true
+  ],
+  [
+   "hss_differences.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hss_differences.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "hss_points.csv: no committed file",
+   true
+  ],
+  [
+   "hnl.csv: rows of the other models (120)",
+   true
+  ],
+  [
+   "hnl.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hnl.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "hnl.csv: Canto-L (HNL) / (ttbar+HNL) rows (60)",
+   true
+  ],
+  [
+   "hnl.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "hnl_bins.csv: rows of the other models (892)",
+   true
+  ],
+  [
+   "hnl_bins.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hnl_bins.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ],
+  [
+   "hnl_bins.csv: Canto-L (HNL) / (ttbar+HNL) rows (446)",
+   true
+  ],
+  [
+   "hnl_bins.csv: their eff_s0 and n equal the committed one-seed rows, three seeds now (0 differ)",
+   true
+  ],
+  [
+   "hnl_differences.csv: no committed file",
+   true
+  ],
+  [
+   "hnl_points.csv: rows of the other models (60)",
+   true
+  ],
+  [
+   "hnl_points.csv: same keys of the other models",
+   true
+  ],
+  [
+   "hnl_points.csv: every value of the other models identical (0 differ, missing columns [])",
+   true
+  ]
+ ],
+ "finished_utc": "2026-10-18T17:37:45Z"
+}

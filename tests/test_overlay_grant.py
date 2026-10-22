@@ -351,7 +351,8 @@ def test_addendum_h_entry_points_refuse_overlay_ids(tmp_path, clean_env):
              "--out-json", t + "/h1.json")
     _refused(H.main, "run", "--set", "hval", "--sealed", t, "--grid-1gev", t, "--grid-hs", t,
              "--out-json", t + "/h1.json")
-    with pytest.raises(LookupError):                                       # no H-test list before H-T1 at all
+    # before H-T1 there is no H-test list at all (LookupError); after it, no grant (PermissionError)
+    with pytest.raises((LookupError, PermissionError)):
         H.main(["run", "--set", "htest", "--grid-full", t, "--grid-1gev", t, "--grid-hs", t,
                 "--out-json", t + "/h1.json"])
     assert not os.listdir(t) or set(os.listdir(t)) <= {"grants"}

@@ -79,7 +79,11 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 DATA = os.environ.get("HNL_DATA", "/ceph/submit/data/user/j/jinboz1/hnl_lrt")
 RUNS = os.path.join(DATA, "runs")
 B = os.path.join(RUNS, "baseline_v1")
-OUT = os.path.join(RUNS, "addendum_g_v1")
+OUT = os.environ.get("ADDG_OUT", os.path.join(RUNS, "addendum_g_v1"))   # ADDG_OUT: seeds 1-2 of the training-
+#   sample runs (ledger R20; slurm/ts_seeds12), an output root on /work whose acorn_ii_s<S> and eval/<model>_s<S> of
+#   the R14 runs are links to this default root; default unchanged
+TS_SEEDS = tuple(int(x) for x in os.environ.get("ADDG_TS_SEEDS", "0").split(","))   # seeds of canto_l_hnl / _tthnl
+SEL_TS_SEEDS12 = "results/training_sample_test_selection_seeds12_v1.json"      # their seeds 1 and 2 (ledger R19)
 FS = os.path.join(DATA, "derived", "acorn_fs", "generated_v1")
 T1 = os.path.join(DATA, "derived", "generated_v1", "t1")
 T2 = os.path.join(DATA, "derived", "generated_v1", "t2")        # truth tables of hnl.eval.addendum_g_truth
@@ -207,11 +211,15 @@ def canto_settings(model: str, seed: int) -> dict:
         e = sel["pipelines"]["l1tl"]["seeds"][str(seed)]
         graphs_run, arm, source = os.path.join(B, f"armi_s{seed}"), "i", "results/final_selection_v1.json"
     else:
-        sel = json.load(open(_repo("results/training_sample_test_selection_v1.json")))
-        p = sel["pipelines"][{"canto_l_hnl": "l1tl_ii", "canto_l_tthnl": "l1tl_iii"}[model]]
+        source = "results/training_sample_test_selection_v1.json"
+        pname = {"canto_l_hnl": "l1tl_ii", "canto_l_tthnl": "l1tl_iii"}[model]
+        sel = json.load(open(_repo(source)))
+        if str(seed) not in sel["pipelines"][pname]["seeds"]:      # seeds 1 and 2 (ledger R19): their own selection
+            source = SEL_TS_SEEDS12
+            sel = json.load(open(_repo(source)))
+        p = sel["pipelines"][pname]
         e = p["seeds"][str(seed)]
-        graphs_run, arm, source = p["graphs_run"], {"canto_l_hnl": "ii", "canto_l_tthnl": "iii"}[model], \
-            "results/training_sample_test_selection_v1.json"
+        graphs_run, arm = e.get("graphs_run", p.get("graphs_run")), {"canto_l_hnl": "ii", "canto_l_tthnl": "iii"}[model]
     ub = json.load(open(os.path.join(graphs_run, "ltf_union_graphs", "report_test", "build.json")))
     gi = _infer_record(os.path.join(e["run"], "gnn_scores", "test_infer"))
     return {"run": e["run"], "graphs_run": graphs_run, "acorn_arm": arm, "acorn_seed": seed, "config": e["config"],
@@ -248,7 +256,7 @@ def model_settings(model: str, seed: int) -> dict:
 
 
 def model_seeds(model: str) -> list[int]:
-    return [0] if model in ("canto_l_hnl", "canto_l_tthnl") else [0, 1, 2]
+    return list(TS_SEEDS) if model in ("canto_l_hnl", "canto_l_tthnl") else [0, 1, 2]
 
 
 def scored_tar(model: str, seed: int, set_: str) -> str:
@@ -283,8 +291,8 @@ def cmd_models(a) -> None:
            "note": "frozen settings read from the committed records; nothing chosen on the generated samples",
            "models": {m: [model_settings(m, s) for s in model_seeds(m)] for m in LABELS},
            "acorn": {f"{arm}_s{s}": acorn_settings(arm, s) for arm, seeds in (("i", (0, 1, 2)), ("ii", (0, 1, 2)),
-                                                                             ("iii", (0,))) for s in seeds}}
-    path = _repo("results/addendum_g_models_v1.json")
+                                                                             ("iii", TS_SEEDS)) for s in seeds}}
+    path = _repo(a.out)
     with open(path, "w") as f:
         json.dump(out, f, indent=1)
     print(path)
@@ -939,7 +947,8 @@ def main(argv=None):
     p = sub.add_parser("val-check")
     p.add_argument("--eval-root", required=True)
     p.add_argument("--scratch", required=True)
-    sub.add_parser("models")
+    p = sub.add_parser("models")
+    p.add_argument("--out", default="results/addendum_g_models_v1.json")
     p = sub.add_parser("acorn-args")
     p.add_argument("--arm", required=True)
     p.add_argument("--seed", type=int, required=True)
